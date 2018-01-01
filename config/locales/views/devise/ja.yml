@@ -1,0 +1,63 @@
+---
+ja:
+  devise:
+    confirmations:
+      new:
+        Resend_confirmation_instructions: 確認メールをもう一度送る
+        email: メールアドレス
+    mailer:
+    passwords:
+      edit:
+        Change_your_password: パスワードを変更する
+        characters_minimum: 文字以上
+        New_password: 新しいパスワード
+        Confirm_new_password: パスワード確認
+        Change_my_password: パスワードを変更
+      new:
+        Forgot_your_password?: パスワードを変更する
+        email: メールアドレス
+        Send_me_reset_password_instructions: パスワード再発行メールを送る
+
+        characters_minimum: 文字以上
+        New_password: 新しいパスワード
+        Confirm_new_password: パスワード確認
+        Change_my_password: パスワードを変更
+    registrations:
+      new:
+        sign_up: 新規登録
+        name: お名前
+        email: メールアドレス
+        password: パスワード
+        characters_minimum: 文字以上
+        password_confirmation: パスワード確認
+        sign_up_btn: 登録する
+      edit:
+        Edit_Settings: 基本設定の変更
+        name: お名前
+        email: メールアドレス
+        New_password: 新しいパスワード
+        leave_blank_if_you_don't_want_to_change_it: 変更しない場合は、空欄にしてください。
+        password: パスワード
+        characters_minimum: 文字以上
+        password_confirmation: パスワード確認
+        current_password: 現在のパスワード
+        we_need_your_current_password_to_confirm_your_changes: 確認のため、パスワードを入力してください。
+        Cancel_my_account: 退会する
+        Are_you_sure?: 本当に退会しますか？
+    sessions:
+      new:
+        sign_in: ログイン
+        email: メールアドレス
+        password: パスワード
+        remember_me: ログイン状態を保持
+    shared:
+      links:
+        sign_in: ログイン
+        sign_up: 新規登録
+        Forgot_your_password?: パスワードを忘れた方
+        Didn't_receive_confirmation_instructions?: 確認メールを再送
+        Didn't_receive_unlock_instructions?: パスワード再発行メールを再送
+    unlocks:
+      new:
+        Resend_unlock_instructions: アカウント凍結からの回復メールをもう一度送る
+        email: メールアドレス

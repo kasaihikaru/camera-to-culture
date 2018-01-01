@@ -1,0 +1,83 @@
+<h2><%= t(".sign_up")%></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+  <div class="field">
+    <%= f.label :name, t(".name") %><br />
+    <%= f.text_field :name, autofocus: true, maxlength: "20" %>
+  </div>
+
+  <p><%= t(".language_use")%></p>
+  <%= f.fields_for :user_languages do |lg| %>
+    <div class="field">
+      <label><input name="language_id[]" type="checkbox" value="1" /><%= t(".japanese")%></label><br />
+    </div>
+  <% end %>
+
+  <%= f.fields_for :user_languages do |lg| %>
+    <div class="field">
+      <label><input name="language_id[]" type="checkbox" value="2" /><%= t(".english")%></label><br />
+    </div>
+  <% end %>
+
+  <%= f.fields_for :user_languages do |lg| %>
+    <div class="field">
+      <label><input name="language_id[]" type="checkbox" value="3" /><%= t(".chinese")%></label><br />
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image, t(".image") %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, t(".email") %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, t(".password") %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %><%=t(".characters_minimum") %>)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, t(".password_confirmation") %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <br>
+  <P>（開発用）依頼者用フォーム</P>
+  <%= f.fields_for :customers do |cs| %>
+    <div class="field">
+      <%= cs.label :introduction, t(".cs_introduction") %><br />
+      <%= cs.text_field :introduction %>
+    </div>
+  <% end %>
+
+  <br>
+  <P>（開発用）カメラマン用フォーム</P>
+  <%= f.fields_for :clients do |cl| %>
+    <div class="field">
+      <%= cl.label :camera, t(".camera") %><br />
+      <%= cl.text_field :camera %>
+    </div>
+    <div class="field">
+      <%= cl.label :introduction, t(".cl_introduction") %><br />
+      <%= cl.text_field :introduction %>
+    </div>
+  <% end %>
+
+
+
+  <div class="actions">
+    <%= f.submit t(".sign_up_btn") %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

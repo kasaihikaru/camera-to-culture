@@ -1,0 +1,9 @@
+---
+en:
+  users:
+    show:
+      sign-up: "sign-up"
+      sign-in: "ログイン"
+      sign-out: "ログアウト"
+      mypage: "マイページ"
+      aaa: "テスト"

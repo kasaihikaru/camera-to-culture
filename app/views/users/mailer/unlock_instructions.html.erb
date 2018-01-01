@@ -1,0 +1,8 @@
+<p><%= t(".title")%></p>
+<p><%= @resource.email %>!</p>
+
+<p><%= t(".Your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts.")%></p>
+
+<p><%= t(".Click_the_link_below_to_unlock_your_account")%></p>
+
+<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>

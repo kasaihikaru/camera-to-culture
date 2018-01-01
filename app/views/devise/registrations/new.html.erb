@@ -1,0 +1,68 @@
+<h2><%= t(".sign_up")%></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :to_be_cs, "なる" %><br />
+    <label><%= f.radio_button :to_be_cs, true %> 撮影を依頼する </label>
+    <label><%= f.radio_button :to_be_cs, false %> カメラマンになる</label>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :name, t(".name") %><br />
+    <%= f.text_field :name, autofocus: true, maxlength: "20" %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :email, t(".email") %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, t(".password") %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %><%=t(".characters_minimum") %>)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, t(".password_confirmation") %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <%= f.fields_for :customers do |cs| %>
+    <div class="field">
+      <%= cs.label :introduction %>
+      <%= cs.text_field :introduction %>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :clients do |cl| %>
+    <div class="field">
+      <%= cl.label :camera %>
+      <%= cl.text_field :camera %>
+    </div>
+    <div class="field">
+      <%= cl.label :introduction %>
+      <%= cl.text_field :introduction %>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :user_languages do |lg| %>
+    <div class="field">
+      <%= lg.label :language_id %>
+      <%= lg.text_field :language_id %>
+    </div>
+  <% end %>
+
+
+  <div class="actions">
+    <%= f.submit t(".sign_up_btn") %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

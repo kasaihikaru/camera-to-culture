@@ -1,0 +1,24 @@
+<h2>多言語確認用</h2>
+<%= @date %>
+<%= @a %>
+<%= l(Time.now) %>
+<%= l(Time.now,format: :long)   %>
+<%= l(Time.now,format: :short)  %>
+
+<h2>ユーザー情報</h2>
+<h4>ユーザー名</h4>
+<%= @user.name %><br>
+<h4>メアド</h4>
+<%= @user.email %><br>
+<h4>プロフィール画像</h4>
+<%= image_tag @user.image.url, :alt => "icon" if @user.image? %><br>
+<h4>話せる言語</h4>
+<% @mylangs.each do |lang| %>
+	<%= lang.ja %><br>
+<% end %><br>
+<h4>利用カメラ</h4>
+<%= @cl.camera %><br>
+<h4>カメラマンとして自己紹介</h4>
+<%= @cl.introduction %><br>
+<h4>客として自己紹介</h4>
+<%= @cs.introduction %><br>

@@ -1,0 +1,8 @@
+tw:
+  layouts:
+    application:
+      language: 言語
+      sign-up: 新規登録
+      sign-in: ログイン
+      sign-out: ログアウト
+      mypage: マイページ

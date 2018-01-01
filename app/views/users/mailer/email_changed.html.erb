@@ -1,0 +1,10 @@
+<p><%= t(".title")%></p>
+<p><%= @email %></p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <p><%= t(".We're_contacting_you_to_notify_you_that_your_email_is_being_changed_to")%></p>
+  <p><%= @resource.unconfirmed_email %></p>
+<% else %>
+  <p><%= t(".We're_contacting_you_to_notify_you_that_your_email_has_been_changed_to")%></p>
+  <p><%= @resource.email %>.</p>
+<% end %>
