@@ -5,6 +5,7 @@ class Client < ApplicationRecord
 	belongs_to :user
 
 	has_many :client_portfolios
+	accepts_nested_attributes_for :client_portfolios
 	has_many :client_locations
 	has_many :client_categories
 	has_many :client_schedules

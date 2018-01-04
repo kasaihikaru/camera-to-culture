@@ -1,4 +1,4 @@
-<h2><%= t(".cs_registration_form")%></h2>
+<h2><%= t(".cs_form")%></h2>
 
 <%= form_for([current_user, @cs]) do |f| %>
   <div class="field">
@@ -7,6 +7,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit t(".sign_up_btn") %>
+    <%= f.submit t(".register_btn") %>
   </div>
 <% end %>

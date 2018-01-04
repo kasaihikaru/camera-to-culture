@@ -11,11 +11,13 @@ Rails.application.routes.draw do
 		resources :users, only: [:show] do
 			resources :messages, only: [:index, :create]
 			resources :events, only: [:index]
+			resources :clients, only: [:edit, :update]
+			resources :customers, only: [:edit, :update]
 		end
 
-		resources :clients, only: [:index, :show, :edit, :update]
+		resources :clients, only: [:index, :show]
 
-		resources :customers, only: [:show, :edit, :update]
+		resources :customers, only: [:show]
 
 		resources :events, only: [:new, :create, :show] do
 			resources :event_states, only: [:new, :create]

@@ -5,15 +5,11 @@ class ApplicationController < ActionController::Base
 ###########deviseの設定###########
   before_action :configure_permitted_parameters, if: :devise_controller?
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :is_deleted, :image, customers_attributes: [:introduction], clients_attributes: [:camera, :introduction]])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :is_deleted, :image])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :is_deleted, :image])
   end
 
 
-
-  def after_sign_up_path_for(resource)
-    "http://www.google.com" # <- Path you want to redirect the user to.
-  end
 
 
 ###########多言語の設定###########

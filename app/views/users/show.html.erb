@@ -5,6 +5,10 @@
 <%= l(Time.now,format: :long)   %>
 <%= l(Time.now,format: :short)  %>
 
+<h2>リンク</h2>
+<p><%= link_to "CS登録ページ", edit_user_customer_path(current_user) %></p>
+<p><%= link_to "CL登録ページ", edit_user_client_path(current_user) %></p>
+
 <h2>ユーザー情報</h2>
 <h4>ユーザー名</h4>
 <%= @user.name %><br>
@@ -16,9 +20,3 @@
 <% @mylangs.each do |lang| %>
 	<%= lang.ja %><br>
 <% end %><br>
-<h4>利用カメラ</h4>
-<%= @cl.camera %><br>
-<h4>カメラマンとして自己紹介</h4>
-<%= @cl.introduction %><br>
-<h4>客として自己紹介</h4>
-<%= @cs.introduction %><br>

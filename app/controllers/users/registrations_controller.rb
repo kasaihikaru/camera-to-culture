@@ -5,10 +5,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     # super
-
     my_build_resource({})
-    self.resource.clients.build
-    self.resource.customers.build
     self.resource.user_languages.build
     yield resource if block_given?
     respond_with resource
@@ -17,15 +14,36 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     # super
-
     user = my_build_resource(sign_up_params)
     resource.save
+
+    #CL,CS発番
+    customer = Customer.create(user_id: user.id)
+    client = Client.create(user_id: user.id)
+
+    #User_languageではダメ
+    #マスターテーブルが空だと保存できない
+    unless user_language_params == nil
+      language_ids = user_language_params
+      language_ids.each do |id|
+        UserLanguage.create(user_id: user.id, language_id: id.to_i)
+      end
+    end
+
     yield resource if block_given?
     if resource.persisted?
       if resource.active_for_authentication?
         set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
-        respond_with resource, location: after_sign_up_path_for(resource)
+
+        #リダイレクト先を設定
+        if as_who_params == "cl"
+          redirect_to edit_user_client_path(resource, client)
+        elsif as_who_params == "cs"
+          redirect_to edit_user_customer_path(resource, customer)
+        else
+          respond_with resource, location: after_sign_up_path_for(resource)
+        end
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
         expire_data_after_sign_in!
@@ -37,12 +55,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       respond_with resource
     end
 
-    #User_languageではダメ
-    #マスターテーブルが空だと保存できない
-    language_ids = user_language_params
-    language_ids.each do |id|
-      UserLanguage.create(user_id: user.id, language_id: id.to_i)
-    end
   end
 
   # GET /resource/edit
@@ -76,6 +88,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def user_language_params
     params[:language_id]
+  end
+
+  def as_who_params
+    params[:as_who]
   end
 
   # If you have extra params to permit, append them to the sanitizer.

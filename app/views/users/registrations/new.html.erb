@@ -12,7 +12,7 @@
   <p><%= t(".language_use")%></p>
   <%= f.fields_for :user_languages do |lg| %>
     <div class="field">
-      <label><input name="language_id[]" type="checkbox" value="1" /><%= t(".japanese")%></label><br />
+      <label><input name="language_id[]" type="checkbox" value="1" checked="checked"/><%= t(".japanese")%></label><br />
     </div>
   <% end %>
 
@@ -51,28 +51,13 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <br>
-  <P>（開発用）依頼者用フォーム</P>
-  <%= f.fields_for :customers do |cs| %>
-    <div class="field">
-      <%= cs.label :introduction, t(".cs_introduction") %><br />
-      <%= cs.text_field :introduction %>
-    </div>
-  <% end %>
 
   <br>
-  <P>（開発用）カメラマン用フォーム</P>
-  <%= f.fields_for :clients do |cl| %>
-    <div class="field">
-      <%= cl.label :camera, t(".camera") %><br />
-      <%= cl.text_field :camera %>
-    </div>
-    <div class="field">
-      <%= cl.label :introduction, t(".cl_introduction") %><br />
-      <%= cl.text_field :introduction %>
-    </div>
-  <% end %>
-
+  <P>（開発用）ページ遷移先を決めさせる</P>
+  <div class="field">
+    <input type="radio" name="as_who" value="cs" checked> 依頼者として
+    <input type="radio" name="as_who" value="cl"> 撮影者として
+  </div>
 
 
   <div class="actions">

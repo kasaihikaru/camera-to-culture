@@ -14,8 +14,6 @@ ActiveRecord::Schema.define(version: 20171228140158) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "client_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -41,9 +39,8 @@ ActiveRecord::Schema.define(version: 20171228140158) do
   create_table "client_option_prices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "client_id"
     t.string "name", null: false
-    t.integer "arithmetic_type", null: false
-    t.integer "add_sub_price"
-    t.float "mul_div_percent", limit: 24
+    t.boolean "along_with_time", default: false, null: false
+    t.integer "price"
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -102,8 +99,6 @@ ActiveRecord::Schema.define(version: 20171228140158) do
     t.string "en", null: false
     t.string "zh", null: false
     t.string "tw", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "customer_reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -192,8 +187,6 @@ ActiveRecord::Schema.define(version: 20171228140158) do
     t.string "en", null: false
     t.string "zh", null: false
     t.string "tw", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -208,12 +201,11 @@ ActiveRecord::Schema.define(version: 20171228140158) do
   end
 
   create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "area", null: false
     t.string "ja", null: false
     t.string "en", null: false
     t.string "zh", null: false
     t.string "tw", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "user_languages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

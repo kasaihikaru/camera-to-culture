@@ -9,9 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 	has_many :customers
-	accepts_nested_attributes_for :customers
 	has_many :clients
-	accepts_nested_attributes_for :clients
 	has_many :user_languages
 	accepts_nested_attributes_for :user_languages
 

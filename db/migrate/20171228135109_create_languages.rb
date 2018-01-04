@@ -5,7 +5,6 @@ class CreateLanguages < ActiveRecord::Migration[5.1]
       t.string  :en, null:false
       t.string  :zh, null:false
       t.string  :tw, null:false
-      t.timestamps
     end
   end
 end
