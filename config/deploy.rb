@@ -6,6 +6,7 @@ set :repo_url, "git@github.com:kasaihikaru/camera-to-culture.git"
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
+set :deploy_to, '/home/ec2-user/work/camera-to-culture'
 set :rbenv_type, :user
 set :rbenv_ruby, '2.4.3'
 set :ssh_options, auth_methods: ['publickey'],
