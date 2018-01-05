@@ -6,7 +6,7 @@
 ## CarrierWaveの設定
 CarrierWave.configure do |config|
   # S3の設定
-  config.fog_provider = 'fog/aws'
+  # config.fog_provider = 'fog/aws'
   config.fog_credentials = {
       :provider               => 'AWS',
       :aws_access_key_id      => ENV['S3_ACCESS_KEY'],
@@ -17,7 +17,17 @@ CarrierWave.configure do |config|
   }
 
   # S3のバケットを指定。
-  config.fog_directory     = ENV['S3_BUCKET']
+  case Rails.env
+    when 'production'
+        config.fog_directory  = ENV['S3_BUCKET']
+    when 'staging'
+        config.fog_directory  = ENV['S3_BUCKET']
+    when 'development'
+        config.fog_directory  = ENV['S3_BUCKET']
+    when 'test'
+        config.fog_directory  = ENV['S3_BUCKET']
+  end
+
   # 一般公開させて無いS3の場合は以下の設定を行う。
   config.fog_public     = false
   # 一般公開されていない場合は以下の設定をする事で60秒間有効なURLを発行してくれる。

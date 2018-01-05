@@ -16,6 +16,14 @@ set :ssh_options, auth_methods: ['publickey'],
 set :unicorn_pid, -> { "/home/ec2-user/work/camera-to-culture/shared/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "/home/ec2-user/work/camera-to-culture/current/config/unicorn.rb" }
 
+set :default_env, {
+	S3_BUCKET: ENV['S3_BUCKET'],
+	S3_ACCESS_KEY: ENV['S3_ACCESS_KEY'],
+	S3_SECRET_KEY: ENV['S3_SECRET_KEY'],
+	S3_REGION: ENV['S3_REGION']
+}
+
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
