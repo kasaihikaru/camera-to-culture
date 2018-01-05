@@ -7,12 +7,14 @@ set :repo_url, "git@github.com:kasaihikaru/camera-to-culture.git"
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :deploy_to, '/home/ec2-user/work/camera-to-culture'
+set :keep_releases, 5 # サーバー上に保持する過去世代数
 set :rbenv_type, :user
 set :rbenv_ruby, '2.4.3'
 set :ssh_options, auth_methods: ['publickey'],
  keys: ['/Users/01018603/.ssh/hikaru.pem']
-set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
-set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+
+set :unicorn_pid, -> { "/home/ec2-user/work/camera-to-culture/shared/tmp/pids/unicorn.pid" }
+set :unicorn_config_path, -> { "/home/ec2-user/work/camera-to-culture/current/config/unicorn.rb" }
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
