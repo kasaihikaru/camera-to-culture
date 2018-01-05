@@ -88,4 +88,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #for devise
+  config.action_mailer.default_url_options = { :host => 'http://13.230.174.55/' }
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => ENV['gmail_account'], #gmailアドレス
+    :password => ENV['gmail_password'], #gmailパスワード
+    :authentication => 'login',
+  }
 end
