@@ -2,9 +2,10 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  # devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable, :omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable, :omniauthable
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  #メール認証外す
+  # devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
 	has_many :customers
 	has_many :clients
@@ -33,7 +34,7 @@ class User < ApplicationRecord
 
         # If you are using confirmable and the provider(s) you use validate emails,
         # uncomment the line below to skip the confirmation emails.
-        # user.skip_confirmation!
+        user.skip_confirmation!
       end
     end
   end
