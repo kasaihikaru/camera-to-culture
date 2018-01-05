@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
+	devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
+
 	scope '(:locale)', constraints: { locale: /\w{2}/ } do
 
-		devise_for :users, :controllers => {
-			:registrations => "users/registrations"
-		}
+		devise_for :users, skip: :omniauth_callbacks, :controllers => { :registrations => "users/registrations"}
+
 		root to: "homes#show"
 
 		resource :home, only: [:show]

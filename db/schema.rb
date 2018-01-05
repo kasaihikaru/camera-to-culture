@@ -240,6 +240,8 @@ ActiveRecord::Schema.define(version: 20171228140158) do
     t.string "name", null: false
     t.boolean "is_deleted", default: false, null: false
     t.string "image"
+    t.string "uid"
+    t.string "provider"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -33,10 +33,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       t.timestamps null: false
 
-      #add
+      #add_for_devise
       t.string  :name, null:false
       t.boolean :is_deleted, default:false, null:false
       t.string  :image
+
+      #add_for_FB
+      t.string  :uid
+      t.string  :provider
     end
 
     add_index :users, :email,                unique: true

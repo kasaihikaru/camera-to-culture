@@ -62,4 +62,6 @@ gem 'rails-i18n'#多言語対応
 gem 'dotenv-rails'#環境変数の管理用
 gem 'carrierwave'#image uploader with AWS S3
 gem 'fog'#image uploader with AWS S3
-gem 'rmagick'   # 画像加工用
+gem 'rmagick'#画像加工用
+gem 'omniauth'#FB認証
+gem 'omniauth-facebook'#FB認証

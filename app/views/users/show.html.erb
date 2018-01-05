@@ -6,8 +6,9 @@
 <%= l(Time.now,format: :short)  %>
 
 <h2>リンク</h2>
-<p><%= link_to "CS登録ページ", edit_user_customer_path(current_user) %></p>
-<p><%= link_to "CL登録ページ", edit_user_client_path(current_user) %></p>
+<o><%= link_to "ユーザー情報編集", edit_user_registration_path %></p>
+<p><%= link_to "CS情報編集ページ", edit_user_customer_path(current_user) %></p>
+<p><%= link_to "CL情報編集ページ", edit_user_client_path(current_user) %></p>
 
 <h2>ユーザー情報</h2>
 <h4>ユーザー名</h4>

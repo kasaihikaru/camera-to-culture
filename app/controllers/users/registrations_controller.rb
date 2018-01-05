@@ -58,14 +58,62 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    # super
+    user_languages = current_user.user_languages
+    @lang_ids = []
+    for user_language in user_languages
+      @lang_ids << user_language.language_id
+    end
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    #super
+
+    self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
+    prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
+
+    resource_updated = update_resource(resource, account_update_params)
+
+
+    #User_languageの更新
+    unless user_language_params == nil
+      #元のlangを取得
+      pre_user_languages = current_user.user_languages
+      pre_lang_ids = []
+      for user_language in pre_user_languages
+        pre_lang_ids << user_language.language_id
+      end
+
+      #変更するlangと照らし合わせて更新
+      language_ids = user_language_params
+      language_ids.each do |id|
+        unless pre_lang_ids.include?(id.to_i)
+          UserLanguage.create(user_id: current_user.id, language_id: id.to_i)
+        end
+      end
+      pre_lang_ids.each do |pre_id|
+        unless language_ids.include?(pre_id.to_s)
+          UserLanguage.where(user_id: current_user.id, language_id: pre_id.to_i).destroy_all
+        end
+      end
+    end
+    yield resource if block_given?
+    if resource_updated
+      if is_flashing_format?
+        flash_key = update_needs_confirmation?(resource, prev_unconfirmed_email) ?
+          :update_needs_confirmation : :updated
+        set_flash_message :notice, flash_key
+      end
+      bypass_sign_in resource, scope: resource_name
+      respond_with resource, location: after_update_path_for(resource)
+    else
+      clean_up_passwords resource
+      set_minimum_password_length
+      respond_with resource
+    end
+  end
 
   # DELETE /resource
   # def destroy
@@ -92,6 +140,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def as_who_params
     params[:as_who]
+  end
+
+  #user編集の際にパスワード入力をなくす
+  def update_resource(resource, params)
+    resource.update_without_password(params)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

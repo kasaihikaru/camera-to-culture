@@ -8,6 +8,28 @@
     <%= f.text_field :name, autofocus: true, maxlength: "20" %>
   </div>
 
+  <p><%= t(".language_use")%></p>
+  <div class="field">
+  <% if @lang_ids.include?(1) %>
+    <label><input name="language_id[]" type="checkbox" value="1" checked="checked"/><%= t(".japanese")%></label>
+  <% else %>
+    <label><input name="language_id[]" type="checkbox" value="1"/><%= t(".japanese")%></label>
+  <% end %>
+
+  <% if @lang_ids.include?(2) %>
+    <label><input name="language_id[]" type="checkbox" value="2" checked="checked"/><%= t(".english")%></label>
+  <% else %>
+    <label><input name="language_id[]" type="checkbox" value="2" /><%= t(".english")%></label>
+  <% end %>
+
+  <% if @lang_ids.include?(3) %>
+    <label><input name="language_id[]" type="checkbox" value="3" checked="checked"/><%= t(".chinese")%></label>
+  <% else %>
+    <label><input name="language_id[]" type="checkbox" value="3" /><%= t(".chinese")%></label>
+  <% end %>
+
+  </div>
+
   <div class="field">
     <%= f.label :email, t(".email") %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -16,6 +38,12 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+
+  <%= image_tag current_user.image.url, :alt => "icon" if current_user.image? %><br>
+  <div class="field">
+    <%= f.label :image, t(".image") %><br />
+    <%= f.file_field :image %>
+  </div>
 
   <div class="field">
     <%= f.label :password, t(".New_password") %> <i><%= t(".leave_blank_if_you_don't_want_to_change_it")%></i><br />
@@ -29,11 +57,6 @@
   <div class="field">
     <%= f.label :password_confirmation, t(".password_confirmation") %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password, t(".current_password") %> <i>(<%=t(".we_need_your_current_password_to_confirm_your_changes") %>)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="actions">
