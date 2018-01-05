@@ -51,4 +51,5 @@ production:
   <<: *default
   database: ctoc01_production
   username: ctoc01
-  password: <%= ENV['CTOC01_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
