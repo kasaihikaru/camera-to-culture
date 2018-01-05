@@ -2,8 +2,7 @@ app_path = File.expand_path('../../', __FILE__)
 
 worker_processes 1
 
-working_directory "/home/ec2-user/work/camera-to-culture/current
-"
+working_directory "/home/ec2-user/work/camera-to-culture/current"
 pid "/home/ec2-user/work/camera-to-culture/shared/tmp/pids/unicorn.pid"
 stderr_path "/home/ec2-user/work/camera-to-culture/shared/log/unicorn.stderr.log"
 stdout_path "/home/ec2-user/work/camera-to-culture/shared/log/unicorn.stdout.log"
