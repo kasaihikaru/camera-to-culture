@@ -6,7 +6,7 @@
 ## CarrierWaveの設定
 CarrierWave.configure do |config|
   # S3の設定
-  # config.fog_provider = 'fog/aws'
+  config.fog_provider = 'fog/aws'
   config.fog_credentials = {
       :provider               => 'AWS',
       :aws_access_key_id      => ENV['S3_ACCESS_KEY'],
@@ -29,7 +29,7 @@ CarrierWave.configure do |config|
   end
 
   # 一般公開させて無いS3の場合は以下の設定を行う。
-  config.fog_public     = false
+  config.fog_public = true
   # 一般公開されていない場合は以下の設定をする事で60秒間有効なURLを発行してくれる。
   config.fog_authenticated_url_expiration = 60
   CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
