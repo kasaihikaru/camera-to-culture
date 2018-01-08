@@ -1,20 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
 
-# #env用に追加してみた
-# ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
-# set :default_env, {
-# 	S3_BUCKET: ENV['S3_BUCKET'],
-# 	S3_ACCESS_KEY: ENV['S3_ACCESS_KEY'],
-# 	S3_SECRET_KEY: ENV['S3_SECRET_KEY'],
-# 	S3_REGION: ENV['S3_REGION'],
-# 	FB_App_ID: ENV['FB_App_ID'],
-# 	FB_App_Secret: ENV['FB_App_Secret']
-# }
-set :linked_files, fetch(:linked_files, []).push('.env')
-
-
-
 set :application, "camera-to-culture"
 set :repo_url, "git@github.com:kasaihikaru/camera-to-culture.git"
 
@@ -30,16 +16,27 @@ set :ssh_options, auth_methods: ['publickey'],
 set :unicorn_pid, -> { "/home/ec2-user/work/camera-to-culture/shared/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "/home/ec2-user/work/camera-to-culture/current/config/unicorn.rb" }
 
-
-
-
-
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
 end
+
+
+# #env用に追加してみたが、いらんかった。
+# ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+# set :default_env, {
+# 	S3_BUCKET: ENV['S3_BUCKET'],
+# 	S3_ACCESS_KEY: ENV['S3_ACCESS_KEY'],
+# 	S3_SECRET_KEY: ENV['S3_SECRET_KEY'],
+# 	S3_REGION: ENV['S3_REGION'],
+# 	FB_App_ID: ENV['FB_App_ID'],
+# 	FB_App_Secret: ENV['FB_App_Secret']
+# }
+# set :linked_files, fetch(:linked_files, []).push('.env')
+
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
