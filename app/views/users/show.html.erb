@@ -21,3 +21,31 @@
 <% @mylangs.each do |lang| %>
 	<%= lang.ja %><br>
 <% end %><br>
+
+<h2>撮影者としての情報</h2>
+<h4>カメラ</h4>
+<%= @cl.camera %><br>
+<h4>メッセージ</h4>
+<%= @cl.introduction %><br>
+<h4>価格</h4>
+<% if @cl_prim_price.present? %>
+  <%= @cl_prim_price.price_per_hour %>円/時間<br>
+  最少受付時間：<%= @cl_prim_price.minimum_hours %><br>
+<% end %>
+<h4>オプション</h4>
+<% @cl_opt_prices.each do |cl_opt_price| %>
+  <%= cl_opt_price.name %>
+  <% if cl_opt_price.along_with_time == true %>
+    １時間ごとに
+  <% end %>
+  <%= cl_opt_price.price %>円
+  <br>
+<% end %>
+<h4>撮影エリア</h4>
+<% @cl_prefectures.each do |cl_prefecture| %>
+	<%= cl_prefecture.ja %>
+<% end %>
+
+<h2>依頼者としての情報</h2>
+<h4>自己紹介</h4>
+<%= @cs.introduction %><br>

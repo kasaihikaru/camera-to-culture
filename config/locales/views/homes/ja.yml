@@ -1,21 +1,8 @@
 ---
 ja:
-  clients:
-    edit:
-      cl_form: 撮影者としてのプロフィール
-      camera: カメラ
-      introduction: 自己紹介
-      category_form: 撮影可能な写真カテゴリー
-      commercial_photos_people: ビジネス写真（ヒト）
-      commercial_photos_items: ビジネス写真（モノ）
-      event_photos: イベント写真（結婚式、七五三）
-      private_photo: プライベート写真（旅行、家族、恋人、友達）
-      prime_price_form: メイン価格
-      price_per_hour: １時間あたり
-      minimum_hours: 最低受付時間
-      registed_opt_price_list: 登録済みオプション価格
-      add_opt_price_form: オプション価格を追加
-      prefecture_form: 出張可能な都道府県を選択
+  homes:
+    show:
+      select_area: 都道府県を選択
       Hokkaido_area: 北海道エリア
       Tohoku_area: 東北エリア
       Kanto_area: 関東エリア
@@ -73,18 +60,4 @@ ja:
       Kagoshima: 鹿児島県
       Okinawa: 沖縄県
 
-
-      register_btn: この内容で登録
-
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
-    show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      search_btn: 検索

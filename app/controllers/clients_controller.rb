@@ -2,6 +2,7 @@ class ClientsController < ApplicationController
 	before_action :user_check, only: :edit
 
 	def index
+		@cls = Client.active.search(params[:search])
 	end
 
 	def show
@@ -12,20 +13,25 @@ class ClientsController < ApplicationController
 		@cl_prim_price = @cl.client_primary_prices.active.first
 		@cl_opt_prices = @cl.client_option_prices.active
 		@cl_locations = @cl.client_locations
-		@pre_ids = []
-		for pre_location in @cl_locations
-			@pre_ids << pre_location.prefecture_id
+		@prefecture_ids = []
+		for cl_location in @cl_locations
+			@prefecture_ids << cl_location.prefecture_id
+		end
+		@cl_categories = @cl.client_categories
+		@category_ids = []
+		for cl_category in @cl_categories
+			@category_ids << cl_category.category_id
 		end
 	end
 
 	def update
 		#-----クライアントupdate-----#
-		@cl = current_user.clients.active.first
-		@cl.update(cl_create_params)
-		client_id = @cl.id
+		cl = current_user.clients.active.first
+		cl.update(cl_create_params)
+		client_id = cl.id
 
 		#-----メイン価格登録------#
-		pre_cl_prim_price = @cl.client_primary_prices.active.first
+		pre_cl_prim_price = cl.client_primary_prices.active.first
 
 		# 有効なレコードがなければ、単純に作成
 		if pre_cl_prim_price.nil?
@@ -58,22 +64,53 @@ class ClientsController < ApplicationController
 			ClientOptionPrice.create(client_id: client_id, name: opt_price[:name], along_with_time: opt_price[:along_with_time], price: opt_price[:price].to_i)
 		end
 
+		#-----カテゴリ登録------#
+		# 元々のカテゴリ
+		cl_categories = cl.client_categories
+		pre_category_ids = []
+		for pre_category in cl_categories
+			pre_category_ids << pre_category.category_id
+		end
 
+		#パラムス
+		category_ids = cl_category_params
+
+		# カテゴリ追加
+		category_ids.each do |id|
+			unless pre_category_ids.include?(id.to_i)
+				ClientCategory.create(client_id: client_id, category_id: id)
+			end
+		end
+
+		#カテゴリ消去
+		pre_category_ids.each do |pre_id|
+			unless category_ids.include?(pre_id.to_s)
+				ClientCategory.where(client_id: client_id, category_id: pre_id.to_i).destroy_all
+			end
+		end
 
 		#-----エリア登録------#
 		# 元々のエリア
-		@cl_locations = @cl.client_locations
+		cl_locations = cl.client_locations
 		pre_prefecture_ids = []
-		for pre_location in @cl_locations
+		for pre_location in cl_locations
 			pre_prefecture_ids << pre_location.prefecture_id
 		end
 
-		# 入力されたエリア
-		for prefecture_id in cl_prefecture_params do
-			if pre_prefecture_ids.include?(prefecture_id.to_i)
-				next
-			else
-				ClientLocation.create(client_id: client_id, country_id: 1, prefecture_id: prefecture_id)
+		#パラムス
+		prefecture_ids = cl_prefecture_params
+
+		# エリア追加
+		prefecture_ids.each do |id|
+			unless pre_prefecture_ids.include?(id.to_i)
+				ClientLocation.create(client_id: client_id, country_id: 1, prefecture_id: id)
+			end
+		end
+
+		#エリア消去
+		pre_prefecture_ids.each do |pre_id|
+			unless prefecture_ids.include?(pre_id.to_s)
+				ClientLocation.where(client_id: client_id, prefecture_id: pre_id.to_i).destroy_all
 			end
 		end
 
@@ -125,4 +162,9 @@ class ClientsController < ApplicationController
 	def cl_prefecture_params
 		params[:prefecture_id]
 	end
+
+	def cl_category_params
+		params[:category_id]
+	end
+
 end
