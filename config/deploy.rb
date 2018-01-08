@@ -1,6 +1,16 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
 
+# 環境変数
+ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+set :default_env, {
+	S3_BUCKET: ENV['S3_BUCKET'],
+	S3_ACCESS_KEY: ENV['S3_ACCESS_KEY'],
+	S3_SECRET_KEY: ENV['S3_SECRET_KEY'],
+	S3_REGION: ENV['S3_REGION']
+}
+
+
 set :application, "camera-to-culture"
 set :repo_url, "git@github.com:kasaihikaru/camera-to-culture.git"
 
@@ -16,13 +26,9 @@ set :ssh_options, auth_methods: ['publickey'],
 set :unicorn_pid, -> { "/home/ec2-user/work/camera-to-culture/shared/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "/home/ec2-user/work/camera-to-culture/current/config/unicorn.rb" }
 
-set :default_env, {
-	S3_BUCKET: ENV['S3_BUCKET'],
-	S3_ACCESS_KEY: ENV['S3_ACCESS_KEY'],
-	S3_SECRET_KEY: ENV['S3_SECRET_KEY'],
-	S3_REGION: ENV['S3_REGION']
-}
 
+
+# set :linked_files, fetch(:linked_files, []).push('.env')
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
