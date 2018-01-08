@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
 
-# 環境変数
+# #env用に追加してみた
 ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
 set :default_env, {
 	S3_BUCKET: ENV['S3_BUCKET'],
@@ -11,8 +11,9 @@ set :default_env, {
 	FB_App_ID: ENV['FB_App_ID'],
 	FB_App_Secret: ENV['FB_App_Secret']
 }
-
 set :linked_files, fetch(:linked_files, []).push('.env')
+
+
 
 set :application, "camera-to-culture"
 set :repo_url, "git@github.com:kasaihikaru/camera-to-culture.git"

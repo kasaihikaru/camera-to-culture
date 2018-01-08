@@ -17,6 +17,11 @@ check_client_connection false
 
 run_once = true
 
+#env用に追加してみた
+before_exec do |server|
+  Dotenv.overload
+end
+
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) &&
     ActiveRecord::Base.connection.disconnect!
