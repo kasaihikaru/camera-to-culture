@@ -17,7 +17,6 @@
 <%= @user.email %><br>
 <h4>プロフィール画像</h4>
 <%= image_tag @user.image.url, :alt => "icon" if @user.image? %><br>
-<%= image_tag @user.image.to_s, :alt => "icon" if @user.image? %>
 <h4>話せる言語</h4>
 <% @mylangs.each do |lang| %>
 	<%= lang.ja %><br>
