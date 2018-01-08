@@ -25,7 +25,7 @@ CarrierWave.configure do |config|
       when 'staging'
           config.fog_directory  = ENV['S3_BUCKET']
       when 'development'
-          config.fog_directory  = ENV['S3_BUCKET']
+          config.fog_directory  = ENV['S3_BUCKET_dev']
       when 'test'
           config.fog_directory  = ENV['S3_BUCKET']
     end

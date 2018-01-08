@@ -11,7 +11,7 @@ lock "~> 3.10.1"
 # 	FB_App_ID: ENV['FB_App_ID'],
 # 	FB_App_Secret: ENV['FB_App_Secret']
 # }
-# set :linked_files, fetch(:linked_files, []).push('.env')
+set :linked_files, fetch(:linked_files, []).push('.env')
 
 
 
