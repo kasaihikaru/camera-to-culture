@@ -2,15 +2,15 @@
 lock "~> 3.10.1"
 
 # #env用に追加してみた
-ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
-set :default_env, {
-	S3_BUCKET: ENV['S3_BUCKET'],
-	S3_ACCESS_KEY: ENV['S3_ACCESS_KEY'],
-	S3_SECRET_KEY: ENV['S3_SECRET_KEY'],
-	S3_REGION: ENV['S3_REGION'],
-	FB_App_ID: ENV['FB_App_ID'],
-	FB_App_Secret: ENV['FB_App_Secret']
-}
+# ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+# set :default_env, {
+# 	S3_BUCKET: ENV['S3_BUCKET'],
+# 	S3_ACCESS_KEY: ENV['S3_ACCESS_KEY'],
+# 	S3_SECRET_KEY: ENV['S3_SECRET_KEY'],
+# 	S3_REGION: ENV['S3_REGION'],
+# 	FB_App_ID: ENV['FB_App_ID'],
+# 	FB_App_Secret: ENV['FB_App_Secret']
+# }
 set :linked_files, fetch(:linked_files, []).push('.env')
 
 
