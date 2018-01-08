@@ -8,7 +8,7 @@ set :default_env, {
 	S3_ACCESS_KEY: ENV['S3_ACCESS_KEY'],
 	S3_SECRET_KEY: ENV['S3_SECRET_KEY'],
 	S3_REGION: ENV['S3_REGION'],
-	FB_App_ID: ENV['FB_App_ID']
+	FB_App_ID: ENV['FB_App_ID'],
 	FB_App_Secret: ENV['FB_App_Secret']
 }
 
