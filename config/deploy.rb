@@ -2,7 +2,7 @@
 lock "~> 3.10.1"
 
 # 環境変数
-ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+ENV.update YAML.load(File.read(File.expand_path('application.yml', __FILE__)))
 set :default_env, {
 	S3_BUCKET: ENV['S3_BUCKET'],
 	S3_ACCESS_KEY: ENV['S3_ACCESS_KEY'],
