@@ -1,0 +1,15 @@
+<% @cls.each do |cl| %>
+	<div>
+
+		<h1><%= cl.user.name %><br></h1>
+		<%= image_tag cl.user.image.url, :alt => "icon" if cl.user.image? %><br>
+		<% cl.user.user_languages.each do |lang| %>
+			<%= lang.language.ja %><br>
+		<% end %><br>
+
+		<% cl.client_primary_prices.each do |prim_price| %>
+			<%= prim_price.price_per_hour %>円/時間<br>
+			最少受付時間：<%= prim_price.minimum_hours %><br>
+		<% end %>
+	</div>
+<% end %>

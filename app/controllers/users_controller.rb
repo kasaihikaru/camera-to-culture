@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	def show
 		#user_info
 		@user = current_user
-		langs = @user.user_languages
+		langs = @user.user_languages.includes(:language)
 		@mylangs = []
 		langs.each do |lang|
 			@mylangs << lang.language
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 		@cl = current_user.clients.active.first
 		@cl_prim_price = @cl.client_primary_prices.active.first
 		@cl_opt_prices = @cl.client_option_prices.active
-		@cl_locations = @cl.client_locations
+		@cl_locations = @cl.client_locations.includes(:prefecture)
 		# @pre_ids = []
 		# for pre_location in @cl_locations
 		# 	@pre_ids << pre_location.prefecture_id

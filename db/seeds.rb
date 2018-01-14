@@ -66,3 +66,11 @@ Prefecture.create([
 	{ area: '九州', ja: '鹿児島県', en: 'Kagoshima', zh: '鹿儿岛县', tw: '鹿兒島縣'},
 	{ area: '九州', ja: '沖縄県', en: 'Okinawa', zh: '冲绳县', tw: '沖繩縣'}
 	])
+
+
+Category.create([
+	{ ja: 'ヒト写真(商用利用)', en: 'Pictures of people(for business)', zh: '人像摄影(商用)', tw: '人像攝影(商用)'},
+	{ ja: 'モノ写真(商用利用)', en: 'Picture of things(for business)', zh: '物品摄影(商用)', tw: '物品攝影(商用)'},
+	{ ja: 'イベント写真(結婚式、七五三、旅行)', en: 'Event photos(wedding, traveling..etc..)', zh: '纪念日摄影(婚礼，旅行等)', tw: '紀念日攝影(婚禮，旅行等)'},
+	{ ja: 'プライベート写真(家族、恋人、友達)', en: 'private_photo（friends, family, couples）', zh: '个人写真(家人，情侣，闺蜜)', tw: '個人寫真(家人，情侶，朋友)'}
+	])

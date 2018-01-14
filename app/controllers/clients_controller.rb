@@ -2,7 +2,10 @@ class ClientsController < ApplicationController
 	before_action :user_check, only: :edit
 
 	def index
-		@cls = Client.active.search(params[:search])
+		@cls = Client.active.includes({user: [user_languages: :language]}, :client_primary_prices).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id(params[:prefecture_id])
+
+
+		# @a = Client.active.search(params[:search])
 	end
 
 	def show

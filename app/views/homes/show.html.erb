@@ -1,76 +1,101 @@
 <h2>カメラマンを探す</h2>
-<!-- エリア検索 -->
+
+
+
 <%= form_tag(clients_path, method: :get) do %>
-	<select class="selectpicker" name="prefecture">
-	<option value=""><%= t(".select_area")%></option>
-	<optgroup label="<%= t(".Hokkaido_area")%>">
-		<option value="1"><%= t(".Hokkaido")%></option>
-	</optgroup>
-	<optgroup label="<%= t(".Tohoku_area")%>">
-		<option value="1"><%= t(".Hokkaido")%></option>
-		<option value="2"><%= t(".Aomori")%></option>
-		<option value="3"><%= t(".Iwate")%></option>
-		<option value="4"><%= t(".Akita")%></option>
-		<option value="5"><%= t(".Miyagi")%></option>
-		<option value="6"><%= t(".Yamagata")%></option>
-		<option value="7"><%= t(".Fukushima")%></option>
-	</optgroup>
-	<optgroup label="<%= t(".Kanto_area")%>">
-		<option value="8"><%= t(".Tokyo")%></option>
-		<option value="9"><%= t(".Kanagawa")%></option>
-		<option value="10"><%= t(".Saitama")%></option>
-		<option value="11"><%= t(".Chiba")%></option>
-		<option value="12"><%= t(".Ibaraki")%></option>
-		<option value="13"><%= t(".Tochigi")%></option>
-		<option value="14"><%= t(".Gunma")%></option>
-		<option value="15"><%= t(".Yamanashi")%></option>
-	</optgroup>
-	<optgroup label="<%= t(".Hokushinetsu_area")%>">
-		<option value="16"><%= t(".Niigata")%></option>
-		<option value="17"><%= t(".Nagano")%></option>
-		<option value="18"><%= t(".Toyama")%></option>
-		<option value="19"><%= t(".Ishikawa")%></option>
-		<option value="20"><%= t(".Fukui")%></option>
-	</optgroup>
-	<optgroup label="<%= t(".Tokai_area")%>">
-		<option value="21"><%= t(".Aichi")%></option>
-		<option value="22"><%= t(".Gifu")%></option>
-		<option value="23"><%= t(".Shizuoka")%></option>
-		<option value="24"><%= t(".Mie")%></option>
-	</optgroup>
-	<optgroup label="<%= t(".Kinki_area")%>">
-		<option value="25"><%= t(".Osaka")%></option>
-		<option value="26"><%= t(".Hyōgo")%></option>
-		<option value="27"><%= t(".Kyoto")%></option>
-		<option value="28"><%= t(".Shiga")%></option>
-		<option value="29"><%= t(".Nara")%></option>
-		<option value="30"><%= t(".Wakayama")%></option>
-	</optgroup>
-	<optgroup label="<%= t(".Chugoku_area")%>">
-		<option value="31"><%= t(".Tottori")%></option>
-		<option value="32"><%= t(".Shimane")%></option>
-		<option value="33"><%= t(".Okayama")%></option>
-		<option value="34"><%= t(".Hiroshima")%></option>
-		<option value="35"><%= t(".Yamaguchi")%></option>
-	</optgroup>
-	<optgroup label="<%= t(".Shikoku_area")%>">
-		<option value="36"><%= t(".Tokushima")%></option>
-		<option value="37"><%= t(".Kagawa")%></option>
-		<option value="38"><%= t(".Ehime")%></option>
-		<option value="39"><%= t(".Kochi")%></option>
-	</optgroup>
-	<optgroup label="<%= t(".Kyushu_area")%>">
-		<option value="40"><%= t(".Fukuoka")%></option>
-		<option value="41"><%= t(".Saga")%></option>
-		<option value="42"><%= t(".Nagasaki")%></option>
-		<option value="43"><%= t(".Kumamoto")%></option>
-		<option value="44"><%= t(".Oita")%></option>
-		<option value="45"><%= t(".Miyazaki")%></option>
-		<option value="46"><%= t(".Kagoshima")%></option>
-		<option value="47"><%= t(".Okinawa")%></option>
-  </optgroup>
-</select>
+
+	<!-- カテゴリ検索 -->
+	<select class="selectpicker" multiple title="<%= t(".select_category")%>" name="category_ids[]">
+		<optgroup label="<%= t(".for_business")%>">
+			<option value="1"><%= t(".commercial_photos_people")%></option>
+			<option value="2"><%= t(".commercial_photos_items")%></option>
+		</optgroup>
+		<optgroup label="<%= t(".for_private")%>">
+			<option value="3"><%= t(".event_photos")%></option>
+			<option value="4"><%= t(".private_photo")%></option>
+		</optgroup>
+	</select>
+
+
+	<!-- エリア検索 -->
+	<select class="selectpicker" name="prefecture_id" data-live-search="true">
+		<option value=""><%= t(".select_area")%></option>
+		<optgroup label="<%= t(".Hokkaido_area")%>">
+			<option value="1"><%= t(".Hokkaido")%></option>
+		</optgroup>
+		<optgroup label="<%= t(".Tohoku_area")%>">
+			<option value="2"><%= t(".Aomori")%></option>
+			<option value="3"><%= t(".Iwate")%></option>
+			<option value="4"><%= t(".Akita")%></option>
+			<option value="5"><%= t(".Miyagi")%></option>
+			<option value="6"><%= t(".Yamagata")%></option>
+			<option value="7"><%= t(".Fukushima")%></option>
+		</optgroup>
+		<optgroup label="<%= t(".Kanto_area")%>">
+			<option value="8"><%= t(".Tokyo")%></option>
+			<option value="9"><%= t(".Kanagawa")%></option>
+			<option value="10"><%= t(".Saitama")%></option>
+			<option value="11"><%= t(".Chiba")%></option>
+			<option value="12"><%= t(".Ibaraki")%></option>
+			<option value="13"><%= t(".Tochigi")%></option>
+			<option value="14"><%= t(".Gunma")%></option>
+			<option value="15"><%= t(".Yamanashi")%></option>
+		</optgroup>
+		<optgroup label="<%= t(".Hokushinetsu_area")%>">
+			<option value="16"><%= t(".Niigata")%></option>
+			<option value="17"><%= t(".Nagano")%></option>
+			<option value="18"><%= t(".Toyama")%></option>
+			<option value="19"><%= t(".Ishikawa")%></option>
+			<option value="20"><%= t(".Fukui")%></option>
+		</optgroup>
+		<optgroup label="<%= t(".Tokai_area")%>">
+			<option value="21"><%= t(".Aichi")%></option>
+			<option value="22"><%= t(".Gifu")%></option>
+			<option value="23"><%= t(".Shizuoka")%></option>
+			<option value="24"><%= t(".Mie")%></option>
+		</optgroup>
+		<optgroup label="<%= t(".Kinki_area")%>">
+			<option value="25"><%= t(".Osaka")%></option>
+			<option value="26"><%= t(".Hyōgo")%></option>
+			<option value="27"><%= t(".Kyoto")%></option>
+			<option value="28"><%= t(".Shiga")%></option>
+			<option value="29"><%= t(".Nara")%></option>
+			<option value="30"><%= t(".Wakayama")%></option>
+		</optgroup>
+		<optgroup label="<%= t(".Chugoku_area")%>">
+			<option value="31"><%= t(".Tottori")%></option>
+			<option value="32"><%= t(".Shimane")%></option>
+			<option value="33"><%= t(".Okayama")%></option>
+			<option value="34"><%= t(".Hiroshima")%></option>
+			<option value="35"><%= t(".Yamaguchi")%></option>
+		</optgroup>
+		<optgroup label="<%= t(".Shikoku_area")%>">
+			<option value="36"><%= t(".Tokushima")%></option>
+			<option value="37"><%= t(".Kagawa")%></option>
+			<option value="38"><%= t(".Ehime")%></option>
+			<option value="39"><%= t(".Kochi")%></option>
+		</optgroup>
+		<optgroup label="<%= t(".Kyushu_area")%>">
+			<option value="40"><%= t(".Fukuoka")%></option>
+			<option value="41"><%= t(".Saga")%></option>
+			<option value="42"><%= t(".Nagasaki")%></option>
+			<option value="43"><%= t(".Kumamoto")%></option>
+			<option value="44"><%= t(".Oita")%></option>
+			<option value="45"><%= t(".Miyazaki")%></option>
+			<option value="46"><%= t(".Kagoshima")%></option>
+			<option value="47"><%= t(".Okinawa")%></option>
+	  </optgroup>
+	</select>
+
 
   <%= text_field_tag :search %>
   <%= submit_tag t(".search_btn"), :name => nil %>
 <% end %>
+
+
+<!-- turbolinksでもselectbox読ませる設定 -->
+<script>
+$( document ).ready(function() {
+  $('.selectpicker').selectpicker();
+});
+</script>

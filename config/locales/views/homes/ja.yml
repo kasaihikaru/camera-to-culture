@@ -2,6 +2,13 @@
 ja:
   homes:
     show:
+      select_category: カテゴリーを選択
+      for_business: ビジネス用
+      commercial_photos_people: ビジネス写真（ヒト）
+      commercial_photos_items: ビジネス写真（モノ）
+      for_private: プライベート用
+      event_photos: イベント写真（結婚式、七五三）
+      private_photo: プライベート写真（旅行、家族、恋人、友達）
       select_area: 都道府県を選択
       Hokkaido_area: 北海道エリア
       Tohoku_area: 東北エリア

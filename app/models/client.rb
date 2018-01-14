@@ -15,8 +15,24 @@ class Client < ApplicationRecord
 	has_many :events
 	has_many :client_reviews
 	has_many :customer_reviews
+	has_many :categories, through: :client_categories
+	has_many :prefectures, through: :client_locations
 
 
+#--------indexでの検索用------------
+  #引数のcategoryのうちどれかにあてはまる
+  scope :fits_categpory_id_in, -> category_ids {
+    joins(:categories).merge(Category.id_in category_ids) if category_ids.present?
+  }
+
+  #引数のprefectureにあてはまる
+  scope :fits_prefecture_id, -> prefecture_id {
+    joins(:prefectures).merge(Prefecture.id_is prefecture_id)  if prefecture_id.present?
+  }
+
+
+
+#--------photo search-------------
 	def self.search(search) #ここでのself.はUser.を意味する
 		if search
 			where(['camera LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。User.は省略
