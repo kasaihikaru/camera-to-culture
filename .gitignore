@@ -20,6 +20,4 @@
 
 /.env
 
-/config/application.yml
-
 /public/uploads/user

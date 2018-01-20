@@ -3,12 +3,17 @@ class ClientsController < ApplicationController
 
 	def index
 		@cls = Client.active.includes({user: [user_languages: :language]}, :client_primary_prices).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id(params[:prefecture_id])
-
-
-		# @a = Client.active.search(params[:search])
 	end
 
 	def show
+		@cl = Client.find(params[:id])
+		@categories = @cl.client_categories.includes(:category)
+		@langs = @cl.user.user_languages.includes(:language)
+		@locations = @cl.client_locations.includes(:prefecture)
+		@prim_price = @cl.client_primary_prices.active.first
+		@options = @cl.client_option_prices.active
+		@portfolios = @cl.client_portfolios
+
 	end
 
 	def edit

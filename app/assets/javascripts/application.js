@@ -16,4 +16,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap-select
 //= require turbolinks
+//= require fileinput
 //= require_tree .
+

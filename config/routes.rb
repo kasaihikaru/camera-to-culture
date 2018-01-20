@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 			resources :customers, only: [:edit, :update]
 		end
 
-		resources :clients, only: [:index, :show]
+		resources :clients, only: [:index, :show] do
+			resources :client_portfolios, only: [:new, :create, :destroy]
+		end
 
 		resources :customers, only: [:show]
 

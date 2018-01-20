@@ -12,6 +12,8 @@
     <%= f.text_area :introduction %>
   </div>
 
+
+<!-- カテゴリー -->
   <p><%= t(".category_form")%></p>
   <% if @category_ids.include?(1) %>
     <input type="checkbox" name="category_id[]" value="1", checked="checked"><%= t(".commercial_photos_people")%>
@@ -37,6 +39,8 @@
     <input type="checkbox" name="category_id[]" value="4"><%= t(".private_photo")%>
   <% end %>
 
+
+<!-- 価格 -->
   <h3>価格</h3>
   <P><%= t(".prime_price_form")%></P>
   <% if @cl_prim_price.present? %>
@@ -50,6 +54,7 @@
   <% end %>
   <br><br><br>
 
+<!-- オプション -->
   <P><%= t(".registed_opt_price_list")%></P>
   <% @cl_opt_prices.each do |cl_opt_price| %>
     <input type="checkbox" name="delete_opt_price[]" value=<%= cl_opt_price.id %>>消去
@@ -93,7 +98,7 @@
       <br>
   </div>
 
-
+<!-- 出張可能都道府県 -->
   <p><%= t(".prefecture_form")%></p>
   <p><%= t(".Hokkaido_area")%></p>
   <% if @prefecture_ids.include?(1) %>
@@ -339,6 +344,23 @@
   <% else %>
     <input type="checkbox" name="prefecture_id[]" value="47"><%= t(".Okinawa")%>
   <% end %>
+
+
+<!-- サンプル写真 -->
+  <div class="file-loading">
+      <input id="portfolio-ja" name="portfolioja[]" type="file" multiple>
+  </div>
+  <script>
+  $("#portfolio-ja").fileinput({
+      language: "ja",
+      uploadUrl: "/file-upload-batch/2",
+      allowedFileExtensions: ["jpg", "png", "jpeg"]
+  });
+  </script>
+
+
+
+
   <div class="actions">
     <%= f.submit t(".register_btn") %>
   </div>

@@ -1,0 +1,44 @@
+<div>
+	<%= image_tag @cl.user.image.url, :alt => "icon" if @cl.user.image? %><br>
+	<%= @cl.user.name %><br>
+	<% @categories.each do |cate| %>
+		<%= cate.category.ja %> / 
+	<% end %><br>
+	<% @langs.each do |lang| %>
+		<%= lang.language.ja %> / 
+	<% end %><br>
+	<%= link_to "予約する", new_event_path(id: @cl.id) %>
+<div>
+
+<div>
+	<% @locations.each do |location| %>
+		<%= location.prefecture.ja %> / 
+	<% end %><br>
+
+	<%= @prim_price.price_per_hour %>円/時間<br>
+	最少受付時間：<%= @prim_price.minimum_hours %><br>
+
+	<% @options.each do |option| %>
+		<%= option.name %>
+		<% if option.along_with_time == "1" %>
+			１時間あたり
+		<% end %>
+		<%= option.price %>
+	<% end %><br>
+
+	<%= @cl.camera %><br>
+	<%= @cl.introduction %>
+</div>
+
+<div>
+	<% @portfolios.each do |portfolio| %>
+		<%= image_tag portfolio.image.url, :alt => "portfolio" if portfolio.image? %>
+	<% end %>
+</div>
+
+
+
+
+<div>
+	<h1>カレンダー</h1>
+</div>

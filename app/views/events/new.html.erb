@@ -1,0 +1,42 @@
+<div>
+	<%= image_tag @cl.user.image.url, :alt => "icon" if @cl.user.image? %><br>
+	<%= @cl.user.name %><br>
+	<% @categories.each do |cate| %>
+		<%= cate.category.ja %> / 
+	<% end %><br>
+	<% @langs.each do |lang| %>
+		<%= lang.language.ja %> / 
+	<% end %><br>
+<div>
+
+<div>
+	<%= @cl.introduction %>
+</div>
+
+<div>
+	<h1>カレンダー</h1>
+	
+
+</div>
+
+
+<div>
+	<select class="selectpicker" name="prefecture_id" data-live-search="true">
+		<% @locations.each do |location| %>
+			<option value=<%= location.prefecture.id %>><%= location.prefecture.ja %></option>
+		<% end %>
+	</select><br>
+	<textarea name="location_detail" rows="2" cols="60" maxlength="300">撮影希望場所の詳細</textarea><br>
+
+	<%= @prim_price.price_per_hour %>円/時間<br>
+	最少受付時間：<%= @prim_price.minimum_hours %><br>
+
+	<% @options.each do |option| %>
+		<%= option.name %>
+		<% if option.along_with_time == "1" %>
+			１時間あたり
+		<% end %>
+		<%= option.price %>
+	<% end %><br>
+
+</div>

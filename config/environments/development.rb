@@ -54,6 +54,19 @@ Rails.application.configure do
 
   #for devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #yahoo
+  # config.action_mailer.smtp_settings = {
+  #   :enable_starttls_auto => true,
+  #   :address => "smtp.mail.yahoo.co.jp",
+  #   :port => 465,
+  #   :domain => 'smtp.mail.yahoo.co.jp',
+  #   :user_name => ENV['gmail_account'], #gmailアドレス
+  #   :password => ENV['gmail_password'], #gmailパスワード
+  #   :authentication => 'login',
+  # }
+
+ #gmail
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
     :address => "smtp.gmail.com",

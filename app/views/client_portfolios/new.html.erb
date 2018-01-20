@@ -1,0 +1,39 @@
+
+<!-- アップロード箇所 -->
+  <div class="file-loading">
+      <input id="client_portfolio" name="client_portfolio" type="file" multiple>
+  </div>
+
+  <script>
+  <% if @locale == "ja" %>
+    $("#client_portfolio").fileinput({
+        language: "ja",
+        uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+        allowedFileExtensions: ["jpg", "png", "jpeg"]
+    });
+  <% elsif @locale == "zh" %>
+    $("#client_portfolio").fileinput({
+        language: "zh",
+        uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+        allowedFileExtensions: ["jpg", "png", "jpeg"]
+    });
+  <% elsif @locale == "tw" %>
+    $("#client_portfolio").fileinput({
+        language: "tw",
+        uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+        allowedFileExtensions: ["jpg", "png", "jpeg"]
+    });
+  <% else %>
+    $("#client_portfolio").fileinput({
+        language: "en",
+        uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+        allowedFileExtensions: ["jpg", "png", "jpeg"]
+    });
+  <% end %>
+  </script>
+
+
+<!-- 投稿済みポートフォリオ -->
+<% @portfolios.each do |pf| %>
+<%= image_tag pf.image.url, :alt => "sample" if pf.image? %>
+<% end %>
