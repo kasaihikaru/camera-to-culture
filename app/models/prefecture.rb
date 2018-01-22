@@ -3,7 +3,7 @@ class Prefecture < ApplicationRecord
 	has_many :clients, through: :client_locations
 
 	#indexでの検索用
-  scope :id_is, -> id {
-    where(id: id)
+  scope :id_in, -> ids {
+    where(id: ids) if ids.present?
   }
 end

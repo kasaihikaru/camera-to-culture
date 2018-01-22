@@ -1,3 +1,31 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$prim-col      : #FF8000;
+$subprim-col      : #51C4AA;
+
+
+#home-top{
+		height: 100%;
+		background-image: image-url("home-top.jpg");
+		background-attachment: fixed;
+		background-position: center 50px ;
+		background-size: cover;
+		display: flex;
+		justify-content: center; /*左右中央揃え*/
+		align-items: center;		/*上下中央揃え*/
+		.home-cl-search{
+			h1{
+				font-size: 25px;
+				font-weight: 800;
+				color: $prim-col;
+				margin: 0 auto 10px;
+				text-align: center;
+			}
+			.home-cl-search-btn{
+				width:100px;
+			}
+		}
+
+}

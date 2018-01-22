@@ -1,6 +1,7 @@
 class Client < ApplicationRecord
 
 	scope :active, -> { where(is_deleted: false) }
+	scope :registerd, -> { where.not(introduction: nil).where.not(image: nil) }
 
 	belongs_to :user
 
@@ -19,6 +20,9 @@ class Client < ApplicationRecord
 	has_many :prefectures, through: :client_locations
 
 
+	# ファイルアップロード処理
+	mount_uploader :image, ImageUploader
+
 #--------indexでの検索用------------
   #引数のcategoryのうちどれかにあてはまる
   scope :fits_categpory_id_in, -> category_ids {
@@ -26,8 +30,8 @@ class Client < ApplicationRecord
   }
 
   #引数のprefectureにあてはまる
-  scope :fits_prefecture_id, -> prefecture_id {
-    joins(:prefectures).merge(Prefecture.id_is prefecture_id)  if prefecture_id.present?
+  scope :fits_prefecture_id_in, -> prefecture_ids {
+    joins(:prefectures).merge(Prefecture.id_in prefecture_ids)  if prefecture_ids.present?
   }
 
 

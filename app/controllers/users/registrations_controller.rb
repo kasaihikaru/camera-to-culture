@@ -36,14 +36,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
 
-        #リダイレクト先を設定
-        if as_who_params == "cl"
-          redirect_to edit_user_client_path(resource, client)
-        elsif as_who_params == "cs"
-          redirect_to edit_user_customer_path(resource, customer)
-        else
-          respond_with resource, location: after_sign_up_path_for(resource)
-        end
+        respond_with resource, location: after_sign_up_path_for(resource)
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
         expire_data_after_sign_in!

@@ -12,6 +12,12 @@
     <%= f.text_area :introduction %>
   </div>
 
+  <%= image_tag @cl.image.url, :alt => "Main Image" if @cl.image? %><br>
+  <div class="field">
+    <%= f.label :image, t(".main_image") %><br />
+    <%= f.file_field :image %>
+  </div>
+
 
 <!-- カテゴリー -->
   <p><%= t(".category_form")%></p>
@@ -49,8 +55,8 @@
       <label><%= t(".minimum_hours") %><input type="number" name="minimum_hours" min="1" max="24", value=<%= @cl_prim_price.minimum_hours %>></label>
     <% end %>
   <% else %>
-    <label><%= t(".price_per_hour") %><input type="number" name="price_per_hour" min="500" max="1000000"></label>
-      <label><%= t(".minimum_hours") %><input type="number" name="minimum_hours" min="1" max="24"></label>
+    <label><%= t(".price_per_hour") %><input type="number" name="price_per_hour" min="500" max="1000000" value="3000"></label>
+      <label><%= t(".minimum_hours") %><input type="number" name="minimum_hours" min="1" max="24" value="1"></label>
   <% end %>
   <br><br><br>
 
@@ -344,22 +350,6 @@
   <% else %>
     <input type="checkbox" name="prefecture_id[]" value="47"><%= t(".Okinawa")%>
   <% end %>
-
-
-<!-- サンプル写真 -->
-  <div class="file-loading">
-      <input id="portfolio-ja" name="portfolioja[]" type="file" multiple>
-  </div>
-  <script>
-  $("#portfolio-ja").fileinput({
-      language: "ja",
-      uploadUrl: "/file-upload-batch/2",
-      allowedFileExtensions: ["jpg", "png", "jpeg"]
-  });
-  </script>
-
-
-
 
   <div class="actions">
     <%= f.submit t(".register_btn") %>

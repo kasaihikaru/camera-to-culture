@@ -1,44 +1,88 @@
-<div>
-	<%= image_tag @cl.user.image.url, :alt => "icon" if @cl.user.image? %><br>
-	<%= @cl.user.name %><br>
-	<% @categories.each do |cate| %>
-		<%= cate.category.ja %> / 
-	<% end %><br>
-	<% @langs.each do |lang| %>
-		<%= lang.language.ja %> / 
-	<% end %><br>
-	<%= link_to "予約する", new_event_path(id: @cl.id) %>
-<div>
 
-<div>
-	<% @locations.each do |location| %>
-		<%= location.prefecture.ja %> / 
-	<% end %><br>
 
-	<%= @prim_price.price_per_hour %>円/時間<br>
-	最少受付時間：<%= @prim_price.minimum_hours %><br>
-
-	<% @options.each do |option| %>
-		<%= option.name %>
-		<% if option.along_with_time == "1" %>
-			１時間あたり
-		<% end %>
-		<%= option.price %>
-	<% end %><br>
-
-	<%= @cl.camera %><br>
-	<%= @cl.introduction %>
+<div class="container-fluid cl-show cl-show-1">
+	<div class="container">
+		<div class="row">
+			<div class="cl-show-1-left col-3 col-sm-3 col-md-2">
+				<%= image_tag @cl.user.image.url, :alt => "icon" if @cl.user.image? %><br>
+			</div>
+			<div class="cl-show-1-middle col-9 col-sm-9 col-md-7">
+				<%= @cl.user.name %><br>
+				<% @categories.each do |cate| %>
+					<span class="badge badge-pill badge-light"><%= cate.category.ja %></span>
+				<% end %><br>
+				<% @langs.each do |lang| %>
+					<span class="badge badge-pill badge-dark"><%= lang.language.ja %></span>
+				<% end %><br>
+			</div>
+			<div class="cl-show-1-right col-12 col-sm-12 col-md-3">
+				<div class="prim-btn cl-show-1-btn btn">
+				<%= link_to "予約する", new_event_path(id: @cl.id), class: "" %>
+				</div>
+				<div class="prim-btn cl-show-1-btn btn">
+				<%= link_to "メッセージしてみる", new_event_path(id: @cl.id), class: "" %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div>
-	<% @portfolios.each do |portfolio| %>
-		<%= image_tag portfolio.image.url, :alt => "portfolio" if portfolio.image? %>
-	<% end %>
+<div class="container-fluid cl-show cl-show-2">
+	<h1>About</h1>
+	<div class="container">
+		<div class="row">
+			<div>
+				<h2>撮影可能な都道府県</h2>
+				<p>
+					<% @locations.each do |location| %>
+						<%= location.prefecture.ja %>&nbsp;
+					<% end %>
+				</p>
+				<h2>価格</h2>
+				<p><%= @prim_price.price_per_hour %>円/時間&nbsp;（<%= @prim_price.minimum_hours %>時間から受け付けます）</p>
+				<% if @options.present? %>
+					<h2>オプションメニュー</h2>
+					<% @options.each do |option| %>
+						<p>
+							<%= option.name %>
+							<% if option.along_with_time == "1" %>
+								１時間あたり
+							<% end %>
+							<%= option.price %>
+						</p>
+					<% end %>
+				<% end %>
+				<% if @cl.camera.present? %>
+					<h2>カメラ</h2>
+					<p><%= @cl.camera %></p>
+				<% end %>
+				<h2>メッセージ</h2>
+				<p><%= @cl.introduction %></p>
+			</div>
+		</div>
+	</div>
 </div>
 
+<div class="container-fluid cl-show cl-show-3">
+	<h1>Portfolio</h1>
+	<div class="container">
+		<div class="row">
+			<% @portfolios.each do |portfolio| %>
+				<div class="pf col-12 col-sm-6 col-md-4 col-lg-3">
+					<a href="<%= portfolio.image.url if portfolio.image? %>" data-lightbox="image-1" data-title="<%= @cl.user.name %>">
+						<div class="pf-img" style="background-image: url(<%= portfolio.image.url %>);"></div>
+					</a>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
 
-
-
-<div>
+<div class="container-fluid cl-show cl-show-4">
 	<h1>カレンダー</h1>
+	<div class="container">
+		<div class="row">
+			
+		</div>
+	</div>
 </div>

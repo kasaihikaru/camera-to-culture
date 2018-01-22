@@ -55,15 +55,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   # リサイズしたり画像形式を変更するのに必要
   include CarrierWave::RMagick
 
-  # 画像を100x100にリサイズする。
-  process :resize_to_fill => [300, 300]
+  # 画像をリサイズする。
+  # process :resize_to_fill => [nil, 800]
+  process resize_to_limit: [1200, 900]
 
   # 保存形式をJPGにする
   process :convert => 'jpg'
 
   # サムネイルを生成する設定
   version :thumb do
-    process :resize_to_fill => [64, 64, gravity = ::Magick::CenterGravity]
+    process :resize_to_fill => [40, 40, gravity = ::Magick::CenterGravity]
   end
 
   # Override the filename of the uploaded files:

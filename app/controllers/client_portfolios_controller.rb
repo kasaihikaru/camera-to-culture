@@ -22,6 +22,5 @@ private
 		portfolio[:image] = params[:client_portfolio]
 		portfolio[:client_id] = params[:client_id].to_i
 		return portfolio
-		# binding.pry
 	end
 end

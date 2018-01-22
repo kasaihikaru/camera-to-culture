@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
 	before_action :user_check, only: :edit
 
 	def index
-		@cls = Client.active.includes({user: [user_languages: :language]}, :client_primary_prices).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id(params[:prefecture_id])
+		@cls = Client.active.registerd.includes({user: [user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids])
 	end
 
 	def show
@@ -135,7 +135,7 @@ class ClientsController < ApplicationController
 	end
 
 	def cl_create_params
-		params.require(:client).permit(:camera, :introduction).merge(user_id: current_user.id)
+		params.require(:client).permit(:camera, :introduction, :image).merge(user_id: current_user.id)
 	end
 
 	def cl_prim_price_params

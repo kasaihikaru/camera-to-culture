@@ -27,5 +27,7 @@ Rails.application.routes.draw do
 			resources :event_states, only: [:new, :create]
 		end
 
+		resource :about, only: [:show]
+
 	end
 end

@@ -1,20 +1,55 @@
-<% @cls.each do |cl| %>
+<div class="search-research">
+	<div class="research-upper">
 
-	<%= link_to client_path(cl) do %>
-		<div>
-			<h1><%= cl.user.name %><br></h1>
-			<%= image_tag cl.user.image.url, :alt => "icon" if cl.user.image? %><br>
-			<% cl.user.user_languages.each do |lang| %>
-				<%= lang.language.ja %><br>
-			<% end %><br>
+	</div>
+	<div class="research-lower">
+	</div>
+</div>
 
-			<% cl.client_primary_prices.each do |prim_price| %>
-				<%= prim_price.price_per_hour %>円/時間<br>
-				最少受付時間：<%= prim_price.minimum_hours %><br>
+<div class="search-results">
+	<div class="container-fluid">
+		<div class="row">
+			<% @cls.each do |cl| %>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="cameraman-lists">
+						<div class="cameraman-list-upper">
+							<div id="carousel-pf-<%= cl.id %>" class="carousel slide" data-ride="carousel" data-interval="0">
+							  <div class="carousel-inner">
+							    <div class="carousel-item active">
+							      <%= image_tag cl.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if cl.image? %>
+							    </div>
+							    <% cl.client_portfolios.each do |pf| %>
+							    	<div class="carousel-item">
+							    		<%= image_tag pf.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if pf.image? %>
+							    	</div>
+							    <% end %>
+							  </div>
+							  <a class="carousel-control-prev" href="#carousel-pf-<%= cl.id %>" role="button" data-slide="prev">
+							   <%= render :partial => 'svgs/cal_left' %>
+							    <span class="sr-only">Previous</span>
+							  </a>
+							  <a class="carousel-control-next" href="#carousel-pf-<%= cl.id %>" role="button" data-slide="next">
+							    <%= render :partial => 'svgs/cal_right' %>
+							    <span class="sr-only">Next</span>
+							  </a>
+							</div>
+						</div>
+						<%= link_to client_path(cl) do %>
+							<div class="cameraman-list-lower">
+								<%= cl.user.name %>
+								<%= image_tag cl.user.image.url, :alt => "icon", :class => "cameraman-list-image" if cl.user.image? %>
+								<% cl.user.user_languages.each do |lang| %>
+									<%= lang.language.ja %>
+								<% end %>
+
+								<% cl.client_primary_prices.active.each do |prim_price| %>
+									<%= prim_price.price_per_hour %>円/時間<br>
+								<% end %>
+							</div>
+						<% end %>
+					</div>
+				</div>
 			<% end %>
 		</div>
-	<% end %>
-	<hr>
-
-
-<% end %>
+	</div>
+</div>

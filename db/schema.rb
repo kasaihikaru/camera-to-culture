@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20171228140158) do
     t.bigint "user_id"
     t.text "introduction"
     t.text "camera"
+    t.string "image"
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

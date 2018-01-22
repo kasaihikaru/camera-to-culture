@@ -1,3 +1,110 @@
 // Place all the styles related to the clients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$prim-col      : #FF8000;
+$subprim-col      : #51C4AA;
+
+
+//------------- client/index ---------------//
+.search-results{
+	background-color: $subprim-col;
+	.cameraman-lists{
+		height: 300px;
+		margin-top: 30px;
+		border: 1px solid #9E9E9E;
+		border-radius: 5px;
+		.cameraman-list-upper{
+			height: 200px;
+			background-color: #000000;
+			text-align: center;
+			border-radius: 5px 5px 0 0 / 5px 5px 0 0;
+			.carousel{
+				a{
+					color: black;
+				}
+				img{
+					border-radius: 5px 5px 0 0 / 5px 5px 0 0;
+				}
+			}
+		}
+		.cameraman-list-lower{
+			background-color: #FFFFFF;
+			height: 100px;
+			border-radius: 0 0 5px 5px / 0 0 5px 5px;
+			.cameraman-list-image{
+				width: 15%
+			}
+		}
+	}
+}
+
+.carousel-item, .cameraman-list-portfolio{
+	height: 200px;
+}
+
+
+
+
+
+//------------- client/show ---------------//
+.cl-show{
+	h1{
+		text-align: center;
+		padding: 35px 0 ;
+	}
+}
+
+.cl-show-1{
+	background-color: $subprim-col;
+	padding: 10px 0;
+	.cl-show-1-left{
+		text-align: center;
+		img{
+			width:auto;
+			height:auto;
+			max-width:80px;
+			max-height:96px;
+		}
+	}
+	.cl-show-1-right{
+		text-align: center;
+		.cl-show-1-btn{
+			width: 180px;
+			margin: 5px 0;
+			a{
+				color: #FFFFFF;
+			}
+		}
+	}
+}
+
+.cl-show-2{
+	background-color: #FFFFFF;
+	padding: 20px;
+	h2{
+		font-size: 15px;
+		font-weight: 800;
+	}
+	p{
+		font-size: 15px;
+		padding-left: 15px;
+	}
+}
+
+.cl-show-3{
+	.pf{
+		.pf-img{
+			width:285px;
+			height:285px;
+			margin: auto;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+}
+
+.cl-show-4{
+	background-color: $prim-col;
+}

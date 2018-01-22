@@ -11,11 +11,13 @@
 // about supported directives.
 //
 
-//= require jquery
+//= require jquery3
 //= require rails-ujs
+//= require popper
+//= require bootstrap/dropdown
 //= require bootstrap-sprockets
-//= require bootstrap-select
-//= require turbolinks
+// require turbolinks
 //= require fileinput
+//= require bootstrap-select
+//= require lightbox.min
 //= require_tree .
-

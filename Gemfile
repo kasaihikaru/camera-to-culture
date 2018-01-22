@@ -71,7 +71,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'devise'# ユーザー
-gem 'bootstrap-sass'#bootstrap
+gem 'bootstrap', '~> 4.0.0'#bootstrap
 gem 'jquery-rails'#bootstrap
 gem 'rails-i18n'#多言語対応
 gem 'dotenv-rails'#環境変数の管理用
@@ -80,4 +80,3 @@ gem 'fog'#image uploader with AWS S3
 gem 'rmagick'#画像加工用
 gem 'omniauth'#FB認証
 gem 'omniauth-facebook'#FB認証
-gem 'bootstrap-select-rails'#セレクトボックス用
