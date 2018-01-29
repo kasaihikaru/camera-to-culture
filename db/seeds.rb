@@ -8,9 +8,9 @@
 
 
 Language.create([
-	{ ja: '日本語', en: 'Japanese', zh: '日语', tw: '日語'},
-	{ ja: '英語', en: 'English', zh: '英语', tw: '英語'},
-	{ ja: '中国語', en: 'Chinese', zh: '中文', tw: '中文'}
+	{ ja: '日本語', ja_s: '日', en: 'Japanese', en_s: 'JP', zh: '日语', zh_s: '日', tw: '日語', tw_s: '日'},
+	{ ja: '英語', ja_s: '英', en: 'English', en_s: 'EN', zh: '英语', zh_s: '英', tw: '英語', tw_s: '英'},
+	{ ja: '中国語', ja_s: '中', en: 'Chinese', en_s: 'CN', zh: '中文', zh_s: '中', tw: '中文', tw_s: '中'}
 	])
 
 Country.create([
@@ -69,8 +69,8 @@ Prefecture.create([
 
 
 Category.create([
-	{ ja: 'ヒト写真(商用利用)', en: 'Pictures of people(for business)', zh: '人像摄影(商用)', tw: '人像攝影(商用)'},
-	{ ja: 'モノ写真(商用利用)', en: 'Picture of things(for business)', zh: '物品摄影(商用)', tw: '物品攝影(商用)'},
-	{ ja: 'イベント写真(結婚式、七五三、旅行)', en: 'Event photos(wedding, traveling..etc..)', zh: '纪念日摄影(婚礼，旅行等)', tw: '紀念日攝影(婚禮，旅行等)'},
-	{ ja: 'プライベート写真(家族、恋人、友達)', en: 'private_photo（friends, family, couples）', zh: '个人写真(家人，情侣，闺蜜)', tw: '個人寫真(家人，情侶，朋友)'}
+	{ ja: 'ヒト写真(商用利用)', ja_s: 'ヒト(商)', en: 'Pictures of people(for business)', en_s: 'Models', zh: '人像摄影(商用)', zh_s: '人(商)', tw: '人像攝影(商用)', tw_s: '人(商)'},
+	{ ja: 'モノ写真(商用利用)', ja_s: 'モノ(商)', en: 'Picture of things(for business)', en_s: 'Items', zh: '物品摄影(商用)', zh_s: '物(商)', tw: '物品攝影(商用)', tw_s: '物(商)'},
+	{ ja: 'イベント写真(結婚式、七五三、旅行)', ja_s: 'イベント', en: 'Event photos(wedding, traveling..etc..)', en_s: 'Events', zh: '纪念日摄影(婚礼，旅行等)', zh_s: '纪念日', tw: '紀念日攝影(婚禮，旅行等)', tw_s: '紀念日'},
+	{ ja: 'プライベート写真(家族、恋人、友達)', ja_s: 'プライベート', en: 'private_photo（friends, family, couples）', en_s: 'Private', zh: '私人写真(家人，情侣，闺蜜)', zh_s: '私人', tw: '私人寫真(家人，情侶，朋友)', tw_s: '私人'}
 	])

@@ -5,6 +5,6 @@ ja:
       message: さんへのメッセージ
       send_btn: 送信
     show:
-      return: 戻る
       write_here: メッセージを書く
       send_btn: 送信
+      last_message: 最後のメッセージ

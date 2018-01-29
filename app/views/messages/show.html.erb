@@ -70,7 +70,7 @@
 	<div class="ms-content col-12 col-md-8 col-lg-6">
 		<div class="container-fluid">
 			<div class="ms-content-upper d-lg-none">
-				<%= link_to t(".return"), user_messages_path(current_user), class: "return-btn" %>
+				<%= link_to "＜", user_messages_path(current_user), class: "return-btn" %>
 				<%= link_to client_path(@cl) do%>
 					<%= image_tag @comunitating_user.image.url(:thumb), :alt => "icon", :class => "ms-content-icon" if @comunitating_user.image? %>
 				<% end %>
@@ -81,15 +81,16 @@
 					<%= form_for @msg,:url => {:action => :create} do |f| %>
 						<%= f.hidden_field :reciever_id, :value => @comunitating_user.id %>
 						<%= f.text_area :message, placeholder: t(".write_here") %>
-						<div class="send-btn">
+						<div class="send-btn clearfix">
 							<%= f.submit t(".send_btn"), class: "prim-btn" %>
 						</div>
+						<hr>
 					<% end %>
 				</div>
 			</div>
 			<div class="ms-content-lower">
 				<div class="ms-content-lower-time">
-					<%= @selected_msges.first.created_at %>
+					<%= t(".last_message") %> : <%= @selected_msges.first.created_at %>
 				</div>
 				<% @selected_msges.each do |msg| %>
 					<% if msg.sender_id == current_user.id %>

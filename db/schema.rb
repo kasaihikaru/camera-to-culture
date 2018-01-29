@@ -14,9 +14,13 @@ ActiveRecord::Schema.define(version: 20171228140158) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "ja", null: false
+    t.string "ja_s", null: false
     t.string "en", null: false
+    t.string "en_s", null: false
     t.string "zh", null: false
+    t.string "zh_s", null: false
     t.string "tw", null: false
+    t.string "tw_s", null: false
   end
 
   create_table "client_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -189,9 +193,13 @@ ActiveRecord::Schema.define(version: 20171228140158) do
 
   create_table "languages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "ja", null: false
+    t.string "ja_s", null: false
     t.string "en", null: false
+    t.string "en_s", null: false
     t.string "zh", null: false
+    t.string "zh_s", null: false
     t.string "tw", null: false
+    t.string "tw_s", null: false
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
