@@ -12,7 +12,6 @@ class Client < ApplicationRecord
 	has_many :client_schedules
 	has_many :client_primary_prices
 	has_many :client_option_prices
-	has_many :messages
 	has_many :events
 	has_many :client_reviews
 	has_many :customer_reviews

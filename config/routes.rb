@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 		resource :home, only: [:show]
 
 		resources :users, only: [:show] do
-			resources :messages, only: [:index, :create]
+			resources :messages, only: [:index, :new, :create, :show] do
+				collection do
+					post 'first_create'
+				end
+			end
 			resources :events, only: [:index]
 			resources :clients, only: [:edit, :update]
 			resources :customers, only: [:edit, :update]

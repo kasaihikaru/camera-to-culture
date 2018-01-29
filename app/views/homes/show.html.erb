@@ -4,7 +4,9 @@
 		<h1>カメラマンを探す</h1>
 		<%= form_tag(clients_path, method: :get) do %>
 			<%= render :partial => 'render/home_search' %>
-			<%= submit_tag t(".search_btn"), class: "home-cl-search-btn prim-btn" %>
+			<div class="search-btn">
+				<%= submit_tag t(".search_btn"), class: "home-cl-search-btn prim-btn" %>
+			</div>
 		<% end %>
 	</div>
 </div>

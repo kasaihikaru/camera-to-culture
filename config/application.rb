@@ -25,5 +25,12 @@ module Ctoc01
     config.i18n.enforce_available_locales = true
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
+
+    #TimeZoneの設定
+    config.active_record.default_timezone = :local
+    config.time_zone = 'Tokyo'
+
+    Time::DATE_FORMATS[:default] = '%Y/%m/%d %H:%M'
   end
 end

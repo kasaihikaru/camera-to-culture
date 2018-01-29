@@ -10,6 +10,7 @@ $subprim-col      : #51C4AA;
 //------------- client/index ---------------//
 .search-results{
 	background-color: $subprim-col;
+	padding-bottom: 30px;
 	.cameraman-lists{
 		height: 300px;
 		margin-top: 30px;
@@ -34,7 +35,8 @@ $subprim-col      : #51C4AA;
 			height: 100px;
 			border-radius: 0 0 5px 5px / 0 0 5px 5px;
 			.cameraman-list-image{
-				width: 15%
+				width: 15%;
+				max-height: 100%;
 			}
 		}
 	}

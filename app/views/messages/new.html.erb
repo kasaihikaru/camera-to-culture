@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="ms-new">
+		<%= form_for @msg,:url => {:action => :first_create} do |f| %>
+			<h1><%= @reciever.name %> <%=t(".message") %></h1>
+			<%= f.text_area :message %>
+			<div class="send-btn">
+				<%= f.submit t(".send_btn"), class: "subprim-btn" %>
+			</div>
+		<% end %>
+	</div>
+</div>

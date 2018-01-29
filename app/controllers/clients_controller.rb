@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
 	before_action :user_check, only: :edit
 
 	def index
-		@cls = Client.active.registerd.includes({user: [user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids])
+		@cls = Client.active.registerd.includes({user: [user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
 	end
 
 	def show

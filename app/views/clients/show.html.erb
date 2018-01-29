@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="cl-show-1-left col-3 col-sm-3 col-md-2">
-				<%= image_tag @cl.user.image.url, :alt => "icon" if @cl.user.image? %><br>
+				<%= image_tag @cl.user.image.url(:thumb), :alt => "icon" if @cl.user.image? %><br>
 			</div>
 			<div class="cl-show-1-middle col-9 col-sm-9 col-md-7">
 				<%= @cl.user.name %><br>
@@ -16,12 +16,16 @@
 				<% end %><br>
 			</div>
 			<div class="cl-show-1-right col-12 col-sm-12 col-md-3">
-				<div class="prim-btn cl-show-1-btn btn">
-				<%= link_to "予約する", new_event_path(id: @cl.id), class: "" %>
-				</div>
-				<div class="prim-btn cl-show-1-btn btn">
-				<%= link_to "メッセージしてみる", new_event_path(id: @cl.id), class: "" %>
-				</div>
+				<%= link_to new_event_path(id: @cl.id) do %>
+					<div class="prim-btn cl-show-1-btn btn">
+						予約する
+					</div>
+				<% end %>
+				<%= link_to new_user_message_path(@cl.user.id) do %>
+					<div class="prim-btn cl-show-1-btn btn">
+						メッセージしてみる
+					</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

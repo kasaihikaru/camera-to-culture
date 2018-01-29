@@ -6,7 +6,8 @@ $prim-col      : #FF8000;
 $subprim-col      : #51C4AA;
 
 
-#home-top{
+@media screen and (min-width: 550px) {
+	#home-top{
 		height: 100%;
 		background-image: image-url("home-top.jpg");
 		background-attachment: fixed;
@@ -16,6 +17,9 @@ $subprim-col      : #51C4AA;
 		justify-content: center; /*左右中央揃え*/
 		align-items: center;		/*上下中央揃え*/
 		.home-cl-search{
+			.search-category, .search-area, .search-btn{
+				float: left;
+			}
 			h1{
 				font-size: 25px;
 				font-weight: 800;
@@ -27,5 +31,31 @@ $subprim-col      : #51C4AA;
 				width:100px;
 			}
 		}
-
+	}
+}
+@media screen and (max-width: 549px) {
+	#home-top{
+		height: 100%;
+		background-image: image-url("home-top.jpg");
+		background-position: center;
+		display: flex;
+		background-size: cover;
+		justify-content: center; /*左右中央揃え*/
+		align-items: center;		/*上下中央揃え*/
+		.home-cl-search{
+			.search-btn{
+				text-align: right;
+			}
+			h1{
+				font-size: 25px;
+				font-weight: 800;
+				color: $prim-col;
+				margin: 0 auto 10px;
+				text-align: center;
+			}
+			.home-cl-search-btn{
+				width:100px;
+			}
+		}
+	}
 }

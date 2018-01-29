@@ -195,14 +195,13 @@ ActiveRecord::Schema.define(version: 20171228140158) do
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "client_id"
-    t.bigint "customer_id"
+    t.integer "sender_id", null: false
+    t.integer "reciever_id", null: false
     t.text "message"
-    t.boolean "from_cs", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_messages_on_client_id"
-    t.index ["customer_id"], name: "index_messages_on_customer_id"
+    t.index ["reciever_id"], name: "index_messages_on_reciever_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
   create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -280,8 +279,6 @@ ActiveRecord::Schema.define(version: 20171228140158) do
   add_foreign_key "event_states", "events"
   add_foreign_key "events", "clients"
   add_foreign_key "events", "customers"
-  add_foreign_key "messages", "clients"
-  add_foreign_key "messages", "customers"
   add_foreign_key "user_languages", "languages"
   add_foreign_key "user_languages", "users"
 end

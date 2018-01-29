@@ -41,13 +41,20 @@ $subprim-col      : #51C4AA;
   border-radius: 5px;
   border: none;
 }
+.subprim-btn{
+  height: 38px;
+  background-color: $subprim-col;
+  color: #FFFFFF;
+  border-radius: 5px;
+  border: none;
+}
+
 
 .clearfix:after {
     content:" ";
     display:block;
     clear:both;
 }
-
 
 
 //--------------- layout ----------------//
@@ -82,6 +89,12 @@ $nav_col     : #FFFFFF;
     background-color: $nav_bg;
   }
 }
+.navbar-brand{
+  padding: 0;
+  .nav-logo-img{
+    height: 40px;
+  }
+}
 
 
 
@@ -90,6 +103,7 @@ $nav_col     : #FFFFFF;
   text-align: center;
   background-color: #FF8000;
   color: #FFFFFF;
+  margin:0;
 }
 
 

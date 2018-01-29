@@ -10,6 +10,7 @@
 <p><%= link_to "CS情報編集ページ", edit_user_customer_path(current_user) %></p>
 <p><%= link_to "CL情報編集ページ", edit_user_client_path(current_user) %></p>
 <p><%= link_to "CLサンプル写真登録ページ", new_client_client_portfolio_path(@cl) %></p>
+<%= link_to t(".sign-out"), destroy_user_session_path, method: :delete, class: "nav-link" %>
 
 <h2>ユーザー情報</h2>
 <h4>ユーザー名</h4>

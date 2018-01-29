@@ -37,7 +37,7 @@
 						<%= link_to client_path(cl) do %>
 							<div class="cameraman-list-lower">
 								<%= cl.user.name %>
-								<%= image_tag cl.user.image.url, :alt => "icon", :class => "cameraman-list-image" if cl.user.image? %>
+								<%= image_tag cl.user.image.url(:thumb), :alt => "icon", :class => "cameraman-list-image" if cl.user.image? %>
 								<% cl.user.user_languages.each do |lang| %>
 									<%= lang.language.ja %>
 								<% end %>

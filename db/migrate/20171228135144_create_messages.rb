@@ -1,10 +1,9 @@
 class CreateMessages < ActiveRecord::Migration[5.1]
   def change
     create_table :messages do |t|
-      t.references :client, index: true, foreign_key: true
-      t.references :customer, index: true, foreign_key: true
+      t.integer :sender_id, null:false, index: true
+      t.integer :reciever_id, null:false, index: true
       t.text    :message
-      t.boolean :from_cs, default:true, null:false
       t.timestamps
     end
   end

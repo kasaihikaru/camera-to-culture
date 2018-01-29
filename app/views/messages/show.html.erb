@@ -1,0 +1,105 @@
+<div class="row">
+	<div class="ms-menu col-12 col-md-4 col-lg-3 d-none d-md-block">
+		<hr>
+		<% @users.each do |user| %>
+			<div class="container-fluid">
+				<%= link_to user_message_path(current_user.id, user.id), class: "" do %>
+					<div class="row">
+						<div class="col-3">
+							<%= image_tag user.image.url(:thumb), :alt => "icon", :class => "ms-menu-icon" if user.image? %>
+						</div>
+						<div class="col-9">
+							<%= user.name %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+			<hr>
+		<% end %>
+	</div>
+	<div class="ms-user col-lg-3 d-none d-lg-block">
+		<div class="ms-user-upper">
+			<h2><%= @comunitating_user.name %></h2>
+			<%= image_tag @comunitating_user.image.url(:thumb), :alt => "icon", :class => "ms-user-icon" if @comunitating_user.image? %>
+		</div>
+		<div class="ms-user-lower">
+			<% if @cs.introduction? %>
+				<h2>自己紹介</h2>
+				<%= @cs.introduction %>
+			<% end %>
+			<% if @categories.present? %>
+				<h2>撮影カテゴリー</h2>
+				<% @categories.each do |cate| %>
+					<p><%= cate.category.ja %></p>
+				<% end %>
+			<% end %>
+			<% if @locations.present? %>
+				<h2>撮影可能な都道府県</h2>
+				<p>
+					<% @locations.each do |location| %>
+						<%= location.prefecture.ja %>&nbsp;
+					<% end %>
+				</p>
+			<% end %>
+			<% if @prim_price.price_per_hour.present? %>
+				<h2>価格</h2>
+				<p><%= @prim_price.price_per_hour %>円/時間&nbsp;（<%= @prim_price.minimum_hours %>時間から受け付けます）</p>
+			<% end %>
+			<% if @options.present? %>
+				<h2>オプションメニュー</h2>
+				<% @options.each do |option| %>
+					<p>
+						<%= option.name %>
+						<% if option.along_with_time == "1" %>
+							１時間あたり
+						<% end %>
+						<%= option.price %>
+					</p>
+				<% end %>
+			<% end %>
+			<% if @cl.camera.present? %>
+				<h2>カメラ</h2>
+				<p><%= @cl.camera %></p>
+			<% end %>
+			<% if @cl.introduction? %>
+				<h2>メッセージ</h2>
+				<p><%= @cl.introduction %></p>
+			<% end %>
+		</div>
+	</div>
+	<div class="ms-content col-12 col-md-8 col-lg-6">
+		<div class="container-fluid">
+			<div class="ms-content-upper d-lg-none">
+				<%= link_to t(".return"), user_messages_path(current_user), class: "return-btn" %>
+				<%= link_to client_path(@cl) do%>
+					<%= image_tag @comunitating_user.image.url(:thumb), :alt => "icon", :class => "ms-content-icon" if @comunitating_user.image? %>
+				<% end %>
+			</div>
+			<hr>
+			<div class="ms-content-middle">
+				<div class="ms-content-new">
+					<%= form_for @msg,:url => {:action => :create} do |f| %>
+						<%= f.hidden_field :reciever_id, :value => @comunitating_user.id %>
+						<%= f.text_area :message, placeholder: t(".write_here") %>
+						<div class="send-btn">
+							<%= f.submit t(".send_btn"), class: "prim-btn" %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<div class="ms-content-lower">
+				<div class="ms-content-lower-time">
+					<%= @selected_msges.first.created_at %>
+				</div>
+				<% @selected_msges.each do |msg| %>
+					<% if msg.sender_id == current_user.id %>
+						<p class="right_balloon"><%= msg.message %></p>
+					<% else %>
+						<p class="left_balloon"><%= msg.message %></p>
+					<% end %>
+				<% end %>
+				<br class="clear_balloon"/>
+			</div>
+		</div>
+	</div>
+</div>

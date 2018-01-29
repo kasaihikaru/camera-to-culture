@@ -16,10 +16,6 @@ class UsersController < ApplicationController
 		@cl_prim_price = @cl.client_primary_prices.active.first
 		@cl_opt_prices = @cl.client_option_prices.active
 		@cl_locations = @cl.client_locations.includes(:prefecture)
-		# @pre_ids = []
-		# for pre_location in @cl_locations
-		# 	@pre_ids << pre_location.prefecture_id
-		# end
 		@cl_prefectures = []
 		for cl_locations in @cl_locations
 			@cl_prefectures << cl_locations.prefecture

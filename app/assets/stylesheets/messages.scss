@@ -1,3 +1,225 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$prim-col      : #FF8000;
+$subprim-col      : #51C4AA;
+
+
+//----------- new -------------//
+.ms-new{
+	h1{
+		padding: 20px 0;
+		font-size: 25px;
+		font-weight: 800;
+		color: $subprim-col;
+		margin: 0 auto 10px;
+		text-align: center;
+	}
+	textarea{
+		width: 100%;
+		border-color: #000000;
+		border-radius: 5px;
+		height: 300px;
+	}
+	.send-btn{
+		width: 100%;
+		input{
+			float: right
+		}
+	}
+}
+
+
+
+//----------- show right-content -------------//
+// @media screen and (min-width: 768px) {
+// 	.ms-menu{
+// 		width: 260px;
+// 		background-color: $subprim-col;
+// 	}
+// 	.ms-content{
+// 		position: absolute;
+// 		top: 56px;
+// 		left: 260px;
+// 	}
+// }
+// @media screen and (max-width: 767px) {
+// 	.ms-content{
+// 		// position: relative;
+// 	}
+// }
+// // @media screen and (max-width: 480px) {
+// // }
+
+
+//----- left menu ------//
+.ms-menu{
+	background-color: $subprim-col;
+	a{
+		color: #000000;
+		text-decoration: none;
+	}
+	.ms-menu-icon{
+		width:100%;
+	}
+}
+
+
+//----- middle user ------//
+.ms-user{
+	border-right: solid 1px;
+	border-color: #CFCFCF;
+	padding: 30px 0;
+	.ms-user-upper{
+		text-align: center;
+	}
+	.ms-user-lower{
+		text-align: left;
+		padding: 15px;
+	}
+	.ms-user-icon{
+		width:40%;
+	}
+	h2{
+		font-size: 15px;
+		font-weight: 800;
+	}
+	p{
+		font-size: 15px;
+		padding-left: 15px;
+	}
+}
+
+
+//----- right message content ------//
+.ms-content{
+	border-left: solid 1px;
+	border-color: #CFCFCF;
+}
+	.ms-content-upper{
+		width: 100%;
+		text-align: center;
+		background-color: #FFFFFF;
+		z-index: 1;
+		.return-btn{
+			float: left;
+		}
+		.ms-content-icon{
+			height: 50px;
+			margin-top: 16px;
+		}
+	}
+
+	.ms-content-middle{
+		width: 100%;
+		bottom: 0;
+		.ms-content-new{
+			textarea{
+				width: 100%;
+				border-color: #000000;
+				border-radius: 5px;
+				height: 100px;
+			}
+			.send-btn{
+				width: 100%;
+				input{
+					float: right
+				}
+			}
+		}
+	}
+
+	.ms-content-lower{
+		// overflow: scroll;
+		.ms-content-lower-time{
+			text-align: center;
+			color: #CFCFCF;
+			font-size: 15px;
+		}
+	}
+
+
+
+
+
+
+//----------- 以下、balloon -------------//
+/*******************************
+* 左からの吹き出し
+********************************/
+.left_balloon {
+		color: #FFFFFF;
+    position: relative;
+    background: $subprim-col;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 15px;
+    clear: both;
+    float: left;
+}
+.left_balloon:after,
+.left_balloon:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.left_balloon:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: $subprim-col;
+    border-width: 7px;
+    margin-top: -7px;
+}
+.left_balloon:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-width: 8px;
+    margin-top: -8px;
+}
+
+/*******************************
+* 右からの吹き出し
+********************************/
+.right_balloon {
+    position: relative;
+    background: #D8D8D8;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 20%;
+    clear: both;
+    max-width: 500px;
+    float: right;
+}
+.right_balloon:after,
+.right_balloon:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.right_balloon:after {
+    border-color: rgba(133, 226, 73, 0);
+    border-left-color: #D8D8D8;
+    border-width: 7px;
+    margin-top: -7px;
+}
+.right_balloon:before {
+    border-color: rgba(119, 119, 119, 0);
+    border-width: 8px;
+    margin-top: -8px;
+}
+/*******************************
+* 割り込みを解除
+********************************/
+.clear_balloon{
+  clear: both;
+}
