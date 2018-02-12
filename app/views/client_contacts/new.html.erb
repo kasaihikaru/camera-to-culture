@@ -5,13 +5,13 @@
     </div>
 
     <div class="col-12 col-md-8 mypage-content">
-      <h1><%= t(".register_as_cameraman") %></h1>
+      <h1><%= t(".change_contacts") %></h1>
 
       <%= form_for([@user, @cl, @contact]) do |f| %>
 
         <!-- エラーメッセージ -->
         <% if @contact.errors.any? %>
-          <p><%= @contact.errors.count %>件のエラーがあります</p>
+          <p><%= t(".An_eroor_occurred") %></p>
           <ul>
             <% @contact.errors.full_messages.each do |message| %>
               <li><%= message %></li>

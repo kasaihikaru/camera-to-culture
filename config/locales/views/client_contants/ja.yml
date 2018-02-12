@@ -9,7 +9,8 @@ ja:
       terms_of_service: 利用規約
       register_btn: 規約に同意して登録
     new:
-      register_as_cameraman: カメラマンとして登録する
+      change_contacts: 連絡先情報を変更する
+      An_eroor_occurred: 登録できませんでした
       phone_number: 電話番号
       This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
       address: 住所
