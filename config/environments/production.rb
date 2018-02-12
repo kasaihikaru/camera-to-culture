@@ -101,4 +101,7 @@ Rails.application.configure do
     :password => ENV['gmail_password'], #gmailパスワード
     :authentication => 'login',
   }
+
+
+  GA.tracker = "UA-109580394-2" #For GA
 end
