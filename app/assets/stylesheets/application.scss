@@ -49,12 +49,33 @@ $subprim-col      : #51C4AA;
   border: none;
 }
 
-
 .clearfix:after {
     content:" ";
     display:block;
     clear:both;
 }
+
+.prim-back{
+  background-color: $prim-col;
+}
+.subprim-back{
+  background-color: $subprim-col;
+}
+
+.float-right{
+  float: right;
+}
+.float-left{
+  float: left;
+}
+
+.bold{
+  font-weight: 800;
+}
+.indent{
+  padding-left: 30px;
+}
+
 
 
 //--------------- layout ----------------//
@@ -95,6 +116,30 @@ $nav_col     : #FFFFFF;
     height: 40px;
   }
 }
+
+
+
+//------------- フッター ---------------//
+footer{
+  background-color: #000000;
+  // background-color: $subprim-col;
+  color: #FFFFFF;
+  hr{
+    border-color: #FFFFFF;
+  }
+  .footer-bottom{
+    padding: 10px 0;
+    #footerDropdown{
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 0;
+    }
+  }
+  .footer-bottom-space{
+    height:90px;
+  }
+}
+
 
 
 

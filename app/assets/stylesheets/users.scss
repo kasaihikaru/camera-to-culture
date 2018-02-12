@@ -1,3 +1,124 @@
 // Place all the styles related to the users controller here.
+// Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+$prim-col      : #FF8000;
+$subprim-col      : #51C4AA;
+
+
+// ---------- show -----------//
+.mypage-container{
+	// text-align: center;
+	.mypage-wrapper{
+			background-color: $subprim-col;
+		h1{
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.mypage-menu{
+			padding: 30px 15px;
+			a{
+				color: #000000;
+				text-decoration: none;
+			}
+			.selected{
+				font-weight: 900;
+			}
+		}
+		.mypage-content{
+			padding: 30px 15px;
+			background-color: #FFFFFF;
+			.field{
+				margin-bottom: 60px;
+				.input-text{
+					width: 80%;
+					height: 40px;
+					border-radius: 5px;
+				}
+				.input-textarea{
+					width: 100%;
+					height: 150px;
+					border-radius: 5px;
+				}
+				.field-explanation{
+					font-size: 13px;
+					font-weight: 400;
+				}
+				.image{
+					width: 300px;
+				}
+			}
+		}
+	}
+}
+
+
+//---------- clients/edit -----------//
+
+
+
+
+
+//---------- client_contacts/new -----------//
+#terms_of_service{
+	width:95%;
+	height:200px;
+	overflow:auto;
+	margin: 20px auto;
+	padding: 20px;
+	border:solid 1px;
+	border-radius: 5px;
+}
+
+
+
+//---------- devise -----------//
+.register-container{
+	background-color: $subprim-col;
+	text-align: center;
+	.resigter-form-wrapper{
+		padding: 70px 0 150px 0;
+		h1{
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.fb-register-wrap{
+				width: 200px;
+				height: 30px;
+				margin: 0 auto;
+				background-color: #2D4385;
+				border-radius: 5px;
+				border: none;
+			.fb-register{
+				color: #FFFFFF;
+			}
+		}
+		.resigter-form{
+			text-align: left;
+			label{
+				margin-bottom: 5px;
+				font-weight: bold;
+			}
+			.field{
+				margin-bottom: 20px;
+				.input-text{
+					width: 100%;
+					height: 40px;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+

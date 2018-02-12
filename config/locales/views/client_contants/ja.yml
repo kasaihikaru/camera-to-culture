@@ -1,0 +1,16 @@
+---
+ja:
+  client_contacts:
+    first_new:
+      register_as_cameraman: カメラマンとして登録する
+      phone_number: 電話番号
+      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
+      address: 住所
+      terms_of_service: 利用規約
+      register_btn: 規約に同意して登録
+    new:
+      register_as_cameraman: カメラマンとして登録する
+      phone_number: 電話番号
+      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
+      address: 住所
+      register_btn: 更新

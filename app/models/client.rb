@@ -1,6 +1,7 @@
 class Client < ApplicationRecord
 
 	scope :active, -> { where(is_deleted: false) }
+	scope :consent, -> { where(consent: true) }
 	scope :registerd, -> { where.not(introduction: nil).where.not(image: nil) }
 
 	belongs_to :user
@@ -12,6 +13,7 @@ class Client < ApplicationRecord
 	has_many :client_schedules
 	has_many :client_primary_prices
 	has_many :client_option_prices
+	has_many :client_contacts
 	has_many :events
 	has_many :client_reviews
 	has_many :customer_reviews

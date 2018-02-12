@@ -33,32 +33,8 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto ">
-		      <li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span class="glyphicon glyphicon-globe" aria-hidden="true"></span><%= t(".language") %>
-		        </a>
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		        	<% if params[:locale] != 'ja' %>
-								<% if params[:locale].nil? == true %>
-								<% else %>
-									<%= link_to("日本語", url_for(locale: nil, only_path: false), class: "dropdown-item") %>
-								<% end %>
-							<% end %>
-							<% if params[:locale] != 'en'%>
-								<%= link_to("English", url_for(locale: 'en', only_path: false), class: "dropdown-item") %>
-							<% end %>
-
-							<% if params[:locale] != 'zh'%>
-								<%= link_to("简体中文", url_for(locale: 'zh', only_path: false), class: "dropdown-item") %>
-							<% end %>
-
-							<% if params[:locale] != 'tw'%>
-								<%= link_to("繁體中文", url_for(locale: 'tw', only_path: false), class: "dropdown-item") %>
-							<% end %>
-		        </div>
-		      </li>
 					<li class="nav-item">
-			      <%= link_to about_path, class: "nav-link" do %>
+						<%= link_to about_path, class: "nav-link" do %>
 							<%= t(".about") %>
 						<% end %>
 			    </li>
@@ -94,6 +70,67 @@
 				<div class="alert"><%= alert %></div>
 			<% end %>
 			<%= yield %>
+
+
+			<!-- ######## フッター ########## -->
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 d-none d-lg-block">
+							<%= link_to about_path, class: "nav-link" do %>
+								<%= t(".about") %>
+							<% end %>
+							あ<br>
+							あ<br>
+						</div>
+						<div class="col-md-4 d-none d-lg-block">
+							あ<br>
+							あ<br>
+							あ<br>
+						</div>
+						<div class="col-md-4 d-none d-lg-block">
+							あ<br>
+							あ<br>
+							あ<br>
+						</div>
+					</div>
+					<hr class="d-none d-lg-block">
+					<div class="row footer-bottom">
+						<div class="col-12 clearfix">
+							<div class="float-left">© 2018 Camera-to-Culture</div>
+							<div class="float-right">
+								<a class="nav-link dropdown-toggle" href="#" id="footerDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<%= render :partial => 'svgs/global' %>&nbsp;<%= t(".language") %>
+								</a>
+								<div class="dropdown-menu" aria-labelledby="footerDropdown">
+									<% if params[:locale] != 'ja' %>
+										<% if params[:locale].nil? == true %>
+										<% else %>
+											<%= link_to("日本語", url_for(locale: nil, only_path: false), class: "dropdown-item") %>
+										<% end %>
+									<% end %>
+									<% if params[:locale] != 'en'%>
+										<%= link_to("English", url_for(locale: 'en', only_path: false), class: "dropdown-item") %>
+									<% end %>
+
+									<% if params[:locale] != 'zh'%>
+										<%= link_to("简体中文", url_for(locale: 'zh', only_path: false), class: "dropdown-item") %>
+									<% end %>
+
+									<% if params[:locale] != 'tw'%>
+										<%= link_to("繁體中文", url_for(locale: 'tw', only_path: false), class: "dropdown-item") %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- md以上で一番下にスペースを作る -->
+					<div class="row footer-bottom-space d-none d-lg-block">
+					</div>
+				</div>
+			</footer>
 		</div>
+
 	</body>
 </html>

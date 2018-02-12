@@ -1,0 +1,66 @@
+<!-- ホーム -->
+<%= link_to user_path(current_user) do %>
+  <p class="selected"><span class="glyphicon glyphicon-hand-right"></span><%= t(".mypage") %></p>
+<% end %>
+<hr>
+
+<!-- メッセージ -->
+<%= link_to user_messages_path(@user) do %>
+  <p><%= t(".message") %></p>
+<% end %>
+<hr>
+
+<!-- 撮影 -->
+<a data-toggle="collapse" href="#mypage-menu-events">
+<p><%= t(".events") %></p>
+</a>
+<div class="collapse" id="mypage-menu-events">
+  <p>&emsp;<%= t(".撮影の予定") %></p>
+  <p>&emsp;<%= t(".過去の撮影") %></p>
+</div>
+<hr>
+
+<!-- 設定 -->
+<a data-toggle="collapse" href="#mypage-menu-settings">
+  <p><%= t(".settings") %></p>
+</a>
+<div class="collapse" id="mypage-menu-settings">
+  <%= link_to edit_user_registration_path do %>
+    <p>&emsp;<%= t(".user_settings") %></p>
+  <% end %>
+  <%= link_to edit_user_customer_path(@user, @cs) do %>
+    <p>&emsp;<%= t(".cs_settings") %></p>
+  <% end %>
+</div>
+<hr>
+
+<!-- カメラマンメニュー -->
+<% if @cl.consent == true %>
+  <a data-toggle="collapse" href="#mypage-menu-cameraman">
+    <p><%= t(".cameraman_menu") %></p>
+  </a>
+  <div class="collapse" id="mypage-menu-cameraman">
+    <%= link_to edit_user_client_path(@user, @cl) do %>
+      <p>&emsp;<%= t(".cl_settings") %></p>
+    <% end %>
+    <%= link_to new_client_client_portfolio_path(@cl) do %>
+      <p>&emsp;<%= t(".upload_cl_portpolios") %></p>
+    <% end %>
+    <%= link_to new_user_client_client_contact_path(@user, @cl) do %>
+      <p>&emsp;<%= t(".change_phone_number_adress") %></p>
+    <% end %>
+  </div>
+
+
+<!-- カメラマンになる -->
+<% else %>
+  <%= link_to first_new_user_client_client_contacts_path(@user, @cl) do %>
+    <p><%= t(".register_as_cameraman") %></p>
+  <% end %>
+<% end %>
+<hr>
+
+<!-- ログアウト -->
+<%= link_to destroy_user_session_path, method: :delete do %>
+  <p><%= t(".sign-out") %></p>
+<% end %>

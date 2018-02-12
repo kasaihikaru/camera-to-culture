@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171228140158) do
+ActiveRecord::Schema.define(version: 20180211030124) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "ja", null: false
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20171228140158) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_client_categories_on_category_id"
     t.index ["client_id"], name: "index_client_categories_on_client_id"
+  end
+
+  create_table "client_contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "client_id"
+    t.string "tel"
+    t.string "address"
+    t.boolean "is_deleted", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_client_contacts_on_client_id"
   end
 
   create_table "client_locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -97,6 +107,7 @@ ActiveRecord::Schema.define(version: 20171228140158) do
     t.text "introduction"
     t.text "camera"
     t.string "image"
+    t.boolean "consent", default: false, null: false
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -262,6 +273,7 @@ ActiveRecord::Schema.define(version: 20171228140158) do
 
   add_foreign_key "client_categories", "categories"
   add_foreign_key "client_categories", "clients"
+  add_foreign_key "client_contacts", "clients"
   add_foreign_key "client_locations", "clients"
   add_foreign_key "client_locations", "countries"
   add_foreign_key "client_locations", "prefectures"

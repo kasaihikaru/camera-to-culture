@@ -53,6 +53,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   def edit
     # super
+
+    # menu用
+    @user = current_user
+    @cl = @user.clients.active.first
+    @cs = @user.customers.active.first
+
+    # content用
     user_languages = current_user.user_languages
     @lang_ids = []
     for user_language in user_languages
@@ -100,7 +107,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         set_flash_message :notice, flash_key
       end
       bypass_sign_in resource, scope: resource_name
-      respond_with resource, location: after_update_path_for(resource)
+      respond_with resource, location: user_path(resource)
+      # respond_with resource, location: after_update_path_for(resource)
     else
       clean_up_passwords resource
       set_minimum_password_length

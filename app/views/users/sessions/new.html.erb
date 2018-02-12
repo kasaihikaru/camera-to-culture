@@ -1,28 +1,38 @@
-<%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path %>
+<div class="container-fluid register-container">
+  <div class="row resigter-form-wrapper">
+    <div class="col-12 col-md-4 offset-md-1">
+      <h1><%= t(".sign_in")%></h1>
+      <div class="fb-register-wrap">
+        <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, class: "fb-register" %>
+      </div>
 
-<h2><%= t(".sign_in")%></h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email, t(".email") %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="resigter-form">
+          <div class="field">
+            <%= f.label :email, t(".email") %><br />
+            <%= f.email_field :email, autofocus: true, class: "input-text" %>
+          </div>
 
-  <div class="field">
-    <%= f.label :password, t(".password") %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+          <div class="field">
+            <%= f.label :password, t(".password") %><br />
+            <%= f.password_field :password, autocomplete: "off", class: "input-text" %>
+          </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, t(".remember_me") %>
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me, t(".remember_me") %>
+            </div>
+          <% end -%>
+
+          <div class="actions">
+            <%= f.submit t(".sign_in") %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= render "users/shared/links" %>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit t(".sign_in") %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

@@ -1,8 +1,9 @@
 class ClientsController < ApplicationController
 	before_action :user_check, only: :edit
+	before_action :active_concent_check, only: :show
 
 	def index
-		@cls = Client.active.registerd.includes({user: [user_languages: :language]}, :client_portfolios, client_categories: :category).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
+		@cls = Client.active.consent.registerd.includes({user: [user_languages: :language]}, :client_portfolios, client_categories: :category).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
 	end
 
 	def show
@@ -17,7 +18,9 @@ class ClientsController < ApplicationController
 	end
 
 	def edit
-		@cl = current_user.clients.active.first
+		@user = current_user
+		@cl = @user.clients.active.first
+		@cs = @user.customers.active.first
 		@cl_prim_price = @cl.client_primary_prices.active.first
 		@cl_opt_prices = @cl.client_option_prices.active
 		@cl_locations = @cl.client_locations
@@ -83,19 +86,23 @@ class ClientsController < ApplicationController
 		#パラムス
 		category_ids = cl_category_params
 
-		# カテゴリ追加
-		category_ids.each do |id|
-			unless pre_category_ids.include?(id.to_i)
-				ClientCategory.create(client_id: client_id, category_id: id)
+
+		if category_ids.present?
+			# カテゴリ追加
+			category_ids.each do |id|
+				unless pre_category_ids.include?(id.to_i)
+					ClientCategory.create(client_id: client_id, category_id: id)
+				end
+			end
+
+			#カテゴリ消去
+			pre_category_ids.each do |pre_id|
+				unless category_ids.include?(pre_id.to_s)
+					ClientCategory.where(client_id: client_id, category_id: pre_id.to_i).destroy_all
+				end
 			end
 		end
 
-		#カテゴリ消去
-		pre_category_ids.each do |pre_id|
-			unless category_ids.include?(pre_id.to_s)
-				ClientCategory.where(client_id: client_id, category_id: pre_id.to_i).destroy_all
-			end
-		end
 
 		#-----エリア登録------#
 		# 元々のエリア
@@ -108,17 +115,20 @@ class ClientsController < ApplicationController
 		#パラムス
 		prefecture_ids = cl_prefecture_params
 
-		# エリア追加
-		prefecture_ids.each do |id|
-			unless pre_prefecture_ids.include?(id.to_i)
-				ClientLocation.create(client_id: client_id, country_id: 1, prefecture_id: id)
-			end
-		end
 
-		#エリア消去
-		pre_prefecture_ids.each do |pre_id|
-			unless prefecture_ids.include?(pre_id.to_s)
-				ClientLocation.where(client_id: client_id, prefecture_id: pre_id.to_i).destroy_all
+		if prefecture_ids.present?
+			# エリア追加
+			prefecture_ids.each do |id|
+				unless pre_prefecture_ids.include?(id.to_i)
+					ClientLocation.create(client_id: client_id, country_id: 1, prefecture_id: id)
+				end
+			end
+
+			#エリア消去
+			pre_prefecture_ids.each do |pre_id|
+				unless prefecture_ids.include?(pre_id.to_s)
+					ClientLocation.where(client_id: client_id, prefecture_id: pre_id.to_i).destroy_all
+				end
 			end
 		end
 
@@ -126,14 +136,8 @@ class ClientsController < ApplicationController
 		redirect_to user_path(current_user)
 	end
 
-	private
-	def user_check
-		unless user_signed_in? && params[:user_id].to_i == current_user.id
-			flash[:alert] = "ログインしてください"
-			redirect_to root_path
-		end
-	end
 
+private
 	def cl_create_params
 		params.require(:client).permit(:camera, :introduction, :image).merge(user_id: current_user.id)
 	end
@@ -173,6 +177,22 @@ class ClientsController < ApplicationController
 
 	def cl_category_params
 		params[:category_id]
+	end
+
+
+	def user_check
+		unless user_signed_in? && params[:user_id].to_i == current_user.id
+			flash[:alert] = "ログインしてください"
+			redirect_to root_path
+		end
+	end
+
+	def active_concent_check
+		cl = Client.find(params[:id])
+		unless cl.consent == true && cl.is_deleted == false
+			flash[:alert] = "指定したページはありません"
+			redirect_to root_path
+		end
 	end
 
 end

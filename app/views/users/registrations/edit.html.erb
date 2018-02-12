@@ -1,72 +1,85 @@
-<h2><%= t(".Edit_Settings")%></h2>
+<div class="container-fluid mypage-container">
+  <div class="row mypage-wrapper">
+    <div class="col-12 col-md-3 offset-md-1 mypage-menu">
+      <%= render :partial => 'users/mypage_menu' %>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="col-12 col-md-8 mypage-content">
+      <h1><%= t(".Edit_Settings")%></h1>
+      <hr>
 
-  <div class="field">
-    <%= f.label :name, t(".name") %><br />
-    <%= f.text_field :name, autofocus: true, maxlength: "20" %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <!-- 名前 -->
+        <div class="field">
+          <%= f.label :name, t(".name"), class: "bold" %><br>
+          <div class="indent">
+            <%= f.text_field :name, autofocus: true, maxlength: "20", class: "input-text" %>
+          </div>
+        </div>
+
+        <p class="bold"><%= t(".language_use")%></p>
+        <div class="field">
+          <div class="indent">
+            <% if @lang_ids.include?(1) %>
+              <label><input name="language_id[]" type="checkbox" value="1" checked="checked"/><%= t(".japanese")%></label>
+            <% else %>
+              <label><input name="language_id[]" type="checkbox" value="1"/><%= t(".japanese")%></label>
+            <% end %>
+
+            <% if @lang_ids.include?(2) %>
+              <label><input name="language_id[]" type="checkbox" value="2" checked="checked"/><%= t(".english")%></label>
+            <% else %>
+              <label><input name="language_id[]" type="checkbox" value="2" /><%= t(".english")%></label>
+            <% end %>
+
+            <% if @lang_ids.include?(3) %>
+              <label><input name="language_id[]" type="checkbox" value="3" checked="checked"/><%= t(".chinese")%></label>
+            <% else %>
+              <label><input name="language_id[]" type="checkbox" value="3" /><%= t(".chinese")%></label>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, t(".email"), class: "bold" %><br />
+          <div class="indent">
+            <%= f.email_field :email, autofocus: true, class: "input-text" %>
+          </div>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+
+        <div class="field">
+          <%= f.label :image, t(".image"), class: "bold" %><br>
+          <div class="indent">
+            <%= image_tag current_user.image.url, :alt => "icon" if current_user.image? %><br>
+            <%= f.file_field :image, class: "image" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, t(".New_password"), class: "bold" %>&emsp;<span class="field-explanation"><%= t(".leave_blank_if_you_don't_want_to_change_it")%></span><br>
+          <div class="indent">
+            <%= f.password_field :password, autocomplete: "off", placeholder:  t(".characters_minimum"), class: "input-text" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: t(".password_confirmation"), class: "input-text" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit t(".update_btn") %>
+        </div>
+      <% end %>
+
+
+    </div>
   </div>
+</div>
 
-  <p><%= t(".language_use")%></p>
-  <div class="field">
-  <% if @lang_ids.include?(1) %>
-    <label><input name="language_id[]" type="checkbox" value="1" checked="checked"/><%= t(".japanese")%></label>
-  <% else %>
-    <label><input name="language_id[]" type="checkbox" value="1"/><%= t(".japanese")%></label>
-  <% end %>
+<!-- <h3><%= t(".Cancel_my_account")%></h3>
 
-  <% if @lang_ids.include?(2) %>
-    <label><input name="language_id[]" type="checkbox" value="2" checked="checked"/><%= t(".english")%></label>
-  <% else %>
-    <label><input name="language_id[]" type="checkbox" value="2" /><%= t(".english")%></label>
-  <% end %>
-
-  <% if @lang_ids.include?(3) %>
-    <label><input name="language_id[]" type="checkbox" value="3" checked="checked"/><%= t(".chinese")%></label>
-  <% else %>
-    <label><input name="language_id[]" type="checkbox" value="3" /><%= t(".chinese")%></label>
-  <% end %>
-
-  </div>
-
-  <div class="field">
-    <%= f.label :email, t(".email") %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <%= image_tag current_user.image.url, :alt => "icon" if current_user.image? %><br>
-  <div class="field">
-    <%= f.label :image, t(".image") %><br />
-    <%= f.file_field :image %>
-  </div>
-  <div class="preview"></div>
-
-  <div class="field">
-    <%= f.label :password, t(".New_password") %> <i><%= t(".leave_blank_if_you_don't_want_to_change_it")%></i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em>(<%= @minimum_password_length %><%=t(".characters_minimum") %>)</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, t(".password_confirmation") %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3><%= t(".Cancel_my_account")%></h3>
-
-<p>Unhappy? <%= button_to t(".Cancel_my_account"), registration_path(resource_name), data: { confirm: t(".Are_you_sure?") }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<p>Unhappy? <%= button_to t(".Cancel_my_account"), registration_path(resource_name), data: { confirm: t(".Are_you_sure?") }, method: :delete %></p> -->

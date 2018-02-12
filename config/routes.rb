@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
 	scope '(:locale)', constraints: { locale: /\w{2}/ } do
 
-		devise_for :users, skip: :omniauth_callbacks, :controllers => { :registrations => "users/registrations"}
+		devise_for :users, skip: :omniauth_callbacks, :controllers => {
+			registrations: "users/registrations",
+			sessions: "users/sessions",
+			passwords: "users/passwords",
+			confirmations: "users/confirmations",
+			unlocks: "users/unlocks"
+		}
 
 		root to: "homes#show"
 
@@ -17,7 +23,14 @@ Rails.application.routes.draw do
 				end
 			end
 			resources :events, only: [:index]
-			resources :clients, only: [:edit, :update]
+			resources :clients, only: [:edit, :update] do
+				resources :client_contacts, only: [:new, :create] do
+					collection do
+						get 'first_new'
+						post 'first_create'
+					end
+				end
+			end
 			resources :customers, only: [:edit, :update]
 		end
 
@@ -31,7 +44,10 @@ Rails.application.routes.draw do
 			resources :event_states, only: [:new, :create]
 		end
 
-		resource :about, only: [:show]
-
+		resource :about, only: [:show] do
+			collection do
+				get 'terms_of_service'
+			end
+		end
 	end
 end

@@ -2,15 +2,25 @@
 ja:
   users:
     show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+
+    mypage_menu:
+      mypage: ホーム
+      message: メッセージ
+      events: 撮影
+      settings: 設定
+      user_settings: プロフィールを編集
+      cs_settings: 自己紹介を書く
+      register_as_cameraman: カメラマンになる
+      change_phone_number_adress: 電話番号、住所の変更
+      cameraman_menu: カメラマンメニュー
+      cl_settings: カメラマンプロフィール
+      upload_cl_portpolios: サンプル写真を投稿
+      sign-out: ログアウト
+
 # 以下、devise用
     confirmations:
       new:
-        Resend_confirmation_instructions: 確認メールをもう一度送る
+        Resend_confirmation_instructions: 確認メールを送る
         email: メールアドレス
     mailer:
       confirmation_instructions:
@@ -66,14 +76,20 @@ ja:
         cl_introduction: 自己紹介を書いてください！
         image: プロフィール画像
       edit:
-        Edit_Settings: 基本設定の変更
+        Edit_Settings: ユーザープロフィールの変更
         name: お名前
+        language_use: 話す言語を全て選択して下さい
+        japanese: 日本語
+        english: 英語
+        chinese: 中国語
+        image: プロフィール画像
         email: メールアドレス
         New_password: 新しいパスワード
         leave_blank_if_you_don't_want_to_change_it: 変更しない場合は、空欄にしてください。
         password: パスワード
-        characters_minimum: 文字以上
+        characters_minimum: パスワード（６文字以上）
         password_confirmation: パスワード確認
+        update_btn: 更新
         current_password: 現在のパスワード
         we_need_your_current_password_to_confirm_your_changes: 確認のため、パスワードを入力してください。
         Cancel_my_account: 退会する
@@ -90,8 +106,8 @@ ja:
         sign_up: 新規登録
         Forgot_your_password?: パスワードを忘れた方
         Didn't_receive_confirmation_instructions?: 確認メールを再送
-        Didn't_receive_unlock_instructions?: パスワード再発行メールを再送
+        Didn't_receive_unlock_instructions?: パスワード再発行メールを送る
     unlocks:
       new:
-        Resend_unlock_instructions: アカウント凍結からの回復メールをもう一度送る
+        Resend_unlock_instructions: アカウント凍結からの回復メールを送る
         email: メールアドレス

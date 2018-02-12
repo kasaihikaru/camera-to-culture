@@ -1,0 +1,73 @@
+<div class="container-fluid mypage-container">
+  <div class="row mypage-wrapper">
+    <div class="col-12 col-md-3 offset-md-1 mypage-menu">
+      <%= render :partial => 'users/mypage_menu' %>
+    </div>
+
+    <div class="col-12 col-md-8 mypage-content">
+      <h1><%= t(".register_as_cameraman") %></h1>
+
+      <%= form_for([@user, @cl, @contact]) do |f| %>
+
+        <!-- エラーメッセージ -->
+        <% if @contact.errors.any? %>
+          <p><%= @contact.errors.count %>件のエラーがあります</p>
+          <ul>
+            <% @contact.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
+
+        <!-- 入力フィールド -->
+        <% if @pre_cl_contact.present? %>
+          <div class="field">
+            <%= f.label :tel, t(".phone_number") %>
+            &emsp;<span class="field-explanation">
+              <%= t(".This_field_does_not_share_with_other_users") %>
+            </span>
+            <br>
+            <%= f.text_field :tel, required: true, placeholder: "08012345678", maxlength: "15", value: @pre_cl_contact.tel, class: "input-text" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :address, t(".address") %>
+            &emsp;<span class="field-explanation">
+              <%= t(".This_field_does_not_share_with_other_users") %>
+            </span>
+            <br>
+            <%= f.text_field :address, required: true, placeholder: "〇〇県 〇〇市 〇〇 １−１−１", maxlength: "1500", value: @pre_cl_contact.address, class: "input-text" %>
+          </div>
+
+        <% else %>
+          <div class="field">
+            <%= f.label :tel, t(".phone_number") %>
+            &emsp;<span class="field-explanation">
+              <%= t(".This_field_does_not_share_with_other_users") %>
+            </span>
+            <br>
+            <%= f.text_field :tel, required: true, placeholder: "08012345678", maxlength: "15",class: "input-text" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :address, t(".address") %>
+            &emsp;<span class="field-explanation">
+              <%= t(".This_field_does_not_share_with_other_users") %>
+            </span>
+            <br>
+            <%= f.text_field :address, required: true, placeholder: "〇〇県 〇〇市 〇〇 １−１−１", maxlength: "1500", class: "input-text" %>
+          </div>
+        <% end %>
+
+
+        <div class="actions">
+          <%= f.submit t(".register_btn") %>
+        </div>
+      <% end %>
+
+
+
+    </div>
+  </div>
+</div>

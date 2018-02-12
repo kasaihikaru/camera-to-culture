@@ -1,54 +1,50 @@
-<h2>多言語確認用</h2>
-<%= @date %>
-<%= @a %>
-<%= l(Time.now) %>
-<%= l(Time.now,format: :long)   %>
-<%= l(Time.now,format: :short)  %>
+<div class="container-fluid mypage-container">
+  <div class="row mypage-wrapper">
+    <div class="col-12 col-md-3 offset-md-1 mypage-menu">
+      <%= render :partial => 'users/mypage_menu' %>
+    </div>
 
-<h2>リンク</h2>
-<o><%= link_to "ユーザー情報編集", edit_user_registration_path %></p>
-<p><%= link_to "CS情報編集ページ", edit_user_customer_path(current_user) %></p>
-<p><%= link_to "CL情報編集ページ", edit_user_client_path(current_user) %></p>
-<p><%= link_to "CLサンプル写真登録ページ", new_client_client_portfolio_path(@cl) %></p>
-<%= link_to t(".sign-out"), destroy_user_session_path, method: :delete, class: "nav-link" %>
+    <div class="col-12 col-md-8 mypage-content">
+      <h1>ユーザー情報</h1>
+      <h4>ユーザー名</h4>
+      <%= @user.name %><br>
+      <h4>メアド</h4>
+      <%= @user.email %><br>
+      <h4>プロフィール画像</h4>
+      <%= image_tag @user.image.url, :alt => "icon" if @user.image? %><br>
+      <h4>話せる言語</h4>
+      <% @mylangs.each do |lang| %>
+      	<%= lang.ja %><br>
+      <% end %><br>
 
-<h2>ユーザー情報</h2>
-<h4>ユーザー名</h4>
-<%= @user.name %><br>
-<h4>メアド</h4>
-<%= @user.email %><br>
-<h4>プロフィール画像</h4>
-<%= image_tag @user.image.url, :alt => "icon" if @user.image? %><br>
-<h4>話せる言語</h4>
-<% @mylangs.each do |lang| %>
-	<%= lang.ja %><br>
-<% end %><br>
+      <h1>撮影者としての情報</h1>
+      <h4>カメラ</h4>
+      <%= @cl.camera %><br>
+      <h4>メッセージ</h4>
+      <%= @cl.introduction %><br>
 
-<h2>撮影者としての情報</h2>
-<h4>カメラ</h4>
-<%= @cl.camera %><br>
-<h4>メッセージ</h4>
-<%= @cl.introduction %><br>
+      <h4>価格</h4>
+      <% if @cl_prim_price.present? %>
+        <%= @cl_prim_price.price_per_hour %>円/時間<br>
+        最少受付時間：<%= @cl_prim_price.minimum_hours %><br>
+      <% end %>
+      <h4>オプション</h4>
+      <% @cl_opt_prices.each do |cl_opt_price| %>
+        <%= cl_opt_price.name %>
+        <% if cl_opt_price.along_with_time == true %>
+          １時間ごとに
+        <% end %>
+        <%= cl_opt_price.price %>円
+        <br>
+      <% end %>
+      <h4>撮影エリア</h4>
+      <% @cl_prefectures.each do |cl_prefecture| %>
+      	<%= cl_prefecture.ja %>
+      <% end %>
 
-<h4>価格</h4>
-<% if @cl_prim_price.present? %>
-  <%= @cl_prim_price.price_per_hour %>円/時間<br>
-  最少受付時間：<%= @cl_prim_price.minimum_hours %><br>
-<% end %>
-<h4>オプション</h4>
-<% @cl_opt_prices.each do |cl_opt_price| %>
-  <%= cl_opt_price.name %>
-  <% if cl_opt_price.along_with_time == true %>
-    １時間ごとに
-  <% end %>
-  <%= cl_opt_price.price %>円
-  <br>
-<% end %>
-<h4>撮影エリア</h4>
-<% @cl_prefectures.each do |cl_prefecture| %>
-	<%= cl_prefecture.ja %>
-<% end %>
-
-<h2>依頼者としての情報</h2>
-<h4>自己紹介</h4>
-<%= @cs.introduction %><br>
+      <h1>依頼者としての情報</h1>
+      <h4>自己紹介</h4>
+      <%= @cs.introduction %><br>
+    </div>
+  </div>
+</div>

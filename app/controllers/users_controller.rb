@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 		end
 
 		#client_info
-		@cl = current_user.clients.active.first
+		@cl = @user.clients.active.first
 		@cl_prim_price = @cl.client_primary_prices.active.first
 		@cl_opt_prices = @cl.client_option_prices.active
 		@cl_locations = @cl.client_locations.includes(:prefecture)
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 		end
 
 		#customer_info
-		@cs = current_user.customers.active.first
+		@cs = @user.customers.active.first
 
 	end
 

@@ -2,10 +2,11 @@
 ja:
   clients:
     edit:
-      cl_form: 撮影者としてのプロフィール
-      camera: カメラ
+      cl_form: カメラマンプロフィール編集
+      camera: 撮影に使うカメラについて
       introduction: 自己紹介
       main_image: メイン写真を登録
+      main_image_explain: トップサンプル写真として表示されます。
       category_form: 撮影可能な写真カテゴリー
       commercial_photos_people: ビシネス用ヒト写真（ファッションモデル、ヘアモデル）
       commercial_photos_items: ビジネス用モノ写真（アイテム、料理）
@@ -14,8 +15,12 @@ ja:
       prime_price_form: メイン価格
       price_per_hour: １時間あたり
       minimum_hours: 最低受付時間
+      h: 時間
       registed_opt_price_list: 登録済みオプション価格
-      add_opt_price_form: オプション価格を追加
+      checked_options_will_be_deleted: 消去するにはチェックをつけてください
+      add_opt_price_form: オプションを追加
+      option_name: オプション名
+      option_price: 価格
       prefecture_form: 出張可能な都道府県を選択
       Hokkaido_area: 北海道エリア
       Tohoku_area: 東北エリア

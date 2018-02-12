@@ -1,39 +1,62 @@
+<div class="container-fluid mypage-container">
+  <div class="row mypage-wrapper">
+    <div class="col-12 col-md-3 offset-md-1 mypage-menu">
+      <%= render :partial => 'users/mypage_menu' %>
+    </div>
 
-<!-- アップロード箇所 -->
-  <div class="file-loading">
-      <input id="client_portfolio" name="client_portfolio" type="file" multiple>
+    <div class="col-12 col-md-8 mypage-content">
+      <h1><%= t(".portfolio")%></h1>
+      <hr>
+
+      <!-- アップロード箇所 -->
+      <div class="file-loading">
+          <input id="client_portfolio" name="client_portfolio" type="file" multiple>
+      </div>
+
+      <script>
+      <% if @locale == "ja" %>
+        $("#client_portfolio").fileinput({
+            language: "ja",
+            uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+            allowedFileExtensions: ["jpg", "png", "jpeg"]
+        });
+      <% elsif @locale == "zh" %>
+        $("#client_portfolio").fileinput({
+            language: "zh",
+            uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+            allowedFileExtensions: ["jpg", "png", "jpeg"]
+        });
+      <% elsif @locale == "tw" %>
+        $("#client_portfolio").fileinput({
+            language: "tw",
+            uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+            allowedFileExtensions: ["jpg", "png", "jpeg"]
+        });
+      <% else %>
+        $("#client_portfolio").fileinput({
+            language: "en",
+            uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+            allowedFileExtensions: ["jpg", "png", "jpeg"]
+        });
+      <% end %>
+      </script>
+
+
+      <!-- 投稿済みポートフォリオ -->
+      <div class="container-fluid cl-show cl-show-3">
+        <div class="container">
+          <div class="row">
+            <% @portfolios.each do |portfolio| %>
+              <div class="pf col-12 col-sm-6 col-lg-4">
+                <a href="<%= portfolio.image.url if portfolio.image? %>" data-lightbox="image-1" data-title="<%= @cl.user.name %>">
+                  <div class="pf-img" style="background-image: url(<%= portfolio.image.url %>);"></div>
+                </a>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-
-  <script>
-  <% if @locale == "ja" %>
-    $("#client_portfolio").fileinput({
-        language: "ja",
-        uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
-        allowedFileExtensions: ["jpg", "png", "jpeg"]
-    });
-  <% elsif @locale == "zh" %>
-    $("#client_portfolio").fileinput({
-        language: "zh",
-        uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
-        allowedFileExtensions: ["jpg", "png", "jpeg"]
-    });
-  <% elsif @locale == "tw" %>
-    $("#client_portfolio").fileinput({
-        language: "tw",
-        uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
-        allowedFileExtensions: ["jpg", "png", "jpeg"]
-    });
-  <% else %>
-    $("#client_portfolio").fileinput({
-        language: "en",
-        uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
-        allowedFileExtensions: ["jpg", "png", "jpeg"]
-    });
-  <% end %>
-  </script>
-
-
-<!-- 投稿済みポートフォリオ -->
-<% @portfolios.each do |pf| %>
-<%= image_tag pf.image.url, :alt => "sample" if pf.image? %>
-<% end %>
+</div>
