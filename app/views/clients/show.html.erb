@@ -2,10 +2,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="cl-show-1-left col-3 col-sm-3 col-md-2">
-				<%= image_tag @cl.user.image.url(:thumb), :alt => "icon" if @cl.user.image? %><br>
+				<%= image_tag @cl_here.user.image.url(:thumb), :alt => "icon" if @cl_here.user.image? %><br>
 			</div>
 			<div class="cl-show-1-middle col-9 col-sm-9 col-md-7">
-				<%= @cl.user.name %><br>
+				<%= @cl_here.user.name %><br>
 				<% @categories.each do |cate| %>
 					<span class="badge badge-pill badge-light"><%= cate.category.ja %></span>
 				<% end %><br>
@@ -14,12 +14,12 @@
 				<% end %><br>
 			</div>
 			<div class="cl-show-1-right col-12 col-sm-12 col-md-3">
-				<%= link_to new_event_path(id: @cl.id) do %>
+				<%= link_to new_event_path(id: @cl_here.id) do %>
 					<div class="prim-btn cl-show-1-btn btn">
 						予約する
 					</div>
 				<% end %>
-				<%= link_to new_user_message_path(@cl.user.id) do %>
+				<%= link_to new_user_message_path(@cl_here.user.id) do %>
 					<div class="prim-btn cl-show-1-btn btn">
 						メッセージしてみる
 					</div>
@@ -54,12 +54,12 @@
 						</p>
 					<% end %>
 				<% end %>
-				<% if @cl.camera.present? %>
+				<% if @cl_here.camera.present? %>
 					<h2>カメラ</h2>
-					<p><%= @cl.camera %></p>
+					<p><%= @cl_here.camera %></p>
 				<% end %>
 				<h2>メッセージ</h2>
-				<p><%= @cl.introduction %></p>
+				<p><%= @cl_here.introduction %></p>
 			</div>
 		</div>
 	</div>
@@ -71,7 +71,7 @@
 		<div class="row">
 			<% @portfolios.each do |portfolio| %>
 				<div class="pf col-12 col-sm-6 col-md-4 col-lg-3">
-					<a href="<%= portfolio.image.url if portfolio.image? %>" data-lightbox="image-1" data-title="<%= @cl.user.name %>">
+					<a href="<%= portfolio.image.url if portfolio.image? %>" data-lightbox="image-1" data-title="<%= @cl_here.user.name %>">
 						<div class="pf-img" style="background-image: url(<%= portfolio.image.url %>);"></div>
 					</a>
 				</div>

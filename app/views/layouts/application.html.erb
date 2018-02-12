@@ -75,26 +75,44 @@
 			<!-- ######## フッター ########## -->
 			<footer>
 				<div class="container">
-					<div class="row">
-						<div class="col-md-4 d-none d-lg-block">
+					<div class="row footer-upper-md">
+						<div class="col-md-4 offset-md-2 col-lg-3 offset-lg-3 d-none d-md-block">
+							<p class="bold">Camera-to-Culture</p>
 							<%= link_to about_path, class: "nav-link" do %>
 								<%= t(".about") %>
 							<% end %>
-							あ<br>
-							あ<br>
+							<%= link_to about_path, class: "nav-link" do %>
+								<%= t(".about") %>
+							<% end %>
+							<%= link_to about_path, class: "nav-link" do %>
+								<%= t(".about") %>
+							<% end %>
 						</div>
-						<div class="col-md-4 d-none d-lg-block">
-							あ<br>
-							あ<br>
-							あ<br>
-						</div>
-						<div class="col-md-4 d-none d-lg-block">
-							あ<br>
-							あ<br>
-							あ<br>
+
+
+						<!-- カメラマン -->
+						<div class="col-md-4 col-lg-3 d-none d-md-block">
+							<p class="bold"><%= t(".cameraman") %></p>
+
+							<!-- カメラマン説明 -->
+							<%= link_to to_be_a_cameraman_about_path, class: "nav-link" do %>
+								<%= t(".To_be_a_cameraman") %>
+							<% end %>
+
+							<!-- ログイン時かつ、未登録時、フォームへ -->
+							<% if user_signed_in? && @cl.consent == false %>
+								<%= link_to first_new_user_client_client_contacts_path(@user, @cl), class: "nav-link" do %>
+									<%= t(".register_as_cameraman") %>
+								<% end %>
+							<% end %>
 						</div>
 					</div>
-					<hr class="d-none d-lg-block">
+					<div class="footer-upper-sm d-md-none">
+						<%= link_to to_be_a_cameraman_about_path, class: "nav-link" do %>
+							<%= t(".To_be_a_cameraman") %>
+						<% end %>
+					</div>
+					<hr class="">
 					<div class="row footer-bottom">
 						<div class="col-12 clearfix">
 							<div class="float-left">© 2018 Camera-to-Culture</div>

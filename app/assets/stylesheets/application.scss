@@ -24,6 +24,7 @@
 @import "homes";
 @import "messages";
 @import "users";
+@import "abouts";
 @import "lightbox.min";
 
 
@@ -122,13 +123,28 @@ $nav_col     : #FFFFFF;
 //------------- フッター ---------------//
 footer{
   background-color: #000000;
-  // background-color: $subprim-col;
+  a, a:hover{
+    color: #FFFFFF;
+    text-decoration: none;
+  }
   color: #FFFFFF;
   hr{
     border-color: #FFFFFF;
   }
+  .footer-upper-md{
+    p{
+      margin: 16px 0;
+    }
+  }
+  .footer-upper-sm{
+    text-align: center;
+    a{
+      margin: 16px 0 0 0;
+      padding: 0;
+    }
+  }
   .footer-bottom{
-    padding: 10px 0;
+    padding-bottom: 16px;
     #footerDropdown{
       color: #FFFFFF;
       text-decoration: none;

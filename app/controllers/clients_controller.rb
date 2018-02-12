@@ -3,17 +3,30 @@ class ClientsController < ApplicationController
 	before_action :active_concent_check, only: :show
 
 	def index
+		if user_signed_in?
+			@user = current_user
+			@cl = @user.clients.active.first
+			@cs = @user.customers.active.first
+		end
+
+		# 検索結果
 		@cls = Client.active.consent.registerd.includes({user: [user_languages: :language]}, :client_portfolios, client_categories: :category).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
 	end
 
 	def show
-		@cl = Client.find(params[:id])
-		@categories = @cl.client_categories.includes(:category)
-		@langs = @cl.user.user_languages.includes(:language)
-		@locations = @cl.client_locations.includes(:prefecture)
-		@prim_price = @cl.client_primary_prices.active.first
-		@options = @cl.client_option_prices.active
-		@portfolios = @cl.client_portfolios
+		if user_signed_in?
+			@user = current_user
+			@cl = @user.clients.active.first
+			@cs = @user.customers.active.first
+		end
+
+		@cl_here = Client.find(params[:id])
+		@categories = @cl_here.client_categories.includes(:category)
+		@langs = @cl_here.user.user_languages.includes(:language)
+		@locations = @cl_here.client_locations.includes(:prefecture)
+		@prim_price = @cl_here.client_primary_prices.active.first
+		@options = @cl_here.client_option_prices.active
+		@portfolios = @cl_here.client_portfolios
 
 	end
 

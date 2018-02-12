@@ -18,13 +18,19 @@ $subprim-col      : #51C4AA;
 
 //----------- new -------------//
 .ms-new{
+	margin-bottom: 15px;
+	text-align: center;
+	.image{
+		margin-top: 15px;
+		height: 40px;
+		border-radius: 5px;
+	}
 	h1{
 		padding: 20px 0;
-		font-size: 25px;
+		font-size: 20px;
 		font-weight: 800;
 		color: $subprim-col;
 		margin: 0 auto 10px;
-		text-align: center;
 	}
 	textarea{
 		width: 100%;

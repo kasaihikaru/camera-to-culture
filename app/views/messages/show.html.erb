@@ -23,9 +23,9 @@
 			<%= image_tag @comunitating_user.image.url(:thumb), :alt => "icon", :class => "ms-user-icon" if @comunitating_user.image? %>
 		</div>
 		<div class="ms-user-lower">
-			<% if @cs.introduction? %>
+			<% if @cs_here.introduction? %>
 				<h2>自己紹介</h2>
-				<%= @cs.introduction %>
+				<%= @cs_here.introduction %>
 			<% end %>
 			<% if @categories.present? %>
 				<h2>撮影カテゴリー</h2>
@@ -57,13 +57,13 @@
 					</p>
 				<% end %>
 			<% end %>
-			<% if @cl.camera.present? %>
+			<% if @cl_here.camera.present? %>
 				<h2>カメラ</h2>
-				<p><%= @cl.camera %></p>
+				<p><%= @cl_here.camera %></p>
 			<% end %>
-			<% if @cl.introduction? %>
+			<% if @cl_here.introduction? %>
 				<h2>メッセージ</h2>
-				<p><%= @cl.introduction %></p>
+				<p><%= @cl_here.introduction %></p>
 			<% end %>
 		</div>
 	</div>
@@ -71,7 +71,7 @@
 		<div class="container-fluid">
 			<div class="ms-content-upper d-lg-none">
 				<%= link_to "＜", user_messages_path(current_user), class: "return-btn" %>
-				<%= link_to client_path(@cl) do%>
+				<%= link_to client_path(@cl_here) do%>
 					<%= image_tag @comunitating_user.image.url(:thumb), :alt => "icon", :class => "ms-content-icon" if @comunitating_user.image? %>
 				<% end %>
 			</div>

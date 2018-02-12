@@ -3,16 +3,24 @@ class MessagesController < ApplicationController
 	before_action :login_check, only: [:new]
 
 	def new
+		@user = current_user
+		@cl = @user.clients.active.first
+		@cs = @user.customers.active.first
+
 		@msg = Message.new
 		@reciever = User.find(user_params)
 	end
 
 	def first_create
 		Message.create(first_create_params)
-		redirect_to user_path(current_user)
+		redirect_to user_message_path(current_user.id, user_params)
 	end
 
 	def index
+		@user = current_user
+		@cl = @user.clients.active.first
+		@cs = @user.customers.active.first
+
 		#-------- left-menu --------#
 		@msges = Message.user_sends(current_user.id).or(Message.user_recirves(current_user.id)).order_new
 
@@ -27,6 +35,10 @@ class MessagesController < ApplicationController
 	end
 
 	def show
+		@user = current_user
+		@cl = @user.clients.active.first
+		@cs = @user.customers.active.first
+
 		#-------- left-menu --------#
 		@msges = Message.user_sends(current_user.id).or(Message.user_recirves(current_user.id)).order_new
 
@@ -43,12 +55,12 @@ class MessagesController < ApplicationController
 		#-------- right-content --------#
 		# user
 		@comunitating_user = User.find(id_params)
-		@cs = @comunitating_user.customers.active.first
-		@cl = @comunitating_user.clients.active.first
-		@categories = @cl.client_categories.includes(:category)
-		@locations = @cl.client_locations.includes(:prefecture)
-		@prim_price = @cl.client_primary_prices.active.first
-		@options = @cl.client_option_prices.active
+		@cs_here = @comunitating_user.customers.active.first
+		@cl_here = @comunitating_user.clients.active.first
+		@categories = @cl_here.client_categories.includes(:category)
+		@locations = @cl_here.client_locations.includes(:prefecture)
+		@prim_price = @cl_here.client_primary_prices.active.first
+		@options = @cl_here.client_option_prices.active
 
 		#messages
 		@selected_msges = Message.user_sends(current_user.id).user_recirves(id_params).or(Message.user_recirves(current_user.id).user_sends(id_params)).order_new

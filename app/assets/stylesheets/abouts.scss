@@ -1,3 +1,75 @@
 // Place all the styles related to the abouts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$prim-col      : #FF8000;
+$subprim-col      : #51C4AA;
+
+
+
+
+
+
+.about{
+	text-align: center;
+}
+
+@media screen and (min-width:1000px){
+	.about{
+		h1{
+			font-size: 25px;
+		}
+	}
+}
+
+@media screen and (max-width:999px){
+	.about{
+		h1{
+			font-size: 20px;
+		}
+	}
+}
+
+@media screen and (max-width:599px){
+	.about{
+		h1{
+			font-size: 14px;
+		}
+	}
+}
+
+@media screen and (max-width:299px){
+	.about{
+		h1{
+			font-size: 14px;
+		}
+	}
+}
+
+
+
+
+
+
+.about-1{
+	background-color: $subprim-col;
+	color: #FFFFFF;
+	padding: 100px 0;
+	img{
+		width: 100%;
+		margin: 50px 0;
+	}
+}
+
+.about-2{
+
+}
+
+.about-3{
+	background-color: $subprim-col;
+	color: #FFFFFF;
+}
+
+.about-4{
+
+}

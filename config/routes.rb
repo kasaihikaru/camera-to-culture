@@ -46,7 +46,9 @@ Rails.application.routes.draw do
 
 		resource :about, only: [:show] do
 			collection do
-				get 'terms_of_service'
+				get 'terms_of_service_cl'
+				get 'terms_of_service_cs'
+				get 'to_be_a_cameraman'
 			end
 		end
 	end

@@ -1,6 +1,6 @@
 <div>
-	<%= image_tag @cl.user.image.url, :alt => "icon" if @cl.user.image? %><br>
-	<%= @cl.user.name %><br>
+	<%= image_tag @cl_here.user.image.url, :alt => "icon" if @cl_here.user.image? %><br>
+	<%= @cl_here.user.name %><br>
 	<% @categories.each do |cate| %>
 		<%= cate.category.ja %> / 
 	<% end %><br>
@@ -10,7 +10,7 @@
 <div>
 
 <div>
-	<%= @cl.introduction %>
+	<%= @cl_here.introduction %>
 </div>
 
 <div>

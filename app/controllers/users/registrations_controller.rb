@@ -4,6 +4,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
+    if user_signed_in?
+      @user = current_user
+      @cl = @user.clients.active.first
+      @cs = @user.customers.active.first
+    end
+
     # super
     my_build_resource({})
     self.resource.user_languages.build
@@ -52,6 +58,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
+    @user = current_user
+    @cl = @user.clients.active.first
+    @cs = @user.customers.active.first
+
     # super
 
     # menu用
