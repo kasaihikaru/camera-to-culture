@@ -1,0 +1,74 @@
+<div class="container-fluid about about-3">
+	<h1>利用の流れ</h1>
+	<br><br>
+	<p1>①検索</p1>
+	<div class="row about-inner">
+		<div class="col-12 col-md-4 offset-md-2">
+			<img alt="search" src="/images/about-top.png" class="img-phone">
+			<img alt="search" src="/images/about-search.png" class="img-phone">
+		</div>
+		<div class="col-12 col-md-4 center">
+			<p2>
+				簡単にカメラマンを検索できます。<br>
+				ポートフォリオやレビューからお気に入りのカメラマンを探してください。<br>
+				<%= link_to t(".back_to_top"), home_path, class: "about-btn" %>
+			</p2>
+		</div>
+	</div>
+
+
+	<p1>②予約</p1>
+	<div class="row about-inner">
+		<div class="col-12 col-md-4 offset-md-2">
+			<img alt="reserve" src="/images/about-reserve.png" class="img-phone">
+			<img alt="reserve" src="/images/about-message.png" class="img-phone">
+		</div>
+		<div class="col-12 col-md-4 center">
+			<p2>
+				料金やスケジュールをみて、予約します。<br>
+				何か質問があれば、メッセージを送ることができます。<br>
+				予約やメッセージ送信を行うにはユーザー登録が必要です。<br>
+				<% unless user_signed_in? %>
+					<%= link_to t(".sign-up"), new_user_registration_path, class: "about-btn" %>
+				<% end %>
+			</p2>
+		</div>
+	</div>
+
+
+	<p1>③撮影</p1>
+	<div class="row about-inner">
+		<div class="col-12 col-md-4 offset-md-2">
+			<img alt="search" src="/images/about-search.png" class="img-phone">
+		</div>
+		<div class="col-12 col-md-4 center">
+			<p2>
+				集合し、撮影を行います。<br>
+			</p2>
+		</div>
+	</div>
+
+	<p1>④写真受け取り</p1>
+	<div class="row about-inner">
+		<div class="col-12 col-md-4 offset-md-2">
+			<img alt="search" src="/images/about-search.png" class="img-phone">
+		</div>
+		<div class="col-12 col-md-4 center">
+			<p2>
+				後日、写真が納品されます。<br>
+			</p2>
+		</div>
+	</div>
+
+	<p1>⑤レビュー</p1>
+	<div class="row about-inner">
+		<div class="col-12 col-md-4 offset-md-2">
+			<img alt="search" src="/images/about-search.png" class="img-phone">
+		</div>
+		<div class="col-12 col-md-4 center">
+			<p2>
+				撮影の感想をレビューに残します。<br>
+			</p2>
+		</div>
+	</div>
+</div>

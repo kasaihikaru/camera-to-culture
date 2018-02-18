@@ -83,16 +83,28 @@
 					<div class="row footer-upper-md">
 						<div class="col-md-4 offset-md-2 col-lg-3 offset-lg-3 d-none d-md-block">
 							<p class="bold">Camera-to-Culture</p>
+
+							<!-- サービスについて -->
 							<%= link_to about_path, class: "nav-link" do %>
 								<%= t(".about") %>
 							<% end %>
-							<%= link_to about_path, class: "nav-link" do %>
-								<%= t(".about") %>
+
+							<!-- 使い方 -->
+							<%= link_to how_to_use_about_path, class: "nav-link" do %>
+								<%= t(".how_to_use") %>
 							<% end %>
-							<%= link_to about_path, class: "nav-link" do %>
-								<%= t(".about") %>
+
+							<!-- スマートフォンでの利用 -->
+<!-- 							<%= link_to use_with_phone_about_path, class: "nav-link" do %>
+								<%= t(".use_with_phone") %>
+							<% end %> -->
+
+							<!-- 利用規約 -->
+							<%= link_to terms_of_service_cs_about_path, class: "nav-link" do %>
+								<%= t(".terms_of_service_cs") %>
 							<% end %>
 						</div>
+
 
 
 						<!-- カメラマン -->
@@ -110,14 +122,29 @@
 									<%= t(".register_as_cameraman") %>
 								<% end %>
 							<% end %>
+
+							<!-- カメラマン規約 -->
+							<%= link_to terms_of_service_cl_about_path, class: "nav-link" do %>
+								<%= t(".terms_of_service_cl") %>
+							<% end %>
 						</div>
 					</div>
+
+					<!-- スマホ画面 -->
 					<div class="footer-upper-sm d-md-none">
+						<!-- カメラマンになる -->
 						<%= link_to to_be_a_cameraman_about_path, class: "" do %>
 							<%= t(".To_be_a_cameraman") %>
 						<% end %>
+						<!-- 利用規約 -->
+						<%= link_to terms_of_service_cs_about_path, class: "nav-link" do %>
+							<%= t(".terms_of_service_cs") %>
+						<% end %>
 					</div>
+
 					<hr class="">
+
+					<!-- bottom-footer -->
 					<div class="row footer-bottom">
 						<div class="col-12 clearfix">
 							<div class="float-left">© 2018 Camera-to-Culture</div>

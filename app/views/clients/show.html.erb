@@ -56,10 +56,10 @@
 				<% end %>
 				<% if @cl_here.camera.present? %>
 					<h2>カメラ</h2>
-					<p><%= @cl_here.camera %></p>
+					<pre class="indent"><%= @cl_here.camera %></pre>
 				<% end %>
 				<h2>メッセージ</h2>
-				<p><%= @cl_here.introduction %></p>
+				<pre class="indent"><%= @cl_here.introduction %></pre>
 			</div>
 		</div>
 	</div>

@@ -49,6 +49,8 @@ Rails.application.routes.draw do
 				get 'terms_of_service_cl'
 				get 'terms_of_service_cs'
 				get 'to_be_a_cameraman'
+				get 'how_to_use'
+				get 'use_with_phone'
 			end
 		end
 	end

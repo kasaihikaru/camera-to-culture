@@ -30,4 +30,22 @@ class AboutsController < ApplicationController
 			@cs = @user.customers.active.first
 		end
 	end
+
+	def how_to_use
+		if user_signed_in?
+			@user = current_user
+			@cl = @user.clients.active.first
+			@cs = @user.customers.active.first
+		end
+	end
+
+	def use_with_phone
+		if user_signed_in?
+			@user = current_user
+			@cl = @user.clients.active.first
+			@cs = @user.customers.active.first
+		end
+	end
+
+
 end

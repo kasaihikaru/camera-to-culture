@@ -1,0 +1,29 @@
+---
+ja:
+  abouts:
+    show:
+      back_to_top: 検索フォームへ
+      sign-up: 新規登録
+    how_to_use:
+      back_to_top: 検索フォームへ
+      sign-up: 新規登録
+    terms_of_service_cs:
+
+    terms_of_service_cl:
+
+    to_be_a_cameraman:
+      Register_as_a_cameraman: カメラマンになるには
+      1_Sign_up: ①ユーザー登録
+      Please_sign_up_first: まずは、ユーザー登録してください。
+      sign-up: 新規登録
+      2_Register_as_a_cameraman: ②カメラマン登録
+      Next_register_as_a_cameraman: 次に、カメラマン登録を行います。
+      register_as_cameraman: カメラマン登録へ
+      3_Edit_your_profile: ③プロフィールを登録
+      3_disc_1: メイン写真や価格、自己紹介を入力します
+      3_disc_2: 入力が終わっていない場合は、検索し結果に表示されません。
+      cl_settings: 設定画面へ
+      4_Upload_your_portfolios: ④サンプル写真アップロード
+      4_disc_1: サンプル写真をアップロードします。
+      4_disc_2: ③で登録したメイン写真に続いて、検索時のリストや、プロフィールページで表示されます。
+      upload_cl_portpolios: アップロード画面へ

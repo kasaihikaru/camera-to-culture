@@ -77,6 +77,20 @@ $subprim-col      : #51C4AA;
   padding-left: 30px;
 }
 
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+//--------------- 対策 ----------------//
+pre {
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
 
 
 //--------------- layout ----------------//
