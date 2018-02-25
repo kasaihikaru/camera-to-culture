@@ -1,6 +1,6 @@
 <p><%= t(".title")%></p>
 <p><%= @email %></p>
 
-<p><%= t(".You_can_confirm_your_account_email_through_the_link_below")%></p>
+<p><%= t(".explain_1")%></p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to t(".Confirm_my_account"), confirmation_url(@resource, confirmation_token: @token) %></p>

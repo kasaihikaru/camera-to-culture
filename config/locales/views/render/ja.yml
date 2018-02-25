@@ -8,7 +8,7 @@ ja:
       commercial_photos_items: モノ写真（アイテム、料理）
       for_private: プライベート利用
       event_photos: イベント写真（結婚式、七五三、旅行）
-      private_photo: プライベート写真（家族、恋人、友達）
+      private_photo: 日常写真（家族、恋人、友達）
       select_area: 撮影場所を選択
       Hokkaido_area: 北海道エリア
       Tohoku_area: 東北エリア
@@ -66,5 +66,3 @@ ja:
       Miyazaki : 宮崎県
       Kagoshima: 鹿児島県
       Okinawa: 沖縄県
-
-      search_btn: 検索

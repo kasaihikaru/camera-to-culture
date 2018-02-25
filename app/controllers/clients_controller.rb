@@ -9,8 +9,9 @@ class ClientsController < ApplicationController
 			@cs = @user.customers.active.first
 		end
 
-		# 検索結果
-		@cls = Client.active.consent.registerd.includes({user: [user_languages: :language]}, :client_portfolios, client_categories: :category).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
+		# 検索結果(.uniqするとarrayになってしまうので、kaminariは別に切り出す必要がある。)
+		array_cls = Client.active.consent.registerd.includes({user: [user_languages: :language]}, :client_portfolios, client_categories: :category).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
+		@cls = Kaminari.paginate_array(array_cls).page(params[:page]).per(12)
 	end
 
 	def show

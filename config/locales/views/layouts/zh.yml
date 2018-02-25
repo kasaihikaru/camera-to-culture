@@ -1,8 +1,16 @@
 zh:
   layouts:
     application:
-      language: 言語
-      sign-up: 新規登録
-      sign-in: ログイン
-      sign-out: ログアウト
-      mypage: マイページ
+      language: 语言
+      about: 关于本服务
+      sign-up: 注册
+      sign-in: 登录
+      mypage: 我的页面
+      message: 消息
+      how_to_use: 使用方法
+      use_with_phone: 用智能手机浏览
+      terms_of_service_cs: 使用规定
+      cameraman: 摄影师
+      To_be_a_cameraman: 关于成为摄影师
+      register_as_cameraman: 加入成为摄影师
+      terms_of_service_cl: 摄影师的规定

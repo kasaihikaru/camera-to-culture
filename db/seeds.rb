@@ -72,5 +72,5 @@ Category.create([
 	{ ja: 'ヒト写真(商用利用)', ja_s: 'ヒト(商)', en: 'Pictures of people(for business)', en_s: 'Models', zh: '人像摄影(商用)', zh_s: '人(商)', tw: '人像攝影(商用)', tw_s: '人(商)'},
 	{ ja: 'モノ写真(商用利用)', ja_s: 'モノ(商)', en: 'Picture of things(for business)', en_s: 'Items', zh: '物品摄影(商用)', zh_s: '物(商)', tw: '物品攝影(商用)', tw_s: '物(商)'},
 	{ ja: 'イベント写真(結婚式、七五三、旅行)', ja_s: 'イベント', en: 'Event photos(wedding, traveling..etc..)', en_s: 'Events', zh: '纪念日摄影(婚礼，旅行等)', zh_s: '纪念日', tw: '紀念日攝影(婚禮，旅行等)', tw_s: '紀念日'},
-	{ ja: 'プライベート写真(家族、恋人、友達)', ja_s: 'プライベート', en: 'private_photo（friends, family, couples）', en_s: 'Private', zh: '私人写真(家人，情侣，闺蜜)', zh_s: '私人', tw: '私人寫真(家人，情侶，朋友)', tw_s: '私人'}
+	{ ja: '日常写真(家族、恋人、友達)', ja_s: '日常', en: 'Daily_photos（friends, family, couples）', en_s: 'Daily', zh: '私人写真(家人，情侣，闺蜜)', zh_s: '私人', tw: '私人寫真(家人，情侶，朋友)', tw_s: '私人'}
 	])

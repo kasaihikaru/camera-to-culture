@@ -1,7 +1,7 @@
 <div id="home-top">
 	<!-- ###### 検索フォーム ###### -->
 	<div class="home-cl-search clearfix">
-		<h1>カメラマンを探す</h1>
+		<h1><%= t(".find_your_photographer") %></h1>
 		<%= form_tag(clients_path, method: :get) do %>
 			<%= render :partial => 'render/home_search' %>
 			<div class="search-btn">

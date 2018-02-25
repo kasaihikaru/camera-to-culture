@@ -1,8 +1,16 @@
 tw:
   layouts:
     application:
-      language: 言語
-      sign-up: 新規登録
-      sign-in: ログイン
-      sign-out: ログアウト
-      mypage: マイページ
+      language: 語言
+      about: 關於本服務
+      sign-up: 加入會員
+      sign-in: 登入
+      mypage: 我的頁面
+      message: 訊息
+      how_to_use: 使用方法
+      use_with_phone: 用智慧型手機瀏覽
+      terms_of_service_cs: 使用規定
+      cameraman: 攝影師
+      To_be_a_cameraman: 關於成為攝影師
+      register_as_cameraman: 加入成為攝影師
+      terms_of_service_cl: 攝影師的規定

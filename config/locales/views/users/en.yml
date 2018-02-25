@@ -2,8 +2,113 @@
 en:
   users:
     show:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+
+    mypage_menu:
+      mypage: Home
+      message: Message
+      events: Events in CtoC
+      settings: Settings
+      user_settings: Edit your profile
+      cs_settings: Write your introduction
+      register_as_cameraman: register as a cameraman
+      change_phone_number_adress: change your contacts
+      cameraman_menu: Cameraman Menu
+      cl_settings: Edit your profile
+      upload_cl_portpolios: Upload prtfolios
+      sign-out: Sign out
+
+# 以下、devise用
+    confirmations:
+      new:
+        Resend_confirmation_instructions: Resend confirmation instructions
+        email: email
+    mailer:
+      confirmation_instructions:
+        title: 【Camera-to-Culture】Than you for your registration!
+        explain_1: You can confirm your account email through the link below.
+        Confirm_my_account: Confirm your account
+      email_changed:
+        title: 【Cumera-to-Culture】Email change
+        explain_1: We're contacting you to notify you that your email is being changed to
+        explain_2: We're contacting you to notify you that your email has been changed to
+      passwords_change:
+        title: 【Cumera-to-Culture】Password has changed
+        explain_1: We're contacting you to notify you that your password has been changed.
+      reset_password_instructions:
+        title: 【Cumera-to-Culture】Reset password instructions
+        explain_1: Someone has requested a link to change your password. You can do this through the link below.
+        Change_my_password: Change your password
+        explain_2: If you didn't request this, please ignore this email.
+        explain_3: Your password won't change until you access the link above and create a new one.
+      unlock_instructions:
+        title: 【Cumera-to-Culture】Unlock your account instruction
+        explain_1: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
+        explain_2: Click the link below to unlock your account
+        Unlock_my_account: Unlock your account
+    passwords:
+      edit:
+        Change_your_password: Change your password
+        characters_minimum: 6characters minimum
+        New_password: New password
+        Confirm_new_password: Confirm new password
+        Change_my_password: Change your password
+      new:
+        Forgot_your_password?: Forgot your password?
+        email: Email
+        Send_me_reset_password_instructions: Send a reset password instruction
+        characters_minimum: characters minimum
+        New_password: New password
+        Confirm_new_password: Confirm new password
+        Change_my_password: Change your password
+    registrations:
+      new:
+        sign_up: Sign up
+        sign_up_with_FB: Sign up with Facebook
+        name: Name
+        email: Email
+        password: Password
+        characters_minimum: characters minimum
+        password_confirmation: Password confirmation
+        sign_up_btn: Sign up
+        language_use: Languages that you speak
+        japanese: Japanese
+        english: English
+        chinese: Chinese
+        image: Profile photo
+      edit:
+        Edit_Settings: Edit your profile
+        name: Name
+        language_use: Languages that you speak
+        japanese: Japanese
+        english: English
+        chinese: Chinese
+        image: Profile photo
+        email: Email
+        New_password: New password
+        leave_blank_if_you_don't_want_to_change_it: Leave blank if you don't want to change it.
+        password: Password
+        characters_minimum: Password（ 6 characters minimum ）
+        password_confirmation: Password confirmation
+        update_btn: Update
+        current_password: Current password
+        we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
+        Cancel_my_account: Cancel your account?
+        Are_you_sure?: Are you sure?
+    sessions:
+      new:
+        sign_in: Sign in
+        sign_in_with_FB: Sign in with Facebook
+        email: Email
+        password: Password
+        remember_me: Remember me
+    shared:
+      links:
+        sign_in: Sign in
+        sign_up: Sign up
+        Forgot_your_password?: Forgot your password?
+        Didn't_receive_confirmation_instructions?: Didn't receive confirmation instructions?
+        Didn't_receive_unlock_instructions?: Didn't receive unlock instructions?
+    unlocks:
+      new:
+        Resend_unlock_instructions: Resend unlock instructions
+        email: Email

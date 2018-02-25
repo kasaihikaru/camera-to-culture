@@ -1,15 +1,6 @@
 ---
 zh:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  homes:
     show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      find_your_photographer: 寻找摄影师
+      search_btn: 搜索

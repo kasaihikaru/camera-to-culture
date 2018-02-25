@@ -61,3 +61,14 @@ ja:
       new:
         Resend_unlock_instructions: アカウント凍結からの回復メールをもう一度送る
         email: メールアドレス
+    mailer:
+      confirmation_instructions:
+        subject: 【Camera-to-Culture】ご登録ありがとうございます！
+      email_changed:
+        subject: 【Camera-to-Culture】メールアドレス変更
+      reset_password_instructions:
+        subject: 【Camera-to-Culture】パスワード変更
+      unlock_instructions:
+        subject: 【Camera-to-Culture】アカウント凍結の連絡
+      password_change:
+        subject: 【Camera-to-Culture】パスワード変更完了の連絡

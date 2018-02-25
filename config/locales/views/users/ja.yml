@@ -25,35 +25,37 @@ ja:
     mailer:
       confirmation_instructions:
         title: 【Camera-to-Culture】ご登録ありがとうございます！
-        You_can_confirm_your_account_email_through_the_link_below: 以下のリンクからアカウント登録を完了させてください！
+        explain_1: 以下のリンクからアカウント登録を完了させてください
+        Confirm_my_account: メールアドレスを承認
       email_changed:
         title: 【Cumera-to-Culture】メールアドレスの変更
-        We're_contacting_you_to_notify_you_that_your_email_is_being_changed_to: ご登録のメールアドレスの変更に失敗しました。失敗したメールアドレスは以下です。
-        We're_contacting_you_to_notify_you_that_your_email_has_been_changed_to: ご登録のメールアドレスを以下のメールアドレスに変更しました。
+        explain_1: ご登録のメールアドレスを変更します。メールアドレスの認証はまだ終わっていません。
+        explain_2: ご登録のメールアドレスを以下のメールアドレスに変更しました。
       passwords_change:
         title: 【Cumera-to-Culture】パスワード変更完了
-        We're_contacting_you_to_notify_you_that_your_password_has_been_changed.: パスワードが変更されました。
+        explain_1: パスワードが変更されました。
       reset_password_instructions:
         title: 【Cumera-to-Culture】パスワード変更確認
-        Someone_has_requested_a_link_to_change_your_password._You_can_do_this_through_the_link_below.: パスワード変更のためのリンクが発行されました。以下のリンクからパスワードの変更が行えます。
-        If_you_didn't_request_this,_please_ignore_this_email.: こちらのメールはパスワードリセット希望の操作により発行されています。
-        Your_password_won't_change_until_you_access_the_link_above_and_create_a_new_one.: 心当たりのない場合は、無視してください。リンク先にアクセスし、パスワード変更手続きを行わない限り、新しいパスワードは発行されません。
+        explain_1: パスワード変更のためのリンクが発行されました。以下のリンクからパスワードの変更が行えます。
+        Change_my_password: 'パスワードを変更する'
+        explain_2: このメールはパスワード変更手続きにより発行されています。
+        explain_3: もし、ご自身で変更手続きを行なっていない場合、リンクをクリックしないで下さい。リンク先にアクセスし、パスワード変更手続きを行わない限り、新しいパスワードは発行されません。
       unlock_instructions:
         title: 【Cumera-to-Culture】アカウント凍結解除確認
-        Your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts.: アカウントは、一定回数のログイン失敗により凍結されました。
-        Click_the_link_below_to_unlock_your_account: 凍結を解除するには、以下のリンクをクリックして下さい。
+        explain_1: あなたのアカウントは、一定回数のログイン失敗により凍結されました。
+        explain_2: 凍結を解除するには、以下のリンクをクリックして下さい。
+        Unlock_my_account: 凍結を解除
     passwords:
       edit:
         Change_your_password: パスワードを変更する
-        characters_minimum: 文字以上
+        characters_minimum: 6文字以上
         New_password: 新しいパスワード
-        Confirm_new_password: パスワード確認
+        Confirm_new_password: もう一度入力
         Change_my_password: パスワードを変更
       new:
         Forgot_your_password?: パスワードを変更する
         email: メールアドレス
         Send_me_reset_password_instructions: パスワード再発行メールを送る
-
         characters_minimum: 文字以上
         New_password: 新しいパスワード
         Confirm_new_password: パスワード確認
@@ -61,6 +63,7 @@ ja:
     registrations:
       new:
         sign_up: 新規登録
+        sign_up_with_FB: Facebookで会員登録
         name: お名前
         email: メールアドレス
         password: パスワード
@@ -71,9 +74,6 @@ ja:
         japanese: 日本語
         english: 英語
         chinese: 中国語
-        cs_introduction: 自己紹介を書いてください！
-        camera: 利用するカメラやレンズを教えて下さい！
-        cl_introduction: 自己紹介を書いてください！
         image: プロフィール画像
       edit:
         Edit_Settings: ユーザープロフィールの変更
@@ -97,6 +97,7 @@ ja:
     sessions:
       new:
         sign_in: ログイン
+        sign_in_with_FB: Facebookでログイン
         email: メールアドレス
         password: パスワード
         remember_me: ログイン状態を保持

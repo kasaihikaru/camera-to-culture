@@ -5,6 +5,8 @@ ja:
       back_to_top: 検索フォームへ
       sign-up: 新規登録
     how_to_use:
+      how_to_use: 利用の流れ
+      1_Search: ①検索
       back_to_top: 検索フォームへ
       sign-up: 新規登録
     terms_of_service_cs:
@@ -19,7 +21,7 @@ ja:
       2_Register_as_a_cameraman: ②カメラマン登録
       Next_register_as_a_cameraman: 次に、カメラマン登録を行います。
       register_as_cameraman: カメラマン登録へ
-      3_Edit_your_profile: ③プロフィールを登録
+      3_Edit_your_profile: ③プロフィール登録
       3_disc_1: メイン写真や価格、自己紹介を入力します
       3_disc_2: 入力が終わっていない場合は、検索し結果に表示されません。
       cl_settings: 設定画面へ

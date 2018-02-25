@@ -81,3 +81,4 @@ gem 'rmagick'#画像加工用
 gem 'omniauth'#FB認証
 gem 'omniauth-facebook'#FB認証
 gem 'google-analytics-rails'#forGA
+gem 'kaminari'#ページネーション

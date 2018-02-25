@@ -3,7 +3,7 @@
     <div class="col-12 col-md-4 offset-md-1">
       <h1><%= t(".sign_in")%></h1>
       <div class="fb-register-wrap">
-        <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, class: "fb-register" %>
+        <%= link_to t(".sign_in_with_FB"), user_facebook_omniauth_authorize_path, class: "fb-register" %>
       </div>
 
 
@@ -31,6 +31,7 @@
           </div>
         </div>
       <% end %>
+      <br><br>
 
       <%= render "users/shared/links" %>
     </div>

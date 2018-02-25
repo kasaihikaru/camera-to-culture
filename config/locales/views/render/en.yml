@@ -1,15 +1,69 @@
 ---
 en:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
-    show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  render:
+    home_search:
+      find_your_photographer: Find Your Photographer
+      select_category: Select Categories
+      for_business: Commercial Photos
+      commercial_photos_people: People（models）
+      commercial_photos_items: Items（apparel, cuisine）
+      for_private: Private Photos
+      event_photos: Events（wedding, traveling）
+      private_photo: Daily（family, couples, friends）
+      select_area: Select Prefectures
+      Hokkaido_area: Hokkaido Area
+      Tohoku_area: Tohoku Area
+      Kanto_area: Kanto Area
+      Hokushinetsu_area: Hokushinetsu Area
+      Tokai_area: Tokai Area
+      Kinki_area: Kinki Area
+      Chugoku_area: Chugoku Area
+      Shikoku_area: Shikoku Area
+      Kyushu_area: Kyushu Area
+      Hokkaido: Hokkaido
+      Aomori: Aomori
+      Iwate: Iwate
+      Akita: Akita
+      Miyagi: Miyagi
+      Yamagata: Yamagata
+      Fukushima: Fukushima
+      Tokyo: Tokyo
+      Kanagawa: Kanagawa
+      Saitama: Saitama
+      Chiba: Chiba
+      Ibaraki: Ibaraki
+      Tochigi: Tochigi
+      Gunma: Gunma
+      Yamanashi: Yamanashi
+      Niigata: Niigata
+      Nagano: Nagano
+      Toyama: Toyama
+      Ishikawa: Ishikawa
+      Fukui: Fukui
+      Aichi: Aichi
+      Gifu: Gifu
+      Shizuoka: Shizuoka
+      Mie: Mie
+      Osaka: Osaka
+      Hyōgo: Hyōgo
+      Kyoto: Kyoto
+      Shiga: Shiga
+      Nara: Nara
+      Wakayama: Wakayama
+      Tottori: Tottori
+      Shimane: Shimane
+      Okayama: Okayama
+      Hiroshima: Hiroshima
+      Yamaguchi: Yamaguchi
+      Tokushima: Tokushima
+      Kagawa: Kagawa
+      Ehime: Ehime
+      Kochi: Kochi
+      Fukuoka: Fukuoka
+      Saga: Saga
+      Nagasaki: Nagasaki
+      Kumamoto: Kumamoto
+      Oita: Oita
+      Miyazaki : Miyazaki
+      Kagoshima: Kagoshima
+      Okinawa: Okinawa

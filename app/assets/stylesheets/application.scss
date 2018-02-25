@@ -173,6 +173,20 @@ footer{
 
 
 
+//----------------- pagenatiom ------------------//
+.pagination{
+  .active .page-link{
+    background: #000000;
+    border-color: #000000
+  }
+  .page-link{
+    color: #000000;
+  }
+}
+
+
+
+
 
 //------------- devise, notice alert ---------------//
 .notice, .alert{

@@ -1,15 +1,68 @@
 ---
 tw:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
-    show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  render:
+    home_search:
+      select_category: 選擇照片用途
+      for_business: 商業利用
+      commercial_photos_people: 人像攝影（服裝模特、髮型模特）
+      commercial_photos_items: 物品寫真（物品、料理）
+      for_private: 私人寫真
+      event_photos: 紀念日攝影（婚禮、婚紗、旅行）
+      private_photo: 私人寫真（家人、戀人、朋友）
+      select_area: 選擇攝影地
+      Hokkaido_area: 北海道地區
+      Tohoku_area: 東北地區
+      Kanto_area: 関東地區
+      Hokushinetsu_area: 北信越地區
+      Tokai_area: 東海地區
+      Kinki_area: 近畿地區
+      Chugoku_area: 中国地區
+      Shikoku_area: 四国地區
+      Kyushu_area: 九州地區
+      Hokkaido: 北海道
+      Aomori: 青森縣肯
+      Iwate: 岩手縣
+      Akita: 秋田縣
+      Miyagi: 宮城縣
+      Yamagata: 山形縣
+      Fukushima: 福島縣
+      Tokyo: 東京
+      Kanagawa: 神奈川縣
+      Saitama: 埼玉縣
+      Chiba: 千葉縣
+      Ibaraki: 茨城縣
+      Tochigi: 栃木縣
+      Gunma: 群馬縣
+      Yamanashi: 山梨縣
+      Niigata: 新潟縣
+      Nagano: 長野縣
+      Toyama: 富山縣
+      Ishikawa: 石川縣
+      Fukui: 福井縣
+      Aichi: 愛知縣
+      Gifu: 岐阜縣
+      Shizuoka: 靜岡縣
+      Mie: 三重縣
+      Osaka: 大阪府
+      Hyōgo: 兵庫縣
+      Kyoto: 京都府
+      Shiga: 滋賀縣
+      Nara: 奈良縣
+      Wakayama: 和歌山縣
+      Tottori: 鳥取縣
+      Shimane: 島根縣
+      Okayama: 岡山縣
+      Hiroshima: 廣島縣
+      Yamaguchi: 山口縣
+      Tokushima: 德島縣
+      Kagawa: 香川縣
+      Ehime: 愛媛縣
+      Kochi: 高知縣
+      Fukuoka: 福岡縣
+      Saga: 佐賀縣
+      Nagasaki: 長崎縣
+      Kumamoto: 熊本縣
+      Oita: 大分縣
+      Miyazaki: 宮崎縣
+      Kagoshima: 鹿兒島縣
+      Okinawa: 沖繩縣
