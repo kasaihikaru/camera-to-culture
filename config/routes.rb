@@ -52,6 +52,7 @@ Rails.application.routes.draw do
 				get 'to_be_a_cameraman'
 				get 'how_to_use'
 				get 'use_with_phone'
+				get 'contact_us'
 			end
 		end
 	end

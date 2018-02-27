@@ -9,7 +9,7 @@ $subprim-col      : #51C4AA;
 @media screen and (min-width: 550px) {
 	#home-top{
 		height: 100%;
-		background-image: image-url("home-top.jpg");
+		background-image: image-url("home-top.png");
 		background-attachment: fixed;
 		background-position: center 50px ;
 		background-size: cover;
@@ -36,7 +36,7 @@ $subprim-col      : #51C4AA;
 @media screen and (max-width: 549px) {
 	#home-top{
 		height: 100%;
-		background-image: image-url("home-top.jpg");
+		background-image: image-url("home-top.png");
 		background-position: center;
 		display: flex;
 		background-size: cover;

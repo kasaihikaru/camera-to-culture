@@ -4,11 +4,12 @@ en:
     application:
       language: Language
       about: About
-      sign-up: Sign Up
-      sign-in: Sign In
+      sign-up: Join Free
+      sign-in: Login
       mypage: Mypage
       message: Message
       how_to_use: How to Use
+      contact_us: Contact Us
       use_with_phone: Use with Smartphone
       terms_of_service_cs: Terms of Service
       cameraman: Photographer

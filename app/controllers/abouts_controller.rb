@@ -47,5 +47,12 @@ class AboutsController < ApplicationController
 		end
 	end
 
+	def contact_us
+		if user_signed_in?
+			@user = current_user
+			@cl = @user.clients.active.first
+			@cs = @user.customers.active.first
+		end
+	end
 
 end

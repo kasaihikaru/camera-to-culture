@@ -54,12 +54,12 @@
 				      <%= link_to t(".message"), user_messages_path(current_user), class: "nav-link" %>
 				    </li>
 		<!-- 未ログイン時 -->
-			    <% else %>
-						<li class="nav-item">
-							<%= link_to t(".sign-up"), new_user_registration_path, class: 'nav-link' %>
-						</li>
+					<% else %>
 						<li class="nav-item">
 							<%= link_to t(".sign-in"), new_user_session_path, class: "nav-link" %>
+						</li>
+						<li class="nav-item">
+							<%= link_to t(".sign-up"), new_user_registration_path, class: 'nav-link' %>
 						</li>
 					<% end %>
 		  </div>
@@ -82,12 +82,10 @@
 				<div class="container">
 					<div class="row footer-upper-md">
 						<div class="col-md-4 offset-md-2 col-lg-3 offset-lg-3 d-none d-md-block">
-							<p class="bold">Camera-to-Culture</p>
+
 
 							<!-- サービスについて -->
-							<%= link_to about_path, class: "nav-link" do %>
-								<%= t(".about") %>
-							<% end %>
+							<p class="bold">Camera-to-Culture</p>
 
 							<!-- 使い方 -->
 							<%= link_to how_to_use_about_path, class: "nav-link" do %>
@@ -99,10 +97,16 @@
 								<%= t(".use_with_phone") %>
 							<% end %> -->
 
+							<!-- お問い合わせ -->
+							<%= link_to contact_us_about_path, class: "nav-link" do %>
+								<%= t(".contact_us") %>
+							<% end %>
+
 							<!-- 利用規約 -->
 							<%= link_to terms_of_service_cs_about_path, class: "nav-link" do %>
 								<%= t(".terms_of_service_cs") %>
 							<% end %>
+
 						</div>
 
 
