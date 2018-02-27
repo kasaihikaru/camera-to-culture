@@ -130,250 +130,266 @@
       <!-- 出張可能都道府県 -->
         <div class="field">
           <p class="bold"><%= t(".prefecture_form")%></p>
+          <p><%= t(".Hokkaido_area")%></p>
           <div class="indent">
-            <p><%= t(".Hokkaido_area")%></p>
             <% if @prefecture_ids.include?(1) %>
-              <input type="checkbox" name="prefecture_id[]" value="1", checked="checked"><%= t(".Hokkaido")%>
+              <input type="checkbox" name="prefecture_id[]" value="1", checked="checked" id="DD_1"><label for="DD_1"><%= t(".Hokkaido")%></label>
             <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="1"><%= t(".Hokkaido")%>
+              <input type="checkbox" name="prefecture_id[]" value="1" id="Hokkaido_2"><label for="Hokkaido_2"><%= t(".Hokkaido")%></label>
             <% end %>
-            <p><%= t(".Tohoku_area")%></p>
+          </div>
+          <p><%= t(".Tohoku_area")%></p>
+          <div class="indent">
             <% if @prefecture_ids.include?(2) %>
-              <input type="checkbox" name="prefecture_id[]" value="2", checked="checked"><%= t(".Aomori")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="2"><%= t(".Aomori")%>
+              <input type="checkbox" name="prefecture_id[]" value="2", checked="checked" id="Aomori_1"><label for="Aomori_1"><%= t(".Aomori")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="2" id="Aomori_2"><label for="Aomori_2"><%= t(".Aomori")%></label></label>
             <% end %>
             <% if @prefecture_ids.include?(3) %>
-              <input type="checkbox" name="prefecture_id[]" value="3", checked="checked"><%= t(".Iwate")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="3"><%= t(".Iwate")%>
+              <input type="checkbox" name="prefecture_id[]" value="3", checked="checked" id="Iwate_1"><label for="Iwate_1"><%= t(".Iwate")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="3" id="Iwate_2"><label for="Iwate_2"><%= t(".Iwate")%></label>
             <% end %>
             <% if @prefecture_ids.include?(4) %>
-              <input type="checkbox" name="prefecture_id[]" value="4", checked="checked"><%= t(".Akita")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="4"><%= t(".Akita")%>
+              <input type="checkbox" name="prefecture_id[]" value="4", checked="checked" id="Akita_1"><label for="Akita_1"><%= t(".Akita")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="4" id="Akita_2"><label for="Akita_2"><%= t(".Akita")%></label>
             <% end %>
             <% if @prefecture_ids.include?(5) %>
-              <input type="checkbox" name="prefecture_id[]" value="5", checked="checked"><%= t(".Miyagi")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="5"><%= t(".Miyagi")%>
+              <input type="checkbox" name="prefecture_id[]" value="5", checked="checked" id="Miyagi_1"><label for="Miyagi_1"><%= t(".Miyagi")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="5" id="Miyagi_2"><label for="Miyagi_2"><%= t(".Miyagi")%></label>
             <% end %>
             <% if @prefecture_ids.include?(6) %>
-              <input type="checkbox" name="prefecture_id[]" value="6", checked="checked"><%= t(".Yamagata")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="6"><%= t(".Yamagata")%>
+              <input type="checkbox" name="prefecture_id[]" value="6", checked="checked" id="Yamagata_1"><label for="Yamagata_1"><%= t(".Yamagata")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="6" id="Yamagata_2"><label for="Yamagata_2"><%= t(".Yamagata")%></label>
             <% end %>
             <% if @prefecture_ids.include?(7) %>
-              <input type="checkbox" name="prefecture_id[]" value="7", checked="checked"><%= t(".Fukushima")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="7"><%= t(".Fukushima")%>
+              <input type="checkbox" name="prefecture_id[]" value="7", checked="checked" id="Fukushima_1"><label for="Fukushima_1"><%= t(".Fukushima")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="7" id="Fukushima_2"><label for="Fukushima_2"><%= t(".Fukushima")%></label>
             <% end %>
-            <p><%= t(".Kanto_area")%></p>
+          </div>
+          <p><%= t(".Kanto_area")%></p>
+          <div class="indent">
             <% if @prefecture_ids.include?(8) %>
-              <input type="checkbox" name="prefecture_id[]" value="8", checked="checked"><%= t(".Tokyo")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="8"><%= t(".Tokyo")%>
+              <input type="checkbox" name="prefecture_id[]" value="8", checked="checked" id="Tokyo_1"><label for="Tokyo_1"><%= t(".Tokyo")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="8" id="Tokyo_2"><label for="Tokyo_2"><%= t(".Tokyo")%></label>
             <% end %>
             <% if @prefecture_ids.include?(9) %>
-              <input type="checkbox" name="prefecture_id[]" value="9", checked="checked"><%= t(".Kanagawa")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="9"><%= t(".Kanagawa")%>
+              <input type="checkbox" name="prefecture_id[]" value="9", checked="checked" id="Kanagawa_1"><label for="Kanagawa_1"><%= t(".Kanagawa")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="9" id="Kanagawa_2"><label for="Kanagawa_2"><%= t(".Kanagawa")%></label>
             <% end %>
             <% if @prefecture_ids.include?(10) %>
-              <input type="checkbox" name="prefecture_id[]" value="10", checked="checked"><%= t(".Saitama")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="10"><%= t(".Saitama")%>
+              <input type="checkbox" name="prefecture_id[]" value="10", checked="checked" id="Saitama_1"><label for="Saitama_1"><%= t(".Saitama")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="10" id="Saitama_2"><label for="Saitama_2"><%= t(".Saitama")%></label>
             <% end %>
             <% if @prefecture_ids.include?(11) %>
-              <input type="checkbox" name="prefecture_id[]" value="11", checked="checked"><%= t(".Chiba")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="11"><%= t(".Chiba")%>
+              <input type="checkbox" name="prefecture_id[]" value="11", checked="checked" id="Chiba_1"><label for="Chiba_1"><%= t(".Chiba")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="11" id="Chiba_2"><label for="Chiba_2"><%= t(".Chiba")%></label>
             <% end %>
             <% if @prefecture_ids.include?(12) %>
-              <input type="checkbox" name="prefecture_id[]" value="12", checked="checked"><%= t(".Ibaraki")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="12"><%= t(".Ibaraki")%>
+              <input type="checkbox" name="prefecture_id[]" value="12", checked="checked" id="Ibaraki_1"><label for="Ibaraki_1"><%= t(".Ibaraki")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="12" id="Ibaraki_2"><label for="Ibaraki_2"><%= t(".Ibaraki")%></label>
             <% end %>
             <% if @prefecture_ids.include?(13) %>
-              <input type="checkbox" name="prefecture_id[]" value="13", checked="checked"><%= t(".Tochigi")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="13"><%= t(".Tochigi")%>
+              <input type="checkbox" name="prefecture_id[]" value="13", checked="checked" id="Tochigi_1"><label for="Tochigi_1"><%= t(".Tochigi")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="13" id="Tochigi_2"><label for="Tochigi_2"><%= t(".Tochigi")%></label>
             <% end %>
             <% if @prefecture_ids.include?(14) %>
-              <input type="checkbox" name="prefecture_id[]" value="14", checked="checked"><%= t(".Gunma")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="14"><%= t(".Gunma")%>
+              <input type="checkbox" name="prefecture_id[]" value="14", checked="checked" id="Gunma_1"><label for="Gunma_1"><%= t(".Gunma")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="14" id="Gunma_2"><label for="Gunma_2"><%= t(".Gunma")%></label>
             <% end %>
             <% if @prefecture_ids.include?(15) %>
-              <input type="checkbox" name="prefecture_id[]" value="15", checked="checked"><%= t(".Yamanashi")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="15"><%= t(".Yamanashi")%>
+              <input type="checkbox" name="prefecture_id[]" value="15", checked="checked" id="Yamanashi_1"><label for="Yamanashi_1"><%= t(".Yamanashi")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="15" id="Yamanashi_2"><label for="Yamanashi_2"><%= t(".Yamanashi")%></label>
             <% end %>
-            <p><%= t(".Hokushinetsu_area")%></p>
+          </div>
+          <p><%= t(".Hokushinetsu_area")%></p>
+          <div class="indent">
             <% if @prefecture_ids.include?(16) %>
-              <input type="checkbox" name="prefecture_id[]" value="16", checked="checked"><%= t(".Niigata")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="16"><%= t(".Niigata")%>
+              <input type="checkbox" name="prefecture_id[]" value="16", checked="checked" id="Niigata_1"><label for="Niigata_1"><%= t(".Niigata")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="16" id="Niigata_2"><label for="Niigata_2"><%= t(".Niigata")%></label>
             <% end %>
             <% if @prefecture_ids.include?(17) %>
-              <input type="checkbox" name="prefecture_id[]" value="17", checked="checked"><%= t(".Nagano")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="17"><%= t(".Nagano")%>
+              <input type="checkbox" name="prefecture_id[]" value="17", checked="checked" id="Nagano_1"><label for="Nagano_1"><%= t(".Nagano")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="17" id="Nagano_2"><label for="Nagano_2"><%= t(".Nagano")%></label>
             <% end %>
             <% if @prefecture_ids.include?(18) %>
-              <input type="checkbox" name="prefecture_id[]" value="18", checked="checked"><%= t(".Toyama")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="18"><%= t(".Toyama")%>
+              <input type="checkbox" name="prefecture_id[]" value="18", checked="checked" id="Toyama_1"><label for="Toyama_1"><%= t(".Toyama")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="18" id="Toyama_2"><label for="Toyama_2"><%= t(".Toyama")%></label>
             <% end %>
             <% if @prefecture_ids.include?(19) %>
-              <input type="checkbox" name="prefecture_id[]" value="19", checked="checked"><%= t(".Ishikawa")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="19"><%= t(".Ishikawa")%>
+              <input type="checkbox" name="prefecture_id[]" value="19", checked="checked" id="Ishikawa_1"><label for="Ishikawa_1"><%= t(".Ishikawa")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="19" id="Ishikawa_2"><label for="Ishikawa_2"><%= t(".Ishikawa")%></label>
             <% end %>
             <% if @prefecture_ids.include?(20) %>
-              <input type="checkbox" name="prefecture_id[]" value="20", checked="checked"><%= t(".Fukui")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="20"><%= t(".Fukui")%>
+              <input type="checkbox" name="prefecture_id[]" value="20", checked="checked" id="Fukui_1"><label for="Fukui_1"><%= t(".Fukui")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="20" id="Fukui_2"><label for="Fukui_2"><%= t(".Fukui")%></label>
             <% end %>
-            <p><%= t(".Tokai_area")%></p>
+          </div>
+          <p><%= t(".Tokai_area")%></p>
+          <div class="indent">
             <% if @prefecture_ids.include?(21) %>
-              <input type="checkbox" name="prefecture_id[]" value="21", checked="checked"><%= t(".Aichi")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="21"><%= t(".Aichi")%>
+              <input type="checkbox" name="prefecture_id[]" value="21", checked="checked" id="Aichi_1"><label for="Aichi_1"><%= t(".Aichi")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="21" id="Aichi_2"><label for="Aichi_2"><%= t(".Aichi")%></label>
             <% end %>
             <% if @prefecture_ids.include?(22) %>
-              <input type="checkbox" name="prefecture_id[]" value="22", checked="checked"><%= t(".Gifu")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="22"><%= t(".Gifu")%>
+              <input type="checkbox" name="prefecture_id[]" value="22", checked="checked" id="Gifu_1"><label for="Gifu_1"><%= t(".Gifu")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="22" id="Gifu_2"><label for="Gifu_2"><%= t(".Gifu")%></label>
             <% end %>
             <% if @prefecture_ids.include?(23) %>
-              <input type="checkbox" name="prefecture_id[]" value="23", checked="checked"><%= t(".Shizuoka")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="23"><%= t(".Shizuoka")%>
+              <input type="checkbox" name="prefecture_id[]" value="23", checked="checked" id="Shizuoka_1"><label for="Shizuoka_1"><%= t(".Shizuoka")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="23" id="Shizuoka_2"><label for="Shizuoka_2"><%= t(".Shizuoka")%></label>
             <% end %>
             <% if @prefecture_ids.include?(24) %>
-              <input type="checkbox" name="prefecture_id[]" value="24", checked="checked"><%= t(".Mie")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="24"><%= t(".Mie")%>
+              <input type="checkbox" name="prefecture_id[]" value="24", checked="checked" id="Mie_1"><label for="Mie_1"><%= t(".Mie")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="24" id="Mie_2"><label for="Mie_2"><%= t(".Mie")%></label>
             <% end %>
-            <p><%= t(".Kinki_area")%></p>
+          </div>
+          <p><%= t(".Kinki_area")%></p>
+          <div class="indent">
             <% if @prefecture_ids.include?(25) %>
-              <input type="checkbox" name="prefecture_id[]" value="25", checked="checked"><%= t(".Osaka")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="25"><%= t(".Osaka")%>
+              <input type="checkbox" name="prefecture_id[]" value="25", checked="checked" id="Osaka_1"><label for="Osaka_1"><%= t(".Osaka")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="25" id="Osaka_2"><label for="Osaka_2"><%= t(".Osaka")%></label>
             <% end %>
             <% if @prefecture_ids.include?(26) %>
-              <input type="checkbox" name="prefecture_id[]" value="26", checked="checked"><%= t(".Hyōgo")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="26"><%= t(".Hyōgo")%>
+              <input type="checkbox" name="prefecture_id[]" value="26", checked="checked" id="Hyōgo_1"><label for="Hyōgo_1"><%= t(".Hyōgo")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="26" id="Hyōgo_2"><label for="Hyōgo_2"><%= t(".Hyōgo")%></label>
             <% end %>
             <% if @prefecture_ids.include?(27) %>
-              <input type="checkbox" name="prefecture_id[]" value="27", checked="checked"><%= t(".Kyoto")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="27"><%= t(".Kyoto")%>
+              <input type="checkbox" name="prefecture_id[]" value="27", checked="checked" id="Kyoto_1"><label for="Kyoto_1"><%= t(".Kyoto")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="27" id="Kyoto_2"><label for="Kyoto_2"><%= t(".Kyoto")%></label>
             <% end %>
             <% if @prefecture_ids.include?(28) %>
-              <input type="checkbox" name="prefecture_id[]" value="28", checked="checked"><%= t(".Shiga")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="28"><%= t(".Shiga")%>
+              <input type="checkbox" name="prefecture_id[]" value="28", checked="checked" id="Shiga_1"><label for="Shiga_1"><%= t(".Shiga")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="28" id="Shiga_2"><label for="Shiga_2"><%= t(".Shiga")%></label>
             <% end %>
             <% if @prefecture_ids.include?(29) %>
-              <input type="checkbox" name="prefecture_id[]" value="29", checked="checked"><%= t(".Nara")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="29"><%= t(".Nara")%>
+              <input type="checkbox" name="prefecture_id[]" value="29", checked="checked" id="Nara_1"><label for="Nara_1"><%= t(".Nara")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="29" id="Nara_2"><label for="Nara_2"><%= t(".Nara")%></label>
             <% end %>
             <% if @prefecture_ids.include?(30) %>
-              <input type="checkbox" name="prefecture_id[]" value="30", checked="checked"><%= t(".Wakayama")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="30"><%= t(".Wakayama")%>
+              <input type="checkbox" name="prefecture_id[]" value="30", checked="checked" id="Wakayama_1"><label for="Wakayama_1"><%= t(".Wakayama")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="30" id="Wakayama_2"><label for="Wakayama_2"><%= t(".Wakayama")%></label>
             <% end %>
-            <p><%= t(".Chugoku_area")%></p>
+          </div>
+          <p><%= t(".Chugoku_area")%></p>
+          <div class="indent">
             <% if @prefecture_ids.include?(31) %>
-              <input type="checkbox" name="prefecture_id[]" value="31", checked="checked"><%= t(".Tottori")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="31"><%= t(".Tottori")%>
+              <input type="checkbox" name="prefecture_id[]" value="31", checked="checked" id="Tottori_1"><label for="Tottori_1"><%= t(".Tottori")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="31" id="Tottori_2"><label for="Tottori_2"><%= t(".Tottori")%></label>
             <% end %>
             <% if @prefecture_ids.include?(32) %>
-              <input type="checkbox" name="prefecture_id[]" value="32", checked="checked"><%= t(".Shimane")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="32"><%= t(".Shimane")%>
+              <input type="checkbox" name="prefecture_id[]" value="32", checked="checked" id="Shimane_1"><label for="Shimane_1"><%= t(".Shimane")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="32" id="Shimane_2"><label for="Shimane_2"><%= t(".Shimane")%></label>
             <% end %>
             <% if @prefecture_ids.include?(33) %>
-              <input type="checkbox" name="prefecture_id[]" value="33", checked="checked"><%= t(".Okayama")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="33"><%= t(".Okayama")%>
+              <input type="checkbox" name="prefecture_id[]" value="33", checked="checked" id="Okayama_1"><label for="Okayama_1"><%= t(".Okayama")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="33" id="Okayama_2"><label for="Okayama_2"><%= t(".Okayama")%></label>
             <% end %>
             <% if @prefecture_ids.include?(34) %>
-              <input type="checkbox" name="prefecture_id[]" value="34", checked="checked"><%= t(".Hiroshima")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="34"><%= t(".Hiroshima")%>
+              <input type="checkbox" name="prefecture_id[]" value="34", checked="checked" id="Hiroshima_1"><label for="Hiroshima_1"><%= t(".Hiroshima")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="34" id="Hiroshima_2"><label for="Hiroshima_2"><%= t(".Hiroshima")%></label>
             <% end %>
             <% if @prefecture_ids.include?(35) %>
-              <input type="checkbox" name="prefecture_id[]" value="35", checked="checked"><%= t(".Yamaguchi")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="35"><%= t(".Yamaguchi")%>
+              <input type="checkbox" name="prefecture_id[]" value="35", checked="checked" id="Yamaguchi_1"><label for="Yamaguchi_1"><%= t(".Yamaguchi")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="35" id="Yamaguchi_2"><label for="Yamaguchi_2"><%= t(".Yamaguchi")%></label>
             <% end %>
-            <p><%= t(".Shikoku_area")%></p>
+          </div>
+          <p><%= t(".Shikoku_area")%></p>
+          <div class="indent">
             <% if @prefecture_ids.include?(36) %>
-              <input type="checkbox" name="prefecture_id[]" value="36", checked="checked"><%= t(".Tokushima")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="36"><%= t(".Tokushima")%>
+              <input type="checkbox" name="prefecture_id[]" value="36", checked="checked" id="Tokushima_1"><label for="Tokushima_1"><%= t(".Tokushima")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="36" id="Tokushima_2"><label for="Tokushima_2"><%= t(".Tokushima")%></label>
             <% end %>
             <% if @prefecture_ids.include?(37) %>
-              <input type="checkbox" name="prefecture_id[]" value="37", checked="checked"><%= t(".Kagawa")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="37"><%= t(".Kagawa")%>
+              <input type="checkbox" name="prefecture_id[]" value="37", checked="checked" id="Kagawa_1"><label for="Kagawa_1"><%= t(".Kagawa")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="37" id="Kagawa_2"><label for="Kagawa_2"><%= t(".Kagawa")%></label>
             <% end %>
             <% if @prefecture_ids.include?(38) %>
-              <input type="checkbox" name="prefecture_id[]" value="38", checked="checked"><%= t(".Ehime")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="38"><%= t(".Ehime")%>
+              <input type="checkbox" name="prefecture_id[]" value="38", checked="checked" id="Ehime_1"><label for="Ehime_1"><%= t(".Ehime")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="38" id="Ehime_2"><label for="Ehime_2"><%= t(".Ehime")%></label>
             <% end %>
             <% if @prefecture_ids.include?(39) %>
-              <input type="checkbox" name="prefecture_id[]" value="39", checked="checked"><%= t(".Kochi")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="39"><%= t(".Kochi")%>
+              <input type="checkbox" name="prefecture_id[]" value="39", checked="checked" id="Kochi_1"><label for="Kochi_1"><%= t(".Kochi")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="39" id="Kochi_2"><label for="Kochi_2"><%= t(".Kochi")%></label>
             <% end %>
-            <p><%= t(".Kyushu_area")%></p>
+          </div>
+          <p><%= t(".Kyushu_area")%></p>
+          <div class="indent">
             <% if @prefecture_ids.include?(40) %>
-              <input type="checkbox" name="prefecture_id[]" value="40", checked="checked"><%= t(".Fukuoka")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="40"><%= t(".Fukuoka")%>
+              <input type="checkbox" name="prefecture_id[]" value="40", checked="checked" id="Fukuoka_1"><label for="Fukuoka_1"><%= t(".Fukuoka")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="40" id="Fukuoka_2"><label for="Fukuoka_2"><%= t(".Fukuoka")%></label>
             <% end %>
             <% if @prefecture_ids.include?(41) %>
-              <input type="checkbox" name="prefecture_id[]" value="41", checked="checked"><%= t(".Saga")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="41"><%= t(".Saga")%>
+              <input type="checkbox" name="prefecture_id[]" value="41", checked="checked" id="Saga_1"><label for="Saga_1"><%= t(".Saga")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="41" id="Saga_2"><label for="Saga_2"><%= t(".Saga")%></label>
             <% end %>
             <% if @prefecture_ids.include?(42) %>
-              <input type="checkbox" name="prefecture_id[]" value="42", checked="checked"><%= t(".Nagasaki")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="42"><%= t(".Nagasaki")%>
+              <input type="checkbox" name="prefecture_id[]" value="42", checked="checked" id="Nagasaki_1"><label for="Nagasaki_1"><%= t(".Nagasaki")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="42" id="Nagasaki_2"><label for="Nagasaki_2"><%= t(".Nagasaki")%></label>
             <% end %>
             <% if @prefecture_ids.include?(43) %>
-              <input type="checkbox" name="prefecture_id[]" value="43", checked="checked"><%= t(".Kumamoto")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="43"><%= t(".Kumamoto")%>
+              <input type="checkbox" name="prefecture_id[]" value="43", checked="checked" id="Kumamoto_1"><label for="Kumamoto_1"><%= t(".Kumamoto")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="43" id="Kumamoto_2"><label for="Kumamoto_2"><%= t(".Kumamoto")%></label>
             <% end %>
             <% if @prefecture_ids.include?(44) %>
-              <input type="checkbox" name="prefecture_id[]" value="44", checked="checked"><%= t(".Oita")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="44"><%= t(".Oita")%>
+              <input type="checkbox" name="prefecture_id[]" value="44", checked="checked" id="Oita_1"><label for="Oita_1"><%= t(".Oita")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="44" id="Oita_2"><label for="Oita_2"><%= t(".Oita")%></label>
             <% end %>
             <% if @prefecture_ids.include?(45) %>
-              <input type="checkbox" name="prefecture_id[]" value="45", checked="checked"><%= t(".Miyazaki ")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="45"><%= t(".Miyazaki")%>
+              <input type="checkbox" name="prefecture_id[]" value="45", checked="checked" id="Miyazaki_1"><label for="Miyazaki_1"><%= t(".Miyazaki ")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="45" id="Miyazaki_2"><label for="Miyazaki_2"><%= t(".Miyazaki")%></label>
             <% end %>
             <% if @prefecture_ids.include?(46) %>
-              <input type="checkbox" name="prefecture_id[]" value="46", checked="checked"><%= t(".Kagoshima")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="46"><%= t(".Kagoshima")%>
+              <input type="checkbox" name="prefecture_id[]" value="46", checked="checked" id="Kagoshima_1"><label for="Kagoshima_1"><%= t(".Kagoshima")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="46" id="Kagoshima_2"><label for="Kagoshima_2"><%= t(".Kagoshima")%></label>
             <% end %>
             <% if @prefecture_ids.include?(47) %>
-              <input type="checkbox" name="prefecture_id[]" value="47", checked="checked"><%= t(".Okinawa")%>
-            <% else %>
-              <input type="checkbox" name="prefecture_id[]" value="47"><%= t(".Okinawa")%>
+              <input type="checkbox" name="prefecture_id[]" value="47", checked="checked" id="Okinawa_1"><label for="Okinawa_1"><%= t(".Okinawa")%>
+            </label><% else %>
+              <input type="checkbox" name="prefecture_id[]" value="47" id="Okinawa_2"><label for="Okinawa_2"><%= t(".Okinawa")%></label>
             <% end %>
           </div>
         </div>
