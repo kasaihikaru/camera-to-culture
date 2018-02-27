@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20180211030124) do
   create_table "client_portfolios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "client_id"
     t.string "image"
+    t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_client_portfolios_on_client_id"
