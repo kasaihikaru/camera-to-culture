@@ -23,32 +23,71 @@
         <!-- カテゴリー -->
         <div class="field">
           <p class="bold"><%= t(".category_form")%></p>
-          <div class="indent">
-            <% if @category_ids.include?(1) %>
-              <input type="checkbox" name="category_id[]" value="1", checked="checked"><%= t(".commercial_photos_people")%>
-            <% else %>
-              <input type="checkbox" name="category_id[]" value="1"><%= t(".commercial_photos_people")%>
-            <% end %>
-            <br>
-            <% if @category_ids.include?(2) %>
-              <input type="checkbox" name="category_id[]" value="2", checked="checked"><%= t(".commercial_photos_items")%>
-            <% else %>
-              <input type="checkbox" name="category_id[]" value="2"><%= t(".commercial_photos_items")%>
-            <% end %>
-            <br>
-            <% if @category_ids.include?(3) %>
-              <input type="checkbox" name="category_id[]" value="3", checked="checked"><%= t(".event_photos")%>
-            <% else %>
-              <input type="checkbox" name="category_id[]" value="3"><%= t(".event_photos")%>
-            <% end %>
-            <br>
-            <% if @category_ids.include?(4) %>
-              <input type="checkbox" name="category_id[]" value="4", checked="checked"><%= t(".private_photo")%>
-            <% else %>
-              <input type="checkbox" name="category_id[]" value="4"><%= t(".private_photo")%>
-            <% end %>
-          </div>
+            <div class="indent">
+              <label class=checkbox>
+                <% if @category_ids.include?(1) %>
+                  <input type="checkbox" name="category_id[]" value="1", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".commercial_photos_people")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="1"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".commercial_photos_people")%></span>
+                  </div>
+                <% end %>
+              </label><br>
+              <label class=checkbox>
+                <% if @category_ids.include?(2) %>
+                  <input type="checkbox" name="category_id[]" value="2", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".commercial_photos_items")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="2"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".commercial_photos_items")%></span>
+                  </div>
+                <% end %>
+              </label><br>
+              <label class=checkbox>
+                <% if @category_ids.include?(3) %>
+                  <input type="checkbox" name="category_id[]" value="3", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".event_photos")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="3"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".event_photos")%></span>
+                  </div>
+                <% end %>
+              </label><br>
+              <label class=checkbox>
+                <% if @category_ids.include?(4) %>
+                  <input type="checkbox" name="category_id[]" value="4", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".private_photo")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="4"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".private_photo")%></span>
+                  </div>
+                <% end %>
+              </label>
+            </div>
         </div>
+
+
+
+
+
+
+
+
+
+
 
 
       <!-- 価格 -->
