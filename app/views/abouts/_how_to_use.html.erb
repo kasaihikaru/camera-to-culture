@@ -1,7 +1,7 @@
 <div class="container-fluid about about-3">
 	<h1><%= t(".how_to_use") %></h1>
 	<br><br>
-	<p1>①検索</p1>
+	<p1><%= t(".1_Search") %></p1>
 	<div class="row about-inner">
 		<div class="col-12 col-md-4 offset-md-2">
 			<img alt="search" src="/images/about-top.png" class="img-phone">
@@ -9,15 +9,15 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				簡単にカメラマンを検索できます。<br>
-				ポートフォリオやレビューからお気に入りのカメラマンを探してください。<br>
+				<%= t(".1_disc_1") %><br>
+				<%= t(".1_disc_2") %><br>
 				<%= link_to t(".back_to_top"), home_path, class: "about-btn" %>
 			</p2>
 		</div>
 	</div>
 
 
-	<p1>②予約</p1>
+	<p1><%= t(".2_Reserve") %></p1>
 	<div class="row about-inner">
 		<div class="col-12 col-md-4 offset-md-2">
 			<img alt="reserve" src="/images/about-reserve.png" class="img-phone">
@@ -25,9 +25,9 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				料金やスケジュールをみて、予約します。<br>
-				何か質問があれば、メッセージを送ることができます。<br>
-				予約やメッセージ送信を行うにはユーザー登録が必要です。<br>
+				<%= t(".2_disc_1") %><br>
+				<%= t(".2_disc_2") %><br>
+				<%= t(".2_disc_3") %><br>
 				<% unless user_signed_in? %>
 					<%= link_to t(".sign-up"), new_user_registration_path, class: "about-btn" %>
 				<% end %>
@@ -36,31 +36,31 @@
 	</div>
 
 
-	<p1>③撮影</p1>
+	<p1><%= t(".3_Photographing") %></p1>
 	<div class="row about-inner">
 		<div class="col-12 col-md-4 offset-md-2">
 			<img alt="search" src="/images/about-search.png" class="img-phone">
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				集合し、撮影を行います。<br>
+				<%= t(".3_disc_1") %><br>
 			</p2>
 		</div>
 	</div>
 
-	<p1>④写真受け取り</p1>
+	<p1><%= t(".4_Recieve_photos") %></p1>
 	<div class="row about-inner">
 		<div class="col-12 col-md-4 offset-md-2">
 			<img alt="search" src="/images/about-search.png" class="img-phone">
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				後日、写真が納品されます。<br>
+				<%= t(".4_disc_1") %><br>
 			</p2>
 		</div>
 	</div>
 
-	<p1>⑤レビュー</p1>
+	<p1><%= t(".5_Review") %></p1>
 	<div class="row about-inner">
 		<div class="col-12 col-md-4 offset-md-2">
 			<img alt="search" src="/images/about-search.png" class="img-phone">

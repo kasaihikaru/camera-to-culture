@@ -6,13 +6,14 @@ ja:
       camera: 撮影に使うカメラについて
       introduction: 自己紹介
       main_image: メイン写真を登録
-      main_image_explain: トップサンプル写真として表示されます。
+      main_image_explain: 検索時、トップのサンプル写真として表示されます。
       category_form: 撮影可能な写真カテゴリー
-      commercial_photos_people: ビシネス用ヒト写真（ファッションモデル、ヘアモデル）
-      commercial_photos_items: ビジネス用モノ写真（アイテム、料理）
+      commercial_photos_people: 商用ヒト写真（ファッションモデル、ヘアモデル）
+      commercial_photos_items: 商用モノ写真（アイテム、料理）
       event_photos: イベント写真（結婚式、七五三、旅行）
-      private_photo: プライベート写真（家族、恋人、友達）
-      prime_price_form: メイン価格
+      private_photo: 日常写真（家族、恋人、友達）
+      prime_price_form: 撮影価格
+      fill_your_main_price: メインの価格を入力し、細かな設定はオプションから登録してください。
       price_per_hour: １時間あたり
       minimum_hours: 最低受付時間
       h: 時間
@@ -75,7 +76,7 @@ ja:
       Nagasaki: 長崎県
       Kumamoto: 熊本県
       Oita: 大分県
-      Miyazaki : 宮崎県
+      Miyazaki: 宮崎県
       Kagoshima: 鹿児島県
       Okinawa: 沖縄県
       upload_portfolio: サンプル写真をアップロード

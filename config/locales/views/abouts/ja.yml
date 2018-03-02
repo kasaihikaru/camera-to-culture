@@ -2,13 +2,42 @@
 ja:
   abouts:
     show:
-      back_to_top: 検索フォームへ
-      sign-up: 新規登録
+      about_1_1: その瞬間にしかない価値を切り取る写真
+      about_1_2: Camera-to-Cultureは
+      about_1_3: 全てのひとへ
+      about_1_4: 「写真撮影をもっと身近にする」
+      about_1_5: お手伝いをします
+      about_2_1: 子供が生まれたこのタイミングで、家族写真を
+      about_2_2: 自分の宣材写真を
+      about_2_3: 自然に恋人との旅行中の写真を
+      about_2_4: 結婚式用の写真を
+      about_2_5: 飲食店のメニュー表に使う写真を
+      about_2_6: 色んな「撮りたい」と
+      about_2_7: 色んな「撮ってほしい」を
+      about_2_8: より自由に結ぶことを目指しています
     how_to_use:
       how_to_use: 利用の流れ
       1_Search: ①検索
+      1_disc_1: 簡単にカメラマンを検索できます。
+      1_disc_2: ポートフォリオやレビューからお気に入りのカメラマンを探してください。
       back_to_top: 検索フォームへ
+      2_Reserve: ②予約
+      2_disc_1: 料金やスケジュールをみて、予約します。
+      2_disc_2: 何か質問があれば、事前にメッセージを送ることができます。
+      2_disc_3: 予約やメッセージ送信を行うにはユーザー登録が必要です。
       sign-up: 新規登録
+      3_Photographing: ③撮影
+      3_disc_1: 集合し、撮影を行います。
+      3_disc_2:
+      3_disc_3:
+      4_Recieve_photos: ④写真受け取り
+      4_disc_1: 後日、写真が納品されます。
+      4_disc_2:
+      4_disc_3:
+      5_Review: ⑤レビュー
+      5_disc_1: 撮影の感想をレビューに残します。
+      5_disc_2:
+      5_disc_3:
     terms_of_service_cs:
 
     terms_of_service_cl:
@@ -23,7 +52,7 @@ ja:
       register_as_cameraman: カメラマン登録へ
       3_Edit_your_profile: ③プロフィール登録
       3_disc_1: メイン写真や価格、自己紹介を入力します
-      3_disc_2: 入力が終わっていない場合は、検索し結果に表示されません。
+      3_disc_2: 入力が終わっていない場合は、検索結果には表示されません。
       cl_settings: 設定画面へ
       4_Upload_your_portfolios: ④サンプル写真アップロード
       4_disc_1: サンプル写真をアップロードします。

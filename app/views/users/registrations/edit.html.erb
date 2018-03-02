@@ -22,25 +22,54 @@
         <p class="bold"><%= t(".language_use")%></p>
         <div class="field">
           <div class="indent">
-            <% if @lang_ids.include?(1) %>
-              <label><input name="language_id[]" type="checkbox" value="1" checked="checked"/><%= t(".japanese")%></label>
-            <% else %>
-              <label><input name="language_id[]" type="checkbox" value="1"/><%= t(".japanese")%></label>
-            <% end %>
+            <label class="checkbox">
+              <% if @lang_ids.include?(1) %>
+                <input type="checkbox" name="language_id[]" value="1", checked="checked"/>
+                <div class="btn btn-sık">
+                  <span><%= t(".japanese")%></span>
+                </div>
+              <% else %>
+                <input type="checkbox" name="language_id[]" value="1"/>
+                <div class="btn btn-sık">
+                  <span><%= t(".japanese")%></span>
+                </div>
+              <% end %>
+            </label>
 
-            <% if @lang_ids.include?(2) %>
-              <label><input name="language_id[]" type="checkbox" value="2" checked="checked"/><%= t(".english")%></label>
-            <% else %>
-              <label><input name="language_id[]" type="checkbox" value="2" /><%= t(".english")%></label>
-            <% end %>
+            <label class=checkbox>
+              <% if @lang_ids.include?(2) %>
+                <input type="checkbox" name="language_id[]" value="2", checked="checked"/>
+                <div class="btn btn-sık">
+                  <span><%= t(".english")%></span>
+                </div>
+              <% else %>
+                <input type="checkbox" name="language_id[]" value="2"/>
+                <div class="btn btn-sık">
+                  <span><%= t(".english")%></span>
+                </div>
+              <% end %>
+            </label>
 
-            <% if @lang_ids.include?(3) %>
-              <label><input name="language_id[]" type="checkbox" value="3" checked="checked"/><%= t(".chinese")%></label>
-            <% else %>
-              <label><input name="language_id[]" type="checkbox" value="3" /><%= t(".chinese")%></label>
-            <% end %>
+            <label class=checkbox>
+              <% if @lang_ids.include?(3) %>
+                <input type="checkbox" name="language_id[]" value="3", checked="checked"/>
+                <div class="btn btn-sık">
+                  <span><%= t(".chinese")%></span>
+                </div>
+              <% else %>
+                <input type="checkbox" name="language_id[]" value="3"/>
+                <div class="btn btn-sık">
+                  <span><%= t(".chinese")%></span>
+                </div>
+              <% end %>
+            </label>
           </div>
         </div>
+
+
+
+
+
 
         <div class="field">
           <%= f.label :email, t(".email"), class: "bold" %><br />

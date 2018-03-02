@@ -3,3 +3,5 @@ ja:
   client_portfolios:
     new:
       portfolio: ポートフォリオ
+      delete_check: 消去チェック
+      delete_btn: チェックした写真を消去

@@ -18,15 +18,28 @@
           <div class="field">
             <%= f.label :user_languages, t(".language_use") %><br />
             <%= f.fields_for :user_languages do |lg| %>
-              <input name="language_id[]" type="checkbox" value="1" checked="checked"/><%= t(".japanese")%>
+              <label class="checkbox checkbox-white">
+                <input type="checkbox" name="language_id[]" value="1"  checked="checked"/>
+                <div class="btn btn-sık">
+                  <span><%= t(".japanese")%></span>
+                </div>
+              </label>
             <% end %>
-
             <%= f.fields_for :user_languages do |lg| %>
-              <input name="language_id[]" type="checkbox" value="2" /><%= t(".english")%>
+              <label class="checkbox checkbox-white">
+                <input type="checkbox" name="language_id[]" value="2"/>
+                <div class="btn btn-sık">
+                  <span><%= t(".english")%></span>
+                </div>
+              </label>
             <% end %>
-
             <%= f.fields_for :user_languages do |lg| %>
-              <input name="language_id[]" type="checkbox" value="3" /><%= t(".chinese")%>
+              <label class="checkbox checkbox-white">
+                <input type="checkbox" name="language_id[]" value="3"/>
+                <div class="btn btn-sık">
+                  <span><%= t(".chinese")%></span>
+                </div>
+              </label>
             <% end %>
           </div>
 
@@ -63,6 +76,7 @@
       <%= render "users/shared/links" %>
     </div>
     <div class="col-md-5 offset-md-1 d-none d-md-block">
+      
     </div>
   </div>
 </div>

@@ -36,7 +36,11 @@ Rails.application.routes.draw do
 		end
 
 		resources :clients, only: [:index, :show] do
-			resources :client_portfolios, only: [:new, :create, :destroy]
+			resources :client_portfolios, only: [:new, :create] do
+				collection do
+					delete 'r_destroy'
+				end
+			end
 		end
 
 		resources :customers, only: [:show]
