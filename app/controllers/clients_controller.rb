@@ -27,7 +27,7 @@ class ClientsController < ApplicationController
 		@locations = @cl_here.client_locations.includes(:prefecture)
 		@prim_price = @cl_here.client_primary_prices.active.first
 		@options = @cl_here.client_option_prices.active
-		@portfolios = @cl_here.client_portfolios
+		@portfolios = @cl_here.client_portfolios.active
 
 	end
 

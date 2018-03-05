@@ -13,15 +13,31 @@
 					<span class="badge badge-pill badge-dark"><%= lang.language.ja %></span>
 				<% end %><br>
 			</div>
+
+
+
 			<div class="cl-show-1-right col-12 col-sm-12 col-md-3">
-				<%= link_to new_event_path(id: @cl_here.id) do %>
-					<div class="prim-btn cl-show-1-btn btn">
-						予約する
-					</div>
-				<% end %>
-				<%= link_to new_user_message_path(@cl_here.user.id) do %>
-					<div class="prim-btn cl-show-1-btn btn">
-						メッセージしてみる
+				<!-- ログイン時 -->
+				<% if user_signed_in? %>
+					<%= link_to new_event_path(id: @cl_here.id) do %>
+						<div class="prim-btn cl-show-1-btn btn">
+							予約する
+						</div>
+					<% end %>
+					<%= link_to new_user_message_path(@cl_here.user.id) do %>
+						<div class="prim-btn cl-show-1-btn btn">
+							メッセージしてみる
+						</div>
+					<% end %>
+				<!-- 未ログイン時 -->
+				<% else %>
+					<%= link_to new_user_registration_path do %>
+						<div class="prim-btn cl-show-1-btn btn">
+							<%= t(".sign-up") %>
+						</div>
+					<% end %>
+					<div class="text-explanation">
+						ユーザー登録すると、予約やメッセージ送信が行えます。
 					</div>
 				<% end %>
 			</div>
