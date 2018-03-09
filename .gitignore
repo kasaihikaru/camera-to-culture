@@ -21,3 +21,5 @@
 /.env
 
 /public/uploads/user
+
+config/.DS_Store
