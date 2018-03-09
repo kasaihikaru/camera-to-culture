@@ -1,15 +1,21 @@
 ---
 en:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
-    show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  client_contacts:
+    first_new:
+      register_as_cameraman: カメラマンとして登録する
+      phone_number: 電話番号(半角数字)
+      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
+      address: 住所
+      terms_of_service: 利用規約
+      register_btn: 規約に同意して登録
+    new:
+      change_contacts: 連絡先情報を変更する
+      An_eroor_occurred: 登録できませんでした
+      phone_number: 電話番号
+      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
+      address: 住所
+      register_btn: 更新
+    create:
+      Setting_has_updated: 更新しました
+    user_check:
+      Please_login: ログインしてください

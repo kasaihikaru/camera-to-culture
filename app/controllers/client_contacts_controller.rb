@@ -72,7 +72,7 @@ before_action :user_check, only: [:first_new, :new]
 				@pre_cl_contact.update(is_deleted: true)
 			end
 
-			flash[:alert] = "更新しました"
+			flash[:alert] = t(".Setting_has_updated")
 			redirect_to new_user_client_client_contact_path(@user, @cl)
 
 		# validationにひっかかったら、エラーメッセージ表示
@@ -90,7 +90,7 @@ private
 
 	def user_check
 		unless user_signed_in? && params[:user_id].to_i == current_user.id && Client.find(params[:client_id]).user == current_user
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end

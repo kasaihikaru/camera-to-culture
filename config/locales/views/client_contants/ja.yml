@@ -15,3 +15,7 @@ ja:
       This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
       address: 住所
       register_btn: 更新
+    create:
+      Setting_has_updated: 更新しました
+    user_check:
+      Please_login: ログインしてください

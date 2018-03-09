@@ -1,9 +1,0 @@
----
-en:
-  models:
-    user:
-      name: 名前
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
