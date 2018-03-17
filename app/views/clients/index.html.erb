@@ -54,7 +54,7 @@
 										<!-- 言語 -->
 										<% cl.user.user_languages.each do |l| %>
 											<span class="badge badge-pill badge-dark"><%= l.language.ja_s %></span>
-										<% end %>
+										<% end %><br>
 										<%= image_tag cl.user.image.url(:thumb), :alt => "icon", :class => "cameraman-list-image" if cl.user.image? %>
 									</div>
 								</div>
