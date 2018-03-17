@@ -20,6 +20,10 @@
 
     <!-- ライブサーチなし -->
      <select class="selectpicker" multiple title="<%= t(".select_area")%>" name="prefecture_ids[]" data-selected-text-format="count">
+        <optgroup label="<%= t(".Popular_area")%>">
+            <option value="8"><%= t(".Tokyo")%></option>
+            <option value="27"><%= t(".Kyoto")%></option>
+        </optgroup>
         <optgroup label="<%= t(".Hokkaido_area")%>">
             <option value="1"><%= t(".Hokkaido")%></option>
         </optgroup>
