@@ -82,7 +82,7 @@ ja:
       register_btn: この内容で登録
 
     index:
-
+      no_result: 該当するカメラマンがいません。。。泣
     show:
       researve: 予約する
       message: メッセージしてみる

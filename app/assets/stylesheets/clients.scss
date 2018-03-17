@@ -11,6 +11,10 @@ $subprim-col      : #51C4AA;
 .search-results{
 	background-color: $subprim-col;
 	padding-bottom: 30px;
+	.no-result{
+		text-align: center;
+		margin: 200px auto;
+	}
 	.cameraman-lists{
 		height: 300px;
 		margin-top: 30px;
