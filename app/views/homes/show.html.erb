@@ -1,13 +1,15 @@
-<div id="home-top">
+<div id="home-top" >
 	<!-- ###### 検索フォーム ###### -->
-	<div class="home-cl-search clearfix">
+	<div>
 		<h1><%= t(".find_your_photographer") %></h1>
-		<%= form_tag(clients_path, method: :get) do %>
-			<%= render :partial => 'render/home_search' %>
-			<div class="search-btn">
-				<%= submit_tag t(".search_btn"), class: "home-cl-search-btn prim-btn" %>
-			</div>
-		<% end %>
+		<div class="home-cl-search clearfix">
+			<%= form_tag(clients_path, method: :get) do %>
+				<%= render :partial => 'render/home_search' %>
+				<div class="search-btn">
+					<%= submit_tag t(".search_btn"), class: "home-cl-search-btn prim-btn" %>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>
 
