@@ -56,6 +56,11 @@ $subprim-col      : #51C4AA;
 			.home-cl-search-btn{
 				width:100px;
 			}
+			form{
+				.dropdown-menu{
+					max-width: 280px;
+				}
+			}
 		}
 	}
 }
