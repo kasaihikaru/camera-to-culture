@@ -11,7 +11,7 @@
 
         <!-- エラーメッセージ -->
         <% if @contact.errors.any? %>
-          <p><%= @contact.errors.count %>件のエラーがあります</p>
+          <p><%= t(".An_eroor_occurred") %></p>
           <ul>
             <% @contact.errors.full_messages.each do |message| %>
               <li><%= message %></li>
@@ -37,7 +37,7 @@
               <%= t(".This_field_does_not_share_with_other_users") %>
             </span>
             <br>
-            <%= f.text_field :address, required: true, placeholder: "〇〇県 〇〇市 〇〇 １−１−１", maxlength: "1500", value: @pre_cl_contact.address, class: "input-text" %>
+            <%= f.text_field :address, required: true, placeholder: t(".adress_example"), maxlength: "1500", value: @pre_cl_contact.address, class: "input-text" %>
           </div>
 
         <% else %>
@@ -56,7 +56,7 @@
               <%= t(".This_field_does_not_share_with_other_users") %>
             </span>
             <br>
-            <%= f.text_field :address, required: true, placeholder: "〇〇県 〇〇市 〇〇 １−１−１", maxlength: "1500", class: "input-text" %>
+            <%= f.text_field :address, required: true, placeholder: t(".adress_example"), maxlength: "1500", class: "input-text" %>
           </div>
         <% end %>
 

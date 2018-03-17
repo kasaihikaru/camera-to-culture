@@ -48,6 +48,13 @@ $subprim-col      : #51C4AA;
 					font-size: 20px;
 					margin: 0;
 				}
+				.cameraman-list-intro{
+					margin-top: 8px;
+					font-size: 12px;
+					width: 100%;
+					height: 38px;
+					overflow:hidden;
+				}
 			}
 			.cameraman-list-lower-right{
 				height: 100px;
@@ -108,6 +115,13 @@ $subprim-col      : #51C4AA;
 				color: #FFFFFF;
 			}
 		}
+		.cl-show-1-btn-login{
+			width: 280px;
+			margin: 5px 0;
+			a{
+				color: #FFFFFF;
+			}
+		}
 	}
 }
 
@@ -138,5 +152,5 @@ $subprim-col      : #51C4AA;
 }
 
 .cl-show-4{
-	background-color: $prim-col;
+	background-color: $subprim-col;
 }

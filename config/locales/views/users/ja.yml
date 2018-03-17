@@ -8,12 +8,12 @@ ja:
       mypage: ホーム
       message: メッセージ
       events: CtoCでの撮影
-      settings: 設定
+      settings: ユーザー設定
       user_settings: プロフィールを編集
       cs_settings: 自己紹介を書く
       register_as_cameraman: カメラマンになる
       change_phone_number_adress: 電話番号、住所の変更
-      cameraman_menu: カメラマンメニュー
+      cameraman_menu: カメラマン設定
       cl_settings: カメラマンプロフィール
       upload_cl_portpolios: サンプル写真を投稿
       sign-out: ログアウト

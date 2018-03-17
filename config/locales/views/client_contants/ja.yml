@@ -3,9 +3,11 @@ ja:
   client_contacts:
     first_new:
       register_as_cameraman: カメラマンとして登録する
+      An_eroor_occurred: 入力ミスがあります
       phone_number: 電話番号(半角数字)
       This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
       address: 住所
+      adress_example: 〇〇県 〇〇市 〇〇 １−１−１
       terms_of_service: 利用規約
       register_btn: 規約に同意して登録
     new:
@@ -14,6 +16,7 @@ ja:
       phone_number: 電話番号
       This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
       address: 住所
+      adress_example: 〇〇県 〇〇市 〇〇 １−１−１
       register_btn: 更新
     create:
       Setting_has_updated: 更新しました

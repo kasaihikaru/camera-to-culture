@@ -26,6 +26,9 @@
             </div>
           <% end -%>
 
+          <!-- 検索結果保持用 -->
+          <%= f.hidden_field :redirect_client_id, :value => params[:redirect_client_id] %>
+
           <div class="actions">
             <%= f.submit t(".sign_in") %>
           </div>
