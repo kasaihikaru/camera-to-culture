@@ -10,10 +10,6 @@
 	<div class="container-fluid">
 		<div class="row">
 			<% if @cls.present? %>
-				<div class="no-result">
-					<%= t(".no_result") %>
-				</div>
-			<% else %>
 				<% @cls.each do |cl| %>
 					<div class="col-12 col-sm-6 col-md-4">
 						<div class="cameraman-lists">
@@ -68,6 +64,10 @@
 						</div>
 					</div>
 				<% end %>
+			<% else %>
+				<div class="no-result">
+					<%= t(".no_result") %>
+				</div>
 			<% end %>
 		</div>
 		<%= paginate @cls %>
