@@ -51,11 +51,13 @@ $subprim-col      : #51C4AA;
 		}
 		.home-cl-search{
 			text-align: center;
+			.search-category, .search-area{
+				margin-bottom: 10px;
+			}
 			.search-btn{
-				// text-align: right;
 			}
 			.home-cl-search-btn{
-				width:100px;
+				width:220px;
 			}
 			form{
 				.dropdown-menu{

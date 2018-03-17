@@ -4,11 +4,11 @@ zh:
     home_search:
       select_category: 选择照片用途
       for_business: 商业利用
-      commercial_photos_people: 人像摄影（服装模特、发型模特）
-      commercial_photos_items: 物品摄影（商品、料理）
+      commercial_photos_people: 人像（服装模特、发型模特..）
+      commercial_photos_items: 物品（商品、料理..）
       for_private: 私人写真
-      event_photos: 纪念日摄影（婚礼、婚纱、旅行等）
-      private_photo: 私人写真（家人、情侣、朋友）
+      event_photos: 纪念日（婚礼、婚纱、旅行等..）
+      private_photo: 私人写真（家人、情侣、朋友..）
       select_area: 选择摄影地
       Hokkaido_area: 北海道地区
       Tohoku_area: 东北地区
