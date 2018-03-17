@@ -5,6 +5,16 @@ ja:
       message: さんへのメッセージ
       send_btn: 送信
     show:
+      Introduction: 自己紹介
+      Photographing_Categories: 撮影カテゴリー
+      Photographing_Area: 撮影可能な都道府県
+      Price: 価格
+      yen_per_hour: 円/時間
+      hours_minimum: 時間から受け付けます
+      Option_memu: オプションメニュー
+      price_per_hour: １時間あたり
+      Camera: カメラ
+      Message: メッセージ
       write_here: メッセージを書く
       send_btn: 送信
       last_message: 最後のメッセージ
