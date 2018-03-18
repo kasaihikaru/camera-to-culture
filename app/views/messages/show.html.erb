@@ -41,9 +41,11 @@
 					<% end %>
 				</p>
 			<% end %>
-			<% if @prim_price.price_per_hour.present? %>
-				<h2><%= t(".Price") %></h2>
-				<p><%= @prim_price.price_per_hour %>円/時間&nbsp;（<%= @prim_price.minimum_hours %>時間から受け付けます）</p>
+			<% if @prim_price.present? %>
+				<% if @prim_price.price_per_hour.present? %>
+					<h2><%= t(".Price") %></h2>
+					<p><%= @prim_price.price_per_hour %>円/時間&nbsp;（<%= @prim_price.minimum_hours %>時間から受け付けます）</p>
+				<% end %>
 			<% end %>
 			<% if @options.present? %>
 				<h2><%= t(".Option_memu") %></h2>
