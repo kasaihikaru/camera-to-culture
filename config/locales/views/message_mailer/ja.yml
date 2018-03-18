@@ -1,0 +1,7 @@
+---
+ja:
+  message_mailer:
+    recieved:
+      ctoc: 【Camera-to-Culture】
+      title: さんよりメッセージが届きました
+      explain_1: メッセージ内容

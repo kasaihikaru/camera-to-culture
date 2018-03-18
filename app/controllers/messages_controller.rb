@@ -71,7 +71,15 @@ class MessagesController < ApplicationController
 
 	def create
 		Message.create(create_params)
+
 		redirect_to user_message_path(current_user.id, reciever_params)
+
+		# 通知メール
+		message = create_params[:message]
+		user = Client.find(create_params[:reciever_id]).user
+		mail = user.email
+		name = user.name
+		MessageMailer.recieved(message, mail, name).deliver_now
 	end
 
 
