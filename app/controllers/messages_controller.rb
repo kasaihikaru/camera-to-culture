@@ -17,9 +17,8 @@ class MessagesController < ApplicationController
 
 		# 通知メール
 		message = first_create_params[:message]
-		user = Client.find(first_create_params[:reciever_id]).user
-		mail = user.email
-		name = user.name
+		mail = Client.find(first_create_params[:reciever_id]).user.email
+		name = Client.find(first_create_params[:sender_id]).user.name
 		MessageMailer.recieved(message, mail, name).deliver_now
 	end
 
@@ -83,9 +82,8 @@ class MessagesController < ApplicationController
 
 		# 通知メール
 		message = create_params[:message]
-		user = Client.find(create_params[:reciever_id]).user
-		mail = user.email
-		name = user.name
+		mail = Client.find(create_params[:reciever_id]).user.email
+		name = Client.find(create_params[:sender_id]).user.name
 		MessageMailer.recieved(message, mail, name).deliver_now
 	end
 
