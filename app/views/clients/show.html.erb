@@ -160,7 +160,7 @@
 								      <%= c_date["date"].day %>
 								     </span>
 								  <% else %>
-										<div class="collapsed" data-toggle="collapse" data-target=<%= "#" + c_date["date"].strftime("%Y%m%d") %> aria-expanded="true" aria-controls="">
+										<div class="btn collapsed" data-toggle="collapse" data-target=<%= "#" + c_date["date"].strftime("%Y%m%d") %> aria-expanded="true" aria-controls="">
 											<div class="active-day" ><%= c_date["date"].day %></div>
 										</div>
 								  <% end %>
