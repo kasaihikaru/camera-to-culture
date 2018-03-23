@@ -155,11 +155,15 @@ $subprim-col      : #51C4AA;
 	}
 }
 
-.cl-show-4, .cl-show-5{
+.cl-show-4{
 	background-color: $subprim-col;
 }
 
-
+.cl-show-5{
+	padding: 30px 0 70px;
+	background-color: $subprim-col;
+	text-align: center;
+}
 
 
 
@@ -192,6 +196,9 @@ $subprim-col      : #51C4AA;
 			margin: 0 auto;
 			.grey{
 				color: #AAAAAA;
+			}
+			.btn{
+				padding: 0;
 			}
 		}
 	}

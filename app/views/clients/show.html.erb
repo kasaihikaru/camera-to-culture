@@ -181,6 +181,7 @@
 								予定<br>
 								<span class="text-explanation">カレンダーから日付を選択してください</span>
 							</div>
+							<hr>
 							<div class="schedule-middle">
 								<% @c_dates.each do |c_date| %>
 									<div id=<%= c_date["date"].strftime("%Y%m%d") %> class="collapse" aria-labelledby="" data-parent="#calender-schedule-wrapper">
@@ -200,20 +201,20 @@
 <div class="container-fluid cl-show cl-show-5">
 	<!-- ログイン時 -->
 	<% if user_signed_in? %>
-		<%= link_to new_event_path(id: @cl_here.id) do %>
-			<div class="prim-btn cl-show-1-btn btn margin-auto">
-				<%= t(".researve") %>
+		<%= link_to new_user_message_path(@cl_here.user.id) do %>
+			<div class="prim-btn cl-show-1-btn btn">
+				<%= t(".message") %>
 			</div>
 		<% end %>
-		<%= link_to new_user_message_path(@cl_here.user.id) do %>
-			<div class="prim-btn cl-show-1-btn btn margin-auto">
-				<%= t(".message") %>
+		<%= link_to new_event_path(id: @cl_here.id) do %>
+			<div class="prim-btn cl-show-1-btn btn">
+				<%= t(".researve") %>
 			</div>
 		<% end %>
 	<!-- 未ログイン時 -->
 	<% else %>
 		<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
-			<div class="prim-btn cl-show-1-btn-login btn margin-auto">
+			<div class="prim-btn cl-show-1-btn-login btn">
 				<%= t(".sign-in") %>
 			</div>
 		<% end %>
