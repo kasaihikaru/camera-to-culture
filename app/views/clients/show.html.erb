@@ -1,3 +1,4 @@
+<!-- ##########  ヘッダー  ########## -->
 <div class="container-fluid cl-show cl-show-1">
 	<div class="container">
 		<div class="row">
@@ -38,15 +39,15 @@
 							<%= t(".sign-in") %>
 						</div>
 					<% end %>
-<!-- 					<div class="text-explanation">
-						ユーザー登録すると、予約やメッセージ送信が行えます。
-					</div> -->
 				<% end %>
 			</div>
 		</div>
 	</div>
 </div>
 
+
+
+<!-- ##########  About  ########## -->
 <div class="container-fluid cl-show cl-show-2">
 	<h1>About</h1>
 	<div class="container">
@@ -93,6 +94,10 @@
 	</div>
 </div>
 
+
+
+
+<!-- ##########  Portfolio  ########## -->
 <div class="container-fluid cl-show cl-show-3">
 	<h1>Portfolio</h1>
 	<div class="container">
@@ -113,11 +118,104 @@
 	</div>
 </div>
 
+
+
+
+
+<!-- ##########  Schedule  ########## -->
 <div class="container-fluid cl-show cl-show-4">
-	<h1>カレンダー</h1>
+	<h1>Schedule</h1>
 	<div class="container">
-		<div class="row">
-			
-		</div>
-	</div>
+
+		<div id="calender-schedule-wrapper">
+			<div class="row">
+				<!-- 左側カレンダー -->
+				<div class="calender-wrapper cal col-12 col-md-6 col-lg-4 offset-lg-2">
+					<div class="calendar-base">
+						<div class="row calendar-upper">
+							<div class="calendar-upper-left cal col-7">
+								<p><%= @day.strftime(" %m / %Y ") %></p>
+							</div>
+							<div class="calendar-upper-right cal col-5 calender-explanation clear-fix">
+								<div class="active-day-example float-left"></div>
+								<div class="float-left">撮影可能日</div>
+							</div>
+						</div>
+						<table class="calendar">
+						  <tr>
+						    <% t('date.abbr_day_names').each do |day_name| %>
+						      <td>
+						        <%= day_name %>
+						      </td>
+						    <% end %>
+						  </tr>
+						  <% @c_dates.each do |c_date| %>
+						    <% if c_date["date"].wday == 0 %>
+						      <tr>
+						    <% end %>
+						    <td>
+						    	<!-- 今月の日付たちをアコーディオンボタンに -->
+						    	<% if c_date["date"].month != @day.month %>
+							    	<span class="grey">
+								      <%= c_date["date"].day %>
+								     </span>
+								  <% else %>
+										<div class="collapsed" data-toggle="collapse" data-target=<%= "#" + c_date["date"].strftime("%Y%m%d") %> aria-expanded="true" aria-controls="">
+											<div class="active-day" ><%= c_date["date"].day %></div>
+										</div>
+								  <% end %>
+								</td>
+								<% if c_date["date"].wday == 6 %>
+									</tr>
+								<% end %>
+							<% end %>
+						</table>
+					</div>
+				</div>
+
+				<!-- 右側スケジュール -->
+				<div class="calender-wrapper cal col-12 col-md-6 col-lg-4">
+					<div class="calendar-base">
+						<div class="schedule-base">
+							<div class="schedule-upper">
+								予定<br>
+								<span class="text-explanation">カレンダーから日付を選択してください</span>
+							</div>
+							<div class="schedule-middle">
+								<% @c_dates.each do |c_date| %>
+									<div id=<%= c_date["date"].strftime("%Y%m%d") %> class="collapse" aria-labelledby="" data-parent="#calender-schedule-wrapper">
+										<%= c_date["schedule"] %>
+									</div>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div><!-- endofcalender-wrapper -->
+			</div><!-- endofRow -->
+		</div><!-- endofcalender-schedule-wrapper -->
+	</div><!-- endofContainer -->
+</div><!-- endofcontainer-fluid -->
+
+
+<div class="container-fluid cl-show cl-show-5">
+	<!-- ログイン時 -->
+	<% if user_signed_in? %>
+		<%= link_to new_event_path(id: @cl_here.id) do %>
+			<div class="prim-btn cl-show-1-btn btn margin-auto">
+				<%= t(".researve") %>
+			</div>
+		<% end %>
+		<%= link_to new_user_message_path(@cl_here.user.id) do %>
+			<div class="prim-btn cl-show-1-btn btn margin-auto">
+				<%= t(".message") %>
+			</div>
+		<% end %>
+	<!-- 未ログイン時 -->
+	<% else %>
+		<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
+			<div class="prim-btn cl-show-1-btn-login btn margin-auto">
+				<%= t(".sign-in") %>
+			</div>
+		<% end %>
+	<% end %>
 </div>

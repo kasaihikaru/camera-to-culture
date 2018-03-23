@@ -29,6 +29,24 @@ class ClientsController < ApplicationController
 		@options = @cl_here.client_option_prices.active
 		@portfolios = @cl_here.client_portfolios.active
 
+
+		######### カレンダー ###########
+		@today = Date.today
+
+		@schedule = "12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ"
+
+		@day2 = Date.new(2007, 5 ,30)
+		@day = @today
+		from_date = Date.new(@day.year, @day.month, @day.beginning_of_month.day).beginning_of_week(:sunday)
+		to_date = Date.new(@day.year, @day.month, @day.end_of_month.day).end_of_week(:sunday)
+
+		@c_dates = []
+		(from_date..to_date).each do |d|
+			date = {}
+			date["date"] = d
+			date["schedule"] = @schedule
+			@c_dates << date
+		end
 	end
 
 	def edit
