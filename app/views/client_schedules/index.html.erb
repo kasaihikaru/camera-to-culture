@@ -1,0 +1,81 @@
+<div class="container-fluid mypage-container">
+  <div class="row mypage-wrapper">
+    <div class="col-12 col-md-3 offset-md-1 mypage-menu">
+      <%= render :partial => 'users/mypage_menu' %>
+    </div>
+
+    <div class="col-12 col-md-8 mypage-content">
+      <h1><%= t(".schedule")%></h1>
+      <hr>
+      <%= form_tag(user_client_client_schedules_path, method: :post) do %>
+        <div class="mypage-schedule-month">
+          <!-- 前の月へ -->
+          <%= link_to user_client_client_schedules_path(@user, @cl, day: @day.beginning_of_month-1 ), class: "change-month left" do %>
+            ◀︎
+          <% end %>
+          <!-- 表示月 -->
+          <%= @day.strftime(" %m / %Y ") %>
+          <!-- 次の月へ -->
+          <%= link_to user_client_client_schedules_path(@user, @cl, day: @day.end_of_month+1 ), class: "change-month right" do %>
+            ▶︎︎
+          <% end %>
+        </div>
+        <br>
+        <table id="mypage-schedule" class="table">
+          <!-- ヘッダー -->
+          <thead>
+            <tr>
+              <th class="sort tr-date" data-sort="date"><%= t(".date") %></th>
+              <th class="tr-wday" data-sort="wday"><%= t(".day") %></th>
+              <th class="tr-sch" data-sort="sch"><%= t(".avairable-time") %></th>
+             </tr>
+          </thead>
+          <!-- 例 -->
+          <tr class="tr-example">
+            <td class="date"><%= t(".example") %></td>
+            <td class="wday"></td>
+            <td class="sch"><%= t(".example_sch") %></td>
+          </tr>
+          <!-- テーブル内容 -->
+          <tbody class="list">
+            <% @c_dates.each do |c_date| %>
+              <tr>
+                <td class="date"><%= c_date["date"].strftime(" %m / %d ") %></td>
+                <td><%= l(c_date["date"], format: :wday) %></td>
+                <td class="sch"><input type="text" name="sch[]<%= c_date["date"] %>" value="<%= c_date["schedule"] %>" maxlength=150></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= hidden_field_tag :day, @day %>
+        <%= submit_tag t(".Update") %>
+      <% end %>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+<!-- テーブルソート用 -->
+<script>
+  // 全部ソート
+  // var options = {
+  //   valueNames: [ 'date', 'wday', 'sch' ]
+  // };
+  // 日付のみソート
+  var options = {
+    valueNames: [ 'date' ]
+  };
+  var schList = new List('mypage-schedule', options);
+  schList.sort( 'date', {order : 'asc'} );
+</script>
+<style>
+.sort.desc:after {
+  content:"▼";
+}
+.sort.asc:after {
+  content:"▲";
+}
+</style>

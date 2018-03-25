@@ -132,6 +132,7 @@ $subprim-col      : #51C4AA;
 .cl-show-2{
 	background-color: #FFFFFF;
 	padding: 20px;
+	margin-top: 35px;
 	h2{
 		font-size: 15px;
 		font-weight: 800;
@@ -144,16 +145,28 @@ $subprim-col      : #51C4AA;
 
 .cl-show-3{
 	padding-bottom: 40px;
-	.pf{
-		.pf-img{
-			width:285px;
-			height:285px;
-			margin: auto;
-			background-position: center center;
-			background-size: cover;
-		}
+	.pf-img{
+		width:285px;
+		height:285px;
+		margin: auto;
+		background-position: center center;
+		background-size: cover;
 	}
 }
+@media screen and (max-width:360px){
+	.pf{
+		padding: 0;
+	}
+}
+
+@media screen and (min-width:361px){
+	.pf{
+		padding: 0 15px;
+	}
+}
+
+
+
 
 .cl-show-4{
 	background-color: $subprim-col;
@@ -172,57 +185,122 @@ $subprim-col      : #51C4AA;
 
 
 //------------- calender ---------------//
-.calender-wrapper{
-	.calendar-base {
-		margin: 0 auto 20px;
-		width: 315px;
-		height: 350px;
-		border-radius: 20px;
-		background-color: white;
-		color: black;
-		text-align: center;
-		.calendar-upper{
-			padding-top: 10px;
-			.calendar-upper-left{
-
+// iPhoneSE用
+@media screen and (max-width:360px){
+	.calender-wrapper{
+			padding: 0;
+		.calendar-base {
+			margin: 0 auto 20px;
+			padding: 0 5px;
+			width: 285px;
+			height: 330px;
+			border-radius: 20px;
+			background-color: white;
+			color: black;
+			text-align: center;
+			font-size: 13px;
+			.calendar-upper{
+				padding-top: 10px;
+				.calendar-upper-left{
+					.change-month{
+						background-color: #000000;
+						color: #FFFFFF;
+						border-radius: 8px;
+						margin: 0 3px;
+						padding: 0 8px
+					}
+				}
 			}
-			.calendar-upper-right{
+			.calendar{
+				font-family: 'Kanit', sans-serif;
+				width: 275px;
+				height: 300px;
+				margin: 0 auto;
+				.grey{
+					color: #AAAAAA;
+				}
+				.btn{
+					padding: 0;
+				}
 			}
 		}
-		.calendar{
-			font-family: 'Kanit', sans-serif;
-			width: 300px;
-			height: 300px;
+		.active-day {
+			width:25px;
+			height: 25px;
 			margin: 0 auto;
-			.grey{
-				color: #AAAAAA;
-			}
-			.btn{
-				padding: 0;
-			}
+			border-radius: 50%;
+			background-color: $prim-col;
+		}
+		.active-day-example {
+			width: 18px;
+			height: 18px;
+			margin: 3px 3px 0 0;
+			border-radius: 50%;
+			background-color: $prim-col;
+		}
+		.calender-explanation{
+			margin: 0 auto;
 		}
 	}
-	.active-day {
-		width:25px;
-		height: 25px;
-		margin: 0 auto;
-		border-radius: 50%;
-		background-color: $prim-col;
-	}
-	.active-day-example {
-		width: 18px;
-		height: 18px;
-		margin: 3px 3px 0 0;
-		border-radius: 50%;
-		background-color: $prim-col;
-	}
-	.calender-explanation{
-		margin: 0 auto;
+	.schedule-base{
+		padding: 30px;
 	}
 }
 
-
-.schedule-base{
-	padding: 30px;
+@media screen and (min-width:361px){
+	.calender-wrapper{
+		.calendar-base {
+			margin: 0 auto 20px;
+			width: 315px;
+			height: 350px;
+			border-radius: 20px;
+			background-color: white;
+			color: black;
+			text-align: center;
+			.calendar-upper{
+				padding-top: 10px;
+				.calendar-upper-left{
+					.change-month{
+						background-color: #000000;
+						color: #FFFFFF;
+						border-radius: 8px;
+						margin: 0 5px;
+						padding: 0 10px
+					}
+				}
+			}
+			.calendar{
+				font-family: 'Kanit', sans-serif;
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				.grey{
+					color: #AAAAAA;
+				}
+				.btn{
+					padding: 0;
+				}
+			}
+		}
+		.active-day {
+			width:25px;
+			height: 25px;
+			margin: 0 auto;
+			border-radius: 50%;
+			background-color: $prim-col;
+		}
+		.active-day-example {
+			width: 18px;
+			height: 18px;
+			margin: 3px 3px 0 0;
+			border-radius: 50%;
+			background-color: $prim-col;
+		}
+		.calender-explanation{
+			margin: 0 auto;
+		}
+	}
+	.schedule-base{
+		padding: 30px;
+	}
 }
-

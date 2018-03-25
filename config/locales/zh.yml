@@ -42,6 +42,7 @@ zh:
       default: "%Y-%m-%d"
       long: "%Y年%m月%d日"
       short: "%m月%d日"
+      wday: "%a"
     month_names:
     -
     - 一月

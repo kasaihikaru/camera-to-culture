@@ -31,11 +31,20 @@ Rails.application.routes.draw do
 						post 'first_create'
 					end
 				end
+				resources :client_schedules, only: [:index, :create, ] do
+					collection do
+						delete 'r_destroy'
+					end
+				end
 			end
 			resources :customers, only: [:edit, :update]
 		end
 
 		resources :clients, only: [:index, :show] do
+			collection do
+				get 'pre_month'
+				get 'next_month'
+			end
 			resources :client_portfolios, only: [:new, :create] do
 				collection do
 					delete 'r_destroy'

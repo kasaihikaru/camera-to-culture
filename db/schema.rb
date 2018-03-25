@@ -97,7 +97,9 @@ ActiveRecord::Schema.define(version: 20180211030124) do
 
   create_table "client_schedules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "client_id"
-    t.date "day_off", null: false
+    t.date "date", null: false
+    t.text "schedule"
+    t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_client_schedules_on_client_id"
@@ -193,7 +195,8 @@ ActiveRecord::Schema.define(version: 20180211030124) do
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "client_id"
     t.bigint "customer_id"
-    t.date "date", null: false
+    t.datetime "start_time", null: false
+    t.datetime "end_time", null: false
     t.integer "total_price"
     t.integer "primary_price_sum"
     t.integer "option_price_sum"

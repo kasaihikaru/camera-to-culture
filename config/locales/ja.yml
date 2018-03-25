@@ -42,6 +42,7 @@ ja:
       default: "%Y/%m/%d"
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
+      wday: "%a"
     month_names:
     -
     - 1月
@@ -203,3 +204,4 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%y/%m/%d %H:%M"
     pm: 午後
+    wd: ["日", "月", "火", "水", "木", "金", "土"]

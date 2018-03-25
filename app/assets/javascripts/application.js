@@ -20,4 +20,5 @@
 //= require fileinput
 //= require bootstrap-select
 //= require lightbox.min
+//= require list.min
 //= require_tree .

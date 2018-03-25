@@ -1,0 +1,84 @@
+<h1>Schedule</h1>
+<div class="container">
+
+	<div id="calender-schedule-wrapper">
+		<div class="row">
+			<!-- 左側カレンダー -->
+			<div class="calender-wrapper cal col-12 col-md-6 col-lg-4 offset-lg-2">
+				<div class="calendar-base">
+					<div class="row calendar-upper">
+						<div class="calendar-upper-left cal col-7">
+							<!-- 前の月へ -->
+							<%= link_to pre_month_clients_path(cl_here: cl_here, day: day.beginning_of_month-1 ), method: :get, remote: true, class: "change-month" do %>
+								◀
+							<% end %>
+							<!-- 今の月表示 -->
+							<%= day.strftime(" %m / %Y ") %>
+							<!-- 次の月へ -->
+							<%= link_to next_month_clients_path(cl_here: cl_here, day: day.end_of_month+1 ), method: :get, remote: true, class: "change-month" do %>
+								▶
+							<% end %>
+						</div>
+						<div class="calendar-upper-right cal col-5 calender-explanation clear-fix">
+							<div class="active-day-example float-left"></div>
+							<div class="float-left">撮影可能日</div>
+						</div>
+					</div>
+					<table class="calendar">
+						<tr>
+							<% t('date.abbr_day_names').each do |day_name| %>
+								<td>
+									<%= day_name %>
+								</td>
+							<% end %>
+						</tr>
+						<% c_dates.each do |c_date| %>
+							<% if c_date["date"].wday == 0 %>
+					      <tr>
+					    <% end %>
+					    <td>
+					    	<!-- 今月の日付たちをアコーディオンボタンに -->
+					    	<% if c_date["date"].month != day.month %>
+						    	<span class="grey">
+							      <%= c_date["date"].day %>
+							     </span>
+							  <% else %>
+									<% if c_date["schedule"].present? %>
+										<div class="btn collapsed" data-toggle="collapse" data-target=<%= "#" + c_date["date"].strftime("%Y%m%d") %> aria-expanded="true" aria-controls="">
+											<div class="active-day" ><%= c_date["date"].day %></div>
+										</div>
+									<% else %>
+										<%= c_date["date"].day %>
+									<% end %>
+							  <% end %>
+							</td>
+							<% if c_date["date"].wday == 6 %>
+								</tr>
+							<% end %>
+						<% end %>
+					</table>
+				</div>
+			</div>
+
+			<!-- 右側スケジュール -->
+			<div class="calender-wrapper cal col-12 col-md-6 col-lg-4">
+				<div class="calendar-base">
+					<div class="schedule-base">
+						<div class="schedule-upper">
+							予定<br>
+							<span class="text-explanation">カレンダーから日付を選択してください</span>
+						</div>
+						<hr>
+						<div class="schedule-middle">
+							<% c_dates.each do |c_date| %>
+								<div id=<%= c_date["date"].strftime("%Y%m%d") %> class="collapse" aria-labelledby="" data-parent="#calender-schedule-wrapper">
+									<%= c_date["schedule"] %>
+								</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div><!-- endofcalender-wrapper -->
+		</div><!-- endofRow -->
+	</div><!-- endofcalender-schedule-wrapper -->
+</div><!-- endofContainer -->

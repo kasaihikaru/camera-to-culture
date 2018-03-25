@@ -1,5 +1,5 @@
 class ClientPortfoliosController < ApplicationController
-before_action :user_check, only: [:new, :r_destroy]
+before_action :user_check, only: [:new, :create, :r_destroy]
 
 
 	def new

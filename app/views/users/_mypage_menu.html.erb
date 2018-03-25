@@ -40,6 +40,9 @@
     <p><%= t(".cameraman_menu") %></p>
   </a>
   <div class="collapse" id="mypage-menu-cameraman">
+    <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
+      <p>&emsp;<%= t(".cl_schedule") %></p>
+    <% end %>
     <%= link_to edit_user_client_path(@user, @cl) do %>
       <p>&emsp;<%= t(".cl_settings") %></p>
     <% end %>

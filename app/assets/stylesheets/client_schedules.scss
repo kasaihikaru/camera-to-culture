@@ -1,0 +1,63 @@
+// Place all the styles related to the client_schedules controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$prim-col      : #FF8000;
+$subprim-col      : #51C4AA;
+
+.mypage-schedule-month{
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	a{
+		color: #FFFFFF;
+	}
+	.change-month{
+		border-radius: 10px;
+		background-color: $prim-col;
+		padding: 0 30px;
+	}
+	.right{
+		margin-left: 15px;
+	}
+	.left{
+		margin-right: 15px;
+	}
+}
+
+#mypage-schedule{
+	min-width: 290px;
+	text-align: center;
+	thead{
+		background-color: $subprim-col;
+		th{
+			padding: 12px 0;
+		}
+		.tr-date{
+			width: 25%;
+		}
+		.tr-wday{
+			width: 10%;
+		}
+		.tr-sch{
+			width: 70%;
+		}
+	}
+	.tr-example{
+		background-color: #E6E6E6;
+		color: #808080;
+		height: 32px;
+		font-size: 15px;
+		td{
+			padding: 3px 12px;
+		}
+		.sch{
+			text-align: left;
+		}
+	}
+	tbody{
+		input{
+			width: 100%;
+		}
+	}
+}

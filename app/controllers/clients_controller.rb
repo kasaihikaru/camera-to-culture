@@ -21,7 +21,7 @@ class ClientsController < ApplicationController
 			@cs = @user.customers.active.first
 		end
 
-		@cl_here = Client.find(params[:id])
+		@cl_here = Client.find(id_params)
 		@categories = @cl_here.client_categories.includes(:category)
 		@langs = @cl_here.user.user_languages.includes(:language)
 		@locations = @cl_here.client_locations.includes(:prefecture)
@@ -31,20 +31,21 @@ class ClientsController < ApplicationController
 
 
 		######### カレンダー ###########
-		@today = Date.today
+		@day = Date.today
 
-		@schedule = "12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ12時〜18時まで受付あああああああああああ"
-
-		@day2 = Date.new(2007, 5 ,30)
-		@day = @today
 		from_date = Date.new(@day.year, @day.month, @day.beginning_of_month.day).beginning_of_week(:sunday)
 		to_date = Date.new(@day.year, @day.month, @day.end_of_month.day).end_of_week(:sunday)
 
+		# カレンダーを書く用
 		@c_dates = []
 		(from_date..to_date).each do |d|
+			sch = ClientSchedule.find_by(client_id: @cl.id, date: d)
+
 			date = {}
 			date["date"] = d
-			date["schedule"] = @schedule
+			if sch.present?
+				date["schedule"] = sch.schedule
+			end
 			@c_dates << date
 		end
 	end
@@ -168,8 +169,60 @@ class ClientsController < ApplicationController
 		redirect_to user_path(current_user)
 	end
 
+	def pre_month
+		@day = date_params
+		@cl_here = cl_here_params.to_i
+
+		from_date = Date.new(@day.year, @day.month, @day.beginning_of_month.day).beginning_of_week(:sunday)
+		to_date = Date.new(@day.year, @day.month, @day.end_of_month.day).end_of_week(:sunday)
+
+		# カレンダーを書く用
+		@c_dates = []
+		(from_date..to_date).each do |d|
+			sch = ClientSchedule.find_by(client_id: @cl_here, date: d)
+
+			date = {}
+			date["date"] = d
+			if sch.present?
+				date["schedule"] = sch.schedule
+			end
+			@c_dates << date
+		end
+	end
+
+	def next_month
+		@day = date_params
+		@cl_here = cl_here_params.to_i
+
+		from_date = Date.new(@day.year, @day.month, @day.beginning_of_month.day).beginning_of_week(:sunday)
+		to_date = Date.new(@day.year, @day.month, @day.end_of_month.day).end_of_week(:sunday)
+
+		# カレンダーを書く用
+		@c_dates = []
+		(from_date..to_date).each do |d|
+			sch = ClientSchedule.find_by(client_id: @cl_here, date: d)
+
+			date = {}
+			date["date"] = d
+			if sch.present?
+				date["schedule"] = sch.schedule
+			end
+			@c_dates << date
+		end
+	end
+
+
+
 
 private
+	def id_params
+		params[:id]
+	end
+
+	def cl_here_params
+		params[:cl_here]
+	end
+
 	def cl_create_params
 		params.require(:client).permit(:camera, :introduction, :image).merge(user_id: current_user.id)
 	end
@@ -211,6 +264,9 @@ private
 		params[:category_id]
 	end
 
+	def date_params
+		Date.strptime(params[:day], '%Y-%m-%d')
+	end
 
 	def user_check
 		unless user_signed_in? && params[:user_id].to_i == current_user.id
