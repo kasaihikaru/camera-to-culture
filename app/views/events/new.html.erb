@@ -1,42 +1,128 @@
-<div>
-	<%= image_tag @cl_here.user.image.url, :alt => "icon" if @cl_here.user.image? %><br>
-	<%= @cl_here.user.name %><br>
-	<% @categories.each do |cate| %>
-		<%= cate.category.ja %> / 
-	<% end %><br>
-	<% @langs.each do |lang| %>
-		<%= lang.language.ja %> / 
-	<% end %><br>
-<div>
+<div class="container-fluid ev-new ev-new-1">
 
-<div>
-	<%= @cl_here.introduction %>
+	<%= form_tag(events_path, method: :post) do %>
+		<h1><%= t(".Request_Reservation") %></h1>
+		<div class="container">
+			<!-- 名前、アイコン -->
+			<div class="ev-new-cl">
+				<%= @cl_here.user.name %><br>
+				<%= image_tag @cl_here.user.image.url, :alt => "icon" if @cl_here.user.image? %>
+			</div>
+
+			<!-- カレンダー  -->
+			<div id="cl-show4-calender" class="container-fluid cl-show cl-show-4">
+				<%= render partial: 'clients/show4_calender', locals: {cl_here: @cl_here, day: @day, c_dates: @c_dates } %>
+			</div>
+				<!-- 日付選択 -->
+			<div class="ev-new-datetime">
+				<h2><%= t(".Request_date_and_time") %></h2>
+				<input type="date" min=<%= @day.strftime("%Y-%m-%d")%> max=<%= (@day + 365).strftime("%Y-%m-%d") %>>
+				<input type="time" step="900">〜<input type="time" step="900">
+			</div>
+			<!-- 場所選択 -->
+			<div class="ev-new-location">
+				<h2><%= t(".Photographing_Location") %></h2>
+				<select class="selectpicker" name="prefecture_id" data-live-search="false">
+					<% @locations.each do |location| %>
+						<option value=<%= location.prefecture.id %>><%= location.prefecture.ja %></option>
+					<% end %>
+				</select><br>
+				<textarea name="location_detail" rows="4" maxlength="300" placeholder="<%= t(".tell_location_detail", name: @cl_here.user.name ) %>"></textarea>
+			</div>
+			<!-- 撮影人数 -->
+			<div class="ev-new-people">
+				<h2><%= t(".How_many_people?") %></h2>
+				<input type="number" name="people" min="1" value="1">
+			</div>
+			<!-- あいさつ -->
+			<div class="ev-new-comment">
+				<h2><%= t(".Say_hello") %></h2>
+				<p><%= t(".Let_cl_know_you", name: @cl_here.user.name) %></p>
+				<textarea name="say_hello" rows="8" maxlength="1000" placeholder="<%= t(".greeting_message", name: @cl_here.user.name) %>"></textarea>
+			</div>
+			<!-- オプション -->
+			<% if @options.present? %>
+				<div class="ev-new-opyion">
+					<h2><%= t(".Option_Menu") %></h2>
+					<p><%= t(".per_hour_automatically_culculates") %>
+					<table class="table">
+						<thead>
+							<tr>
+								<td><%= t(".option_name") %></td>
+								<td><%= t(".price") %></td>
+								<td><%= t(".number") %></td>
+							</tr>
+						</thead>
+						<tbody>
+							<% @options.each do |option| %>
+								<tr>
+									<td><%= option.name %></td>
+									<td>
+										<% if option.along_with_time == true %>
+											<%= t(".price_per_hour") %>
+										<% end %>
+										<%= option.price %><%= t(".yen") %>
+									</td>
+									<td>
+										<input type="number" name="<%= option.id %>" min="0" value="0">
+									</td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+				<% end %>
+		</div>
+		<%= submit_tag t(".Request_Reservation"), class: "prim-btn btn" %>
+	<% end %>
 </div>
 
-<div>
-	<h1>カレンダー</h1>
-	
 
-</div>
-
-
-<div>
-	<select class="selectpicker" name="prefecture_id" data-live-search="true">
-		<% @locations.each do |location| %>
-			<option value=<%= location.prefecture.id %>><%= location.prefecture.ja %></option>
+<!-- ##########  About  ########## -->
+<div class="container-fluid cl-show cl-show-2">
+	<h1>About</h1>
+	<div class="container">
+		<h2><%= t(".Languages") %></h2>
+		<p>
+			<% @langs.each do |lang| %>
+				<%= lang.language.ja %><br>
+			<% end %>
+		</p>
+		<h2><%= t(".Photographing_Categories") %></h2>
+		<p>
+			<% @categories.each do |cate| %>
+				<%= cate.category.ja %><br>
+			<% end %>
+		</p>
+		<h2><%= t(".Photographing_Area") %></h2>
+		<p>
+			<% @locations.each do |location| %>
+				<%= location.prefecture.ja %>&nbsp;
+			<% end %>
+		</p>
+		<h2><%= t(".Price") %></h2>
+		<p><%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %>&nbsp;
+			<% if @prim_price.minimum_hours > 1 %>
+				（<%= @prim_price.minimum_hours %><%= t(".hours_minimum") %>）
+			<% end %>
+		</p>
+		<% if @options.present? %>
+			<h2><%= t(".Option_memu") %></h2>
+			<% @options.each do |option| %>
+				<p>
+					<%= option.name %>：
+					<% if option.along_with_time == true %>
+						<%= t(".price_per_hour") %>
+					<% end %>
+					<%= option.price %><%= t(".yen") %>
+				</p>
+			<% end %>
 		<% end %>
-	</select><br>
-	<textarea name="location_detail" rows="2" cols="60" maxlength="300">撮影希望場所の詳細</textarea><br>
-
-	<%= @prim_price.price_per_hour %>円/時間<br>
-	最少受付時間：<%= @prim_price.minimum_hours %><br>
-
-	<% @options.each do |option| %>
-		<%= option.name %>
-		<% if option.along_with_time == "1" %>
-			１時間あたり
+		<% if @cl_here.camera.present? %>
+			<h2><%= t(".Camera") %></h2>
+			<pre class="indent"><%= @cl_here.camera %></pre>
 		<% end %>
-		<%= option.price %>
-	<% end %><br>
-
+		<h2><%= t(".Message") %></h2>
+		<pre class="indent"><%= @cl_here.introduction %></pre>
+	</div>
 </div>

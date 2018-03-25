@@ -70,14 +70,14 @@
 			<% end %>
 		</p>
 		<% if @options.present? %>
-			<h2><%= t(".Option_memu") %></h2>
+			<h2><%= t(".Option_Menu") %></h2>
 			<% @options.each do |option| %>
 				<p>
-					<%= option.name %>
-					<% if option.along_with_time == "1" %>
+					<%= option.name %>：
+					<% if option.along_with_time == true %>
 						<%= t(".price_per_hour") %>
 					<% end %>
-					<%= option.price %>
+					<%= option.price %><%= t(".yen") %>
 				</p>
 			<% end %>
 		<% end %>
@@ -91,35 +91,9 @@
 </div>
 
 
-
-
-<!-- ##########  Portfolio  ########## -->
-<div class="container-fluid cl-show cl-show-3">
-	<h1>Portfolio</h1>
-	<div class="container">
-		<div class="row">
-			<div class="pf col-12 col-sm-6 col-md-4 col-lg-3">
-				<a href="<%= @cl_here.image.url if @cl_here.image? %>" data-lightbox="image-1" data-title="<%= @cl_here.user.name %>">
-					<div class="pf-img" style="background-image: url(<%= @cl_here.image.url %>);"></div>
-				</a>
-			</div>
-			<% @portfolios.each do |portfolio| %>
-				<div class="pf col-12 col-sm-6 col-md-4 col-lg-3">
-					<a href="<%= portfolio.image.url if portfolio.image? %>" data-lightbox="image-1" data-title="<%= @cl_here.user.name %>">
-						<div class="pf-img" style="background-image: url(<%= portfolio.image.url %>);"></div>
-					</a>
-				</div>
-			<% end %>
-		</div>
-	</div>
-</div>
-
-
-
-
-
 <!-- ##########  Schedule  ########## -->
 <div id="cl-show4-calender" class="container-fluid cl-show cl-show-4">
+	<h1>Schedule</h1>
 	<%= render partial: 'clients/show4_calender', locals: {cl_here: @cl_here, day: @day, c_dates: @c_dates } %>
 </div>
 
@@ -144,4 +118,27 @@
 			</div>
 		<% end %>
 	<% end %>
+</div>
+
+
+
+<!-- ##########  Portfolio  ########## -->
+<div class="container-fluid cl-show cl-show-3">
+	<h1>Portfolio</h1>
+	<div class="container">
+		<div class="row">
+			<div class="pf col-12 col-sm-6 col-md-4 col-lg-3">
+				<a href="<%= @cl_here.image.url if @cl_here.image? %>" data-lightbox="image-1" data-title="<%= @cl_here.user.name %>">
+					<div class="pf-img" style="background-image: url(<%= @cl_here.image.url %>);"></div>
+				</a>
+			</div>
+			<% @portfolios.each do |portfolio| %>
+				<div class="pf col-12 col-sm-6 col-md-4 col-lg-3">
+					<a href="<%= portfolio.image.url if portfolio.image? %>" data-lightbox="image-1" data-title="<%= @cl_here.user.name %>">
+						<div class="pf-img" style="background-image: url(<%= portfolio.image.url %>);"></div>
+					</a>
+				</div>
+			<% end %>
+		</div>
+	</div>
 </div>

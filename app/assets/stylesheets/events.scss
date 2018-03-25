@@ -1,3 +1,56 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$prim-col      : #FF8000;
+$subprim-col      : #51C4AA;
+
+
+//------------- event/new ---------------//
+.ev-new{
+	h1{
+		text-align: center;
+		padding: 35px 0 ;
+	}
+	h2{
+		font-size: 25px;
+		font-weight: 800;
+		margin: 40px 0 20px;
+	}
+	textarea{
+		max-width: 100%;
+		width: 400px;
+	}
+}
+
+.ev-new-1{
+	text-align: center;
+	background-color: $subprim-col;
+	padding: 10px 0;
+	.ev-new-cl{
+		margin-bottom: 30px;
+	}
+	.ev-new-place{
+	}
+	.ev-new-people{
+		input{
+			width: 80px;
+			text-align: right;
+		}
+	}
+	.ev-new-opyion{
+		table{
+			text-align: left;
+			thead{
+				background-color: #E6E6E6
+			}
+			tbody{
+				background-color: #FFFFFF;
+			}
+		}
+		input{
+			width: 40px;
+			text-align: right;
+		}
+	}
+}

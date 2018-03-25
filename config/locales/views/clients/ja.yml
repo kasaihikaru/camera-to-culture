@@ -92,7 +92,8 @@ ja:
       Price: 価格
       yen_per_hour: 円/時間
       hours_minimum: 時間から受け付けます
-      Option_memu: オプションメニュー
+      Option_Menu: オプションメニュー
       price_per_hour: １時間あたり
+      yen: 円
       Camera: カメラ
       Message: メッセージ

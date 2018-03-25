@@ -1,0 +1,31 @@
+---
+ja:
+  events:
+    new:
+      Request_Reservation: 予約リクエスト
+      Request_date_and_time: 予約希望日時
+      Photographing_Location: 撮影場所
+      tell_location_detail: 撮影場所の詳細を伝えましょう。
+      How_many_people?: 撮影に参加する人数
+      Say_hello: 挨拶と自己紹介
+      Let_cl_know_you: '%{name}さんに一言挨拶しましょう！'
+      greeting_message: |
+        %{name}さん、初めまして。
+        妻と息子の３人で、家族写真を撮りたいと思っています。
+        よろしくお願いします！
+      per_hour_automatically_culculates: 時間帯あたりの価格は自動計算されます。
+      option_name: オプション名
+      price: 価格
+      number: 数量
+      Languages: 話す言語
+      sign-in: ログインして、メッセージを送る
+      Photographing_Categories: 撮影カテゴリー
+      Photographing_Area: 撮影可能な都道府県
+      Price: 価格
+      yen_per_hour: 円/時間
+      hours_minimum: 時間から受け付けます
+      Option_Menu: オプションメニュー
+      price_per_hour: １時間あたり
+      yen: 円
+      Camera: カメラ
+      Message: メッセージ

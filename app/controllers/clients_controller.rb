@@ -39,7 +39,7 @@ class ClientsController < ApplicationController
 		# カレンダーを書く用
 		@c_dates = []
 		(from_date..to_date).each do |d|
-			sch = ClientSchedule.find_by(client_id: @cl.id, date: d)
+			sch = ClientSchedule.find_by(client_id: @cl_here.id, date: d)
 
 			date = {}
 			date["date"] = d

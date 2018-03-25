@@ -154,12 +154,20 @@ $subprim-col      : #51C4AA;
 	}
 }
 @media screen and (max-width:360px){
+	.cl-show-4{
+		background-color: $subprim-col;
+		padding: 0;
+	}
 	.pf{
 		padding: 0;
 	}
 }
 
 @media screen and (min-width:361px){
+	.cl-show-4{
+		background-color: $subprim-col;
+		padding: 0 15px;
+	}
 	.pf{
 		padding: 0 15px;
 	}
