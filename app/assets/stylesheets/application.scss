@@ -38,6 +38,15 @@
 $prim-col      : #FF8000;
 $subprim-col      : #51C4AA;
 
+.big-prim-btn{
+  padding: 20px 35px;
+  background-color: $prim-col;
+  color: #FFFFFF;
+  border-radius: 15px;
+  border: none;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
 .prim-btn{
   height: 38px;
   background-color: $prim-col;

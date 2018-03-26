@@ -37,6 +37,8 @@ class EventsController < ApplicationController
 
 		######### インスタンス渡す ########
 		@event = Event.new
+		@event.event_option_prices.build
+
 	end
 
 	def show
@@ -46,12 +48,22 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		
+		binding.pry
 	end
 
 
 
 private
+	def ev_create_params
+		start_time = DateTime.parse(params[:date] + " " + params[:event][:start_time])
+		end_time = DateTime.parse(params[:date] + " " + params[:event][:end_time])
+
+
+		x = params.require(:event).permit(:location_detail, :num_people, :message).merge(client_id: param[:client_id] ,customer_id: current_user.id, prefecture_id: param[:prefecture_id], start_time: start_time, end_time: end_time,  )
+	end
+
+
+
 	def login_check
 		unless user_signed_in?
 			flash[:alert] = "ログインしてください"

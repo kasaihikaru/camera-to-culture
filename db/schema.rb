@@ -195,15 +195,20 @@ ActiveRecord::Schema.define(version: 20180211030124) do
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "client_id"
     t.bigint "customer_id"
+    t.bigint "prefecture_id"
+    t.text "location_detail", null: false
     t.datetime "start_time", null: false
     t.datetime "end_time", null: false
-    t.integer "total_price"
+    t.integer "total_price", null: false
+    t.integer "num_people", null: false
+    t.text "message", null: false
     t.integer "primary_price_sum"
     t.integer "option_price_sum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_events_on_client_id"
     t.index ["customer_id"], name: "index_events_on_customer_id"
+    t.index ["prefecture_id"], name: "index_events_on_prefecture_id"
   end
 
   create_table "languages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -303,6 +308,7 @@ ActiveRecord::Schema.define(version: 20180211030124) do
   add_foreign_key "event_states", "events"
   add_foreign_key "events", "clients"
   add_foreign_key "events", "customers"
+  add_foreign_key "events", "prefectures"
   add_foreign_key "user_languages", "languages"
   add_foreign_key "user_languages", "users"
 end

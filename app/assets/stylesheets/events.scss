@@ -15,7 +15,7 @@ $subprim-col      : #51C4AA;
 	h2{
 		font-size: 25px;
 		font-weight: 800;
-		margin: 40px 0 20px;
+		margin: 60px 0 10px;
 	}
 	textarea{
 		max-width: 100%;
@@ -29,6 +29,9 @@ $subprim-col      : #51C4AA;
 	padding: 10px 0;
 	.ev-new-cl{
 		margin-bottom: 30px;
+		img{
+			width: 100px;
+		}
 	}
 	.ev-new-place{
 	}
@@ -52,5 +55,8 @@ $subprim-col      : #51C4AA;
 			width: 40px;
 			text-align: right;
 		}
+	}
+	.ev-new-submit{
+		margin: 80px 0 40px;
 	}
 }

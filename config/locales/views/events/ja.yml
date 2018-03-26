@@ -2,8 +2,10 @@
 ja:
   events:
     new:
-      Request_Reservation: 予約リクエスト
+      Request_to_Book: 予約リクエスト
+      Check_Shedule: '%{name}さんの予定を確認'
       Request_date_and_time: 予約希望日時
+      15_minute_increments: 予約時間は15分刻みです。
       Photographing_Location: 撮影場所
       tell_location_detail: 撮影場所の詳細を伝えましょう。
       How_many_people?: 撮影に参加する人数
@@ -17,6 +19,9 @@ ja:
       option_name: オプション名
       price: 価格
       number: 数量
+      Fee: 料金
+      item_name: 項目
+      hours: 時間
       Languages: 話す言語
       sign-in: ログインして、メッセージを送る
       Photographing_Categories: 撮影カテゴリー

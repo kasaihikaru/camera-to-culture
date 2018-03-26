@@ -1,50 +1,55 @@
 <div class="container-fluid ev-new ev-new-1">
 
-	<%= form_tag(events_path, method: :post) do %>
-		<h1><%= t(".Request_Reservation") %></h1>
+	<%= form_for @event do |f| %>
+		<h1><%= t(".Request_to_Book") %></h1>
 		<div class="container">
 			<!-- 名前、アイコン -->
 			<div class="ev-new-cl">
-				<%= @cl_here.user.name %><br>
-				<%= image_tag @cl_here.user.image.url, :alt => "icon" if @cl_here.user.image? %>
+				<%= image_tag @cl_here.user.image.url, alt: "icon" if @cl_here.user.image? %>
 			</div>
 
 			<!-- カレンダー  -->
 			<div id="cl-show4-calender" class="container-fluid cl-show cl-show-4">
+				<h2><%= t(".Check_Shedule", name: @cl_here.user.name) %></h2>
 				<%= render partial: 'clients/show4_calender', locals: {cl_here: @cl_here, day: @day, c_dates: @c_dates } %>
 			</div>
 				<!-- 日付選択 -->
 			<div class="ev-new-datetime">
 				<h2><%= t(".Request_date_and_time") %></h2>
-				<input type="date" min=<%= @day.strftime("%Y-%m-%d")%> max=<%= (@day + 365).strftime("%Y-%m-%d") %>>
-				<input type="time" step="900">〜<input type="time" step="900">
+				<p><%= t(".15_minute_increments") %></p>
+				<input id="date" name="date" type="date" min="<%= @day.strftime("%Y-%m-%d")%>" max="<%= (@day + 365).strftime("%Y-%m-%d") %>" required>
+				<%= f.time_field :start_time, step: "900", required: true%>
+				〜
+				<%= f.time_field :end_time, step: "900", required: true %>
+				<br>
+				<span id="time-validation"></span>
 			</div>
 			<!-- 場所選択 -->
 			<div class="ev-new-location">
 				<h2><%= t(".Photographing_Location") %></h2>
-				<select class="selectpicker" name="prefecture_id" data-live-search="false">
+				<select name="prefecture_id" class="selectpicker" name="prefecture_id" data-live-search="false">
 					<% @locations.each do |location| %>
 						<option value=<%= location.prefecture.id %>><%= location.prefecture.ja %></option>
 					<% end %>
 				</select><br>
-				<textarea name="location_detail" rows="4" maxlength="300" placeholder="<%= t(".tell_location_detail", name: @cl_here.user.name ) %>"></textarea>
+				<%= f.text_area :location_detail, rows: "4", maxlength: "1000", placeholder:  t(".tell_location_detail", name: @cl_here.user.name ), required: true%>
 			</div>
 			<!-- 撮影人数 -->
 			<div class="ev-new-people">
 				<h2><%= t(".How_many_people?") %></h2>
-				<input type="number" name="people" min="1" value="1">
+				<%= f.number_field :num_people, min: "1", value: "1", required: true %>
 			</div>
 			<!-- あいさつ -->
 			<div class="ev-new-comment">
 				<h2><%= t(".Say_hello") %></h2>
 				<p><%= t(".Let_cl_know_you", name: @cl_here.user.name) %></p>
-				<textarea name="say_hello" rows="8" maxlength="1000" placeholder="<%= t(".greeting_message", name: @cl_here.user.name) %>"></textarea>
+				<%= f.text_area :message, rows: "8", maxlength: "2000", placeholder:  t(".greeting_message", name: @cl_here.user.name), required: true%>
 			</div>
 			<!-- オプション -->
 			<% if @options.present? %>
 				<div class="ev-new-opyion">
 					<h2><%= t(".Option_Menu") %></h2>
-					<p><%= t(".per_hour_automatically_culculates") %>
+					<p><%= t(".per_hour_automatically_culculates") %></p>
 					<table class="table">
 						<thead>
 							<tr>
@@ -64,19 +69,123 @@
 										<%= option.price %><%= t(".yen") %>
 									</td>
 									<td>
-										<input type="number" name="<%= option.id %>" min="0" value="0">
+										<%= f.fields_for :event_option_prices do |fo| %>
+											<%= fo.number_field :numbers, min: "0", value: "0", required: true %>
+										<% end %>
 									</td>
 								</tr>
 							<% end %>
 						</tbody>
 					</table>
 				</div>
-				<% end %>
+			<% end %>
+			<!-- 料金計算 -->
+			<div class="ev-new-opyion">
+				<h2><%= t(".Fee") %></h2>
+				<p><%= t(".test") %></p>
+				<table class="table">
+					<thead>
+						<tr>
+							<td><%= t(".item_name") %></td>
+							<td><%= t(".price") %></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								メイン価格&emsp;
+								<span id="prime_price">
+									<%= @prim_price.price_per_hour %>
+								</span>
+								<%= t(".yen") %>
+								×<span id="hours">0</span><%= t(".hours") %>
+							</td>
+							<td><span id="total_prime_price">0</span><%= t(".yen") %></td>
+						</tr>
+						<tr>
+							<td>衣装</td>
+							<td>5000<%= t(".yen") %></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<%= f.hidden_field :client_id, value: @cl_here.id %>
+			<!-- 送信ボタン -->
+			<div class="ev-new-submit">
+				<%= f.submit  t(".Request_to_Book"), class: "big-prim-btn btn" %>
+			</div>
 		</div>
-		<%= submit_tag t(".Request_Reservation"), class: "prim-btn btn" %>
 	<% end %>
 </div>
 
+
+<script>
+	// メイン料金計算
+	function cultulate_prim_price(){
+		var prime_price = parseInt($('#prime_price').text(), 10);
+		var hours = (new Date(($('#date').val()+'T'+$('#event_end_time').val()+'Z')) - new Date(($('#date').val()+'T'+$('#event_start_time').val()+'Z'))) / (1000 * 60 * 60 );
+		var total_prime_price = prime_price * hours
+
+		// 時間描画
+		if (hours > 0) {
+			$('#hours').text(hours);
+		} else {
+			$('#hours').text('0');
+		}
+		// メイン価格描画
+		if (total_prime_price > 0) {
+			$('#total_prime_price').text(total_prime_price);
+		} else {
+			$('#total_prime_price').text('0');
+		}
+	}
+
+	// 時間前後validation
+	function check_time(){
+		var start_time = parseInt($('#event_start_time').val().substr(0,2)+$('#event_start_time').val().substr(3,2), 10);
+		var end_time = parseInt($('#event_end_time').val().substr(0,2)+$('#event_end_time').val().substr(3,2), 10);
+		if (start_time >= end_time) {
+			$('#time-validation').text('時間が前後しています');
+		} else {
+			$('#time-validation').text('');
+		}
+	}
+
+	$(function() {
+		$('input[type="time"]').on('keyup change', function() {
+			cultulate_prim_price();
+			check_time();
+		});
+		$('input[type="date"]').on('keyup change', function() {
+			cultulate_prim_price();
+		});
+	});
+
+
+
+
+
+</script>
+
+<div class="container">
+     <p>量</p>
+     <input id="quantity" type="number" size="40"><br>
+     <p>単価</p>
+     <input id="price" type="number" size="40"><br>
+     <p>合計金額</p>
+     <span id="total"></span>円です。
+</div>
+<script>
+	function update_field(){
+			var result = $('#quantity').val() * $('#price').val();
+			$('#total').text(result);
+	}
+	$(function() {
+		$('input[type="number"]').on('keyup change', function() {
+			update_field();
+		});
+	});
+</script>
 
 <!-- ##########  About  ########## -->
 <div class="container-fluid cl-show cl-show-2">
