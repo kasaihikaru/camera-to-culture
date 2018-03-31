@@ -6,8 +6,11 @@ ja:
       Check_Shedule: '%{name}さんの予定を確認'
       Request_date_and_time: 予約希望日時
       15_minute_increments: 予約時間は15分刻みです。
+      hours_minimum: から受け付けます
+      Booking_will_be_accepted_over: 予約は
+      hours_explanation: 時間から受け付けます。
       Photographing_Location: 撮影場所
-      tell_location_detail: 撮影場所の詳細を伝えましょう。
+      tell_location_detail: 撮影場所や集合場所の詳細を伝えましょう。
       How_many_people?: 撮影に参加する人数
       Say_hello: 挨拶と自己紹介
       Let_cl_know_you: '%{name}さんに一言挨拶しましょう！'
@@ -20,8 +23,10 @@ ja:
       price: 価格
       number: 数量
       Fee: 料金
+      Primary_Price: メイン価格
       item_name: 項目
       hours: 時間
+      Total_Fee: 合計金額
       Languages: 話す言語
       sign-in: ログインして、メッセージを送る
       Photographing_Categories: 撮影カテゴリー

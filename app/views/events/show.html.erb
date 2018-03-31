@@ -1,0 +1,125 @@
+<div class="container-fluid ev-show ev-how-1">
+	<div class="row">
+		<div class="col-12 col-md-6 offset-md-3">
+			<!-- 名前 -->
+			<div class="ev-show-names clearfix">
+				<div class="float-left">
+					<%= @cs_here.user.name %>
+				</div>
+				<div class="float-right">
+					<%= @cl_here.user.name %>
+				</div>
+			</div>
+			<!-- アイコン -->
+			<div class="ev-show-icons clearfix">
+				<div class="float-left">
+					<%= image_tag @cs_here.user.image.url, alt: "icon" if @cs_here.user.image? %>
+				</div>
+				<div class="float-right">
+					<%= image_tag @cl_here.user.image.url, alt: "icon" if @cl_here.user.image? %>
+				</div>
+			</div>
+
+			<!-- 日時 -->
+			<div class="clearfix">
+				<h2 class="sub-title float-left">
+					<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Date_and_Time") %>
+				</h2>
+				<div class="ev-show-square float-left">
+					<%= @day %>（<%= @wday %>）&emsp;<%= @start_time %>〜<%= @end_time %>
+				</div>
+			</div>
+
+
+			<!-- 人数 -->
+			<div class="clearfix">
+				<h2 class="sub-title float-left">
+					<%= render :partial => 'svgs/people' %>&nbsp;<%= t(".How_many_people?") %>
+				</h2>
+				<div class="ev-show-square float-left">
+					<%= @event.num_people %>
+				</div>
+			</div>
+
+
+			<!-- 場所 -->
+			<div class="clearfix">
+				<h2 class="float-left">
+					<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Location") %>
+				</h2>
+				<div class="ev-show-square float-left">
+					<%= @prefecture.ja %><br>
+					<pre><%= @event.location_detail %></pre>
+				</div>
+			</div>
+
+
+			<!-- コメント -->
+			<div class="clearfix">
+				<h2 class="float-left">
+					<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Message") %>
+				</h2>
+				<div class="ev-show-square float-left">
+					<pre><%= @event.message %></pre>
+				</div>
+			</div>
+
+
+			<!-- 料金 -->
+			<div class="ev-table ev-fee">
+				<h2><%= t(".Fee") %></h2>
+				<table id="FeeTable" class="table">
+					<thead>
+						<tr>
+							<td><%= t(".item_name") %></td>
+							<td><%= t(".price") %></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<%= t(".Primary_Price") %>&emsp;
+								<%= t(".yen") %>
+								×<span id="hours">0</span><%= t(".hours") %>
+							</td>
+							<td><span id="total_prime_price">0</span><%= t(".yen") %></td>
+						</tr>
+						<% if @options.present? %>
+							<% @options.each_with_index do |option, i | %>
+								<tr>
+									<td>
+										<%= option.name %>&emsp;
+										<% if option.along_with_time == true %>
+											<%= t(".price_per_hour") %>
+										<% end %>
+										<%= option.price %><%= t(".yen") %>
+										×<span id=<%= "option_num_" + i.to_s %> >
+											0
+										</span>
+									</td>
+									<td>
+										<span id=<%= "cal_option_price_" + i.to_s %> >
+										0
+										</span>
+										<%= t(".yen") %>
+									</td>
+								</tr>
+							<% end %>
+						<% end %>
+						<tr class="TotalFee">
+							<td>
+								<%= t(".Total_Fee") %>
+							</td>
+							<td>
+								<span id=<%= "total_fee" %> >
+									0
+								</span>
+								<%= t(".yen") %>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

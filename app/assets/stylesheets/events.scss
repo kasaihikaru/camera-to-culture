@@ -8,8 +8,8 @@ $subprim-col      : #51C4AA;
 
 //------------- event/new ---------------//
 .ev-new{
+	text-align: center;
 	h1{
-		text-align: center;
 		padding: 35px 0 ;
 	}
 	h2{
@@ -24,7 +24,6 @@ $subprim-col      : #51C4AA;
 }
 
 .ev-new-1{
-	text-align: center;
 	background-color: $subprim-col;
 	padding: 10px 0;
 	.ev-new-cl{
@@ -32,6 +31,10 @@ $subprim-col      : #51C4AA;
 		img{
 			width: 100px;
 		}
+	}
+	#time-validation, #time-validation-2{
+		color: red;
+		font-weight: 800;
 	}
 	.ev-new-place{
 	}
@@ -41,7 +44,7 @@ $subprim-col      : #51C4AA;
 			text-align: right;
 		}
 	}
-	.ev-new-opyion{
+	.ev-table{
 		table{
 			text-align: left;
 			thead{
@@ -51,12 +54,66 @@ $subprim-col      : #51C4AA;
 				background-color: #FFFFFF;
 			}
 		}
+	}
+	.ev-new-option{
 		input{
 			width: 40px;
 			text-align: right;
 		}
 	}
+	.ev-fee{
+		.TotalFee{
+		border-top: 2px #000000 solid;
+		}
+	}
 	.ev-new-submit{
 		margin: 80px 0 40px;
+	}
+}
+
+
+//------------- event/new ---------------//
+.ev-show{
+	text-align: center;
+	background-color: $subprim-col;
+	h1{
+		text-align: center;
+		font-size: 25px;
+		font-weight: 800;
+		padding: 60px 0 10px;
+	}
+	h2{
+		margin: 60px 0 10px;
+		font-weight: 100;
+		font-size: 15px;
+	}
+	.ev-show-square{
+		text-align: left;
+		width: 100%;
+		padding: 15px;
+		border-radius: 20px;
+		background-color: #FFFFFF;
+		border: #E6E6E6 solid 1px;
+	}
+	.ev-show-names{
+		font-weight: 800;
+		width: 290px;
+		padding-top: 100px;
+		margin: 0 auto 20px;
+	}
+	.ev-show-icons{
+		margin: 0 auto;
+		width: 290px;
+		height: 110px;
+		background-image: image-url("event-users.png");
+		background-size: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		img{
+			border-radius: 10px;
+			width: 110px;
+			height: 110px;
+			object-fit: cover;
+		}
 	}
 }

@@ -16,7 +16,10 @@
 				<!-- 日付選択 -->
 			<div class="ev-new-datetime">
 				<h2><%= t(".Request_date_and_time") %></h2>
-				<p><%= t(".15_minute_increments") %></p>
+				<p>
+					<%= t(".15_minute_increments") %><br>
+					<%= t(".Booking_will_be_accepted_over") %><%= @prim_price.minimum_hours %><%= t(".hours_explanation") %>
+				</p>
 				<input id="date" name="date" type="date" min="<%= @day.strftime("%Y-%m-%d")%>" max="<%= (@day + 365).strftime("%Y-%m-%d") %>" required>
 				<%= f.time_field :start_time, step: "900", required: true%>
 				〜
@@ -47,10 +50,10 @@
 			</div>
 			<!-- オプション -->
 			<% if @options.present? %>
-				<div class="ev-new-opyion">
+				<div class="ev-table ev-new-option">
 					<h2><%= t(".Option_Menu") %></h2>
 					<p><%= t(".per_hour_automatically_culculates") %></p>
-					<table class="table">
+					<table id="OptionTable" class="table">
 						<thead>
 							<tr>
 								<td><%= t(".option_name") %></td>
@@ -59,18 +62,25 @@
 							</tr>
 						</thead>
 						<tbody>
-							<% @options.each do |option| %>
+							<% @options.each_with_index do |option, i | %>
 								<tr>
-									<td><%= option.name %></td>
+									<td>
+										<%= option.name %>
+									</td>
 									<td>
 										<% if option.along_with_time == true %>
-											<%= t(".price_per_hour") %>
+											<span id = <%= "along_" + i.to_s %>>
+												<%= t(".price_per_hour") %>
+											</span>
 										<% end %>
-										<%= option.price %><%= t(".yen") %>
+										<span id=<%= "option_price_" + i.to_s %> >
+											<%= option.price %>
+										</span>
+										<%= t(".yen") %>
 									</td>
 									<td>
 										<%= f.fields_for :event_option_prices do |fo| %>
-											<%= fo.number_field :numbers, min: "0", value: "0", required: true %>
+											<%= fo.number_field :numbers, min: "0", value: "0", name: "event[event_option_prices_attributes][" + option.id.to_s + "]", required: true %>
 										<% end %>
 									</td>
 								</tr>
@@ -80,10 +90,9 @@
 				</div>
 			<% end %>
 			<!-- 料金計算 -->
-			<div class="ev-new-opyion">
+			<div class="ev-table ev-fee">
 				<h2><%= t(".Fee") %></h2>
-				<p><%= t(".test") %></p>
-				<table class="table">
+				<table id="FeeTable" class="table">
 					<thead>
 						<tr>
 							<td><%= t(".item_name") %></td>
@@ -93,7 +102,7 @@
 					<tbody>
 						<tr>
 							<td>
-								メイン価格&emsp;
+								<%= t(".Primary_Price") %>&emsp;
 								<span id="prime_price">
 									<%= @prim_price.price_per_hour %>
 								</span>
@@ -102,9 +111,37 @@
 							</td>
 							<td><span id="total_prime_price">0</span><%= t(".yen") %></td>
 						</tr>
-						<tr>
-							<td>衣装</td>
-							<td>5000<%= t(".yen") %></td>
+
+						<% @options.each_with_index do |option, i | %>
+							<tr>
+								<td>
+									<%= option.name %>&emsp;
+									<% if option.along_with_time == true %>
+										<%= t(".price_per_hour") %>
+									<% end %>
+									<%= option.price %><%= t(".yen") %>
+									×<span id=<%= "option_num_" + i.to_s %> >
+										0
+									</span>
+								</td>
+								<td>
+									<span id=<%= "cal_option_price_" + i.to_s %> >
+									0
+									</span>
+									<%= t(".yen") %>
+								</td>
+							</tr>
+						<% end %>
+						<tr class="TotalFee">
+							<td>
+								<%= t(".Total_Fee") %>
+							</td>
+							<td>
+								<span id=<%= "total_fee" %> >
+									0
+								</span>
+								<%= t(".yen") %>
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -112,13 +149,17 @@
 			<%= f.hidden_field :client_id, value: @cl_here.id %>
 			<!-- 送信ボタン -->
 			<div class="ev-new-submit">
-				<%= f.submit  t(".Request_to_Book"), class: "big-prim-btn btn" %>
+				<span id="time-validation-2"></span><br>
+				<%= f.submit  t(".Request_to_Book"), class: "big-prim-btn btn", id: "ev-new-btn" %>
 			</div>
 		</div>
 	<% end %>
 </div>
 
 
+
+
+<!--/////// 計算 /////// -->
 <script>
 	// メイン料金計算
 	function cultulate_prim_price(){
@@ -140,52 +181,123 @@
 		}
 	}
 
+	// オプション料金計算
+	function cultulate_option_price(){
+		// オプション数カウント
+		var option_rows = OptionTable.rows.length-1;
+
+		var i = 0;
+		while (i < option_rows) {
+				// オプション数量
+				var num_id = '#event_event_option_prices_attributes_'+i+'_numbers';
+				var option_num = parseInt($(num_id).val(), 10);
+
+				//１時間ごと
+				var along_id = '#along_' + i
+				var along = $(along_id).text().replace(/^\s+|\s+$/g,'');
+				if (along == '１時間あたり') {
+					var hours = parseFloat($('#hours').text(), 10);
+				} else {
+					var hours = 1;
+				}
+
+				// オプション価格
+				var price_id = '#option_price_' + i
+				var option_price = parseInt($(price_id).text(), 10);
+
+				// オプション価格（計算後）
+				var cul_option_price = option_num * option_price * hours;
+
+				// オプション数描画
+				var changed_opt_num_id = '#option_num_' + i;
+				$(changed_opt_num_id).text(option_num);
+
+				// オプション価格（計算後）描画
+				var cal_opt_price_id = '#cal_option_price_' + i;
+				$(cal_opt_price_id).text(cul_option_price);
+
+				var i = i + 1;
+		}
+	}
+
+	// 合計金額計算
+	function cultulate_total_fee(){
+		// オプション数カウント
+		var option_rows = OptionTable.rows.length-1;
+		// オプション価格
+		x = 0;
+		var total_opt_price = 0;
+		while (x < option_rows) {
+				var cal_opt_price_id = '#cal_option_price_' + x;
+				var option_price = parseInt($(cal_opt_price_id).text(), 10);
+				var total_opt_price = total_opt_price + option_price
+				x = x + 1;
+		}
+
+		// メイン価格
+		var total_prime_price = parseInt($('#total_prime_price').text(), 10);
+
+		// 合計価格描画
+		var cul_total_price = total_prime_price + total_opt_price;
+		$('#total_fee').text(cul_total_price);
+	}
+
+
 	// 時間前後validation
 	function check_time(){
 		var start_time = parseInt($('#event_start_time').val().substr(0,2)+$('#event_start_time').val().substr(3,2), 10);
 		var end_time = parseInt($('#event_end_time').val().substr(0,2)+$('#event_end_time').val().substr(3,2), 10);
 		if (start_time >= end_time) {
 			$('#time-validation').text('時間が前後しています');
+			$('#time-validation-2').text('予約時間が前後しています');
+			$("#ev-new-btn").prop("disabled", true);
 		} else {
 			$('#time-validation').text('');
+			$('#time-validation-2').text('');
+			$("#ev-new-btn").prop("disabled", false);
 		}
 	}
 
+
+
+	$("#ev-new-btn").prop("disabled", false);
+
 	$(function() {
 		$('input[type="time"]').on('keyup change', function() {
-			cultulate_prim_price();
 			check_time();
+			$.when(
+				cultulate_prim_price(),
+				cultulate_option_price()
+			).done(function(){
+				cultulate_total_fee();
+			});
 		});
 		$('input[type="date"]').on('keyup change', function() {
-			cultulate_prim_price();
+			$.when(
+				cultulate_prim_price(),
+				cultulate_option_price()
+			).done(function(){
+				cultulate_total_fee();
+			});
 		});
-	});
-
-
-
-
-
-</script>
-
-<div class="container">
-     <p>量</p>
-     <input id="quantity" type="number" size="40"><br>
-     <p>単価</p>
-     <input id="price" type="number" size="40"><br>
-     <p>合計金額</p>
-     <span id="total"></span>円です。
-</div>
-<script>
-	function update_field(){
-			var result = $('#quantity').val() * $('#price').val();
-			$('#total').text(result);
-	}
-	$(function() {
 		$('input[type="number"]').on('keyup change', function() {
-			update_field();
+			$.when(
+				cultulate_option_price()
+			).done(function(){
+				cultulate_total_fee();
+			});
 		});
 	});
+
 </script>
+
+
+
+
+
+
+
+
 
 <!-- ##########  About  ########## -->
 <div class="container-fluid cl-show cl-show-2">
