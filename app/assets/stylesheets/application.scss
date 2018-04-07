@@ -82,6 +82,13 @@ $subprim-col      : #51C4AA;
   float: left;
 }
 
+.left-align{
+  text-align: left;
+}
+.center-align{
+  text-align: center;
+}
+
 .bold{
   font-weight: 800;
 }
@@ -101,6 +108,10 @@ $subprim-col      : #51C4AA;
 
 .maring-b-20{
   margin-bottom: 20px;
+}
+
+.padding-0{
+  padding: 0;
 }
 
 

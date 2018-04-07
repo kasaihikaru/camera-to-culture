@@ -1,11 +1,46 @@
 class EventStatesController < ApplicationController
-	def new
-		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+	def cl_accept
+
 	end
 
-	def create
-		
+	def event_finish
+
 	end
+
+
+	def cl_deliver
+
+	end
+
+
+	def cs_recieved
+
+	end
+
+
+	def cl_edit
+
+	end
+
+
+	def cs_accept
+
+	end
+
+
+	def cl_decline
+
+	end
+
+
+	def cs_cancele
+
+	end
+
+
+	def cl_cancele
+
+	end
+
+
 end

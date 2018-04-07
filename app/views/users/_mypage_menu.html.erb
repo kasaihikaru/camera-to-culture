@@ -15,8 +15,27 @@
 <p><%= t(".events") %></p>
 </a>
 <div class="collapse" id="mypage-menu-events">
-  <p>&emsp;<%= t(".撮影の予定") %></p>
-  <p>&emsp;<%= t(".過去の撮影") %></p>
+  <%= link_to cs_future_events_path do %>
+    <p>
+      &emsp;<%= t(".In_the_future") %>
+      <% if @cl.consent == true %><%= t(".As_a_customer") %><% end %>
+    </p>
+  <% end %>
+  <%= link_to cs_future_events_path do %>
+    <p>
+      &emsp;<%= t(".In_the_past") %>
+      <% if @cl.consent == true %><%= t(".As_a_customer") %><% end %>
+    </p>
+  <% end %>
+  <% if @cl.consent == true %>
+    <%= link_to cl_future_events_path do %>
+      <p>&emsp;<%= t(".As_a_cameraman_future") %></p>
+    <% end %>
+    <%= link_to cl_past_events_path do %>
+      <p>&emsp;<%= t(".As_a_cameraman_past") %></p>
+    <% end %>
+  <% end %>
+
 </div>
 <hr>
 

@@ -7,8 +7,8 @@ ja:
       Request_date_and_time: 予約希望日時
       15_minute_increments: 予約時間は15分刻みです。
       hours_minimum: から受け付けます
-      Booking_will_be_accepted_over: 予約は
-      hours_explanation: 時間から受け付けます。
+      hours_explanation1: 最低予約時間は
+      hours_explanation2: 時間です。
       Photographing_Location: 撮影場所
       tell_location_detail: 撮影場所や集合場所の詳細を伝えましょう。
       How_many_people?: 撮影に参加する人数
@@ -18,7 +18,7 @@ ja:
         %{name}さん、初めまして。
         妻と息子の３人で、家族写真を撮りたいと思っています。
         よろしくお願いします！
-      per_hour_automatically_culculates: 時間帯あたりの価格は自動計算されます。
+      per_hour_automatically_culculates: １時間あたりの価格は自動計算されます。
       option_name: オプション名
       price: 価格
       number: 数量
@@ -27,6 +27,7 @@ ja:
       item_name: 項目
       hours: 時間
       Total_Fee: 合計金額
+      Check_Profile: '%{name}さんのプロフィールを確認'
       Languages: 話す言語
       sign-in: ログインして、メッセージを送る
       Photographing_Categories: 撮影カテゴリー
@@ -39,3 +40,26 @@ ja:
       yen: 円
       Camera: カメラ
       Message: メッセージ
+    show:
+      Date_and_Time: 日時
+      How_many_people?: 撮影に参加する人数
+      Location: 撮影場所
+      Message: メッセージ
+      Fee: 料金
+      Price: 価格
+      price_per_hour: １時間あたり
+      Primary_Price: メイン価格
+      item_name: 項目
+      price: 価格
+      hours: 時間
+      Total_Fee: 合計金額
+      yen: 円
+      Send: 送信
+      Accept: リクエストを承認する
+      cl_accept_comment: リクエストありがとうございます。撮影よろしくお願いします！
+      Edit: 撮影条件変更を提案する
+      Decline: 撮影を断る
+      cl_decline_comment: ご希望の条件に沿うのは難しいため、今回は見送らせてください。また次回、よろしくお願いします！
+    cl_future:
+      yen: 円
+      Youve_got_a_request: 承認待ち

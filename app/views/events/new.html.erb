@@ -1,160 +1,206 @@
-<div class="container-fluid ev-new ev-new-1">
+<div class="container-fluid ev-base-common ev-new">
+	<h1><%= t(".Request_to_Book") %></h1>
 
-	<%= form_for @event do |f| %>
-		<h1><%= t(".Request_to_Book") %></h1>
-		<div class="container">
-			<!-- 名前、アイコン -->
-			<div class="ev-new-cl">
-				<%= image_tag @cl_here.user.image.url, alt: "icon" if @cl_here.user.image? %>
-			</div>
+	<!-- 名前、アイコン -->
+	<div class="ev-new-cl">
+		<a href="#ev-new-profile">
+			<%= image_tag @cl_here.user.image.url, alt: "icon" if @cl_here.user.image? %>
+		</a>
+	</div>
 
-			<!-- カレンダー  -->
-			<div id="cl-show4-calender" class="container-fluid cl-show cl-show-4">
-				<h2><%= t(".Check_Shedule", name: @cl_here.user.name) %></h2>
-				<%= render partial: 'clients/show4_calender', locals: {cl_here: @cl_here, day: @day, c_dates: @c_dates } %>
-			</div>
-				<!-- 日付選択 -->
-			<div class="ev-new-datetime">
-				<h2><%= t(".Request_date_and_time") %></h2>
-				<p>
-					<%= t(".15_minute_increments") %><br>
-					<%= t(".Booking_will_be_accepted_over") %><%= @prim_price.minimum_hours %><%= t(".hours_explanation") %>
-				</p>
-				<input id="date" name="date" type="date" min="<%= @day.strftime("%Y-%m-%d")%>" max="<%= (@day + 365).strftime("%Y-%m-%d") %>" required>
-				<%= f.time_field :start_time, step: "900", required: true%>
-				〜
-				<%= f.time_field :end_time, step: "900", required: true %>
-				<br>
-				<span id="time-validation"></span>
-			</div>
-			<!-- 場所選択 -->
-			<div class="ev-new-location">
-				<h2><%= t(".Photographing_Location") %></h2>
-				<select name="prefecture_id" class="selectpicker" name="prefecture_id" data-live-search="false">
-					<% @locations.each do |location| %>
-						<option value=<%= location.prefecture.id %>><%= location.prefecture.ja %></option>
-					<% end %>
-				</select><br>
-				<%= f.text_area :location_detail, rows: "4", maxlength: "1000", placeholder:  t(".tell_location_detail", name: @cl_here.user.name ), required: true%>
-			</div>
-			<!-- 撮影人数 -->
-			<div class="ev-new-people">
-				<h2><%= t(".How_many_people?") %></h2>
-				<%= f.number_field :num_people, min: "1", value: "1", required: true %>
-			</div>
-			<!-- あいさつ -->
-			<div class="ev-new-comment">
-				<h2><%= t(".Say_hello") %></h2>
-				<p><%= t(".Let_cl_know_you", name: @cl_here.user.name) %></p>
-				<%= f.text_area :message, rows: "8", maxlength: "2000", placeholder:  t(".greeting_message", name: @cl_here.user.name), required: true%>
-			</div>
-			<!-- オプション -->
-			<% if @options.present? %>
-				<div class="ev-table ev-new-option">
-					<h2><%= t(".Option_Menu") %></h2>
-					<p><%= t(".per_hour_automatically_culculates") %></p>
-					<table id="OptionTable" class="table">
+	<!-- カレンダー  -->
+	<div id="cl-show4-calender" class="container-fluid cl-show cl-show-4">
+		<h1><%= t(".Check_Shedule", name: @cl_here.user.name) %></h1>
+		<%= render partial: 'clients/show4_calender', locals: {cl_here: @cl_here, day: @day, c_dates: @c_dates } %>
+	</div>
+
+	<!-- 	フォーム -->
+	<div class="row">
+		<div class="left-align col-12 col-md-6 offset-md-3">
+			<%= form_for @event do |f| %>
+
+				<!-- 日時 -->
+				<div class="ev-new-datetime">
+					<h2>
+						<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Request_date_and_time") %>
+					</h2>
+					<h3>
+						<%= t(".15_minute_increments") %>
+						<%= t(".hours_explanation1") %><%= @prim_price.minimum_hours %><%= t(".hours_explanation2") %>
+					</h3>
+					<div class="ev-square ev-new-time">
+						<input id="date" name="date" type="date" min="<%= @day.strftime("%Y-%m-%d")%>" max="<%= (@day + 365).strftime("%Y-%m-%d") %>" required>
+						<%= f.time_field :start_time, step: "900", required: true%>
+						〜
+						<%= f.time_field :end_time, step: "900", required: true %>
+					</div>
+					<span id="time-validation"></span>
+				</div>
+
+
+				<!-- 場所選択 -->
+				<div class="ev-new-location">
+					<h2>
+						<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Photographing_Location") %>
+					</h2>
+					<select name="prefecture_id" class="selectpicker" name="prefecture_id" data-live-search="false">
+						<% @locations.each do |location| %>
+							<option value=<%= location.prefecture.id %>><%= location.prefecture.ja %></option>
+						<% end %>
+					</select>
+					<div class="ev-square">
+						<%= f.text_area :location_detail, rows: "4", maxlength: "1000", placeholder:  t(".tell_location_detail", name: @cl_here.user.name ), required: true%>
+					</div>
+				</div>
+
+
+				<!-- 撮影人数 -->
+				<div class="ev-new-people">
+					<h2>
+						<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".How_many_people?") %>
+					</h2>
+					<div class="ev-square">
+						<%= f.number_field :num_people, min: "1", value: "1", required: true %>
+					</div>
+				</div>
+
+				<!-- あいさつ -->
+				<div class="ev-new-comment">
+					<h2>
+						<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Say_hello") %>
+					</h2>
+					<h3><%= t(".Let_cl_know_you", name: @cl_here.user.name) %></h3>
+					<div class="ev-square">
+						<%= f.text_area :message, rows: "8", maxlength: "2000", placeholder:  t(".greeting_message", name: @cl_here.user.name), required: true%>
+					</div>
+				</div>
+
+
+				<!-- オプション -->
+				<% if @options.present? %>
+					<div class="ev-new-option">
+						<h2>
+							<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Option_Menu") %>
+						</h2>
+						<h3><%= t(".per_hour_automatically_culculates") %></h3>
+						<table id="OptionTable" class="table ev-table">
+							<thead>
+								<tr>
+									<td><%= t(".option_name") %></td>
+									<td><%= t(".price") %></td>
+									<td><%= t(".number") %></td>
+								</tr>
+							</thead>
+							<tbody>
+								<% @options.each_with_index do |option, i | %>
+									<tr>
+										<td>
+											<%= option.name %>
+										</td>
+										<td>
+											<% if option.along_with_time == true %>
+												<span id = <%= "along_" + i.to_s %>>
+													<%= t(".price_per_hour") %>
+												</span>
+											<% end %>
+											<span id=<%= "option_price_" + i.to_s %> >
+												<%= option.price %>
+											</span>
+											<%= t(".yen") %>
+										</td>
+										<td>
+											<%= f.fields_for :event_option_prices do |fo| %>
+												<%= fo.number_field :numbers, min: "0", max: "100", value: "0", name: "event[event_option_prices_attributes][" + option.id.to_s + "]", required: true %>
+											<% end %>
+										</td>
+									</tr>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+				<% end %>
+
+
+
+				<!-- 料金計算 -->
+				<div class="ev-fee">
+					<h2>
+						<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Fee") %>
+					</h2>
+					<table id="FeeTable" class="table ev-table">
 						<thead>
 							<tr>
-								<td><%= t(".option_name") %></td>
+								<td><%= t(".item_name") %></td>
 								<td><%= t(".price") %></td>
-								<td><%= t(".number") %></td>
 							</tr>
 						</thead>
 						<tbody>
+							<tr>
+								<td>
+									<%= t(".Primary_Price") %>&emsp;
+									<span id="prime_price">
+										<%= @prim_price.price_per_hour %>
+									</span>
+									<%= t(".yen") %>
+									×<span id="hours">0</span><%= t(".hours") %>
+								</td>
+								<td><span id="total_prime_price">0</span><%= t(".yen") %></td>
+							</tr>
+
 							<% @options.each_with_index do |option, i | %>
 								<tr>
 									<td>
-										<%= option.name %>
+										<%= option.name %>&emsp;
+										<% if option.along_with_time == true %>
+											<%= t(".price_per_hour") %>
+										<% end %>
+										<%= option.price %><%= t(".yen") %>
+										×<span id=<%= "option_num_" + i.to_s %> >
+											0
+										</span>
 									</td>
 									<td>
-										<% if option.along_with_time == true %>
-											<span id = <%= "along_" + i.to_s %>>
-												<%= t(".price_per_hour") %>
-											</span>
-										<% end %>
-										<span id=<%= "option_price_" + i.to_s %> >
-											<%= option.price %>
+										<span id=<%= "cal_option_price_" + i.to_s %> >
+										0
 										</span>
 										<%= t(".yen") %>
 									</td>
-									<td>
-										<%= f.fields_for :event_option_prices do |fo| %>
-											<%= fo.number_field :numbers, min: "0", value: "0", name: "event[event_option_prices_attributes][" + option.id.to_s + "]", required: true %>
-										<% end %>
-									</td>
 								</tr>
 							<% end %>
-						</tbody>
-					</table>
-				</div>
-			<% end %>
-			<!-- 料金計算 -->
-			<div class="ev-table ev-fee">
-				<h2><%= t(".Fee") %></h2>
-				<table id="FeeTable" class="table">
-					<thead>
-						<tr>
-							<td><%= t(".item_name") %></td>
-							<td><%= t(".price") %></td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<%= t(".Primary_Price") %>&emsp;
-								<span id="prime_price">
-									<%= @prim_price.price_per_hour %>
-								</span>
-								<%= t(".yen") %>
-								×<span id="hours">0</span><%= t(".hours") %>
-							</td>
-							<td><span id="total_prime_price">0</span><%= t(".yen") %></td>
-						</tr>
-
-						<% @options.each_with_index do |option, i | %>
-							<tr>
+							<tr class="TotalFee">
 								<td>
-									<%= option.name %>&emsp;
-									<% if option.along_with_time == true %>
-										<%= t(".price_per_hour") %>
-									<% end %>
-									<%= option.price %><%= t(".yen") %>
-									×<span id=<%= "option_num_" + i.to_s %> >
-										0
-									</span>
+									<%= t(".Total_Fee") %>
 								</td>
 								<td>
-									<span id=<%= "cal_option_price_" + i.to_s %> >
-									0
+									<span id=<%= "total_fee" %> >
+										0
 									</span>
 									<%= t(".yen") %>
 								</td>
 							</tr>
-						<% end %>
-						<tr class="TotalFee">
-							<td>
-								<%= t(".Total_Fee") %>
-							</td>
-							<td>
-								<span id=<%= "total_fee" %> >
-									0
-								</span>
-								<%= t(".yen") %>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<%= f.hidden_field :client_id, value: @cl_here.id %>
-			<!-- 送信ボタン -->
-			<div class="ev-new-submit">
-				<span id="time-validation-2"></span><br>
-				<%= f.submit  t(".Request_to_Book"), class: "big-prim-btn btn", id: "ev-new-btn" %>
-			</div>
+						</tbody>
+					</table>
+				</div>
+
+				<%= f.hidden_field :client_id, value: @cl_here.id %>
+
+
+				<!-- 送信ボタン -->
+				<div class="ev-new-submit">
+					<span id="time-validation-2"></span><br>
+					<span id="fee-validation"></span><br>
+					<%= f.submit  t(".Request_to_Book"), class: "big-prim-btn btn", id: "ev-new-btn" %>
+				</div>
+			<% end %>
 		</div>
-	<% end %>
+	</div>
 </div>
+
+
+
+
+
+
 
 
 
@@ -240,6 +286,13 @@
 		// 合計価格描画
 		var cul_total_price = total_prime_price + total_opt_price;
 		$('#total_fee').text(cul_total_price);
+		if (cul_total_price < 0 ) {
+			$('#fee-validation').text('価格がマイナスの値になっています');
+			$("#ev-new-btn").prop("disabled", true);
+		} else {
+			$('#fee-validation').text('');
+			$("#ev-new-btn").prop("disabled", false);
+		}
 	}
 
 
@@ -300,8 +353,8 @@
 
 
 <!-- ##########  About  ########## -->
-<div class="container-fluid cl-show cl-show-2">
-	<h1>About</h1>
+<div class="container-fluid cl-show cl-show-2" id="ev-new-profile">
+	<h1><%= t(".Check_Profile", name: @cl_here.user.name) %></h1>
 	<div class="container">
 		<h2><%= t(".Languages") %></h2>
 		<p>

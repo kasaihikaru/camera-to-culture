@@ -8,6 +8,11 @@ ja:
       mypage: ホーム
       message: メッセージ
       events: CtoCでの撮影
+      In_the_future: 今後の撮影
+      In_the_past: 過去の撮影
+      As_a_customer: （お客様として）
+      As_a_cameraman_future: 今後の出張（カメラマンとして）
+      As_a_cameraman_past: 過去の出張（カメラマンとして）
       settings: ユーザー設定
       user_settings: プロフィールを編集
       cs_settings: 自己紹介を編集

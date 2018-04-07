@@ -23,7 +23,6 @@ Rails.application.routes.draw do
 					post 'first_create'
 				end
 			end
-			resources :events, only: [:index]
 			resources :clients, only: [:edit, :update] do
 				resources :client_contacts, only: [:new, :create] do
 					collection do
@@ -55,7 +54,25 @@ Rails.application.routes.draw do
 		resources :customers, only: [:show]
 
 		resources :events, only: [:new, :create, :show] do
-			resources :event_states, only: [:new, :create]
+			collection do
+				get 'cs_past'
+				get 'cs_future'
+				get 'cl_past'
+				get 'cl_future'
+			end
+			resources :event_states, only: []  do
+				collection do
+					post 'cl_accept'
+					post 'event_finish'
+					post 'cl_deliver'
+					post 'cs_recieved'
+					post 'cl_edit'
+					post 'cs_accept'
+					post 'cl_decline'
+					post 'cs_cancele'
+					post 'cl_cancele'
+				end
+			end
 		end
 
 		resource :about, only: [:show] do

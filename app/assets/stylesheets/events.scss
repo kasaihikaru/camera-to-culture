@@ -6,75 +6,11 @@ $prim-col      : #FF8000;
 $subprim-col      : #51C4AA;
 
 
-//------------- event/new ---------------//
-.ev-new{
-	text-align: center;
-	h1{
-		padding: 35px 0 ;
-	}
-	h2{
-		font-size: 25px;
-		font-weight: 800;
-		margin: 60px 0 10px;
-	}
-	textarea{
-		max-width: 100%;
-		width: 400px;
-	}
-}
-
-.ev-new-1{
-	background-color: $subprim-col;
-	padding: 10px 0;
-	.ev-new-cl{
-		margin-bottom: 30px;
-		img{
-			width: 100px;
-		}
-	}
-	#time-validation, #time-validation-2{
-		color: red;
-		font-weight: 800;
-	}
-	.ev-new-place{
-	}
-	.ev-new-people{
-		input{
-			width: 80px;
-			text-align: right;
-		}
-	}
-	.ev-table{
-		table{
-			text-align: left;
-			thead{
-				background-color: #E6E6E6
-			}
-			tbody{
-				background-color: #FFFFFF;
-			}
-		}
-	}
-	.ev-new-option{
-		input{
-			width: 40px;
-			text-align: right;
-		}
-	}
-	.ev-fee{
-		.TotalFee{
-		border-top: 2px #000000 solid;
-		}
-	}
-	.ev-new-submit{
-		margin: 80px 0 40px;
-	}
-}
 
 
-//------------- event/new ---------------//
-.ev-show{
-	text-align: center;
+
+//------------- event/共通コンポーネント ---------------//
+.ev-base-common{
 	background-color: $subprim-col;
 	h1{
 		text-align: center;
@@ -82,18 +18,111 @@ $subprim-col      : #51C4AA;
 		font-weight: 800;
 		padding: 60px 0 10px;
 	}
+}
+
+
+.ev-square{
+	text-align: left;
+	width: 100%;
+	padding: 15px;
+	margin: 10px 0 20px;
+	border-radius: 20px;
+	background-color: #FFFFFF;
+	border: #E6E6E6 solid 1px;
+}
+
+.ev-table{
+	width: 100%;
+	margin-top: 10px;
+	thead{
+		background-color: #E6E6E6
+	}
+	tbody{
+		background-color: #FFFFFF;
+	}
+}
+
+
+.TotalFee{
+	border-top: solid 2px #999999;
+}
+
+
+
+
+
+//------------- event/new ---------------//
+.ev-new{
+	text-align: center;
+	h2{
+		margin: 60px 0 0px;
+		font-weight: 800;
+		font-size: 20px;
+	}
+	h3{
+		font-weight: 100;
+		font-size: 15px;
+		margin: 0px;
+	}
+	img{
+		width: 100px;
+	}
+	textarea{
+		max-width: 100%;
+		width: 100%;
+		border: none;
+	}
+	.ev-new-time{
+		text-align: center;
+		input{
+			width: 30%;
+			height: 40px;
+		}
+	}
+	.ev-new-location{
+		button{
+			margin-top: 10px;
+		}
+	}
+	.ev-new-people{
+		input{
+			text-align: center;
+			border: none;
+			width: 100%;
+		}
+	}
+	.ev-new-submit{
+		text-align: center;
+		margin: 20px 0 60px;
+	}
+	#time-validation, #time-validation-2, #fee-validation{
+		color: red;
+		font-weight: 800;
+	}
+}
+
+#ev-new-profile{
+	h1{
+		text-align: center;
+		font-size: 25px;
+		font-weight: 800;
+		padding: 60px 0 10px;
+	}
+}
+
+
+
+
+
+
+
+
+//------------- event/show ---------------//
+.ev-show{
 	h2{
 		margin: 60px 0 10px;
 		font-weight: 100;
 		font-size: 15px;
-	}
-	.ev-show-square{
-		text-align: left;
-		width: 100%;
-		padding: 15px;
-		border-radius: 20px;
-		background-color: #FFFFFF;
-		border: #E6E6E6 solid 1px;
 	}
 	.ev-show-names{
 		font-weight: 800;
@@ -115,5 +144,113 @@ $subprim-col      : #51C4AA;
 			height: 110px;
 			object-fit: cover;
 		}
+	}
+}
+
+.ev-states-btns{
+	text-align: center;
+	margin: 40px 0;
+	.ev-states-btn{
+		margin: 20px;
+	}
+	.ev-state-comment{
+		width: 100%;
+		height: 100px;
+	}
+}
+
+
+
+
+//------------- event/index系 共通コンポーネント---------------//
+.ev-index-base{
+	a, a:hover{
+		text-decoration: none;
+		color: #000000;
+	}
+}
+
+.ev-index-status{
+	margin: 15px 0;
+	.status-badge{
+		padding: 10px 15px;
+		border-radius: 15px;
+		font-weight: 800;
+		font-size: 15px;
+	}
+}
+
+
+.primary-col{
+	background-color: $prim-col;
+}
+
+
+
+
+//------------- event/index cl ---------------//
+
+.ev-index-for-cl{
+	.ev-index-for-cl-line{
+	}
+	.ev-index-for-cl-main{
+		// box-shadow: 2px 2px 4px gray;
+		.ev-index-for-cl-low-left{
+			text-align: center;
+		}
+		.ev-index-for-cl-low-right{
+			.ev-index-for-cl-location{
+				margin: 0 20px 10px 15px ;
+				height: 45px;
+				overflow:hidden;
+			}
+		}
+	}
+}
+
+
+.ev-index-for-cl-main{
+	margin: 15px 0;
+	box-shadow:2px 2px 2px rgba(0,0,0,0.4); //右下
+	border: solid 1px #B3B3B3;
+}
+
+
+.ev-index-for-cl-up{
+	margin: 30px 0 10px;
+	font-weight: 800;
+	font-size: 20px;
+}
+
+
+
+// アイコン
+@media screen and (max-width:1200px){
+	.ev-index-for-cl-up{
+		margin: 30px 0 10px;
+		font-weight: 800;
+		font-size: 15px;
+		margin-left: 20px;
+	}
+	.ev-index-cs-icon{
+		border-radius: 25px;
+		width: 50px;
+		height: 50px;
+		margin: 85px 0;
+	}
+}
+
+@media screen and (min-width:1201px){
+	.ev-index-for-cl-up{
+		margin: 30px 0 10px;
+		font-weight: 800;
+		font-size: 20px;
+		margin-left: 25px;
+	}
+	.ev-index-cs-icon{
+		border-radius: 40px;
+		width: 80px;
+		height: 80px;
+		margin: 70px 0;
 	}
 }

@@ -1,6 +1,8 @@
-<div class="container-fluid ev-show ev-how-1">
+<div class="container-fluid ev-base-common ev-show">
 	<div class="row">
 		<div class="col-12 col-md-6 offset-md-3">
+			
+
 			<!-- 名前 -->
 			<div class="ev-show-names clearfix">
 				<div class="float-left">
@@ -25,7 +27,7 @@
 				<h2 class="sub-title float-left">
 					<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Date_and_Time") %>
 				</h2>
-				<div class="ev-show-square float-left">
+				<div class="ev-square float-left">
 					<%= @day %>（<%= @wday %>）&emsp;<%= @start_time %>〜<%= @end_time %>
 				</div>
 			</div>
@@ -36,7 +38,7 @@
 				<h2 class="sub-title float-left">
 					<%= render :partial => 'svgs/people' %>&nbsp;<%= t(".How_many_people?") %>
 				</h2>
-				<div class="ev-show-square float-left">
+				<div class="ev-square float-left">
 					<%= @event.num_people %>
 				</div>
 			</div>
@@ -47,7 +49,7 @@
 				<h2 class="float-left">
 					<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Location") %>
 				</h2>
-				<div class="ev-show-square float-left">
+				<div class="ev-square float-left">
 					<%= @prefecture.ja %><br>
 					<pre><%= @event.location_detail %></pre>
 				</div>
@@ -59,7 +61,7 @@
 				<h2 class="float-left">
 					<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Message") %>
 				</h2>
-				<div class="ev-show-square float-left">
+				<div class="ev-square float-left">
 					<pre><%= @event.message %></pre>
 				</div>
 			</div>
@@ -67,7 +69,7 @@
 
 			<!-- 料金 -->
 			<div class="ev-table ev-fee">
-				<h2><%= t(".Fee") %></h2>
+				<h2><%= render :partial => 'svgs/fee' %><%= t(".Fee") %></h2>
 				<table id="FeeTable" class="table">
 					<thead>
 						<tr>
@@ -79,28 +81,24 @@
 						<tr>
 							<td>
 								<%= t(".Primary_Price") %>&emsp;
-								<%= t(".yen") %>
-								×<span id="hours">0</span><%= t(".hours") %>
+								<%= @prim_price.price_per_hour %><%= t(".yen") %>
+								×<span id="hours"><%= @ev_prim_price.hours %></span><%= t(".hours") %>
 							</td>
-							<td><span id="total_prime_price">0</span><%= t(".yen") %></td>
+							<td><%= @ev_prim_price.price_sum %><%= t(".yen") %></td>
 						</tr>
 						<% if @options.present? %>
 							<% @options.each_with_index do |option, i | %>
 								<tr>
 									<td>
-										<%= option.name %>&emsp;
-										<% if option.along_with_time == true %>
+										<%= option.client_option_price.name %>&emsp;
+										<% if option.client_option_price.along_with_time == true %>
 											<%= t(".price_per_hour") %>
 										<% end %>
-										<%= option.price %><%= t(".yen") %>
-										×<span id=<%= "option_num_" + i.to_s %> >
-											0
-										</span>
+										<%= option.client_option_price.price %><%= t(".yen") %>
+										×<%= option.numbers %>
 									</td>
 									<td>
-										<span id=<%= "cal_option_price_" + i.to_s %> >
-										0
-										</span>
+										<%= option.price_sum %>
 										<%= t(".yen") %>
 									</td>
 								</tr>
@@ -111,14 +109,98 @@
 								<%= t(".Total_Fee") %>
 							</td>
 							<td>
-								<span id=<%= "total_fee" %> >
-									0
-								</span>
+								<%= @event.total_price %>
 								<%= t(".yen") %>
 							</td>
 						</tr>
 					</tbody>
 				</table>
+			</div>
+			<div class="ev-states-btns">
+				<!-- clの場合 -->
+				<% if @event.client_id == @cl.id %>
+					<!-- リクエスト状態 -->
+					<% if @event.event_states.last.state == "request" %>
+						<!-- リクエスト承認 -->
+						<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cl_accept">
+							<%= t(".Accept") %>
+						</button>
+						<!-- リクエスト承認Modal -->
+						<div class="modal fade" id="cl_accept" tabindex="-1" role="dialog" aria-labelledby="cl_acceptTitle" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="cl_acceptLongTitle"><%= t(".Accept") %></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<%= form_tag cl_accept_event_event_states_path (@event) do %>
+										<div class="modal-body">
+											<%= text_area_tag 'comment', t(".cl_accept_comment"), class: "ev-state-comment" %>
+										</div>
+										<div class="modal-footer">
+											<%= submit_tag t(".Send"), class: "prim-btn btn" %>
+										</div>
+									<% end %>
+								</div>
+							</div>
+						</div>
+						<!-- 撮影を断る -->
+						<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cl_decline">
+							<%= t(".Decline") %>
+						</button>
+						<!-- 撮影を断るModal -->
+						<div class="modal fade" id="cl_decline" tabindex="-1" role="dialog" aria-labelledby="cl_declineTitle" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="cl_declineLongTitle"><%= t(".Decline") %></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<%= form_tag cl_decline_event_event_states_path (@event) do %>
+										<div class="modal-body">
+											<%= text_area_tag 'comment', t(".cl_decline_comment"), class: "ev-state-comment" %>
+										</div>
+										<div class="modal-footer">
+											<%= submit_tag t(".Send"), class: "prim-btn btn" %>
+										</div>
+									<% end %>
+								</div>
+							</div>
+						</div>
+
+
+
+						<!-- 撮影条件変更を提案する -->
+						<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cl_edit">
+							<%= t(".Edit") %>
+						</button>
+						<!-- 条件変更Modal -->
+						<div class="modal fade" id="cl_edit" tabindex="-1" role="dialog" aria-labelledby="cl_editTitle" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLongTitle"><%= t(".Edit") %></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<%= form_tag cl_edit_event_event_states_path (@event) do %>
+										<div class="modal-body">
+											<%= text_area_tag 'comment' %>
+										</div>
+										<div class="modal-footer">
+											<%= submit_tag t(".Send"), class: "prim-btn btn" %>
+										</div>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
 			</div>
 		</div>
 	</div>
