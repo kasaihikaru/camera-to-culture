@@ -20,7 +20,7 @@ class EventsController < ApplicationController
 		@cl = @user.clients.active.first
 		@cs = @user.customers.active.first
 
-		@events = Event.as_cl(@cl.id).request.includes(:prefecture, customer: :user)
+		@events = Event.as_cl(@cl.id).request.includes(:prefecture, customer: :user).order(start_time: :DESC)
 	end
 
 	def cl_past
@@ -109,9 +109,11 @@ class EventsController < ApplicationController
 			EventPrimaryPrice.create(prim_price)
 
 			# ev_opt_price_table
-			for opt in ev_opt_price_params do
-				opt_price = opt.merge(event_id: event.id)
-				EventOptionPrice.create(opt_price)
+			if ev_opt_price_params != 0
+				for opt in ev_opt_price_params do
+					opt_price = opt.merge(event_id: event.id)
+					EventOptionPrice.create(opt_price)
+				end
 			end
 
 			# ev_states_table
@@ -145,29 +147,40 @@ private
 
 		# オプション価格
 		options = params[:event][:event_option_prices_attributes]
-		option_price_sum = 0
-		options.each do |key, value|
-			if value.to_i < 0 then
-				return "opt-num-error"
-			else
-				opt = ClientOptionPrice.find(key)
-				if opt.along_with_time == true
-					option_price = opt.price * value.to_i * hours
+		if options.present?
+			option_price_sum = 0
+			options.each do |key, value|
+				if value.to_i < 0 then
+					return "opt-num-error"
 				else
-					option_price = opt.price * value.to_i
+					opt = ClientOptionPrice.find(key)
+					if opt.along_with_time == true
+						option_price = opt.price * value.to_i * hours
+					else
+						option_price = opt.price * value.to_i
+					end
+					option_price_sum = (option_price_sum + option_price).floor
 				end
-				option_price_sum = (option_price_sum + option_price).floor
 			end
-		end
 
-		# 合計価格
-		total_price = primary_price_sum + option_price_sum
-		if total_price <= 0 then
-			return "total-fee-error"
-		end
+			# 合計価格
+			total_price = primary_price_sum + option_price_sum
+			if total_price <= 0 then
+				return "total-fee-error"
+			end
 
-		x = params.require(:event).permit(:location_detail, :num_people, :message).merge(client_id: client_id ,customer_id: current_user.id, prefecture_id: params[:prefecture_id].to_i, start_time: start_time, end_time: end_time, total_price: total_price, primary_price_sum: primary_price_sum, option_price_sum: option_price_sum)
-		return x
+			x = params.require(:event).permit(:location_detail, :num_people, :message).merge(client_id: client_id ,customer_id: current_user.id, prefecture_id: params[:prefecture_id].to_i, start_time: start_time, end_time: end_time, total_price: total_price, primary_price_sum: primary_price_sum, option_price_sum: option_price_sum)
+			return x
+		else
+			# 合計価格
+			total_price = primary_price_sum
+			if total_price <= 0 then
+				return "total-fee-error"
+			end
+
+			x = params.require(:event).permit(:location_detail, :num_people, :message).merge(client_id: client_id ,customer_id: current_user.id, prefecture_id: params[:prefecture_id].to_i, start_time: start_time, end_time: end_time, total_price: total_price, primary_price_sum: primary_price_sum, option_price_sum: 0)
+			return x
+		end
 	end
 
 
@@ -207,21 +220,25 @@ private
 
 		# オプション価格
 		options = params[:event][:event_option_prices_attributes]
-		x = []
-		options.each do |key, value|
-			a = {}
-			opt = ClientOptionPrice.find(key)
-			client_option_price_id = opt.id
-			numbers = value.to_i
-			if opt.along_with_time == true
-				option_price = opt.price * numbers * hours
-			else
-				option_price = opt.price * numbers
+		if options.present?
+			x = []
+			options.each do |key, value|
+				a = {}
+				opt = ClientOptionPrice.find(key)
+				client_option_price_id = opt.id
+				numbers = value.to_i
+				if opt.along_with_time == true
+					option_price = opt.price * numbers * hours
+				else
+					option_price = opt.price * numbers
+				end
+				a = {"client_option_price_id" => client_option_price_id, "numbers" => numbers, "price_sum" => option_price.floor}
+				x << a
 			end
-			a = {"client_option_price_id" => client_option_price_id, "numbers" => numbers, "price_sum" => option_price.floor}
-			x << a
+			return x
+		else
+			return 0
 		end
-		return x
 	end
 
 

@@ -20,9 +20,28 @@
 										<div class="col-8 ev-index-for-cl-low-right padding-0">
 											<!-- ステータス -->
 											<div class="ev-index-status">
+												<!-- リスエスト -->
 												<% if ev.event_states.last.state == "request" %>
 													<span class="status-badge primary-col">
 														<%= t(".Youve_got_a_request") %>
+													</span>
+												<% end %>
+												<!-- 承認済み -->
+												<% if ev.event_states.last.state == "cl_accepted" %>
+													<span class="status-badge subprimary-col">
+														<%= t(".Request_approved") %>
+													</span>
+												<% end %>
+												<!-- 却下済み -->
+												<% if ev.event_states.last.state == "cl_dismissed" %>
+													<span class="status-badge subprimary-col">
+														<%= t(".Request_dismissed") %>
+													</span>
+												<% end %>
+												<!-- キャンセル済み -->
+												<% if ev.event_states.last.state == "cl_canceled" %>
+													<span class="status-badge subprimary-col">
+														<%= t(".Canceled") %>
 													</span>
 												<% end %>
 											</div>

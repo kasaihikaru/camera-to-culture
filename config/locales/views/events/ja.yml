@@ -54,12 +54,37 @@ ja:
       hours: 時間
       Total_Fee: 合計金額
       yen: 円
+      History: 履歴
+      Date_and_Time: 日時
+      State: アクション
+      request: リクエスト
+      cl_accepted: 撮影確定
+      event_finished: 撮影終了
+      cl_delivered: 写真納品
+      cs_recieved: 写真受け取り
+      cl_edited: 撮影条件変更
+      cs_accepted: 変更承認
+      cl_dismissed: 撮影却下
+      cs_canceled: 予約キャンセル
+      cl_canceled: 撮影キャンセル
+      Comment: コメント
       Send: 送信
       Accept: リクエストを承認する
       cl_accept_comment: リクエストありがとうございます。撮影よろしくお願いします！
       Edit: 撮影条件変更を提案する
-      Decline: 撮影を断る
-      cl_decline_comment: ご希望の条件に沿うのは難しいため、今回は見送らせてください。また次回、よろしくお願いします！
+      Dismiss: 撮影を断る
+      cl_dismiss_comment: ご希望の条件に沿うのは難しいため、今回は見送らせてください。また次回、よろしくお願いします！
+      event_finish_comment: あああああ
+      cl_deliver_comment: あああああ
+      cs_recieve_comment: あああああ
+      cl_edit_comment: あああああ
+      cs_accept_comment: あああああ
+      Cancele: 撮影キャンセルする
+      cs_cancele_comment: あああああ
+      cl_cancele_comment: 大変申し訳ないのですが、撮影をキャンセルさせてください。
     cl_future:
       yen: 円
       Youve_got_a_request: 承認待ち
+      Request_approved: 撮影確定
+      Request_dismissed: 却下済み
+      Canceled: キャンセル済み

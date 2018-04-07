@@ -147,6 +147,13 @@ $subprim-col      : #51C4AA;
 	}
 }
 
+// イベント状態
+.ev-history{
+	.datetime{
+		font-size: 10px;
+	}
+}
+
 .ev-states-btns{
 	text-align: center;
 	margin: 40px 0;
@@ -185,6 +192,9 @@ $subprim-col      : #51C4AA;
 	background-color: $prim-col;
 }
 
+.subprimary-col{
+	background-color: $subprim-col;
+}
 
 
 

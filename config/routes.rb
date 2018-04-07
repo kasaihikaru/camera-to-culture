@@ -68,7 +68,7 @@ Rails.application.routes.draw do
 					post 'cs_recieved'
 					post 'cl_edit'
 					post 'cs_accept'
-					post 'cl_decline'
+					post 'cl_dismiss'
 					post 'cs_cancele'
 					post 'cl_cancele'
 				end
