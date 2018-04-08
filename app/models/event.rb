@@ -20,4 +20,6 @@ class Event < ApplicationRecord
 	scope :request, ->  {
 		joins(:event_states).merge(EventState.request)
 	}
+	scope :future, ->  { where("start_time > ?", Time.now())}
+	scope :past, ->  { where("start_time <= ?", Time.now())}
 end

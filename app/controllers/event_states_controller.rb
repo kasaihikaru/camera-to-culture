@@ -1,13 +1,20 @@
 class EventStatesController < ApplicationController
+
+
+
 	def cl_accept
 		EventState.create(event_id: event_id_params, comment: comment_params, state: "cl_accepted" )
 		redirect_to event_path(event_id_params)
 	end
 
-	def event_finish
-
+	def cs_open_for_dl
+		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_opened" )
+		redirect_to event_path(event_id_params)
 	end
 
+	def cs_claim
+		
+	end
 
 	def cl_deliver
 
@@ -25,7 +32,8 @@ class EventStatesController < ApplicationController
 
 
 	def cs_accept
-
+		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_accepted" )
+		redirect_to event_path(event_id_params)
 	end
 
 
@@ -34,9 +42,19 @@ class EventStatesController < ApplicationController
 		redirect_to event_path(event_id_params)
 	end
 
+	def cs_dismiss
+		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_dismissed" )
+		redirect_to event_path(event_id_params)
+	end
+
+	def cs_request_cancele
+		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_request_canceled" )
+		redirect_to event_path(event_id_params)
+	end
 
 	def cs_cancele
-
+		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_canceled" )
+		redirect_to event_path(event_id_params)
 	end
 
 
@@ -53,5 +71,6 @@ private
 	def event_id_params
 		params[:event_id].to_i
 	end
+
 
 end

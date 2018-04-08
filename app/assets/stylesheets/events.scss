@@ -27,15 +27,16 @@ $subprim-col      : #51C4AA;
 	padding: 15px;
 	margin: 10px 0 20px;
 	border-radius: 20px;
-	background-color: #FFFFFF;
 	border: #E6E6E6 solid 1px;
 }
+
+
 
 .ev-table{
 	width: 100%;
 	margin-top: 10px;
 	thead{
-		background-color: #E6E6E6
+		background-color: #E6E6E6;
 	}
 	tbody{
 		background-color: #FFFFFF;
@@ -163,6 +164,9 @@ $subprim-col      : #51C4AA;
 	.ev-state-comment{
 		width: 100%;
 		height: 100px;
+	}
+	a:hover{
+		color: #FFFFFF;
 	}
 }
 

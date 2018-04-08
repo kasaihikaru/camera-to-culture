@@ -20,28 +20,58 @@
 										<div class="col-8 ev-index-for-cl-low-right padding-0">
 											<!-- ステータス -->
 											<div class="ev-index-status">
-												<!-- リスエスト -->
+												<!-- 顧客がリスエスト -->
 												<% if ev.event_states.last.state == "request" %>
 													<span class="status-badge primary-col">
 														<%= t(".Youve_got_a_request") %>
 													</span>
 												<% end %>
-												<!-- 承認済み -->
+												<!-- あなたが承認済み -->
 												<% if ev.event_states.last.state == "cl_accepted" %>
 													<span class="status-badge subprimary-col">
-														<%= t(".Request_approved") %>
+														<%= t(".You_approved") %>
 													</span>
 												<% end %>
-												<!-- 却下済み -->
+												<!-- あなたが却下済み -->
 												<% if ev.event_states.last.state == "cl_dismissed" %>
 													<span class="status-badge subprimary-col">
-														<%= t(".Request_dismissed") %>
+														<%= t(".You_dismissed") %>
 													</span>
 												<% end %>
-												<!-- キャンセル済み -->
+												<!-- あなたがキャンセル済み -->
 												<% if ev.event_states.last.state == "cl_canceled" %>
 													<span class="status-badge subprimary-col">
-														<%= t(".Canceled") %>
+														<%= t(".You_Canceled") %>
+													</span>
+												<% end %>
+												<!-- 顧客がキャンセル済み -->
+												<% if ev.event_states.last.state == "cs_canceled" %>
+													<span class="status-badge subprimary-col">
+														<%= t(".Customer_Canceled") %>
+													</span>
+												<% end %>
+												<!-- 顧客がリクエストキャンセル済み -->
+												<% if ev.event_states.last.state == "cs_request_canceled" %>
+													<span class="status-badge subprimary-col">
+														<%= t(".Customer_Canceled") %>
+													</span>
+												<% end %>
+												<!-- あなたが条件変更リクエスト -->
+												<% if ev.event_states.last.state == "cl_edited" %>
+													<span class="status-badge subprimary-col">
+														<%= t(".You_edited_Condition") %>
+													</span>
+												<% end %>
+												<!-- 顧客が条件変更を承認済み -->
+												<% if ev.event_states.last.state == "cs_accepted" %>
+													<span class="status-badge subprimary-col">
+														<%= t(".Customer_approved") %>
+													</span>
+												<% end %>
+												<!-- 顧客が却下済み -->
+												<% if ev.event_states.last.state == "cs_dismissed" %>
+													<span class="status-badge subprimary-col">
+														<%= t(".Customer_dismissed") %>
 													</span>
 												<% end %>
 											</div>

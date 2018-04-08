@@ -1,16 +1,9 @@
 <div class="container-fluid ev-base-common ev-new">
-	<h1><%= t(".Request_to_Book") %></h1>
-
-	<!-- 名前、アイコン -->
-	<div class="ev-new-cl">
-		<a href="#ev-new-profile">
-			<%= image_tag @cl_here.user.image.url, alt: "icon" if @cl_here.user.image? %>
-		</a>
-	</div>
+	<h1><%= t(".Edit_Conditions") %></h1>
 
 	<!-- カレンダー  -->
 	<div id="cl-show4-calender" class="container-fluid cl-show cl-show-4">
-		<h1><%= t(".Check_Shedule", name: @cl_here.user.name) %></h1>
+		<h1><%= t(".Check_Your_Shedule") %></h1>
 		<%= render partial: 'clients/show4_calender', locals: {cl_here: @cl_here, day: @day, c_dates: @c_dates } %>
 	</div>
 
@@ -29,7 +22,7 @@
 						<%= t(".hours_explanation1") %><%= @prim_price.minimum_hours %><%= t(".hours_explanation2") %>
 					</h3>
 					<div class="ev-square white-back ev-new-time">
-						<input id="date" name="date" type="date" min="<%= @day.strftime("%Y-%m-%d")%>" max="<%= (@day + 365).strftime("%Y-%m-%d") %>" required>
+						<input id="date" name="date" type="date" min="<%= @day.strftime("%Y-%m-%d")%>" max="<%= (@day + 365).strftime("%Y-%m-%d") %>" required value=<%= @ev_date %>>
 						<%= f.time_field :start_time, step: "900", required: true%>
 						〜
 						<%= f.time_field :end_time, step: "900", required: true %>
@@ -43,13 +36,9 @@
 					<h2>
 						<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Photographing_Location") %>
 					</h2>
-					<select name="prefecture_id" class="selectpicker" name="prefecture_id" data-live-search="false">
-						<% @locations.each do |location| %>
-							<option value=<%= location.prefecture.id %>><%= location.prefecture.ja %></option>
-						<% end %>
-					</select>
-					<div class="ev-square white-back">
-						<%= f.text_area :location_detail, rows: "4", maxlength: "1000", placeholder:  t(".tell_location_detail", name: @cl_here.user.name ), required: true%>
+					<div class="ev-square grey-back">
+						<%= @event.prefecture.ja %><br>
+						<%= @event.location_detail %>
 					</div>
 				</div>
 
@@ -59,8 +48,8 @@
 					<h2>
 						<%= render :partial => 'svgs/people' %>&nbsp;<%= t(".How_many_people?") %>
 					</h2>
-					<div class="ev-square white-back">
-						<%= f.number_field :num_people, min: "1", value: "1", required: true %>
+					<div class="ev-square grey-back">
+						<%= @event.num_people %>
 					</div>
 				</div>
 
@@ -69,56 +58,77 @@
 					<h2>
 						<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Say_hello") %>
 					</h2>
-					<h3><%= t(".Let_cl_know_you", name: @cl_here.user.name) %></h3>
-					<div class="ev-square white-back">
-						<%= f.text_area :message, rows: "8", maxlength: "2000", placeholder:  t(".greeting_message", name: @cl_here.user.name), required: true%>
+					<div class="ev-square grey-back">
+						<%= @event.message %>
 					</div>
 				</div>
 
 
 				<!-- オプション -->
-				<% if @options.present? %>
-					<div class="ev-new-option">
-						<h2>
-							<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Option_Menu") %>
-						</h2>
-						<h3><%= t(".per_hour_automatically_culculates") %></h3>
-						<table id="OptionTable" class="table ev-table">
-							<thead>
+				<div class="ev-new-option">
+					<h2>
+						<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Option_Menu") %>
+					</h2>
+					<h3><%= t(".per_hour_automatically_culculates") %></h3>
+					<table id="OptionTable" class="table ev-table">
+						<thead>
+							<tr>
+								<td><%= t(".option_name") %></td>
+								<td><%= t(".price") %></td>
+								<td><%= t(".number") %></td>
+							</tr>
+						</thead>
+						<tbody>
+							<% @ev_options.each do |ev_opt| %>
 								<tr>
-									<td><%= t(".option_name") %></td>
-									<td><%= t(".price") %></td>
-									<td><%= t(".number") %></td>
+									<td>
+										<%= ev_opt.client_option_price.name %>
+									</td>
+									<td>
+										<% if ev_opt.client_option_price.along_with_time == true %>
+											<span id = <%= "along_" + @i.to_s %>>
+												<%= t(".price_per_hour") %>
+											</span>
+										<% end %>
+										<span id=<%= "option_price_" + @i.to_s %> >
+											<%= ev_opt.client_option_price.price %>
+										</span>
+										<%= t(".yen") %>
+									</td>
+									<td>
+										<%= f.number_field :numbers, min: "0", max: "100", value: ev_opt.numbers, name: "event[event_option_prices_attributes][" + ev_opt.client_option_price.id.to_s + "]", id: "event_event_option_prices_attributes_" + @i.to_s + "_numbers", required: true %>
+									</td>
 								</tr>
-							</thead>
-							<tbody>
-								<% @options.each_with_index do |option, i | %>
+								<% @i = @i + 1 %>
+							<% end %>
+							<% @options.each do |option| %>
+								<% if @ev_opt_ids.include?(option.id) == false %>
 									<tr>
 										<td>
 											<%= option.name %>
 										</td>
 										<td>
 											<% if option.along_with_time == true %>
-												<span id = <%= "along_" + i.to_s %>>
+												<span id = <%= "along_" + @x.to_s %>>
 													<%= t(".price_per_hour") %>
 												</span>
 											<% end %>
-											<span id=<%= "option_price_" + i.to_s %> >
+											<span id=<%= "option_price_" + @x.to_s %> >
 												<%= option.price %>
 											</span>
 											<%= t(".yen") %>
 										</td>
 										<td>
-											<%= f.fields_for :event_option_prices do |fo| %>
-												<%= fo.number_field :numbers, min: "0", max: "100", value: "0", name: "event[event_option_prices_attributes][" + option.id.to_s + "]", required: true %>
-											<% end %>
+											<%= f.number_field :numbers, min: "0", max: "100", value: "0", name: "event[event_option_prices_attributes][" + option.id.to_s + "]", id: "event_event_option_prices_attributes_" + @x.to_s + "_numbers", required: true %>
 										</td>
 									</tr>
+									<% @x = @x + 1 %>
 								<% end %>
-							</tbody>
-						</table>
-					</div>
-				<% end %>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+
 
 
 
@@ -142,30 +152,52 @@
 										<%= @prim_price.price_per_hour %>
 									</span>
 									<%= t(".yen") %>
-									×<span id="hours">0</span><%= t(".hours") %>
+									×<span id="hours"><%= @ev_prim_price.hours %></span><%= t(".hours") %>
 								</td>
-								<td><span id="total_prime_price">0</span><%= t(".yen") %></td>
+								<td><span id="total_prime_price"><%= @event.primary_price_sum %></span><%= t(".yen") %></td>
 							</tr>
-
-							<% @options.each_with_index do |option, i | %>
+							<% @ev_options.each_with_index do |ev_opt, i | %>
 								<tr>
 									<td>
-										<%= option.name %>&emsp;
-										<% if option.along_with_time == true %>
+										<%= ev_opt.client_option_price.name %>&emsp;
+										<% if ev_opt.client_option_price.along_with_time == true %>
 											<%= t(".price_per_hour") %>
 										<% end %>
-										<%= option.price %><%= t(".yen") %>
+										<%= ev_opt.client_option_price.price %><%= t(".yen") %>
 										×<span id=<%= "option_num_" + i.to_s %> >
-											0
+											<%= ev_opt.numbers %>
 										</span>
 									</td>
 									<td>
 										<span id=<%= "cal_option_price_" + i.to_s %> >
-										0
+											<%= ev_opt.price_sum %>
 										</span>
 										<%= t(".yen") %>
 									</td>
 								</tr>
+							<% end %>
+							<% @options.each do |option| %>
+								<% if @ev_opt_ids.include?(option.id) == false %>
+									<tr>
+										<td>
+											<%= option.name %>&emsp;
+											<% if option.along_with_time == true %>
+												<%= t(".price_per_hour") %>
+											<% end %>
+											<%= option.price %><%= t(".yen") %>
+											×<span id=<%= "option_num_" + @y.to_s %> >
+												0
+											</span>
+										</td>
+										<td>
+											<span id=<%= "cal_option_price_" + @y.to_s %> >
+											0
+											</span>
+											<%= t(".yen") %>
+										</td>
+									</tr>
+									<% @y = @y + 1 %>
+								<% end %>
 							<% end %>
 							<tr class="TotalFee">
 								<td>
@@ -182,25 +214,31 @@
 					</table>
 				</div>
 
-				<%= f.hidden_field :client_id, value: @cl_here.id %>
-
-
-				<!-- 送信ボタン -->
-				<div class="ev-new-submit">
-					<span id="time-validation-2"></span><br>
-					<span id="fee-validation"></span><br>
-					<%= f.submit  t(".Request_to_Book"), class: "big-prim-btn btn", id: "ev-new-btn" %>
+				<!-- コメント -->
+				<div class="ev-edit-comment">
+					<h2>
+						<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Message") %>
+					</h2>
+					<div class="ev-square white-back">
+						<textarea name="comment"><%= t(".cl_edit_comment") %></textarea>
+					</div>
 				</div>
+
+
+				<%= f.hidden_field :client_id%>
+
+				<% if @event.client_id == @cl.id && @event.event_states.last.state == "request" %>
+					<!-- 送信ボタン -->
+					<div class="ev-new-submit">
+						<span id="time-validation-2"></span><br>
+						<span id="fee-validation"></span><br>
+						<%= f.submit  t(".Send_request"), class: "big-prim-btn btn", id: "ev-new-btn" %>
+					</div>
+				<% end %>
 			<% end %>
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
 
 
 
@@ -227,10 +265,10 @@
 		}
 	}
 
-	// オプション料金計算
+	// 元からあるオプション料金計算
 	function cultulate_option_price(){
-		// オプション数カウント
-		var option_rows = OptionTable.rows.length-1;
+		// 元からあるオプション数カウント
+		var option_rows = <%= @ev_opt_ids.count %>;
 
 		var i = 0;
 		while (i < option_rows) {
@@ -264,16 +302,64 @@
 
 				var i = i + 1;
 		}
+		// 新しくできたオプション数カウント
+		var option_rows = <%= @opt_diff.count %>;
+
+		var x = 1000;
+		while (x < option_rows + 1000) {
+				// オプション数量
+				var num_id = '#event_event_option_prices_attributes_'+x+'_numbers';
+				var option_num = parseInt($(num_id).val(), 10);
+
+				//１時間ごと
+				var along_id = '#along_' + x
+				var along = $(along_id).text().replace(/^\s+|\s+$/g,'');
+				if (along == '１時間あたり') {
+					var hours = parseFloat($('#hours').text(), 10);
+				} else {
+					var hours = 1;
+				}
+
+				// オプション価格
+				var price_id = '#option_price_' + x
+				var option_price = parseInt($(price_id).text(), 10);
+
+				// オプション価格（計算後）
+				var cul_option_price = option_num * option_price * hours;
+
+				// オプション数描画
+				var changed_opt_num_id = '#option_num_' + x;
+				$(changed_opt_num_id).text(option_num);
+
+				// オプション価格（計算後）描画
+				var cal_opt_price_id = '#cal_option_price_' + x;
+				$(cal_opt_price_id).text(cul_option_price);
+
+				var x = x + 1;
+		}
 	}
+
+
+
 
 	// 合計金額計算
 	function cultulate_total_fee(){
-		// オプション数カウント
-		var option_rows = OptionTable.rows.length-1;
-		// オプション価格
+		// 元からあるオプション数カウント
+		var option_rows = <%= @ev_opt_ids.count %>;
+		// 元からあるオプション価格
 		x = 0;
 		var total_opt_price = 0;
 		while (x < option_rows) {
+				var cal_opt_price_id = '#cal_option_price_' + x;
+				var option_price = parseInt($(cal_opt_price_id).text(), 10);
+				var total_opt_price = total_opt_price + option_price
+				x = x + 1;
+		}
+		// 新しいオプション数カウント
+		var option_rows = <%= @opt_diff.count %>;
+		// 新しいオプション価格
+		x = 1000;
+		while (x < option_rows + 1000) {
 				var cal_opt_price_id = '#cal_option_price_' + x;
 				var option_price = parseInt($(cal_opt_price_id).text(), 10);
 				var total_opt_price = total_opt_price + option_price
@@ -343,60 +429,3 @@
 	});
 
 </script>
-
-
-
-
-
-
-
-
-
-<!-- ##########  About  ########## -->
-<div class="container-fluid cl-show cl-show-2" id="ev-new-profile">
-	<h1><%= t(".Check_Profile", name: @cl_here.user.name) %></h1>
-	<div class="container">
-		<h2><%= t(".Languages") %></h2>
-		<p>
-			<% @langs.each do |lang| %>
-				<%= lang.language.ja %><br>
-			<% end %>
-		</p>
-		<h2><%= t(".Photographing_Categories") %></h2>
-		<p>
-			<% @categories.each do |cate| %>
-				<%= cate.category.ja %><br>
-			<% end %>
-		</p>
-		<h2><%= t(".Photographing_Area") %></h2>
-		<p>
-			<% @locations.each do |location| %>
-				<%= location.prefecture.ja %>&nbsp;
-			<% end %>
-		</p>
-		<h2><%= t(".Price") %></h2>
-		<p><%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %>&nbsp;
-			<% if @prim_price.minimum_hours > 1 %>
-				（<%= @prim_price.minimum_hours %><%= t(".hours_minimum") %>）
-			<% end %>
-		</p>
-		<% if @options.present? %>
-			<h2><%= t(".Option_memu") %></h2>
-			<% @options.each do |option| %>
-				<p>
-					<%= option.name %>：
-					<% if option.along_with_time == true %>
-						<%= t(".price_per_hour") %>
-					<% end %>
-					<%= option.price %><%= t(".yen") %>
-				</p>
-			<% end %>
-		<% end %>
-		<% if @cl_here.camera.present? %>
-			<h2><%= t(".Camera") %></h2>
-			<pre class="indent"><%= @cl_here.camera %></pre>
-		<% end %>
-		<h2><%= t(".Message") %></h2>
-		<pre class="indent"><%= @cl_here.introduction %></pre>
-	</div>
-</div>

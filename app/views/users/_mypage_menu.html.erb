@@ -21,7 +21,7 @@
       <% if @cl.consent == true %><%= t(".As_a_customer") %><% end %>
     </p>
   <% end %>
-  <%= link_to cs_future_events_path do %>
+  <%= link_to cs_past_events_path do %>
     <p>
       &emsp;<%= t(".In_the_past") %>
       <% if @cl.consent == true %><%= t(".As_a_customer") %><% end %>

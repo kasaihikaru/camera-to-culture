@@ -53,7 +53,7 @@ Rails.application.routes.draw do
 
 		resources :customers, only: [:show]
 
-		resources :events, only: [:new, :create, :show] do
+		resources :events, only: [:new, :create, :show, :edit, :update] do
 			collection do
 				get 'cs_past'
 				get 'cs_future'
@@ -63,13 +63,16 @@ Rails.application.routes.draw do
 			resources :event_states, only: []  do
 				collection do
 					post 'cl_accept'
-					post 'event_finish'
+					post 'cs_open_for_dl'
+					post 'cs_claim'
 					post 'cl_deliver'
 					post 'cs_recieved'
 					post 'cl_edit'
 					post 'cs_accept'
 					post 'cl_dismiss'
+					post 'cs_dismiss'
 					post 'cs_cancele'
+					post 'cs_request_cancele'
 					post 'cl_cancele'
 				end
 			end

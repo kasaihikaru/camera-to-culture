@@ -1,32 +1,34 @@
 class EventsController < ApplicationController
-	before_action :login_check, only: [:new, :create]
+	before_action :login_check, only: [:new, :create, :cs_future, :cs_past, :cl_future, :cl_past]
 	before_action :event_show_user_check, only: [:show]
-
+	before_action :event_edit_user_check, only: [:edit]
 
 	def cs_future
 		@user = current_user
 		@cl = @user.clients.active.first
 		@cs = @user.customers.active.first
+		@events = Event.as_cs(@cs.id).future.request.includes(:prefecture, client: :user).order(start_time: :DESC)
 	end
 
 	def cs_past
 		@user = current_user
 		@cl = @user.clients.active.first
 		@cs = @user.customers.active.first
+		@events = Event.as_cs(@cs.id).past.request.includes(:prefecture, client: :user).order(start_time: :DESC)
 	end
 
 	def cl_future
 		@user = current_user
 		@cl = @user.clients.active.first
 		@cs = @user.customers.active.first
-
-		@events = Event.as_cl(@cl.id).request.includes(:prefecture, customer: :user).order(start_time: :DESC)
+		@events = Event.as_cl(@cl.id).future.request.includes(:prefecture, customer: :user).order(start_time: :DESC)
 	end
 
 	def cl_past
 		@user = current_user
 		@cl = @user.clients.active.first
 		@cs = @user.customers.active.first
+		@events = Event.as_cl(@cl.id).past.request.includes(:prefecture, customer: :user).order(start_time: :DESC)
 	end
 
 
@@ -35,7 +37,7 @@ class EventsController < ApplicationController
 		@cl = @user.clients.active.first
 		@cs = @user.customers.active.first
 
-		@cl_here = Client.find(params[:id])
+		@cl_here = Client.find(id_params)
 		@categories = @cl_here.client_categories.includes(:category)
 		@langs = @cl_here.user.user_languages.includes(:language)
 		@locations = @cl_here.client_locations.includes(:prefecture)
@@ -68,24 +70,51 @@ class EventsController < ApplicationController
 		@event.event_option_prices.build
 	end
 
-	def show
+	def edit
 		@user = current_user
 		@cl = @user.clients.active.first
 		@cs = @user.customers.active.first
-		@event = Event.find(id_params)
-		@cl_here = Client.find(@event.client_id)
-		@cs_here = Customer.find(@event.customer_id)
-		@day = @event.start_time.strftime('%Y/%m/%d')
-		@wday = l(@day.to_date, format: :wday)
-		@start_time = @event.start_time.strftime('%H:%M')
-		@end_time  = @event.end_time.strftime('%H:%M')
-		@prefecture = @event.prefecture
-		@options = @event.event_option_prices.includes(:client_option_price)
-		@ev_prim_price = @event.event_primary_prices.first
-		@prim_price = @ev_prim_price.client_primary_price
-		@event_state_now = @event.event_states.last
 
-		# @event_state = EventState.new
+		@event = Event.find(id_params)
+		@ev_date = @event.start_time.to_date
+		@ev_prim_price = @event.event_primary_prices.last
+		@prim_price = @event.event_primary_prices.last.client_primary_price
+		@ev_options = @event.event_option_prices.includes(:client_option_price)
+		@ev_opt_ids = []
+		for opt in @ev_options do
+			@ev_opt_ids << opt.client_option_price_id
+		end
+
+		@cl_here = Client.find(client_id_params)
+		@options = @cl_here.client_option_prices.active
+		opt_ids = []
+		for opt in @options do
+			opt_ids << opt.id
+		end
+		@opt_diff = opt_ids - @ev_opt_ids
+
+		######### カレンダー ###########
+		@day = Date.today
+
+		from_date = Date.new(@day.year, @day.month, @day.beginning_of_month.day).beginning_of_week(:sunday)
+		to_date = Date.new(@day.year, @day.month, @day.end_of_month.day).end_of_week(:sunday)
+
+		# カレンダーを書く用
+		@c_dates = []
+		(from_date..to_date).each do |d|
+			sch = ClientSchedule.find_by(client_id: @cl_here.id, date: d)
+
+			date = {}
+			date["date"] = d
+			if sch.present?
+				date["schedule"] = sch.schedule
+			end
+			@c_dates << date
+		end
+
+		@i = 0
+		@x = 1000
+		@y = 1000
 	end
 
 	def create
@@ -94,7 +123,7 @@ class EventsController < ApplicationController
 			if ev_create_params == "time-error" then
 				flash[:alert] = "リクエスト時間が足りません"
 				redirect_to new_event_path(id: event_client_id_params)
-			elsif
+			elsif ev_create_params == "total-fee-error" then
 				flash[:alert] = "金額がマイナスの値です"
 				redirect_to new_event_path(id: event_client_id_params)
 			else
@@ -123,9 +152,70 @@ class EventsController < ApplicationController
 		end
 	end
 
+	def update
+		# イベント作成
+		if ev_edit_params.kind_of?(String) then
+			if ev_edit_params == "time-error" then
+				flash[:alert] = "リクエスト時間が足りません"
+				redirect_to new_event_path(id: event_client_id_params)
+			elsif ev_edit_params == "total-fee-error" then
+				flash[:alert] = "金額がマイナスの値です"
+				redirect_to new_event_path(id: event_client_id_params)
+			else
+				flash[:alert] = "オプションの数が不正です"
+				redirect_to new_event_path(id: event_client_id_params)
+			end
+		else
+			event = Event.find(id_params)
+			event.update(ev_edit_params)
+
+			# ev_prim_price_table
+			ev_prim_price = event.event_primary_prices.last
+			ev_prim_price.update(edit_ev_prim_price_params)
+
+			# ev_opt_price_table
+			if ev_opt_price_params != 0
+				for opt in ev_opt_price_params do
+					opt_price = opt.merge(event_id: event.id)
+					ev_opt = EventOptionPrice.find_by(event_id: event.id, client_option_price_id: opt["client_option_price_id"])
+					if ev_opt.present?
+						ev_opt.update(opt_price)
+					else
+						EventOptionPrice.create(opt_price)
+					end
+				end
+			end
+
+			# ev_states_table
+			EventState.create(event_id: event.id, state: "cl_edited", comment: comment_params)
+
+			redirect_to event_path(event)
+		end
+	end
+
+	def show
+		@user = current_user
+		@cl = @user.clients.active.first
+		@cs = @user.customers.active.first
+		@event = Event.find(id_params)
+		@cl_here = Client.find(@event.client_id)
+		@cs_here = Customer.find(@event.customer_id)
+		@day = @event.start_time.strftime('%Y/%m/%d')
+		@wday = l(@day.to_date, format: :wday)
+		@start_time = @event.start_time.strftime('%H:%M')
+		@end_time  = @event.end_time.strftime('%H:%M')
+		@prefecture = @event.prefecture
+		@options = @event.event_option_prices.includes(:client_option_price)
+		@ev_prim_price = @event.event_primary_prices.first
+		@prim_price = @ev_prim_price.client_primary_price
+		@event_state_now = @event.event_states.last
+	end
+
+
 
 
 private
+	#------------ create params -------------#
 	def ev_create_params
 		# 時間
 		start_time = ev_hours_params["start_time"]
@@ -242,6 +332,80 @@ private
 	end
 
 
+	#------------ edit -------------#
+	def ev_edit_params
+		# 時間
+		start_time = ev_hours_params["start_time"]
+		end_time = ev_hours_params["end_time"]
+		hours = ev_hours_params["hours"]
+		# マイナスならエラーを返す
+		if hours <= 0 then
+			return "time-error"
+		end
+
+		# メイン価格
+		event = Event.find(id_params)
+		prim_price = event.event_primary_prices.last.client_primary_price.price_per_hour
+		primary_price_sum = (prim_price * hours).floor
+
+
+		# オプション価格
+		options = params[:event][:event_option_prices_attributes]
+		if options.present?
+			option_price_sum = 0
+			options.each do |key, value|
+				if value.to_i < 0 then
+					return "opt-num-error"
+				else
+					opt = ClientOptionPrice.find(key)
+					if opt.along_with_time == true
+						option_price = opt.price * value.to_i * hours
+					else
+						option_price = opt.price * value.to_i
+					end
+					option_price_sum = (option_price_sum + option_price).floor
+				end
+			end
+
+			# 合計価格
+			total_price = primary_price_sum + option_price_sum
+			if total_price <= 0 then
+				return "total-fee-error"
+			end
+			y = {}
+			x = y.merge(start_time: start_time, end_time: end_time, total_price: total_price, primary_price_sum: primary_price_sum, option_price_sum: option_price_sum)
+			return x
+		else
+			# 合計価格
+			total_price = primary_price_sum
+			if total_price <= 0 then
+				return "total-fee-error"
+			end
+
+			y = {}
+			x = y.merge(start_time: start_time, end_time: end_time, total_price: total_price, primary_price_sum: primary_price_sum, option_price_sum: 0)
+			return x
+		end
+	end
+
+
+	def edit_ev_prim_price_params
+		#時間
+		hours = ev_hours_params["hours"]
+
+		# メイン価格
+		event = Event.find(id_params)
+		prim_price = event.event_primary_prices.last.client_primary_price.price_per_hour
+		primary_price_sum = (prim_price * hours).floor
+
+		x = {}
+		x = {"hours" => hours, "price_sum" => primary_price_sum}
+		return x
+	end
+
+
+
+
 	def event_client_id_params
 		client_id = params[:event][:client_id].to_i
 	end
@@ -251,6 +415,13 @@ private
 		params[:id]
 	end
 
+	def client_id_params
+		params[:client_id]
+	end
+
+	def comment_params
+		params[:comment]
+	end
 
 	def login_check
 		unless user_signed_in?
@@ -262,11 +433,21 @@ private
 	def event_show_user_check
 		event = Event.find(params[:id])
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		cl = @user.clients.active.first
+		cs = @user.customers.active.first
 		unless user_signed_in? &&(
-				event.client_id == @cl.id || event.customer_id == @cs.id
+				event.client_id == cl.id || event.customer_id == cs.id
 			)
+			flash[:alert] = "ログインしてください"
+			redirect_to root_path
+		end
+	end
+
+	def event_edit_user_check
+		event = Event.find(params[:id])
+		cl_here = Client.find(params[:client_id])
+		cl = current_user.clients.active.first
+		unless user_signed_in? &&	event.client_id == cl.id && cl_here == cl
 			flash[:alert] = "ログインしてください"
 			redirect_to root_path
 		end
