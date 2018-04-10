@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(version: 20180211030124) do
 
   create_table "event_photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "event_id"
+    t.string "image"
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

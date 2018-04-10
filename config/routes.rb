@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 						post 'first_create'
 					end
 				end
-				resources :client_schedules, only: [:index, :create, ] do
+				resources :client_schedules, only: [:index, :create] do
 					collection do
 						delete 'r_destroy'
 					end
@@ -74,6 +74,11 @@ Rails.application.routes.draw do
 					post 'cs_cancele'
 					post 'cs_request_cancele'
 					post 'cl_cancele'
+				end
+			end
+			resources :event_photos, only: [:create] do
+				collection do
+					delete 'r_destroy'
 				end
 			end
 		end

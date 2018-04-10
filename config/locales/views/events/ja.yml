@@ -41,6 +41,7 @@ ja:
       Camera: カメラ
       Message: メッセージ
     show:
+      Session_Details: 撮影の詳細を見る
       Date_and_Time: 日時
       How_many_people?: 撮影に参加する人数
       Location: 撮影場所
@@ -170,3 +171,9 @@ ja:
       Waiting_for_Photos: 納品待ち
       Photos_delivered: 納品済み
       Photos_recieved: 写真受け取り済み
+    event_photo:
+      See_Uploaded_photos: 納品した写真を確認
+      delete_check: 消去チェック
+      delete_btn: 消去する
+    event_photo_upload:
+      Upload: 写真納品

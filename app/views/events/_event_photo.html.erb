@@ -1,0 +1,28 @@
+<!-- 投稿済みイベントフォト -->
+<% if ev_photos.present? %>
+  <%= form_tag( r_destroy_event_event_photos_path(@event), method: :delete) do %>
+    <div class="container-fluid ev-deliver">
+      <h1 class="common-h1"><%= t(".See_Uploaded_photos") %></h1>
+      <div class="container">
+        <div class="row">
+          <% ev_photos.each do |ev_photo| %>
+            <div class="pf col-12 col-sm-6 col-lg-4 maring-b-20">
+              <a href="<%= ev_photo.image.url if ev_photo.image? %>" data-lightbox="image-1">
+                <div class="pf-img" style="background-image: url(<%= ev_photo.image.url %>);"></div>
+              </a>
+              <label class="checkbox float-right">
+                <input type="checkbox" name="delete_ev_photo[]" value=<%= ev_photo.id %>>
+                <div class="btn btn-sık">
+                  <span><%= t(".delete_check")%></span>
+                </div>
+              </label>
+            </div>
+          <% end %>
+        </div>
+        <div class="center-align">
+          <%= submit_tag(t(".delete_btn")) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -209,6 +209,7 @@ class EventsController < ApplicationController
 		@ev_prim_price = @event.event_primary_prices.first
 		@prim_price = @ev_prim_price.client_primary_price
 		@event_state_now = @event.event_states.last
+		@ev_photos = @event.event_photos.active
 	end
 
 

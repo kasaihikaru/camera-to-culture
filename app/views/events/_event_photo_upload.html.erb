@@ -1,0 +1,39 @@
+<div class="clearfix">
+  <h2 class="sub-title left-align">
+    <%= render :partial => 'svgs/upload' %><%= t(".Upload") %>
+  </h2>
+  <!-- アップロード箇所 -->
+  <div class="file-loading">
+      <input id="event_photo" name="event_photo" type="file" multiple>
+  </div>
+</div>
+
+
+<script>
+<% if @locale == "ja" %>
+  $("#event_photo").fileinput({
+      language: "ja",
+      uploadUrl: "/events/<%= event.id %>/event_photos",
+      allowedFileExtensions: ["jpg", "png", "jpeg"]
+  });
+<% elsif @locale == "zh" %>
+  $("#event_photo").fileinput({
+      language: "zh",
+      uploadUrl: "/events/<%= event.id %>/event_photos",
+      allowedFileExtensions: ["jpg", "png", "jpeg"]
+  });
+<% elsif @locale == "tw" %>
+  $("#event_photo").fileinput({
+      language: "tw",
+      uploadUrl: "/events/<%= event.id %>/event_photos",
+      allowedFileExtensions: ["jpg", "png", "jpeg"]
+  });
+<% else %>
+  $("#event_photo").fileinput({
+      language: "en",
+      uploadUrl: "/events/<%= event.id %>/event_photos",
+      allowedFileExtensions: ["jpg", "png", "jpeg"]
+  });
+<% end %>
+</script>
+<br>
