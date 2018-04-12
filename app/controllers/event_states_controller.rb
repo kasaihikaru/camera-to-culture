@@ -44,7 +44,7 @@ class EventStatesController < ApplicationController
 		redirect_to event_path(event_id_params)
 	end
 
-	include ActionController::Streacming
+	include ActionController::Streaming
 	include Zipline
 	def cs_recieve
 		# state作成
