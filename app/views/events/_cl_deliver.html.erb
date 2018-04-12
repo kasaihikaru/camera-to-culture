@@ -1,0 +1,25 @@
+<!-- 写真納品完了 -->
+<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cl_deliver">
+	<%= t(".Notify_Deliverys_Completed") %>
+</button>
+<!-- 写真納品完了Modal -->
+<div class="modal fade" id="cl_deliver" tabindex="-1" role="dialog" aria-labelledby="cl_deliverTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="cl_deliverLongTitle"><%= t(".Notify_Deliverys_Completed") %></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<%= form_tag cl_deliver_event_event_states_path (event) do %>
+				<div class="modal-body">
+					<%= text_area_tag 'comment', t(".cl_deliver_comment"), class: "ev-state-comment" %>
+				</div>
+				<div class="modal-footer">
+					<%= submit_tag t(".Send"), class: "prim-btn btn" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

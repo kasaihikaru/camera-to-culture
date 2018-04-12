@@ -171,21 +171,24 @@ $subprim-col      : #51C4AA;
 }
 
 
+.ev-photos{
+	text-align: center;
+	h1{
+		text-align: center;
+		font-size: 25px;
+		font-weight: 800;
+		padding: 60px 0 10px;
+	}
+}
+
 //納品
 .ev-deliver{
-	text-align: center;
 	.pf-img{
 		width:285px;
 		height:285px;
 		margin: auto;
 		background-position: center center;
 		background-size: cover;
-	}
-	h1{
-		text-align: center;
-		font-size: 25px;
-		font-weight: 800;
-		padding: 60px 0 10px;
 	}
 }
 

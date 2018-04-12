@@ -1,0 +1,25 @@
+<!-- リクエストキャンセル -->
+<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cs_request_cancele">
+	<%= t(".Request_Cancele") %>
+</button>
+<!-- リクエストキャンセルModal -->
+<div class="modal fade" id="cs_request_cancele" tabindex="-1" role="dialog" aria-labelledby="cs_request_canceleTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="cs_request_canceleLongTitle"><%= t(".Request_Cancele") %></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<%= form_tag cs_request_cancele_event_event_states_path (event) do %>
+				<div class="modal-body">
+					<%= text_area_tag 'comment', t(".cs_request_cancele_comment"), class: "ev-state-comment" %>
+				</div>
+				<div class="modal-footer">
+					<%= submit_tag t(".Send"), class: "prim-btn btn" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

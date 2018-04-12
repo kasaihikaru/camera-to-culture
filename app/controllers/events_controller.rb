@@ -210,6 +210,8 @@ class EventsController < ApplicationController
 		@prim_price = @ev_prim_price.client_primary_price
 		@event_state_now = @event.event_states.last
 		@ev_photos = @event.event_photos.active
+		@ev_photo_nums = @ev_photos.count
+		@ev_photos_6 = @event.event_photos.active.limit(6)
 	end
 
 

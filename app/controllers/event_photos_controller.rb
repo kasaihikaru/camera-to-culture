@@ -19,6 +19,20 @@ before_action :user_check, only: [:create, :r_destroy]
 	end
 
 
+	include ActionController::Streaming
+	include Zipline
+	def zip_dl
+		ev_photos = EventPhoto.from_ev(event_id_params).active.image_present
+		respond_to do |format|
+			format.html
+			format.zip do
+				files =  ev_photos.map{ |ev_photo| [ev_photo.image, "#{ev_photo.id}.jpg"] }
+				zipline(files, 'Camera-to-Culture-Photos_' + Time.now().to_s + '.zip')
+			end
+		end
+	end
+
+
 #------ストロングパラメーター------#
 private
 	def create_params
@@ -28,7 +42,9 @@ private
 		return ev_photo
 	end
 
-
+	def event_id_params
+		params[:event_id]
+	end
 
 	def r_destroy_params
 		params[:delete_ev_photo]

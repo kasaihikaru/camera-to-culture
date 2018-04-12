@@ -7,29 +7,10 @@ class EventStatesController < ApplicationController
 		redirect_to event_path(event_id_params)
 	end
 
-	def cs_open_for_dl
-		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_opened" )
+	def cl_deliver
+		EventState.create(event_id: event_id_params, comment: comment_params, state: "cl_delivered" )
 		redirect_to event_path(event_id_params)
 	end
-
-	def cs_claim
-		
-	end
-
-	def cl_deliver
-
-	end
-
-
-	def cs_recieved
-
-	end
-
-
-	def cl_edit
-
-	end
-
 
 	def cs_accept
 		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_accepted" )
@@ -60,6 +41,33 @@ class EventStatesController < ApplicationController
 
 	def cl_cancele
 		EventState.create(event_id: event_id_params, comment: comment_params, state: "cl_canceled" )
+		redirect_to event_path(event_id_params)
+	end
+
+	include ActionController::Streacming
+	include Zipline
+	def cs_recieve
+		# state作成
+		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_recieved" )
+
+		# zip_dl
+		ev_photos = EventPhoto.from_ev(event_id_params).active.image_present
+		respond_to do |format|
+			format.html
+			format.zip do
+				files =  ev_photos.map{ |ev_photo| [ev_photo.image, "#{ev_photo.id}.jpg"] }
+				zipline(files, 'Camera-to-Culture-Photos_' + Time.now().to_s + '.zip')
+			end
+		end
+	end
+
+	def cs_complain_1
+		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_complained_1" )
+		redirect_to event_path(event_id_params)
+	end
+
+	def cs_complain_2
+		EventState.create(event_id: event_id_params, comment: comment_params, state: "cs_complained_2" )
 		redirect_to event_path(event_id_params)
 	end
 

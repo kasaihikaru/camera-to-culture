@@ -72,25 +72,52 @@ ja:
       cl_canceled: 撮影キャンセル
       Comment: コメント
       Send: 送信
+      Edit: 撮影条件変更を提案する
+      Canceled_by_time_passed: カメラマンの返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
+      download_zip: 再度zipでダウンロード
+    cl_accept:
       Accept: リクエストを承認する
       cl_accept_comment: リクエストありがとうございます。撮影よろしくお願いします！
-      Edit: 撮影条件変更を提案する
-      Dismiss: 撮影を断る
-      cl_dismiss_comment: ご希望の条件に沿うのは難しいため、今回は見送らせてください。また次回、よろしくお願いします！
-      cs_open_for_dl_comment: 撮影ありがとうございました！写真の納品お願いします！
-      cl_deliver_comment: あああああ
-      cs_recieve_comment: あああああ
+    cs_complain_1:
+      Complain: 不満を言う
+      Complain_to_Photographer: カメラマンに不満を言う
+      Send: 送信
+    cs_complain_2:
+      Complain: 不満を言う
+      Complain_to_Photographer: カメラマンに不満を言う
+    cl_deliver:
+      Notify_Deliverys_Completed: 納品完了を知らせる
+      cl_deliver_comment: 写真を納品しました。確認お願いします！
+      Send: 送信
+    cs_recieve:
+      Recieve_photos: 写真を受け取る
+      cs_recieve_comment: 写真ダウンロードします。ありがとうございました！
+      download_zip: zipでダウンロード
+      Send: 送信
+    cs_accept:
       Accept_Edited_Condition: 撮影条件変更を承認する
       cs_accept_comment: わかりました。宜しくお願いします！
-      Dismiss_Edited_Condition: 撮影条件変更を承認しない
+      Send: 送信
+    cl_dismiss:
+      Dismiss: 撮影を断る
       cs_dismiss_comment: 今回は見送らせてください。また次回、よろしくお願いします！
-      Cancele: 撮影キャンセルする
+      Send: 送信
+    cs_dismiss:
+      Dismiss_Edited_Condition: 撮影条件変更を承認しない
+      cl_dismiss_comment: ご希望の条件に沿うのは難しいため、今回は見送らせてください。また次回、よろしくお願いします！
+      Send: 送信
+    cs_request_cancele:
       Request_Cancele: リクエストをキャンセルする
       cs_request_cancele_comment: リクエストをキャンセルさせてください。
+      Send: 送信
+    cs_cancele:
+      Cancele: 予約をキャンセルする
       cs_cancele_comment: 大変申し訳ないのですが、予約をキャンセルさせてください。
+      Send: 送信
+    cl_cancele:
+      Cancele: 撮影をキャンセルする
       cl_cancele_comment: 大変申し訳ないのですが、撮影をキャンセルさせてください。
-      Canceled_by_time_passed: カメラマンの返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
-      Open_delivery_box_for_DL: 納品ボックスを開ける
+      Send: 送信
     edit:
       Edit_Conditions: 撮影条件変更を依頼
       Check_Your_Shedule: 自分のスケージュールを確認
@@ -177,3 +204,8 @@ ja:
       delete_btn: 消去する
     event_photo_upload:
       Upload: 写真納品
+      Upload_explanation: アップロードした写真を確認するには画面をリロードしてください
+    event_photo_cs:
+      Preview_Uploaded_photos: 納品された写真をプレビュー
+      photo_nums_explanation_1: '全部で%{nums}枚の写真が納品されています'
+      photo_nums_explanation_2: プレビューは6枚まで表示されます。

@@ -1,0 +1,17 @@
+<!-- 投稿済みイベントフォト -->
+<% if ev_photos_6.present? %>
+  <div class="container-fluid ev-deliver">
+    <h1><%= t(".Preview_Uploaded_photos") %></h1>
+    <p><%= t(".photo_nums_explanation_1", nums: ev_photo_nums) %></p>
+    <p><%= t(".photo_nums_explanation_2", nums: ev_photo_nums) %></p>
+    <div class="container">
+      <div class="row">
+        <% ev_photos_6.each do |ev_photo| %>
+          <div class="pf col-12 col-sm-6 col-lg-4 maring-b-20">
+            <div class="pf-img" style="background-image: url(<%= ev_photo.image.url %>);"></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

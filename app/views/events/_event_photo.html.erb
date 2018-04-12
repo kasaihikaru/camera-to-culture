@@ -2,7 +2,7 @@
 <% if ev_photos.present? %>
   <%= form_tag( r_destroy_event_event_photos_path(@event), method: :delete) do %>
     <div class="container-fluid ev-deliver">
-      <h1 class="common-h1"><%= t(".See_Uploaded_photos") %></h1>
+      <h1><%= t(".See_Uploaded_photos") %></h1>
       <div class="container">
         <div class="row">
           <% ev_photos.each do |ev_photo| %>

@@ -133,58 +133,48 @@
 							<tr>
 								<td>
 									<% if state.state == "request" %>
-										<%= render :partial => 'svgs/customer' %><%= t(".request") %><br>
-										<span class="datetime"><%= state.created_at %></span>
+										<%= render :partial => 'svgs/customer' %><br><%= t(".request") %>
 									<% end %>
 									<% if state.state == "cl_accepted" %>
-										<%= render :partial => 'svgs/cameraman' %><%= t(".cl_accepted") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_accepted") %>
 									<% end %>
 									<% if state.state == "cs_opened" %>
-										<%= render :partial => 'svgs/customer' %><%= t(".cs_opened") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_opened") %>
 									<% end %>
 									<% if state.state == "cl_delivered" %>
-										<%= render :partial => 'svgs/cameraman' %><%= t(".cl_delivered") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_delivered") %>
 									<% end %>
 									<% if state.state == "cs_recieved" %>
-										<%= render :partial => 'svgs/customer' %><%= t(".cs_recieved") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_recieved") %>
 									<% end %>
 									<% if state.state == "cl_edited" %>
-										<%= render :partial => 'svgs/cameraman' %><%= t(".cl_edited") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_edited") %>
 									<% end %>
 									<% if state.state == "cs_accepted" %>
-										<%= render :partial => 'svgs/customer' %><%= t(".cs_accepted") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_accepted") %>
 									<% end %>
 									<% if state.state == "cl_dismissed" %>
-										<%= render :partial => 'svgs/cameraman' %><%= t(".cl_dismissed") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_dismissed") %>
 									<% end %>
 									<% if state.state == "cs_dismissed" %>
-										<%= render :partial => 'svgs/customer' %><%= t(".cs_dismissed") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_dismissed") %>
 									<% end %>
 									<% if state.state == "cs_request_canceled" %>
-										<%= render :partial => 'svgs/customer' %><%= t(".cs_request_canceled") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_request_canceled") %>
 									<% end %>
 									<% if state.state == "cs_canceled" %>
-										<%= render :partial => 'svgs/customer' %><%= t(".cs_canceled") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_canceled") %>
 									<% end %>
 									<% if state.state == "cl_canceled" %>
-										<%= render :partial => 'svgs/cameraman' %><%= t(".cl_canceled") %><br>
-										<span class="datetime"><%= state.created_at %>
+										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_canceled") %>
 									<% end %>
 								</td>
 								<td>
 									<% if state.state == "request" %>
+										<span class="datetime"><%= state.created_at %></span><br>
 										<%= @event.message %>
 									<% else %>
+										<span class="datetime"><%= state.created_at %></span><br>
 										<%= state.comment %>
 									<% end %>
 								</td>
@@ -204,279 +194,113 @@
 			</div>
 
 
-
-			<!-- ボタン -->
+			<!-- event_stateボタン -->
 			<div class="ev-states-btns">
-				<!-- clの場合 -->
-				<% if @event.client_id == @cl.id %>
-					<!-- 将来の場合 -->
-					<% if @event.start_time > Time.now() %>
-						<!-- リクエスト状態 -->
-						<% if @event.event_states.last.state == "request" %>
-							<!-- リクエスト承認 -->
-							<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cl_accept">
-								<%= t(".Accept") %>
-							</button>
-							<!-- リクエスト承認Modal -->
-							<div class="modal fade" id="cl_accept" tabindex="-1" role="dialog" aria-labelledby="cl_acceptTitle" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="cl_acceptLongTitle"><%= t(".Accept") %></h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<%= form_tag cl_accept_event_event_states_path (@event) do %>
-											<div class="modal-body">
-												<%= text_area_tag 'comment', t(".cl_accept_comment"), class: "ev-state-comment" %>
-											</div>
-											<div class="modal-footer">
-												<%= submit_tag t(".Send"), class: "prim-btn btn" %>
-											</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-							<!-- 撮影を断る -->
-							<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cl_dismiss">
-								<%= t(".Dismiss") %>
-							</button>
-							<!-- 撮影を断るModal -->
-							<div class="modal fade" id="cl_dismiss" tabindex="-1" role="dialog" aria-labelledby="cl_dismissTitle" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="cl_dismissLongTitle"><%= t(".Dismiss") %></h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<%= form_tag cl_dismiss_event_event_states_path (@event) do %>
-											<div class="modal-body">
-												<%= text_area_tag 'comment', t(".cl_dismiss_comment"), class: "ev-state-comment" %>
-											</div>
-											<div class="modal-footer">
-												<%= submit_tag t(".Send"), class: "prim-btn btn" %>
-											</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-							<!-- 撮影条件変更を提案する -->
-							<%= link_to edit_event_path(id: @event.id, client_id: @cl_here.id), class: "btn prim-btn ev-states-btn" do %>
-								<%= t(".Edit") %>
-							<% end %>
-						<% end %><!-- endOf リクエスト状態 -->
-
-						<!-- 撮影確定状態 -->
-						<% if @event.event_states.last.state == "cl_accepted" || @event.event_states.last.state == "cs_accepted" %>
-							<!-- 撮影をキャンセルする -->
-							<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cl_cancele">
-								<%= t(".Cancele") %>
-							</button>
-							<!-- 撮影をキャンセルするModal -->
-							<div class="modal fade" id="cl_cancele" tabindex="-1" role="dialog" aria-labelledby="cl_canceleTitle" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="cl_canceleLongTitle"><%= t(".Cancele") %></h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<%= form_tag cl_cancele_event_event_states_path (@event) do %>
-											<div class="modal-body">
-												<%= text_area_tag 'comment', t(".cl_cancele_comment"), class: "ev-state-comment" %>
-											</div>
-											<div class="modal-footer">
-												<%= submit_tag t(".Send"), class: "prim-btn btn" %>
-											</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-						<% end %><!-- endOf 撮影確定状態 -->
-					<!-- endOf 将来の場合 -->
 
 
-					<% else %><!-- 過去の場合 -->
-						<!-- 撮影確定状態 -->
-						<% if @event.event_states.last.state == "cl_accepted" %>
-							<%= render :partial => 'events/event_photo_upload', :locals=>{event: @event} %>
-						<% end %><!-- endOf 撮影確定状態 -->
-						<!-- 納品待ち状態 -->
-						<% if @event.event_states.last.state == "cs_opened" %>
-							<%= render :partial => 'events/event_photo_upload', :locals=>{event: @event} %>
-						<% end %><!-- endOf 納品待ち状態 -->
-					<% end %><!-- endOf 過去の場合 -->
-				<% end %><!-- endOf clの場合 -->
+				<!-- cl 将来 の場合 -->
+				<% if @event.client_id == @cl.id && @event.start_time > Time.now() %>
+					<!-- リクエスト状態 -->
+					<% if @event.event_states.last.state == "request" %>
+						<!-- 撮影承認 -->
+						<%= render :partial => 'events/cl_accept', :locals=>{event: @event} %>
+						<!-- 撮影を断る -->
+						<%= render :partial => 'events/cl_dismiss', :locals=>{event: @event} %>
+						<!-- 撮影条件変更を提案する -->
+						<%= link_to edit_event_path(id: @event.id, client_id: @cl_here.id), class: "btn prim-btn ev-states-btn" do %>
+							<%= t(".Edit") %>
+						<% end %>
+					<% end %><!-- endOf リクエスト状態 -->
+
+					<!-- 撮影確定状態 -->
+					<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
+						<!-- 撮影をキャンセルする -->
+						<%= render :partial => 'events/cl_cancele', :locals=>{event: @event} %>
+					<% end %><!-- endOf 撮影確定状態 -->
+				<% end %><!-- cl 将来 の場合 -->
 
 
-				<!-- csの場合 -->
-				<% if @event.customer_id == @cs.id %>
-					<!-- 将来の場合 -->
-					<% if @event.start_time > Time.now() %>
-						<!-- リクエスト状態 -->
-						<% if @event.event_states.last.state == "request" %>
-							<!-- リクエストキャンセル -->
-							<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cs_request_cancele">
-								<%= t(".Request_Cancele") %>
-							</button>
-							<!-- リクエストキャンセルModal -->
-							<div class="modal fade" id="cs_request_cancele" tabindex="-1" role="dialog" aria-labelledby="cs_request_canceleTitle" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="cs_request_canceleLongTitle"><%= t(".Request_Cancele") %></h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<%= form_tag cs_request_cancele_event_event_states_path (@event) do %>
-											<div class="modal-body">
-												<%= text_area_tag 'comment', t(".cs_request_cancele_comment"), class: "ev-state-comment" %>
-											</div>
-											<div class="modal-footer">
-												<%= submit_tag t(".Send"), class: "prim-btn btn" %>
-											</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-						<% end %><!-- endOf リクエスト状態 -->
-						<!-- 撮影確定状態 -->
-						<% if @event.event_states.last.state == "cl_accepted" %>
-							<!-- 撮影を断る -->
-							<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cs_cancele">
-								<%= t(".Cancele") %>
-							</button>
-							<!-- 撮影を断るModal -->
-							<div class="modal fade" id="cs_cancele" tabindex="-1" role="dialog" aria-labelledby="cs_canceleTitle" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="cs_canceleLongTitle"><%= t(".Cancele") %></h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<%= form_tag cs_cancele_event_event_states_path (@event) do %>
-											<div class="modal-body">
-												<%= text_area_tag 'comment', t(".cs_cancele_comment"), class: "ev-state-comment" %>
-											</div>
-											<div class="modal-footer">
-												<%= submit_tag t(".Send"), class: "prim-btn btn" %>
-											</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-						<% end %><!-- endOf 撮影確定状態 -->
 
-						<!-- 撮影条件変更依頼状態 -->
-						<% if @event.event_states.last.state == "cl_edited" %>
-							<!-- 撮影条件変更を承認する -->
-							<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cs_accept">
-								<%= t(".Accept_Edited_Condition") %>
-							</button>
-							<!-- 撮影条件変更を承認するModal -->
-							<div class="modal fade" id="cs_accept" tabindex="-1" role="dialog" aria-labelledby="cs_acceptTitle" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="cs_acceptLongTitle"><%= t(".Accept_Edited_Condition") %></h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<%= form_tag cs_accept_event_event_states_path (@event) do %>
-											<div class="modal-body">
-												<%= text_area_tag 'comment', t(".cs_accept_comment"), class: "ev-state-comment" %>
-											</div>
-											<div class="modal-footer">
-												<%= submit_tag t(".Send"), class: "prim-btn btn" %>
-											</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-							<!-- 撮影条件変更を断る -->
-							<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cs_dismiss">
-								<%= t(".Dismiss_Edited_Condition") %>
-							</button>
-							<!-- 撮影条件変更を断るModal -->
-							<div class="modal fade" id="cs_dismiss" tabindex="-1" role="dialog" aria-labelledby="cs_dismissTitle" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="cs_dismissLongTitle"><%= t(".Dismiss_Edited_Condition") %></h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<%= form_tag cs_dismiss_event_event_states_path (@event) do %>
-											<div class="modal-body">
-												<%= text_area_tag 'comment', t(".cs_dismiss_comment"), class: "ev-state-comment" %>
-											</div>
-											<div class="modal-footer">
-												<%= submit_tag t(".Send"), class: "prim-btn btn" %>
-											</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-						<% end %><!-- endOf 撮影条件変更依頼状態 -->
-						<!-- endOf 将来の場合 -->
-					<!--  過去の場合 -->
-					<% else %>
-						<!-- 撮影確定状態 -->
-						<% if @event.event_states.last.state == "cl_accepted" || @event.event_states.last.state == "cs_accepted" %>
-							<!-- 納品口を開く -->
-							<button type="button" class="btn prim-btn ev-states-btn" data-toggle="modal" data-target="#cs_open_for_dl">
-								<%= t(".Open_delivery_box_for_DL") %>
-							</button>
-							<!-- 納品口を開くModal -->
-							<div class="modal fade" id="cs_open_for_dl" tabindex="-1" role="dialog" aria-labelledby="cs_open_for_dlTitle" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="cs_open_for_dlLongTitle"><%= t(".Open_delivery_box_for_DL") %></h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<%= form_tag cs_open_for_dl_event_event_states_path (@event) do %>
-											<div class="modal-body">
-												<%= text_area_tag 'comment', t(".cs_open_for_dl_comment"), class: "ev-state-comment" %>
-											</div>
-											<div class="modal-footer">
-												<%= submit_tag t(".Send"), class: "prim-btn btn" %>
-											</div>
-										<% end %>
-									</div>
-								</div>
-							</div>
-						<% end %><!-- endOf 撮影確定状態 -->
-					<% end %><!-- endOf 過去の場合 -->
-				<% end %><!-- endOf csの場合 -->
-			</div>
-		</div>
-	</div>
+				<!-- cl 過去 の場合 -->
+				<% if @event.client_id == @cl.id && @event.start_time <= Time.now() %>
+					<!-- 撮影確定状態 -->
+					<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
+						<!-- 写真納品完了 -->
+						<%= render :partial => 'events/cl_deliver', :locals=>{event: @event} %>
+					<% end %><!-- endOf 撮影確定状態 -->
+				<% end %><!-- endOf cl 過去の場合 -->
+
+
+
+				<!-- cs 将来の場合 -->
+				<% if @event.customer_id == @cs.id && @event.start_time > Time.now() %>
+					<!-- リクエスト状態 -->
+					<% if @event.event_states.last.state == "request" %>
+						<!-- リクエストをキャンセルする -->
+						<%= render :partial => 'events/cs_request_cancele', :locals=>{event: @event} %>
+					<% end %><!-- endOf リクエスト状態 -->
+					<!-- 撮影確定状態 -->
+					<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
+						<!-- 予約をキャンセルする -->
+						<%= render :partial => 'events/cs_cancele', :locals=>{event: @event} %>
+					<% end %><!-- endOf 撮影確定状態 -->
+
+					<!-- 撮影条件変更依頼状態 -->
+					<% if @event.event_states.last.state == "cl_edited" %>
+						<!-- 撮影条件変更を承認する -->
+						<%= render :partial => 'events/cs_accept', :locals=>{event: @event} %>
+						<!-- 撮影条件変更を断る -->
+						<%= render :partial => 'events/cs_dismiss', :locals=>{event: @event} %>
+					<% end %><!-- endOf 撮影条件変更依頼状態 -->
+				<% end %><!-- endOf cs 将来の場合 -->
+
+
+				<!-- cs 過去の場合 -->
+				<% if @event.customer_id == @cs.id && @event.start_time <= Time.now() %>
+					<!-- 撮影確定状態 -->
+					<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
+						<!-- 納品前に不満を言う -->
+						<%= render :partial => 'events/cs_complain_1', :locals=>{event: @event} %>
+					<% end %><!-- endOf 撮影確定状態 -->
+					<!-- 納品済み状態 -->
+					<% if @event.event_states.last.state == "cl_delivered" %>
+						<!-- 写真を受け取る -->
+						<%= render :partial => 'events/cs_recieve', :locals=>{event: @event} %>
+					<% end %><!-- endOf 納品済み状態 -->
+					<!-- 写真受け取り済み状態 -->
+					<% if @event.event_states.last.state == "cs_recieved" %>
+						<!-- 再度zip_dl -->
+						<%= link_to t(".download_zip"), zip_dl_event_event_photos_path(format: :zip, event_id: @event.id), class: "btn prim-btn" %>
+						<!-- 受け取り後に不満を言う -->
+						<%= render :partial => 'events/cs_complain_2', :locals=>{event: @event} %>
+					<% end %><!-- endOf 写真受け取り済み状態 -->
+				<% end %><!-- cs 過去の場合 -->
+			</div><!-- endOf event_stateボタン -->
+
+
+		</div><!-- endOf col-->
+	</div><!-- endOf row -->
+</div><!-- endOf container -->
+
+<div class="ev-photos">
+	<!-- cl 過去の場合 -->
+	<% if @event.client_id == @cl.id && @event.start_time <= Time.now() %>
+		<!-- 撮影確定 or 納品済み or 不満  状態 -->
+		<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted','cl_delivered', 'cs_recieved', 'cs_complained_1', 'cs_complained_2']) %>
+			<!-- 写真アップロード -->
+			<%= render :partial => 'events/event_photo_upload', :locals=>{event: @event} %>
+			<!-- アップロード済み写真確認 -->
+			<%= render :partial => 'events/event_photo', :locals=>{event: @event, ev_photos: @ev_photos} %>
+		<% end %><!-- endOf 撮影確定 or 納品済み状態 -->
+	<% end %><!-- endOf cl 過去の場合 -->
+
+
+	<!-- cs 過去の場合 -->
+	<% if @event.customer_id == @cs.id && @event.start_time <= Time.now() %>
+		<!-- 撮影確定 or 納品済み or 不満  状態 -->
+		<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted','cl_delivered', 'cs_recieved', 'cs_complained_1', 'cs_complained_2']) %>
+			<!-- アップロード済み写真確認 -->
+			<%= render :partial => 'events/event_photo_cs', :locals=>{event: @event, ev_photos_6: @ev_photos_6, ev_photo_nums: @ev_photo_nums} %>
+		<% end %><!-- endOf 撮影確定 or 納品済み状態 -->
+	<% end %><!-- endOf cl 過去の場合 -->
 </div>
-
-
-				<!-- clの場合 -->
-				<% if @event.client_id == @cl.id %>
-					<!-- 過去の場合 -->
-					<% if @event.start_time <= Time.now() %>
-						<!-- 撮影確定状態 -->
-						<% if @event.event_states.last.state == "cl_accepted" %>
-							<%= render :partial => 'events/event_photo', :locals=>{event: @event, ev_photos: @ev_photos} %>
-						<% end %><!-- endOf 撮影確定状態 -->
-						<!-- 納品待ち状態 -->
-						<% if @event.event_states.last.state == "cs_opened" %>
-							<%= render :partial => 'events/event_photo', :locals=>{event: @event, ev_photos: @ev_photos} %>
-						<% end %><!-- endOf 納品待ち状態 -->
-					<% end %><!-- endOf 過去の場合 -->
-				<% end %><!-- endOf clの場合 -->
