@@ -63,8 +63,6 @@ Rails.application.routes.draw do
 			resources :event_states, only: []  do
 				collection do
 					post 'cl_accept'
-					post 'cs_complain_1'
-					post 'cs_complain_2'
 					post 'cl_deliver'
 					post 'cs_recieve'
 					post 'cl_edit'

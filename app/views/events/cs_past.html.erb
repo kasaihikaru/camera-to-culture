@@ -28,8 +28,8 @@
 												<% end %>
 												<!-- clが承認済み -->
 												<% if ev.event_states.last.state == "cl_accepted" %>
-													<span class="status-badge primary-col">
-														<%= t(".Open_for_DL") %>
+													<span class="status-badge subprimary-col">
+														<%= t(".Waiting_for_Photos") %>
 													</span>
 												<% end %>
 												<!-- clが却下済み -->
@@ -72,12 +72,6 @@
 												<% if ev.event_states.last.state == "cs_dismissed" %>
 													<span class="status-badge subprimary-col">
 														<%= t(".You_dismissed") %>
-													</span>
-												<% end %>
-												<!-- 顧客納品ボックスオープン済み -->
-												<% if ev.event_states.last.state == "cs_opened" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".Waiting_for_Photos") %>
 													</span>
 												<% end %>
 												<!-- 写真納品済み -->

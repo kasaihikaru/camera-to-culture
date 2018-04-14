@@ -1,5 +1,6 @@
 class EventPhotosController < ApplicationController
-before_action :user_check, only: [:create, :r_destroy]
+	before_action :user_check, only: [:create, :r_destroy]
+	before_action :state_recieved, only: [:zip_dl]
 
 	def create
 		EventPhoto.create(create_params)
@@ -35,6 +36,7 @@ before_action :user_check, only: [:create, :r_destroy]
 
 #------ストロングパラメーター------#
 private
+	#---------- params ----------#
 	def create_params
 		ev_photo = {}
 		ev_photo[:image] = params[:event_photo]
@@ -50,9 +52,19 @@ private
 		params[:delete_ev_photo]
 	end
 
+	#---------- user_check ----------#
 	def user_check
 		unless user_signed_in? && Event.find(params[:event_id]).client == current_user.clients.active.first
 			flash[:alert] = "ログインしてください"
+			redirect_to root_path
+		end
+	end
+
+	#---------- state_check ----------#
+	def state_recieved
+		event = Event.find(params[:event_id].to_i)
+		unless event.event_states.last.state == "cs_recieved"
+			flash[:alert] = "リクエストが不正です"
 			redirect_to root_path
 		end
 	end

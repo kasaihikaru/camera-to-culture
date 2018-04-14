@@ -29,13 +29,13 @@
 												<!-- あなたが承認済み -->
 												<% if ev.event_states.last.state == "cl_accepted" %>
 													<span class="status-badge subprimary-col">
-														<%= t(".You_approved") %>
+														<%= t(".You_Approved") %>
 													</span>
 												<% end %>
 												<!-- あなたが却下済み -->
 												<% if ev.event_states.last.state == "cl_dismissed" %>
 													<span class="status-badge subprimary-col">
-														<%= t(".You_dismissed") %>
+														<%= t(".You_Dismissed") %>
 													</span>
 												<% end %>
 												<!-- あなたがキャンセル済み -->
@@ -65,13 +65,13 @@
 												<!-- 顧客が条件変更を承認済み -->
 												<% if ev.event_states.last.state == "cs_accepted" %>
 													<span class="status-badge subprimary-col">
-														<%= t(".Customer_approved") %>
+														<%= t(".Customer_Approved") %>
 													</span>
 												<% end %>
 												<!-- 顧客が却下済み -->
 												<% if ev.event_states.last.state == "cs_dismissed" %>
 													<span class="status-badge subprimary-col">
-														<%= t(".Customer_dismissed") %>
+														<%= t(".Customer_Dismissed") %>
 													</span>
 												<% end %>
 											</div>

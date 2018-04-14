@@ -73,18 +73,14 @@ ja:
       Comment: コメント
       Send: 送信
       Edit: 撮影条件変更を提案する
-      Canceled_by_time_passed: カメラマンの返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
+      request_canceled: リクエストキャンセル
+      Photographer_no_replied: カメラマンの返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
+      Customer_no_replied: 顧客の返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
       download_zip: 再度zipでダウンロード
     cl_accept:
       Accept: リクエストを承認する
       cl_accept_comment: リクエストありがとうございます。撮影よろしくお願いします！
-    cs_complain_1:
-      Complain: 不満を言う
-      Complain_to_Photographer: カメラマンに不満を言う
       Send: 送信
-    cs_complain_2:
-      Complain: 不満を言う
-      Complain_to_Photographer: カメラマンに不満を言う
     cl_deliver:
       Notify_Deliverys_Completed: 納品完了を知らせる
       cl_deliver_comment: 写真を納品しました。確認お願いします！
@@ -100,11 +96,11 @@ ja:
       Send: 送信
     cl_dismiss:
       Dismiss: 撮影を断る
-      cs_dismiss_comment: 今回は見送らせてください。また次回、よろしくお願いします！
+      cl_dismiss_comment: ご希望の条件に沿うのは難しいため、今回は見送らせてください。また次回、よろしくお願いします！
       Send: 送信
     cs_dismiss:
       Dismiss_Edited_Condition: 撮影条件変更を承認しない
-      cl_dismiss_comment: ご希望の条件に沿うのは難しいため、今回は見送らせてください。また次回、よろしくお願いします！
+      cs_dismiss_comment: 今回は見送らせてください。また次回、よろしくお願いします！
       Send: 送信
     cs_request_cancele:
       Request_Cancele: リクエストをキャンセルする
@@ -147,26 +143,24 @@ ja:
     cl_future:
       yen: 円
       Youve_got_a_request: あなたの承認待ち
-      You_approved: 撮影確定
-      You_dismissed: 撮影却下済み
+      You_Approved: 撮影確定
+      You_Dismissed: 撮影却下済み
       You_Canceled: キャンセル済み
       Customer_Canceled: 顧客がキャンセル
       You_edited_Condition: 条件変更依頼中
-      Customer_approved: 撮影確定
-      Customer_dismissed: 却下されました
+      Customer_Approved: 撮影確定
+      Customer_Dismissed: 却下されました
       Event_finished: 納品待ち
       Photos_delivered: 納品済み
       Photos_recieved: 写真受け取り済み
     cl_past:
       yen: 円
       Automatically_Canceled: 自動キャンセル済み
-      You_approved: 撮影確定
+      Please_deliver_photos: 納品して下さい
       You_dismissed: 撮影却下済み
       You_Canceled: キャンセル済み
       Customer_Canceled: 顧客がキャンセル
-      You_edited_Condition: 条件変更依頼中
-      Customer_approved: 撮影確定
-      Customer_dismissed: 却下されました
+      Customer_dismissed: 顧客が却下
       Waiting_for_Photos: 納品待ち
       Photos_delivered: 納品済み
       Photos_recieved: 写真受け取り済み
@@ -175,11 +169,11 @@ ja:
       Requesting: 承認待ち
       Approved: 撮影確定
       Request_dismissed: 却下されました
-      Canceled_by_photographer: 相手がキャンセル
+      Photographer_Canceled: 相手がキャンセル
       You_Canceled: あなたがキャンセル
       Youve_got_request: あなたの承認待ち
       Customer_approved: 撮影確定
-      You_dismissed: 却下しました
+      You_dismissed: あなたが却下
       Event_finished: 納品待ち
       Photos_delivered: 納品済み
       Photos_recieved: 写真受け取り済み
@@ -188,13 +182,12 @@ ja:
       Requesting: 承認待ち
       Approved: 撮影確定
       Automatically_Canceled: 自動キャンセル済み
-      Request_dismissed: 却下されました
+      Request_dismissed: 相手が却下
       Canceled_by_photographer: 相手がキャンセル
       You_Canceled: あなたがキャンセル
       Youve_got_request: あなたの承認待ち
       Customer_approved: 撮影確定
-      You_dismissed: 却下しました
-      Open_for_DL: 納品口を開く
+      You_dismissed: あなたが却下
       Waiting_for_Photos: 納品待ち
       Photos_delivered: 納品済み
       Photos_recieved: 写真受け取り済み

@@ -182,11 +182,22 @@
 						<% end %>
 						<% if @event.event_states.last.state == "request" &&  @event.start_time < Time.now() %>
 							<td>
-								<%= render :partial => 'svgs/cameraman' %><%= t(".cs_canceled") %><br>
-								<span class="datetime"><%= @event.start_time %>
+								<%= render :partial => 'svgs/cameraman' %><br>
+								<%= t(".request_canceled") %>
 							</td>
 							<td>
-								<%= t(".Canceled_by_time_passed") %>
+								<span class="datetime"><%= @event.start_time %></span><br>
+								<%= t(".Photographer_no_replied") %>
+							</td>
+						<% end %>
+						<% if @event.event_states.last.state == "cl_edited" &&  @event.start_time < Time.now() %>
+							<td>
+								<%= render :partial => 'svgs/customer' %><br>
+								<%= t(".request_canceled") %>
+							</td>
+							<td>
+								<span class="datetime"><%= @event.start_time %></span><br>
+								<%= t(".Customer_no_replied") %>
 							</td>
 						<% end %>
 					</tbody>
@@ -259,8 +270,6 @@
 				<% if @event.customer_id == @cs.id && @event.start_time <= Time.now() %>
 					<!-- 撮影確定状態 -->
 					<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
-						<!-- 納品前に不満を言う -->
-						<%= render :partial => 'events/cs_complain_1', :locals=>{event: @event} %>
 					<% end %><!-- endOf 撮影確定状態 -->
 					<!-- 納品済み状態 -->
 					<% if @event.event_states.last.state == "cl_delivered" %>
@@ -271,8 +280,6 @@
 					<% if @event.event_states.last.state == "cs_recieved" %>
 						<!-- 再度zip_dl -->
 						<%= link_to t(".download_zip"), zip_dl_event_event_photos_path(format: :zip, event_id: @event.id), class: "btn prim-btn" %>
-						<!-- 受け取り後に不満を言う -->
-						<%= render :partial => 'events/cs_complain_2', :locals=>{event: @event} %>
 					<% end %><!-- endOf 写真受け取り済み状態 -->
 				<% end %><!-- cs 過去の場合 -->
 			</div><!-- endOf event_stateボタン -->
@@ -286,9 +293,13 @@
 	<!-- cl 過去の場合 -->
 	<% if @event.client_id == @cl.id && @event.start_time <= Time.now() %>
 		<!-- 撮影確定 or 納品済み or 不満  状態 -->
-		<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted','cl_delivered', 'cs_recieved', 'cs_complained_1', 'cs_complained_2']) %>
+		<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted','cl_delivered', 'cs_recieved']) %>
 			<!-- 写真アップロード -->
 			<%= render :partial => 'events/event_photo_upload', :locals=>{event: @event} %>
+			<!-- 納品完了を伝えるボタン -->
+			<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
+				<%= render :partial => 'events/cl_deliver', :locals=>{event: @event} %>
+			<% end %>
 			<!-- アップロード済み写真確認 -->
 			<%= render :partial => 'events/event_photo', :locals=>{event: @event, ev_photos: @ev_photos} %>
 		<% end %><!-- endOf 撮影確定 or 納品済み状態 -->
@@ -298,7 +309,7 @@
 	<!-- cs 過去の場合 -->
 	<% if @event.customer_id == @cs.id && @event.start_time <= Time.now() %>
 		<!-- 撮影確定 or 納品済み or 不満  状態 -->
-		<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted','cl_delivered', 'cs_recieved', 'cs_complained_1', 'cs_complained_2']) %>
+		<% if @event.event_states.last.state.in?(['cl_delivered', 'cs_recieved']) %>
 			<!-- アップロード済み写真確認 -->
 			<%= render :partial => 'events/event_photo_cs', :locals=>{event: @event, ev_photos_6: @ev_photos_6, ev_photo_nums: @ev_photo_nums} %>
 		<% end %><!-- endOf 撮影確定 or 納品済み状態 -->

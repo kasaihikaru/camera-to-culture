@@ -157,23 +157,10 @@
 									<%= render :partial => 'svgs/global' %>&nbsp;<%= t(".language") %>
 								</a>
 								<div class="dropdown-menu" aria-labelledby="footerDropdown">
-									<% if params[:locale] != 'ja' %>
-										<% if params[:locale].nil? == true %>
-										<% else %>
-											<%= link_to("日本語", url_for(locale: nil, only_path: false), class: "dropdown-item") %>
-										<% end %>
-									<% end %>
-									<% if params[:locale] != 'en'%>
-										<%= link_to("English", url_for(locale: 'en', only_path: false), class: "dropdown-item") %>
-									<% end %>
-
-									<% if params[:locale] != 'zh'%>
-										<%= link_to("简体中文", url_for(locale: 'zh', only_path: false), class: "dropdown-item") %>
-									<% end %>
-
-									<% if params[:locale] != 'tw'%>
-										<%= link_to("繁體中文", url_for(locale: 'tw', only_path: false), class: "dropdown-item") %>
-									<% end %>
+									<%= link_to("日本語", url_for(locale: 'ja', only_path: false), class: "dropdown-item") %>
+									<%= link_to("English", url_for(locale: 'en', only_path: false), class: "dropdown-item") %>
+									<%= link_to("简体中文", url_for(locale: 'zh', only_path: false), class: "dropdown-item") %>
+									<%= link_to("繁體中文", url_for(locale: 'tw', only_path: false), class: "dropdown-item") %>
 								</div>
 							</div>
 						</div>

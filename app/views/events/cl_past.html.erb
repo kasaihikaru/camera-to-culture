@@ -28,8 +28,8 @@
 												<% end %>
 												<!-- あなたが承認済み -->
 												<% if ev.event_states.last.state == "cl_accepted" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".You_approved") %>
+													<span class="status-badge primary-col">
+														<%= t(".Please_deliver_photos") %>
 													</span>
 												<% end %>
 												<!-- あなたが却下済み -->
@@ -59,25 +59,19 @@
 												<!-- あなたが条件変更リクエスト -->
 												<% if ev.event_states.last.state == "cl_edited" %>
 													<span class="status-badge subprimary-col">
-														<%= t(".You_edited_Condition") %>
+														<%= t(".Automatically_Canceled") %>
 													</span>
 												<% end %>
 												<!-- 顧客が条件変更を承認済み -->
 												<% if ev.event_states.last.state == "cs_accepted" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".Customer_approved") %>
+													<span class="status-badge primary-col">
+														<%= t(".Please_deliver_photos") %>
 													</span>
 												<% end %>
 												<!-- 顧客が却下済み -->
 												<% if ev.event_states.last.state == "cs_dismissed" %>
 													<span class="status-badge subprimary-col">
 														<%= t(".Customer_dismissed") %>
-													</span>
-												<% end %>
-												<!-- 撮影終了済み -->
-												<% if ev.event_states.last.state == "cs_opened" %>
-													<span class="status-badge primary-col">
-														<%= t(".Waiting_for_Photos") %>
 													</span>
 												<% end %>
 												<!-- 写真納品済み -->
