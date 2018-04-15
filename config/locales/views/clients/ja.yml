@@ -96,3 +96,7 @@ ja:
       yen: 円
       Camera: カメラ
       Message: メッセージ
+    show4_calender:
+      available_dates: 撮影可能日
+      check_date_and_time: 撮影できる時間を確認
+      Please_select_from_the_calender: カレンダーから日付を選択してください

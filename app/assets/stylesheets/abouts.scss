@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $prim-col      : #FF8000;
-$subprim-col      : #51C4AA;
+// $subprim-col   : #51C4AA;
 
-
-
+$subprim-col   : #EBE2DA;
+$letter-col    : #000000;
 
 
 
@@ -83,7 +83,7 @@ $subprim-col      : #51C4AA;
 
 .about-1{
 	background-color: $subprim-col;
-	color: #FFFFFF;
+	color: $letter-col;
 }
 
 .about-2{
@@ -92,7 +92,7 @@ $subprim-col      : #51C4AA;
 
 .about-3{
 	background-color: $subprim-col;
-	color: #FFFFFF;
+	color: $letter-col;
 }
 
 .about-4{
@@ -109,14 +109,14 @@ $subprim-col      : #51C4AA;
 	display: inline-block;
 	font-size: 18px;
 	background-color: $prim-col;
-	color: #FFFFFF;
+	color: $letter-col;
 	border-radius: 5px;
 	border: none;
 	padding: 5px 0;
 	margin: 8px 0;
 }
 .about-btn:hover{
-	color: #FFFFFF;
+	color: $letter-col;
 	text-decoration: none;
 }
 

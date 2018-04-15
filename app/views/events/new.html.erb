@@ -9,8 +9,8 @@
 	</div>
 
 	<!-- カレンダー  -->
+	<h1><%= t(".Check_Shedule", name: @cl_here.user.name) %></h1>
 	<div id="cl-show4-calender" class="container-fluid cl-show cl-show-4">
-		<h1><%= t(".Check_Shedule", name: @cl_here.user.name) %></h1>
 		<%= render partial: 'clients/show4_calender', locals: {cl_here: @cl_here, day: @day, c_dates: @c_dates } %>
 	</div>
 

@@ -20,7 +20,7 @@
 						</div>
 						<div class="calendar-upper-right cal col-5 calender-explanation clear-fix">
 							<div class="active-day-example float-left"></div>
-							<div class="float-left">撮影可能日</div>
+							<div class="float-left"><%= t(".available_dates") %></div>
 						</div>
 					</div>
 					<table class="calendar">
@@ -64,8 +64,9 @@
 				<div class="calendar-base">
 					<div class="schedule-base">
 						<div class="schedule-upper">
-							撮影できる時間を確認<br>
-							<span class="text-explanation">カレンダーから日付を選択してください
+							<%= t(".check_date_and_time") %><br>
+							<span class="text-explanation">
+								<%= t(".Please_select_from_the_calender") %>
 							</span>
 						</div>
 						<hr>
