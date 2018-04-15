@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211030124) do
+ActiveRecord::Schema.define(version: 20180415114259) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "ja", null: false
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 20180211030124) do
     t.string "image"
     t.boolean "consent", default: false, null: false
     t.boolean "is_deleted", default: false, null: false
+    t.boolean "confirmed", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_clients_on_user_id"
@@ -183,6 +184,22 @@ ActiveRecord::Schema.define(version: 20180211030124) do
     t.datetime "updated_at", null: false
     t.index ["client_primary_price_id"], name: "index_event_primary_prices_on_client_primary_price_id"
     t.index ["event_id"], name: "index_event_primary_prices_on_event_id"
+  end
+
+  create_table "event_reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "event_id"
+    t.text "cl_review"
+    t.text "cl_comment"
+    t.text "cs_review"
+    t.string "cl_image_1"
+    t.string "cl_image_2"
+    t.string "cl_image_3"
+    t.string "cs_image_1"
+    t.string "cs_image_2"
+    t.string "cs_image_3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_reviews_on_event_id"
   end
 
   create_table "event_states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -307,6 +324,7 @@ ActiveRecord::Schema.define(version: 20180211030124) do
   add_foreign_key "event_photos", "events"
   add_foreign_key "event_primary_prices", "client_primary_prices"
   add_foreign_key "event_primary_prices", "events"
+  add_foreign_key "event_reviews", "events"
   add_foreign_key "event_states", "events"
   add_foreign_key "events", "clients"
   add_foreign_key "events", "customers"

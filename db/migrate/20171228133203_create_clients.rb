@@ -7,6 +7,7 @@ class CreateClients < ActiveRecord::Migration[5.1]
       t.string  :image
       t.boolean :consent, default:false, null:false
       t.boolean :is_deleted, default:false, null:false
+      t.boolean :confirmed, default:false, null:false
       t.timestamps
     end
   end

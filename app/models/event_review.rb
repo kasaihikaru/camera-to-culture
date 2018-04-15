@@ -1,0 +1,2 @@
+class EventReview < ApplicationRecord
+end
