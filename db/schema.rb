@@ -206,6 +206,8 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.bigint "event_id"
     t.string "state", null: false
     t.text "comment"
+    t.boolean "cl_read", default: false, null: false
+    t.boolean "cs_read", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_event_states_on_event_id"
@@ -293,6 +295,7 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.string "image"
     t.string "uid"
     t.string "provider"
+    t.boolean "mail_refused", default: false, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

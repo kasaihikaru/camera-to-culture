@@ -5,7 +5,7 @@ ja:
       schedule: スケジュール
       date: 日付
       day: 曜日
-      avairable-time: 撮影可能な時間の説明
+      available-time: 撮影可能な時間の説明
       example: （例）
       example_sch: 10:00-17:00まで受付可能
       Update: 更新

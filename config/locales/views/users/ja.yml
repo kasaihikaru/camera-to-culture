@@ -3,6 +3,7 @@ ja:
   users:
     show:
       Home: ホーム
+      Update_available_dates_for_your_customer: 撮影可能日を登録しましょう
       booking_request: '%{name}さんより予約リクエストが届きました。'
       Deliver_photos: '%{name}さんの写真を納品しましょう'
       changing_conditions_request: '%{name}さんより条件変更リクエストが届きました。'
@@ -10,6 +11,8 @@ ja:
       Languages: 話す言語
       None: なし
       Introduction: メッセージ
+      Available_dates: 撮影可能日
+      available_dates_explanation: "撮影可能候補日として、%{nums}日間登録されています。"
       Photographing_Categories: 撮影カテゴリー
       Photographing_Area: 撮影可能な都道府県
       Price: 価格

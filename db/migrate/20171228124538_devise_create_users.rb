@@ -41,6 +41,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       #add_for_FB
       t.string  :uid
       t.string  :provider
+
+      #check_mail_permission
+      t.boolean :mail_refused, default:false, null:false
     end
 
     add_index :users, :email,                unique: true

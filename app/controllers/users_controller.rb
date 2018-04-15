@@ -23,6 +23,9 @@ class UsersController < ApplicationController
 		end
 		@portfolio_nums = @cl.client_portfolios.active.count
 
+		#schedule.present?
+		@cl_schedules = @cl.client_schedules.future.available
+
 		#customer_info
 		@cs = @user.customers.active.first
 

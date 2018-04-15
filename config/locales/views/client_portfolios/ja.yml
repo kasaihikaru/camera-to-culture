@@ -2,6 +2,6 @@
 ja:
   client_portfolios:
     new:
-      portfolio: ポートフォリオ
+      portfolio: ポートフォリオ（サンプル写真）
       delete_check: 消去チェック
       delete_btn: チェックした写真を消去

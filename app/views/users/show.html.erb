@@ -11,8 +11,14 @@
       <!-- お知らせ -->
       <div class="user-show-alert">
         <div class="fusen">
-
           <ul>
+            <% if @cl_schedules.blank? %>
+              <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
+                <li>
+                  <%= t(".Update_available_dates_for_your_customer") %>
+                </li>
+              <% end %>
+            <% end %>
             <% if @cl_future.present? %>
               <% @cl_future.each do |ev_state| %>
                 <%= link_to event_path(ev_state.event.id) do %>
@@ -108,6 +114,23 @@
           </div>
           <!-- カメラマン情報 -->
           <% if @cl.consent == true && @cl.is_deleted == false %>
+            <h2>
+              <%= t(".Available_dates") %>
+              <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
+                <% if @cl_schedules.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @cl_schedules.present? %>
+                <%= t(".available_dates_explanation", nums: @cl_schedules.count) %>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
             <h2>
               <%= t(".Photographing_Categories") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
