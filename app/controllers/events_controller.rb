@@ -231,7 +231,7 @@ private
 			return "time-error"
 		end
 
-		# メイン価格
+		# 撮影価格
 		client_id = params[:event][:client_id].to_i
 		cl = Client.find(client_id)
 		prim_price_ins = cl.client_primary_prices.active.first
@@ -295,7 +295,7 @@ private
 		#時間
 		hours = ev_hours_params["hours"]
 
-		# メイン価格
+		# 撮影価格
 		client_id = params[:event][:client_id].to_i
 		cl = Client.find(client_id)
 		prim_price_ins = cl.client_primary_prices.active.first
@@ -348,7 +348,7 @@ private
 			return "time-error"
 		end
 
-		# メイン価格
+		# 撮影価格
 		event = Event.find(id_params)
 		prim_price = event.event_primary_prices.last.client_primary_price.price_per_hour
 		primary_price_sum = (prim_price * hours).floor
@@ -398,7 +398,7 @@ private
 		#時間
 		hours = ev_hours_params["hours"]
 
-		# メイン価格
+		# 撮影価格
 		event = Event.find(id_params)
 		prim_price = event.event_primary_prices.last.client_primary_price.price_per_hour
 		primary_price_sum = (prim_price * hours).floor

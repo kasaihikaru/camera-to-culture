@@ -9,7 +9,7 @@ ja:
       Photos_delivered: '%{name}さんから写真が届きました。'
       Languages: 話す言語
       None: なし
-      Introduction: 自己紹介
+      Introduction: メッセージ
       Photographing_Categories: 撮影カテゴリー
       Photographing_Area: 撮影可能な都道府県
       Price: 価格
@@ -25,6 +25,7 @@ ja:
       photos_are_uploaded: 枚のポートフォリオが登録されています。
 
     mypage_menu:
+      Open_Menu: メニューを開く
       mypage: ホーム
       message: メッセージ
       events: CtoCでの撮影

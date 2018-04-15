@@ -27,6 +27,10 @@ $subprim-col      : #51C4AA;
 			.selected{
 				font-weight: 900;
 			}
+			.mypage-menu-btn-sm{
+				margin: 0;
+				text-align: center;
+			}
 		}
 		.mypage-content{
 			padding: 30px 15px;
@@ -109,10 +113,10 @@ $subprim-col      : #51C4AA;
 				box-shadow: 0 5px 5px rgba(0,0,0,0.3);
 				transform: rotate(2deg);
 			}
-			li:nth-child(odd) { /* 奇数番のli */
+			a:nth-child(odd) li { /* 奇数番のli */
 				background: linear-gradient(to right, #ffffcc 0%, #f1f1c1 0.5%, #f1f1c1 13%, #ffffcc 16%);
 			}
-			li:nth-child(even) { /* 偶数番のli */
+			a:nth-child(even) li { /* 偶数番のli */
 				background: linear-gradient(to right, #FDF8E6 0%, #F5ECDA 0.5%, #F5ECDA 13%, #FDF8E6 16%);
 				margin: 1.6em 0em !important;
 			}

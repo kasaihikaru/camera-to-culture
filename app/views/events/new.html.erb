@@ -207,7 +207,7 @@
 
 <!--/////// 計算 /////// -->
 <script>
-	// メイン料金計算
+	// 撮影料金計算
 	function cultulate_prim_price(){
 		var prime_price = parseInt($('#prime_price').text(), 10);
 		var hours = (new Date(($('#date').val()+'T'+$('#event_end_time').val()+'Z')) - new Date(($('#date').val()+'T'+$('#event_start_time').val()+'Z'))) / (1000 * 60 * 60 );
@@ -219,7 +219,7 @@
 		} else {
 			$('#hours').text('0');
 		}
-		// メイン価格描画
+		// 撮影価格描画
 		if (total_prime_price > 0) {
 			$('#total_prime_price').text(total_prime_price);
 		} else {
@@ -280,7 +280,7 @@
 				x = x + 1;
 		}
 
-		// メイン価格
+		// 撮影価格
 		var total_prime_price = parseInt($('#total_prime_price').text(), 10);
 
 		// 合計価格描画

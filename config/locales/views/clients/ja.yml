@@ -4,7 +4,7 @@ ja:
     edit:
       cl_form: カメラマンプロフィール編集
       camera: 撮影に使うカメラについて
-      introduction: 自己紹介
+      introduction: メッセージ
       main_image: メイン写真を登録
       main_image_explain: 検索時、トップのサンプル写真として表示されます。
       category_form: 撮影可能な写真カテゴリー
@@ -13,7 +13,7 @@ ja:
       event_photos: イベント写真（結婚式、七五三、旅行）
       private_photo: 日常写真（家族、恋人、友達）
       prime_price_form: 撮影価格
-      fill_your_main_price: メインの価格を入力し、細かな設定はオプションから登録してください。
+      fill_your_main_price: メインの撮影価格を入力し、細かな設定はオプションから登録してください。
       price_per_hour: １時間あたり
       minimum_hours: 最低受付時間
       h: 時間

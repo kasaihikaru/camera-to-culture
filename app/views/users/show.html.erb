@@ -49,50 +49,10 @@
                 <% end %>
               <% end %>
             <% end %>
-
-
-
-            <% if @cl_future.present? %>
-              <% @cl_future.each do |ev_state| %>
-                <li>
-                  <%= link_to event_path(ev_state.event.id) do %>
-                    <%= t(".booking_request", name: ev_state.event.customer.user.name) %>
-                  <% end %>
-                </li>
-              <% end %>
-            <% end %>
-            <% if @cl_past.present? %>
-              <% @cl_past.each do |ev_state| %>
-                <li>
-                  <%= link_to event_path(ev_state.event.id) do %>
-                    <%= t(".Deliver_photos", name: ev_state.event.customer.user.name) %>
-                  <% end %>
-                </li>
-              <% end %>
-            <% end %>
-            <% if @cs_future.present? %>
-              <% @cs_future.each do |ev_state| %>
-                <li>
-                  <%= link_to event_path(ev_state.event.id) do %>
-                    <%= t(".changing_conditions_request", name: ev_state.event.client.user.name) %>
-                  <% end %>
-                </li>
-              <% end %>
-            <% end %>
-            <% if @cs_past.present? %>
-              <% @cs_past.each do |ev_state| %>
-                <li>
-                  <%= link_to event_path(ev_state.event.id) do %>
-                    <%= t(".Photos_delivered", name: ev_state.event.client.user.name) %>
-                  <% end %>
-                </li>
-              <% end %>
-            <% end %>
           </ul>
         </div>
-      </div>
+      </div><!-- endOf ふせん -->
 
-      <hr>
 
       <div class="user-show-wrapper">
         <!-- ユーザー情報 -->

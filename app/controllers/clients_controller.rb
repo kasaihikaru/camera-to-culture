@@ -74,7 +74,7 @@ class ClientsController < ApplicationController
 		cl.update(cl_create_params)
 		client_id = cl.id
 
-		#-----メイン価格登録------#
+		#-----撮影価格登録------#
 		pre_cl_prim_price = cl.client_primary_prices.active.first
 
 		# 有効なレコードがなければ、単純に作成
