@@ -1,0 +1,18 @@
+<div class="ms-menu col-12 col-md-4 col-lg-3">
+	<hr>
+	<% users.each do |user| %>
+		<div class="container-fluid">
+			<%= link_to user_message_path(current_user.id, user.id), class: "" do %>
+				<div class="row">
+					<div class="col-3">
+						<%= image_tag user.image.url(:thumb), :alt => "icon", :class => "ms-menu-icon" if user.image? %>
+					</div>
+					<div class="col-9">
+						<%= user.name %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<hr>
+	<% end %>
+</div>

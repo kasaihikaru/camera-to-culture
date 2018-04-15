@@ -8,48 +8,297 @@
       <h1><%= t(".Home")%></h1>
       <hr>
 
+      <!-- お知らせ -->
+      <div class="user-show-alert">
+        <div class="fusen">
+
+          <ul>
+            <% if @cl_future.present? %>
+              <% @cl_future.each do |ev_state| %>
+                <%= link_to event_path(ev_state.event.id) do %>
+                  <li>
+                    <%= t(".booking_request", name: ev_state.event.customer.user.name) %>
+                  </li>
+                <% end %>
+              <% end %>
+            <% end %>
+            <% if @cl_past.present? %>
+              <% @cl_past.each do |ev_state| %>
+                <%= link_to event_path(ev_state.event.id) do %>
+                  <li>
+                    <%= t(".Deliver_photos", name: ev_state.event.customer.user.name) %>
+                  </li>
+                <% end %>
+              <% end %>
+            <% end %>
+            <% if @cs_future.present? %>
+              <% @cs_future.each do |ev_state| %>
+                <%= link_to event_path(ev_state.event.id) do %>
+                  <li>
+                    <%= t(".changing_conditions_request", name: ev_state.event.client.user.name) %>
+                  </li>
+                <% end %>
+              <% end %>
+            <% end %>
+            <% if @cs_past.present? %>
+              <% @cs_past.each do |ev_state| %>
+                <%= link_to event_path(ev_state.event.id) do %>
+                  <li>
+                    <%= t(".Photos_delivered", name: ev_state.event.client.user.name) %>
+                  </li>
+                <% end %>
+              <% end %>
+            <% end %>
 
 
-<!--       <h1>ユーザー情報</h1>
-      <h4>ユーザー名</h4>
-      <%= @user.name %><br>
-      <h4>メアド</h4>
-      <%= @user.email %><br>
-      <h4>プロフィール画像</h4>
-      <%= image_tag @user.image.url, :alt => "icon" if @user.image? %><br>
-      <h4>話せる言語</h4>
-      <% @mylangs.each do |lang| %>
-      	<%= lang.ja %><br>
-      <% end %><br>
 
-      <h1>撮影者としての情報</h1>
-      <h4>カメラ</h4>
-      <%= @cl.camera %><br>
-      <h4>メッセージ</h4>
-      <%= @cl.introduction %><br>
+            <% if @cl_future.present? %>
+              <% @cl_future.each do |ev_state| %>
+                <li>
+                  <%= link_to event_path(ev_state.event.id) do %>
+                    <%= t(".booking_request", name: ev_state.event.customer.user.name) %>
+                  <% end %>
+                </li>
+              <% end %>
+            <% end %>
+            <% if @cl_past.present? %>
+              <% @cl_past.each do |ev_state| %>
+                <li>
+                  <%= link_to event_path(ev_state.event.id) do %>
+                    <%= t(".Deliver_photos", name: ev_state.event.customer.user.name) %>
+                  <% end %>
+                </li>
+              <% end %>
+            <% end %>
+            <% if @cs_future.present? %>
+              <% @cs_future.each do |ev_state| %>
+                <li>
+                  <%= link_to event_path(ev_state.event.id) do %>
+                    <%= t(".changing_conditions_request", name: ev_state.event.client.user.name) %>
+                  <% end %>
+                </li>
+              <% end %>
+            <% end %>
+            <% if @cs_past.present? %>
+              <% @cs_past.each do |ev_state| %>
+                <li>
+                  <%= link_to event_path(ev_state.event.id) do %>
+                    <%= t(".Photos_delivered", name: ev_state.event.client.user.name) %>
+                  <% end %>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
 
-      <h4>価格</h4>
-      <% if @cl_prim_price.present? %>
-        <%= @cl_prim_price.price_per_hour %>円/時間<br>
-        最少受付時間：<%= @cl_prim_price.minimum_hours %><br>
-      <% end %>
-      <h4>オプション</h4>
-      <% @cl_opt_prices.each do |cl_opt_price| %>
-        <%= cl_opt_price.name %>
-        <% if cl_opt_price.along_with_time == true %>
-          １時間ごとに
-        <% end %>
-        <%= cl_opt_price.price %>円
-        <br>
-      <% end %>
-      <h4>撮影エリア</h4>
-      <% @cl_prefectures.each do |cl_prefecture| %>
-      	<%= cl_prefecture.ja %>
-      <% end %>
+      <hr>
 
-      <h1>依頼者としての情報</h1>
-      <h4>自己紹介</h4>
-      <%= @cs.introduction %><br> -->
+      <div class="user-show-wrapper">
+        <!-- ユーザー情報 -->
+        <div class="user-show-info">
+          <h2>
+            <%= @user.name %>
+            <% unless @user.image.present? %>
+              <%= link_to edit_user_registration_path do %>
+                <%= render :partial => 'svgs/edit_prim' %>
+              <% end %>
+            <% end %>
+          </h2>
+          <% if @user.image.present? %>
+            <%= image_tag @user.image.url, :alt => "icon" %>
+          <% else %>
+            <%= render :partial => 'svgs/baby' %>
+          <% end %>
+          <h2>
+            <%= t(".Languages")%>
+            <%= link_to edit_user_registration_path do %>
+              <% if @mylangs.present? %>
+                <%= render :partial => 'svgs/edit' %>
+              <% else %>
+                <%= render :partial => 'svgs/edit_prim' %>
+              <% end %>
+            <% end %>
+          </h2>
+          <div class="indent">
+            <% if @mylangs.present? %>
+              <% @mylangs.each do |lang| %>
+              	<%= lang.ja %>
+              <% end %>
+            <% else %>
+              <%= t(".None") %>
+            <% end %>
+          </div>
+          <h2>
+            <%= t(".Introduction")%>
+            <%= link_to edit_user_customer_path(@user, @cs) do %>
+                <% if @cs.introduction.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+            <% end %>
+          </h2>
+          <div class="indent">
+            <% if @cs.introduction? %>
+              <%= @cs.introduction %>
+            <% else %>
+              <%= t(".None")%>
+            <% end %>
+          </div>
+          <!-- カメラマン情報 -->
+          <% if @cl.consent == true && @cl.is_deleted == false %>
+            <h2>
+              <%= t(".Photographing_Categories") %>
+              <%= link_to edit_user_client_path(@user, @cl) do %>
+                <% if @cl_categories.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @cl_categories.present? %>
+                <% @cl_categories.each do |cl_category| %>
+                  <%= cl_category.category.ja %><br>
+                <% end %>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
+            <h2>
+              <%= t(".Photographing_Area") %>
+              <%= link_to edit_user_client_path(@user, @cl) do %>
+                <% if @cl_prefectures.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @cl_prefectures.present? %>
+                <% @cl_prefectures.each do |cl_prefecture| %>
+                  <%= cl_prefecture.ja %>
+                <% end %>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
+            <h2>
+              <%= t(".Price") %>
+              <%= link_to edit_user_client_path(@user, @cl) do %>
+                <% if @cl_prim_price.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @cl_prim_price.present? %>
+                <%= @cl_prim_price.price_per_hour %><%= t(".yen_per_hour") %><br>
+                <%= @cl_prim_price.minimum_hours %><%= t(".hours_minimum") %>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
+            <h2>
+              <%= t(".Option_Menu") %>
+              <%= link_to edit_user_client_path(@user, @cl) do %>
+                <% if @cl_opt_prices.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @cl_opt_prices.present? %>
+                <% @cl_opt_prices.each do |cl_opt_price| %>
+                  <%= cl_opt_price.name %>
+                  <% if cl_opt_price.along_with_time == true %>
+                    <%= t(".price_per_hour") %>
+                  <% end %>
+                  <%= cl_opt_price.price %><%= t(".yen") %>
+                  <br>
+                <% end %>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
+            <h2>
+              <%= t(".Camera") %>
+              <%= link_to edit_user_client_path(@user, @cl) do %>
+                <% if @cl.camera.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @cl.camera.present? %>
+                <%= @cl.camera %>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
+            <h2>
+              <%= t(".Message") %>
+              <%= link_to edit_user_client_path(@user, @cl) do %>
+                <% if @cl.introduction.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @cl.introduction.present? %>
+                <%= @cl.introduction %>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
+            <h2>
+              <%= t(".Your_Main_Photo") %>
+              <%= link_to edit_user_client_path(@user, @cl) do %>
+                <% if @cl.image.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @cl.image.present? %>
+                <%= image_tag @cl.image.url, :alt => "Main Image", class: "image" %>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
+            <h2>
+              <%= t(".Portfolios") %>
+              <%= link_to new_client_client_portfolio_path(@cl) do %>
+                <% if @portfolio_nums == "0" %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @portfolio_nums == "0" %>
+                <%= @portfolio_nums %><%= t(".photos_are_uploaded")%>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

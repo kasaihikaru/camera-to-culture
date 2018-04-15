@@ -11,9 +11,10 @@
       <%= form_for([current_user, @cl]) do |f| %>
 
         <!-- メイン写真 -->
-        <div class="field">
-          <%= f.label :image, t(".main_image"), class: "bold" %>&emsp;<span class="field-explanation"><%= t(".main_image_explain")%></span><br>
+        <div class="field user-image">
+          <%= f.label :image, t(".main_image"), class: "bold" %><br>
           <div class="indent">
+            <span class="field-explanation"><%= t(".main_image_explain")%></span><br>
             <%= image_tag @cl.image.url, :alt => "Main Image", class: "image" if @cl.image? %><br>
             <%= f.file_field :image %>
           </div>
@@ -82,7 +83,10 @@
 
       <!-- 価格 -->
         <div class="field">
-          <P class="bold"><%= t(".prime_price_form")%>&emsp;<span class="field-explanation"><%= t(".fill_your_main_price")%></span></P>
+          <P class="bold">
+            <%= t(".prime_price_form")%><br>
+            <span class="field-explanation"><%= t(".fill_your_main_price")%></span>
+          </P>
           <div class="indent">
             <% if @cl_prim_price.present? %>
               <% if @cl_prim_price.price_per_hour.present? && @cl_prim_price.minimum_hours.present? %>
@@ -101,7 +105,9 @@
       <!-- オプション -->
         <div class="field">
           <% if @cl_opt_prices.present? %>
-            <P class="bold"><%= t(".registed_opt_price_list")%>&emsp;<span class="field-explanation"><%= t(".checked_options_will_be_deleted")%></span></P>
+            <P class="bold"><%= t(".registed_opt_price_list")%><br>
+            <span class="field-explanation"><%= t(".checked_options_will_be_deleted")%></span>
+          </P>
             <div class="indent">
               <% @cl_opt_prices.each do |cl_opt_price| %>
                 <input type="checkbox" name="delete_opt_price[]" value=<%= cl_opt_price.id %>>

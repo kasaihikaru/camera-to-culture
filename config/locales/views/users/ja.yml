@@ -3,6 +3,26 @@ ja:
   users:
     show:
       Home: ホーム
+      booking_request: '%{name}さんより予約リクエストが届きました。'
+      Deliver_photos: '%{name}さんの写真を納品しましょう'
+      changing_conditions_request: '%{name}さんより条件変更リクエストが届きました。'
+      Photos_delivered: '%{name}さんから写真が届きました。'
+      Languages: 話す言語
+      None: なし
+      Introduction: 自己紹介
+      Photographing_Categories: 撮影カテゴリー
+      Photographing_Area: 撮影可能な都道府県
+      Price: 価格
+      yen_per_hour: 円/時間
+      hours_minimum: 時間から受け付けます
+      Option_Menu: オプションメニュー
+      price_per_hour: １時間あたり
+      yen: 円
+      Camera: カメラ
+      Message: メッセージ
+      Your_Main_Photo: メイン写真
+      Portfolios: ポートフォリオ
+      photos_are_uploaded: 枚のポートフォリオが登録されています。
 
     mypage_menu:
       mypage: ホーム

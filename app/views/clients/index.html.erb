@@ -15,24 +15,26 @@
 						<div class="cameraman-lists">
 							<div class="cameraman-list-upper">
 								<div id="carousel-pf-<%= cl.id %>" class="carousel slide" data-ride="carousel" data-interval="0">
-								  <div class="carousel-inner">
-								    <div class="carousel-item active">
-								      <%= image_tag cl.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if cl.image? %>
-								    </div>
-								    <% cl.client_portfolios.each do |pf| %>
-								    	<div class="carousel-item">
-								    		<%= image_tag pf.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if pf.image? %>
-								    	</div>
-								    <% end %>
-								  </div>
-								  <a class="carousel-control-prev" href="#carousel-pf-<%= cl.id %>" role="button" data-slide="prev">
-								   <%= render :partial => 'svgs/cal_left' %>
-								    <span class="sr-only">Previous</span>
-								  </a>
-								  <a class="carousel-control-next" href="#carousel-pf-<%= cl.id %>" role="button" data-slide="next">
-								    <%= render :partial => 'svgs/cal_right' %>
-								    <span class="sr-only">Next</span>
-								  </a>
+									<%= link_to client_path(cl) do %>
+										<div class="carousel-inner">
+											<div class="carousel-item active">
+												<%= image_tag cl.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if cl.image? %>
+											</div>
+											<% cl.client_portfolios.each do |pf| %>
+												<div class="carousel-item">
+													<%= image_tag pf.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if pf.image? %>
+												</div>
+											<% end %>
+										</div>
+									<% end %>
+									<a class="carousel-control-prev" href="#carousel-pf-<%= cl.id %>" role="button" data-slide="prev">
+										<%= render :partial => 'svgs/cal_left' %>
+										<span class="sr-only">Previous</span>
+									</a>
+									<a class="carousel-control-next" href="#carousel-pf-<%= cl.id %>" role="button" data-slide="next">
+										<%= render :partial => 'svgs/cal_right' %>
+										<span class="sr-only">Next</span>
+									</a>
 								</div>
 							</div>
 							<%= link_to client_path(cl) do %>

@@ -2,6 +2,7 @@
 ja:
   client_schedules:
     index:
+      schedule: スケジュール
       date: 日付
       day: 曜日
       avairable-time: 撮影可能な時間の説明

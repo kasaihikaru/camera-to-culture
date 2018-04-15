@@ -77,7 +77,9 @@ $subprim-col      : #51C4AA;
 		text-decoration: none;
 	}
 	.ms-menu-icon{
-		width:100%;
+		width:50px;
+		height: 50px;
+		border-radius: 10px;
 	}
 }
 
@@ -95,7 +97,9 @@ $subprim-col      : #51C4AA;
 		padding: 15px;
 	}
 	.ms-user-icon{
-		width:40%;
+		width: 100px;
+		height: 100px;
+		border-radius: 15px;
 	}
 	h2{
 		font-size: 15px;
@@ -127,6 +131,8 @@ $subprim-col      : #51C4AA;
 		}
 		.ms-content-icon{
 			height: 50px;
+			width: 50px;
+			border-radius: 8px;
 			margin-top: 16px;
 		}
 	}

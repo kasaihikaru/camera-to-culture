@@ -83,7 +83,7 @@
         <% end %>
 
 
-        <div class="field">
+        <div class="field user-image">
           <%= f.label :image, t(".image"), class: "bold" %><br>
           <div class="indent">
             <%= image_tag current_user.image.url, alt: "icon", class: "image" if current_user.image? %><br>

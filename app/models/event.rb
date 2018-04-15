@@ -20,6 +20,18 @@ class Event < ApplicationRecord
 	scope :request, ->  {
 		joins(:event_states).merge(EventState.request)
 	}
+	scope :cl_edited, ->  {
+		joins(:event_states).merge(EventState.cl_edited)
+	}
+	scope :accepted, ->  {
+		joins(:event_states).merge(EventState.accepted)
+	}
+	scope :cl_edited, ->  {
+		joins(:event_states).merge(EventState.cl_edited)
+	}
+	scope :cl_delivered, ->  {
+		joins(:event_states).merge(EventState.cl_delivered)
+	}
 	scope :future, ->  { where("start_time > ?", Time.now())}
 	scope :past, ->  { where("start_time <= ?", Time.now())}
 end

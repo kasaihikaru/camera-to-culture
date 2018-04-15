@@ -15,10 +15,18 @@
 			<!-- アイコン -->
 			<div class="ev-show-icons clearfix">
 				<div class="float-left">
-					<%= image_tag @cs_here.user.image.url, alt: "icon" if @cs_here.user.image? %>
+					<% if @cs_here.user.image? %>
+						<%= image_tag @cs_here.user.image.url, alt: "icon" %>
+					<% else %>
+						<%= render :partial => 'svgs/baby' %>
+					<% end %>
 				</div>
 				<div class="float-right">
-					<%= image_tag @cl_here.user.image.url, alt: "icon" if @cl_here.user.image? %>
+					<% if @cl_here.user.image? %>
+						<%= image_tag @cl_here.user.image.url, alt: "icon" %>
+					<% else %>
+						<%= render :partial => 'svgs/baby' %>
+					<% end %>
 				</div>
 			</div>
 

@@ -2,6 +2,8 @@ class EventsController < ApplicationController
 	before_action :login_check, only: [:new, :create, :cs_future, :cs_past, :cl_future, :cl_past]
 	before_action :event_show_user_check, only: [:show]
 	before_action :event_edit_user_check, only: [:edit]
+	before_action :update_user_check, only: [:update]
+
 
 	def cs_future
 		@user = current_user
@@ -428,6 +430,15 @@ private
 
 	def login_check
 		unless user_signed_in?
+			flash[:alert] = "ログインしてください"
+			redirect_to root_path
+		end
+	end
+
+	def update_user_check
+		event = Event.find(id_params)
+		cl = Client.find(event.client_id)
+		unless user_signed_in? && cl.user == current_user
 			flash[:alert] = "ログインしてください"
 			redirect_to root_path
 		end
