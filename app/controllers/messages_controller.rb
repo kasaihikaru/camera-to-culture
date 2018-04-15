@@ -16,10 +16,13 @@ class MessagesController < ApplicationController
 		redirect_to user_message_path(current_user.id, user_params)
 
 		# 通知メール
-		message = first_create_params[:message]
-		mail = Client.find(first_create_params[:reciever_id]).user.email
-		name = Client.find(first_create_params[:sender_id]).user.name
-		MessageMailer.recieved(message, mail, name).deliver_now
+		reciever = User.find(first_create_params[:reciever_id])
+		if reciever.mail_refused == false
+			message = first_create_params[:message]
+			mail = reciever.email
+			name = User.find(first_create_params[:sender_id]).name
+			MessageMailer.recieved(message, mail, name).deliver_now
+		end
 	end
 
 	def index
@@ -81,10 +84,13 @@ class MessagesController < ApplicationController
 		redirect_to user_message_path(current_user.id, reciever_params)
 
 		# 通知メール
-		message = create_params[:message]
-		mail = Client.find(create_params[:reciever_id]).user.email
-		name = Client.find(create_params[:sender_id]).user.name
-		MessageMailer.recieved(message, mail, name).deliver_now
+		reciever = User.find(create_params[:reciever_id])
+		if reciever.mail_refused == false
+			message = create_params[:message]
+			mail = reciever.email
+			name = User.find(create_params[:sender_id]).name
+			MessageMailer.recieved(message, mail, name).deliver_now
+		end
 	end
 
 

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 	# before_action :authenticate_user!, only: :show
 	before_action :user_check, only: :show
+	before_action :login_check, only: [:profile, :edit_profile]
+
 
 	def show
 		#user_info
@@ -127,6 +129,14 @@ private
 
 	def cs_intro_params
 		params[:introduction]
+	end
+
+
+	def login_check
+		unless user_signed_in?
+			flash[:alert] = "ログインしてください"
+			redirect_to root_path
+		end
 	end
 
 	def user_check
