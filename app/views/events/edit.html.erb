@@ -96,7 +96,7 @@
 										<%= t(".yen") %>
 									</td>
 									<td>
-										<%= f.number_field :numbers, min: "0", max: "100", value: ev_opt.numbers, name: "event[event_option_prices_attributes][" + ev_opt.client_option_price.id.to_s + "]", id: "event_event_option_prices_attributes_" + @i.to_s + "_numbers", required: true %>
+										<%= f.number_field :numbers, min: "0", max: "100", value: ev_opt.numbers, name: "event[event_option_prices_attributes][" + ev_opt.client_option_price.id.to_s + "]", id: "event_event_option_prices_attributes_" + @i.to_s + "_numbers", pattern: "[1-9][0-9]*", required: true %>
 									</td>
 								</tr>
 								<% @i = @i + 1 %>
@@ -119,7 +119,7 @@
 											<%= t(".yen") %>
 										</td>
 										<td>
-											<%= f.number_field :numbers, min: "0", max: "100", value: "0", name: "event[event_option_prices_attributes][" + option.id.to_s + "]", id: "event_event_option_prices_attributes_" + @x.to_s + "_numbers", required: true %>
+											<%= f.number_field :numbers, min: "0", max: "100", value: "0", name: "event[event_option_prices_attributes][" + option.id.to_s + "]", id: "event_event_option_prices_attributes_" + @x.to_s + "_numbers", pattern: "[1-9][0-9]*", required: true %>
 										</td>
 									</tr>
 									<% @x = @x + 1 %>

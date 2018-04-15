@@ -60,7 +60,7 @@
 						<%= render :partial => 'svgs/people' %>&nbsp;<%= t(".How_many_people?") %>
 					</h2>
 					<div class="ev-square white-back">
-						<%= f.number_field :num_people, min: "1", value: "1", required: true %>
+						<%= f.number_field :num_people, min: "1", value: "1", required: true, pattern: "[1-9][0-9]*" %>
 					</div>
 				</div>
 
@@ -110,7 +110,7 @@
 										</td>
 										<td>
 											<%= f.fields_for :event_option_prices do |fo| %>
-												<%= fo.number_field :numbers, min: "0", max: "100", value: "0", name: "event[event_option_prices_attributes][" + option.id.to_s + "]", required: true %>
+												<%= fo.number_field :numbers, min: "0", max: "100", value: "0", name: "event[event_option_prices_attributes][" + option.id.to_s + "]", pattern: "[1-9][0-9]*", required: true %>
 											<% end %>
 										</td>
 									</tr>
