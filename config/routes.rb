@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 		resource :home, only: [:show]
 
 		resources :users, only: [:show] do
+			collection do
+				get 'profile'
+				put 'edit_profile'
+			end
 			resources :messages, only: [:index, :new, :create, :show] do
 				collection do
 					post 'first_create'
@@ -36,7 +40,6 @@ Rails.application.routes.draw do
 					end
 				end
 			end
-			resources :customers, only: [:edit, :update]
 		end
 
 		resources :clients, only: [:index, :show] do

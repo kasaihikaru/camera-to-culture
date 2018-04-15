@@ -19,78 +19,27 @@
           </div>
         </div>
 
-        <p class="bold"><%= t(".language_use")%></p>
-        <div class="field">
-          <div class="indent">
-            <label class="checkbox">
-              <% if @lang_ids.include?(1) %>
-                <input type="checkbox" name="language_id[]" value="1", checked="checked"/>
-                <div class="btn btn-sık">
-                  <span><%= t(".japanese")%></span>
-                </div>
-              <% else %>
-                <input type="checkbox" name="language_id[]" value="1"/>
-                <div class="btn btn-sık">
-                  <span><%= t(".japanese")%></span>
-                </div>
-              <% end %>
-            </label>
-
-            <label class=checkbox>
-              <% if @lang_ids.include?(2) %>
-                <input type="checkbox" name="language_id[]" value="2", checked="checked"/>
-                <div class="btn btn-sık">
-                  <span><%= t(".english")%></span>
-                </div>
-              <% else %>
-                <input type="checkbox" name="language_id[]" value="2"/>
-                <div class="btn btn-sık">
-                  <span><%= t(".english")%></span>
-                </div>
-              <% end %>
-            </label>
-
-            <label class=checkbox>
-              <% if @lang_ids.include?(3) %>
-                <input type="checkbox" name="language_id[]" value="3", checked="checked"/>
-                <div class="btn btn-sık">
-                  <span><%= t(".chinese")%></span>
-                </div>
-              <% else %>
-                <input type="checkbox" name="language_id[]" value="3"/>
-                <div class="btn btn-sık">
-                  <span><%= t(".chinese")%></span>
-                </div>
-              <% end %>
-            </label>
-          </div>
-        </div>
-
-
-
-
-
-
+        <!-- メール -->
         <div class="field">
           <%= f.label :email, t(".email"), class: "bold" %><br />
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p><%= t(".Currently_waiting_confirmation_for", mail: resource.unconfirmed_email) %></p>
+          <% end %>
           <div class="indent">
             <%= f.email_field :email, autofocus: true, class: "input-text" %>
           </div>
         </div>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
-
-
-        <div class="field user-image">
-          <%= f.label :image, t(".image"), class: "bold" %><br>
+        <!-- メールお知らせ -->
+        <div class="field">
+          <%= f.label :mail_refused, t(".refuse_mail"), class: "bold" %><br />
           <div class="indent">
-            <%= image_tag current_user.image.url, alt: "icon", class: "image" if current_user.image? %><br>
-            <%= f.file_field :image, class: "image" %>
+            <%= f.check_box :mail_refused,{},checked_value = "true",unchecked_value = "false" %>
+            <%= t(".refuse_mail_explanation")%>
           </div>
         </div>
 
+        <!-- パスワード -->
         <div class="field">
           <%= f.label :password, t(".New_password"), class: "bold" %>&emsp;<span class="field-explanation"><%= t(".leave_blank_if_you_don't_want_to_change_it")%></span><br>
           <div class="indent">
@@ -108,7 +57,3 @@
     </div>
   </div>
 </div>
-
-<!-- <h3><%= t(".Cancel_my_account")%></h3>
-
-<p>Unhappy? <%= button_to t(".Cancel_my_account"), registration_path(resource_name), data: { confirm: t(".Are_you_sure?") }, method: :delete %></p> -->

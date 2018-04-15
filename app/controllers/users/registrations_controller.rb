@@ -58,10 +58,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    @user = current_user
-    @cl = @user.clients.active.first
-    @cs = @user.customers.active.first
-
     # super
 
     # menu用
@@ -86,29 +82,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     resource_updated = update_resource(resource, account_update_params)
 
-
-    #User_languageの更新
-    unless user_language_params == nil
-      #元のlangを取得
-      pre_user_languages = current_user.user_languages
-      pre_lang_ids = []
-      for user_language in pre_user_languages
-        pre_lang_ids << user_language.language_id
-      end
-
-      #変更するlangと照らし合わせて更新
-      language_ids = user_language_params
-      language_ids.each do |id|
-        unless pre_lang_ids.include?(id.to_i)
-          UserLanguage.create(user_id: current_user.id, language_id: id.to_i)
-        end
-      end
-      pre_lang_ids.each do |pre_id|
-        unless language_ids.include?(pre_id.to_s)
-          UserLanguage.where(user_id: current_user.id, language_id: pre_id.to_i).destroy_all
-        end
-      end
-    end
     yield resource if block_given?
     if resource_updated
       if is_flashing_format?
@@ -117,7 +90,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         set_flash_message :notice, flash_key
       end
       bypass_sign_in resource, scope: resource_name
-      respond_with resource, location: user_path(resource)
+      respond_with resource, location: edit_user_registration_path
       # respond_with resource, location: after_update_path_for(resource)
     else
       clean_up_passwords resource
@@ -143,14 +116,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
   def my_build_resource(hash=nil)
     self.resource = resource_class.new_with_session(hash || {}, session)
-  end
-
-  def user_language_params
-    params[:language_id]
-  end
-
-  def as_who_params
-    params[:as_who]
   end
 
   #user編集の際にパスワード入力をなくす

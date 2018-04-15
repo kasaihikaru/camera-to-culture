@@ -63,8 +63,72 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def profile
+		# menu用
+		@user = current_user
+		@cl = @user.clients.active.first
+		@cs = @user.customers.active.first
 
-	private
+		# content用
+		user_languages = current_user.user_languages
+		@lang_ids = []
+		for user_language in user_languages
+			@lang_ids << user_language.language_id
+		end
+	end
+
+	def edit_profile
+		# imageの更新
+		if edit_profile_params.present?
+			current_user.update(edit_profile_params)
+		end
+
+		#User_languageの更新
+		unless user_language_params == nil
+			#元のlangを取得
+			pre_user_languages = current_user.user_languages
+			pre_lang_ids = []
+			for user_language in pre_user_languages
+				pre_lang_ids << user_language.language_id
+			end
+
+			#変更するlangと照らし合わせて更新
+			language_ids = user_language_params
+			language_ids.each do |id|
+				unless pre_lang_ids.include?(id.to_i)
+					UserLanguage.create(user_id: current_user.id, language_id: id.to_i)
+				end
+			end
+			pre_lang_ids.each do |pre_id|
+				unless language_ids.include?(pre_id.to_s)
+					UserLanguage.where(user_id: current_user.id, language_id: pre_id.to_i).destroy_all
+				end
+			end
+		end
+
+		# 自己紹介の更新
+		current_user.customers.active.first.update(introduction: cs_intro_params)
+
+		flash[:alert] = "更新しました"
+		redirect_to profile_users_path
+	end
+
+
+private
+	def user_language_params
+		params[:language_id]
+	end
+
+	def edit_profile_params
+		if params[:user].present?
+			params.require(:user).permit(:image)
+		end
+	end
+
+	def cs_intro_params
+		params[:introduction]
+	end
+
 	def user_check
 		unless user_signed_in? && params[:id].to_i == current_user.id
 			flash[:alert] = "ログインしてください"

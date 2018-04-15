@@ -12,7 +12,7 @@
       <div class="user-show-alert">
         <div class="fusen">
           <ul>
-            <% if @cl_schedules.blank? %>
+            <% if @cl.consent == true && @cl.is_deleted == false && @cl_schedules.blank? %>
               <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
                 <li>
                   <%= t(".Update_available_dates_for_your_customer") %>
@@ -66,7 +66,7 @@
           <h2>
             <%= @user.name %>
             <% unless @user.image.present? %>
-              <%= link_to edit_user_registration_path do %>
+              <%= link_to profile_users_path do %>
                 <%= render :partial => 'svgs/edit_prim' %>
               <% end %>
             <% end %>
@@ -78,7 +78,7 @@
           <% end %>
           <h2>
             <%= t(".Languages")%>
-            <%= link_to edit_user_registration_path do %>
+            <%= link_to profile_users_path do %>
               <% if @mylangs.present? %>
                 <%= render :partial => 'svgs/edit' %>
               <% else %>
@@ -97,7 +97,7 @@
           </div>
           <h2>
             <%= t(".Introduction")%>
-            <%= link_to edit_user_customer_path(@user, @cs) do %>
+            <%= link_to profile_users_path do %>
                 <% if @cs.introduction.present? %>
                   <%= render :partial => 'svgs/edit' %>
                 <% else %>

@@ -49,16 +49,16 @@
     </div>
     <hr>
 
-    <!-- 設定 -->
+    <!-- ユーザー設定 -->
     <a data-toggle="collapse" href="#mypage-menu-settings-sm">
-      <p><%= t(".settings") %></p>
+      <p><%= t(".user_settings") %></p>
     </a>
     <div class="collapse" id="mypage-menu-settings-sm">
-      <%= link_to edit_user_registration_path do %>
-        <p>&emsp;<%= t(".user_settings") %></p>
+      <%= link_to profile_users_path do %>
+        <p>&emsp;<%= t(".edit_profile") %></p>
       <% end %>
-      <%= link_to edit_user_customer_path(@user, @cs) do %>
-        <p>&emsp;<%= t(".cs_settings") %></p>
+      <%= link_to edit_user_registration_path do %>
+        <p>&emsp;<%= t(".settings") %></p>
       <% end %>
     </div>
     <hr>
@@ -147,14 +147,14 @@
 
   <!-- 設定 -->
   <a data-toggle="collapse" href="#mypage-menu-settings">
-    <p><%= t(".settings") %></p>
+    <p><%= t(".user_settings") %></p>
   </a>
   <div class="collapse" id="mypage-menu-settings">
-    <%= link_to edit_user_registration_path do %>
-      <p>&emsp;<%= t(".user_settings") %></p>
+    <%= link_to profile_users_path do %>
+      <p>&emsp;<%= t(".edit_profile") %></p>
     <% end %>
-    <%= link_to edit_user_customer_path(@user, @cs) do %>
-      <p>&emsp;<%= t(".cs_settings") %></p>
+    <%= link_to edit_user_registration_path do %>
+      <p>&emsp;<%= t(".settings") %></p>
     <% end %>
   </div>
   <hr>

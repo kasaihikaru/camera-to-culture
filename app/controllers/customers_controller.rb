@@ -9,24 +9,6 @@ class CustomersController < ApplicationController
 		end
 	end
 
-	def edit
-		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
-	end
-
-	def update
-		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
-
-		@cs.update(update_params)
-
-		flash[:alert] = "更新しました"
-		redirect_to edit_user_customer_path(@user, @cs)
-	end
-
-
 private
 
 	def update_params

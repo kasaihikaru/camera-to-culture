@@ -37,9 +37,10 @@ ja:
       As_a_customer: （お客様として）
       As_a_cameraman_future: 今後の出張（カメラマンとして）
       As_a_cameraman_past: 過去の出張（カメラマンとして）
-      settings: ユーザー設定
-      user_settings: プロフィールを編集
-      cs_settings: 自己紹介を編集
+      user_settings: ユーザー設定
+      edit_profile: プロフィールを編集
+      cs_introduction: 自己紹介を編集
+      settings: 設定
       register_as_cameraman: カメラマンになる
       change_phone_number_adress: 電話番号、住所の変更
       cameraman_menu: カメラマン設定
@@ -47,6 +48,16 @@ ja:
       cl_settings: カメラマンプロフィール
       upload_cl_portpolios: サンプル写真を投稿
       sign-out: ログアウト
+
+    profile:
+      Edit_Profile: ユーザープロフィールの変更
+      language_use: 話す言語を全て選択して下さい
+      japanese: 日本語
+      english: 英語
+      chinese: 中国語
+      image: プロフィール画像
+      introduction: 自己紹介
+      update_btn: 更新
 
 # 以下、devise用
     confirmations:
@@ -107,14 +118,12 @@ ja:
         chinese: 中国語
         image: プロフィール画像
       edit:
-        Edit_Settings: ユーザープロフィールの変更
+        Edit_Settings: 設定の変更
         name: お名前
-        language_use: 話す言語を全て選択して下さい
-        japanese: 日本語
-        english: 英語
-        chinese: 中国語
-        image: プロフィール画像
         email: メールアドレス
+        Currently_waiting_confirmation_for: '「%{mail}」の認証待ち状態です。'
+        refuse_mail: メールでのお知らせを止める
+        refuse_mail_explanation: カメラマンやお客様からの連絡をメールにアドレスに通知しない
         New_password: 新しいパスワード
         leave_blank_if_you_don't_want_to_change_it: 変更しない場合は、空欄にしてください。
         password: パスワード
@@ -123,8 +132,6 @@ ja:
         update_btn: 更新
         current_password: 現在のパスワード
         we_need_your_current_password_to_confirm_your_changes: 確認のため、パスワードを入力してください。
-        Cancel_my_account: 退会する
-        Are_you_sure?: 本当に退会しますか？
     sessions:
       new:
         sign_in: ログイン
