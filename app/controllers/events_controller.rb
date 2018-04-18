@@ -214,6 +214,11 @@ class EventsController < ApplicationController
 		@ev_photos = @event.event_photos.active
 		@ev_photo_nums = @ev_photos.count
 		@ev_photos_6 = @event.event_photos.active.limit(6)
+		if @event.event_review.present?
+			@ev_rev = @event.event_review
+		else
+			@ev_rev = EventReview.new
+		end
 	end
 
 

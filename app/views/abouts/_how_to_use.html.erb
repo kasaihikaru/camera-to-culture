@@ -11,7 +11,7 @@
 			<p2>
 				<%= t(".1_disc_1") %><br>
 				<%= t(".1_disc_2") %><br>
-				<%= link_to t(".back_to_top"), home_path, class: "about-btn" %>
+				<%= link_to t(".back_to_top"), home_path, class: "about-btn prim-btn" %>
 			</p2>
 		</div>
 	</div>
@@ -29,7 +29,7 @@
 				<%= t(".2_disc_2") %><br>
 				<%= t(".2_disc_3") %><br>
 				<% unless user_signed_in? %>
-					<%= link_to t(".sign-up"), new_user_registration_path, class: "about-btn" %>
+					<%= link_to t(".sign-up"), new_user_registration_path, class: "about-btn prim-btn" %>
 				<% end %>
 			</p2>
 		</div>

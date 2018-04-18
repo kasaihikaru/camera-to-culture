@@ -4,18 +4,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
-// $prim-col      : #FF8000;
-// $subprim-col      : #51C4AA;
-
-$prim-col      : #FF8000;
-$subprim-col   : #EBE2DA;
-$test-col      : #14446A;
-
+$prim-col : #AF1C1C;
+$subprim-col : #92C1EC;
+$subprim-col-2 : #E2EEF9;
+$black-col : #000000;
+$white-col : #FFFFFF;
 
 // ---------- ユーザーページ共通 -----------//
 .mypage-container{
-	// text-align: center;
 	.mypage-wrapper{
 			background-color: $subprim-col;
 		h1{
@@ -40,7 +36,7 @@ $test-col      : #14446A;
 		}
 		.mypage-content{
 			padding: 30px 15px;
-			background-color: #FFFFFF;
+			background-color: $white-col;
 			.field{
 				margin-bottom: 60px;
 				.input-text{
@@ -174,6 +170,7 @@ $test-col      : #14446A;
 
 //---------- devise -----------//
 .register-container{
+	padding-top: 56px; //for_topnav_margin
 	background-color: $subprim-col;
 	text-align: center;
 	.resigter-form-wrapper{

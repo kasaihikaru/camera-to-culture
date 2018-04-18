@@ -31,33 +31,33 @@
 			</div>
 
 			<!-- 日時 -->
-			<div class="clearfix">
-				<h2 class="sub-title float-left">
+			<div>
+				<h2>
 					<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Date_and_Time") %>
 				</h2>
-				<div class="ev-square grey-back float-left">
+				<div class="ev-square grey-back">
 					<%= @day %>（<%= @wday %>）&emsp;<%= @start_time %>〜<%= @end_time %>
 				</div>
 			</div>
 
 
 			<!-- 人数 -->
-			<div class="clearfix">
-				<h2 class="sub-title float-left">
+			<div>
+				<h2>
 					<%= render :partial => 'svgs/people' %>&nbsp;<%= t(".How_many_people?") %>
 				</h2>
-				<div class="ev-square grey-back float-left">
+				<div class="ev-square grey-back ">
 					<%= @event.num_people %>
 				</div>
 			</div>
 
 
 			<!-- 場所 -->
-			<div class="clearfix">
-				<h2 class="float-left">
+			<div>
+				<h2>
 					<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Location") %>
 				</h2>
-				<div class="ev-square grey-back float-left">
+				<div class="ev-square grey-back">
 					<%= @prefecture.ja %><br>
 					<pre><%= @event.location_detail %></pre>
 				</div>
@@ -65,11 +65,11 @@
 
 
 			<!-- コメント -->
-			<div class="clearfix">
-				<h2 class="float-left">
+			<div>
+				<h2>
 					<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Message") %>
 				</h2>
-				<div class="ev-square grey-back float-left">
+				<div class="ev-square grey-back">
 					<pre><%= @event.message %></pre>
 				</div>
 			</div>
@@ -297,29 +297,70 @@
 	</div><!-- endOf row -->
 </div><!-- endOf container -->
 
+
+<!-- レビュー -->
+<div class="container-fluid ev-review ev-base-common ev-new">
+	<div class="col-12 col-md-6 offset-md-3">
+		<!-- cl 過去の場合 -->
+		<% if @event.client_id == @cl.id && @event.start_time <= Time.now() %>
+			<!-- 納品済み or 受け取り済み  状態 -->
+			<% if @event.event_states.last.state.in?(['cl_delivered', 'cs_recieved']) %>
+				<h1><%= t(".Review_review") %></h1>
+				<%= form_for ([@event, @ev_rev]) do |f| %>
+					<h2>
+						<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Review") %>
+					</h2>
+					<div class="ev-square white-back">
+						<%= f.text_area :cl_review, rows: "8", maxlength: "2000", placeholder:  t(".greeting_message", name: @cl_here.user.name), required: true %>
+					</div>
+					<%= f.submit t(".Send") %>
+				<% end %>
+
+
+			<% end %><!-- endOf 納品済み or 受け取り済み 状態 -->
+		<% end %><!-- endOf cl 過去の場合 -->
+
+
+		<!-- cs 過去の場合 -->
+		<% if @event.customer_id == @cs.id && @event.start_time <= Time.now() %>
+			<!-- 受け取り済み  状態 -->
+			<% if @event.event_states.last.state.in?(['cs_recieved']) %>
+
+
+
+
+			<% end %><!-- endOf 受け取り済み -->
+		<% end %><!-- endOf cs 過去の場合 -->
+	</div>
+</div><!-- endOf レビュー -->
+
+
+<!-- 写真アップロード -->
 <div class="ev-photos">
 	<!-- cl 過去の場合 -->
 	<% if @event.client_id == @cl.id && @event.start_time <= Time.now() %>
-		<!-- 撮影確定 or 納品済み or 不満  状態 -->
+		<!-- 撮影確定 or 納品済み or 受け取り済み状態 -->
 		<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted','cl_delivered', 'cs_recieved']) %>
 			<!-- 写真アップロード -->
 			<%= render :partial => 'events/event_photo_upload', :locals=>{event: @event} %>
 			<!-- 納品完了を伝えるボタン -->
-			<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
-				<%= render :partial => 'events/cl_deliver', :locals=>{event: @event} %>
-			<% end %>
+			<div class="ev-states-btns">
+				<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
+					<%= render :partial => 'events/cl_deliver', :locals=>{event: @event} %>
+				<% end %>
+			</div>
 			<!-- アップロード済み写真確認 -->
 			<%= render :partial => 'events/event_photo', :locals=>{event: @event, ev_photos: @ev_photos} %>
-		<% end %><!-- endOf 撮影確定 or 納品済み状態 -->
+		<% end %><!-- endOf 撮影確定 or 納品済み or 受け取り済み状態 -->
 	<% end %><!-- endOf cl 過去の場合 -->
 
 
 	<!-- cs 過去の場合 -->
 	<% if @event.customer_id == @cs.id && @event.start_time <= Time.now() %>
-		<!-- 撮影確定 or 納品済み or 不満  状態 -->
+		<!-- 納品済み or 受け取り済み状態 -->
 		<% if @event.event_states.last.state.in?(['cl_delivered', 'cs_recieved']) %>
 			<!-- アップロード済み写真確認 -->
 			<%= render :partial => 'events/event_photo_cs', :locals=>{event: @event, ev_photos_6: @ev_photos_6, ev_photo_nums: @ev_photo_nums} %>
-		<% end %><!-- endOf 撮影確定 or 納品済み状態 -->
-	<% end %><!-- endOf cl 過去の場合 -->
+		<% end %><!-- endOf 納品済み or 受け取り済み状態 -->
+	<% end %><!-- endOf cs 過去の場合 -->
 </div>

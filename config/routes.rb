@@ -83,6 +83,7 @@ Rails.application.routes.draw do
 					get 'zip_dl'
 				end
 			end
+			resources :event_reviews, only: [:create, :update]
 		end
 
 		resource :about, only: [:show] do

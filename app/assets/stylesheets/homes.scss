@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$prim-col      : #FF8000;
-$subprim-col      : #51C4AA;
+
+$prim-col : #AF1C1C;
+$subprim-col : #92C1EC;
+$subprim-col-2 : #E2EEF9;
+$black-col : #000000;
+$white-col : #FFFFFF;
+
 
 
 @media screen and (min-width: 550px) {
@@ -11,7 +16,7 @@ $subprim-col      : #51C4AA;
 		height: 100%;
 		background-image: image-url("home-top.png");
 		background-attachment: fixed;
-		background-position: center 50px ;
+		background-position: center;
 		background-size: cover;
 		display: flex;
 		justify-content: center; /*左右中央揃え*/
@@ -19,7 +24,7 @@ $subprim-col      : #51C4AA;
 		h1{
 			font-size: 25px;
 			font-weight: 800;
-			color: $prim-col;
+			color: $white-col;
 			margin: 0 auto 10px;
 			text-align: center;
 		}
@@ -36,7 +41,7 @@ $subprim-col      : #51C4AA;
 @media screen and (max-width: 549px) {
 	#home-top{
 		height: 100%;
-		background-image: image-url("home-top.png");
+		background-image: image-url("home-top-sm.png");
 		background-position: center;
 		display: flex;
 		background-size: cover;
@@ -45,7 +50,7 @@ $subprim-col      : #51C4AA;
 		h1{
 			font-size: 25px;
 			font-weight: 800;
-			color: $prim-col;
+			color: $white-col;
 			margin: 0 auto 10px;
 			text-align: center;
 		}

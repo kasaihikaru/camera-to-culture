@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$prim-col      : #FF8000;
-$subprim-col      : #51C4AA;
+$prim-col : #AF1C1C;
+$subprim-col : #92C1EC;
+$subprim-col-2 : #E2EEF9;
+$black-col : #000000;
+$white-col : #FFFFFF;
 
 
 
@@ -29,7 +32,7 @@ $subprim-col      : #51C4AA;
 		padding: 20px 0;
 		font-size: 20px;
 		font-weight: 800;
-		color: $subprim-col;
+		color: $black-col;
 		margin: 0 auto 10px;
 	}
 	textarea{
@@ -45,28 +48,6 @@ $subprim-col      : #51C4AA;
 		}
 	}
 }
-
-
-
-//----------- show right-content -------------//
-// @media screen and (min-width: 768px) {
-// 	.ms-menu{
-// 		width: 260px;
-// 		background-color: $subprim-col;
-// 	}
-// 	.ms-content{
-// 		position: absolute;
-// 		top: 56px;
-// 		left: 260px;
-// 	}
-// }
-// @media screen and (max-width: 767px) {
-// 	.ms-content{
-// 		// position: relative;
-// 	}
-// }
-// // @media screen and (max-width: 480px) {
-// // }
 
 
 //----- left menu ------//
@@ -88,7 +69,7 @@ $subprim-col      : #51C4AA;
 .ms-user{
 	border-right: solid 1px;
 	border-color: #CFCFCF;
-	padding: 30px 0;
+	padding: 86px 0 30px; //for_topnav_margin
 	.ms-user-upper{
 		text-align: center;
 	}

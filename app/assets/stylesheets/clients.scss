@@ -3,8 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-$prim-col      : #FF8000;
-$subprim-col      : #51C4AA;
+$prim-col : #AF1C1C;
+$subprim-col : #92C1EC;
+$subprim-col-2 : #E2EEF9;
+$black-col : #000000;
+$white-col : #FFFFFF;
 
 
 //------------- client/index ---------------//
@@ -22,7 +25,7 @@ $subprim-col      : #51C4AA;
 		border-radius: 5px;
 		.cameraman-list-upper{
 			height: 200px;
-			background-color: #000000;
+			background-color: $black-col;
 			text-align: center;
 			border-radius: 5px 5px 0 0 / 5px 5px 0 0;
 			.carousel{
@@ -35,10 +38,10 @@ $subprim-col      : #51C4AA;
 			}
 		}
 		.cameraman-list-lower{
-			background-color: #FFFFFF;
+			background-color: $white-col;
 			height: 100px;
 			border-radius: 0 0 5px 5px / 0 0 5px 5px;
-			color: #000000;
+			color: $black-col;
 			a, a:hover{
 				text-decoration: none;
 			}
@@ -94,8 +97,8 @@ $subprim-col      : #51C4AA;
 }
 
 .cl-show-1{
-	background-color: $subprim-col;
 	padding: 10px 0;
+	background-color: $subprim-col;
 	.cl-show-1-left{
 		text-align: center;
 		img{
@@ -112,21 +115,21 @@ $subprim-col      : #51C4AA;
 			width: 180px;
 			margin: 5px 0;
 			a{
-				color: #FFFFFF;
+				color: $white-col;
 			}
 		}
 		.cl-show-1-btn-login{
 			width: 280px;
 			margin: 5px 0;
 			a{
-				color: #FFFFFF;
+				color: $white-col;
 			}
 		}
 	}
 }
 
 .cl-show-2{
-	background-color: #FFFFFF;
+	background-color: $white-col;
 	padding: 20px;
 	margin-top: 35px;
 	h2{
@@ -214,8 +217,8 @@ $subprim-col      : #51C4AA;
 				padding-top: 10px;
 				.calendar-upper-left{
 					.change-month{
-						background-color: #000000;
-						color: #FFFFFF;
+						background-color: $black-col;
+						color: $white-col;
 						border-radius: 8px;
 						margin: 0 3px;
 						padding: 0 8px
@@ -272,8 +275,8 @@ $subprim-col      : #51C4AA;
 				padding-top: 10px;
 				.calendar-upper-left{
 					.change-month{
-						background-color: #000000;
-						color: #FFFFFF;
+						background-color: $black-col;
+						color: $white-col;
 						border-radius: 8px;
 						margin: 0 5px;
 						padding: 0 10px

@@ -35,13 +35,17 @@
 
 
 //--------------- 共通 ----------------//
-$prim-col      : #FF8000;
-$subprim-col      : #51C4AA;
+$prim-col : #AF1C1C;
+$subprim-col : #92C1EC;
+$subprim-col-2 : #E2EEF9;
+$black-col : #000000;
+$white-col : #FFFFFF;
+
 
 .big-prim-btn{
   padding: 20px 35px;
   background-color: $prim-col;
-  color: #FFFFFF;
+  color: $white-col ;
   border-radius: 15px;
   border: none;
   font-weight: 800;
@@ -50,14 +54,14 @@ $subprim-col      : #51C4AA;
 .prim-btn{
   height: 38px;
   background-color: $prim-col;
-  color: #FFFFFF;
+  color: $white-col ;
   border-radius: 5px;
   border: none;
 }
 .subprim-btn{
   height: 38px;
   background-color: $subprim-col;
-  color: #FFFFFF;
+  color: $white-col ;
   border-radius: 5px;
   border: none;
 }
@@ -75,7 +79,7 @@ $subprim-col      : #51C4AA;
   background-color: $subprim-col;
 }
 .white-back{
-  background-color: #FFFFFF;
+  background-color: $white-col ;
 }
 .grey-back{
   background-color: #E6E6E6;
@@ -139,27 +143,24 @@ body{
 }
 #contents{
   height: 100%;
-  margin-top: 56px;
+  padding-top: 56px;
 }
 
 
 
 
 //------------- グロナビ ---------------//
-$nav_bg      : #000000;
-$nav_col     : #FFFFFF;
 .navbar {
   margin: 0;
 	border-radius: 0;
-  background-color: $nav_bg;
+  background-color: $black-col;
   border: none;
-  color: $nav_col;
-  background-color: $nav_bg;
+  color: $white-col;
   a {
-    color: $nav_col;
+    color: $white-col;
   }
   .dropdown-menu{
-    background-color: $nav_bg;
+    background-color: $black-col;
   }
 }
 .navbar-brand{
@@ -173,18 +174,22 @@ $nav_col     : #FFFFFF;
 
 //------------- フッター ---------------//
 footer{
-  background-color: #000000;
+  background-color: $black-col;
+  border-top: solid 1px $black-col;
   a, a:hover{
-    color: #FFFFFF;
+    color: $white-col;
     text-decoration: none;
   }
-  color: #FFFFFF;
+  color: $white-col;
   hr{
-    border-color: #FFFFFF;
+    border-color: $white-col;
   }
   .footer-upper-md{
     p{
-      margin: 16px 0;
+      margin: 50px 0 20px;
+    }
+    .nav-link{
+      padding: 8px 0;
     }
   }
   .footer-upper-sm{
@@ -198,7 +203,7 @@ footer{
   .footer-bottom{
     padding-bottom: 16px;
     #footerDropdown{
-      color: #FFFFFF;
+      color: $white-col;
       text-decoration: none;
       padding: 0;
     }
@@ -213,11 +218,11 @@ footer{
 //----------------- pagenatiom ------------------//
 .pagination{
   .active .page-link{
-    background: #000000;
-    border-color: #000000
+    background: $black-col;
+    border-color: $black-col
   }
   .page-link{
-    color: #000000;
+    color: $black-col;
   }
 }
 
@@ -228,8 +233,8 @@ footer{
 //------------- devise, notice alert ---------------//
 .notice, .alert{
   text-align: center;
-  background-color: #FF8000;
-  color: #FFFFFF;
+  background-color: $prim-col;
+  color: $white-col ;
   margin:0;
 }
 
@@ -301,12 +306,12 @@ footer{
       transition: all 0.2s ease;
       background-color: white ;
       border: none !important;
-      box-shadow: 0 3px #FFFFFF !important;
+      box-shadow: 0 3px $white-col  !important;
       min-width: 100px;
       border-radius: 20px;
   }
   input[type="checkbox"]:checked + div {
-    background-color: #FFFFFF;
+    background-color: $white-col ;
   }
 }
 

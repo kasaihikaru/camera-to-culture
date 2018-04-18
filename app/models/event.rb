@@ -3,6 +3,8 @@ class Event < ApplicationRecord
 	belongs_to :client
 	belongs_to :prefecture
 
+	has_one :event_review
+
 	has_many :event_categories
 	has_many :event_primary_prices
 	has_many :event_option_prices

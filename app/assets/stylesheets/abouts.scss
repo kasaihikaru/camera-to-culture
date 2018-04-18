@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$prim-col      : #FF8000;
-// $subprim-col   : #51C4AA;
+$prim-col : #AF1C1C;
+$subprim-col : #92C1EC;
+$subprim-col-2 : #E2EEF9;
+$black-col : #000000;
+$white-col : #FFFFFF;
 
-$subprim-col   : #EBE2DA;
-$letter-col    : #000000;
 
 
 
@@ -82,17 +83,18 @@ $letter-col    : #000000;
 
 
 .about-1{
-	background-color: $subprim-col;
-	color: $letter-col;
+	background-color: $white-col;
+	color: $black-col;
 }
 
 .about-2{
-
+	background-color: $subprim-col;
+	color: $white-col;
 }
 
 .about-3{
-	background-color: $subprim-col;
-	color: $letter-col;
+	background-color: $white-col;
+	color: $black-col;
 }
 
 .about-4{
@@ -108,15 +110,15 @@ $letter-col    : #000000;
 	width: 200px;
 	display: inline-block;
 	font-size: 18px;
-	background-color: $prim-col;
-	color: $letter-col;
-	border-radius: 5px;
-	border: none;
+	// background-color: $white-col;
+	// border: solid 1px $prim-col;
+	// color: $prim-col;
+	// border-radius: 5px;
 	padding: 5px 0;
 	margin: 8px 0;
 }
 .about-btn:hover{
-	color: $letter-col;
+	color: $black-col;
 	text-decoration: none;
 }
 
