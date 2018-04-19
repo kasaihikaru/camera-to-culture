@@ -305,15 +305,21 @@
 		<% if @event.client_id == @cl.id && @event.start_time <= Time.now() %>
 			<!-- 納品済み or 受け取り済み  状態 -->
 			<% if @event.event_states.last.state.in?(['cl_delivered', 'cs_recieved']) %>
-				<h1><%= t(".Review_review") %></h1>
+				<h1><%= t(".Write_reviews") %></h1>
 				<%= form_for ([@event, @ev_rev]) do |f| %>
 					<h2>
-						<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Review") %>
+						<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Review_about_cs", name: @cs_here.user.name) %>
 					</h2>
 					<div class="ev-square white-back">
-						<%= f.text_area :cl_review, rows: "8", maxlength: "2000", placeholder:  t(".greeting_message", name: @cl_here.user.name), required: true %>
+						<%= f.text_area :cl_review, rows: "8", maxlength: "2000", placeholder:  t(".cl_review_placeholder", name: @cs_here.user.name), required: true %>
 					</div>
-					<%= f.submit t(".Send") %>
+					<h2>
+						<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Comment_on_this_matching") %>
+					</h2>
+					<div class="ev-square white-back">
+						<%= f.text_area :cl_comment, rows: "8", maxlength: "2000", placeholder:  t(".cl_comment"), required: true %>
+					</div>
+					<%= f.submit t(".Post_reviews") %>
 				<% end %>
 
 

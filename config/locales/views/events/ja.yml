@@ -77,6 +77,13 @@ ja:
       Photographer_no_replied: カメラマンの返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
       Customer_no_replied: 顧客の返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
       download_zip: 再度zipでダウンロード
+      Write_reviews: レビューを書きましょう！
+      Review_about_cs: '%{name}さんへのレビュー'
+      this_review_appears_in_cs: 'このレビューは%{name}さんの紹介ページに表示されます'
+      cl_review_placeholder: '%{name}さんはとても気さくでコミュニケーションしやすく、撮影もスムーズに進みました。ありがとうございました！'
+      Your_comment_on_this_photo_session: 今回の撮影へのコメント
+      this_review_appears_in_yours: このコメントはあなたの紹介ページに表示されます。
+      Post_reviews: 投稿
     cl_accept:
       Accept: リクエストを承認する
       cl_accept_comment: リクエストありがとうございます。撮影よろしくお願いします！

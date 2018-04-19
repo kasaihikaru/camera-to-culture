@@ -4,7 +4,7 @@ class EventStatesController < ApplicationController
 
 	before_action :state_requested, only: [:cl_accept, :cl_dismiss, :cs_request_cancele]
 	before_action :state_accepted, only: [:cl_cancele, :cl_deliver, :cs_cancele]
-	before_action :state_accepted, only: [:cs_accept, :cs_dismiss]
+	before_action :state_edited, only: [:cs_accept, :cs_dismiss]
 	before_action :state_deliverd, only: [:cs_recieve]
 
 	def cl_accept
