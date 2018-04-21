@@ -1,3 +1,69 @@
+<!-- レビューを書く -->
+<div class="container-fluid ev-review">
+	<div class="col-12 col-md-6 offset-md-3">
+		<!-- cl 過去の場合 -->
+		<% if @event.client_id == @cl.id && @event.start_time <= Time.now() %>
+			<!-- 納品済み or 受け取り済み  状態 -->
+			<% if @event.event_states.last.state.in?(['cl_delivered', 'cs_recieved']) %>
+				<!-- 未cl_review -->
+				<% if @ev_rev.cl_review == nil %>
+					<h1><%= t(".Write_reviews") %></h1>
+					<%= form_for ([@event, @ev_rev]) do |f| %>
+						<h2>
+							<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Review_about_cs", name: @cs_here.user.name) %>
+						</h2>
+						<div class="ev-square white-back">
+							<%= f.text_area :cl_review, rows: "8", maxlength: "2000", placeholder:  t(".cl_review_placeholder", name: @cs_here.user.name), required: true %>
+						</div>
+						<%= f.submit t(".Post_reviews"), class: "prim-btn review-post-btn" %>
+					<% end %>
+				<% else %><!-- endOf 未cl_review & startOf 両方review済み -->
+					<% if @ev_rev.cs_review.present? && @ev_rev.cl_comment == nil %>
+						<h2>
+							<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Review_about_you") %>
+						</h2>
+						<div class="ev-square grey-back">
+							<pre><%= @ev_rev.cs_review %></pre>
+						</div>
+						<%= form_for ([@event, @ev_rev]) do |f| %>
+							<h2>
+								<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Comment_on_a_review", name: @cs_here.user.name) %>
+							</h2>
+							<div class="ev-square white-back">
+								<%= f.text_area :cl_comment, rows: "8", maxlength: "2000", placeholder:  t(".cl_comment_placeholder", name: @cs_here.user.name), required: true %>
+							</div>
+							<%= f.submit t(".Post_reviews"), class: "prim-btn review-post-btn" %>
+						<% end %>
+					<% end %>
+				<% end %><!-- endOf cl_review済み -->
+			<% end %><!-- endOf 納品済み or 受け取り済み 状態 -->
+		<% end %><!-- endOf cl 過去の場合 -->
+
+
+		<!-- cs 過去の場合 -->
+		<% if @event.customer_id == @cs.id && @event.start_time <= Time.now() %>
+			<!-- 受け取り済み  状態 -->
+			<% if @event.event_states.last.state.in?(['cs_recieved']) %>
+				<!-- 未cs_review -->
+				<% if @ev_rev.cs_review == nil %>
+					<h1><%= t(".Write_reviews") %></h1>
+					<%= form_for ([@event, @ev_rev]) do |f| %>
+						<h2>
+							<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Review_about_cs", name: @cl_here.user.name) %>
+						</h2>
+						<div class="ev-square white-back">
+							<%= f.text_area :cs_review, rows: "8", maxlength: "2000", placeholder:  t(".cs_review_placeholder", name: @cl_here.user.name), required: true %>
+						</div>
+						<%= f.submit t(".Post_reviews"), class: "prim-btn review-post-btn" %>
+					<% end %>
+				<% end %><!-- endOf 未cs_review -->
+			<% end %><!-- endOf 受け取り済み -->
+		<% end %><!-- endOf cs 過去の場合 -->
+	</div>
+</div><!-- endOf レビューを書く -->
+
+
+
 <div class="container-fluid ev-base-common ev-show">
 	<h1><%= t(".Session_Details") %></h1>
 	<div class="row">
@@ -125,6 +191,71 @@
 				</table>
 			</div>
 
+			<!-- レビュー -->
+				<!-- cl 過去の場合 & cl_reviewあり -->
+				<% if @event.client_id == @cl.id && @event.start_time <= Time.now() && @ev_rev.cl_review.present? %>
+					<div>
+						<h2>
+							<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Review_by_you") %>
+						</h2>
+						<div class="ev-square grey-back">
+							<pre><%= @ev_rev.cl_review %></pre>
+						</div>
+					</div>
+					<!-- cs_reviewあり -->
+					<% if @ev_rev.cs_review.present? %>
+						<div>
+							<h2>
+								<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Review_about_you") %>
+							</h2>
+							<div class="ev-square grey-back">
+								<pre><%= @ev_rev.cs_review %></pre>
+								<!-- cl_commentあり -->
+								<% if @ev_rev.cl_comment.present? %>
+									<hr>
+									<%= t(".Reply_to_cs") %>
+									<pre><%= @ev_rev.cl_comment %></pre>
+								<% end %><!-- endOf cl_commentあり -->
+							</div>
+						</div>
+					<% end %><!-- endOf cs_reviewあり -->
+				<% end %><!-- endOf cl 過去の場合 -->
+				<!-- cs 過去の場合 & cs_reviewあり -->
+				<% if @event.customer_id == @cs.id && @event.start_time <= Time.now() && @ev_rev.cs_review.present? %>
+					<div>
+						<h2>
+							<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Review_by_you") %>
+						</h2>
+						<div class="ev-square grey-back">
+							<pre><%= @ev_rev.cs_review %></pre>
+						</div>
+					</div>
+					<!-- cl_reviewあり -->
+					<% if @ev_rev.cl_review.present? %>
+						<div>
+							<h2>
+								<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Review_about_you") %>
+							</h2>
+							<div class="ev-square grey-back">
+								<pre><%= @ev_rev.cl_review %></pre>
+							</div>
+						</div>
+						<!-- cs_commentあり -->
+						<% if @ev_rev.cl_comment.present? %>
+							<div>
+								<h2>
+									<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Reply_to_your_review") %>
+								</h2>
+								<div class="ev-square grey-back">
+									<pre><%= @ev_rev.cl_comment %></pre>
+								</div>
+							</div>
+						<% end %><!-- endOf cs_commentあり -->
+					<% end %><!-- endOf cs_reviewあり -->
+				<% end %><!-- endOf cl 過去の場合 -->
+
+
+
 
 			<!-- 履歴 -->
 			<div class="ev-table ev-history">
@@ -141,40 +272,52 @@
 							<tr>
 								<td>
 									<% if state.state == "request" %>
-										<%= render :partial => 'svgs/customer' %><br><%= t(".request") %>
+										<span class="datetime"><%= @cs_here.user.name %></span><br>
+										<%= t(".request") %>
 									<% end %>
 									<% if state.state == "cl_accepted" %>
-										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_accepted") %>
+										<span class="datetime"><%= @cl_here.user.name %></span><br>
+										<%= t(".cl_accepted") %>
 									<% end %>
 									<% if state.state == "cs_opened" %>
-										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_opened") %>
+										<span class="datetime"><%= @cs_here.user.name %></span><br>
+										<%= t(".cs_opened") %>
 									<% end %>
 									<% if state.state == "cl_delivered" %>
-										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_delivered") %>
+										<span class="datetime"><%= @cl_here.user.name %></span><br>
+										<%= t(".cl_delivered") %>
 									<% end %>
 									<% if state.state == "cs_recieved" %>
-										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_recieved") %>
+										<span class="datetime"><%= @cs_here.user.name %></span><br>
+										<%= t(".cs_recieved") %>
 									<% end %>
 									<% if state.state == "cl_edited" %>
-										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_edited") %>
+										<span class="datetime"><%= @cl_here.user.name %></span><br>
+										<%= t(".cl_edited") %>
 									<% end %>
 									<% if state.state == "cs_accepted" %>
-										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_accepted") %>
+										<span class="datetime"><%= @cs_here.user.name %></span><br>
+										<%= t(".cs_accepted") %>
 									<% end %>
 									<% if state.state == "cl_dismissed" %>
-										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_dismissed") %>
+										<span class="datetime"><%= @cl_here.user.name %></span><br>
+										<%= t(".cl_dismissed") %>
 									<% end %>
 									<% if state.state == "cs_dismissed" %>
-										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_dismissed") %>
+										<span class="datetime"><%= @cs_here.user.name %></span><br>
+										<%= t(".cs_dismissed") %>
 									<% end %>
 									<% if state.state == "cs_request_canceled" %>
-										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_request_canceled") %>
+										<span class="datetime"><%= @cs_here.user.name %></span><br>
+										<%= t(".cs_request_canceled") %>
 									<% end %>
 									<% if state.state == "cs_canceled" %>
-										<%= render :partial => 'svgs/customer' %><br><%= t(".cs_canceled") %>
+										<span class="datetime"><%= @cs_here.user.name %></span><br>
+										<%= t(".cs_canceled") %>
 									<% end %>
 									<% if state.state == "cl_canceled" %>
-										<%= render :partial => 'svgs/cameraman' %><br><%= t(".cl_canceled") %>
+										<span class="datetime"><%= @cl_here.user.name %></span><br>
+										<%= t(".cl_canceled") %>
 									<% end %>
 								</td>
 								<td>
@@ -190,7 +333,7 @@
 						<% end %>
 						<% if @event.event_states.last.state == "request" &&  @event.start_time < Time.now() %>
 							<td>
-								<%= render :partial => 'svgs/cameraman' %><br>
+								<span class="datetime"><%= @cl_here.user.name %></span><br>
 								<%= t(".request_canceled") %>
 							</td>
 							<td>
@@ -200,7 +343,7 @@
 						<% end %>
 						<% if @event.event_states.last.state == "cl_edited" &&  @event.start_time < Time.now() %>
 							<td>
-								<%= render :partial => 'svgs/customer' %><br>
+								<span class="datetime"><%= @cs_here.user.name %></span><br>
 								<%= t(".request_canceled") %>
 							</td>
 							<td>
@@ -215,7 +358,6 @@
 
 			<!-- event_stateボタン -->
 			<div class="ev-states-btns">
-
 
 				<!-- cl 将来 の場合 -->
 				<% if @event.client_id == @cl.id && @event.start_time > Time.now() %>
@@ -239,7 +381,6 @@
 				<% end %><!-- cl 将来 の場合 -->
 
 
-
 				<!-- cl 過去 の場合 -->
 				<% if @event.client_id == @cl.id && @event.start_time <= Time.now() %>
 					<!-- 撮影確定状態 -->
@@ -248,7 +389,6 @@
 						<%= render :partial => 'events/cl_deliver', :locals=>{event: @event} %>
 					<% end %><!-- endOf 撮影確定状態 -->
 				<% end %><!-- endOf cl 過去の場合 -->
-
 
 
 				<!-- cs 将来の場合 -->
@@ -296,43 +436,6 @@
 		</div><!-- endOf col-->
 	</div><!-- endOf row -->
 </div><!-- endOf container -->
-
-
-<!-- レビュー -->
-<div class="container-fluid ev-review ev-base-common ev-new">
-	<div class="col-12 col-md-6 offset-md-3">
-		<!-- cl 過去の場合 -->
-		<% if @event.client_id == @cl.id && @event.start_time <= Time.now() %>
-			<!-- 納品済み or 受け取り済み  状態 -->
-			<% if @event.event_states.last.state.in?(['cl_delivered', 'cs_recieved']) %>
-				<h1><%= t(".Write_reviews") %></h1>
-				<%= form_for ([@event, @ev_rev]) do |f| %>
-					<h2>
-						<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Review_about_cs", name: @cs_here.user.name) %>
-					</h2>
-					<div class="ev-square white-back">
-						<%= f.text_area :cl_review, rows: "8", maxlength: "2000", placeholder:  t(".cl_review_placeholder", name: @cs_here.user.name), required: true %>
-					</div>
-					<%= f.submit t(".Post_reviews") %>
-				<% end %>
-
-
-			<% end %><!-- endOf 納品済み or 受け取り済み 状態 -->
-		<% end %><!-- endOf cl 過去の場合 -->
-
-
-		<!-- cs 過去の場合 -->
-		<% if @event.customer_id == @cs.id && @event.start_time <= Time.now() %>
-			<!-- 受け取り済み  状態 -->
-			<% if @event.event_states.last.state.in?(['cs_recieved']) %>
-
-
-
-
-			<% end %><!-- endOf 受け取り済み -->
-		<% end %><!-- endOf cs 過去の場合 -->
-	</div>
-</div><!-- endOf レビュー -->
 
 
 <!-- 写真アップロード -->

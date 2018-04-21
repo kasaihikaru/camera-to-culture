@@ -41,7 +41,7 @@ ja:
       Camera: カメラ
       Message: メッセージ
     show:
-      Session_Details: 撮影の詳細を見る
+      Session_Details: 撮影の詳細
       Date_and_Time: 日時
       How_many_people?: 撮影に参加する人数
       Location: 撮影場所
@@ -78,9 +78,17 @@ ja:
       Customer_no_replied: 顧客の返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
       download_zip: 再度zipでダウンロード
       Write_reviews: レビューを書きましょう！
+      Review_about_you: あなたへのレビュー
+      Review_by_you: あなたからのレビュー
       Review_about_cs: '%{name}さんへのレビュー'
+      Review_about_cl: '%{name}さんへのレビュー'
       cl_review_placeholder: '%{name}さんとの撮影はいかがでしたか？'
+      cs_review_placeholder: '%{name}さんとの撮影はいかがでしたか？'
+      cl_comment_placeholder: '%{name}さんからのレビューにコメントを返しますか？'
+      Comment_on_a_review: レビューにコメントを返す
       Post_reviews: 投稿
+      Reply_to_cs: 'レビューへの返信'
+      Reply_to_your_review: あなたのレビューへの返信
     cl_accept:
       Accept: リクエストを承認する
       cl_accept_comment: リクエストありがとうございます。撮影よろしくお願いします！
@@ -193,7 +201,7 @@ ja:
       Customer_approved: 撮影確定
       You_dismissed: あなたが却下
       Waiting_for_Photos: 納品待ち
-      Photos_delivered: 納品済み
+      Photos_delivered: 写真受け取り可能
       Photos_recieved: 写真受け取り済み
     event_photo:
       See_Uploaded_photos: 納品した写真を確認
