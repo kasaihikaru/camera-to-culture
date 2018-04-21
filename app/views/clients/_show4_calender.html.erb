@@ -73,6 +73,7 @@
 						<div class="schedule-middle">
 							<% c_dates.each do |c_date| %>
 								<div id=<%= c_date["date"].strftime("%Y%m%d") %> class="collapse" aria-labelledby="" data-parent="#calender-schedule-wrapper">
+									<%= c_date["date"].strftime("%Y/%m/%d") %><br>
 									<%= c_date["schedule"] %>
 								</div>
 							<% end %>
