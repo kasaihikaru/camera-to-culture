@@ -27,14 +27,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     customer = Customer.create(user_id: user.id)
     client = Client.create(user_id: user.id)
 
-    #User_languageではダメ
-    #マスターテーブルが空だと保存できない
-    unless user_language_params == nil
-      language_ids = user_language_params
-      language_ids.each do |id|
-        UserLanguage.create(user_id: user.id, language_id: id.to_i)
-      end
-    end
 
     yield resource if block_given?
     if resource.persisted?
