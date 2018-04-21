@@ -88,7 +88,7 @@ ja:
       Comment_on_a_review: レビューにコメントを返す
       Post_reviews: 投稿
       Reply_to_cs: 'レビューへの返信'
-      Reply_to_your_review: あなたのレビューへの返信
+      Reply_from_cl: '%{name}さんからの返信'
     cl_accept:
       Accept: リクエストを承認する
       cl_accept_comment: リクエストありがとうございます。撮影よろしくお願いします！
