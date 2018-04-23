@@ -9,7 +9,12 @@ $black-col : #000000;
 $white-col : #FFFFFF;
 
 
-
+.about-wrapper{
+padding-bottom: 200px;
+color: $white-col;
+background-color: #064c92;
+background-image: linear-gradient(180deg, #064c92 15%, #2b79d2 41%, #2f99ff 60%, #a4cbf9 84%, #ffffff 100%);
+}
 
 .about{
 	text-align: center;
@@ -83,22 +88,18 @@ $white-col : #FFFFFF;
 
 
 .about-1{
-	background-color: $white-col;
-	color: $black-col;
+	// background-color: $white-col;
+	// color: $black-col;
 }
 
 .about-2{
-	background-color: $subprim-col;
-	color: $white-col;
+	// background-color: $subprim-col;
+	// color: $white-col;
 }
 
 .about-3{
-	background-color: $white-col;
-	color: $black-col;
-}
-
-.about-4{
-	background-color: red;
+	// background-color: $white-col;
+	// color: $black-col;
 }
 
 

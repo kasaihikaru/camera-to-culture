@@ -37,14 +37,14 @@ $white-col : #FFFFFF;
 				}
 			}
 		}
+		a, a:hover{
+			text-decoration: none;
+		}
 		.cameraman-list-lower{
 			background-color: $white-col;
 			height: 100px;
 			border-radius: 0 0 5px 5px / 0 0 5px 5px;
 			color: $black-col;
-			a, a:hover{
-				text-decoration: none;
-			}
 			.cameraman-list-lower-left{
 				padding-left: 20px;
 				h1, h1:hover{
