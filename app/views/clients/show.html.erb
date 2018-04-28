@@ -1,5 +1,28 @@
 <!-- ##########  ヘッダー  ########## -->
 <div class="container-fluid cl-show cl-show-1">
+
+	<!-- 不動ボタン -->
+	<!-- ログイン時 -->
+	<% if user_signed_in? %>
+		<%= link_to new_event_path(id: @cl_here.id) do %>
+			<div class="prim-btn cl-show-btn cl-show-reserve-btn btn">
+				<%= t(".researve") %>
+			</div>
+		<% end %>
+		<%= link_to new_user_message_path(@cl_here.user.id) do %>
+			<div class="prim-btn cl-show-btn cl-show-message-btn btn">
+				<%= t(".message") %>
+			</div>
+		<% end %>
+	<!-- 未ログイン時 -->
+	<% else %>
+		<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
+			<div class="prim-btn cl-show-btn-login btn">
+				<%= t(".sign-in") %>
+			</div>
+		<% end %>
+	<% end %>
+
 	<div class="container">
 		<div class="row">
 			<div class="cl-show-1-left col-3 col-sm-3 col-md-2">
@@ -20,26 +43,6 @@
 
 
 			<div class="cl-show-1-right col-12 col-sm-12 col-md-3">
-				<!-- ログイン時 -->
-				<% if user_signed_in? %>
-					<%= link_to new_event_path(id: @cl_here.id) do %>
-						<div class="prim-btn cl-show-1-btn btn">
-							<%= t(".researve") %>
-						</div>
-					<% end %>
-					<%= link_to new_user_message_path(@cl_here.user.id) do %>
-						<div class="prim-btn cl-show-1-btn btn">
-							<%= t(".message") %>
-						</div>
-					<% end %>
-				<!-- 未ログイン時 -->
-				<% else %>
-					<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
-						<div class="prim-btn cl-show-1-btn-login btn">
-							<%= t(".sign-in") %>
-						</div>
-					<% end %>
-				<% end %>
 			</div>
 		</div>
 	</div>
@@ -97,29 +100,6 @@
 </div>
 <div id="cl-show4-calender" class="container-fluid cl-show cl-show-4">
 	<%= render partial: 'clients/show4_calender', locals: {cl_here: @cl_here, day: @day, c_dates: @c_dates } %>
-</div>
-
-<div class="container-fluid cl-show cl-show-5">
-	<!-- ログイン時 -->
-	<% if user_signed_in? %>
-		<%= link_to new_user_message_path(@cl_here.user.id) do %>
-			<div class="prim-btn cl-show-1-btn btn">
-				<%= t(".message") %>
-			</div>
-		<% end %>
-		<%= link_to new_event_path(id: @cl_here.id) do %>
-			<div class="prim-btn cl-show-1-btn btn">
-				<%= t(".researve") %>
-			</div>
-		<% end %>
-	<!-- 未ログイン時 -->
-	<% else %>
-		<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
-			<div class="prim-btn cl-show-1-btn-login btn">
-				<%= t(".sign-in") %>
-			</div>
-		<% end %>
-	<% end %>
 </div>
 
 

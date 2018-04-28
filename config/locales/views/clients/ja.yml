@@ -83,8 +83,8 @@ ja:
     index:
       no_result: 該当するカメラマンがいません。。。泣
     show:
-      researve: 予約する
-      message: メッセージしてみる
+      researve: 予約
+      message: メッセージ
       sign-in: ログインして、メッセージを送る
       Photographing_Categories: 撮影カテゴリー
       Photographing_Area: 撮影可能な都道府県

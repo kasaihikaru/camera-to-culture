@@ -32,35 +32,49 @@ class UsersController < ApplicationController
 		@cs = @user.customers.active.first
 
 		#event
-		cl_evs = @cl.events.includes(customer: :user)
+		cl_evs = @cl.events.includes(:event_review, customer: :user)
 		cl_evs_future = cl_evs.future
 		@cl_future = []
 		for ev in cl_evs_future do
 			if ev.event_states.last.state == "request"
-				@cl_future << ev.event_states.last
+				@cl_future << ev
 			end
 		end
 		cl_evs_past = cl_evs.past
 		@cl_past = []
 		for ev in cl_evs_past do
 			if ev.event_states.last.state.in?(['cl_accepted','cs_accepted'])
-				@cl_past << ev.event_states.last
+				@cl_past << ev
+			end
+		end
+		@cl_reviews = []
+		for ev in cl_evs_past do
+			if ev.event_states.last.state.in?(['cl_delivered', 'cs_recieved']) && (ev.event_review == nil || ev.event_review.cl_review == nil)
+				@cl_reviews << ev
 			end
 		end
 
-		cs_evs = @cs.events.includes(client: :user)
+
+		cs_evs = @cs.events.includes(:event_review, client: :user)
 		cs_evs_future = cs_evs.future
 		@cs_future = []
 		for ev in cs_evs_future do
 			if ev.event_states.last.state == "cl_edited"
-				@cs_future << ev.event_states.last
+				@cs_future << ev
 			end
 		end
 		cs_evs_past = cs_evs.past
 		@cs_past = []
-		for ev in cs_evs_future do
+		for ev in cs_evs_past do
 			if ev.event_states.last.state == "cl_delivered"
-				@cs_future << ev.event_states.last
+				@cs_past << ev
+			end
+		end
+
+		@cs_reviews = []
+		for ev in cs_evs_past do
+			if ev.event_states.last.state.in?(['cs_recieved']) && (ev.event_review == nil || ev.event_review.cs_review == nil)
+				@cs_reviews << ev
 			end
 		end
 	end

@@ -8,6 +8,7 @@ ja:
       Deliver_photos: '%{name}さんの写真を納品しましょう'
       changing_conditions_request: '%{name}さんより条件変更リクエストが届きました。'
       Photos_delivered: '%{name}さんから写真が届きました。'
+      Write_a_review: '%{name}さんのレビューを書きましょう'
       Languages: 話す言語
       None: なし
       Introduction: メッセージ

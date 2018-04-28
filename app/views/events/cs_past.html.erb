@@ -82,9 +82,16 @@
 												<% end %>
 												<!-- 写真受け取り済み -->
 												<% if ev.event_states.last.state == "cs_recieved" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".Photos_recieved") %>
-													</span>
+													<!-- 未cs_review -->
+													<% if ev.event_review == nil || ev.event_review.cs_review == nil %>
+														<span class="status-badge primary-col">
+															<%= t(".Write_a_review") %>
+														</span>
+													<% else %><!-- endOf 未cs_review -->
+														<span class="status-badge subprimary-col">
+															<%= t(".Photos_recieved") %>
+														</span>
+													<% end %><!-- endOf cs_review済み -->
 												<% end %>
 											</div>
 											<!-- 名前 -->

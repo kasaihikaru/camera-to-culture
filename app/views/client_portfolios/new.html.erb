@@ -7,41 +7,42 @@
     <div class="col-12 col-md-8 mypage-content">
       <h1><%= t(".portfolio")%></h1>
       <hr>
+      <p><%= @portfolio_nums %><%= t(".photos_are_uploaded")%></p>
+      <% if @num < 20 %>
+        <!-- アップロード箇所 -->
+        <div class="file-loading">
+            <input id="client_portfolio" name="client_portfolio" type="file" multiple>
+        </div>
 
-      <!-- アップロード箇所 -->
-      <div class="file-loading">
-          <input id="client_portfolio" name="client_portfolio" type="file" multiple>
-      </div>
-
-      <script>
-      <% if @locale == "ja" %>
-        $("#client_portfolio").fileinput({
-            language: "ja",
-            uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
-            allowedFileExtensions: ["jpg", "png", "jpeg"]
-        });
-      <% elsif @locale == "zh" %>
-        $("#client_portfolio").fileinput({
-            language: "zh",
-            uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
-            allowedFileExtensions: ["jpg", "png", "jpeg"]
-        });
-      <% elsif @locale == "tw" %>
-        $("#client_portfolio").fileinput({
-            language: "tw",
-            uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
-            allowedFileExtensions: ["jpg", "png", "jpeg"]
-        });
-      <% else %>
-        $("#client_portfolio").fileinput({
-            language: "en",
-            uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
-            allowedFileExtensions: ["jpg", "png", "jpeg"]
-        });
+        <script>
+        <% if @locale == "ja" %>
+          $("#client_portfolio").fileinput({
+              language: "ja",
+              uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+              allowedFileExtensions: ["jpg", "png", "jpeg"]
+          });
+        <% elsif @locale == "zh" %>
+          $("#client_portfolio").fileinput({
+              language: "zh",
+              uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+              allowedFileExtensions: ["jpg", "png", "jpeg"]
+          });
+        <% elsif @locale == "tw" %>
+          $("#client_portfolio").fileinput({
+              language: "tw",
+              uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+              allowedFileExtensions: ["jpg", "png", "jpeg"]
+          });
+        <% else %>
+          $("#client_portfolio").fileinput({
+              language: "en",
+              uploadUrl: "/clients/<%= @cl.id %>/client_portfolios",
+              allowedFileExtensions: ["jpg", "png", "jpeg"]
+          });
+        <% end %>
+        </script>
+        <br>
       <% end %>
-      </script>
-
-      <br>
 
       <!-- 投稿済みポートフォリオ -->
       <%= form_tag( r_destroy_client_client_portfolios_path, method: :delete) do %>

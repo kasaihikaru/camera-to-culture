@@ -175,6 +175,8 @@ ja:
       Customer_dismissed: 顧客が却下
       Waiting_for_Photos: 納品待ち
       Photos_delivered: 納品済み
+      Write_a_review: レビューを書きましょう
+      Reply_to_a_review: レビューに返信
       Photos_recieved: 写真受け取り済み
     cs_future:
       yen: 円
@@ -202,6 +204,7 @@ ja:
       You_dismissed: あなたが却下
       Waiting_for_Photos: 納品待ち
       Photos_delivered: 写真受け取り可能
+      Write_a_review: レビューを書きましょう
       Photos_recieved: 写真受け取り済み
     event_photo:
       See_Uploaded_photos: 納品した写真を確認

@@ -21,6 +21,7 @@ $white-col : #FFFFFF;
 		display: flex;
 		justify-content: center; /*左右中央揃え*/
 		align-items: center;		/*上下中央揃え*/
+		position: relative; /*画像を下に表示するため*/
 		h1{
 			font-size: 25px;
 			font-weight: 800;
@@ -29,6 +30,8 @@ $white-col : #FFFFFF;
 			text-align: center;
 		}
 		.home-cl-search{
+			text-align: center;
+			// margin-bottom: 300px;
 			.search-category, .search-area, .search-btn{
 				float: left;
 			}
@@ -36,6 +39,28 @@ $white-col : #FFFFFF;
 				width:100px;
 			}
 		}
+		// .home-top-imgs{
+		// 		position: absolute;
+		// 		bottom: 80px;
+		// 	.home-top-img{
+		// 		background-size: cover;
+		// 		float: left;
+		// 		width: 200px;
+		// 		height: 200px;
+		// 	}
+		// 	.home-top-img-1{
+		// 		background-image: image-url("home-travel.png");
+		// 	}
+		// 	.home-top-img-2{
+		// 		background-image: image-url("home-dairy.png");
+		// 	}
+		// 	.home-top-img-3{
+		// 		background-image: image-url("home-travel.png");
+		// 	}
+		// 	.home-top-img-4{
+		// 		background-image: image-url("home-dairy.png");
+		// 	}
+		// }
 	}
 }
 @media screen and (max-width: 549px) {

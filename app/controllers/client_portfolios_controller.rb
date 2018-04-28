@@ -5,13 +5,19 @@ before_action :user_check, only: [:new, :create, :r_destroy]
 	def new
 		@user = current_user
 		@cl = @user.clients.active.first
+		@num = @cl.client_portfolios.active.count
 		@cs = @user.customers.active.first
 		@locale = params[:locale]
-		@portfolios = @cl.client_portfolios.active
+		@portfolios = @cl.client_portfolios.active.limit(19)
+		@portfolio_nums = @cl.client_portfolios.active.count
 	end
 
 	def create
-		ClientPortfolio.create(create_params)
+		cl = current_user.clients.active.first
+		num = cl.client_portfolios.active.count
+		if num < 20
+			ClientPortfolio.create(create_params)
+		end
 	end
 
 	def r_destroy

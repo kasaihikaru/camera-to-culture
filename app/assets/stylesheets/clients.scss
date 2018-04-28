@@ -94,6 +94,36 @@ $white-col : #FFFFFF;
 		text-align: center;
 		padding: 35px 0 ;
 	}
+	.cl-show-btn{
+		width: 150px;
+		margin: 5px 0;
+		a{
+			color: $white-col;
+		}
+	}
+	.cl-show-reserve-btn{
+		position:fixed;
+		bottom:10px;
+		right:10px;
+		z-index:999;
+	}
+	.cl-show-message-btn{
+		position:fixed;
+		bottom:10px;
+		right:165px;
+		z-index:999;
+	}
+	.cl-show-btn-login{
+		position:fixed;
+		bottom:10px;
+		right:10px;
+		z-index:999;
+		width: 280px;
+		margin: 5px 0;
+		a{
+			color: $white-col;
+		}
+	}
 }
 
 .cl-show-1{
@@ -111,20 +141,6 @@ $white-col : #FFFFFF;
 	}
 	.cl-show-1-right{
 		text-align: center;
-		.cl-show-1-btn{
-			width: 180px;
-			margin: 5px 0;
-			a{
-				color: $white-col;
-			}
-		}
-		.cl-show-1-btn-login{
-			width: 280px;
-			margin: 5px 0;
-			a{
-				color: $white-col;
-			}
-		}
 	}
 }
 

@@ -16,7 +16,7 @@ class EventsController < ApplicationController
 		@user = current_user
 		@cl = @user.clients.active.first
 		@cs = @user.customers.active.first
-		@events = Event.as_cs(@cs.id).past.request.includes(:prefecture, client: :user).order(start_time: :DESC)
+		@events = Event.as_cs(@cs.id).past.request.includes(:prefecture, :event_review, client: :user).order(start_time: :DESC)
 	end
 
 	def cl_future
@@ -30,7 +30,7 @@ class EventsController < ApplicationController
 		@user = current_user
 		@cl = @user.clients.active.first
 		@cs = @user.customers.active.first
-		@events = Event.as_cl(@cl.id).past.request.includes(:prefecture, customer: :user).order(start_time: :DESC)
+		@events = Event.as_cl(@cl.id).past.request.includes(:prefecture, :event_review, customer: :user).order(start_time: :DESC)
 	end
 
 
