@@ -11,7 +11,7 @@ ja:
       Write_a_review: '%{name}さんのレビューを書きましょう'
       Languages: 話す言語
       None: なし
-      Introduction: メッセージ
+      Introduction: 自己紹介
       Available_dates: 撮影可能日
       available_dates_explanation: "撮影可能候補日として、%{nums}日間登録されています。"
       Photographing_Categories: 撮影カテゴリー

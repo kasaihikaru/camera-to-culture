@@ -10,7 +10,7 @@ class ClientsController < ApplicationController
 		end
 
 		# 検索結果(.uniqするとarrayになってしまうので、kaminariは別に切り出す必要がある。)
-		array_cls = Client.active.consent.registerd.includes({user: [user_languages: :language]}, :client_portfolios, client_categories: :category).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
+		array_cls = Client.active.consent.registerd.includes({user: [user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
 		@cls = Kaminari.paginate_array(array_cls).page(params[:page]).per(12)
 	end
 
@@ -28,6 +28,9 @@ class ClientsController < ApplicationController
 		@prim_price = @cl_here.client_primary_prices.active.first
 		@options = @cl_here.client_option_prices.active
 		@portfolios = @cl_here.client_portfolios.active.limit(19)
+		@events = @cl_here.events.past.cs_reviewed.order(start_time: :DESC).includes(:event_review, customer: :user)
+		@events_3 = @events.take(3)
+		@ev_nums = @events.count()
 
 
 		######### カレンダー ###########

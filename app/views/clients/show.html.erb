@@ -1,77 +1,40 @@
 <!-- ##########  ヘッダー  ########## -->
 <div class="container-fluid cl-show cl-show-1">
-
-	<!-- 不動ボタン -->
-	<!-- ログイン時 -->
-	<% if user_signed_in? %>
-		<%= link_to new_event_path(id: @cl_here.id) do %>
-			<div class="prim-btn cl-show-btn cl-show-reserve-btn btn">
-				<%= t(".researve") %>
-			</div>
-		<% end %>
-		<%= link_to new_user_message_path(@cl_here.user.id) do %>
-			<div class="prim-btn cl-show-btn cl-show-message-btn btn">
-				<%= t(".message") %>
-			</div>
-		<% end %>
-	<!-- 未ログイン時 -->
-	<% else %>
-		<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
-			<div class="prim-btn cl-show-btn-login btn">
-				<%= t(".sign-in") %>
-			</div>
-		<% end %>
-	<% end %>
-
 	<div class="container">
 		<div class="row">
 			<div class="cl-show-1-left col-3 col-sm-3 col-md-2">
-				<%= image_tag @cl_here.user.image.url(:thumb), :alt => "icon" if @cl_here.user.image? %><br>
+				<% if @cl_here.user.image? %>
+					<%= image_tag @cl_here.user.image.url(:thumb), alt: "icon" %>
+				<% else %>
+					<%= render :partial => 'svgs/baby' %>
+				<% end %>
 			</div>
-			<div class="cl-show-1-middle col-9 col-sm-9 col-md-7">
-				<%= @cl_here.user.name %><br>
-				<!-- カテゴリー -->
-<!-- 				<% @categories.each do |cate| %>
-					<span class="badge badge-pill badge-light"><%= cate.category.ja %></span>
-				<% end %><br> -->
-				<!-- 言語 -->
-				<% @langs.each do |lang| %>
-					<span class="badge badge-pill badge-dark"><%= lang.language.ja %></span>
-				<% end %><br>
-			</div>
-
-
-
-			<div class="cl-show-1-right col-12 col-sm-12 col-md-3">
+			<div class="cl-show-1-middle col-9 col-sm-9 col-md-10">
+				<div class="cl-show-name">
+					<%= @cl_here.user.name %>
+					<a class="all-review-inline" data-toggle="modal" data-target="#all-reviews">
+						(<%= @ev_nums %><%= t(".reviews") %>)
+					</a>
+				</div>
+				<%= @cl_here.user.customers.first.introduction %>
 			</div>
 		</div>
 	</div>
 </div>
 
 
+<!-- # About 1 # -->
+<div class="container-fluid cl-show cl-show-2 white-back">
+	<div class="col-12 col-lg-8 offset-lg-2">
+		<!-- 言語 -->
+		<% if @langs.present? %>
+			<% @langs.each do |lang| %>
+				<span class="badge badge-pill badge-dark"><%= lang.language.ja %></span>
+			<% end %>
+			<hr>
+		<% end %>
 
-<!-- ##########  About  ########## -->
-<div class="container-fluid cl-show cl-show-2">
-	<h1>About</h1>
-	<div class="container">
-		<h2><%= t(".Photographing_Categories") %></h2>
-		<p>
-			<% @categories.each do |cate| %>
-				<%= cate.category.ja %><br>
-			<% end %>
-		</p>
-		<h2><%= t(".Photographing_Area") %></h2>
-		<p>
-			<% @locations.each do |location| %>
-				<%= location.prefecture.ja %>&nbsp;
-			<% end %>
-		</p>
-		<h2><%= t(".Price") %></h2>
-		<p><%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %>&nbsp;
-			<% if @prim_price.minimum_hours > 1 %>
-				（<%= @prim_price.minimum_hours %><%= t(".hours_minimum") %>）
-			<% end %>
-		</p>
+		<!-- オプション -->
 		<% if @options.present? %>
 			<h2><%= t(".Option_Menu") %></h2>
 			<% @options.each do |option| %>
@@ -83,18 +46,121 @@
 					<%= option.price %><%= t(".yen") %>
 				</p>
 			<% end %>
+		<hr>
 		<% end %>
+
+		<!-- カテゴリー -->
+		<% @categories.each do |cate| %>
+			<span class="badge badge-pill badge-light"><%= cate.category.ja %></span>
+		<% end %>
+		<hr>
+		<h2><%= t(".Photographing_Categories") %></h2>
+		<p>
+			<% @categories.each do |cate| %>
+				<%= cate.category.ja %><br>
+			<% end %>
+		</p>
+		<hr>
+		<h2><%= t(".Photographing_Area") %></h2>
+		<p>
+			<% @locations.each do |location| %>
+				<%= location.prefecture.ja %>&nbsp;
+			<% end %>
+		</p>
+		<hr>
 		<% if @cl_here.camera.present? %>
 			<h2><%= t(".Camera") %></h2>
 			<pre class="indent"><%= @cl_here.camera %></pre>
 		<% end %>
+		<hr>
 		<h2><%= t(".Message") %></h2>
 		<pre class="indent"><%= @cl_here.introduction %></pre>
+
+		<!-- message_btn -->
+		<!-- ログイン時 -->
+		<div class="indent">
+			<% if user_signed_in? %>
+				<%= link_to new_user_message_path(@cl_here.user.id) do %>
+					<div class="white-btn cl-show-message-btn btn">
+					<%= t(".message") %>
+					</div>
+				<% end %>
+			<!-- 未ログイン時 -->
+			<% else %>
+				<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
+					<div class="white-btn cl-show-message-btn btn">
+						<%= t(".sign-in-for-ms") %>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<hr>
+
+<div class="container-fluid cl-show cl-show-2 white-back">
+	<div class="col-12 col-lg-8 offset-lg-2">
+		<h1>Reviews</h1>
+		<% @events_3.each do |ev| %>
+			<%= render partial: 'clients/reviews', locals: {ev: ev} %>
+		<% end %>
+		<!-- 全てのレビュー -->
+		<p>
+			<button type="button" class="white-btn" data-toggle="modal" data-target="#all-reviews">
+				<%= t(".Read_all_reviews") %>（<%= @ev_nums %>）
+			</button>
+		</p>
+
+		<!-- Modal -->
+		<div class="modal fade" id="all-reviews" tabindex="-1" role="dialog" aria-labelledby="all-reviewsTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="all-reviewsTitle"><%= t(".all_reviews", name: @cl_here.user.name) %>（<%= @ev_nums %>）</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<% @events.each do |ev| %>
+							<%= render partial: 'clients/reviews', locals: {ev: ev} %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+		$(function() {
+		    var count = 80;
+		 $('.text_overflow').each(function() {
+		     var thisText = $(this).text();
+		      var textLength = thisText.length;
+		       if (textLength > count) {
+		            var showText = thisText.substring(0, count);
+		            var hideText = thisText.substring(count, textLength);
+		           var insertText = showText;
+		          insertText += '<span class="hide">' + hideText + '</span>';
+		           insertText += '<span class="omit">…</span>';
+		            insertText += '<a href="" class="more">&emsp;more&emsp;</a>';
+		            $(this).html(insertText);
+		       };
+		  });
+		 $('.text_overflow .hide').hide();
+		 $('.text_overflow .more').click(function() {
+		      $(this).hide()
+		          .prev('.omit').hide()
+		         .prev('.hide').fadeIn();
+		      return false;
+		   });
+		});
+		</script>
 	</div>
 </div>
 
 
-<!-- ##########  Schedule  ########## -->
+
+<!-- # Schedule # -->
 <div class="container-fluid cl-show-schedule-title">
 	<h1>Schedule</h1>
 </div>
@@ -124,3 +190,24 @@
 		</div>
 	</div>
 </div>
+
+<!-- 不動ボタン -->
+<!-- ログイン時 -->
+<div class="container-fluid cl-show cl-show-footer">
+	<%= render :partial => 'svgs/fee' %>&nbsp;<%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %>
+	<% if user_signed_in? %>
+		<%= link_to new_event_path(id: @cl_here.id) do %>
+			<div class="prim-btn cl-show-reserve-btn btn">
+				<%= t(".researve") %>
+			</div>
+		<% end %>
+	<!-- 未ログイン時 -->
+	<% else %>
+		<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
+			<div class="prim-btn cl-show-btn-login btn">
+				<%= t(".sign-in-for-researve") %>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+

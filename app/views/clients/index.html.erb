@@ -47,10 +47,6 @@
 											<% cl.client_primary_prices.active.each do |prim_price| %>
 												<h2><%= prim_price.price_per_hour %>円/時間</h2>
 											<% end %>
-											<!-- カテゴリー -->
-	<!-- 										<% cl.client_categories.each do |c| %>
-												<span class="badge badge-pill badge-dark"><%= c.category.ja_s %></span>
-											<% end %> -->
 											<div class="cameraman-list-intro"><%= cl.introduction %></div>
 										</div>
 										<div class="cameraman-list-lower-right col-4">
@@ -58,7 +54,11 @@
 											<% cl.user.user_languages.each do |l| %>
 												<span class="badge badge-pill badge-dark"><%= l.language.ja_s %></span>
 											<% end %><br>
-											<%= image_tag cl.user.image.url(:thumb), :alt => "icon", :class => "cameraman-list-image" if cl.user.image? %>
+											<% if cl.user.image? %>
+												<%= image_tag cl.user.image.url(:thumb), alt: "icon", class: "cameraman-list-image" %>
+											<% else %>
+												<%= render :partial => 'svgs/baby_sm' %>
+											<% end %>
 										</div>
 									</div>
 								</div>

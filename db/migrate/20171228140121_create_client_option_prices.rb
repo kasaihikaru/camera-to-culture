@@ -5,7 +5,7 @@ class CreateClientOptionPrices < ActiveRecord::Migration[5.1]
       t.string  :name, null:false
       t.boolean :along_with_time, default:false, null:false
       t.integer :price
-      t.boolean :is_deleted, default:false, null:false
+      t.datetime :deleted_at
       t.timestamps
     end
   end

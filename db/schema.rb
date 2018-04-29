@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.bigint "client_id"
     t.string "tel"
     t.string "address"
-    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_client_contacts_on_client_id"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.string "name", null: false
     t.boolean "along_with_time", default: false, null: false
     t.integer "price"
-    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_client_option_prices_on_client_id"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20180415114259) do
   create_table "client_portfolios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "client_id"
     t.string "image"
-    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_client_portfolios_on_client_id"
@@ -77,29 +77,17 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.bigint "client_id"
     t.integer "price_per_hour", null: false
     t.integer "minimum_hours", default: 1, null: false
-    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_client_primary_prices_on_client_id"
-  end
-
-  create_table "client_reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "client_id"
-    t.bigint "customer_id"
-    t.bigint "event_id"
-    t.text "review"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_client_reviews_on_client_id"
-    t.index ["customer_id"], name: "index_client_reviews_on_customer_id"
-    t.index ["event_id"], name: "index_client_reviews_on_event_id"
   end
 
   create_table "client_schedules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "client_id"
     t.date "date", null: false
     t.text "schedule"
-    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_client_schedules_on_client_id"
@@ -111,7 +99,7 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.text "camera"
     t.string "image"
     t.boolean "consent", default: false, null: false
-    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
     t.boolean "confirmed", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -125,22 +113,10 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.string "tw", null: false
   end
 
-  create_table "customer_reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "client_id"
-    t.bigint "customer_id"
-    t.bigint "event_id"
-    t.text "review"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_customer_reviews_on_client_id"
-    t.index ["customer_id"], name: "index_customer_reviews_on_customer_id"
-    t.index ["event_id"], name: "index_customer_reviews_on_event_id"
-  end
-
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.text "introduction"
-    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_customers_on_user_id"
@@ -169,7 +145,7 @@ ActiveRecord::Schema.define(version: 20180415114259) do
   create_table "event_photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "event_id"
     t.string "image"
-    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_event_photos_on_event_id"
@@ -191,12 +167,12 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.text "cl_review"
     t.text "cl_comment"
     t.text "cs_review"
-    t.string "cl_image_1"
-    t.string "cl_image_2"
-    t.string "cl_image_3"
+    t.integer "stars"
     t.string "cs_image_1"
     t.string "cs_image_2"
     t.string "cs_image_3"
+    t.string "cs_image_4"
+    t.string "cs_image_5"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_event_reviews_on_event_id"
@@ -247,6 +223,8 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.integer "sender_id", null: false
     t.integer "reciever_id", null: false
     t.text "message"
+    t.boolean "sender_read", default: false, null: false
+    t.boolean "reciever_read", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reciever_id"], name: "index_messages_on_reciever_id"
@@ -291,7 +269,7 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name", null: false
-    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
     t.string "image"
     t.string "uid"
     t.string "provider"
@@ -311,14 +289,8 @@ ActiveRecord::Schema.define(version: 20180415114259) do
   add_foreign_key "client_option_prices", "clients"
   add_foreign_key "client_portfolios", "clients"
   add_foreign_key "client_primary_prices", "clients"
-  add_foreign_key "client_reviews", "clients"
-  add_foreign_key "client_reviews", "customers"
-  add_foreign_key "client_reviews", "events"
   add_foreign_key "client_schedules", "clients"
   add_foreign_key "clients", "users"
-  add_foreign_key "customer_reviews", "clients"
-  add_foreign_key "customer_reviews", "customers"
-  add_foreign_key "customer_reviews", "events"
   add_foreign_key "customers", "users"
   add_foreign_key "event_categories", "categories"
   add_foreign_key "event_categories", "events"

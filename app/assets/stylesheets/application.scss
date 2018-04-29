@@ -45,25 +45,36 @@ $white-col : #FFFFFF;
 .big-prim-btn{
   padding: 20px 35px;
   background-color: $prim-col;
-  color: $white-col ;
+  color: $white-col;
   border-radius: 15px;
   border: none;
   font-weight: 800;
   letter-spacing: 0.1em;
+  cursor: pointer;
 }
 .prim-btn{
   height: 38px;
   background-color: $prim-col;
-  color: $white-col ;
+  color: $white-col;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 .subprim-btn{
   height: 38px;
   background-color: $subprim-col;
-  color: $white-col ;
+  color: $white-col;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
+}
+.white-btn{
+  height: 26px;
+  background-color: $white-col;
+  color: $prim-col;
+  border: $prim-col 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .clearfix:after {
@@ -209,7 +220,7 @@ footer{
     }
   }
   .footer-bottom-space{
-    height:90px;
+    height:45px;
   }
 }
 

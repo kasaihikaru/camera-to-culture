@@ -84,11 +84,17 @@ ja:
       no_result: 該当するカメラマンがいません。。。泣
     show:
       researve: 予約
-      message: メッセージ
-      sign-in: ログインして、メッセージを送る
+      message: メッセージを送ってみる
+      sign-in-for-ms: ログインしてメッセージを送る
+      sign-in-for-researve: ログインして予約
+      Reviews: レビュー
+      reviews: 件のレビュー
+      Read_all_reviews: 全てのレビューを読む
+      all_reviews: '%{name}さんへのレビュー'
       Photographing_Categories: 撮影カテゴリー
       Photographing_Area: 撮影可能な都道府県
       Price: 価格
+      Photographing_price: 撮影価格
       yen_per_hour: 円/時間
       hours_minimum: 時間から受け付けます
       Option_Menu: オプションメニュー

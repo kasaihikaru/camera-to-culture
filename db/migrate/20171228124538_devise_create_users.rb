@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       #add_for_devise
       t.string  :name, null:false
-      t.boolean :is_deleted, default:false, null:false
+      t.datetime :deleted_at
       t.string  :image
 
       #add_for_FB

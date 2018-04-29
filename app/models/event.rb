@@ -36,4 +36,7 @@ class Event < ApplicationRecord
 	}
 	scope :future, ->  { where("start_time > ?", Time.now())}
 	scope :past, ->  { where("start_time <= ?", Time.now())}
+	scope :cs_reviewed, ->  {
+		joins(:event_review).merge(EventReview.cs_reviewed)
+	}
 end
