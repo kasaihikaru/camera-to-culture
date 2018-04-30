@@ -16,7 +16,9 @@ class Users::SessionsController < Devise::SessionsController
     yield resource if block_given?
 
     if search_result_params[:redirect_client_id].present?
-      redirect_to new_user_message_path(current_user.id, search_result_params)
+      redirect_to new_user_message_path(current_user.id, search_result_params[:redirect_client_id])
+    elsif search_result_params[:rv_redirect_client_id].present?
+      redirect_to new_event_path(id: search_result_params[:rv_redirect_client_id])
     else
       respond_with resource, location: after_sign_in_path_for(resource)
     end
@@ -34,6 +36,6 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
   def search_result_params
-    params.require(:user).permit(:redirect_client_id)
+    params.require(:user).permit(:redirect_client_id, :rv_redirect_client_id)
   end
 end

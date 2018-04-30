@@ -1,13 +1,25 @@
 <!-- カテゴリ検索 -->
 <div class="search-category">
-    <select class="selectpicker" multiple title="<%= t(".select_category")%>" name="category_ids[]" data-selected-text-format="count">
-      <optgroup label="<%= t(".for_business")%>">
-        <option value="1"><%= t(".commercial_photos_people")%></option>
-      <option value="2"><%= t(".commercial_photos_items")%></option>
+    <select class="selectpicker" multiple title="<%= t(".all_categories")%>" name="category_ids[]" data-selected-text-format="count">
+      <optgroup label="<%= t(".Yourself")%>">
+        <option value="1"><%= t(".Profile")%></option>
+        <option value="2"><%= t(".ID photo")%></option>
       </optgroup>
-      <optgroup label="<%= t(".for_private")%>">
-        <option value="3"><%= t(".event_photos")%></option>
-        <option value="4"><%= t(".private_photo")%></option>
+      <optgroup label="<%= t(".Memory")%>">
+        <option value="3"><%= t(".Wedding")%></option>
+        <option value="4"><%= t(".Traveling")%></option>
+        <option value="5"><%= t(".Dairy life")%></option>
+      </optgroup>
+      <optgroup label="<%= t(".Child")%>">
+        <option value="6"><%= t(".seven-five-three")%></option>
+        <option value="7"><%= t(".Coming of age")%></option>
+        <option value="8"><%= t(".Maternity")%></option>
+        <option value="9"><%= t(".New born")%></option>
+      </optgroup>
+      <optgroup label="<%= t(".Others")%>">
+        <option value="6"><%= t(".Commodities")%></option>
+        <option value="7"><%= t(".Event")%></option>
+        <option value="8"><%= t(".Pet")%></option>
       </optgroup>
     </select>
 </div>
@@ -19,7 +31,7 @@
 <!--     <select class="selectpicker" multiple title="<%= t(".select_area")%>" name="prefecture_ids[]" data-live-search="true" data-selected-text-format="count"> -->
 
     <!-- ライブサーチなし -->
-     <select class="selectpicker" multiple title="<%= t(".select_area")%>" name="prefecture_ids[]" data-selected-text-format="count">
+     <select class="selectpicker" multiple title="<%= t(".all_areas")%>" name="prefecture_ids[]" data-selected-text-format="count">
         <optgroup label="<%= t(".Popular_area")%>">
             <option value="8"><%= t(".Tokyo")%></option>
             <option value="27"><%= t(".Kyoto")%></option>

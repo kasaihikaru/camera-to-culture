@@ -77,7 +77,7 @@ Category.create([
 	{ ja_group: '子供', ja: '成人式', en_group: 'Child', en: 'Coming of age', zh_group: '儿童', zh: '成人式', tw_group: '兒童', tw: '成人式'},
 	{ ja_group: '子供', ja: 'マタニティ', en_group: 'Child', en: 'Maternity', zh_group: '儿童', zh: '孕妇照', tw_group: '兒童', tw: '孕婦寫真'},
 	{ ja_group: '子供', ja: 'ニューボーン', en_group: 'Child', en: 'New born', zh_group: '儿童', zh: '新生儿照', tw_group: '兒童', tw: '新生兒寫真'},
-	{ ja_group: 'その他', ja: '商品', en_group: 'The others', en: 'Commodities', zh_group: '其他', zh: '商品', tw_group: '其他', tw: '商品'},
-	{ ja_group: 'その他', ja: 'イベント', en_group: 'The others', en: 'Event', zh_group: '其他', zh: '活动', tw_group: '其他', tw: '活動'},
-	{ ja_group: 'その他', ja: 'ペット', en_group: 'The others', en: 'Pet', zh_group: '其他', zh: '宠物', tw_group: '其他', tw: '寵物'}
+	{ ja_group: 'その他', ja: '商品', en_group: 'Others', en: 'Commodities', zh_group: '其他', zh: '商品', tw_group: '其他', tw: '商品'},
+	{ ja_group: 'その他', ja: 'イベント', en_group: 'Others', en: 'Event', zh_group: '其他', zh: '活动', tw_group: '其他', tw: '活動'},
+	{ ja_group: 'その他', ja: 'ペット', en_group: 'Others', en: 'Pet', zh_group: '其他', zh: '宠物', tw_group: '其他', tw: '寵物'}
 ])

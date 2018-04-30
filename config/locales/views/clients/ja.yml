@@ -3,15 +3,29 @@ ja:
   clients:
     edit:
       cl_form: カメラマンプロフィール編集
+      Jump_to_your_page: あなたのページを見に行く
+      required: 必須
       camera: 撮影に使うカメラについて
       introduction: メッセージ
       main_image: メイン写真を登録
       main_image_explain: 検索時、トップのサンプル写真として表示されます。
       category_form: 撮影可能な写真カテゴリー
-      commercial_photos_people: 商用ヒト写真（ファッションモデル、ヘアモデル）
-      commercial_photos_items: 商用モノ写真（アイテム、料理）
-      event_photos: イベント写真（結婚式、七五三、旅行）
-      private_photo: 日常写真（家族、恋人、友達）
+      Yourself: 個人写真
+      Memory: 思い出
+      Child: 子供
+      Others: その他
+      Profile: プロフィール
+      ID photo: 証明写真
+      Wedding: ウェディング
+      Traveling: 旅行
+      Dairy life: 日常
+      seven-five-three: 七五三
+      Coming of age: 成人式
+      Maternity: マタニティ
+      New born: ニューボーン
+      Commodities: 商品
+      Event: イベント
+      Pet: ペット
       prime_price_form: 撮影価格
       fill_your_main_price: メインの撮影価格を入力し、細かな設定はオプションから登録してください。
       price_per_hour: １時間あたり

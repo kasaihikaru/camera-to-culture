@@ -22,6 +22,15 @@
 						<h2>
 							<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Review_about_you") %>
 						</h2>
+						<!-- レビュー星 -->
+						<div id='rating-stars-show-for-reply' class="left-align"></div>
+						<script>
+							$.fn.raty.defaults.path = "/images";
+							$('#rating-stars-show-for-reply').raty({
+								readOnly: true,
+								score: <%= @ev_rev.stars %>
+							});
+						</script>
 						<div class="ev-square grey-back">
 							<pre><%= @ev_rev.cs_review %></pre>
 						</div>
@@ -51,6 +60,16 @@
 						<h2>
 							<%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Review_about_cs", name: @cl_here.user.name) %>
 						</h2>
+						<!-- レビュー星 -->
+						<div id='rating-stars' class="left-align"></div>
+						<script>
+							$.fn.raty.defaults.path = "/images";
+							$('#rating-stars').raty({
+								size: 36,
+								score: 3
+							});
+						</script>
+						<!-- レビューコメント -->
 						<div class="ev-square white-back">
 							<%= f.text_area :cs_review, rows: "8", maxlength: "2000", placeholder:  t(".cs_review_placeholder", name: @cl_here.user.name), required: true %>
 						</div>
@@ -385,6 +404,16 @@
 						<h2>
 							<%= render :partial => 'svgs/review' %>&nbsp;<%= t(".Review_about_you") %>
 						</h2>
+						<!-- レビュー星 -->
+						<div id='rating-stars-show' class="left-align"></div>
+						<script>
+							$.fn.raty.defaults.path = "/images";
+							$('#rating-stars-show').raty({
+								readOnly: true,
+								score: <%= @ev_rev.stars %>
+							});
+						</script>
+						<!-- レビューコメント -->
 						<div class="ev-square grey-back">
 							<pre><%= @ev_rev.cs_review %></pre>
 							<!-- cl_commentあり -->
@@ -403,6 +432,16 @@
 					<h2>
 						<%= render :partial => 'svgs/review' %>&nbsp;<%= t(".Review_by_you") %>
 					</h2>
+					<!-- レビュー星 -->
+					<div id='rating-stars-show' class="left-align"></div>
+					<script>
+						$.fn.raty.defaults.path = "/images";
+						$('#rating-stars-show').raty({
+							readOnly: true,
+							score: <%= @ev_rev.stars %>
+						});
+					</script>
+					<!-- レビューコメント -->
 					<div class="ev-square grey-back">
 						<pre><%= @ev_rev.cs_review %></pre>
 							<!-- cl_commentあり -->

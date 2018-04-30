@@ -6,13 +6,18 @@
 
     <div class="col-12 col-md-8 mypage-content">
       <h1><%= t(".cl_form")%></h1>
+      <div class="indent">
+        <%= link_to client_path(@cl), class: "subprim-col" do %>
+          <%= t(".Jump_to_your_page")%>
+        <% end %>
+      </div>
       <hr>
 
       <%= form_for([current_user, @cl]) do |f| %>
 
         <!-- メイン写真 -->
         <div class="field user-image">
-          <%= f.label :image, t(".main_image"), class: "bold" %><br>
+          <%= f.label :image, t(".main_image"), class: "bold" %><span class="prim-col">（<%= t(".required")%>）</span><br>
           <div class="indent">
             <span class="field-explanation"><%= t(".main_image_explain")%></span><br>
             <%= image_tag @cl.image.url, :alt => "Main Image", class: "image" if @cl.image? %><br>
@@ -25,55 +30,163 @@
         <div class="field">
           <p class="bold"><%= t(".category_form")%></p>
             <div class="indent">
+              <%= t(".Yourself")%><br>
               <label class="checkbox">
                 <% if @category_ids.include?(1) %>
                   <input type="checkbox" name="category_id[]" value="1", checked="checked"/>
                   <div class="btn btn-sık">
-                    <span><%= t(".commercial_photos_people")%></span>
+                    <span><%= t(".Profile")%></span>
                   </div>
                 <% else %>
                   <input type="checkbox" name="category_id[]" value="1"/>
                   <div class="btn btn-sık">
-                    <span><%= t(".commercial_photos_people")%></span>
+                    <span><%= t(".Profile")%></span>
                   </div>
                 <% end %>
-              </label><br>
+              </label>
               <label class="checkbox">
                 <% if @category_ids.include?(2) %>
                   <input type="checkbox" name="category_id[]" value="2", checked="checked"/>
                   <div class="btn btn-sık">
-                    <span><%= t(".commercial_photos_items")%></span>
+                    <span><%= t(".ID photo")%></span>
                   </div>
                 <% else %>
                   <input type="checkbox" name="category_id[]" value="2"/>
                   <div class="btn btn-sık">
-                    <span><%= t(".commercial_photos_items")%></span>
+                    <span><%= t(".ID photo")%></span>
                   </div>
                 <% end %>
-              </label><br>
+              </label><br><br>
+              <%= t(".Memory")%><br>
               <label class="checkbox">
                 <% if @category_ids.include?(3) %>
                   <input type="checkbox" name="category_id[]" value="3", checked="checked"/>
                   <div class="btn btn-sık">
-                    <span><%= t(".event_photos")%></span>
+                    <span><%= t(".Wedding")%></span>
                   </div>
                 <% else %>
                   <input type="checkbox" name="category_id[]" value="3"/>
                   <div class="btn btn-sık">
-                    <span><%= t(".event_photos")%></span>
+                    <span><%= t(".Wedding")%></span>
                   </div>
                 <% end %>
-              </label><br>
+              </label>
               <label class="checkbox">
                 <% if @category_ids.include?(4) %>
                   <input type="checkbox" name="category_id[]" value="4", checked="checked"/>
                   <div class="btn btn-sık">
-                    <span><%= t(".private_photo")%></span>
+                    <span><%= t(".Traveling")%></span>
                   </div>
                 <% else %>
                   <input type="checkbox" name="category_id[]" value="4"/>
                   <div class="btn btn-sık">
-                    <span><%= t(".private_photo")%></span>
+                    <span><%= t(".Traveling")%></span>
+                  </div>
+                <% end %>
+              </label>
+              <label class="checkbox">
+                <% if @category_ids.include?(5) %>
+                  <input type="checkbox" name="category_id[]" value="5", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Dairy life")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="5"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Dairy life")%></span>
+                  </div>
+                <% end %>
+              </label><br><br>
+              <%= t(".Child")%><br>
+              <label class="checkbox">
+                <% if @category_ids.include?(6) %>
+                  <input type="checkbox" name="category_id[]" value="6", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".seven-five-three")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="6"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".seven-five-three")%></span>
+                  </div>
+                <% end %>
+              </label>
+              <label class="checkbox">
+                <% if @category_ids.include?(7) %>
+                  <input type="checkbox" name="category_id[]" value="7", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Coming of age")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="7"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Coming of age")%></span>
+                  </div>
+                <% end %>
+              </label>
+              <label class="checkbox">
+                <% if @category_ids.include?(8) %>
+                  <input type="checkbox" name="category_id[]" value="8", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Maternity")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="8"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Maternity")%></span>
+                  </div>
+                <% end %>
+              </label>
+              <label class="checkbox">
+                <% if @category_ids.include?(9) %>
+                  <input type="checkbox" name="category_id[]" value="9", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".New born")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="9"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".New born")%></span>
+                  </div>
+                <% end %>
+              </label><br><br>
+              <%= t(".Others")%><br>
+              <label class="checkbox">
+                <% if @category_ids.include?(10) %>
+                  <input type="checkbox" name="category_id[]" value="10", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Commodities")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="10"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Commodities")%></span>
+                  </div>
+                <% end %>
+              </label>
+              <label class="checkbox">
+                <% if @category_ids.include?(11) %>
+                  <input type="checkbox" name="category_id[]" value="11", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Event")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="11"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Event")%></span>
+                  </div>
+                <% end %>
+              </label>
+              <label class="checkbox">
+                <% if @category_ids.include?(12) %>
+                  <input type="checkbox" name="category_id[]" value="12", checked="checked"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Pet")%></span>
+                  </div>
+                <% else %>
+                  <input type="checkbox" name="category_id[]" value="12"/>
+                  <div class="btn btn-sık">
+                    <span><%= t(".Pet")%></span>
                   </div>
                 <% end %>
               </label>
@@ -84,7 +197,7 @@
       <!-- 価格 -->
         <div class="field">
           <P class="bold">
-            <%= t(".prime_price_form")%><br>
+            <%= t(".prime_price_form")%><span class="prim-col">（<%= t(".required")%>）</span><br>
             <span class="field-explanation"><%= t(".fill_your_main_price")%></span>
           </P>
           <div class="indent">
@@ -823,7 +936,7 @@
 
         <!-- メッセージ -->
         <div class="field">
-          <%= f.label :introduction, t(".introduction"), class: "bold" %><br>
+          <%= f.label :introduction, t(".introduction"), class: "bold" %><span class="prim-col">（<%= t(".required")%>）</span><br>
           <%= f.text_area :introduction, class: "input-textarea" %>
         </div>
 

@@ -28,6 +28,7 @@
 @import "abouts";
 @import "client_schedules";
 @import "client_portfolios";
+@import "jquery.raty";
 @import "lightbox.min";
 
 
@@ -94,6 +95,12 @@ $white-col : #FFFFFF;
 }
 .grey-back{
   background-color: #E6E6E6;
+}
+.prim-col{
+  color: $prim-col;
+}
+.subprim-col{
+  color: $subprim-col;
 }
 
 .float-right{

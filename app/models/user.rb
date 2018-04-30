@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
   #論理消去されたユーザーをログイン不可に
   def active_for_authentication?
-    !deleted_at
+    super && !deleted_at && (!confirmation_required? || confirmed? || confirmation_period_valid?)
   end
   def inactive_message
     !deleted_at ? super : :deleted_account

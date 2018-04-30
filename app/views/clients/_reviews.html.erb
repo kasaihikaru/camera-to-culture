@@ -1,13 +1,22 @@
 <div class="cl-show-rv">
-	<div class="cl-show-rv-name">
-	<% if ev.customer.user.image? %>
-		<%= image_tag ev.customer.user.image.url, alt: "icon" %>
-	<% else %>
-		<%= image_tag("/images/baby.png") %>
-	<% end %>
-	<%= ev.customer.user.name %>
+	<div class="cl-show-rv-name clearfix">
+		<% if ev.customer.user.image? %>
+			<%= image_tag ev.customer.user.image.url, alt: "icon" %>
+		<% else %>
+			<%= image_tag("/images/baby.png") %>
+		<% end %>
+		<%= ev.customer.user.name %>
 	</div>
 	<div class="cl-show-rv-comment">
+		<div class="left-align rating-<%= ev.id %>"></div>
 		<div class="text_overflow"><%= ev.event_review.cs_review %></div>
 	</div>
 </div>
+
+<script>
+	$.fn.raty.defaults.path = "/images";
+	$('.rating-<%= ev.id %>').raty({
+		readOnly: true,
+		score: <%= ev.event_review.stars %>
+	});
+</script>

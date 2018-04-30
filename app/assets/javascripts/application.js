@@ -21,4 +21,5 @@
 //= require bootstrap-select
 //= require lightbox.min
 //= require list.min
+//= require jquery.raty
 //= require_tree .

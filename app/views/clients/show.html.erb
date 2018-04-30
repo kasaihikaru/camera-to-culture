@@ -206,7 +206,7 @@
 		<% end %>
 	<!-- 未ログイン時 -->
 	<% else %>
-		<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
+		<%= link_to new_user_session_path(rv_redirect_client_id: @cl_here.id), target: "_new" do %>
 			<div class="prim-btn cl-show-btn-login btn">
 				<%= t(".sign-in-for-researve") %>
 			</div>

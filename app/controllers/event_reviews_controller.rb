@@ -12,7 +12,15 @@ class EventReviewsController < ApplicationController
 
 private
 	def create_params
-		 params.require(:event_review).permit(:cl_review, :cs_review, :cl_comment).merge(event_id: params[:event_id])
+		score = params[:score].to_i.round
+		if score < 1
+			score = 1
+		elsif score > 5
+			score = 5
+		else
+			score = score
+		end
+		params.require(:event_review).permit(:cl_review, :cs_review, :cl_comment).merge(event_id: params[:event_id], stars: score)
 	end
 
 	def update_params
