@@ -72,3 +72,5 @@ ja:
         subject: 【Camera-to-Culture】アカウント凍結の連絡
       password_change:
         subject: 【Camera-to-Culture】パスワード変更完了の連絡
+    failure:
+        deleted_account: すでに退会したアカウントです。

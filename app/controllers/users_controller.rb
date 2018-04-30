@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	# before_action :authenticate_user!, only: :show
 	before_action :user_check, only: :show
-	before_action :login_check, only: [:profile, :edit_profile]
+	before_action :login_check, only: [:profile, :edit_profile, :account_setting]
 
 
 	def show
@@ -127,6 +127,26 @@ class UsersController < ApplicationController
 
 		flash[:alert] = "更新しました"
 		redirect_to profile_users_path
+	end
+
+
+	def account_setting
+		# menu用
+		@user = current_user
+		@cl = @user.clients.active.first
+		@cs = @user.customers.active.first
+	end
+
+	def inactive_account
+		@user = current_user
+		@cl = @user.clients.active.first
+		@cs = @user.customers.active.first
+
+		@user.soft_delete
+		@cl.soft_delete
+		@cs.soft_delete
+		sign_out(@user)
+		redirect_to home_path
 	end
 
 

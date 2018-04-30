@@ -27,7 +27,7 @@ before_action :user_check, only: [:first_new, :new]
 
 			# 前のレコードを消す
 			if @pre_cl_contact.present?
-				@pre_cl_contact.update(is_deleted: true)
+				@pre_cl_contact.update(deleted_at: Time.now)
 			end
 
 			#同意
@@ -69,7 +69,7 @@ before_action :user_check, only: [:first_new, :new]
 
 			# 前のレコードを消す
 			if @pre_cl_contact.present?
-				@pre_cl_contact.update(is_deleted: true)
+				@pre_cl_contact.update(deleted_at: Time.now)
 			end
 
 			flash[:alert] = t(".Setting_has_updated")

@@ -12,9 +12,11 @@
 			<div class="cl-show-1-middle col-9 col-sm-9 col-md-10">
 				<div class="cl-show-name">
 					<%= @cl_here.user.name %>
-					<a class="all-review-inline" data-toggle="modal" data-target="#all-reviews">
-						(<%= @ev_nums %><%= t(".reviews") %>)
-					</a>
+					<% if @ev_nums.present? && @ev_nums > 0 %>
+						<a class="all-review-inline" data-toggle="modal" data-target="#all-reviews">
+							(<%= @ev_nums %><%= t(".reviews") %>)
+						</a>
+					<% end %>
 				</div>
 				<%= @cl_here.user.customers.first.introduction %>
 			</div>
@@ -96,68 +98,69 @@
 		</div>
 	</div>
 </div>
-<hr>
 
-<div class="container-fluid cl-show cl-show-2 white-back">
-	<div class="col-12 col-lg-8 offset-lg-2">
-		<h1>Reviews</h1>
-		<% @events_3.each do |ev| %>
-			<%= render partial: 'clients/reviews', locals: {ev: ev} %>
-		<% end %>
-		<!-- 全てのレビュー -->
-		<p>
-			<button type="button" class="white-btn" data-toggle="modal" data-target="#all-reviews">
-				<%= t(".Read_all_reviews") %>（<%= @ev_nums %>）
-			</button>
-		</p>
+<% if @events_3.present? %>
+	<hr>
+	<div class="container-fluid cl-show cl-show-2 white-back">
+		<div class="col-12 col-lg-8 offset-lg-2">
+			<h1>Reviews</h1>
+			<% @events_3.each do |ev| %>
+				<%= render partial: 'clients/reviews', locals: {ev: ev} %>
+			<% end %>
+			<!-- 全てのレビュー -->
+			<p>
+				<button type="button" class="white-btn" data-toggle="modal" data-target="#all-reviews">
+					<%= t(".Read_all_reviews") %>（<%= @ev_nums %>）
+				</button>
+			</p>
 
-		<!-- Modal -->
-		<div class="modal fade" id="all-reviews" tabindex="-1" role="dialog" aria-labelledby="all-reviewsTitle" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="all-reviewsTitle"><%= t(".all_reviews", name: @cl_here.user.name) %>（<%= @ev_nums %>）</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<% @events.each do |ev| %>
-							<%= render partial: 'clients/reviews', locals: {ev: ev} %>
-						<% end %>
+			<!-- Modal -->
+			<div class="modal fade" id="all-reviews" tabindex="-1" role="dialog" aria-labelledby="all-reviewsTitle" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="all-reviewsTitle"><%= t(".all_reviews", name: @cl_here.user.name) %>（<%= @ev_nums %>）</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<% @events.each do |ev| %>
+								<%= render partial: 'clients/reviews', locals: {ev: ev} %>
+							<% end %>
+						</div>
 					</div>
 				</div>
 			</div>
+
+			<script>
+			$(function() {
+			    var count = 80;
+			 $('.text_overflow').each(function() {
+			     var thisText = $(this).text();
+			      var textLength = thisText.length;
+			       if (textLength > count) {
+			            var showText = thisText.substring(0, count);
+			            var hideText = thisText.substring(count, textLength);
+			           var insertText = showText;
+			          insertText += '<span class="hide">' + hideText + '</span>';
+			           insertText += '<span class="omit">…</span>';
+			            insertText += '<a href="" class="more">&emsp;more&emsp;</a>';
+			            $(this).html(insertText);
+			       };
+			  });
+			 $('.text_overflow .hide').hide();
+			 $('.text_overflow .more').click(function() {
+			      $(this).hide()
+			          .prev('.omit').hide()
+			         .prev('.hide').fadeIn();
+			      return false;
+			   });
+			});
+			</script>
 		</div>
-
-		<script>
-		$(function() {
-		    var count = 80;
-		 $('.text_overflow').each(function() {
-		     var thisText = $(this).text();
-		      var textLength = thisText.length;
-		       if (textLength > count) {
-		            var showText = thisText.substring(0, count);
-		            var hideText = thisText.substring(count, textLength);
-		           var insertText = showText;
-		          insertText += '<span class="hide">' + hideText + '</span>';
-		           insertText += '<span class="omit">…</span>';
-		            insertText += '<a href="" class="more">&emsp;more&emsp;</a>';
-		            $(this).html(insertText);
-		       };
-		  });
-		 $('.text_overflow .hide').hide();
-		 $('.text_overflow .more').click(function() {
-		      $(this).hide()
-		          .prev('.omit').hide()
-		         .prev('.hide').fadeIn();
-		      return false;
-		   });
-		});
-		</script>
 	</div>
-</div>
-
+<% end %>
 
 
 <!-- # Schedule # -->

@@ -60,6 +60,9 @@
       <%= link_to edit_user_registration_path do %>
         <p>&emsp;<%= t(".settings") %></p>
       <% end %>
+      <%= link_to account_setting_users_path do %>
+        <p>&emsp;<%= t(".account_settings") %></p>
+      <% end %>
     </div>
     <hr>
 
@@ -155,6 +158,9 @@
     <% end %>
     <%= link_to edit_user_registration_path do %>
       <p>&emsp;<%= t(".settings") %></p>
+    <% end %>
+    <%= link_to account_setting_users_path do %>
+      <p>&emsp;<%= t(".account_settings") %></p>
     <% end %>
   </div>
   <hr>

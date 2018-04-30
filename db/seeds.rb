@@ -67,10 +67,17 @@ Prefecture.create([
 	{ area: '九州', ja: '沖縄県', en: 'Okinawa', zh: '冲绳县', tw: '沖繩縣'}
 	])
 
-
 Category.create([
-	{ ja: 'ヒト写真(商用利用)', ja_s: 'ヒト(商)', en: 'Pictures of people(for business)', en_s: 'Models', zh: '人像摄影(商用)', zh_s: '人(商)', tw: '人像攝影(商用)', tw_s: '人(商)'},
-	{ ja: 'モノ写真(商用利用)', ja_s: 'モノ(商)', en: 'Picture of things(for business)', en_s: 'Items', zh: '物品摄影(商用)', zh_s: '物(商)', tw: '物品攝影(商用)', tw_s: '物(商)'},
-	{ ja: 'イベント写真(結婚式、七五三、旅行)', ja_s: 'イベント', en: 'Event photos(wedding, traveling..etc..)', en_s: 'Events', zh: '纪念日摄影(婚礼，旅行等)', zh_s: '纪念日', tw: '紀念日攝影(婚禮，旅行等)', tw_s: '紀念日'},
-	{ ja: '日常写真(家族、恋人、友達)', ja_s: '日常', en: 'Daily_photos（friends, family, couples）', en_s: 'Daily', zh: '私人写真(家人，情侣，闺蜜)', zh_s: '私人', tw: '私人寫真(家人，情侶，朋友)', tw_s: '私人'}
-	])
+	{ ja_group: 'あなた', ja: 'プロフィール', en_group: 'Yourself', en: 'Profile', zh_group: '你', zh: '头像照片', tw_group: '你／妳', tw: '個人照片'},
+	{ ja_group: 'あなた', ja: '証明写真', en_group: 'Yourself', en: 'ID photo', zh_group: '你', zh: '证件照', tw_group: '你／妳', tw: '證件照'},
+	{ ja_group: '思い出', ja: 'ウェディング', en_group: 'Memory', en: 'Wedding', zh_group: '重要时刻', zh: '婚纱照', tw_group: '重要時刻', tw: '婚紗照'},
+	{ ja_group: '思い出', ja: '旅行', en_group: 'Memory', en: 'Traveling', zh_group: '重要时刻', zh: '旅行', tw_group: '重要時刻', tw: '旅遊'},
+	{ ja_group: '思い出', ja: '日常', en_group: 'Memory', en: 'Dairy life', zh_group: '重要时刻', zh: '日常', tw_group: '重要時刻', tw: '日常'},
+	{ ja_group: '子供', ja: '七五三', en_group: 'Child', en: 'seven-five-three', zh_group: '儿童', zh: '七五三', tw_group: '兒童', tw: '七五三'},
+	{ ja_group: '子供', ja: '成人式', en_group: 'Child', en: 'Coming of age', zh_group: '儿童', zh: '成人式', tw_group: '兒童', tw: '成人式'},
+	{ ja_group: '子供', ja: 'マタニティ', en_group: 'Child', en: 'Maternity', zh_group: '儿童', zh: '孕妇照', tw_group: '兒童', tw: '孕婦寫真'},
+	{ ja_group: '子供', ja: 'ニューボーン', en_group: 'Child', en: 'New born', zh_group: '儿童', zh: '新生儿照', tw_group: '兒童', tw: '新生兒寫真'},
+	{ ja_group: 'その他', ja: '商品', en_group: 'The others', en: 'Commodities', zh_group: '其他', zh: '商品', tw_group: '其他', tw: '商品'},
+	{ ja_group: 'その他', ja: 'イベント', en_group: 'The others', en: 'Event', zh_group: '其他', zh: '活动', tw_group: '其他', tw: '活動'},
+	{ ja_group: 'その他', ja: 'ペット', en_group: 'The others', en: 'Pet', zh_group: '其他', zh: '宠物', tw_group: '其他', tw: '寵物'}
+])

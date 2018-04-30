@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(version: 20180415114259) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "ja_group", null: false
     t.string "ja", null: false
-    t.string "ja_s", null: false
+    t.string "en_group", null: false
     t.string "en", null: false
-    t.string "en_s", null: false
+    t.string "zh_group", null: false
     t.string "zh", null: false
-    t.string "zh_s", null: false
+    t.string "tw_group", null: false
     t.string "tw", null: false
-    t.string "tw_s", null: false
   end
 
   create_table "client_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

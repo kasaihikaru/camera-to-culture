@@ -5,7 +5,7 @@ class ClientContact < ApplicationRecord
 		length: { in: 10..15 }
 	validates :address, presence: true
 
-	scope :active, -> { where(is_deleted: false) }
+	scope :active, -> { where(deleted_at: nil) }
 
 	belongs_to :client
 end

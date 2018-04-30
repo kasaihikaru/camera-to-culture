@@ -11,7 +11,7 @@ class EventPhotosController < ApplicationController
 		for id in params[:delete_ev_photo]
 			ev_ph = EventPhoto.find(id)
 			if ev_ph.event_id == params[:event_id].to_i
-				ev_ph.update(is_deleted: true)
+				ev_ph.update(deleted_at: Time.now)
 			end
 		end
 

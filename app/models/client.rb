@@ -1,6 +1,6 @@
 class Client < ApplicationRecord
 
-	scope :active, -> { where(is_deleted: false) }
+	scope :active, -> { where(deleted_at: nil) }
 	scope :consent, -> { where(consent: true) }
 	scope :registerd, -> { where.not(introduction: nil).where.not(image: nil) }
 
@@ -35,6 +35,10 @@ class Client < ApplicationRecord
     joins(:prefectures).merge(Prefecture.id_in prefecture_ids)  if prefecture_ids.present?
   }
 
+
+  def soft_delete
+    update(deleted_at: Time.now)
+  end
 
 
 #--------photo search-------------

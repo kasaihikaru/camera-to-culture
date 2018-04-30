@@ -17,6 +17,18 @@ class User < ApplicationRecord
 	mount_uploader :image, ImageUploader
 
 
+  def soft_delete
+    update(deleted_at: Time.now)
+  end
+
+  #論理消去されたユーザーをログイン不可に
+  def active_for_authentication?
+    !deleted_at
+  end
+  def inactive_message
+    !deleted_at ? super : :deleted_account
+  end
+
 	# userがいなければfacebookアカウントでuserを作成するメソッド
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first

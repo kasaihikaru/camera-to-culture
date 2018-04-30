@@ -12,7 +12,7 @@
       <div class="user-show-alert">
         <div class="fusen">
           <ul>
-            <% if @cl.consent == true && @cl.is_deleted == false && @cl_schedules.blank? %>
+            <% if @cl.consent == true && @cl.deleted_at == nil && @cl_schedules.blank? %>
               <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
                 <li>
                   <%= t(".Update_available_dates_for_your_customer") %>
@@ -131,7 +131,7 @@
             <% end %>
           </div>
           <!-- カメラマン情報 -->
-          <% if @cl.consent == true && @cl.is_deleted == false %>
+          <% if @cl.consent == true && @cl.deleted_at == nil %>
             <h2>
               <%= t(".Available_dates") %>
               <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>

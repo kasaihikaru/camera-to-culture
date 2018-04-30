@@ -25,7 +25,7 @@ before_action :user_check, only: [:new, :create, :r_destroy]
 		for id in params[:delete_portfolio]
 			cl_pf = ClientPortfolio.find(id)
 			if cl_pf.client_id == params[:client_id].to_i
-				cl_pf.update(is_deleted: true)
+				cl_pf.update(deleted_at: Time.now)
 			end
 		end
 

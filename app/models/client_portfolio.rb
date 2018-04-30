@@ -1,6 +1,6 @@
 class ClientPortfolio < ApplicationRecord
 
-	scope :active, -> { where(is_deleted: false) }
+	scope :active, -> { where(deleted_at: nil) }
 
 	belongs_to :client
 

@@ -17,6 +17,13 @@ en:
       upload_cl_portpolios: Upload prtfolios
       sign-out: Sign out
 
+    account_setting:
+      Account_settings: Account settings
+      cancel_account_explanation1: You will retain the rights and obligations for all activity on the Airbnb platform prior to deactivation.
+      cancel_account_explanation2: Your profile and any listings will be hidden.
+      cancel_account_explanation3: You can re-activate your account by contacting us.
+      Cancel_account: Cancel account
+
 # 以下、devise用
     confirmations:
       new:

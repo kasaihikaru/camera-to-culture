@@ -89,8 +89,8 @@ class ClientsController < ApplicationController
 			#元の内容から変更があれば、変更する
 			unless pre_cl_prim_price[:price_per_hour] == cl_prim_price_params[:price_per_hour].to_i && pre_cl_prim_price[:minimum_hours] == cl_prim_price_params[:minimum_hours].to_i
 
-				#元のレコードのis_deleted==trueに
-				pre_cl_prim_price.update(is_deleted: true)
+				#元のレコードのdeleted_at: Time.nowに
+				pre_cl_prim_price.update(deleted_at: Time.now)
 
 				#新しくレコードとして追加
 				ClientPrimaryPrice.create(client_id: client_id, price_per_hour: cl_prim_price_params[:price_per_hour].to_i, minimum_hours: cl_prim_price_params[:minimum_hours].to_i)
@@ -102,7 +102,7 @@ class ClientsController < ApplicationController
 		if inact_cl_option_price_params.present?
 			for id in inact_cl_option_price_params
 				inact_opt_price = ClientOptionPrice.find(id)
-				inact_opt_price.update(is_deleted: true)
+				inact_opt_price.update(deleted_at: Time.now)
 			end
 		end
 
@@ -280,7 +280,7 @@ private
 
 	def active_concent_check
 		cl = Client.find(params[:id])
-		unless cl.consent == true && cl.is_deleted == false
+		unless cl.consent == true && cl.deleted_at == nil
 			flash[:alert] = "指定したページはありません"
 			redirect_to root_path
 		end

@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 			collection do
 				get 'profile'
 				put 'edit_profile'
+				get 'account_setting'
+				put 'inactive_account'
 			end
 			resources :messages, only: [:index, :new, :create, :show] do
 				collection do

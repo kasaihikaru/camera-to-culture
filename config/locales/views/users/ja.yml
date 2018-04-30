@@ -42,6 +42,7 @@ ja:
       edit_profile: プロフィールを編集
       cs_introduction: 自己紹介を編集
       settings: 設定
+      account_settings: 退会する
       register_as_cameraman: カメラマンになる
       change_phone_number_adress: 電話番号、住所の変更
       cameraman_menu: カメラマン設定
@@ -59,6 +60,14 @@ ja:
       image: プロフィール画像
       introduction: 自己紹介
       update_btn: 更新
+
+    account_setting:
+      Account_settings: アカウント設定
+      cancel_account_explanation1: 退会後も、Camera-to-Cultureで行った全活動の責任は引き続きご自身が負います。
+      cancel_account_explanation2: あなたのプロフィールが表示されなくなります。
+      cancel_account_explanation3: ご連絡いただければアカウントは再度有効にすることができます。
+      Dont_cancel_account: 退会しない
+      Cancel_account: 退会する
 
 # 以下、devise用
     confirmations:
