@@ -1,0 +1,34 @@
+<div class="review-photo container">
+	<div class="row">
+		<% if ev_rev.cs_image_1? %>
+			<a href="<%= ev_rev.cs_image_1.url if ev_rev.cs_image_1? %>" data-lightbox="image-1">
+				<div class="rview-img" style="background-image: url(<%= ev_rev.cs_image_1.url %>);"></div>
+			</a>
+		<% end %>
+		<% if ev_rev.cs_image_2? %>
+			<a href="<%= ev_rev.cs_image_2.url if ev_rev.cs_image_2? %>" data-lightbox="image-2">
+				<div class="rview-img" style="background-image: url(<%= ev_rev.cs_image_2.url %>);"></div>
+			</a>
+		<% end %>
+		<% if ev_rev.cs_image_3? %>
+			<a href="<%= ev_rev.cs_image_3.url if ev_rev.cs_image_3? %>" data-lightbox="image-3">
+				<div class="rview-img" style="background-image: url(<%= ev_rev.cs_image_3.url %>);"></div>
+			</a>
+		<% end %>
+		<% if ev_rev.cs_image_4? %>
+			<a href="<%= ev_rev.cs_image_4.url if ev_rev.cs_image_4? %>" data-lightbox="image-4">
+				<div class="rview-img" style="background-image: url(<%= ev_rev.cs_image_4.url %>);"></div>
+			</a>
+		<% end %>
+		<% if ev_rev.cs_image_5? %>
+			<a href="<%= ev_rev.cs_image_5.url if ev_rev.cs_image_5? %>" data-lightbox="image-5">
+				<div class="rview-img" style="background-image: url(<%= ev_rev.cs_image_5.url %>);"></div>
+			</a>
+		<% end %>
+		<% if ev_rev.cs_image_6? %>
+			<a href="<%= ev_rev.cs_image_6.url if ev_rev.cs_image_6? %>" data-lightbox="image-6">
+				<div class="rview-img" style="background-image: url(<%= ev_rev.cs_image_6.url %>);"></div>
+			</a>
+		<% end %>
+	</div>
+</div><!-- endof review-photo -->

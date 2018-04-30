@@ -73,6 +73,16 @@
 						<div class="ev-square white-back">
 							<%= f.text_area :cs_review, rows: "8", maxlength: "2000", placeholder:  t(".cs_review_placeholder", name: @cl_here.user.name), required: true %>
 						</div>
+						<div class="left-align indent">
+							<strong><%= t(".Attach_images") %></strong><br>
+							<%= f.file_field :cs_image_1 %><br>
+							<%= f.file_field :cs_image_2 %><br>
+							<%= f.file_field :cs_image_3 %><br>
+							<%= f.file_field :cs_image_4 %><br>
+							<%= f.file_field :cs_image_5 %><br>
+							<%= f.file_field :cs_image_6 %><br>
+							<br>
+						</div>
 						<%= f.submit t(".Post_reviews"), class: "prim-btn review-post-btn" %>
 					<% end %>
 				<% end %><!-- endOf 未cs_review -->
@@ -423,6 +433,41 @@
 								<pre><%= @ev_rev.cl_comment %></pre>
 							<% end %><!-- endOf cl_commentあり -->
 						</div>
+						<!-- レビュー写真 -->
+						<div class="review-photo container">
+							<div class="row">
+								<% if @ev_rev.cs_image_1? %>
+									<a href="<%= @ev_rev.cs_image_1.url if @ev_rev.cs_image_1? %>" data-lightbox="image-1">
+										<div class="rview-img" style="background-image: url(<%= @ev_rev.cs_image_1.url %>);"></div>
+									</a>
+								<% end %>
+								<% if @ev_rev.cs_image_2? %>
+									<a href="<%= @ev_rev.cs_image_2.url if @ev_rev.cs_image_2? %>" data-lightbox="image-2">
+										<div class="rview-img" style="background-image: url(<%= @ev_rev.cs_image_2.url %>);"></div>
+									</a>
+								<% end %>
+								<% if @ev_rev.cs_image_3? %>
+									<a href="<%= @ev_rev.cs_image_3.url if @ev_rev.cs_image_3? %>" data-lightbox="image-3">
+										<div class="rview-img" style="background-image: url(<%= @ev_rev.cs_image_3.url %>);"></div>
+									</a>
+								<% end %>
+								<% if @ev_rev.cs_image_4? %>
+									<a href="<%= @ev_rev.cs_image_4.url if @ev_rev.cs_image_4? %>" data-lightbox="image-4">
+										<div class="rview-img" style="background-image: url(<%= @ev_rev.cs_image_4.url %>);"></div>
+									</a>
+								<% end %>
+								<% if @ev_rev.cs_image_5? %>
+									<a href="<%= @ev_rev.cs_image_5.url if @ev_rev.cs_image_5? %>" data-lightbox="image-5">
+										<div class="rview-img" style="background-image: url(<%= @ev_rev.cs_image_5.url %>);"></div>
+									</a>
+								<% end %>
+								<% if @ev_rev.cs_image_6? %>
+									<a href="<%= @ev_rev.cs_image_6.url if @ev_rev.cs_image_6? %>" data-lightbox="image-6">
+										<div class="rview-img" style="background-image: url(<%= @ev_rev.cs_image_6.url %>);"></div>
+									</a>
+								<% end %>
+							</div>
+						</div><!-- endof review-photo -->
 					</div>
 				<% end %><!-- endOf cs_reviewあり -->
 			<% end %><!-- endOf cl 過去の場合 -->
@@ -451,6 +496,13 @@
 								<pre><%= @ev_rev.cl_comment %></pre>
 							<% end %><!-- endOf cl_commentあり -->
 					</div>
+					<div class="pf col-4 col-md-2 maring-b-20">
+						<a href="<%= @ev_rev.cs_image_1.url if @ev_rev.cs_image_1? %>" data-lightbox="image-1">
+							<div class="pf-img" style="background-image: url(<%= @ev_rev.cs_image_1.url %>);"></div>
+						</a>
+					</div>
+					<!-- レビュー写真 -->
+					<%= render :partial => 'events/event_review_photo', :locals=>{ev_rev: @ev_rev} %>
 				</div>
 				<!-- cl_reviewあり -->
 				<% if @ev_rev.cl_review.present? %>

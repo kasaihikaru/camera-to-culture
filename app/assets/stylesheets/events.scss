@@ -226,6 +226,16 @@ $white-col : #FFFFFF;
 		margin: 10px 20px;
 	}
 }
+.review-photo{
+	margin-bottom: 40px;
+	.rview-img{
+		width:100px;
+		height:100px;
+		margin: auto;
+		background-position: center center;
+		background-size: cover;
+	}
+}
 
 
 

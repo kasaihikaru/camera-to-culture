@@ -89,6 +89,7 @@ ja:
       Post_reviews: 投稿
       Reply_to_cs: 'レビューへの返信'
       Reply_from_cl: '%{name}さんからの返信'
+      Attach_images: 撮影した写真を思い出に公開しましょう！
     cl_accept:
       Accept: リクエストを承認する
       cl_accept_comment: リクエストありがとうございます。撮影よろしくお願いします！

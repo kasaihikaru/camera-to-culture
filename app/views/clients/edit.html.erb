@@ -6,11 +6,13 @@
 
     <div class="col-12 col-md-8 mypage-content">
       <h1><%= t(".cl_form")%></h1>
-      <div class="indent">
-        <%= link_to client_path(@cl), class: "subprim-col" do %>
-          <%= t(".Jump_to_your_page")%>
-        <% end %>
-      </div>
+      <% if @cl.introduction != nil && @cl.image != nil %>
+        <div class="indent">
+          <%= link_to client_path(@cl), class: "subprim-col" do %>
+            <%= t(".Jump_to_your_page")%>
+          <% end %>
+        </div>
+      <% end %>
       <hr>
 
       <%= form_for([current_user, @cl]) do |f| %>

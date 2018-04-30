@@ -15,7 +15,7 @@
 						<div class="cameraman-lists">
 							<div class="cameraman-list-upper">
 								<div id="carousel-pf-<%= cl.id %>" class="carousel slide" data-ride="carousel" data-interval="0">
-									<%= link_to client_path(cl) do %>
+									<%= link_to client_path(cl), target: "_blank", rel: "noopener noreferrer" do %>
 										<div class="carousel-inner">
 											<div class="carousel-item active">
 												<%= image_tag cl.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if cl.image? %>
@@ -37,7 +37,7 @@
 									</a>
 								</div>
 							</div>
-							<%= link_to client_path(cl) do %>
+							<%= link_to client_path(cl), target: "_blank", rel: "noopener noreferrer" do %>
 								<div class="cameraman-list-lower">
 									<div class="row">
 										<div class="cameraman-list-lower-left col-8">

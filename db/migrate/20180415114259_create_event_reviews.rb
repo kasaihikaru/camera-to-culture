@@ -11,6 +11,7 @@ class CreateEventReviews < ActiveRecord::Migration[5.1]
       t.string  :cs_image_3
       t.string  :cs_image_4
       t.string  :cs_image_5
+      t.string  :cs_image_6
       t.timestamps
     end
   end

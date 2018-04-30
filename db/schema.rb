@@ -173,6 +173,7 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.string "cs_image_3"
     t.string "cs_image_4"
     t.string "cs_image_5"
+    t.string "cs_image_6"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_event_reviews_on_event_id"
