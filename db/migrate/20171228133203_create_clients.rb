@@ -6,6 +6,7 @@ class CreateClients < ActiveRecord::Migration[5.1]
       t.text    :camera
       t.string  :image
       t.boolean :consent, default:false, null:false
+      t.datetime :authenticated_at
       t.datetime :deleted_at
       t.boolean :confirmed, default:false, null:false
       t.timestamps

@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20180415114259) do
     t.text "camera"
     t.string "image"
     t.boolean "consent", default: false, null: false
+    t.datetime "authenticated_at"
     t.datetime "deleted_at"
     t.boolean "confirmed", default: false, null: false
     t.datetime "created_at", null: false
