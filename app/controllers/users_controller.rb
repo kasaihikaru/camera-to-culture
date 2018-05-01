@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 		end
 
 		#client_info
-		@cl = @user.clients.active.first
+		@cl = @user.client
 		@cl_categories = @cl.client_categories.includes(:category)
 		@cl_prim_price = @cl.client_primary_prices.active.first
 		@cl_opt_prices = @cl.client_option_prices.active
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 		@cl_schedules = @cl.client_schedules.future.available
 
 		#customer_info
-		@cs = @user.customers.active.first
+		@cs = @user.customer
 
 		#event
 		cl_evs = @cl.events.includes(:event_review, customer: :user)
@@ -82,8 +82,8 @@ class UsersController < ApplicationController
 	def profile
 		# menu用
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 		# content用
 		user_languages = current_user.user_languages
@@ -123,7 +123,7 @@ class UsersController < ApplicationController
 		end
 
 		# 自己紹介の更新
-		current_user.customers.active.first.update(introduction: cs_intro_params)
+		current_user.customer.update(introduction: cs_intro_params)
 
 		flash[:alert] = "更新しました"
 		redirect_to profile_users_path
@@ -133,14 +133,14 @@ class UsersController < ApplicationController
 	def account_setting
 		# menu用
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 	end
 
 	def inactive_account
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 		@user.soft_delete
 		@cl.soft_delete

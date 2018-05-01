@@ -5,10 +5,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     #CL,CS発番
-    unless @user.clients.active.present?
+    unless @user.client.present?
       Client.create(user_id: @user.id)
     end
-    unless @user.customers.active.present?
+    unless @user.customer.present?
       Customer.create(user_id: @user.id)
     end
 

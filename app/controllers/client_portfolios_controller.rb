@@ -4,16 +4,16 @@ before_action :user_check, only: [:new, :create, :r_destroy]
 
 	def new
 		@user = current_user
-		@cl = @user.clients.active.first
+		@cl = @user.client
 		@num = @cl.client_portfolios.active.count
-		@cs = @user.customers.active.first
+		@cs = @user.customer
 		@locale = params[:locale]
 		@portfolios = @cl.client_portfolios.active.limit(19)
 		@portfolio_nums = @cl.client_portfolios.active.count
 	end
 
 	def create
-		cl = current_user.clients.active.first
+		cl = current_user.client
 		num = cl.client_portfolios.active.count
 		if num < 20
 			ClientPortfolio.create(create_params)
@@ -31,7 +31,7 @@ before_action :user_check, only: [:new, :create, :r_destroy]
 
 
 		@user = current_user
-		@cl = @user.clients.active.first
+		@cl = @user.client
 		redirect_to new_client_client_portfolio_path(@cl)
 	end
 

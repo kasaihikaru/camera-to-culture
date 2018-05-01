@@ -17,6 +17,12 @@
 
       <%= form_for([current_user, @cl]) do |f| %>
 
+        <!-- 自己紹介 -->
+        <div class="field">
+          <span class="bold"><%= t(".introduction")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
+          <textarea name="cs_introduction" class="input-textarea" maxlength="120"><%= @cs.introduction %></textarea>
+        </div>
+
         <!-- メイン写真 -->
         <div class="field user-image">
           <%= f.label :image, t(".main_image"), class: "bold" %><span class="prim-col">（<%= t(".required")%>）</span><br>
@@ -938,7 +944,8 @@
 
         <!-- メッセージ -->
         <div class="field">
-          <%= f.label :introduction, t(".introduction"), class: "bold" %><span class="prim-col">（<%= t(".required")%>）</span><br>
+          <%= f.label :introduction, t(".message"), class: "bold" %><span class="prim-col">（<%= t(".required")%>）</span><br>
+          <span class="field-explanation"><%= t(".importance_of_message_explanation")%></span><br>
           <%= f.text_area :introduction, class: "input-textarea" %>
         </div>
 

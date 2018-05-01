@@ -6,8 +6,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     if user_signed_in?
       @user = current_user
-      @cl = @user.clients.active.first
-      @cs = @user.customers.active.first
+      @cl = @user.client
+      @cs = @user.customer
     end
 
     # super
@@ -54,8 +54,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     # menu用
     @user = current_user
-    @cl = @user.clients.active.first
-    @cs = @user.customers.active.first
+    @cl = @user.client
+    @cs = @user.customer
 
     # content用
     user_languages = current_user.user_languages

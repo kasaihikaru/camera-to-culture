@@ -54,7 +54,7 @@ private
 
 	#---------- user_check ----------#
 	def user_check
-		unless user_signed_in? && Event.find(params[:event_id]).client == current_user.clients.active.first
+		unless user_signed_in? && Event.find(params[:event_id]).client == current_user.client
 			flash[:alert] = "ログインしてください"
 			redirect_to root_path
 		end

@@ -1,6 +1,7 @@
 class Customer < ApplicationRecord
 
 	scope :active, -> { where(deleted_at: nil) }
+	scope :intro_present, -> { where.not(introduction: nil) }
 
 	belongs_to :user
 

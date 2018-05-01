@@ -117,7 +117,7 @@ private
 	def client_check
 		event = Event.find(params[:event_id])
 		user = current_user
-		cl = user.clients.active.first
+		cl = user.client
 		unless user_signed_in? &&( event.client_id == cl.id )
 			flash[:alert] = "ログインしてください"
 			redirect_to root_path
@@ -127,7 +127,7 @@ private
 	def customer_check
 		event = Event.find(params[:event_id])
 		user = current_user
-		cs = user.customers.active.first
+		cs = user.customer
 		unless user_signed_in? &&( event.customer_id == cs.id)
 			flash[:alert] = "ログインしてください"
 			redirect_to root_path

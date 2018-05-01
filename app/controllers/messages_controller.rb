@@ -4,8 +4,8 @@ class MessagesController < ApplicationController
 
 	def new
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 		@msg = Message.new
 		@reciever = User.find(user_params)
@@ -27,8 +27,8 @@ class MessagesController < ApplicationController
 
 	def index
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 		#-------- left-menu --------#
 		@msges = Message.user_sends(current_user.id).or(Message.user_recirves(current_user.id)).order_new
@@ -45,8 +45,8 @@ class MessagesController < ApplicationController
 
 	def show
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 		#-------- left-menu --------#
 		@msges = Message.user_sends(current_user.id).or(Message.user_recirves(current_user.id)).order_new
@@ -64,8 +64,8 @@ class MessagesController < ApplicationController
 		#-------- right-content --------#
 		# user
 		@comunitating_user = User.find(id_params)
-		@cs_here = @comunitating_user.customers.active.first
-		@cl_here = @comunitating_user.clients.active.first
+		@cs_here = @comunitating_user.customer
+		@cl_here = @comunitating_user.client
 		@categories = @cl_here.client_categories.includes(:category)
 		@locations = @cl_here.client_locations.includes(:prefecture)
 		@prim_price = @cl_here.client_primary_prices.active.first

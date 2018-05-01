@@ -5,20 +5,20 @@ class ClientsController < ApplicationController
 	def index
 		if user_signed_in?
 			@user = current_user
-			@cl = @user.clients.active.first
-			@cs = @user.customers.active.first
+			@cl = @user.client
+			@cs = @user.customer
 		end
 
 		# 検索結果(.uniqするとarrayになってしまうので、kaminariは別に切り出す必要がある。)
-		array_cls = Client.active.consent.registerd.includes({user: [user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
+		array_cls = Client.active.consent.registerd.cs_intro_present.includes({user: [user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
 		@cls = Kaminari.paginate_array(array_cls).page(params[:page]).per(12)
 	end
 
 	def show
 		if user_signed_in?
 			@user = current_user
-			@cl = @user.clients.active.first
-			@cs = @user.customers.active.first
+			@cl = @user.client
+			@cs = @user.customer
 		end
 
 		@cl_here = Client.find(id_params)
@@ -55,8 +55,8 @@ class ClientsController < ApplicationController
 
 	def edit
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 		@cl_prim_price = @cl.client_primary_prices.active.first
 		@cl_opt_prices = @cl.client_option_prices.active
 		@cl_locations = @cl.client_locations
@@ -72,8 +72,12 @@ class ClientsController < ApplicationController
 	end
 
 	def update
+		#-----カスタマーupdate-----#
+		cs = current_user.customer
+		cs.update(introduction: cs_params)
+
 		#-----クライアントupdate-----#
-		cl = current_user.clients.active.first
+		cl = current_user.client
 		cl.update(cl_create_params)
 		client_id = cl.id
 
@@ -228,6 +232,10 @@ private
 
 	def cl_create_params
 		params.require(:client).permit(:camera, :introduction, :image).merge(user_id: current_user.id)
+	end
+
+	def cs_params
+		params[:cs_introduction]
 	end
 
 	def cl_prim_price_params

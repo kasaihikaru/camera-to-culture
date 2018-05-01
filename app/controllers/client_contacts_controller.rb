@@ -5,16 +5,16 @@ before_action :user_check, only: [:first_new, :new]
 #------------- 最初のカメラマン登録 ----------------#
 	def first_new
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 		@contact = ClientContact.new
 		@pre_cl_contact = @cl.client_contacts.active.first
 	end
 
 	def first_create
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 		# 前のレコードを取ってくる
 		@pre_cl_contact = @cl.client_contacts.active.first
@@ -47,16 +47,16 @@ before_action :user_check, only: [:first_new, :new]
 #------------- 住所、電話番号変更 ----------------#
 	def new
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 		@contact = ClientContact.new
 		@pre_cl_contact = @cl.client_contacts.active.first
 	end
 
 	def create
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 		# 前のレコードを取ってくる
 		@pre_cl_contact = @cl.client_contacts.active.first

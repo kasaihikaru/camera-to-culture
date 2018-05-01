@@ -4,8 +4,8 @@ before_action :user_check, only: [:index, :create, :r_destroy]
 
 	def index
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 
 		######### カレンダー ###########

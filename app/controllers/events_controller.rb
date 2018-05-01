@@ -7,37 +7,37 @@ class EventsController < ApplicationController
 
 	def cs_future
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 		@events = Event.as_cs(@cs.id).future.request.includes(:prefecture, client: :user).order(start_time: :DESC)
 	end
 
 	def cs_past
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 		@events = Event.as_cs(@cs.id).past.request.includes(:prefecture, :event_review, client: :user).order(start_time: :DESC)
 	end
 
 	def cl_future
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 		@events = Event.as_cl(@cl.id).future.request.includes(:prefecture, customer: :user).order(start_time: :DESC)
 	end
 
 	def cl_past
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 		@events = Event.as_cl(@cl.id).past.request.includes(:prefecture, :event_review, customer: :user).order(start_time: :DESC)
 	end
 
 
 	def new
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 		@cl_here = Client.find(id_params)
 		@categories = @cl_here.client_categories.includes(:category)
@@ -74,8 +74,8 @@ class EventsController < ApplicationController
 
 	def edit
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 
 		@event = Event.find(id_params)
 		@ev_date = @event.start_time.to_date
@@ -197,8 +197,8 @@ class EventsController < ApplicationController
 
 	def show
 		@user = current_user
-		@cl = @user.clients.active.first
-		@cs = @user.customers.active.first
+		@cl = @user.client
+		@cs = @user.customer
 		@event = Event.find(id_params)
 		@cl_here = Client.find(@event.client_id)
 		@cs_here = Customer.find(@event.customer_id)
@@ -452,8 +452,8 @@ private
 	def event_show_user_check
 		event = Event.find(params[:id])
 		@user = current_user
-		cl = @user.clients.active.first
-		cs = @user.customers.active.first
+		cl = @user.client
+		cs = @user.customer
 		unless user_signed_in? &&(
 				event.client_id == cl.id || event.customer_id == cs.id
 			)
@@ -465,7 +465,7 @@ private
 	def event_edit_user_check
 		event = Event.find(params[:id])
 		cl_here = Client.find(params[:client_id])
-		cl = current_user.clients.active.first
+		cl = current_user.client
 		unless user_signed_in? &&	event.client_id == cl.id && cl_here == cl
 			flash[:alert] = "ログインしてください"
 			redirect_to root_path

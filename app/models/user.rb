@@ -12,6 +12,10 @@ class User < ApplicationRecord
 	has_many :user_languages
 	accepts_nested_attributes_for :user_languages
 
+  scope :cs_intro_present, ->  {
+    joins(:customer).merge(Customer.intro_present)
+  }
+
 
 	# ファイルアップロード処理
 	mount_uploader :image, ImageUploader

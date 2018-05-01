@@ -47,7 +47,7 @@
 											<% cl.client_primary_prices.active.each do |prim_price| %>
 												<h2><%= prim_price.price_per_hour %>円/時間</h2>
 											<% end %>
-											<div class="cameraman-list-intro"><%= cl.user.customers.active.first.introduction %></div>
+											<div class="cameraman-list-intro"><%= cl.user.customer.introduction %></div>
 										</div>
 										<div class="cameraman-list-lower-right col-4">
 											<!-- 言語 -->
