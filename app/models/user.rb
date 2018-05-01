@@ -7,8 +7,8 @@ class User < ApplicationRecord
   #メール認証外す
   # devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-	has_many :customers
-	has_many :clients
+	has_one :customer
+	has_one :client
 	has_many :user_languages
 	accepts_nested_attributes_for :user_languages
 

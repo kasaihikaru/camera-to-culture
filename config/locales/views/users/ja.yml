@@ -58,7 +58,7 @@ ja:
       english: 英語
       chinese: 中国語
       image: プロフィール画像
-      introduction: 自己紹介
+      introduction: 自己紹介（120文字以内）
       update_btn: 更新
 
     account_setting:

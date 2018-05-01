@@ -11,6 +11,8 @@
 		<div class="left-align rating-<%= ev.id %>"></div>
 		<div class="text_overflow"><%= ev.event_review.cs_review %></div>
 	</div>
+	<!-- レビュー写真 -->
+	<%= render :partial => 'events/event_review_photo', :locals=>{ev_rev: ev.event_review} %>
 </div>
 
 <script>

@@ -6,7 +6,7 @@
 				<% if @cl_here.user.image? %>
 					<%= image_tag @cl_here.user.image.url(:thumb), alt: "icon" %>
 				<% else %>
-					<%= render :partial => 'svgs/baby' %>
+					<%= render :partial => 'svgs/baby_80' %>
 				<% end %>
 			</div>
 			<div class="cl-show-1-middle col-9 col-sm-9 col-md-10">
@@ -108,11 +108,13 @@
 				<%= render partial: 'clients/reviews', locals: {ev: ev} %>
 			<% end %>
 			<!-- 全てのレビュー -->
-			<p>
-				<button type="button" class="white-btn" data-toggle="modal" data-target="#all-reviews">
-					<%= t(".Read_all_reviews") %>（<%= @ev_nums %>）
-				</button>
-			</p>
+			<% if @ev_nums > 3 %>
+				<p>
+					<button type="button" class="white-btn" data-toggle="modal" data-target="#all-reviews">
+						<%= t(".Read_all_reviews") %>（<%= @ev_nums %>）
+					</button>
+				</p>
+			<%end %>
 
 			<!-- Modal -->
 			<div class="modal fade" id="all-reviews" tabindex="-1" role="dialog" aria-labelledby="all-reviewsTitle" aria-hidden="true">
