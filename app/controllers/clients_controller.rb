@@ -83,7 +83,6 @@ class ClientsController < ApplicationController
 
 		#-----撮影価格登録------#
 		pre_cl_prim_price = cl.client_primary_prices.active.first
-
 		# 有効なレコードがなければ、単純に作成
 		if pre_cl_prim_price.nil?
 			ClientPrimaryPrice.create(client_id: client_id, price_per_hour: cl_prim_price_params[:price_per_hour].to_i, minimum_hours: cl_prim_price_params[:minimum_hours].to_i)

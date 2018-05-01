@@ -216,9 +216,9 @@
                 <label><%= t(".minimum_hours") %><input type="number" pattern="[1-9][0-9]*" name="minimum_hours" min="1" max="24", value=<%= @cl_prim_price.minimum_hours %>></label><%= t(".h")%>
               <% end %>
             <% else %>
-              <label><%= t(".price_per_hour") %>¥<input type="number" pattern="[1-9][0-9]*" name="price_per_hour" min="500" max="1000000" value="3000"></label>
+              <label><%= t(".price_per_hour") %>¥<input type="number" pattern="[1-9][0-9]*" name="price_per_hour" min="500" max="1000000" required></label>
               <br>
-              <label><%= t(".minimum_hours") %><input type="number" pattern="[1-9][0-9]*" name="minimum_hours" min="1" max="24" value="1"></label><%= t(".h")%>
+              <label><%= t(".minimum_hours") %><input type="number" pattern="[1-9][0-9]*" name="minimum_hours" min="1" max="23" value="1"></label><%= t(".h")%>
             <% end %>
           </div>
         </div>
@@ -243,41 +243,77 @@
           <% end %>
         </div>
 
+
+
+        <!-- オプション追加 -->
         <div class="field">
-          <P class="bold"><%= t(".add_opt_price_form")%></P>
+          <P class="bold">
+            <%= t(".add_opt_price_form")%><br><span class="field-explanation"><%= t(".option-price-explanation")%></span>
+          </P>
           <div class="indent">
-            <label><input type="text" name="name_a" maxlength="20" placeholder=<%= t(".option_name")%>></label>
+            <!-- オプションa -->
+            <label><input type="text" name="name_a" maxlength="20" placeholder=<%= t(".option_ex_1")%> class="border-bottom option_name"></label>
             <div class="indent">
-              <input type="checkbox" name="along_with_time_a" value="true"><%= t(".price_per_hour")%>
-              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_a" min="-10000000" max="10000000" placeholder=<%= t(".option_price")%> ></label>
+              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_a" min="-1000000" max="1000000" placeholder=<%= t(".option_price")%> class="border-bottom right-align"></label>
+              &nbsp;/&nbsp;
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_a" value="false" checked="checked"/><div class="lever"><%= t(".day")%></div>
+              </label>
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_a" value="true"/><div class="lever"><%= t(".h")%></div>
+              </label>
             </div>
             <br>
-
-            <label><input type="text" name="name_b" maxlength="20" placeholder=<%= t(".option_name")%>></label>
+            <!-- オプションb -->
+            <label><input type="text" name="name_b" maxlength="20" placeholder=<%= t(".option_ex_2")%> class="border-bottom option_name"></label>
             <div class="indent">
-              <input type="checkbox" name="along_with_time_b" value="true"><%= t(".price_per_hour")%>
-              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_b" min="-10000000" max="10000000" placeholder=<%= t(".option_price")%> ></label>
+              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_b" min="-1000000" max="1000000" placeholder=<%= t(".option_price")%> class="border-bottom right-align"></label>
+              &nbsp;/&nbsp;
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_b" value="false"/><div class="lever"><%= t(".day")%></div>
+              </label>
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_b" value="true" checked="checked"/><div class="lever"><%= t(".h")%></div>
+              </label>
             </div>
             <br>
-
-            <label><input type="text" name="name_c" maxlength="20" placeholder=<%= t(".option_name")%>></label>
+            <!-- オプションc -->
+            <label><input type="text" name="name_c" maxlength="20" placeholder=<%= t(".option_ex_3")%> class="border-bottom option_name"></label>
             <div class="indent">
-              <input type="checkbox" name="along_with_time_c" value="true"><%= t(".price_per_hour")%>
-              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_c" min="-10000000" max="10000000" placeholder=<%= t(".option_price")%> ></label>
+              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_c" min="-1000000" max="1000000" placeholder=<%= t(".option_price")%> class="border-bottom right-align"></label>
+              &nbsp;/&nbsp;
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_c" value="false"/><div class="lever"><%= t(".day")%></div>
+              </label>
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_c" value="true" checked="checked"/><div class="lever"><%= t(".h")%></div>
+              </label>
             </div>
             <br>
-
-            <label><input type="text" name="name_d" maxlength="20" placeholder=<%= t(".option_name")%>></label>
+            <!-- オプションd -->
+            <label><input type="text" name="name_d" maxlength="20" placeholder=<%= t(".option_ex_4")%> class="border-bottom option_name"></label>
             <div class="indent">
-              <input type="checkbox" name="along_with_time_d" value="true"><%= t(".price_per_hour")%>
-              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_d" min="-10000000" max="10000000" placeholder=<%= t(".option_price")%> ></label>
+              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_d" min="-1000000" max="1000000" placeholder=<%= t(".option_price")%> class="border-bottom right-align"></label>
+              &nbsp;/&nbsp;
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_d" value="false" checked="checked"/><div class="lever"><%= t(".day")%></div>
+              </label>
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_d" value="true"/><div class="lever"><%= t(".h")%></div>
+              </label>
             </div>
             <br>
-
-            <label><input type="text" name="name_e" maxlength="20" placeholder=<%= t(".option_name")%>></label>
+            <!-- オプションe -->
+            <label><input type="text" name="name_e" maxlength="20" placeholder=<%= t(".option_ex_5")%> class="border-bottom option_name"></label>
             <div class="indent">
-              <input type="checkbox" name="along_with_time_e" value="true"><%= t(".price_per_hour")%>
-              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_e" min="-10000000" max="10000000" placeholder=<%= t(".option_price")%> ></label>
+              <label>¥<input type="number" pattern="[1-9][0-9]*" name="price_e" min="-1000000" max="1000000" placeholder=<%= t(".option_price")%> class="border-bottom right-align"></label>
+              &nbsp;/&nbsp;
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_e" value="false" checked="checked"/><div class="lever"><%= t(".day")%></div>
+              </label>
+              <label class="label-radio">
+                <input type="radio" name="along_with_time_e" value="true"/><div class="lever"><%= t(".h")%></div>
+              </label>
             </div>
             <br>
           </div>

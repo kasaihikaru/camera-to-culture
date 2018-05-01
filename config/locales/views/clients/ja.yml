@@ -29,14 +29,21 @@ ja:
       Event: イベント
       Pet: ペット
       prime_price_form: 撮影価格
-      fill_your_main_price: メインの撮影価格を入力し、細かな設定はオプションから登録してください。
+      fill_your_main_price: メインの撮影価格を入力し、細かな設定はオプションから登録してください。価格は、500円以上で設定して下さい。
       price_per_hour: １時間あたり
       minimum_hours: 最低受付時間
       h: 時間
       registed_opt_price_list: 登録済みオプション価格
       checked_options_will_be_deleted: 消去するにはチェックをつけてください
       add_opt_price_form: オプションを追加
+      option-price-explanation: オプションの内容と、割引・割増価格を入力して下さい。
       option_name: オプションメニュー
+      day: 日
+      option_ex_1: (例)衣装レンタル
+      option_ex_2: (例)一人追加料金
+      option_ex_3: (例)ビデオ撮影
+      option_ex_4: (例)送迎
+      option_ex_5: (例)早朝割引
       option_price: 価格
       prefecture_form: 出張可能な都道府県を選択
       Hokkaido_area: 北海道エリア
@@ -107,6 +114,7 @@ ja:
       reviews: 件のレビュー
       Read_all_reviews: 全てのレビューを読む
       all_reviews: '%{name}さんへのレビュー'
+      Languages: 言語
       Photographing_Categories: 撮影カテゴリー
       Photographing_Area: 撮影可能な都道府県
       Price: 価格

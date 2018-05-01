@@ -28,17 +28,54 @@
 <!-- # About 1 # -->
 <div class="container-fluid cl-show cl-show-2 white-back">
 	<div class="col-12 col-lg-8 offset-lg-2">
-		<!-- 言語 -->
-		<% if @langs.present? %>
-			<% @langs.each do |lang| %>
-				<span class="badge badge-pill badge-dark"><%= lang.language.ja %></span>
-			<% end %>
-			<hr>
-		<% end %>
+
+		<div class="container-fluid">
+			<div class="row">
+				<!-- 言語 -->
+				<% if @langs.present? %>
+					<div class="col-12 col-lg-2">
+						<h2><%= render :partial => 'svgs/language' %>&nbsp;<%= t(".Languages") %></h2>
+						<div class="badges">
+							<% @langs.each do |lang| %>
+								<span class="badge badge-pill prime-badge"><%= lang.language.ja %></span>
+							<% end %>
+						</div>
+						<hr class="d-block d-lg-none">
+					</div>
+				<% end %>
+
+				<!-- カテゴリー -->
+				<% if @categories.present? %>
+					<div class="col-12 col-lg-5">
+						<h2><%= render :partial => 'svgs/category' %>&nbsp;<%= t(".Photographing_Categories") %></h2>
+						<div class="badges">
+							<% @categories.each do |cate| %>
+								<span class="badge badge-pill subprime-badge"><%= cate.category.ja %></span>
+							<% end %>
+						</div>
+						<hr class="d-block d-lg-none">
+					</div>
+				<% end %>
+
+				<!-- 撮影エリア -->
+				<% if @locations.present? %>
+					<div class="col-12 col-lg-5">
+						<h2><%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Photographing_Area") %></h2>
+						<div class="badges">
+							<% @locations.each do |location| %>
+								<span class="badge badge-pill black-badge"><%= location.prefecture.ja %></span>
+							<% end %>
+						</div>
+						<hr class="d-block d-lg-none">
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<hr class="d-none d-lg-block">
 
 		<!-- オプション -->
 		<% if @options.present? %>
-			<h2><%= t(".Option_Menu") %></h2>
+			<h2><%= render :partial => 'svgs/cart' %>&nbsp;<%= t(".Option_Menu") %></h2>
 			<% @options.each do |option| %>
 				<p>
 					<%= option.name %>：
@@ -51,33 +88,16 @@
 		<hr>
 		<% end %>
 
-		<!-- カテゴリー -->
-		<% @categories.each do |cate| %>
-			<span class="badge badge-pill badge-light"><%= cate.category.ja %></span>
-		<% end %>
-		<hr>
-		<h2><%= t(".Photographing_Categories") %></h2>
-		<p>
-			<% @categories.each do |cate| %>
-				<%= cate.category.ja %><br>
-			<% end %>
-		</p>
-		<hr>
-		<h2><%= t(".Photographing_Area") %></h2>
-		<p>
-			<% @locations.each do |location| %>
-				<%= location.prefecture.ja %>&nbsp;
-			<% end %>
-		</p>
-		<hr>
+		<!-- カメラ -->
 		<% if @cl_here.camera.present? %>
-			<h2><%= t(".Camera") %></h2>
+			<h2><%= render :partial => 'svgs/camera' %>&nbsp;<%= t(".Camera") %></h2>
 			<pre class="indent"><%= @cl_here.camera %></pre>
+			<hr>
 		<% end %>
-		<hr>
-		<h2><%= t(".Message") %></h2>
-		<pre class="indent"><%= @cl_here.introduction %></pre>
 
+		<!-- メッセージ -->
+		<h2><%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Message") %></h2>
+		<pre class="indent"><%= @cl_here.introduction %></pre>
 		<!-- message_btn -->
 		<!-- ログイン時 -->
 		<div class="indent">
@@ -98,6 +118,9 @@
 		</div>
 	</div>
 </div>
+
+
+
 
 <% if @events_3.present? %>
 	<hr>

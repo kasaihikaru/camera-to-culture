@@ -42,7 +42,7 @@ $subprim-col-2 : #E2EEF9;
 $black-col : #000000;
 $white-col : #FFFFFF;
 
-
+// ボタン
 .big-prim-btn{
   padding: 20px 35px;
   background-color: $prim-col;
@@ -78,12 +78,9 @@ $white-col : #FFFFFF;
   cursor: pointer;
 }
 
-.clearfix:after {
-  content:" ";
-  display:block;
-  clear:both;
-}
 
+
+// 背景
 .prim-back{
   background-color: $prim-col;
 }
@@ -91,18 +88,52 @@ $white-col : #FFFFFF;
   background-color: $subprim-col;
 }
 .white-back{
-  background-color: $white-col ;
+  background-color: $white-col;
 }
 .grey-back{
   background-color: #E6E6E6;
 }
+
+
+// バッジ
+.prime-badge{
+  color: $black-col;
+  background-color: $white-col;
+  border: #CCCCCC 1px solid;
+  border-bottom: $prim-col 1px solid;
+}
+.subprime-badge{
+  color: $black-col;
+  background-color: $white-col;
+  border: #CCCCCC 1px solid;
+  border-bottom: $subprim-col 1px solid;
+}
+.black-badge{
+  color: $black-col;
+  background-color: $white-col;
+  border: #CCCCCC 1px solid;
+  border-bottom: $black-col 1px solid;
+}
+.white-badge{
+  color: $black-col;
+  background-color: $white-col;
+  border: #CCCCCC 1px solid;
+}
+
+
+// 文字
 .prim-col{
   color: $prim-col;
 }
 .subprim-col{
   color: $subprim-col;
 }
+.bold{
+  font-weight: 800;
+}
 
+
+// フロート
 .float-right{
   float: right;
 }
@@ -110,16 +141,17 @@ $white-col : #FFFFFF;
   float: left;
 }
 
+// 配置
 .left-align{
   text-align: left;
+}
+.right-align{
+  text-align: right;
 }
 .center-align{
   text-align: center;
 }
 
-.bold{
-  font-weight: 800;
-}
 .indent{
   padding-left: 30px;
 }
@@ -142,6 +174,12 @@ $white-col : #FFFFFF;
   padding: 0;
 }
 
+.border-bottom{
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: $black-col !important;
+}
+
 
 //--------------- 対策 ----------------//
 pre {
@@ -149,7 +187,11 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
-
+.clearfix:after {
+  content:" ";
+  display:block;
+  clear:both;
+}
 
 
 //--------------- layout ----------------//
@@ -252,11 +294,40 @@ footer{
 .notice, .alert{
   text-align: center;
   background-color: $prim-col;
-  color: $white-col ;
+  color: $white-col;
   margin:0;
 }
 
+//---------------ラジオボタン---------------//
 
+.label-radio input[type="radio"]{
+  display: none;
+}
+.label-radio{
+  cursor: pointer;
+  color: #828c9a;
+}
+.lever{
+  border: #999999 1px solid;
+  padding: 1px 10px;
+  background-color: $white-col;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.label-radio .lever:before{
+  margin-right: 7px;
+  color: #ccc;
+  font-size: 18px;
+  position: relative;
+  top: 2px;
+}
+.label-radio input[type="radio"]:checked + .lever{
+  color: $black-col;
+  background-color: $subprim-col;
+}
+.label-radio input[type="radio"]:checked + .lever:before{
+  color: $black-col;
+}
 
 
 
