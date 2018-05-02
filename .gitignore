@@ -26,4 +26,5 @@ config/.DS_Store
 
 /app.yaml
 
+config/secrets.yml
 /config/secrets.yml
