@@ -4,6 +4,7 @@ ja:
     edit:
       cl_form: カメラマンプロフィール編集
       Jump_to_your_page: あなたのページを見に行く
+      Jump_to_how_to_regist_page: 登録方法の説明を見る
       required: 必須
       camera: 撮影に使うカメラについて
       introduction: 自己紹介（120字まで）

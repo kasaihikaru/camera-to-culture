@@ -44,7 +44,7 @@
 		<div class="col-12 col-md-4 center">
 			<p2>
 				<%= t(".3_disc_1") %><br>
-				<%= t(".3_disc_2") %><br>
+			<!-- 	<%= t(".3_disc_2") %><br> -->
 				<!-- ログイン時かつ、登録時、フォームへ -->
 				<% if user_signed_in? && @cl.consent == true %>
 					<%= link_to t(".cl_settings"), edit_user_client_path(@user, @cl) , class: "about-btn prim-btn" %>
@@ -65,6 +65,23 @@
 				<!-- ログイン時かつ、登録時、フォームへ -->
 				<% if user_signed_in? && @cl.consent == true %>
 					<%= link_to t(".upload_cl_portpolios"), new_client_client_portfolio_path(@cl), class: "about-btn prim-btn" %>
+				<% end %>
+			</p2>
+		</div>
+	</div>
+
+	<p1><%= t(".5_Register_your_available_days") %></p1>
+	<div class="row about-inner">
+		<div class="col-12 col-md-4 offset-md-2">
+			<img alt="upload" src="/images/about-cl-upload.png" class="img-phone">
+		</div>
+		<div class="col-12 col-md-4 center">
+			<p2>
+				<%= t(".5_disc_1") %><br>
+			<!-- 	<%= t(".5_disc_2") %><br> -->
+				<!-- ログイン時かつ、登録時、フォームへ -->
+				<% if user_signed_in? && @cl.consent == true %>
+					<%= link_to t(".register_available_days"), user_client_client_schedules_path(@user, @cl, day: Date.today ), class: "about-btn prim-btn" %>
 				<% end %>
 			</p2>
 		</div>

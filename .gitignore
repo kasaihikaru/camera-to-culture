@@ -23,3 +23,7 @@
 /public/uploads/user
 
 config/.DS_Store
+
+/app.yaml
+
+/config/secrets.yml

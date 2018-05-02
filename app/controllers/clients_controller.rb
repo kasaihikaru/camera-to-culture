@@ -287,7 +287,7 @@ private
 
 	def active_concent_check
 		cl = Client.find(params[:id])
-		unless cl.consent == true && cl.deleted_at == nil
+		unless cl.consent == true && cl.deleted_at == nil && cl.client_primary_prices.active.first.price_per_hour.present?
 			flash[:alert] = "指定したページはありません"
 			redirect_to root_path
 		end
