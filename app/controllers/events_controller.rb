@@ -150,6 +150,26 @@ class EventsController < ApplicationController
 			# ev_states_table
 			EventState.create(event_id: event.id, state: "request")
 
+			# 通知メール
+			reciever = current_user
+			if reciever.mail_refused == false
+				message = ev_create_params[:message]
+				day = ev_hours_params["start_time"].strftime('%Y/%m/%d')
+				wday = l(day.to_date, format: :wday)
+				start_time = ev_hours_params["start_time"].strftime('%H:%M')
+				end_time  = ev_hours_params["end_time"].strftime('%H:%M')
+				prefecture = Prefecture.find(ev_create_params[:prefecture_id]).ja
+				location_detail = ev_create_params[:location_detail]
+				num_people = ev_create_params[:num_people]
+				total_price = ev_create_params[:total_price]
+				primary_price_sum = ev_create_params[:primary_price_sum]
+				options = event.event_option_prices
+				cs_mail = reciever.email
+				cs_name = reciever.name
+				link = 'https://camera-to-culture-ver2.appspot.com/events/' + event.id.to_s
+				ReserveMailer.cs_requested(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, cs_mail, cs_name, link).deliver_now
+			end
+
 			redirect_to event_path(event)
 		end
 	end
