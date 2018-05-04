@@ -36,7 +36,7 @@ class ClientContactsController < ApplicationController
 			@cl.update(consent: true)
 
 			# 通知メール
-			id = @user.id
+			id = @user.client.id
 			name = @user.name
 			mail = @user.email
 			created_at = @user.created_at
