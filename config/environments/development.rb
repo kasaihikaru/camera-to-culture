@@ -52,29 +52,17 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  #for devise
+# メール設定
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-  #yahoo
-  # config.action_mailer.smtp_settings = {
-  #   :enable_starttls_auto => true,
-  #   :address => "smtp.mail.yahoo.co.jp",
-  #   :port => 465,
-  #   :domain => 'smtp.mail.yahoo.co.jp',
-  #   :user_name => ENV['gmail_account'], #gmailアドレス
-  #   :password => ENV['gmail_password'], #gmailパスワード
-  #   :authentication => 'login',
-  # }
-
- #gmail
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => 'smtp.gmail.com',
-    :user_name => ENV['gmail_account'], #gmailアドレス
-    :password => ENV['gmail_password'], #gmailパスワード
-    :authentication => 'login',
+     :address => ENV['ctoc_mail_address'],
+     :port => '587',
+     :domain => ENV['ctoc_mail_domain'],
+     :authentication => 'plain',
+     :user_name => ENV['ctoc_mail_user_name'],
+     :password => ENV['ctoc_mail_password'],
+     :enable_starttls_auto => true,
   }
 
 

@@ -90,16 +90,17 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  #for devise
+  #メール設定
   config.action_mailer.default_url_options = { :host => 'http://13.230.174.55/' }
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => 'smtp.gmail.com',
-    :user_name => ENV['gmail_account'], #gmailアドレス
-    :password => ENV['gmail_password'], #gmailパスワード
-    :authentication => 'login',
+     :address => ENV['ctoc_mail_address'],
+     :port => '587',
+     :domain => ENV['ctoc_mail_domain'],
+     :authentication => 'plain',
+     :user_name => ENV['ctoc_mail_user_name'],
+     :password => ENV['ctoc_mail_password'],
+     :enable_starttls_auto => true,
   }
 
 
