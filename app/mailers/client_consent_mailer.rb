@@ -5,7 +5,8 @@ class ClientConsentMailer < ApplicationMailer
   #
   #   en.client_consent_mailer.first_new.subject
   #
-	def first_create(name, mail, created_at, consented_at, tel, address)
+	def first_create(id, name, mail, created_at, consented_at, tel, address)
+		@id = id
 		@name = name
 		@mail = mail
 		@created_at = created_at

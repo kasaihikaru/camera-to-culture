@@ -36,13 +36,14 @@ class ClientContactsController < ApplicationController
 			@cl.update(consent: true)
 
 			# 通知メール
+			id = @user.id
 			name = @user.name
 			mail = @user.email
 			created_at = @user.created_at
 			consented_at = @contact.created_at
 			tel = @contact.tel
 			address = @contact.address
-			ClientConsentMailer.first_create(name, mail, created_at, consented_at, tel, address).deliver_now
+			ClientConsentMailer.first_create(id, name, mail, created_at, consented_at, tel, address).deliver_now
 
 			redirect_to edit_user_client_path(@user, @cl)
 
