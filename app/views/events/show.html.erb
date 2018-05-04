@@ -350,7 +350,11 @@
 					<!-- 撮影確定状態 -->
 					<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
 						<!-- 写真納品完了 -->
-						<%= render :partial => 'events/cl_deliver', :locals=>{event: @event} %>
+						<% if @ev_photo_nums > 0 %>
+							<%= render :partial => 'events/cl_deliver', :locals=>{event: @event} %>
+						<% else %>
+							<button class="prim-btn" onclick="koshin()"><%= t(".check_uploaded_photos") %></button>
+						<% end %>
 					<% end %><!-- endOf 撮影確定状態 -->
 				<% end %><!-- endOf cl 過去の場合 -->
 
@@ -531,13 +535,19 @@
 		<!-- 撮影確定 or 納品済み or 受け取り済み状態 -->
 		<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted','cl_delivered', 'cs_recieved']) %>
 			<!-- 写真アップロード -->
-			<%= render :partial => 'events/event_photo_upload', :locals=>{event: @event} %>
+			<%= render :partial => 'events/event_photo_upload', :locals=>{event: @event, locale: @locale} %>
 			<!-- 納品完了を伝えるボタン -->
-			<div class="ev-states-btns">
-				<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
-					<%= render :partial => 'events/cl_deliver', :locals=>{event: @event} %>
-				<% end %>
-			</div>
+			<% if @ev_photo_nums > 0 %>
+				<div class="ev-states-btns">
+					<% if @event.event_states.last.state.in?(['cl_accepted','cs_accepted']) %>
+						<%= render :partial => 'events/cl_deliver', :locals=>{event: @event} %>
+					<% end %>
+				</div>
+			<% else %>
+				<div class="ev-states-btns">
+					<button class="prim-btn" onclick="koshin()"><%= t(".check_uploaded_photos") %></button>
+				</div>
+			<% end %>
 			<!-- アップロード済み写真確認 -->
 			<%= render :partial => 'events/event_photo', :locals=>{event: @event, ev_photos: @ev_photos} %>
 		<% end %><!-- endOf 撮影確定 or 納品済み or 受け取り済み状態 -->
@@ -553,3 +563,9 @@
 		<% end %><!-- endOf 納品済み or 受け取り済み状態 -->
 	<% end %><!-- endOf cs 過去の場合 -->
 </div>
+
+<script>
+function koshin(){
+  location.reload();
+}
+</script>

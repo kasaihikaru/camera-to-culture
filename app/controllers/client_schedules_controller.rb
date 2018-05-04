@@ -1,6 +1,6 @@
 class ClientSchedulesController < ApplicationController
-before_action :user_check, only: [:index, :create, :r_destroy]
-
+	before_action :user_check, only: [:index, :create, :r_destroy]
+	before_action :consent_check, only: :index
 
 	def index
 		@user = current_user
@@ -73,6 +73,13 @@ private
 	def user_check
 		unless user_signed_in? && Client.find(params[:client_id]).user == current_user
 			flash[:alert] = "ログインしてください"
+			redirect_to root_path
+		end
+	end
+	def consent_check
+		cl = Client.find(params[:client_id])
+		unless cl.consent == true && cl.deleted_at == nil
+			flash[:alert] = "指定したページはありません"
 			redirect_to root_path
 		end
 	end

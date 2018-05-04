@@ -76,6 +76,7 @@ ja:
       request_canceled: リクエストキャンセル
       Photographer_no_replied: カメラマンの返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
       Customer_no_replied: 顧客の返答がなく、開始時間を過ぎたため、自動的にキャンセルされました。
+      check_uploaded_photos: 納品写真を確認する（必須）
       download_zip: 再度zipでダウンロード
       Write_reviews: レビューを書きましょう！
       Review_about_you: あなたへのレビュー
@@ -95,7 +96,7 @@ ja:
       cl_accept_comment: リクエストありがとうございます。撮影よろしくお願いします！
       Send: 送信
     cl_deliver:
-      Notify_Deliverys_Completed: 納品完了を知らせる
+      Notify_Deliverys_Completed: 納品完了を知らせる（必須）
       cl_deliver_comment: 写真を納品しました。確認お願いします！
       Send: 送信
     cs_recieve:

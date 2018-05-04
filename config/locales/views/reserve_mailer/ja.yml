@@ -1,0 +1,51 @@
+---
+ja:
+  reserve_mailer:
+    cs_requested:
+      ctoc: 【Camera-to-Culture】
+      title: さんから予約リクエストが届きました。
+      Youve_got_a_request_to_book: '%{name}さんから予約リクエストが届きました。'
+      Date_and_Time: 日時
+      Location: 撮影場所
+      How_many_people?: 撮影に参加する人数
+      num_people: '%{num_people}人'
+      Fee: 料金
+      primary_price_sum: '撮影価格：%{primary_price_sum}円'
+      price_per_hour: １時間あたり
+      yen: 円
+      total_price: '合計価格：%{total_price}円'
+      Message: メッセージ
+    ev_state_changed:
+      ctoc: 【Camera-to-Culture】
+      cl_accepted: 'あなたの予約リクエストは、%{name}さんに承認されました'
+      cl_delivered: '%{name}さんが、あなたの写真を納品しました'
+      cl_dismissed: '%{name}さんが、あなたの予約リクエストを却下しました。'
+      cl_canceled: '%{name}さんが、撮影をキャンセルしました'
+      cs_accepted: '%{name}さんが、条件承認を承認しました'
+      cs_dismissed: '%{name}さんが、予約リクエストを取り下げました'
+      cs_request_canceled: '%{name}さんが、予約リクエストを取り下げました'
+      cs_canceled: '%{name}さんが、予約をキャンセルしました'
+      cs_recieved: '%{name}さんが、写真を受け取りました'
+      cl_edited: '%{name}さんから、撮影条件変更の提案が来ました'
+      cl_accept_title: さんが、あなたの予約リクエストを承認しました
+      cl_delivered_title: さんが、あなたの写真を納品しました
+      cl_dismissed_title: さんが、あなたの予約リクエストを却下しました。
+      cl_canceled_title: さんが、撮影をキャンセルしました
+      cs_accepted_title: さんが、条件承認を承認しました
+      cs_dismissed_title: さんが、予約リクエストを取り下げました
+      cs_request_canceled_title: さんが、予約リクエストを取り下げました
+      cs_canceled_title: さんが、予約をキャンセルしました
+      cs_recieve_title: さんが、写真を受け取りました
+      cl_edited_title: さんから、撮影条件変更の提案が来ました
+      else_title: さんより、連絡がきました
+      event_detail: 撮影詳細
+      Date_and_Time: 日時
+      Location: 撮影場所
+      How_many_people?: 撮影に参加する人数
+      num_people: '%{num_people}人'
+      Fee: 料金
+      primary_price_sum: '撮影価格：%{primary_price_sum}円'
+      price_per_hour: １時間あたり
+      yen: 円
+      total_price: '合計価格：%{total_price}円'
+      Message: メッセージ

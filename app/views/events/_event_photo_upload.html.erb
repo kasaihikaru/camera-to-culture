@@ -11,19 +11,19 @@
 
 
 <script>
-<% if @locale == "ja" %>
+<% if locale == "ja" %>
   $("#event_photo").fileinput({
       language: "ja",
       uploadUrl: "/events/<%= event.id %>/event_photos",
       allowedFileExtensions: ["jpg", "png", "jpeg"]
   });
-<% elsif @locale == "zh" %>
+<% elsif locale == "zh" %>
   $("#event_photo").fileinput({
       language: "zh",
       uploadUrl: "/events/<%= event.id %>/event_photos",
       allowedFileExtensions: ["jpg", "png", "jpeg"]
   });
-<% elsif @locale == "tw" %>
+<% elsif locale == "tw" %>
   $("#event_photo").fileinput({
       language: "tw",
       uploadUrl: "/events/<%= event.id %>/event_photos",

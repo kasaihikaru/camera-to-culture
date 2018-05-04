@@ -1,7 +1,46 @@
-<h2><%= t(".Youve_got_a_request_to_book", name: @sender_name) %></h2>
-<P><%= @link %></P>
-<hr>
+<h2>
+	<% if @state == "cl_accepted" %>
+	<%= t(".cl_accepted", name: @sender_name) %>
+	<% end %>
+	<% if @state == "cl_delivered" %>
+	<%= t(".cl_delivered", name: @sender_name) %>
+	<% end %>
+	<% if @state == "cl_dismissed" %>
+	<%= t(".cl_dismissed", name: @sender_name) %>
+	<% end %>
+	<% if @state == "cl_canceled" %>
+	<%= t(".cl_canceled", name: @sender_name) %>
+	<% end %>
+	<% if @state == "cs_accepted" %>
+	<%= t(".cs_accepted", name: @sender_name) %>
+	<% end %>
+	<% if @state == "cs_dismissed" %>
+	<%= t(".cs_dismissed", name: @sender_name) %>
+	<% end %>
+	<% if @state == "cs_request_canceled" %>
+	<%= t(".cs_request_canceled", name: @sender_name) %>
+	<% end %>
+	<% if @state == "cs_canceled" %>
+	<%= t(".cs_canceled", name: @sender_name) %>
+	<% end %>
+	<% if @state == "cs_recieved" %>
+	<%= t(".cs_recieved", name: @sender_name) %>
+	<% end %>
+	<% if @state == "cl_edited" %>
+	<%= t(".cl_edited", name: @sender_name) %>
+	<% end %>
+</h2>
+<!-- メッセージ -->
+<p>
+	<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Message") %><br>
+	<%= @message %>
+</p>
 
+<P><%= @link %></P>
+<br><br><br>
+
+<h2><%= t(".event_detail") %></h2>
+<hr>
 <!-- 日時 -->
 <p>
 	<%= render :partial => 'svgs/date' %>&nbsp;<%= t(".Date_and_Time") %><br>
@@ -46,9 +85,3 @@
 	<%= t(".total_price", total_price: @total_price) %><br>
 </p>
 <br>
-
-<!-- メッセージ -->
-<p>
-	<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Message") %><br>
-	<%= @message %>
-</p>

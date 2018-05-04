@@ -151,7 +151,8 @@ class EventsController < ApplicationController
 			EventState.create(event_id: event.id, state: "request")
 
 			# 通知メール
-			reciever = current_user
+			reciever = Client.find(event_client_id_params).user
+			sender = current_user
 			if reciever.mail_refused == false
 				message = ev_create_params[:message]
 				day = ev_hours_params["start_time"].strftime('%Y/%m/%d')
@@ -164,10 +165,10 @@ class EventsController < ApplicationController
 				total_price = ev_create_params[:total_price]
 				primary_price_sum = ev_create_params[:primary_price_sum]
 				options = event.event_option_prices
-				cs_mail = reciever.email
-				cs_name = reciever.name
-				link = 'https://camera-to-culture-ver2.appspot.com/events/' + event.id.to_s
-				ReserveMailer.cs_requested(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, cs_mail, cs_name, link).deliver_now
+				reciever_mail = reciever.email
+				sender_name = sender.name
+				link = 'http://13.230.174.55/events/' + event.id.to_s
+				ReserveMailer.cs_requested(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link).deliver_now
 			end
 
 			redirect_to event_path(event)
@@ -211,6 +212,28 @@ class EventsController < ApplicationController
 			# ev_states_table
 			EventState.create(event_id: event.id, state: "cl_edited", comment: comment_params)
 
+			# 通知メール
+			reciever = current_user
+			sender = event.customer.user
+			if reciever.mail_refused == false
+				message = ev_create_params[:message]
+				day = ev_hours_params["start_time"].strftime('%Y/%m/%d')
+				wday = l(day.to_date, format: :wday)
+				start_time = ev_hours_params["start_time"].strftime('%H:%M')
+				end_time  = ev_hours_params["end_time"].strftime('%H:%M')
+				prefecture = event.prefecture.ja
+				location_detail = event.location_detail
+				num_people = event.num_people
+				total_price = ev_create_params[:total_price]
+				primary_price_sum = ev_create_params[:primary_price_sum]
+				options = event.event_option_prices
+				reciever_mail = reciever.email
+				sender_name = sender.name
+				link = 'http://13.230.174.55/events/' + event.id.to_s
+				state = "cl_edited"
+				ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
+			end
+
 			redirect_to event_path(event)
 		end
 	end
@@ -239,6 +262,7 @@ class EventsController < ApplicationController
 		else
 			@ev_rev = EventReview.new
 		end
+		@locale = params[:locale]
 	end
 
 

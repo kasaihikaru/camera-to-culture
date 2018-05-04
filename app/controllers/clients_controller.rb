@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
 	before_action :user_check, only: :edit
-	before_action :active_concent_check, only: :show
+	before_action :consent_check, only: :edit
+	before_action :active_consent_check, only: :show
 
 	def index
 		if user_signed_in?
@@ -285,9 +286,17 @@ private
 		end
 	end
 
-	def active_concent_check
+	def consent_check
 		cl = Client.find(params[:id])
-		unless cl.consent == true && cl.deleted_at == nil && cl.client_primary_prices.active.first.price_per_hour.present?
+		unless cl.consent == true && cl.deleted_at == nil
+			flash[:alert] = "指定したページはありません"
+			redirect_to root_path
+		end
+	end
+
+	def active_consent_check
+		cl = Client.find(params[:id])
+		unless cl.consent == true && cl.confirmed == true && cl.deleted_at == nil && cl.client_primary_prices.active.first.price_per_hour.present?
 			flash[:alert] = "指定したページはありません"
 			redirect_to root_path
 		end

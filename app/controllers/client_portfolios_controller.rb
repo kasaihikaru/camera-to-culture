@@ -1,6 +1,6 @@
 class ClientPortfoliosController < ApplicationController
-before_action :user_check, only: [:new, :create, :r_destroy]
-
+	before_action :user_check, only: [:new, :create, :r_destroy]
+	before_action :consent_check, only: :new
 
 	def new
 		@user = current_user
@@ -58,4 +58,11 @@ private
 		end
 	end
 
+	def consent_check
+		cl = Client.find(params[:client_id])
+		unless cl.consent == true && cl.deleted_at == nil
+			flash[:alert] = "指定したページはありません"
+			redirect_to root_path
+		end
+	end
 end
