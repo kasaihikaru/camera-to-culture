@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :production do
   gem 'unicorn'
+  gem "puma"#for puma in EB
 end
 
 group :development, :test do
