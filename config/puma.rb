@@ -51,6 +51,8 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 #   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
 # end
 #
+bind 'unix:///var/run/puma/my_app.sock'
+stdout_redirect '/var/log/puma/puma.log', '/var/log/puma/puma.log', true
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
