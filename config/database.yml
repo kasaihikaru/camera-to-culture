@@ -49,7 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: ctoc01_production
-  username: ctoc01
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_username'] %>
+  password: <%= ENV['RDS_password'] %>
+  host: <%= ENV['RDS_hostname'] %>
+  port: <%= ENV['RDS_port'] %>
