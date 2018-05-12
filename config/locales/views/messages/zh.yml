@@ -1,15 +1,20 @@
 ---
 zh:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
-    show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  messages:
+    new:
+      message: '给%{name}发消息'
+      send_btn: 发送
+    show:
+      Introduction: 消息
+      Photographing_Categories: 摄影类别
+      Photographing_Area: 可以拍摄的都道府县
+      Price: 价格
+      yen_per_hour: 円/小时
+      hours_minimum: 小时起接受预约
+      Option_memu: 附加服务内容
+      price_per_hour: 每1小时
+      Camera: 相机
+      Message: 消息
+      write_here: 发消息
+      send_btn: 发送
+      last_message: 最后一封消息

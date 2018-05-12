@@ -1,15 +1,20 @@
 ---
 tw:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  messages:
+    new:
+      message: '給%{name}發消息'
+      send_btn: 發送
     show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      Introduction: 消息
+      Photographing_Categories: 攝影類別
+      Photographing_Area: 可以拍攝的都道府縣
+      Price: 價格
+      yen_per_hour: 円/小時
+      hours_minimum: 小時起接受預約
+      Option_memu: 附加服務內容
+      price_per_hour: 每1小時
+      Camera: 相機
+      Message: 消息
+      write_here: 發消息
+      send_btn: 發送
+      last_message: 最後一通消息

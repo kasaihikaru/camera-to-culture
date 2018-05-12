@@ -2,7 +2,7 @@
 ja:
   messages:
     new:
-      message: さんへのメッセージ
+      message: '%{name}さんへのメッセージ'
       send_btn: 送信
     show:
       Introduction: メッセージ

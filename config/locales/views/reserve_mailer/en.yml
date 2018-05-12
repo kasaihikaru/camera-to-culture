@@ -1,70 +1,51 @@
 ---
 en:
-  render:
-    home_search:
-      find_your_photographer: Find Your Photographer
-      select_category: Select Categories
-      for_business: Commercial Photos
-      commercial_photos_people: People（models）
-      commercial_photos_items: Items（apparel, cuisine）
-      for_private: Private Photos
-      event_photos: Events（wedding, traveling）
-      private_photo: Daily（family, couples, friends）
-      select_area: Select Prefectures
-      Popular_area: Popular Area
-      Hokkaido_area: Hokkaido Area
-      Tohoku_area: Tohoku Area
-      Kanto_area: Kanto Area
-      Hokushinetsu_area: Hokushinetsu Area
-      Tokai_area: Tokai Area
-      Kinki_area: Kinki Area
-      Chugoku_area: Chugoku Area
-      Shikoku_area: Shikoku Area
-      Kyushu_area: Kyushu Area
-      Hokkaido: Hokkaido
-      Aomori: Aomori
-      Iwate: Iwate
-      Akita: Akita
-      Miyagi: Miyagi
-      Yamagata: Yamagata
-      Fukushima: Fukushima
-      Tokyo: Tokyo
-      Kanagawa: Kanagawa
-      Saitama: Saitama
-      Chiba: Chiba
-      Ibaraki: Ibaraki
-      Tochigi: Tochigi
-      Gunma: Gunma
-      Yamanashi: Yamanashi
-      Niigata: Niigata
-      Nagano: Nagano
-      Toyama: Toyama
-      Ishikawa: Ishikawa
-      Fukui: Fukui
-      Aichi: Aichi
-      Gifu: Gifu
-      Shizuoka: Shizuoka
-      Mie: Mie
-      Osaka: Osaka
-      Hyōgo: Hyōgo
-      Kyoto: Kyoto
-      Shiga: Shiga
-      Nara: Nara
-      Wakayama: Wakayama
-      Tottori: Tottori
-      Shimane: Shimane
-      Okayama: Okayama
-      Hiroshima: Hiroshima
-      Yamaguchi: Yamaguchi
-      Tokushima: Tokushima
-      Kagawa: Kagawa
-      Ehime: Ehime
-      Kochi: Kochi
-      Fukuoka: Fukuoka
-      Saga: Saga
-      Nagasaki: Nagasaki
-      Kumamoto: Kumamoto
-      Oita: Oita
-      Miyazaki : Miyazaki
-      Kagoshima: Kagoshima
-      Okinawa: Okinawa
+  reserve_mailer:
+    cs_requested:
+      ctoc: 【Camera-to-Culture】
+      title: ' send you a request to book'
+      Youve_got_a_request_to_book: 'You got a request from %{name}'
+      Date_and_Time: Date and time
+      Location: Location
+      How_many_people?: How many people?
+      num_people: '%{num_people}'
+      Fee: Fee
+      primary_price_sum: 'Photographing price：%{primary_price_sum}yen'
+      price_per_hour: (per hour)
+      yen: yen
+      total_price: 'Total fee：%{total_price}yen'
+      Message: Message
+    ev_state_changed:
+      ctoc: 【Camera-to-Culture】
+      cl_accepted: '%{name} accepted your reservation request.'
+      cl_delivered: '%{name} delivered your photos.'
+      cl_dismissed: '%{name} dismissed your reservation request.'
+      cl_canceled: '%{name} canceled session with you.'
+      cs_accepted: '%{name} accepted your request.'
+      cs_dismissed: '%{name} dismissed condition changing request.'
+      cs_request_canceled: '%{name} canceled reservation request.'
+      cs_canceled: '%{name} canceled the reservation'
+      cs_recieved: '%{name} received photos'
+      cl_edited: '%{name} sent you a request to change session conditions'
+      cl_accept_title: ' accepted your reservation request.'
+      cl_delivered_title: ' delivered your photos.'
+      cl_dismissed_title: ' dismissed your reservation request.'
+      cl_canceled_title: ' canceled session with you.'
+      cs_accepted_title: ' accepted your request.'
+      cs_dismissed_title: ' dismissed condition changing request.'
+      cs_request_canceled_title: ' canceled reservation request.'
+      cs_canceled_title: ' canceled the reservation'
+      cs_recieve_title: ' received photos'
+      cl_edited_title: ' sent you a request to change session conditions'
+      else_title: ' sent you a message about session.'
+      event_detail: Session detail
+      Date_and_Time: Date and time
+      Location: Location
+      How_many_people?: How many people?
+      num_people: '%{num_people}'
+      Fee: Fee
+      primary_price_sum: 'Photographing price：%{primary_price_sum}yen'
+      price_per_hour: (per hour)
+      yen: yen
+      total_price: 'Total fee：%{total_price}yen'
+      Message: Message

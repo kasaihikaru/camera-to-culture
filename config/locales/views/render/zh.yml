@@ -1,15 +1,25 @@
 ---
 zh:
-  render:
-    home_search:
-      select_category: 选择照片用途
-      for_business: 商业利用
-      commercial_photos_people: 人像（服装模特、发型模特..）
-      commercial_photos_items: 物品（商品、料理..）
-      for_private: 私人写真
-      event_photos: 纪念日（婚礼、婚纱、旅行等..）
-      private_photo: 私人写真（家人、情侣、朋友..）
-      select_area: 选择摄影地
+   clients:
+    edit:
+      category_form: 可拍摄的照片类别
+      Yourself: 你
+      Memory: 重要时刻
+      Child: 儿童
+      Others: 其他
+      Profile: 头像照片
+      ID photo: 证件照
+      Wedding: 婚纱照
+      Traveling: 旅行
+      Dairy life: 日常
+      seven-five-three: 七五三
+      Coming of age: 成人式
+      Maternity: 孕妇照
+      New born: 新生儿照
+      Commodities: 商品
+      Event: 活动
+      Pet: 宠物 
+      all_areas: 全部地区
       Popular_area: 热门地区
       Hokkaido_area: 北海道地区
       Tohoku_area: 东北地区

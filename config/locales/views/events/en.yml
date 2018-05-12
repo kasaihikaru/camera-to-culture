@@ -1,15 +1,205 @@
 ---
 en:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  events:
+    new:
+      Request_to_Book: Request to Book
+      Check_Shedule: 'Check %{name}''s Shedule'
+      Request_date_and_time: Request date and time
+      15_minute_increments: You can select time at 15-minutes intervals.
+      hours_explanation1: 'Request would be accept more than '
+      hours_explanation2: ' h.'
+      Photographing_Location: Visitable location
+      tell_location_detail: Tell location detail
+      How_many_people?: 'How many people?'
+      Say_hello: 'Say hello to %{name}'
+      Let_cl_know_you: 'Let %{name} know about you'
+      greeting_message: |
+        Hello, %{name}.
+        Can't wait to see you, I really love your portfolios!
+      per_hour_automatically_culculates: ' '
+      option_name: Option name
+      price: Price
+      number: Numbers
+      Fee: Fee
+      Primary_Price: Photographing price
+      item_name: Item name
+      hours: hours
+      price_per_hour: (per hour)
+      Total_Fee: Total fee
+      yen: yen
     show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      Session_Details: Session Details
+      Date_and_Time: Date and Time
+      How_many_people?: 'How many people?'
+      Location: Location
+      Message: Message
+      Fee: Fee
+      Price: Price
+      price_per_hour: '%{price} yen per hour'
+      Primary_Price: Photographing price
+      item_name: Item name
+      price: price
+      hours: h
+      Total_Fee: Total fee
+      yen: yen
+      History: History
+      Date_and_Time: Date and Time
+      State: States
+      request: Request
+      cl_accepted: Request Accept
+      cl_delivered: Photos delivered
+      cs_recieved: Photos received
+      cl_edited: Request to change conditions
+      cs_accepted: Accept the change
+      cl_dismissed: Request dismissed
+      cs_dismissed: Request dismissed
+      cs_request_canceled: Request canceled
+      cs_canceled: Resevation canceled
+      cl_canceled: Resevation canceled
+      Comment: Comment
+      Send: Send
+      Edit: Request to change session conditions
+      request_canceled: Request canceled
+      Photographer_no_replied: Request was automatically canceled because request time has past without reply from photographer.
+      Customer_no_replied: Request was automatically canceled because request time has past without reply from customer.
+      check_uploaded_photos: Check uploaded photos（required）
+      download_zip: Re-download zip
+      Write_reviews: Write a review
+      Review_about_you: Review about you
+      Review_by_you: Review by you
+      Review_about_cs: 'Review about %{name}'
+      Review_about_cl: 'Review about %{name}'
+      cl_review_placeholder: 'How''s the session with %{name}?'
+      cs_review_placeholder: 'How''s the session with %{name}?'
+      cl_comment_placeholder: 'Reply to review from %{name}?'
+      Comment_on_a_review: Comment on a review
+      Post_reviews: Post a review
+      Reply_to_cs: 'Reply'
+      Reply_from_cl: 'Reply from %{name}'
+      Attach_images: Attach your memorial photos in the session.
+    cl_accept:
+      Accept: Accept request
+      cl_accept_comment: Thank you for request. Cant''t wait to see you!
+      Send: Send
+    cl_deliver:
+      Notify_Deliverys_Completed: Notify Delivery has Completed（required）
+      cl_deliver_comment: I delivered your photos. I hope you like them!
+      Send: Send
+    cs_recieve:
+      Recieve_photos: Recieve photos
+      cs_recieve_comment: Thank you for delivery. I am going to download and see them now!
+      download_zip: Download zip
+      Send: Send
+    cs_accept:
+      Accept_Edited_Condition: Accept changing conditions
+      cs_accept_comment: OK! Cant'' wait to see you!
+      Send: Send
+    cl_dismiss:
+      Dismiss: Dismiss request
+      cl_dismiss_comment: Thank you for your request, but it is difficult to meet your request. Please pass this time, sorry...
+      Send: Send
+    cs_dismiss:
+      Dismiss_Edited_Condition: Dismiss request to change condition
+      cs_dismiss_comment: Thank your for your reply, but I will pass this time. it might not be suit for me with these conditions.
+      Send: Send
+    cs_request_cancele:
+      Request_Cancele: Cancele request
+      cs_request_cancele_comment: Please cancele request.
+      Send: Send
+    cs_cancele:
+      Cancele: Cancele resevation
+      cs_cancele_comment: I am sorry to inform you that I will have to cancel my reservation.
+      Send: Send
+    cl_cancele:
+      Cancele: Cancele session
+      cl_cancele_comment: I am sorry to inform you that I will have to cancel your reservation.
+      Send: Send
+    edit:
+      Edit_Conditions: Request to change conditions
+      Check_Your_Shedule: Check your schedule
+      Request_date_and_time: Request date and time
+      15_minute_increments: You can select time at 15-minutes intervals.
+      hours_explanation1: 'Request would be accept more than '
+      hours_explanation2: ' h.'
+      Photographing_Location: Visitable location
+      tell_location_detail: Tell location detail
+      How_many_people?: 'How many people?'
+      Say_hello: 'Message to you'
+      Option_Menu: Option Menu
+      per_hour_automatically_culculates: ' '
+      option_name: Option name
+      price: Price
+      yen: yen
+      number: numbers
+      price_per_hour: (per hour)
+      Fee: Fee
+      item_name: Item name
+      hours: hours
+      price_per_hour: (per hour)
+      Total_Fee: Total fee
+      Primary_Price: Photographing price
+      Message: Message to change conditions
+      cl_edit_comment: Thank you for your request, but conditions were not suit for me. How are these conditions?
+      Send_request: Send request
+    cl_future:
+      yen: yen
+      Youve_got_a_request: 'You''ve got request'
+      You_Approved: Reservation confirmed
+      You_Dismissed: You dismissed
+      You_Canceled: You Canceled
+      Customer_Canceled: Customer Canceled
+      You_edited_Condition: Waiting for accept
+      Customer_Approved: Reservation confirmed
+      Customer_Dismissed: Customer dismissed
+    cl_past:
+      yen: yen
+      Automatically_Canceled: Request canceled
+      Please_deliver_photos: Waiting for photos
+      You_dismissed: You dismissed
+      You_Canceled: You Canceled
+      Customer_Canceled: Customer Canceled
+      Customer_dismissed: Customer dismissed
+      Waiting_for_Photos: Waiting for photos
+      Photos_delivered: Photos delivered
+      Write_a_review: Write a review
+      Reply_to_a_review: Reply to review
+      Photos_recieved: Received photos
+    cs_future:
+      yen: yen
+      Requesting: Requesting
+      Approved: Reservation confirmed
+      Request_dismissed: Request dismissed
+      Photographer_Canceled: Photographer Canceled
+      You_Canceled: You Canceled
+      Youve_got_request: 'You''ve got request'
+      Customer_approved: Reservation confirmed
+      You_dismissed: You dismissed
+      Event_finished: Waiting for photos
+      Photos_delivered: Photos delivered
+      Photos_recieved: Received photos
+    cs_past:
+      yen: yen
+      Requesting: Requesting
+      Approved: Reservation confirmed
+      Automatically_Canceled: Request canceled
+      Request_dismissed: Request dismissed
+      Canceled_by_photographer: Photographer Canceled
+      You_Canceled: You Canceled
+      Youve_got_request: 'You''ve got request'
+      Customer_approved: Reservation confirmed
+      You_dismissed: You dismissed
+      Waiting_for_Photos: Waiting for photos
+      Photos_delivered: DL photos
+      Write_a_review: Write a review
+      Photos_recieved: Received photos
+    event_photo:
+      See_Uploaded_photos: Check Uploaded photos
+      delete_check: check for delete
+      delete_btn: delete
+    event_photo_upload:
+      Upload: Upload photos
+      Upload_explanation: Please reload to check Uploaded photos.
+    event_photo_cs:
+      Preview_Uploaded_photos: Preview uploaded photos
+      photo_nums_explanation_1: '%{nums} photos are uploaded'
+      photo_nums_explanation_2: Preview show 6 photos at most.

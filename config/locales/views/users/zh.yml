@@ -2,8 +2,160 @@
 zh:
   users:
     show:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      Home: 主页
+      Update_available_dates_for_your_customer: 请登录可以拍摄的日程
+      booking_request: '有一个来自%{name}的预约申请。'
+      Deliver_photos: '来上传%{name}的照片吧'
+      changing_conditions_request: '有一个来自%{name}的更改条件的申请。'
+      Photos_delivered: '来自%{name}的照片已被上传。'
+      Write_a_review: '写下对%{name}的评价吧！'
+      Languages: 掌握的语言
+      None: 没有
+      Introduction: 自我介绍
+      Available_dates: 可以拍摄的日程
+      available_dates_explanation: "已登录了%{nums}天作为可以拍摄的日程。"
+      Photographing_Categories: 摄影类别
+      Photographing_Area: 可以拍摄的都道府县
+      Price: 价格
+      yen_per_hour: 円/小时
+      hours_minimum: 小时起可接片
+      Option_Menu: 附加服务
+      price_per_hour: 每1小时%{price}円
+      yen: 円
+      Camera: 相机
+      Message: 消息
+      Your_Main_Photo: 优先照片
+      Portfolios: 作品集
+      photos_are_uploaded: 已登录张作品集。
+
+    mypage_menu:
+      Menu: 菜单
+      mypage: 主页
+      message: 消息
+      events: 在CtoC的撮影
+      In_the_future: 今后的摄影
+      In_the_past: 过去的摄影
+      As_a_customer: （作为顾客）
+      As_a_cameraman_future: 今后的摄影计划（作为摄影师）
+      As_a_cameraman_past: 过去的摄影（作为摄影师）
+      user_settings: 用户设定
+      edit_profile: 简洁编辑
+      settings: 设定
+      account_settings: 注销
+      register_as_cameraman: 成为摄影师
+      change_phone_number_adress: 更改联系电话、地址
+      cameraman_menu: 设定摄影师内容
+      cl_schedule: 设定可拍摄日程
+      cl_settings: 摄影师的简介
+      upload_cl_portpolios: 上传样片
+      sign-out: 退出
+
+    profile:
+      Edit_Profile: 更改用户简介
+      language_use: 请选择能够使用的语言
+      japanese: 日语
+      english: 英语
+      chinese: 中文
+      image: 个人头像
+      introduction: 自我介绍（120字以内）
+      update_btn: 更改
+
+    account_setting:
+      Account_settings: 账户设定
+      cancel_account_explanation1: 注销后，在Camera-to-Culture进行的全部活动，请自行负责至活动结束。
+      cancel_account_explanation2: 您的主页将不再被显示。
+      cancel_account_explanation3: 若再次联络我们，可以重新恢复您的账号。
+      Dont_cancel_account: 先不注销
+      Cancel_account: 注销
+
+# 以下、devise用
+    confirmations:
+      new:
+        Resend_confirmation_instructions: 发送一封帐号确认邮件
+        email: 电子邮箱
+    mailer:
+      confirmation_instructions:
+        title: 【Camera-to-Culture】欢迎！您已注册成功！
+        explain_1: 请点击以下链接，完成注册
+        Confirm_my_account: 已完成验证您的邮箱
+      email_changed:
+        title: 【Cumera-to-Culture】更改电子邮箱
+        explain_1: 已更改电子邮箱。电子邮箱的最后认证还未结束。
+        explain_2: 登录邮箱已成功更改为以下邮箱地址。
+      passwords_change:
+        title: 【Cumera-to-Culture】已成功更改密码
+        explain_1: 密码已更改成功。
+      reset_password_instructions:
+        title: 【Cumera-to-Culture】确认更改密码
+        explain_1: 信息即将更新成功，但我们需要验证您的新电子邮件地址，请检查邮箱（包括垃圾邮箱），并点击该链接激活您的帐号。
+        Change_my_password: '更改密码'
+        explain_2: 此邮件因更改密码而发送至您的邮箱。
+        explain_3: 若并非本人操作，请不要点击以下链接。在没有点击链接的情况下，密码将不会被更新。
+      unlock_instructions:
+        title: 【Cumera-to-Culture】账号解锁确认
+        explain_1: 您的账号由于超过可以密码错误的次数，而被锁定。
+        explain_2: 所需解除锁定，请点击以下链接。
+        Unlock_my_account: 解除锁定
+    passwords:
+      edit:
+        Change_your_password: 更改密码
+        characters_minimum: 6个字以上
+        New_password: 新密码
+        Confirm_new_password: 再输入一次
+        Change_my_password: 更改密码
+      new:
+        Forgot_your_password?: 更改密码
+        email: 电子邮箱
+        Send_me_reset_password_instructions: 发送密码通知邮件
+        characters_minimum: 个字以上
+        New_password: 新密码
+        Confirm_new_password: 确认密码
+        Change_my_password: 更改密码
+    registrations:
+      new:
+        sign_up: 注册新用户
+        sign_up_with_FB: 用Facebook注册新用户
+        name: 名字
+        email: 电子邮箱
+        password: 密码
+        characters_minimum: 个字以上
+        password_confirmation: 确认密码
+        sign_up_btn: 注册
+        language_use: 选择能够使用的语言
+        japanese: 日语
+        english: 英语
+        chinese: 中文
+        image: 个人头像
+      edit:
+        Edit_Settings: 更改设定
+        name: 名字
+        email: 电子邮箱
+        Currently_waiting_confirmation_for: '「%{mail}」正在等待认证。'
+        refuse_mail: 停止发往电子邮箱的通知
+        refuse_mail_explanation: 停止来自摄影师和顾客的消息发往电子邮箱
+        New_password: 新密码
+        leave_blank_if_you_don't_want_to_change_it: 若无更改，无需填写
+        password: 密码
+        characters_minimum: 密码（６个字以上）
+        password_confirmation: 确认密码
+        update_btn: 更新
+        current_password: 现在的密码
+        we_need_your_current_password_to_confirm_your_changes: 为了确认，请再次输入密码。
+    sessions:
+      new:
+        sign_in: 登录
+        sign_in_with_FB: 用Facebook登录
+        email: 电子邮箱
+        password: 密码
+        remember_me: 保持登录状态
+    shared:
+      links:
+        sign_in: 登录
+        sign_up: 注册新用户
+        Forgot_your_password?: 忘记了密码
+        Didn't_receive_confirmation_instructions?: 发送一封确认邮件
+        Didn't_receive_unlock_instructions?: 发送密码通知邮件
+    unlocks:
+      new:
+        Resend_unlock_instructions: 发送解锁账号的确认邮件
+        email: 电子邮箱

@@ -172,8 +172,7 @@ class ClientsController < ApplicationController
 			end
 		end
 
-
-		redirect_to new_client_client_portfolio_path(cl)
+		redirect_to edit_user_client_path(current_user, cl)
 	end
 
 	def pre_month

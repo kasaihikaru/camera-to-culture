@@ -220,9 +220,10 @@
                 <% @cl_opt_prices.each do |cl_opt_price| %>
                   <%= cl_opt_price.name %>
                   <% if cl_opt_price.along_with_time == true %>
-                    <%= t(".price_per_hour") %>
+                    <%= t(".price_per_hour", price: cl_opt_price.price) %>
+                  <% else %>
+                    <%= cl_opt_price.price %><%= t(".yen") %>
                   <% end %>
-                  <%= cl_opt_price.price %><%= t(".yen") %>
                   <br>
                 <% end %>
               <% else %>

@@ -67,7 +67,7 @@
 				<!-- あいさつ -->
 				<div class="ev-new-comment">
 					<h2>
-						<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Say_hello") %>
+						<%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Say_hello", name: @cl_here.user.name) %>
 					</h2>
 					<h3><%= t(".Let_cl_know_you", name: @cl_here.user.name) %></h3>
 					<div class="ev-square white-back">

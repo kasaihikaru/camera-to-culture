@@ -18,6 +18,7 @@
 						</a>
 					<% end %>
 				</div>
+				<%= render :partial => 'svgs/fee' %>&nbsp;<%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %><br>
 				<%= @cl_here.user.customer.introduction %>
 			</div>
 		</div>
@@ -73,6 +74,7 @@
 		</div>
 		<hr class="d-none d-lg-block">
 
+
 		<!-- オプション -->
 		<% if @options.present? %>
 			<h2><%= render :partial => 'svgs/cart' %>&nbsp;<%= t(".Option_Menu") %></h2>
@@ -80,13 +82,14 @@
 				<p>
 					<%= option.name %>：
 					<% if option.along_with_time == true %>
-						<%= t(".price_per_hour") %>
+						<%= t(".price_per_hour", price: option.price) %>
+					<% else %>
+						<%= option.price %><%= t(".yen") %>
 					<% end %>
-					<%= option.price %><%= t(".yen") %>
 				</p>
 			<% end %>
-		<hr>
 		<% end %>
+		<hr>
 
 		<!-- カメラ -->
 		<% if @cl_here.camera.present? %>

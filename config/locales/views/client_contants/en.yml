@@ -2,20 +2,23 @@
 en:
   client_contacts:
     first_new:
-      register_as_cameraman: カメラマンとして登録する
-      phone_number: 電話番号(半角数字)
-      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
-      address: 住所
-      terms_of_service: 利用規約
-      register_btn: 規約に同意して登録
+      register_as_cameraman: Register as a Cameraman
+      An_eroor_occurred: an error occurred
+      phone_number: Phone number
+      This_field_does_not_share_with_other_users : ＊This field does not share with other users
+      address: Address
+      adress_example: '1-1-1, A city, B prefecture, Japan'
+      terms_of_service: Terms of service
+      register_btn: Agree to Terms and Register
     new:
-      change_contacts: 連絡先情報を変更する
-      An_eroor_occurred: 登録できませんでした
-      phone_number: 電話番号
-      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
-      address: 住所
-      register_btn: 更新
+      change_contacts: Change your contacts
+      An_eroor_occurred: an error occurred
+      phone_number: Phone number
+      This_field_does_not_share_with_other_users : ＊This field does not share with other users
+      address: Address
+      adress_example: '1-1-1, A city, B prefecture, Japan'
+      register_btn: Updata
     create:
-      Setting_has_updated: 更新しました
+      Setting_has_updated: Setting_has_updated
     user_check:
-      Please_login: ログインしてください
+      Please_login: Please_login

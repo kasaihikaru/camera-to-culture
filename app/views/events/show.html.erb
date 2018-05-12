@@ -195,9 +195,10 @@
 									<td>
 										<%= option.client_option_price.name %>&emsp;
 										<% if option.client_option_price.along_with_time == true %>
-											<%= t(".price_per_hour") %>
+											<%= t(".price_per_hour", price: option.client_option_price.price) %>
+										<% else %>
+											<%= option.client_option_price.price %><%= t(".yen") %>
 										<% end %>
-										<%= option.client_option_price.price %><%= t(".yen") %>
 										×<%= option.numbers %>
 									</td>
 									<td>
@@ -242,10 +243,6 @@
 									<% if state.state == "cl_accepted" %>
 										<span class="datetime"><%= @cl_here.user.name %></span><br>
 										<%= t(".cl_accepted") %>
-									<% end %>
-									<% if state.state == "cs_opened" %>
-										<span class="datetime"><%= @cs_here.user.name %></span><br>
-										<%= t(".cs_opened") %>
 									<% end %>
 									<% if state.state == "cl_delivered" %>
 										<span class="datetime"><%= @cl_here.user.name %></span><br>

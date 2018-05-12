@@ -1,15 +1,135 @@
 ---
 en:
   clients:
+    edit:
+      cl_form: Edit profile as a cameraman
+      Jump_to_your_page: Jump to your page
+      Jump_to_how_to_regist_page: Jump to 'how to regist' page
+      required: required
+      camera: About your cameras and lenses
+      introduction: Introduction（muximum 120 letters）
+      message: Message to your customer
+      importance_of_message_explanation: Communication is the most important for photographeres and customers on the Camera-to-Culture platform. Let know customers your story, photographing style and introduction in detail.
+      main_image: Your main sample photo
+      main_image_explain: main photo shows when customer seaching
+      category_form: Categories you can take
+      Yourself: Yourself
+      Memory: Memories
+      Child: Children
+      Others: Others
+      Profile: Profile
+      ID photo: ID photo
+      Wedding: Wedding
+      Traveling: Traveling
+      Dairy life: Dairy life
+      seven-five-three: seven-five-three
+      Coming of age: Coming of age
+      Maternity: Maternity
+      New born: New born
+      Commodities: Commodities
+      Event: Event
+      Pet: Pet
+      prime_price_form: Main photographing fee
+      fill_your_main_price: Photographing fee has to be more than 500yen per hour. You can have further fee structure in option settings, which as fllows.
+      price_per_hour: Price per hour
+      minimum_hours: Minimum hours you accept：
+      h: h
+      registed_opt_price_list: Option list you have registered
+      checked_options_will_be_deleted: Checked options will be deleted when setting updates
+      add_opt_price_form: Add to the option list
+      option-price-explanation: fill price and explamnation, please
+      option_name: Option name
+      day: Day
+      option_ex_1: ex) Rental outfit
+      option_ex_2: ex) Extra 1 person
+      option_ex_3: ex) Taking a video
+      option_ex_4: ex) Picking up
+      option_ex_5: ex) Repeat customer discount
+      option_price: Price
+      prefecture_form: Prefectures you can visit
+      Hokkaido_area: Hokkaido Area
+      Tohoku_area: Tohoku Area
+      Kanto_area: Kanto Area
+      Hokushinetsu_area: Hokushinetsu Area
+      Tokai_area: Tokai Area
+      Kinki_area: Kinki Area
+      Chugoku_area: Chugoku Area
+      Shikoku_area: Shikoku Area
+      Kyushu_area: Kyushu Area
+      Hokkaido: Hokkaido
+      Aomori: Aomori
+      Iwate: Iwate
+      Akita: Akita
+      Miyagi: Miyagi
+      Yamagata: Yamagata
+      Fukushima: Fukushima
+      Tokyo: Tokyo
+      Kanagawa: Kanagawa
+      Saitama: Saitama
+      Chiba: Chiba
+      Ibaraki: Ibaraki
+      Tochigi: Tochigi
+      Gunma: Gunma
+      Yamanashi: Yamanashi
+      Niigata: Niigata
+      Nagano: Nagano
+      Toyama: Toyama
+      Ishikawa: Ishikawa
+      Fukui: Fukui
+      Aichi: Aichi
+      Gifu: Gifu
+      Shizuoka: Shizuoka
+      Mie: Mie
+      Osaka: Osaka
+      Hyōgo: Hyōgo
+      Kyoto: Kyoto
+      Shiga: Shiga
+      Nara: Nara
+      Wakayama: Wakayama
+      Tottori: Tottori
+      Shimane: Shimane
+      Okayama: Okayama
+      Hiroshima: Hiroshima
+      Yamaguchi: Yamaguchi
+      Tokushima: Tokushima
+      Kagawa: Kagawa
+      Ehime: Ehime
+      Kochi: Kochi
+      Fukuoka: Fukuoka
+      Saga: Saga
+      Nagasaki: Nagasaki
+      Kumamoto: Kumamoto
+      Oita: Oita
+      Miyazaki : Miyazaki
+      Kagoshima: Kagoshima
+      Okinawa: Okinawa
+      register_btn: Update
     index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      no_result: No cameramans have found. Please change seaching conditions, sorry....
     show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      researve: Request to Book
+      message: Send a message
+      sign-in-for-ms: Log-in and send a message
+      sign-in-for-researve: Log-in and Request to Book
+      Reviews: Reviews
+      reviews: reviews
+      Read_all_reviews: Read all reviews
+      all_reviews: 'Reviews to %{name}'
+      Schedule: Schedule
+      Portfolio: Portfolio
+      Languages: Languages
+      Photographing_Categories: Photo Categories
+      Photographing_Area: Visitable areas
+      Price: Price
+      Photographing_price: Photographing price
+      yen_per_hour: yen/h
+      hours_minimum: hours minimum
+      Option_Menu: Option memus
+      price_per_hour: '%{price}yen per hour'
+      yen: yen
+      Camera: Camera
+      Message: Message
+    show4_calender:
+      available_dates: Available
+      check_date_and_time: Check avairable time
+      Please_select_from_the_calender: Please select a day from the calender.

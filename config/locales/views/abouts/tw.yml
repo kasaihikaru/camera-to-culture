@@ -1,15 +1,65 @@
 ---
 tw:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  abouts:
     show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      about_1_1: 這一瞬間的照片=這一瞬間的價值
+      about_1_2: 在Camera-to-Culture
+      about_1_3: 為了讓大家感受到
+      about_1_4: 「讓照片更加貼近生活」
+      about_1_5: 的意義而努力
+      about_2_1: 和孩子們在一起的家庭寫真
+      about_2_2: 真正表達自己的個人寫真
+      about_2_3: 和戀人一起牽手旅行的照片
+      about_2_4: 婚紗攝影
+      about_2_5: |-
+        網拍商品照
+        我們期望的是
+      about_2_6: 將各式各樣的「想讓你給我拍」
+      about_2_7: 和各式各樣的「讓我給你拍」
+      about_2_8: 更加使彼此自有鏈接。
+      how_to_use: 使用流程
+      1_Search: ①搜索
+      1_disc_1: 可以快速簡易的搜索攝影師。
+      1_disc_2: 請從作品集和評價中挑選中意的攝影師。
+      back_to_top: 前往搜索頁面
+      2_Reserve: ②預約
+      2_disc_1: 了解攝影師的價格和工作時間，進行預約。
+      2_disc_2: 如果有什麼疑問，可以在預約前向攝影師發送消息咨詢。
+      2_disc_3: 預約、發送消息之前，需要您事先註冊，成為我們的用戶。
+      sign-up: 註冊新用戶
+      3_Photographing: ③攝影
+      3_disc_1: 和攝影師碰面后，就可以開始攝影了。
+      3_disc_2: 請和攝影師直接自行決定支付方式。
+      3_disc_3:
+      4_Recieve_photos: ④獲取您的照片
+      4_disc_1: 結束拍攝后，照片將在日後上傳到您的頁面上。
+      4_disc_2: 請記得查收哦！
+      4_disc_3:
+      5_Review: ⑤評價
+      5_disc_1: 最後請在攝影師的個人評價中留下您的感受。
+      5_disc_2:
+      5_disc_3:
+    terms_of_service_cs:
+
+    terms_of_service_cl:
+
+    to_be_a_cameraman:
+      Register_as_a_cameraman: 成為登錄攝影師的步驟為
+      1_Sign_up: ①註冊新用戶
+      Please_sign_up_first: 首先，請註冊成為我們的用戶。
+      sign-up: 前往註冊新用戶
+      2_Register_as_a_cameraman: ②登錄成為攝影師
+      Next_register_as_a_cameraman: 接下來，成為登錄攝影師。
+      register_as_cameraman: 前往成為登錄攝影師
+      3_Edit_your_profile: ③填寫個人簡介
+      3_disc_1: 請填寫自我介紹的攝影價格。價格均為攝影師本人決定。
+      3_disc_2:
+      cl_settings: 前往設置頁面
+      4_Upload_your_portfolios: ④上傳您的作品樣片
+      4_disc_1: 請在作品集中上傳您的樣片。
+      4_disc_2: 顧客會根據攝影師的樣片來了解攝影風格，是非常重要的內容。
+      upload_cl_portpolios: 前往上傳樣片
+      5_Register_your_available_days: ⑤登錄可以進行拍攝的日期
+      5_disc_1: 顧客在預約時將根據可拍攝的日期而進行參考。
+      5_disc_2:
+      register_available_days: 前往登錄可拍攝日期

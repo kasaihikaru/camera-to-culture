@@ -1,10 +1,76 @@
 ---
 en:
   devise:
+    confirmations:
+      new:
+        Resend_confirmation_instructions: Resend confirmation instructions
+        email: E-mail
+    mailer:
+    passwords:
+      edit:
+        Change_your_password: Change your password
+        characters_minimum: characters minimum
+        New_password: New password
+        Confirm_new_password: Confirm new password
+        Change_my_password: Change password
+      new:
+        Forgot_your_password?: 'Forgot your password?'
+        email: E-mail
+        Send_me_reset_password_instructions: Send reset password instructions
+
+        characters_minimum: characters minimum
+        New_password: New password
+        Confirm_new_password: Confirm new password
+        Change_my_password: Change password
     registrations:
       new:
-        sign-up: "新規登録"
-        sign-in: "ログイン"
-        sign-out: "ログアウト"
-        mypage: "マイページ"
-        aaa: "テスト"
+        sign_up: Sign up
+        name: Name
+        email: E-mail
+        password: Password
+        characters_minimum: characters minimum
+        password_confirmation: Password confirmation
+        sign_up_btn: Sign up
+      edit:
+        Edit_Settings: Edit settings
+        name: Name
+        email: E-mail
+        New_password: New password
+        leave_blank_if_you_don't_want_to_change_it: leave blank if you don't want to change passwprd
+        password: Password
+        characters_minimum: characters minimum
+        password_confirmation: Password確認
+        current_password: Current password
+        we_need_your_current_password_to_confirm_your_changes: Current password to confirm your changes
+        Cancel_my_account: Cancel account
+        Are_you_sure?: Are you sure?
+    sessions:
+      new:
+        sign_in: Log in
+        email: E-mail
+        password: Password
+        remember_me: Remember me
+    shared:
+      links:
+        sign_in: Log in
+        sign_up: Sign up
+        Forgot_your_password?: 'Forgot your password?'
+        Didn't_receive_confirmation_instructions?: Resend confirmation instructions
+        Didn't_receive_unlock_instructions?: Resend unlock instructions
+    unlocks:
+      new:
+        Resend_unlock_instructions: Resend unlock instructions
+        email: E-mail
+    mailer:
+      confirmation_instructions:
+        subject: 【Camera-to-Culture】Thank you for registration
+      email_changed:
+        subject: 【Camera-to-Culture】E-mail changed
+      reset_password_instructions:
+        subject: 【Camera-to-Culture】Reset password instruction
+      unlock_instructions:
+        subject: 【Camera-to-Culture】Unlock instructions
+      password_change:
+        subject: 【Camera-to-Culture】Password changed
+    failure:
+        deleted_account: deleted account

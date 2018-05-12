@@ -1,15 +1,8 @@
 ---
 tw:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
-    show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  client_portfolios:
+    new:
+      portfolio: 作品集樣片（最多可上傳19張）
+      photos_are_uploaded: 張的樣片已經成功上傳至作品集。
+      delete_check: 多選
+      delete_btn: 選擇后將照片刪除

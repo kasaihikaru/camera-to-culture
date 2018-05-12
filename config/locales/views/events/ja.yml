@@ -27,19 +27,8 @@ ja:
       item_name: 項目
       hours: 時間
       Total_Fee: 合計金額
-      Check_Profile: '%{name}さんのプロフィールを確認'
-      Languages: 話す言語
-      sign-in: ログインして、メッセージを送る
-      Photographing_Categories: 撮影カテゴリー
-      Photographing_Area: 撮影可能な都道府県
-      Price: 価格
-      yen_per_hour: 円/時間
-      hours_minimum: 時間から受け付けます
-      Option_Menu: オプションメニュー
       price_per_hour: １時間あたり
       yen: 円
-      Camera: カメラ
-      Message: メッセージ
     show:
       Session_Details: 撮影の詳細
       Date_and_Time: 日時
@@ -48,7 +37,7 @@ ja:
       Message: メッセージ
       Fee: 料金
       Price: 価格
-      price_per_hour: １時間あたり
+      price_per_hour: '１時間あたり%{price}円'
       Primary_Price: 撮影価格
       item_name: 項目
       price: 価格
@@ -109,7 +98,7 @@ ja:
       cs_accept_comment: わかりました。宜しくお願いします！
       Send: 送信
     cl_dismiss:
-      Dismiss: 撮影を断る
+      Dismiss: リクエストを断る
       cl_dismiss_comment: ご希望の条件に沿うのは難しいため、今回は見送らせてください。また次回、よろしくお願いします！
       Send: 送信
     cs_dismiss:
@@ -164,9 +153,6 @@ ja:
       You_edited_Condition: 条件変更依頼中
       Customer_Approved: 撮影確定
       Customer_Dismissed: 却下されました
-      Event_finished: 納品待ち
-      Photos_delivered: 納品済み
-      Photos_recieved: 写真受け取り済み
     cl_past:
       yen: 円
       Automatically_Canceled: 自動キャンセル済み
@@ -177,7 +163,7 @@ ja:
       Customer_dismissed: 顧客が却下
       Waiting_for_Photos: 納品待ち
       Photos_delivered: 納品済み
-      Write_a_review: レビューを書きましょう
+      Write_a_review: レビュー待ち
       Reply_to_a_review: レビューに返信
       Photos_recieved: 写真受け取り済み
     cs_future:
@@ -206,7 +192,7 @@ ja:
       You_dismissed: あなたが却下
       Waiting_for_Photos: 納品待ち
       Photos_delivered: 写真受け取り可能
-      Write_a_review: レビューを書きましょう
+      Write_a_review: レビュー待ち
       Photos_recieved: 写真受け取り済み
     event_photo:
       See_Uploaded_photos: 納品した写真を確認

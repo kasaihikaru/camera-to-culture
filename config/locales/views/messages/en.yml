@@ -1,15 +1,20 @@
 ---
 en:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  messages:
+    new:
+      message: 'Message to %{name}'
+      send_btn: Send
     show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      Introduction: Introduction
+      Photographing_Categories: Photo categories
+      Photographing_Area: Visitable areas
+      Price: Price
+      yen_per_hour: yen per hour
+      hours_minimum: h is minimum
+      Option_memu: Option menu
+      price_per_hour: (per hour)
+      Camera: Camera
+      Message: Message
+      write_here: Write a message
+      send_btn: Send
+      last_message: Last message

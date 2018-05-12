@@ -1,15 +1,10 @@
 ---
 tw:
-  clients:
+  client_schedules:
     index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
-    show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      schedule: 可拍攝日程
+      date: 日期
+      day: 星期
+      available-time: 可拍攝日程的時間詳情
+      example_sch: （例）10:00-17:00可接片
+      Update: 更新

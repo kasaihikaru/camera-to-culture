@@ -2,20 +2,23 @@
 zh:
   client_contacts:
     first_new:
-      register_as_cameraman: カメラマンとして登録する
-      phone_number: 電話番号(半角数字)
-      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
-      address: 住所
-      terms_of_service: 利用規約
-      register_btn: 規約に同意して登録
+      register_as_cameraman: 登录摄影师
+      An_eroor_occurred: 输入的内容有误
+      phone_number: 联络电话（半角数字)
+      This_field_does_not_share_with_other_users : ＊非公开项目
+      address: 住址
+      adress_example: 〇〇县 〇〇市 〇〇 １−１−１
+      terms_of_service: 注册协议
+      register_btn: 同意注册协议并注册
     new:
-      change_contacts: 連絡先情報を変更する
-      An_eroor_occurred: 登録できませんでした
-      phone_number: 電話番号
-      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
-      address: 住所
+      change_contacts: 更改联络方式
+      An_eroor_occurred: 无法注册成功
+      phone_number: 联络电话
+      This_field_does_not_share_with_other_users : ＊非公开项目
+      address: 住址
+      adress_example: 〇〇县 〇〇市 〇〇 １−１−１
       register_btn: 更新
     create:
-      Setting_has_updated: 更新しました
+      Setting_has_updated: 更新成功
     user_check:
-      Please_login: ログインしてください
+      Please_login: 请登录

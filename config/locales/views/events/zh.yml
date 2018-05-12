@@ -1,15 +1,207 @@
 ---
 zh:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  events:
+    new:
+      Request_to_Book: 申请预约
+      Check_Shedule: '确认%{name}的预约情况'
+      Request_date_and_time: 预约希望时间
+      15_minute_increments: 预约时间单位为15分钟。
+      hours_minimum: 起接受预约
+      hours_explanation1: 最少预约时间为
+      hours_explanation2: 小时。
+      Photographing_Location: 拍摄场所
+      tell_location_detail: 请将详细的拍摄场所和集合场所和摄影师沟通。
+      How_many_people?: 参加拍摄的人数
+      Say_hello: 打声招呼并做个自我介绍
+      Let_cl_know_you: '向%{name}打个招呼吧！'
+      greeting_message: |
+        %{name}，你好。
+        这次想和妻子、儿子三个人一起拍家庭写真。
+        麻烦你了！
+      per_hour_automatically_culculates: 系统会自动计算每小时的价格。
+      option_name: 附加服务内容
+      price: 价格
+      number: 数量
+      Fee: 价格
+      Primary_Price: 摄影价格
+      item_name: 项目
+      hours: 小时
+      Total_Fee: 合计金额
+      price_per_hour: 每1小时
+      yen: 円
     show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      Session_Details: 摄影的详情
+      Date_and_Time: 日程时间
+      How_many_people?: 参加拍摄的人数
+      Location: 拍摄场所
+      Message: 消息
+      Fee: 价格
+      Price: 价格
+      price_per_hour: '每1小时%{price}円'
+      Primary_Price: 摄影价格
+      item_name: 项目
+      price: 价格
+      hours: 小时
+      Total_Fee: 合计金额
+      yen: 円
+      History: 历史记录
+      Date_and_Time: 日程时间
+      State: 行动
+      request: 申请
+      cl_accepted: 拍摄确定
+      cs_opened: 拍摄结束
+      cl_delivered: 照片上传
+      cs_recieved: 获取照片
+      cl_edited: 申请更改拍摄条件
+      cs_accepted: 接收更改
+      cl_dismissed: 拍摄取消
+      cs_dismissed: 更改取消
+      cs_request_canceled: 取消申请
+      cs_canceled: 取消预约
+      cl_canceled: 取消拍摄
+      Comment: 评价
+      Send: 添加
+      Edit: 建议更改拍摄条件
+      request_canceled: 取消申请
+      Photographer_no_replied: 由于摄影师无回复，并超过了拍摄时间，已经自动取消。
+      Customer_no_replied: 顾客无回复，并超过了拍摄时间，已经自动取消。
+      check_uploaded_photos: 确认上传照片（必需）
+      download_zip: 再次下载（zip格式）
+      Write_reviews: 写下您的评价吧！
+      Review_about_you: 关于您的评价
+      Review_by_you: 来自您的评价
+      Review_about_cs: '给%{name}留下评价'
+      Review_about_cl: '给%{name}留下评价'
+      cl_review_placeholder: '觉得%{name}的拍摄怎么样？'
+      cs_review_placeholder: '觉得%{name}的拍摄真么样？'
+      cl_comment_placeholder: '要回复来自%{name}的评价吗？'
+      Comment_on_a_review: 回复评价
+      Post_reviews: 评价
+      Reply_to_cs: '回复的评价'
+      Reply_from_cl: '来自%{name}的回复'
+      Attach_images: 给大家看看您这次拍摄的照片吧！
+    cl_accept:
+      Accept: 同意申请
+      cl_accept_comment: 感谢您的申请！拍摄还请多多关照！
+      Send: 发送
+    cl_deliver:
+      Notify_Deliverys_Completed: 关于照片交付的通知（必需）
+      cl_deliver_comment: 照片已经上传成功。请确认！
+      Send: 发送
+    cs_recieve:
+      Recieve_photos: 获取照片
+      cs_recieve_comment: 我会下载照片的。谢谢！
+      download_zip: 下载（zip格式）
+      Send: 发送
+    cs_accept:
+      Accept_Edited_Condition: 同意更改摄影条件
+      cs_accept_comment: 好的，我知道了。没有问题！
+      Send: 发送
+    cl_dismiss:
+      Dismiss: 拒绝申请
+      cl_dismiss_comment: 不好意思，这次的拍摄有些困难，希望下次能为您提供服务！
+      Send: 发送
+    cs_dismiss:
+      Dismiss_Edited_Condition: 不同意更改拍摄条件
+      cs_dismiss_comment: 不好意思，这次的拍摄有些困难，希望下次能为您提供服务！
+      Send: 发送
+    cs_request_cancele:
+      Request_Cancele: 取消申请
+      cs_request_cancele_comment: 不好意思，请允许我取消您的申请。
+      Send: 发送
+    cs_cancele:
+      Cancele: 取消预约
+      cs_cancele_comment: 非常抱歉，请允许我取消您的预约。
+      Send: 发送
+    cl_cancele:
+      Cancele: 取消拍摄
+      cl_cancele_comment: 非常抱歉，请允许我取消您的拍摄。
+      Send: 发送
+    edit:
+      Edit_Conditions: 提出更改拍摄调节
+      Check_Your_Shedule: 确认自己的拍摄日程
+      Request_date_and_time: 予约希望的日程
+      15_minute_increments: 预约时间单位为15分钟。
+      hours_minimum: 开始接受预约。
+      hours_explanation1: 最少预约时间为
+      hours_explanation2: 小时。
+      Photographing_Location: 拍摄场所
+      How_many_people?: 参加拍摄的人数
+      Say_hello: 给您的消息
+      Option_Menu: 附加服务
+      per_hour_automatically_culculates: 系统会自动计算每小时的价格。
+      option_name: 附加服务内容
+      price: 价格
+      yen: 円
+      number: 数量
+      price_per_hour: 每1小时
+      Fee: 价格
+      Primary_Price: 拍摄价格
+      item_name: 项目
+      hours: 小时
+      Total_Fee: 合计金额
+      Message: 关于更改条件的通知
+      cl_edit_comment: 已经更改了拍摄条件。如果是这样的条件的话是可以接片的。您看看怎么样？
+      Send_request: 提出更改拍摄条件
+    cl_future:
+      yen: 円
+      Youve_got_a_request: 等待您的同意
+      You_Approved: 决定拍摄
+      You_Dismissed: 已拒绝拍摄
+      You_Canceled: 已取消
+      Customer_Canceled: 顾客已取消
+      You_edited_Condition: 提出更改条件中
+      Customer_Approved: 决定拍摄
+      Customer_Dismissed: 已被拒绝
+    cl_past:
+      yen: 円
+      Automatically_Canceled: 已自动取消
+      Please_deliver_photos: 请上传照片
+      You_dismissed: 已被拒绝拍摄
+      You_Canceled: 已取消
+      Customer_Canceled: 顾客已取消
+      Customer_dismissed: 顾客已拒绝
+      Waiting_for_Photos: 等待照片上传
+      Photos_delivered: 照片上传成功
+      Write_a_review: 等待评价
+      Reply_to_a_review: 回复评价
+      Photos_recieved: 已获取照片
+    cs_future:
+      yen: 円
+      Requesting: 等待同意
+      Approved: 决定拍摄
+      Request_dismissed: 已被拒绝
+      Photographer_Canceled: 对方已取消
+      You_Canceled: 您已取消
+      Youve_got_request: 等待您的同意
+      Customer_approved: 决定拍摄
+      You_dismissed: 您已拒绝
+      Event_finished: 等待照片上传
+      Photos_delivered: 照片上传成功
+      Photos_recieved: 已获取照片
+    cs_past:
+      yen: 円
+      Requesting: 等待同意
+      Approved: 决定拍摄
+      Automatically_Canceled: 已自动取消
+      Request_dismissed: 对方已拒绝
+      Canceled_by_photographer: 对方已取消
+      You_Canceled: 您已取消
+      Youve_got_request: 等待您的同意
+      Customer_approved: 决定拍摄
+      You_dismissed: 您已拒绝
+      Waiting_for_Photos: 等待照片上传
+      Photos_delivered: 照片上传成功
+      Write_a_review: 照片上传成功
+      Photos_recieved: 已获取照片
+    event_photo:
+      See_Uploaded_photos: 确定已上传的照片
+      delete_check: 选择删除对象
+      delete_btn: 删除
+    event_photo_upload:
+      Upload: 照片上传
+      Upload_explanation: 请刷新页面，确认已上传的照片
+    event_photo_cs:
+      Preview_Uploaded_photos: 预览已上传的照片
+      photo_nums_explanation_1: '全部%{nums}张的照片已经上传成功'
+      photo_nums_explanation_2: 预览仅显示6张照片。

@@ -1,10 +1,76 @@
 ---
 zh:
   devise:
+    confirmations:
+      new:
+        Resend_confirmation_instructions: 再发送一次确认邮件
+        email: 电子邮箱
+    mailer:
+    passwords:
+      edit:
+        Change_your_password: 更改密码
+        characters_minimum: 字以上
+        New_password: 新密码
+        Confirm_new_password: 确认新密码
+        Change_my_password: 更改密码
+      new:
+        Forgot_your_password?: 更改密码
+        email: 电子邮箱
+        Send_me_reset_password_instructions: 再次发送更改密码的电子邮件
+
+        characters_minimum: 字以上
+        New_password: 新密码
+        Confirm_new_password: 确认旧密码
+        Change_my_password: 更改密码
     registrations:
       new:
-        sign-up: "新規登録"
-        sign-in: "ログイン"
-        sign-out: "ログアウト"
-        mypage: "マイページ"
-        aaa: "テスト"
+        sign_up: 注册
+        name: 名字
+        email: 电子邮箱
+        password: 密码
+        characters_minimum: 字以上
+        password_confirmation: 确认密码
+        sign_up_btn: 注册
+      edit:
+        Edit_Settings: 更改基本设置
+        name: 名字
+        email: 电子邮箱
+        New_password: 新密码
+        leave_blank_if_you_don't_want_to_change_it: 不用更改的话无需填写
+        password: 密码
+        characters_minimum: 字以上
+        password_confirmation: 确认密码
+        current_password: 现在的密码
+        we_need_your_current_password_to_confirm_your_changes: 请输入密码进行确定。
+        Cancel_my_account: 注销账号
+        Are_you_sure?: 真的要注销账号吗？
+    sessions:
+      new:
+        sign_in: 登录
+        email: 电子邮箱
+        password: 密码
+        remember_me: 保持登录状态
+    shared:
+      links:
+        sign_in: 登录
+        sign_up: 注册
+        Forgot_your_password?: 忘记密码
+        Didn't_receive_confirmation_instructions?: 发送确认邮件
+        Didn't_receive_unlock_instructions?: 发送密码提醒邮件
+    unlocks:
+      new:
+        Resend_unlock_instructions: 再发送一次来自被冻结的账号回复的邮件
+        email: 电子邮箱
+    mailer:
+      confirmation_instructions:
+        subject: 【Camera-to-Culture】谢谢您的注册！
+      email_changed:
+        subject: 【Camera-to-Culture】更改电子邮箱
+      reset_password_instructions:
+        subject: 【Camera-to-Culture】更改密码
+      unlock_instructions:
+        subject: 【Camera-to-Culture】关于账号冻结的通知
+      password_change:
+        subject: 【Camera-to-Culture】关于更改密码成功的通知
+    failure:
+        deleted_account: 这是已经注销的账号。

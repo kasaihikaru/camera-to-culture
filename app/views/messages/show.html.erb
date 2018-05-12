@@ -12,28 +12,39 @@
 				<h2><%= t(".Introduction") %></h2>
 				<p><%= @cs_here.introduction %></p>
 			<% end %>
+
+			<!-- カテゴリー -->
 			<% if @categories.present? %>
-				<h2><%= t(".Photographing_Categories") %></h2>
-				<% @categories.each do |cate| %>
-					<p><%= cate.category.ja %></p>
-				<% end %>
-			<% end %>
-			<% if @locations.present? %>
-				<h2><%= t(".Photographing_Area") %></h2>
-				<p>
-					<% @locations.each do |location| %>
-						<%= location.prefecture.ja %>&nbsp;
+				<h2><%= render :partial => 'svgs/category' %>&nbsp;<%= t(".Photographing_Categories") %></h2>
+				<div class="badges">
+					<% @categories.each do |cate| %>
+						<span class="badge badge-pill subprime-badge"><%= cate.category.ja %></span>
 					<% end %>
-				</p>
+				</div>
 			<% end %>
+			<br>
+
+			<!-- 撮影エリア -->
+			<% if @locations.present? %>
+				<h2><%= render :partial => 'svgs/location' %>&nbsp;<%= t(".Photographing_Area") %></h2>
+				<div class="badges">
+					<% @locations.each do |location| %>
+						<span class="badge badge-pill black-badge"><%= location.prefecture.ja %></span>
+					<% end %>
+				</div>
+			<% end %>
+			<br>
+
 			<% if @prim_price.present? %>
 				<% if @prim_price.price_per_hour.present? %>
-					<h2><%= t(".Price") %></h2>
+					<h2><%= render :partial => 'svgs/fee' %>&nbsp;<%= t(".Price") %></h2>
 					<p><%= @prim_price.price_per_hour %>円/時間&nbsp;（<%= @prim_price.minimum_hours %>時間から受け付けます）</p>
 				<% end %>
 			<% end %>
+			<br>
+
 			<% if @options.present? %>
-				<h2><%= t(".Option_memu") %></h2>
+				<h2><%= render :partial => 'svgs/cart' %>&nbsp;<%= t(".Option_memu") %></h2>
 				<% @options.each do |option| %>
 					<p>
 						<%= option.name %>
@@ -44,12 +55,14 @@
 					</p>
 				<% end %>
 			<% end %>
+			<br>
+
 			<% if @cl_here.camera.present? %>
-				<h2><%= t(".Camera") %></h2>
+				<h2><%= render :partial => 'svgs/camera' %>&nbsp;<%= t(".Camera") %></h2>
 				<p><%= @cl_here.camera %></p>
 			<% end %>
 			<% if @cl_here.introduction? %>
-				<h2><%= t(".Message") %></h2>
+				<h2><%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Message") %></h2>
 				<p><%= @cl_here.introduction %></p>
 			<% end %>
 		</div>

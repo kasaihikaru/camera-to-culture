@@ -1,15 +1,207 @@
 ---
 tw:
-  clients:
-    index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
-    show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+  events:
+    new:
+      Request_to_Book: 申請預約
+      Check_Shedule: '確認%{name}的預約情況'
+      Request_date_and_time: 預約希望時間
+      15_minute_increments: 預約時間單位為15分鐘。
+      hours_minimum: 起接受預約
+      hours_explanation1: 最少預約時間為
+      hours_explanation2: 小時。
+      Photographing_Location: 拍攝場所
+      tell_location_detail: 請將詳細的拍攝場所和集合場所和攝影師溝通。
+      How_many_people?: 參加拍攝的人數
+      Say_hello: 打聲招呼並做個自我介紹
+      Let_cl_know_you: '向%{name}打個招呼吧！ '
+      greeting_message: |
+        %{name}，你好。
+        這次想和妻子、兒子三個人一起拍家庭寫真。
+        麻煩你了！
+      per_hour_automatically_culculates: 系統會自動計算每小時的價格。
+      option_name: 附加服務內容
+      price: 價格
+      number: 數量
+      Fee: 價格
+      Primary_Price: 攝影價格
+      item_name: 項目
+      hours: 小時
+      Total_Fee: 合計金額
+      price_per_hour: 每1小時
+      yen: 円
+    show:
+      Session_Details: 攝影的詳情
+      Date_and_Time: 日程時間
+      How_many_people?: 參加拍攝的人數
+      Location: 拍攝場所
+      Message: 消息
+      Fee: 價格
+      Price: 價格
+      price_per_hour: '每1小時%{price}円'
+      Primary_Price: 攝影價格
+      item_name: 項目
+      price: 價格
+      hours: 小時
+      Total_Fee: 合計金額
+      yen: 円
+      History: 歷史記錄
+      Date_and_Time: 日程時間
+      State: 行動
+      request: 申請
+      cl_accepted: 拍攝確定
+      cs_opened: 拍攝結束
+      cl_delivered: 照片上傳
+      cs_recieved: 獲取照片
+      cl_edited: 申請更改拍攝條件
+      cs_accepted: 接收更改
+      cl_dismissed: 拍攝取消
+      cs_dismissed: 更改取消
+      cs_request_canceled: 取消申請
+      cs_canceled: 取消預約
+      cl_canceled: 取消拍攝
+      Comment: 評價
+      Send: 添加
+      Edit: 建議更改拍攝條件
+      request_canceled: 取消申請
+      Photographer_no_replied: 由於攝影師無回复，並超過了拍攝時間，已經自動取消。
+      Customer_no_replied: 顧客無回复，並超過了拍攝時間，已經自動取消。
+      check_uploaded_photos: 確認上傳照片（必需）
+      download_zip: 再次下載（zip格式）
+      Write_reviews: 寫下您的評價吧！
+      Review_about_you: 關於您的評價
+      Review_by_you: 來自您的評價
+      Review_about_cs: '給%{name}留下評價'
+      Review_about_cl: '給%{name}留下評價'
+      cl_review_placeholder: '覺得%{name}的拍攝怎麼樣？ '
+      cs_review_placeholder: '覺得%{name}的拍攝真麼樣？ '
+      cl_comment_placeholder: '要回復來自%{name}的評價嗎？ '
+      Comment_on_a_review: 回複評價
+      Post_reviews: 評價
+      Reply_to_cs: '回复的評價'
+      Reply_from_cl: '來自%{name}的回复'
+      Attach_images: 給大家看看您這次拍攝的照片吧！
+    cl_accept:
+      Accept: 同意申請
+      cl_accept_comment: 感謝您的申請！拍攝還請多多關照！
+      Send: 發送
+    cl_deliver:
+      Notify_Deliverys_Completed: 關於照片交付的通知（必需）
+      cl_deliver_comment: 照片已經上傳成功。請確認！
+      Send: 發送
+    cs_recieve:
+      Recieve_photos: 獲取照片
+      cs_recieve_comment: 我會下載照片的。謝謝！
+      download_zip: 下載（zip格式）
+      Send: 發送
+    cs_accept:
+      Accept_Edited_Condition: 同意更改攝影條件
+      cs_accept_comment: 好的，我知道了。沒有問題！
+      Send: 發送
+    cl_dismiss:
+      Dismiss: 拒絕申請
+      cl_dismiss_comment: 不好意思，這次的拍攝有些困難，希望下次能為您提供服務！
+      Send: 發送
+    cs_dismiss:
+      Dismiss_Edited_Condition: 不同意更改拍攝條件
+      cs_dismiss_comment: 不好意思，這次的拍攝有些困難，希望下次能為您提供服務！
+      Send: 發送
+    cs_request_cancele:
+      Request_Cancele: 取消申請
+      cs_request_cancele_comment: 不好意思，請允許我取消您的申請。
+      Send: 發送
+    cs_cancele:
+      Cancele: 取消預約
+      cs_cancele_comment: 非常抱歉，請允許我取消您的預約。
+      Send: 發送
+    cl_cancele:
+      Cancele: 取消拍攝
+      cl_cancele_comment: 非常抱歉，請允許我取消您的拍攝。
+      Send: 發送
+    edit:
+      Edit_Conditions: 提出更改拍攝調節
+      Check_Your_Shedule: 確認自己的拍攝日程
+      Request_date_and_time: 予約希望的日程
+      15_minute_increments: 預約時間單位為15分鐘。
+      hours_minimum: 開始接受預約。
+      hours_explanation1: 最少預約時間為
+      hours_explanation2: 小時。
+      Photographing_Location: 拍攝場所
+      How_many_people?: 參加拍攝的人數
+      Say_hello: 給您的消息
+      Option_Menu: 附加服務
+      per_hour_automatically_culculates: 系統會自動計算每小時的價格。
+      option_name: 附加服務內容
+      price: 價格
+      yen: 円
+      number: 數量
+      price_per_hour: 每1小時
+      Fee: 價格
+      Primary_Price: 拍攝價格
+      item_name: 項目
+      hours: 小時
+      Total_Fee: 合計金額
+      Message: 關於更改條件的通知
+      cl_edit_comment: 已經更改了拍攝條件。如果是這樣的條件的話是可以接片的。您看看怎麼樣？
+      Send_request: 提出更改拍攝條件
+    cl_future:
+      yen: 円
+      Youve_got_a_request: 等待您的同意
+      You_Approved: 決定拍攝
+      You_Dismissed: 已拒絕拍攝
+      You_Canceled: 已取消
+      Customer_Canceled: 顧客已取消
+      You_edited_Condition: 提出更改條件中
+      Customer_Approved: 決定拍攝
+      Customer_Dismissed: 已被拒絕
+    cl_past:
+      yen: 円
+      Automatically_Canceled: 已自動取消
+      Please_deliver_photos: 請上傳照片
+      You_dismissed: 已被拒絕拍攝
+      You_Canceled: 已取消
+      Customer_Canceled: 顧客已取消
+      Customer_dismissed: 顧客已拒絕
+      Waiting_for_Photos: 等待照片上傳
+      Photos_delivered: 照片上傳成功
+      Write_a_review: 等待評價
+      Reply_to_a_review: 回複評價
+      Photos_recieved: 已獲取照片
+    cs_future:
+      yen: 円
+      Requesting: 等待同意
+      Approved: 決定拍攝
+      Request_dismissed: 已被拒絕
+      Photographer_Canceled: 對方已取消
+      You_Canceled: 您已取消
+      Youve_got_request: 等待您的同意
+      Customer_approved: 決定拍攝
+      You_dismissed: 您已拒絕
+      Event_finished: 等待照片上傳
+      Photos_delivered: 照片上傳成功
+      Photos_recieved: 已獲取照片
+    cs_past:
+      yen: 円
+      Requesting: 等待同意
+      Approved: 決定拍攝
+      Automatically_Canceled: 已自動取消
+      Request_dismissed: 對方已拒絕
+      Canceled_by_photographe: 對方已拒絕
+      You_Canceled: あなたがキャンセル
+      Youve_got_request: あなたの承認待ち
+      Customer_approved: 撮影確定
+      You_dismissed: あなたが卻下
+      Waiting_for_Photos: 納品待ち
+      Photos_delivered: 寫真受け取り可能
+      Write_a_review: レビュー待ち
+      Photos_recieved: 寫真受け取り済み
+    event_photo:
+      See_Uploaded_photos: 納品した寫真を確認
+      delete_check: 消去チェック
+      delete_btn: 消去する
+    event_photo_upload:
+      Upload: 寫真納品
+      Upload_explanation: アップロードした寫真を確認するには畫面をリロードしてください
+    event_photo_cs:
+      Preview_Uploaded_photos: 納品された寫真をプレビュー
+      photo_nums_explanation_1: '全部で%{nums}枚の寫真が納品されています'
+      photo_nums_explanation_2: プレビューは6枚まで表示されます。

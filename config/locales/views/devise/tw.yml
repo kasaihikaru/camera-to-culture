@@ -1,10 +1,76 @@
 ---
 tw:
   devise:
+    confirmations:
+      new:
+        Resend_confirmation_instructions: 再發送一次確認郵件
+        email: 電子郵箱
+    mailer:
+    passwords:
+      edit:
+        Change_your_password: 更改密碼
+        characters_minimum: 字以上
+        New_password: 新密碼
+        Confirm_new_password: 確認新密碼
+        Change_my_password: 更改密碼
+      new:
+        Forgot_your_password?: 更改密碼
+        email: 電子郵箱
+        Send_me_reset_password_instructions: 再次發送更改密碼的電子郵件
+
+        characters_minimum: 字以上
+        New_password: 新密碼
+        Confirm_new_password: 確認舊密碼
+        Change_my_password: 更改密碼
     registrations:
       new:
-        sign-up: "新規登録"
-        sign-in: "ログイン"
-        sign-out: "ログアウト"
-        mypage: "マイページ"
-        aaa: "テスト"
+        sign_up: 註冊
+        name: 名字
+        email: 電子郵箱
+        password: 密碼
+        characters_minimum: 字以上
+        password_confirmation: 確認密碼
+        sign_up_btn: 註冊
+      edit:
+        Edit_Settings: 更改基本設置
+        name: 名字
+        email: 電子郵箱
+        New_password: 新密碼
+        leave_blank_if_you_don't_want_to_change_it: 不用更改的話無需填寫
+        password: 密碼
+        characters_minimum: 字以上
+        password_confirmation: 確認密碼
+        current_password: 現在的密碼
+        we_need_your_current_password_to_confirm_your_changes: 請輸入密碼進行確定。
+        Cancel_my_account: 註冊賬號
+        Are_you_sure?: 真的要註銷賬號嗎？
+    sessions:
+      new:
+        sign_in: 登錄
+        email: 電子郵箱
+        password: 密碼
+        remember_me: 保持登錄狀態
+    shared:
+      links:
+        sign_in: 登錄
+        sign_up: 註冊
+        Forgot_your_password?: 忘記密碼
+        Didn't_receive_confirmation_instructions?: 發送確認郵件
+        Didn't_receive_unlock_instructions?: 發送密碼提醒郵件
+    unlocks:
+      new:
+        Resend_unlock_instructions: 再發送一次來自被凍結的賬號回复的郵件
+        email: 電子郵箱
+    mailer:
+      confirmation_instructions:
+        subject: 【Camera-to-Culture】謝謝您的註冊！
+      email_changed:
+        subject: 【Camera-to-Culture】更改電子郵箱
+      reset_password_instructions:
+        subject: 【Camera-to-Culture】更改密碼
+      unlock_instructions:
+        subject: 【Camera-to-Culture】關於賬號凍結的通知
+      password_change:
+        subject: 【Camera-to-Culture】關於更改密碼成功的通知
+    failure:
+        deleted_account: 這是已經註銷的賬號。

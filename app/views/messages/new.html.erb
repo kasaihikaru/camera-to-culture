@@ -2,7 +2,7 @@
 	<div class="ms-new clearfix">
 		<%= form_for @msg,:url => {:action => :first_create} do |f| %>
 			<%= image_tag @reciever.image.url, alt: "icon", class: "image" if @reciever.image? %><br>
-			<h1><%= @reciever.name %><%=t(".message") %></h1>
+			<h1><%=t(".message", name: @reciever.name) %></h1>
 			<%= f.text_area :message %>
 			<div class="send-btn">
 				<%= f.submit t(".send_btn"), class: "prim-btn" %>

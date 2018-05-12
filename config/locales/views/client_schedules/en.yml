@@ -1,15 +1,10 @@
 ---
 en:
-  clients:
+  client_schedules:
     index:
-      sign-up: "sign-up"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
-    show:
-      sign-up: "新規登録"
-      sign-in: "ログイン"
-      sign-out: "ログアウト"
-      mypage: "マイページ"
-      aaa: "テスト"
+      schedule: Schedule
+      date: Date
+      day: Day
+      available-time: Write your available-time
+      example_sch: ex) 10:00-17:00 is available
+      Update: Update

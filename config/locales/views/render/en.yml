@@ -2,15 +2,24 @@
 en:
   render:
     home_search:
-      find_your_photographer: Find Your Photographer
-      select_category: Select Categories
-      for_business: Commercial Photos
-      commercial_photos_people: People（models）
-      commercial_photos_items: Items（apparel, cuisine）
-      for_private: Private Photos
-      event_photos: Events（wedding, traveling）
-      private_photo: Daily（family, couples, friends）
-      select_area: Select Prefectures
+      all_categories: All categories
+      Yourself: Yourself
+      Memory: Memories
+      Child: Children
+      Others: Others
+      Profile: Profile
+      ID photo: ID photo
+      Wedding: Wedding
+      Traveling: Traveling
+      Dairy life: Dairy life
+      seven-five-three: seven-five-three
+      Coming of age: Coming of age
+      Maternity: Maternity
+      New born: New born
+      Commodities: Commodities
+      Event: Event
+      Pet: Pet
+      all_areas: 'All areas'
       Popular_area: Popular Area
       Hokkaido_area: Hokkaido Area
       Tohoku_area: Tohoku Area
