@@ -14,7 +14,7 @@ $white-col : #FFFFFF;
 @media screen and (min-width: 550px) {
 	#home-top{
 		height: 100%;
-		background-image: image-url("home-top.png");
+		background-image: url("/images/home-top.png");
 		background-attachment: fixed;
 		background-position: center;
 		background-size: cover;
