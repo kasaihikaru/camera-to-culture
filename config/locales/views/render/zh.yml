@@ -1,8 +1,8 @@
 ---
 zh:
-   clients:
-    edit:
-      category_form: 可拍摄的照片类别
+  render:
+    home_search:
+      all_categories: 全部照片类别
       Yourself: 你
       Memory: 重要时刻
       Child: 儿童
@@ -18,7 +18,7 @@ zh:
       New born: 新生儿照
       Commodities: 商品
       Event: 活动
-      Pet: 宠物 
+      Pet: 宠物
       all_areas: 全部地区
       Popular_area: 热门地区
       Hokkaido_area: 北海道地区
