@@ -167,7 +167,7 @@ class EventsController < ApplicationController
 				options = event.event_option_prices
 				reciever_mail = reciever.email
 				sender_name = sender.name
-				link = 'http://13.230.174.55/events/' + event.id.to_s
+				link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/' + event.id.to_s
 				ReserveMailer.cs_requested(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link).deliver_now
 			end
 
@@ -229,7 +229,7 @@ class EventsController < ApplicationController
 				options = event.event_option_prices
 				reciever_mail = reciever.email
 				sender_name = sender.name
-				link = 'http://13.230.174.55/events/' + event.id.to_s
+				link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/' + event.id.to_s
 				state = "cl_edited"
 				ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 			end
