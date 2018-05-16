@@ -153,6 +153,7 @@ zh:
       You_edited_Condition: 提出更改条件中
       Customer_Approved: 决定拍摄
       Customer_Dismissed: 已被拒绝
+      no_result: 还没有拍摄计划
     cl_past:
       yen: 円
       Automatically_Canceled: 已自动取消
@@ -166,6 +167,7 @@ zh:
       Write_a_review: 等待评价
       Reply_to_a_review: 回复评价
       Photos_recieved: 已获取照片
+      no_result: 还没有过拍摄记录
     cs_future:
       yen: 円
       Requesting: 等待同意
@@ -179,6 +181,7 @@ zh:
       Event_finished: 等待照片上传
       Photos_delivered: 照片上传成功
       Photos_recieved: 已获取照片
+      no_result: 还没有拍摄计划
     cs_past:
       yen: 円
       Requesting: 等待同意
@@ -194,6 +197,7 @@ zh:
       Photos_delivered: 照片上传成功
       Write_a_review: 照片上传成功
       Photos_recieved: 已获取照片
+      no_result: 还没有过拍摄记录
     event_photo:
       See_Uploaded_photos: 确定已上传的照片
       delete_check: 选择删除对象

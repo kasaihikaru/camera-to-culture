@@ -1,99 +1,105 @@
 <div class="container-fluid ev-index-base ev-index-for-cl">
 	<div class="row">
 		<div class="col-12 col-md-8 offset-md-2">
-			<% @events.each do |ev| %>
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-1 ev-index-for-cl-line padding-0">
-							<%= render :partial => 'svgs/ev_cl_line' %>
-						</div>
-						<div class="col-11 ev-index-for-cl-main padding-0">
-							<%= link_to event_path(ev.id), class: "" do %>
-								<div class="ev-index-for-cl-up padding-0">
-									<%= render :partial => 'svgs/date' %><%= ev.start_time.strftime('%Y/%m/%d %H:%M') %>〜<%= ev.end_time.strftime('%H:%M') %>
-								</div>
-								<div class="container-fluid">
-									<div class="row">
-										<div class="col-4 ev-index-for-cl-low-left padding-0">
-											<%= image_tag ev.customer.user.image.url(:thumb), :alt => "icon", :class => "ev-index-cs-icon" if ev.customer.user.image? %>
-										</div>
-										<div class="col-8 ev-index-for-cl-low-right padding-0">
-											<!-- ステータス -->
-											<div class="ev-index-status">
-												<!-- 顧客がリスエスト -->
-												<% if ev.event_states.last.state == "request" %>
-													<span class="status-badge primary-col">
-														<%= t(".Youve_got_a_request") %>
-													</span>
-												<% end %>
-												<!-- あなたが承認済み -->
-												<% if ev.event_states.last.state == "cl_accepted" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".You_Approved") %>
-													</span>
-												<% end %>
-												<!-- あなたが却下済み -->
-												<% if ev.event_states.last.state == "cl_dismissed" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".You_Dismissed") %>
-													</span>
-												<% end %>
-												<!-- あなたがキャンセル済み -->
-												<% if ev.event_states.last.state == "cl_canceled" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".You_Canceled") %>
-													</span>
-												<% end %>
-												<!-- 顧客がキャンセル済み -->
-												<% if ev.event_states.last.state == "cs_canceled" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".Customer_Canceled") %>
-													</span>
-												<% end %>
-												<!-- 顧客がリクエストキャンセル済み -->
-												<% if ev.event_states.last.state == "cs_request_canceled" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".Customer_Canceled") %>
-													</span>
-												<% end %>
-												<!-- あなたが条件変更リクエスト -->
-												<% if ev.event_states.last.state == "cl_edited" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".You_edited_Condition") %>
-													</span>
-												<% end %>
-												<!-- 顧客が条件変更を承認済み -->
-												<% if ev.event_states.last.state == "cs_accepted" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".Customer_Approved") %>
-													</span>
-												<% end %>
-												<!-- 顧客が却下済み -->
-												<% if ev.event_states.last.state == "cs_dismissed" %>
-													<span class="status-badge subprimary-col">
-														<%= t(".Customer_Dismissed") %>
-													</span>
-												<% end %>
+			<% if @events.present? %>
+				<% @events.each do |ev| %>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-1 ev-index-for-cl-line padding-0">
+								<%= render :partial => 'svgs/ev_cl_line' %>
+							</div>
+							<div class="col-11 ev-index-for-cl-main padding-0">
+								<%= link_to event_path(ev.id), class: "" do %>
+									<div class="ev-index-for-cl-up padding-0">
+										<%= render :partial => 'svgs/date' %><%= ev.start_time.strftime('%Y/%m/%d %H:%M') %>〜<%= ev.end_time.strftime('%H:%M') %>
+									</div>
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-4 ev-index-for-cl-low-left padding-0">
+												<%= image_tag ev.customer.user.image.url(:thumb), :alt => "icon", :class => "ev-index-cs-icon" if ev.customer.user.image? %>
 											</div>
-											<!-- 名前 -->
-											<div><%= ev.customer.user.name %></div>
-											<!-- 料金 -->
-											<div class="ev-index-for-cl-fee">
-												<%= render :partial => 'svgs/fee' %><%= ev.total_price %><%= t(".yen") %>
-											</div>
-											<!-- 場所 -->
-											<div>
-												<%= render :partial => 'svgs/location' %><%= ev.prefecture.ja %>
-											</div>
-											<div class="ev-index-for-cl-location">
-												<%= ev.location_detail %>
+											<div class="col-8 ev-index-for-cl-low-right padding-0">
+												<!-- ステータス -->
+												<div class="ev-index-status">
+													<!-- 顧客がリスエスト -->
+													<% if ev.event_states.last.state == "request" %>
+														<span class="status-badge primary-col">
+															<%= t(".Youve_got_a_request") %>
+														</span>
+													<% end %>
+													<!-- あなたが承認済み -->
+													<% if ev.event_states.last.state == "cl_accepted" %>
+														<span class="status-badge subprimary-col">
+															<%= t(".You_Approved") %>
+														</span>
+													<% end %>
+													<!-- あなたが却下済み -->
+													<% if ev.event_states.last.state == "cl_dismissed" %>
+														<span class="status-badge subprimary-col">
+															<%= t(".You_Dismissed") %>
+														</span>
+													<% end %>
+													<!-- あなたがキャンセル済み -->
+													<% if ev.event_states.last.state == "cl_canceled" %>
+														<span class="status-badge subprimary-col">
+															<%= t(".You_Canceled") %>
+														</span>
+													<% end %>
+													<!-- 顧客がキャンセル済み -->
+													<% if ev.event_states.last.state == "cs_canceled" %>
+														<span class="status-badge subprimary-col">
+															<%= t(".Customer_Canceled") %>
+														</span>
+													<% end %>
+													<!-- 顧客がリクエストキャンセル済み -->
+													<% if ev.event_states.last.state == "cs_request_canceled" %>
+														<span class="status-badge subprimary-col">
+															<%= t(".Customer_Canceled") %>
+														</span>
+													<% end %>
+													<!-- あなたが条件変更リクエスト -->
+													<% if ev.event_states.last.state == "cl_edited" %>
+														<span class="status-badge subprimary-col">
+															<%= t(".You_edited_Condition") %>
+														</span>
+													<% end %>
+													<!-- 顧客が条件変更を承認済み -->
+													<% if ev.event_states.last.state == "cs_accepted" %>
+														<span class="status-badge subprimary-col">
+															<%= t(".Customer_Approved") %>
+														</span>
+													<% end %>
+													<!-- 顧客が却下済み -->
+													<% if ev.event_states.last.state == "cs_dismissed" %>
+														<span class="status-badge subprimary-col">
+															<%= t(".Customer_Dismissed") %>
+														</span>
+													<% end %>
+												</div>
+												<!-- 名前 -->
+												<div><%= ev.customer.user.name %></div>
+												<!-- 料金 -->
+												<div class="ev-index-for-cl-fee">
+													<%= render :partial => 'svgs/fee' %><%= ev.total_price %><%= t(".yen") %>
+												</div>
+												<!-- 場所 -->
+												<div>
+													<%= render :partial => 'svgs/location' %><%= ev.prefecture.ja %>
+												</div>
+												<div class="ev-index-for-cl-location">
+													<%= ev.location_detail %>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							<% end %>
-						</div><!-- endOf-main -->
+								<% end %>
+							</div><!-- endOf-main -->
+						</div>
 					</div>
+				<% end %>
+			<% else %>
+				<div class="no-result">
+					<%= t(".no_result") %>
 				</div>
 			<% end %>
 		</div>

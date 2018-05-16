@@ -153,6 +153,7 @@ tw:
       You_edited_Condition: 提出更改條件中
       Customer_Approved: 決定拍攝
       Customer_Dismissed: 已被拒絕
+      no_result: 還沒有拍攝計劃
     cl_past:
       yen: 円
       Automatically_Canceled: 已自動取消
@@ -166,6 +167,7 @@ tw:
       Write_a_review: 等待評價
       Reply_to_a_review: 回複評價
       Photos_recieved: 已獲取照片
+      no_result: 還沒有過拍攝記錄
     cs_future:
       yen: 円
       Requesting: 等待同意
@@ -179,6 +181,7 @@ tw:
       Event_finished: 等待照片上傳
       Photos_delivered: 照片上傳成功
       Photos_recieved: 已獲取照片
+      no_result: 還沒有拍攝計劃
     cs_past:
       yen: 円
       Requesting: 等待同意
@@ -194,6 +197,7 @@ tw:
       Photos_delivered: 寫真受け取り可能
       Write_a_review: レビュー待ち
       Photos_recieved: 寫真受け取り済み
+      no_result: 還沒有過拍攝記錄
     event_photo:
       See_Uploaded_photos: 納品した寫真を確認
       delete_check: 消去チェック

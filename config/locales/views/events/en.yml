@@ -151,6 +151,7 @@ en:
       You_edited_Condition: Waiting for accept
       Customer_Approved: Reservation confirmed
       Customer_Dismissed: Customer dismissed
+      no_result: 'No reservation now'
     cl_past:
       yen: yen
       Automatically_Canceled: Request canceled
@@ -164,6 +165,7 @@ en:
       Write_a_review: Write a review
       Reply_to_a_review: Reply to review
       Photos_recieved: Received photos
+      no_result: You have not got sessions yet.
     cs_future:
       yen: yen
       Requesting: Requesting
@@ -177,6 +179,7 @@ en:
       Event_finished: Waiting for photos
       Photos_delivered: Photos delivered
       Photos_recieved: Received photos
+      no_result: 'No reservation now'
     cs_past:
       yen: yen
       Requesting: Requesting
@@ -192,6 +195,7 @@ en:
       Photos_delivered: DL photos
       Write_a_review: Write a review
       Photos_recieved: Received photos
+      no_result: You have not got sessions yet.
     event_photo:
       See_Uploaded_photos: Check Uploaded photos
       delete_check: check for delete

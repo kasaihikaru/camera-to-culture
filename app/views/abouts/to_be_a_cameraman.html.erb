@@ -75,8 +75,7 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				<%= t(".5_disc_1") %><br>
-			<!-- 	<%= t(".5_disc_2") %><br> -->
+				<%= simple_format(t(".5_disc")) %><br>
 				<!-- ログイン時かつ、登録時、フォームへ -->
 				<% if user_signed_in? && @cl.consent == true %>
 					<%= link_to t(".register_available_days"), user_client_client_schedules_path(@user, @cl, day: Date.today ), class: "about-btn prim-btn" %>

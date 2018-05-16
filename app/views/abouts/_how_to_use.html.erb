@@ -9,8 +9,7 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				<%= t(".1_disc_1") %><br>
-				<%= t(".1_disc_2") %><br>
+				<%= simple_format(t(".1_disc")) %><br>
 				<%= link_to t(".back_to_top"), home_path, class: "about-btn prim-btn" %>
 			</p2>
 		</div>
@@ -25,9 +24,7 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				<%= t(".2_disc_1") %><br>
-				<%= t(".2_disc_2") %><br>
-				<%= t(".2_disc_3") %><br>
+				<%= simple_format(t(".2_disc")) %><br>
 				<% unless user_signed_in? %>
 					<%= link_to t(".sign-up"), new_user_registration_path, class: "about-btn prim-btn" %>
 				<% end %>
@@ -43,7 +40,7 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				<%= t(".3_disc_1") %><br>
+				<%= simple_format(t(".3_disc")) %><br>
 			</p2>
 		</div>
 	</div>
@@ -55,7 +52,7 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				<%= t(".4_disc_1") %><br>
+				<%= simple_format(t(".4_disc")) %><br>
 			</p2>
 		</div>
 	</div>
@@ -67,7 +64,7 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				<%= t(".5_disc_1") %><br>
+				<%= simple_format(t(".5_disc")) %><br>
 			</p2>
 		</div>
 	</div>

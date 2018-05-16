@@ -20,26 +20,27 @@ tw:
     how_to_use:
       how_to_use: 使用流程
       1_Search: ①搜索
-      1_disc_1: 可以快速簡易的搜索攝影師。
-      1_disc_2: 請從作品集和評價中挑選中意的攝影師。
+      1_disc: |
+        可以快速簡易的搜索攝影師。
+        請從作品集和評價中挑選中意的攝影師。
       back_to_top: 前往搜索頁面
       2_Reserve: ②預約
-      2_disc_1: 了解攝影師的價格和工作時間，進行預約。
-      2_disc_2: 如果有什麼疑問，可以在預約前向攝影師發送消息咨詢。
-      2_disc_3: 預約、發送消息之前，需要您事先註冊，成為我們的用戶。
+      2_disc: |
+        了解攝影師的價格和工作時間，進行預約。
+        如果有什麼疑問，可以在預約前向攝影師發送消息咨詢。
+        預約、發送消息之前，需要您事先註冊，成為我們的用戶。
       sign-up: 註冊新用戶
       3_Photographing: ③攝影
-      3_disc_1: 和攝影師碰面后，就可以開始攝影了。
-      3_disc_2: 請和攝影師直接自行決定支付方式。
-      3_disc_3:
+      3_disc: |
+        和攝影師碰面后，就可以開始攝影了。
+        請和攝影師直接自行決定支付方式。
       4_Recieve_photos: ④獲取您的照片
-      4_disc_1: 結束拍攝后，照片將在日後上傳到您的頁面上。
-      4_disc_2: 請記得查收哦！
-      4_disc_3:
+      4_disc: |
+        結束拍攝后，照片將在日後上傳到您的頁面上。
+        請記得查收哦！
       5_Review: ⑤評價
-      5_disc_1: 最後請在攝影師的個人評價中留下您的感受。
-      5_disc_2:
-      5_disc_3:
+      5_disc: |
+        最後請在攝影師的個人評價中留下您的感受。
     terms_of_service_cs:
 
     terms_of_service_cl:
@@ -50,17 +51,19 @@ tw:
       Please_sign_up_first: 首先，請註冊成為我們的用戶。
       sign-up: 前往註冊新用戶
       2_Register_as_a_cameraman: ②登錄成為攝影師
-      Next_register_as_a_cameraman: 接下來，成為登錄攝影師。
+      2_disc: |
+        接下來，成為登錄攝影師。
       register_as_cameraman: 前往成為登錄攝影師
       3_Edit_your_profile: ③填寫個人簡介
-      3_disc_1: 請填寫自我介紹的攝影價格。價格均為攝影師本人決定。
-      3_disc_2:
+      3_disc:  |
+        請填寫自我介紹的攝影價格。價格均為攝影師本人決定。
       cl_settings: 前往設置頁面
       4_Upload_your_portfolios: ④上傳您的作品樣片
-      4_disc_1: 請在作品集中上傳您的樣片。
-      4_disc_2: 顧客會根據攝影師的樣片來了解攝影風格，是非常重要的內容。
+      4_disc: |
+        請在作品集中上傳您的樣片。
+        顧客會根據攝影師的樣片來了解攝影風格，是非常重要的內容。
       upload_cl_portpolios: 前往上傳樣片
       5_Register_your_available_days: ⑤登錄可以進行拍攝的日期
-      5_disc_1: 顧客在預約時將根據可拍攝的日期而進行參考。
-      5_disc_2:
+      5_disc: |
+        顧客在預約時將根據可拍攝的日期而進行參考。
       register_available_days: 前往登錄可拍攝日期

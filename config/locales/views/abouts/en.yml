@@ -18,26 +18,27 @@ en:
     how_to_use:
       how_to_use: How to use
       1_Search: ①Search
-      1_disc_1: You can search photographers with a simple form.
-      1_disc_2: Check portfolios and reviews, and find your favorite.
+      1_disc: |
+        You can search photographers with a simple form.
+        Check portfolios and reviews, and find your favorite.
       back_to_top: Jump to Search
       2_Reserve: ②Reserve
-      2_disc_1: Check fees and schedules to request for a reservation.
-      2_disc_2: If you have any questions, send a message in advance.
-      2_disc_3: You need to sign-up for making a reservation and sending a message.
+      2_disc: |
+        Check fees and schedules to request for a reservation.
+        If you have any questions, send a message in advance.
+        You need to sign-up for making a reservation and sending a message.
       sign-up: Sign-up
       3_Photographing: ③Photo session
-      3_disc_1: Meet up and take photos!
-      3_disc_2: Please pay a fee to your photographer by yourself.
-      3_disc_3:
+      3_disc: |
+        Meet up and take photos!
+        Please pay a fee to your photographer by yourself.
       4_Recieve_photos: ④Receive photos
-      4_disc_1: Your photographer delivers photos in session pages.
-      4_disc_2: Receive and check them!
-      4_disc_3:
+      4_disc: |
+        Your photographer delivers photos in session pages.
+        Receive and check them!
       5_Review: ⑤Review
-      5_disc_1: Write a review about your photographer and photos.
-      5_disc_2:
-      5_disc_3:
+      5_disc: |
+        Write a review about your photographer and photos.
     terms_of_service_cs:
 
     terms_of_service_cl:
@@ -48,17 +49,22 @@ en:
       Please_sign_up_first: Please sign-up first.
       sign-up: Sign-up
       2_Register_as_a_cameraman: ②Register as a photographer
-      Next_register_as_a_cameraman: Write your profile, 
+      2_disc: |
+        カメラマン登録申請をしてください。
+        後日、電話で本人確認をさせていただきます。
+        電話は、日本語、英語、中国語で対応可能です。
       register_as_cameraman: カメラマン登録へ
       3_Edit_your_profile: ③プロフィール登録
-      3_disc_1: 自己紹介や、撮影価格を入力します。料金を決めるのは、カメラマン自身です。
-      3_disc_2:
+      3_disc: |
+        自己紹介や、撮影価格を入力します。
+        料金を決めるのは、カメラマン自身です。
       cl_settings: 設定画面へ
       4_Upload_your_portfolios: ④サンプル写真アップロード
-      4_disc_1: ポートフォリオにサンプル写真をアップロードします。
-      4_disc_2: 顧客はサンプル写真をもとに、カメラマンの撮影スタイルを確認するので、非常に重要です。
+      4_disc: |
+        ポートフォリオにサンプル写真をアップロードします。
+        顧客はサンプル写真をもとに、カメラマンの撮影スタイルを確認するので、非常に重要です。
       upload_cl_portpolios: アップロード画面へ
       5_Register_your_available_days: ⑤撮影可能日を登録
-      5_disc_1: 撮影可能な日を登録すると、顧客は予約する際に参考にできます。
-      5_disc_2:
+      5_disc: |
+        撮影可能な日を登録すると、顧客は予約する際に参考にできます。
       register_available_days: 撮影可能日登録へ

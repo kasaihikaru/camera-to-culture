@@ -153,6 +153,7 @@ ja:
       You_edited_Condition: 条件変更依頼中
       Customer_Approved: 撮影確定
       Customer_Dismissed: 却下されました
+      no_result: 今は予定はありません
     cl_past:
       yen: 円
       Automatically_Canceled: 自動キャンセル済み
@@ -166,6 +167,7 @@ ja:
       Write_a_review: レビュー待ち
       Reply_to_a_review: レビューに返信
       Photos_recieved: 写真受け取り済み
+      no_result: まだ撮影がありません
     cs_future:
       yen: 円
       Requesting: 承認待ち
@@ -179,6 +181,7 @@ ja:
       Event_finished: 納品待ち
       Photos_delivered: 納品済み
       Photos_recieved: 写真受け取り済み
+      no_result: 今は予定がありません
     cs_past:
       yen: 円
       Requesting: 承認待ち
@@ -194,6 +197,7 @@ ja:
       Photos_delivered: 写真受け取り可能
       Write_a_review: レビュー待ち
       Photos_recieved: 写真受け取り済み
+      no_result: まだ撮影がありません
     event_photo:
       See_Uploaded_photos: 納品した写真を確認
       delete_check: 消去チェック
