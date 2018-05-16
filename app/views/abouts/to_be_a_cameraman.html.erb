@@ -26,7 +26,7 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				<%= t(".Next_register_as_a_cameraman") %><br>
+				<%= simple_format(t(".2_disc")) %><br>
 				<!-- ログイン時かつ、未登録時、フォームへ -->
 				<% if user_signed_in? && @cl.consent == false %>
 					<%= link_to t(".register_as_cameraman"), first_new_user_client_client_contacts_path(@user, @cl), class: "about-btn prim-btn" %>
@@ -43,8 +43,7 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				<%= t(".3_disc_1") %><br>
-			<!-- 	<%= t(".3_disc_2") %><br> -->
+				<%= simple_format(t(".3_disc")) %><br>
 				<!-- ログイン時かつ、登録時、フォームへ -->
 				<% if user_signed_in? && @cl.consent == true %>
 					<%= link_to t(".cl_settings"), edit_user_client_path(@user, @cl) , class: "about-btn prim-btn" %>
@@ -60,8 +59,7 @@
 		</div>
 		<div class="col-12 col-md-4 center">
 			<p2>
-				<%= t(".4_disc_1") %><br>
-				<%= t(".4_disc_2") %><br>
+				<%= simple_format(t(".4_disc")) %><br>
 				<!-- ログイン時かつ、登録時、フォームへ -->
 				<% if user_signed_in? && @cl.consent == true %>
 					<%= link_to t(".upload_cl_portpolios"), new_client_client_portfolio_path(@cl), class: "about-btn prim-btn" %>
