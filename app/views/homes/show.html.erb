@@ -1,7 +1,12 @@
 <div id="home-top" >
 	<!-- ###### 検索フォーム ###### -->
 	<div>
-		<h1><%= t(".find_your_photographer") %></h1>
+		<!-- <h1><%= t(".find_your_photographer") %></h1> -->
+		<div class="home-top-title">
+			<h1 class="home-top-title-1">find your</h1>
+			<h1 class="home-top-title-2">photographer</h1>
+			<i class="glyphicon glyphicon-upload"></i>
+		</div>
 		<div class="home-cl-search clearfix">
 			<%= form_tag(clients_path, method: :get) do %>
 				<%= render :partial => 'render/home_search' %>
