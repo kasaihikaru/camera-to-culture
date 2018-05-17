@@ -28,7 +28,11 @@ config/.DS_Store
 
 config/secrets.yml
 /config/secrets.yml
+
+
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+!.elasticbeanstalk/01_nginx-max-body.config
