@@ -92,7 +92,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #メール設定
-  config.action_mailer.default_url_options = { :host => 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/' }
+  config.action_mailer.default_url_options = { :host => 'https://www.camera-to-culture.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
      :address => ENV['ctoc_mail_address'],

@@ -30,7 +30,7 @@ class EventStatesController < ApplicationController
 			options = event.event_option_prices
 			reciever_mail = reciever.email
 			sender_name = sender.name
-			link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/ja/events/' + event.id.to_s
+			link = 'https://www.camera-to-culture.com/events/' + event.id.to_s
 			state = "cl_accepted"
 			ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 		end
@@ -60,7 +60,7 @@ class EventStatesController < ApplicationController
 			options = event.event_option_prices
 			reciever_mail = reciever.email
 			sender_name = sender.name
-			link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/ja/events/' + event.id.to_s
+			link = 'https://www.camera-to-culture.com/events/' + event.id.to_s
 			state = "cl_delivered"
 			ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 		end
@@ -90,7 +90,7 @@ class EventStatesController < ApplicationController
 			options = event.event_option_prices
 			reciever_mail = reciever.email
 			sender_name = sender.name
-			link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/ja/events/' + event.id.to_s
+			link = 'https://www.camera-to-culture.com/events/' + event.id.to_s
 			state = "cs_accepted"
 			ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 		end
@@ -121,7 +121,7 @@ class EventStatesController < ApplicationController
 			options = event.event_option_prices
 			reciever_mail = reciever.email
 			sender_name = sender.name
-			link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/ja/events/' + event.id.to_s
+			link = 'https://www.camera-to-culture.com/events/' + event.id.to_s
 			state = "cl_dismissed"
 			ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 		end
@@ -151,7 +151,7 @@ class EventStatesController < ApplicationController
 			options = event.event_option_prices
 			reciever_mail = reciever.email
 			sender_name = sender.name
-			link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/ja/events/' + event.id.to_s
+			link = 'https://www.camera-to-culture.com/events/' + event.id.to_s
 			state = "cs_dismissed"
 			ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 		end
@@ -181,7 +181,7 @@ class EventStatesController < ApplicationController
 			options = event.event_option_prices
 			reciever_mail = reciever.email
 			sender_name = sender.name
-			link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/ja/events/' + event.id.to_s
+			link = 'https://www.camera-to-culture.com/events/' + event.id.to_s
 			state = "cs_request_canceled"
 			ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 		end
@@ -211,7 +211,7 @@ class EventStatesController < ApplicationController
 			options = event.event_option_prices
 			reciever_mail = reciever.email
 			sender_name = sender.name
-			link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/ja/events/' + event.id.to_s
+			link = 'https://www.camera-to-culture.com/events/' + event.id.to_s
 			state = "cs_canceled"
 			ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 		end
@@ -242,7 +242,7 @@ class EventStatesController < ApplicationController
 			options = event.event_option_prices
 			reciever_mail = reciever.email
 			sender_name = sender.name
-			link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/ja/events/' + event.id.to_s
+			link = 'https://www.camera-to-culture.com/events/' + event.id.to_s
 			state = "cl_canceled"
 			ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 		end
@@ -285,7 +285,7 @@ class EventStatesController < ApplicationController
 			options = event.event_option_prices
 			reciever_mail = reciever.email
 			sender_name = sender.name
-			link = 'http://camera-to-culture.ap-northeast-1.elasticbeanstalk.com/ja/events/' + event.id.to_s
+			link = 'https://www.camera-to-culture.com/events/' + event.id.to_s
 			state = "cs_recieved"
 			ReserveMailer.ev_state_changed(message, day, wday, start_time, end_time, prefecture, location_detail, num_people, total_price, primary_price_sum, options, reciever_mail, sender_name, link, state).deliver_now
 		end
