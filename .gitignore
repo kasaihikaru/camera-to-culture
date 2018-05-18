@@ -31,6 +31,7 @@ config/secrets.yml
 
 
 # Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
+/.elasticbeanstalk/*
+!/.elasticbeanstalk/01_nginx-max-body.config
+!/.elasticbeanstalk/*.cfg.yml
+!/.elasticbeanstalk/*.global.yml
