@@ -84,4 +84,3 @@ gem 'google-analytics-rails'#forGA
 gem 'kaminari'#ページネーション
 gem 'zipline'#zipで写真DL
 gem 'meta-tags'#metatag設定
-gem 'settingslogic'#metatag設定用
