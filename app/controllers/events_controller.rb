@@ -6,38 +6,28 @@ class EventsController < ApplicationController
 
 
 	def cs_future
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 		@events = Event.as_cs(@cs.id).future.request.includes(:prefecture, client: :user).order(start_time: :DESC)
 	end
 
 	def cs_past
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 		@events = Event.as_cs(@cs.id).past.request.includes(:prefecture, :event_review, client: :user).order(start_time: :DESC)
 	end
 
 	def cl_future
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 		@events = Event.as_cl(@cl.id).future.request.includes(:prefecture, customer: :user).order(start_time: :DESC)
 	end
 
 	def cl_past
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 		@events = Event.as_cl(@cl.id).past.request.includes(:prefecture, :event_review, customer: :user).order(start_time: :DESC)
 	end
 
 
 	def new
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 
 		@cl_here = Client.find(id_params)
 		@categories = @cl_here.client_categories.includes(:category)
@@ -73,9 +63,7 @@ class EventsController < ApplicationController
 	end
 
 	def edit
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 
 		@event = Event.find(id_params)
 		@ev_date = @event.start_time.to_date
@@ -239,9 +227,7 @@ class EventsController < ApplicationController
 	end
 
 	def show
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 		@event = Event.find(id_params)
 		@cl_here = Client.find(@event.client_id)
 		@cs_here = Customer.find(@event.customer_id)

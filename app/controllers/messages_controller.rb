@@ -3,9 +3,7 @@ class MessagesController < ApplicationController
 	before_action :login_check, only: [:new]
 
 	def new
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 
 		@msg = Message.new
 		@reciever = User.find(user_params)
@@ -26,9 +24,7 @@ class MessagesController < ApplicationController
 	end
 
 	def index
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 
 		#-------- left-menu --------#
 		@msges = Message.user_sends(current_user.id).or(Message.user_recirves(current_user.id)).order_new
@@ -44,9 +40,7 @@ class MessagesController < ApplicationController
 	end
 
 	def show
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 
 		#-------- left-menu --------#
 		@msges = Message.user_sends(current_user.id).or(Message.user_recirves(current_user.id)).order_new

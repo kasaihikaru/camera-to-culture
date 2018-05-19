@@ -4,11 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    if user_signed_in?
-      @user = current_user
-      @cl = @user.client
-      @cs = @user.customer
-    end
+    import_current_user
 
     # super
     my_build_resource({})
@@ -53,9 +49,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # super
 
     # menu用
-    @user = current_user
-    @cl = @user.client
-    @cs = @user.customer
+    import_current_user
 
     # content用
     user_languages = current_user.user_languages

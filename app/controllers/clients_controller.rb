@@ -4,11 +4,7 @@ class ClientsController < ApplicationController
 	before_action :active_consent_check, only: :show
 
 	def index
-		if user_signed_in?
-			@user = current_user
-			@cl = @user.client
-			@cs = @user.customer
-		end
+		import_current_user
 
 		# 検索結果(.uniqするとarrayになってしまうので、kaminariは別に切り出す必要がある。)
 		array_cls = Client.active.consent.registerd.cs_intro_present.includes({user: [user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
@@ -16,11 +12,7 @@ class ClientsController < ApplicationController
 	end
 
 	def show
-		if user_signed_in?
-			@user = current_user
-			@cl = @user.client
-			@cs = @user.customer
-		end
+		import_current_user
 
 		@cl_here = Client.find(id_params)
 		@categories = @cl_here.client_categories.includes(:category)
@@ -55,9 +47,7 @@ class ClientsController < ApplicationController
 	end
 
 	def edit
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 		@cl_prim_price = @cl.client_primary_prices.active.first
 		@cl_opt_prices = @cl.client_option_prices.active
 		@cl_locations = @cl.client_locations

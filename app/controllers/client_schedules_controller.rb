@@ -3,10 +3,7 @@ class ClientSchedulesController < ApplicationController
 	before_action :consent_check, only: :index
 
 	def index
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
-
+		import_current_user
 
 		######### カレンダー ###########
 		@day = date_params

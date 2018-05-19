@@ -98,5 +98,22 @@ Rails.application.routes.draw do
 				get 'contact_us'
 			end
 		end
+
+		resources :categories, only: [:index] do
+			collection do
+				get 'profile'
+				get 'id_photo'
+				get 'wedding'
+				get 'traveling'
+				get 'dairy_life'
+				get 'seven_five_three'
+				get 'coming_of_age'
+				get 'maternity'
+				get 'new_born'
+				get 'commodities'
+				get 'event'
+				get 'pet'
+			end
+		end
 	end
 end

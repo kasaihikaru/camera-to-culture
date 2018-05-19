@@ -81,9 +81,7 @@ class UsersController < ApplicationController
 
 	def profile
 		# menu用
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 
 		# content用
 		user_languages = current_user.user_languages
@@ -132,15 +130,11 @@ class UsersController < ApplicationController
 
 	def account_setting
 		# menu用
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 	end
 
 	def inactive_account
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 
 		@user.soft_delete
 		@cl.soft_delete

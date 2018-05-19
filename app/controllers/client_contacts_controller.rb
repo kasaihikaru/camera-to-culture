@@ -6,17 +6,13 @@ class ClientContactsController < ApplicationController
 
 #------------- 最初のカメラマン登録 ----------------#
 	def first_new
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 		@contact = ClientContact.new
 		@pre_cl_contact = @cl.client_contacts.active.first
 	end
 
 	def first_create
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 
 		# 前のレコードを取ってくる
 		@pre_cl_contact = @cl.client_contacts.active.first
@@ -57,17 +53,13 @@ class ClientContactsController < ApplicationController
 
 #------------- 住所、電話番号変更 ----------------#
 	def new
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 		@contact = ClientContact.new
 		@pre_cl_contact = @cl.client_contacts.active.first
 	end
 
 	def create
-		@user = current_user
-		@cl = @user.client
-		@cs = @user.customer
+		import_current_user
 
 		# 前のレコードを取ってくる
 		@pre_cl_contact = @cl.client_contacts.active.first

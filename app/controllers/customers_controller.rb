@@ -2,11 +2,7 @@ class CustomersController < ApplicationController
 	before_action :user_check, only: :edit
 
 	def show
-		if user_signed_in?
-			@user = current_user
-			@cl = @user.client
-			@cs = @user.customer
-		end
+		import_current_user
 	end
 
 private

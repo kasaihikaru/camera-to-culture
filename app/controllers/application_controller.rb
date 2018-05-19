@@ -9,6 +9,15 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :deleted_at, :image, :mail_refused])
   end
 
+###########全ページ用の読み込み###########
+  def import_current_user
+    if user_signed_in?
+      @user = current_user
+      @cl = @user.client
+      @cs = @user.customer
+    end
+  end
+
 
 
 
