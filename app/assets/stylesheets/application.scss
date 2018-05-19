@@ -26,6 +26,7 @@
 @import "messages";
 @import "users";
 @import "abouts";
+@import "categories";
 @import "client_schedules";
 @import "client_portfolios";
 @import "jquery.raty";
@@ -162,6 +163,13 @@ $white-col : #FFFFFF;
   align-items: center;
 }
 
+.inline-center{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+}
+
 .margin-auto{
   margin: 0 auto;
 }
@@ -183,6 +191,20 @@ $white-col : #FFFFFF;
 .no-result{
   text-align: center;
   margin: 200px auto;
+}
+
+.sized-square-photo{
+  display: block;
+  height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  box-shadow: 0 2px 4px 0 #ccc;
+  padding: 20px;
 }
 
 

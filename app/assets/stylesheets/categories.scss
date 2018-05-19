@@ -1,3 +1,182 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$prim-col : #CF1820;
+$subprim-col : #92C1EC;
+$subprim-col-2 : #E2EEF9;
+$black-col : #000000;
+$white-col : #FFFFFF;
+
+
+// 写真設定
+.cate-photo-wedding{
+	background-image: image-url("/images/category-wedding.png");
+}
+
+
+// 共通設定
+@media screen and (min-width: 550px) {
+	#cate-photo{
+		height: 50%;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		display: flex;
+		justify-content: center; /*左右中央揃え*/
+		align-items: center;		/*上下中央揃え*/
+		position: relative; /*画像を下に表示するため*/
+		h1{
+			font-size: 70px;
+			letter-spacing: 20px;
+			font-weight: 800;
+			color: $white-col;
+		}
+	}
+}
+@media screen and (max-width: 549px) {
+	#cate-photo{
+		height: 30%;
+		// background-image: image-url("home-top-sm.png");
+		background-position: center;
+		display: flex;
+		background-size: cover;
+		justify-content: center; /*左右中央揃え*/
+		align-items: center;		/*上下中央揃え*/
+		h1{
+			font-size: 40px;
+			letter-spacing: 10px;
+			font-weight: 800;
+			color: $white-col;
+		}
+	}
+}
+
+@media screen and (min-width: 550px) {
+	.cate-common{
+		margin-bottom: 30px;
+		h1{
+			text-align: center;
+			margin: 150px auto 30px;
+			font-size: 28px;
+			font-weight: 800;
+		}
+	}
+}
+@media screen and (max-width: 549px) {
+	.cate-common{
+		margin-bottom: 30px;
+		h1{
+			text-align: center;
+			margin: 150px auto 30px;
+			font-size: 20px;
+			font-weight: 800;
+		}
+	}
+}
+
+// メイン
+.cate-main{
+	.cate-main-disc{
+		font-size: 20px;
+		padding: 20px;
+	}
+	.cate-main-photos{
+		.cate-main-photo{
+			padding: 10px;
+		}
+	}
+}
+
+
+// ロケーション
+.cate-location{
+	.cate-location-photo{
+		cursor : pointer;
+		text-align: center;
+		padding: 10px;
+	}
+	h2{
+		font-size: 18px;
+		font-weight: 700;
+	}
+}
+
+.balloon-top {
+	position: relative;
+	display: inline-block;
+ 	margin: 24px auto;
+	padding: 20px;
+	min-width: 120px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	background: #e0edff;
+	border-radius: 15px;
+}
+
+.balloon-top:before{
+	content: "";
+	position: absolute;
+	top: -30px;
+	left: 50%;
+ 	margin-left: -15px;
+	border: 15px solid transparent;
+	border-bottom: 15px solid #e0edff;
+}
+
+.balloon-top p {
+	margin: 0;
+	padding: 0;
+}
+
+
+// チェックポイント
+@media screen and (min-width: 1000px) {
+	.cate-tips{
+		padding: 0 100px;
+		.cate-tips-card{
+			.cate-tips-card-left{
+				img{
+					width: 60%;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 999px) {
+	.cate-tips{
+		padding: 0 10px;
+		.cate-tips-card{
+			.cate-tips-card-left{
+				padding: 0;
+				img{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.cate-tips-card{
+	margin-bottom: 30px;
+}
+
+
+// カテゴリーリスト
+.cate-cate-list{
+	text-align: center;
+	a, a:hover{
+		color: $white-col;
+		text-decoration: none;
+		font-size: 18px;
+		font-weight: 800;
+	}
+	p{
+		padding-top: 15px;
+	}
+	.cate-cate-photo{
+		padding: 10px;
+	}
+}
