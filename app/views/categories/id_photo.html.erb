@@ -1,0 +1,185 @@
+<div id="cate-photo" class="cate-photo-id-photo">
+	<h1><%= t(".id-photo") %></h1>
+</div>
+<div class="cate-main container">
+	<div class="cate-main-disc">
+		<p>
+			<%= simple_format(t(".cate-main-disc")) %>
+		</p>
+	</div>
+	<div class="cate-main-photos row">
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/id-photo-sample1.png" data-lightbox="image-1" data-title="id-photo-photos">
+				<div class="sized-square-photo" alt="id-photo-photo-sample" style='background-image: url("/images/id-photo-sample1.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/id-photo-sample2.png" data-lightbox="image-1" data-title="id-photo-photos">
+				<div class="sized-square-photo" alt="id-photo-photo-sample" style='background-image: url("/images/id-photo-sample2.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/id-photo-sample3.png" data-lightbox="image-1" data-title="id-photo-photos">
+				<div class="sized-square-photo" alt="id-photo-photo-sample" style='background-image: url("/images/id-photo-sample3.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/id-photo-sample4.png" data-lightbox="image-1" data-title="id-photo-photos">
+				<div class="sized-square-photo" alt="id-photo-photo-sample" style='background-image: url("/images/id-photo-sample4.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/id-photo-sample5.png" data-lightbox="image-1" data-title="id-photo-photos">
+				<div class="sized-square-photo" alt="id-photo-photo-sample" style='background-image: url("/images/id-photo-sample5.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/id-photo-sample6.png" data-lightbox="image-1" data-title="id-photo-photos">
+				<div class="sized-square-photo" alt="id-photo-photo-sample" style='background-image: url("/images/id-photo-sample6.png");'></div>
+			</a>
+		</div>
+	</div>
+</div>
+<hr>
+
+
+<section class="cate-tips cate-common">
+	<h1><%= t(".tips") %></h1>
+	<div class="card cate-tips-card">
+		<div class="container">
+			<div class="row">
+				<div class="cate-tips-card-left col-4 inline-center">
+					<img alt="id-photo-tips1" src="/images/id-photo-tips1.png" class="">
+				</div>
+				<div class="cate-tips-card-right col-8 inline-center">
+					<%= simple_format(t(".tips_desc_1")) %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card cate-tips-card">
+		<div class="container">
+			<div class="row">
+				<div class="cate-tips-card-left col-4 inline-center">
+					<img alt="id-photo-tips1" src="/images/id-photo-tips2.png" class="">
+				</div>
+				<div class="cate-tips-card-right col-8 inline-center">
+					<%= simple_format(t(".tips_desc_2")) %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card cate-tips-card">
+		<div class="container">
+			<div class="row">
+				<div class="cate-tips-card-left col-4 inline-center">
+					<img alt="id-photo-tips3" src="/images/id-photo-tips3.png" class="">
+				</div>
+				<div class="cate-tips-card-right col-8 inline-center">
+					<%= simple_format(t(".tips_desc_3")) %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<hr>
+
+
+<section class="cate-photographer-list cate-common">
+	<h1>
+		このジャンルのカメラマンが<br>
+		10人見つかりました
+	</h1>
+
+</section>
+<hr>
+
+<section class="cate-cate-list cate-common container">
+	<h1>他のカテゴリーはこちら</h1>
+	<div class="cate-cate-photos row">
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to traveling_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-traveling" style='background-image: url("/images/category-traveling-sm.png");'>
+					<p><%= t(".traveling") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to profile_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-profile" style='background-image: url("/images/category-profile-sm.png");'>
+					<p><%= t(".profile") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to wedding_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-wedding" style='background-image: url("/images/category-wedding-sm.png");'>
+					<p><%= t(".wedding") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to dairy_life_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-dairy-life" style='background-image: url("/images/category-dairy-life-sm.png");'>
+					<p><%= t(".dairy_life") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to id_photo_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-id-photo" style='background-image: url("/images/category-id-photo-sm.png");'>
+					<p><%= t(".id_photo") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to seven_five_three_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-seven_five_three" style='background-image: url("/images/category-seven-five-three-sm.png");'>
+					<p><%= t(".seven_five_three") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to coming_of_age_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-coming_of_age" style='background-image: url("/images/category-coming-of-age-sm.png");'>
+					<p><%= t(".coming_of_age") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to maternity_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-maternity" style='background-image: url("/images/category-maternity-sm.png");'>
+					<p><%= t(".maternity") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to new_born_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-new_born" style='background-image: url("/images/category-new-born-sm.png");'>
+					<p><%= t(".new_born") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to commodities_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-commodities" style='background-image: url("/images/category-commodities-sm.png");'>
+					<p><%= t(".commodities") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to event_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-event" style='background-image: url("/images/category-event-sm.png");'>
+					<p><%= t(".event") %></p>
+				</div>
+			<% end %>
+		</div>
+		<div class="cate-cate-photo col-4 col-lg-2">
+			<%= link_to pet_categories_path, class: "" do %>
+				<div class="sized-square-photo" alt="category-pet" style='background-image: url("/images/category-pet-sm.png");'>
+					<p><%= t(".pet") %></p>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</section>

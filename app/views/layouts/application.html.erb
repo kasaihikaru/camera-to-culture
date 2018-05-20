@@ -120,12 +120,12 @@
 			<!-- ######## フッター ########## -->
 			<footer>
 				<div class="container">
+					<!-- ###  PC  ### -->
 					<div class="row footer-upper-md">
-						<div class="col-md-4 offset-md-2 col-lg-3 offset-lg-3 d-none d-md-block">
-
-
-							<!-- サービスについて -->
+						<!-- Camera-to-Culture -->
+						<div class="col-md-3 d-none d-md-block">
 							<p class="bold">Camera-to-Culture</p>
+							<hr>
 
 							<!-- 使い方 -->
 							<%= link_to how_to_use_about_path, class: "nav-link" do %>
@@ -133,9 +133,9 @@
 							<% end %>
 
 							<!-- スマートフォンでの利用 -->
-<!-- 							<%= link_to use_with_phone_about_path, class: "nav-link" do %>
+							<%= link_to use_with_phone_about_path, class: "nav-link" do %>
 								<%= t(".use_with_phone") %>
-							<% end %> -->
+							<% end %>
 
 							<!-- お問い合わせ -->
 							<%= link_to contact_us_about_path, class: "nav-link" do %>
@@ -152,8 +152,9 @@
 
 
 						<!-- カメラマン -->
-						<div class="col-md-4 col-lg-3 d-none d-md-block">
+						<div class="col-md-3 d-none d-md-block">
 							<p class="bold"><%= t(".cameraman") %></p>
+							<hr>
 
 							<!-- カメラマン説明 -->
 							<%= link_to to_be_a_cameraman_about_path, class: "nav-link" do %>
@@ -172,13 +173,89 @@
 								<%= t(".terms_of_service_cl") %>
 							<% end %>
 						</div>
+
+
+						<!-- カテゴリー -->
+						<div class="col-md-3 d-none d-md-block">
+							<p class="bold"><%= t(".categories") %></p>
+							<hr>
+
+							<!-- profile -->
+							<%= link_to profile_categories_path, class: "nav-link" do %>
+								<%= t(".profile") %>
+							<% end %>
+
+							<!-- id_photo -->
+							<%= link_to id_photo_categories_path, class: "nav-link" do %>
+								<%= t(".id_photo") %>
+							<% end %>
+
+							<!-- wedding -->
+							<%= link_to wedding_categories_path, class: "nav-link" do %>
+								<%= t(".wedding") %>
+							<% end %>
+
+							<!-- traveling -->
+							<%= link_to traveling_categories_path, class: "nav-link" do %>
+								<%= t(".traveling") %>
+							<% end %>
+
+							<!-- dairy_life -->
+							<%= link_to dairy_life_categories_path, class: "nav-link" do %>
+								<%= t(".dairy_life") %>
+							<% end %>
+
+							<!-- seven_five_three -->
+							<%= link_to seven_five_three_categories_path, class: "nav-link" do %>
+								<%= t(".seven_five_three") %>
+							<% end %>
+						</div>
+
+						<div class="col-md-3 d-none d-md-block">
+							<p class="bold">&nbsp;</p>
+							<!-- coming_of_age -->
+							<%= link_to coming_of_age_categories_path, class: "nav-link" do %>
+								<%= t(".coming_of_age") %>
+							<% end %>
+
+							<!-- maternity -->
+							<%= link_to maternity_categories_path, class: "nav-link" do %>
+								<%= t(".maternity") %>
+							<% end %>
+
+							<!-- new_born -->
+							<%= link_to new_born_categories_path, class: "nav-link" do %>
+								<%= t(".new_born") %>
+							<% end %>
+
+							<!-- commodities -->
+							<%= link_to commodities_categories_path, class: "nav-link" do %>
+								<%= t(".commodities") %>
+							<% end %>
+
+							<!-- event -->
+							<%= link_to event_categories_path, class: "nav-link" do %>
+								<%= t(".event") %>
+							<% end %>
+
+							<!-- pet -->
+							<%= link_to pet_categories_path, class: "nav-link" do %>
+								<%= t(".pet") %>
+							<% end %>
+						</div>
 					</div>
 
-					<!-- スマホ画面 -->
+
+
+					<!-- ###  スマホ  ### -->
 					<div class="footer-upper-sm d-md-none">
 						<!-- カメラマンになる -->
 						<%= link_to to_be_a_cameraman_about_path, class: "" do %>
 							<%= t(".To_be_a_cameraman") %>
+						<% end %>
+						<!-- スマートフォンでの利用 -->
+						<%= link_to use_with_phone_about_path, class: "nav-link" do %>
+							<%= t(".use_with_phone") %>
 						<% end %>
 						<!-- 利用規約 -->
 						<%= link_to terms_of_service_cs_about_path, class: "nav-link" do %>

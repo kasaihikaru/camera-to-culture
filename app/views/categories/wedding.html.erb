@@ -1,5 +1,5 @@
 <div id="cate-photo" class="cate-photo-wedding">
-	<h1>WEDDING</h1>
+	<h1><%= t(".wedding") %></h1>
 </div>
 <div class="cate-main container">
 	<div class="cate-main-disc">
@@ -9,33 +9,33 @@
 	</div>
 	<div class="cate-main-photos row">
 		<div class="cate-main-photo col-4 col-lg-2">
-			<a href="/images/category-wedding.png" data-lightbox="image-1" data-title="wedding-photos">
-				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
+			<a href="/images/wedding-sample1.png" data-lightbox="image-1" data-title="wedding-photos">
+				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/wedding-sample1.png");'></div>
 			</a>
 		</div>
 		<div class="cate-main-photo col-4 col-lg-2">
-			<a href="/images/category-wedding.png" data-lightbox="image-1" data-title="wedding-photos">
-				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
+			<a href="/images/wedding-sample2.png" data-lightbox="image-1" data-title="wedding-photos">
+				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/wedding-sample2.png");'></div>
 			</a>
 		</div>
 		<div class="cate-main-photo col-4 col-lg-2">
-			<a href="/images/category-wedding.png" data-lightbox="image-1" data-title="wedding-photos">
-				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
+			<a href="/images/wedding-sample3.png" data-lightbox="image-1" data-title="wedding-photos">
+				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/wedding-sample3.png");'></div>
 			</a>
 		</div>
 		<div class="cate-main-photo col-4 col-lg-2">
-			<a href="/images/category-wedding.png" data-lightbox="image-1" data-title="wedding-photos">
-				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
+			<a href="/images/wedding-sample4.png" data-lightbox="image-1" data-title="wedding-photos">
+				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/wedding-sample4.png");'></div>
 			</a>
 		</div>
 		<div class="cate-main-photo col-4 col-lg-2">
-			<a href="/images/category-wedding.png" data-lightbox="image-1" data-title="wedding-photos">
-				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
+			<a href="/images/wedding-sample5.png" data-lightbox="image-1" data-title="wedding-photos">
+				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/wedding-sample5.png");'></div>
 			</a>
 		</div>
 		<div class="cate-main-photo col-4 col-lg-2">
-			<a href="/images/category-wedding.png" data-lightbox="image-1" data-title="wedding-photos">
-				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
+			<a href="/images/wedding-sample6.png" data-lightbox="image-1" data-title="wedding-photos">
+				<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/wedding-sample6.png");'></div>
 			</a>
 		</div>
 	</div>
@@ -47,37 +47,49 @@
 	<h1><%= t(".location") %></h1>
 	<div class="cate-location-photos row">
 		<div class="cate-location-photo col-4 col-lg-2" data-toggle="collapse" data-target="#wedding-location-city" aria-expanded="false" aria-controls="wedding-location-city">
-			<div class="sized-square-photo" alt="wedding-photo-city" style='background-image: url("/images/category-wedding.png");'></div>
+			<div class="sized-square-photo" alt="wedding-photo-city" style='background-image: url("/images/wedding-location-city.png");'></div>
 			<p><%= t(".city") %></p>
 		</div>
-		<div class="cate-location-photo col-4 col-lg-2">
-			<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
-			<p><%= t(".in_nature") %></p>
+		<div class="cate-location-photo col-4 col-lg-2" data-toggle="collapse" data-target="#wedding-location-in-nature" aria-expanded="false" aria-controls="wedding-location-in-nature">
+			<div class="sized-square-photo" alt="wedding-photo-in-nature" style='background-image: url("/images/wedding-location-in-nature.png");'></div>
+			<p><%= t(".in-nature") %></p>
 		</div>
-		<div class="cate-location-photo col-4 col-lg-2">
-			<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
-			<p><%= t(".dairy_life") %></p>
+		<div class="cate-location-photo col-4 col-lg-2" data-toggle="collapse" data-target="#wedding-location-dairy-life" aria-expanded="false" aria-controls="wedding-location-dairy-life">
+			<div class="sized-square-photo" alt="wedding-photo-dairy-life" style='background-image: url("/images/wedding-location-dairy-life.png");'></div>
+			<p><%= t(".dairy-life") %></p>
 		</div>
-		<div class="cate-location-photo col-4 col-lg-2">
-			<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
-			<p><%= t(".places_of_memories") %></p>
+		<div class="cate-location-photo col-4 col-lg-2" data-toggle="collapse" data-target="#wedding-location-places-of-memories" aria-expanded="false" aria-controls="wedding-location-places-of-memories">
+			<div class="sized-square-photo" alt="wedding-photo-places-of-memories" style='background-image: url("/images/wedding-location-places-of-memories.png");'></div>
+			<p><%= t(".places-of-memories") %></p>
 		</div>
-		<div class="cate-location-photo col-4 col-lg-2">
-			<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
-			<p><%= t(".secret_places") %></p>
+		<div class="cate-location-photo col-4 col-lg-2" data-toggle="collapse" data-target="#wedding-location-church" aria-expanded="false" aria-controls="wedding-location-church">
+			<div class="sized-square-photo" alt="wedding-photo-church" style='background-image: url("/images/wedding-location-church.png");'></div>
+			<p><%= t(".church") %></p>
 		</div>
-		<div class="cate-location-photo col-4 col-lg-2">
-			<div class="sized-square-photo" alt="wedding-photo-sample" style='background-image: url("/images/category-wedding.png");'></div>
-			<p><%= t(".city") %></p>
+		<div class="cate-location-photo col-4 col-lg-2" data-toggle="collapse" data-target="#wedding-location-secret-places" aria-expanded="false" aria-controls="wedding-location-secret-places">
+			<div class="sized-square-photo" alt="wedding-photo-secret-places" style='background-image: url("/images/wedding-location-secret-places.png");'></div>
+			<p><%= t(".secret-places") %></p>
 		</div>
 	</div>
-	<div class="center-align">
-		<div class="collapse" id="wedding-location-city">
-			<div class="balloon-top">
-				<h2>秘密の場所</h2>
-				<p>
-					知ってる？カメラマンが自分しか知らないおすすめロケーション地があるって！他の人と被らないロケーションを探そう！お気に入りのカメラマンに聞いてみたら？予約確定する前教えてもらうカメラマンもいるかもよ。
-				</p>
+	<div id="wedding-location-wrapper">
+		<div class="center-align">
+			<div class="collapse show" id="wedding-location-secret-places" data-parent="#wedding-location-wrapper">
+				<div class="balloon-top">
+					<h2>秘密の場所</h2>
+					<p>
+						知ってる？カメラマンが自分しか知らないおすすめロケーション地があるって！他の人と被らないロケーションを探そう！お気に入りのカメラマンに聞いてみたら？予約確定する前教えてもらうカメラマンもいるかもよ。
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="center-align">
+			<div class="collapse" id="wedding-location-in-nature" data-parent="#wedding-location-wrapper">
+				<div class="balloon-top">
+					<h2>自然</h2>
+					<p>
+						ああああああああああ
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -85,15 +97,15 @@
 
 
 <section class="cate-tips cate-common">
-	<h1>チェックポイント</h1>
+	<h1><%= t(".tips") %></h1>
 	<div class="card cate-tips-card">
 		<div class="container">
 			<div class="row">
-				<div class="cate-tips-card-left col-4">
-					<img alt="wedding-dress" src="/images/wedding-dress.png" class="">
+				<div class="cate-tips-card-left col-4 inline-center">
+					<img alt="wedding-tips1" src="/images/wedding-tips1.png" class="">
 				</div>
 				<div class="cate-tips-card-right col-8 inline-center">
-					服装の用意はできました？ウェディングドレスはもちろん、日常的な「白いワンピース＋ベール」の組み合わせもおすすめしますよ！ウェディングドレスも提供しているカメラマンもいるので、カメラマン個人ページのオプションメニューでご確認くだい。
+					<%= simple_format(t(".tips_desc_1")) %>
 				</div>
 			</div>
 		</div>
@@ -101,11 +113,11 @@
 	<div class="card cate-tips-card">
 		<div class="container">
 			<div class="row">
-				<div class="cate-tips-card-left col-4">
-					<img alt="wedding-bride" src="/images/wedding-bride.png" class="">
+				<div class="cate-tips-card-left col-4 inline-center">
+					<img alt="wedding-tips1" src="/images/wedding-tips2.png" class="">
 				</div>
 				<div class="cate-tips-card-right col-8 inline-center">
-					ウェディング写真は、一般的な写真より、もうちょっと濃い目の化粧は必要の場合があります。自分の化粧技術に不安を感じる方へ、一部のカメラマンはメイクサービスを提供しています。カメラマン個人ページのオプションメニューでご確認くだい。
+					<%= simple_format(t(".tips_desc_2")) %>
 				</div>
 			</div>
 		</div>
@@ -113,11 +125,11 @@
 	<div class="card cate-tips-card">
 		<div class="container">
 			<div class="row">
-				<div class="cate-tips-card-left col-4">
-					<img alt="wedding-bouquet" src="/images/wedding-bouquet.png" class="">
+				<div class="cate-tips-card-left col-4 inline-center">
+					<img alt="wedding-tips3" src="/images/wedding-tips3.png" class="">
 				</div>
 				<div class="cate-tips-card-right col-8 inline-center">
-					写真のバリエーションにも、撮影の過程をもっと楽しく過ごすにも、小物の用途はたくさんあります。二人の昔のアルバム、ペアのアクセサリー、二人とも好きなおもちゃなど。使い道を楽しみ！ミニブーケ、小道具など、一部のカメラマンは提供しています。カメラマン個人ページのオプションメニューでご確認くだい。
+					<%= simple_format(t(".tips_desc_3")) %>
 				</div>
 			</div>
 		</div>
@@ -139,84 +151,84 @@
 	<div class="cate-cate-photos row">
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to traveling_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-traveling" style='background-image: url("/images/category-traveling_sm.png");'>
+				<div class="sized-square-photo" alt="category-traveling" style='background-image: url("/images/category-traveling-sm.png");'>
 					<p><%= t(".traveling") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to profile_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-profile" style='background-image: url("/images/category-profile_sm.png");'>
+				<div class="sized-square-photo" alt="category-profile" style='background-image: url("/images/category-profile-sm.png");'>
 					<p><%= t(".profile") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to wedding_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-wedding" style='background-image: url("/images/category-wedding_sm.png");'>
+				<div class="sized-square-photo" alt="category-wedding" style='background-image: url("/images/category-wedding-sm.png");'>
 					<p><%= t(".wedding") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to dairy_life_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-dairy_life" style='background-image: url("/images/category-dairy_life_sm.png");'>
+				<div class="sized-square-photo" alt="category-dairy-life" style='background-image: url("/images/category-dairy-life-sm.png");'>
 					<p><%= t(".dairy_life") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to id_photo_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-id_photo" style='background-image: url("/images/category-id_photo_sm.png");'>
+				<div class="sized-square-photo" alt="category-id-photo" style='background-image: url("/images/category-id-photo-sm.png");'>
 					<p><%= t(".id_photo") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to seven_five_three_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-seven_five_three" style='background-image: url("/images/category-seven_five_three_sm.png");'>
+				<div class="sized-square-photo" alt="category-seven_five_three" style='background-image: url("/images/category-seven-five-three-sm.png");'>
 					<p><%= t(".seven_five_three") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to coming_of_age_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-coming_of_age" style='background-image: url("/images/category-coming_of_age_sm.png");'>
+				<div class="sized-square-photo" alt="category-coming_of_age" style='background-image: url("/images/category-coming-of-age-sm.png");'>
 					<p><%= t(".coming_of_age") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to maternity_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-maternity" style='background-image: url("/images/category-maternity_sm.png");'>
+				<div class="sized-square-photo" alt="category-maternity" style='background-image: url("/images/category-maternity-sm.png");'>
 					<p><%= t(".maternity") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to new_born_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-new_born" style='background-image: url("/images/category-new_born_sm.png");'>
+				<div class="sized-square-photo" alt="category-new_born" style='background-image: url("/images/category-new-born-sm.png");'>
 					<p><%= t(".new_born") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to commodities_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-commodities" style='background-image: url("/images/category-commodities_sm.png");'>
+				<div class="sized-square-photo" alt="category-commodities" style='background-image: url("/images/category-commodities-sm.png");'>
 					<p><%= t(".commodities") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to event_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-event" style='background-image: url("/images/category-event_sm.png");'>
+				<div class="sized-square-photo" alt="category-event" style='background-image: url("/images/category-event-sm.png");'>
 					<p><%= t(".event") %></p>
 				</div>
 			<% end %>
 		</div>
 		<div class="cate-cate-photo col-4 col-lg-2">
 			<%= link_to pet_categories_path, class: "" do %>
-				<div class="sized-square-photo" alt="category-pet" style='background-image: url("/images/category-pet_sm.png");'>
+				<div class="sized-square-photo" alt="category-pet" style='background-image: url("/images/category-pet-sm.png");'>
 					<p><%= t(".pet") %></p>
 				</div>
 			<% end %>

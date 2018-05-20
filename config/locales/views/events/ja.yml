@@ -204,7 +204,9 @@ ja:
       delete_btn: 消去する
     event_photo_upload:
       Upload: 写真納品
-      Upload_explanation: アップロードした写真を確認するには画面をリロードしてください
+      Upload_explanation: |
+        アップロードした写真を確認するには画面をリロードしてください
+        下の「ファイルを選択..」から写真をアップロードしてください
     event_photo_cs:
       Preview_Uploaded_photos: 納品された写真をプレビュー
       photo_nums_explanation_1: '全部で%{nums}枚の写真が納品されています'

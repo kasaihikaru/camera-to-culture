@@ -195,7 +195,7 @@ zh:
       You_dismissed: 您已拒绝
       Waiting_for_Photos: 等待照片上传
       Photos_delivered: 照片上传成功
-      Write_a_review: 照片上传成功
+      Write_a_review: 留下评价
       Photos_recieved: 已获取照片
       no_result: 还没有过拍摄记录
     event_photo:
@@ -204,7 +204,9 @@ zh:
       delete_btn: 删除
     event_photo_upload:
       Upload: 照片上传
-      Upload_explanation: 请刷新页面，确认已上传的照片
+      Upload_explanation: |
+        请刷新页面，确认已上传的照片
+        点击[选择...]，上传照片
     event_photo_cs:
       Preview_Uploaded_photos: 预览已上传的照片
       photo_nums_explanation_1: '全部%{nums}张的照片已经上传成功'

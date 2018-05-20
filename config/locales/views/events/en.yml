@@ -202,7 +202,9 @@ en:
       delete_btn: delete
     event_photo_upload:
       Upload: Upload photos
-      Upload_explanation: Please reload to check Uploaded photos.
+      Upload_explanation: |
+        Please reload to check Uploaded photos.
+        Click "Brows..." to upload photos.
     event_photo_cs:
       Preview_Uploaded_photos: Preview uploaded photos
       photo_nums_explanation_1: '%{nums} photos are uploaded'

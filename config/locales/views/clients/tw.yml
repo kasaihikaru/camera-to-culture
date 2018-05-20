@@ -8,7 +8,7 @@ tw:
       required: 必填
       camera: 關於攝影時所使用的相機
       introduction: 自我簡介（120字以内）
-      message: 給顧客發消息
+      message: 向顧客詳細介紹自己
       importance_of_message_explanation: 在Camera-to-Culture成為攝影師，最重要的是與顧客的交流。寫下您那首的攝影詳情，詳細的向顧客介紹自己吧。
       main_image: 上傳優先樣片
       main_image_explain: 搜索結果中，優先樣片將出現在首頁。
