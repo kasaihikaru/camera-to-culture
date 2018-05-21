@@ -20,8 +20,8 @@ $white-col : #FFFFFF;
 .cate-photo-wedding{
 	background-image: image-url("/images/category-wedding.png");
 }
-.cate-photo-dairy-life{
-	background-image: image-url("/images/category-dairy-life.png");
+.cate-photo-daily-life{
+	background-image: image-url("/images/category-daily-life.png");
 }
 .cate-photo-id-photo{
 	background-image: image-url("/images/category-id-photo.png");
@@ -195,6 +195,145 @@ $white-col : #FFFFFF;
 .cate-tips-card{
 	margin-bottom: 30px;
 }
+
+
+// clリスト
+@media screen and (min-width: 600px) {
+.cate-photographer-list{
+	.cameraman-lists{
+		height: 200px;
+		margin-top: 30px;
+		border: 1px solid #9E9E9E;
+		border-radius: 5px;
+		box-shadow: 0 2px 4px 0 #ccc;
+		.cameraman-list-upper{
+			height: 150px;
+			background-color: $black-col;
+			text-align: center;
+			border-radius: 5px 5px 0 0 / 5px 5px 0 0;
+			.carousel{
+				height: 150px;
+				a{
+					color: black;
+				}
+				img{
+					border-radius: 5px 5px 0 0 / 5px 5px 0 0;
+				}
+			}
+			.cameraman-list-portfolio{
+				height: 150px;
+			}
+		}
+		a, a:hover{
+			text-decoration: none;
+		}
+		.cameraman-list-lower{
+			background-color: $white-col;
+			height: 50px;
+			border-radius: 0 0 5px 5px / 0 0 5px 5px;
+			color: $black-col;
+			.cameraman-list-lower-left{
+				height: 100%;
+				padding: 0 0 0 20px;
+				h1, h1:hover{
+					text-align: left;
+					margin: 0;
+					font-size: 15px;
+					text-decoration: none;
+				}
+				h2{
+					font-size: 20px;
+					margin: 0;
+				}
+			}
+			.cameraman-list-lower-right{
+				height: 100%;
+				text-align: center;
+				padding: 0;
+				.cameraman-list-image{
+					width: 30px;
+					height: 30px;
+					border-radius: 15px;
+					margin: 10px auto 10px;
+				}
+			}
+		}
+	}
+}
+}
+@media screen and (max-width: 599px) {
+	.cate-photographer-list{
+		.col-6{
+			padding: 0 5px;
+		}
+		.cameraman-lists{
+			height: 140px;
+			margin-top: 30px;
+			border: 1px solid #9E9E9E;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px 0 #ccc;
+			.cameraman-list-upper{
+				height: 100px;
+				background-color: $black-col;
+				text-align: center;
+				border-radius: 5px 5px 0 0 / 5px 5px 0 0;
+				.carousel{
+					height: 100px;
+					a{
+						color: black;
+					}
+					img{
+						border-radius: 5px 5px 0 0 / 5px 5px 0 0;
+					}
+				}
+				.cameraman-list-portfolio{
+					height: 100px;
+				}
+			}
+			a, a:hover{
+				text-decoration: none;
+			}
+			.cameraman-list-lower{
+				background-color: $white-col;
+				height: 40px;
+				border-radius: 0 0 5px 5px / 0 0 5px 5px;
+				color: $black-col;
+				.cameraman-list-lower-left{
+					height: 100%;
+					padding: 0 0 0 20px;
+					h1, h1:hover{
+						text-align: left;
+						margin: 0;
+						font-size: 10px;
+						text-decoration: none;
+					}
+					h2{
+						font-weight: 800;
+						font-size: 15px;
+						margin: 0;
+					}
+				}
+				.cameraman-list-lower-right{
+					height: 100%;
+					text-align: center;
+					padding: 0;
+					.cameraman-list-image{
+						width: 30px;
+						height: 30px;
+						border-radius: 15px;
+						margin: 5px auto 5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
 
 
 // カテゴリーリスト

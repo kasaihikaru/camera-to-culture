@@ -2,6 +2,8 @@ class CategoriesController < ApplicationController
 
 	def profile
 		import_current_user
+		@cls_kanto = Client.active.consent.registerd.cs_intro_present.includes(:user, :client_primary_prices, :client_portfolios).fits_categpory_id_in(1).fits_prefecture_id_in([8..15]).uniq
+		@cls_kansai = Client.active.consent.registerd.cs_intro_present.includes(:user, :client_primary_prices).fits_categpory_id_in(1).fits_prefecture_id_in([25..30]).uniq
 	end
 
 	def id_photo
@@ -16,7 +18,7 @@ class CategoriesController < ApplicationController
 		import_current_user
 	end
 
-	def dairy_life
+	def daily_life
 		import_current_user
 	end
 

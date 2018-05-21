@@ -21,7 +21,7 @@ ja:
       ID photo: 証明写真
       Wedding: ウェディング
       Traveling: 旅行
-      Dairy life: 日常
+      Daily life: 日常
       seven-five-three: 七五三
       Coming of age: 成人式
       Maternity: マタニティ
@@ -105,6 +105,7 @@ ja:
       Okinawa: 沖縄県
       register_btn: この内容で登録
     index:
+      yen_per_hour: 円/時間
       no_result: 該当するカメラマンがいません。。。泣
     show:
       researve: 予約

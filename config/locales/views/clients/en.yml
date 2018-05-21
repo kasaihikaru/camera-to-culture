@@ -21,7 +21,7 @@ en:
       ID photo: ID photo
       Wedding: Wedding
       Traveling: Traveling
-      Dairy life: Dairy life
+      Daily life: Daily life
       seven-five-three: seven-five-three
       Coming of age: Coming of age
       Maternity: Maternity
@@ -105,6 +105,7 @@ en:
       Okinawa: Okinawa
       register_btn: Update
     index:
+      yen_per_hour: yen/h
       no_result: No cameramans have found. Please change seaching conditions, sorry....
     show:
       researve: Request to Book

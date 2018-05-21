@@ -21,7 +21,7 @@ zh:
       ID photo: 证件照
       Wedding: 婚纱照
       Traveling: 旅行
-      Dairy life: 日常
+      Daily life: 日常
       seven-five-three: 七五三
       Coming of age: 成人式
       Maternity: 孕妇照
@@ -105,6 +105,7 @@ zh:
       Okinawa: 冲绳县
       register_btn: 登录以上内容
     index:
+      yen_per_hour: 円/1小时
       no_result: 没有相对应的摄影师。。。哭哭
     show:
       researve: 预约
@@ -125,7 +126,7 @@ zh:
       yen_per_hour: 円/1小时
       hours_minimum: 小时起可接片
       Option_Menu: 附加服务
-      price_per_hour: 每1小时%{price}円
+      price_per_hour: 每1小时{price}円
       yen: 円
       Camera: 相机
       Message: 消息

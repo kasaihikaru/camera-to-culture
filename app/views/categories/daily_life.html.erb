@@ -1,0 +1,100 @@
+<div id="cate-photo" class="cate-photo-daily-life">
+	<h1><%= t(".daily-life") %></h1>
+</div>
+<div class="cate-main container">
+	<div class="cate-main-disc">
+		<p>
+			<%= simple_format(t(".cate-main-disc")) %>
+		</p>
+	</div>
+	<div class="cate-main-photos row">
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/daily-life-sample1.png" data-lightbox="image-1" data-title="daily-life-photos">
+				<div class="sized-square-photo" alt="daily-life-photo-sample" style='background-image: url("/images/daily-life-sample1.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/daily-life-sample2.png" data-lightbox="image-1" data-title="daily-life-photos">
+				<div class="sized-square-photo" alt="daily-life-photo-sample" style='background-image: url("/images/daily-life-sample2.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/daily-life-sample3.png" data-lightbox="image-1" data-title="daily-life-photos">
+				<div class="sized-square-photo" alt="daily-life-photo-sample" style='background-image: url("/images/daily-life-sample3.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/daily-life-sample4.png" data-lightbox="image-1" data-title="daily-life-photos">
+				<div class="sized-square-photo" alt="daily-life-photo-sample" style='background-image: url("/images/daily-life-sample4.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/daily-life-sample5.png" data-lightbox="image-1" data-title="daily-life-photos">
+				<div class="sized-square-photo" alt="daily-life-photo-sample" style='background-image: url("/images/daily-life-sample5.png");'></div>
+			</a>
+		</div>
+		<div class="cate-main-photo col-4 col-lg-2">
+			<a href="/images/daily-life-sample6.png" data-lightbox="image-1" data-title="daily-life-photos">
+				<div class="sized-square-photo" alt="daily-life-photo-sample" style='background-image: url("/images/daily-life-sample6.png");'></div>
+			</a>
+		</div>
+	</div>
+</div>
+<hr>
+
+
+<section class="cate-tips cate-common">
+	<h1><%= t(".tips") %></h1>
+	<div class="card cate-tips-card">
+		<div class="container">
+			<div class="row">
+				<div class="cate-tips-card-left col-4 inline-center">
+					<img alt="daily-life-tips1" src="/images/daily-life-tips1.png" class="">
+				</div>
+				<div class="cate-tips-card-right col-8 inline-center">
+					<%= simple_format(t(".tips_desc_1")) %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card cate-tips-card">
+		<div class="container">
+			<div class="row">
+				<div class="cate-tips-card-left col-4 inline-center">
+					<img alt="daily-life-tips1" src="/images/daily-life-tips2.png" class="">
+				</div>
+				<div class="cate-tips-card-right col-8 inline-center">
+					<%= simple_format(t(".tips_desc_2")) %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card cate-tips-card">
+		<div class="container">
+			<div class="row">
+				<div class="cate-tips-card-left col-4 inline-center">
+					<img alt="daily-life-tips3" src="/images/daily-life-tips3.png" class="">
+				</div>
+				<div class="cate-tips-card-right col-8 inline-center">
+					<%= simple_format(t(".tips_desc_3")) %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<hr>
+
+
+<section class="cate-photographer-list cate-common">
+	<h1>
+		このジャンルのカメラマンが<br>
+		10人見つかりました
+	</h1>
+
+</section>
+<hr>
+
+<section class="cate-common">
+	<h1><%= t(".other_categories") %></h1>
+	<%= render :partial => 'categories/category_list' %>
+</section>

@@ -72,7 +72,7 @@ Category.create([
 	{ ja_group: 'あなた', ja: '証明写真', en_group: 'Yourself', en: 'ID photo', zh_group: '你', zh: '证件照', tw_group: '你／妳', tw: '證件照'},
 	{ ja_group: '思い出', ja: 'ウェディング', en_group: 'Memory', en: 'Wedding', zh_group: '重要时刻', zh: '婚纱照', tw_group: '重要時刻', tw: '婚紗照'},
 	{ ja_group: '思い出', ja: '旅行', en_group: 'Memory', en: 'Traveling', zh_group: '重要时刻', zh: '旅行', tw_group: '重要時刻', tw: '旅遊'},
-	{ ja_group: '思い出', ja: '日常', en_group: 'Memory', en: 'Dairy life', zh_group: '重要时刻', zh: '日常', tw_group: '重要時刻', tw: '日常'},
+	{ ja_group: '思い出', ja: '日常', en_group: 'Memory', en: 'Daily life', zh_group: '重要时刻', zh: '日常', tw_group: '重要時刻', tw: '日常'},
 	{ ja_group: '子供', ja: '七五三', en_group: 'Child', en: 'seven-five-three', zh_group: '儿童', zh: '七五三', tw_group: '兒童', tw: '七五三'},
 	{ ja_group: '子供', ja: '成人式', en_group: 'Child', en: 'Coming of age', zh_group: '儿童', zh: '成人式', tw_group: '兒童', tw: '成人式'},
 	{ ja_group: '子供', ja: 'マタニティ', en_group: 'Child', en: 'Maternity', zh_group: '儿童', zh: '孕妇照', tw_group: '兒童', tw: '孕婦寫真'},

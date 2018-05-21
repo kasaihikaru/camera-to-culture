@@ -1,0 +1,59 @@
+<div class="container-fluid">
+	<div class="row">
+		<% if cls_kanto.present? %>
+			<% cls_kanto.each do |cl| %>
+				<div class="col-6 col-xl-3">
+					<div class="cameraman-lists">
+						<div class="cameraman-list-upper">
+							<div id="carousel-pf-<%= cl.id %>" class="carousel slide" data-ride="carousel" data-interval="0">
+								<%= link_to client_path(cl), target: "_blank", rel: "noopener noreferrer" do %>
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+											<%= image_tag cl.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if cl.image? %>
+										</div>
+										<% cl.client_portfolios.each do |pf| %>
+											<div class="carousel-item">
+												<%= image_tag pf.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if pf.image? %>
+											</div>
+										<% end %>
+									</div>
+								<% end %>
+								<a class="carousel-control-prev" href="#carousel-pf-<%= cl.id %>" role="button" data-slide="prev">
+									<%= render :partial => 'svgs/cal_left' %>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="carousel-control-next" href="#carousel-pf-<%= cl.id %>" role="button" data-slide="next">
+									<%= render :partial => 'svgs/cal_right' %>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
+						</div>
+						<%= link_to client_path(cl), target: "_blank", rel: "noopener noreferrer" do %>
+							<div class="cameraman-list-lower">
+								<div class="row">
+									<div class="cameraman-list-lower-left col-8">
+										<!-- 名前 -->
+										<h1><%= cl.user.name %></h1>
+										<!-- 値段 -->
+										<% cl.client_primary_prices.active.each do |prim_price| %>
+											<h2><%= prim_price.price_per_hour %><%= t(".yen_per_hour") %></h2>
+										<% end %>
+									</div>
+									<div class="cameraman-list-lower-right col-4">
+										<% if cl.user.image? %>
+											<%= image_tag cl.user.image.url(:thumb), alt: "icon", class: "cameraman-list-image" %>
+										<% else %>
+											<div class="cameraman-list-image">
+												<%= render :partial => 'svgs/baby_xs' %>
+											</div>
+										<% end %>
+									</div>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>

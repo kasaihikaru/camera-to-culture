@@ -105,7 +105,7 @@ Rails.application.routes.draw do
 				get 'id_photo'
 				get 'wedding'
 				get 'traveling'
-				get 'dairy_life'
+				get 'daily_life'
 				get 'seven_five_three'
 				get 'coming_of_age'
 				get 'maternity'

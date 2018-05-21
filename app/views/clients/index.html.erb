@@ -42,10 +42,10 @@
 									<div class="row">
 										<div class="cameraman-list-lower-left col-8">
 											<!-- 名前 -->
-											<h1><%= cl.user.name %><h1>
+											<h1><%= cl.user.name %></h1>
 											<!-- 値段 -->
 											<% cl.client_primary_prices.active.each do |prim_price| %>
-												<h2><%= prim_price.price_per_hour %>円/時間</h2>
+												<h2><%= prim_price.price_per_hour %><%= t(".yen_per_hour") %></h2>
 											<% end %>
 											<div class="cameraman-list-intro"><%= cl.user.customer.introduction %></div>
 										</div>
