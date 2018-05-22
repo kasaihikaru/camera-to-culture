@@ -2,8 +2,9 @@ class CategoriesController < ApplicationController
 
 	def profile
 		import_current_user
-		@cls_kanto = Client.active.consent.registerd.cs_intro_present.includes(:user, :client_primary_prices, :client_portfolios).fits_categpory_id_in(1).fits_prefecture_id_in([8..15]).uniq
-		@cls_kansai = Client.active.consent.registerd.cs_intro_present.includes(:user, :client_primary_prices).fits_categpory_id_in(1).fits_prefecture_id_in([25..30]).uniq
+		@cls = Client.active.consent.registerd.cs_intro_present.includes(:user, :client_primary_prices, :client_portfolios).fits_categpory_id_in(1)
+		@cls_kanto = @cls.fits_prefecture_id_in([8..15]).uniq
+		@cls_kansai = @cls.fits_prefecture_id_in([25..30]).uniq
 	end
 
 	def id_photo

@@ -86,8 +86,8 @@
 
 
 <section class="cate-photographer-list cate-common">
-	<h1><%= t(".This_category_has_cls") %></h1>
-	<%= render :partial => 'categories/category_cl_list', :locals=>{cls_kanto: @cls_kanto} %>
+	<h1><%= t(".This_category_has_cls", num: @cls.count) %></h1>
+	<%= render :partial => 'categories/category_cl_list', :locals=>{cls_kanto: @cls_kanto, cls_kansai: @cls_kansai} %>
 </section>
 <hr>
 
