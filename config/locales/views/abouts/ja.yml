@@ -71,3 +71,6 @@ ja:
       5_disc: |
         撮影可能な日を登録すると、顧客は予約する際に参考にできます。
       register_available_days: 撮影可能日登録へ
+    use_with_phone:
+      Use_with_iphone: iPhoneで使う
+      please_add_to_home: 以下の画像にならって、ホーム画面に追加してお使いください。

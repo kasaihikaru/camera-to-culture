@@ -18,7 +18,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+###########カテゴリページのcl検索###########
+  def cate_cl_search(category_id)
+    @cls = Client.active.consent.registerd.cs_intro_present.includes(:user, :client_primary_prices, :client_portfolios).fits_categpory_id_in(category_id)
+  end
 
+  def area_cl_search
+    @cls_kanto = @cls.fits_prefecture_id_in([8..15]).uniq
+    @cls_kansai = @cls.fits_prefecture_id_in([25..30]).uniq
+  end
 
 
 ###########多言語の設定###########

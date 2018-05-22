@@ -22,7 +22,7 @@ ja:
       other_categories: その他のカテゴリーはこちら
     id_photo:
       cate-main-disc: |
-        aa
+        
       tips: チェックポイント
       tips_desc_1: |
         白やグレーなどを背景として撮影します。履歴書などの場合、スーツが無難です。
@@ -133,7 +133,7 @@ ja:
       other_categories: その他のカテゴリーはこちら
     maternity:
       cate-main-disc: |
-        a
+        
       tips: チェックポイント
       tips_desc_1: |
         マタニティフォトは妊娠8〜9カ月頃に撮るとよいと言われています。9ヶ月を超えてくると体調が不安になってきます。
@@ -192,7 +192,7 @@ ja:
       other_categories: その他のカテゴリーはこちら
     pet:
       cate-main-disc: |
-        a
+        
       tips: チェックポイント
       tips_desc_1: |
         ペットとの撮影では、それぞれの性格、好きなもの、できることに合わせて撮影することが重要です。ペット撮影になれたカメラマンを選びましょう。
@@ -206,3 +206,16 @@ ja:
       Kanto_area: 関東エリア
       Kansai_area: 関西エリア
       yen_per_hour: 円/時間
+    category_list:
+      profile: プロフィール
+      id_photo: 証明写真
+      wedding: ウェディング
+      traveling: 旅行
+      daily_life: 日常
+      seven_five_three: 七五三
+      coming_of_age: 成人式
+      maternity: マタニティ
+      new_born: ニューボーン
+      commodities: 商品
+      event: イベント
+      pet: ペット

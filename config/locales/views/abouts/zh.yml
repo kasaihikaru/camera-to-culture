@@ -67,3 +67,6 @@ zh:
       5_disc: |
         客人在预约时将根据可拍摄的日期而进行参考。
       register_available_days: 前往登录可拍摄日期
+    use_with_phone:
+      Use_with_iphone: iOS移动客户端
+      please_add_to_home: 显示出下方的图像后，请添加至手机桌面。

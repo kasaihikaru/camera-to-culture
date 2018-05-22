@@ -137,14 +137,13 @@
 </section>
 <hr>
 
-<section class="cate-photographer-list cate-common">
-	<h1>
-		このジャンルのカメラマンが<br>
-		10人見つかりました
-	</h1>
-
-</section>
-<hr>
+<% if @cls.count > 0 %>
+	<section class="cate-photographer-list cate-common">
+		<h1><%= t(".This_category_has_cls", num: @cls.count) %></h1>
+		<%= render :partial => 'categories/category_cl_list', :locals=>{cls_kanto: @cls_kanto, cls_kansai: @cls_kansai} %>
+	</section>
+	<hr>
+<% end %>
 
 <section class="cate-common">
 	<h1><%= t(".other_categories") %></h1>

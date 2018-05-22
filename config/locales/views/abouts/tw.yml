@@ -67,3 +67,6 @@ tw:
       5_disc: |
         顧客在預約時將根據可拍攝的日期而進行參考。
       register_available_days: 前往登錄可拍攝日期
+    use_with_phone:
+      Use_with_iphone: iOS移動客戶端
+      please_add_to_home: 顯示出下方的圖像後，請添加至手機桌面。

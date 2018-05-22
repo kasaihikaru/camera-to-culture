@@ -1,6 +1,6 @@
 <% if cls_kanto.present? %>
-	<h2><%= t(".Kanto_area") %></h2>
-	<div class="container-fluid">
+	<div class="area-name-band"><h2><%= t(".Kanto_area") %></h2></div>
+	<div class="container-fluid cate-photographer-list-area">
 		<div class="row">
 			<% cls_kanto.first(4).each do |cl| %>
 				<div class="col-6 col-xl-3">
@@ -59,8 +59,8 @@
 	</div>
 <% end %>
 <% if cls_kansai.present? %>
-	<h2><%= t(".Kansai_area") %></h2>
-	<div class="container-fluid">
+	<div class="area-name-band"><h2><%= t(".Kansai_area") %></h2></div>
+	<div class="container-fluid cate-photographer-list-area">
 		<div class="row">
 			<% cls_kansai.first(4).each do |cl| %>
 				<div class="col-6 col-xl-3">

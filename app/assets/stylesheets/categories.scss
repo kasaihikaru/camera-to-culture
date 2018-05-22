@@ -202,8 +202,18 @@ $white-col : #FFFFFF;
 // clリスト
 @media screen and (min-width: 600px) {
 	.cate-photographer-list{
-		h2{
+		.cate-photographer-list-area{
+			margin-bottom: 40px;
+		}
+		.area-name-band{
+			max-width: 600px;
+			margin: 0 auto;
+			border-radius: 10px;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
 			background-color: $subprim-col;
+		}
+		h2{
 			color: $white-col;
 			font-size: 20px;
 			text-align: center;
@@ -272,8 +282,12 @@ $white-col : #FFFFFF;
 }
 @media screen and (max-width: 599px) {
 	.cate-photographer-list{
-		h2{
+		.area-name-band{
+			max-width: 600px;
+			margin: 0 auto;
 			background-color: $subprim-col;
+		}
+		h2{
 			color: $white-col;
 			font-size: 15px;
 			text-align: center;
