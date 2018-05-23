@@ -57,6 +57,7 @@ $white-col : #FFFFFF;
 		background-position: center;
 		background-size: cover;
 		display: flex;
+		flex-direction: column;
 		justify-content: center; /*左右中央揃え*/
 		align-items: center;		/*上下中央揃え*/
 		position: relative; /*画像を下に表示するため*/
@@ -66,14 +67,20 @@ $white-col : #FFFFFF;
 			font-weight: 800;
 			color: $white-col;
 		}
+		h2{
+			font-size: 30px;
+			letter-spacing: 10px;
+			font-weight: 800;
+			color: $white-col;
+		}
 	}
 }
 @media screen and (max-width: 549px) {
 	#cate-photo{
 		height: 30%;
-		// background-image: image-url("home-top-sm.png");
 		background-position: center;
 		display: flex;
+		flex-direction: column;
 		background-size: cover;
 		justify-content: center; /*左右中央揃え*/
 		align-items: center;		/*上下中央揃え*/

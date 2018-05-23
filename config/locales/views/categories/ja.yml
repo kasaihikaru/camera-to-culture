@@ -2,6 +2,7 @@
 ja:
   categories:
     profile:
+      profile: プロフィール
       tips: チェックポイント
       tips_desc_1: |
         プロフィール写真は、とても自由度が高く色々な写真を撮り方をすることができます。
@@ -19,6 +20,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     id_photo:
+      id-photo: 証明写真
       cate-main-disc: |
         履歴書の写真は「あなたの印象」を決める大きな要素です。パスポートや社員証で使われる証明写真も長く使われるので、よいものを使いたいですよね。
         プロのやり方で、今までない証明写真を撮ってみませんか？
@@ -38,6 +40,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     wedding:
+      wedding: ウェディング
       location: ロケーション
       city: 都市
       in-nature: 自然の中
@@ -60,6 +63,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     traveling:
+      traveling: 旅行
       tips: チェックポイント
       tips_desc_1: |
         撮影する場所と最初カメラマンの集合場所が異なる場合あります。集合スポットは必ず事前にカメラマンと相談しましょう。
@@ -74,6 +78,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     daily_life:
+      daily-life: 日常
       tips: チェックポイント
       tips_desc_1: |
         写真に残したい日常はどんなシーンですか？
@@ -88,6 +93,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     seven_five_three:
+      seven-five-three: 七五三
       tips: チェックポイント
       tips_desc_1: |
         昔は七五三の撮影といえば、ほとんどスタジオ撮影でしたが、今は外のでの撮影も増えています。
@@ -105,6 +111,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     coming_of_age:
+      coming-of-age: 成人式
       tips: チェックポイント
       tips_desc_1: |
         成人式の前撮りは、一生残る大切な写真です。スタジオでの撮影もよいですが、外に出ての撮影もおすすめです。
@@ -119,6 +126,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     maternity:
+      maternity: マタニティ
       tips: チェックポイント
       tips_desc_1: |
         マタニティフォトは妊娠8〜9カ月頃に撮るとよいと言われています。9ヶ月を超えてくると体調が不安になってきます。
@@ -132,6 +140,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     new_born:
+      new-born: ニューボーン
       tips: チェックポイント
       tips_desc_1: |
         ニューボーンフォトは産まれてから1ヶ月以内に撮るようにしましょう。10日以内だとより新生児の小さい姿を写真にできます。
@@ -147,6 +156,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     commodities:
+      commodities: 商品
       tips: チェックポイント
       tips_desc_1: |
         商品の撮影では、撮影場所が非常に大切です。
@@ -160,6 +170,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     event:
+      event: イベント
       tips: チェックポイント
       tips_desc_1: |
         イベント撮影で必要なことは「規模と雰囲気を残すこと」です。
@@ -173,6 +184,7 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     pet:
+      pet: ペット
       tips: チェックポイント
       tips_desc_1: |
         ペットとの撮影では、それぞれの性格、好きなもの、できることに合わせて撮影することが重要です。ペット撮影になれたカメラマンを選びましょう。
