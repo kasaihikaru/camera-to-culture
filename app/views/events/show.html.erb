@@ -125,6 +125,27 @@
 				</div>
 			</div>
 
+
+			<!-- メッセージを送る -->
+			<!-- to cl -->
+			<div class="ev-show-message-btn">
+				<% if @cl_here.user != current_user %>
+					<%= link_to new_user_message_path(@cl_here.user.id) do %>
+						<div class="white-btn">
+						<%= t(".message") %>
+						</div>
+					<% end %>
+				<% end %>
+				<!-- to cs -->
+				<% if @cs_here.user != current_user %>
+					<%= link_to new_user_message_path(@cs_here.user.id) do %>
+						<div class="white-btn">
+						<%= t(".message") %>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+
 			<!-- 日時 -->
 			<div>
 				<h2>

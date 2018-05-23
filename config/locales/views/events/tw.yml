@@ -31,6 +31,7 @@ tw:
       yen: 円
     show:
       Session_Details: 攝影的詳情
+      message: 發送消息
       Date_and_Time: 日程時間
       How_many_people?: 參加拍攝的人數
       Location: 拍攝場所

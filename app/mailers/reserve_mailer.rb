@@ -52,7 +52,7 @@ class ReserveMailer < ApplicationMailer
 		elsif @state == "cl_delivered"
 			mail(
 				to: @reciever_mail,
-				subject: t(".ctoc") + @sender_name + t(".cl_cl_delivere_titled"),
+				subject: t(".ctoc") + @sender_name + t(".cl_delivered_title"),
 			)
 		elsif @state == "cl_dismissed"
 			mail(

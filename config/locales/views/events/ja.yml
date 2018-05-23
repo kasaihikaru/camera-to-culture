@@ -31,6 +31,7 @@ ja:
       yen: 円
     show:
       Session_Details: 撮影の詳細
+      message: メッセージを送る
       Date_and_Time: 日時
       How_many_people?: 撮影に参加する人数
       Location: 撮影場所

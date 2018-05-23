@@ -29,6 +29,7 @@ en:
       yen: yen
     show:
       Session_Details: Session Details
+      message: Send a message
       Date_and_Time: Date and Time
       How_many_people?: 'How many people?'
       Location: Location
