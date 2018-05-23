@@ -64,7 +64,7 @@ $white-col : #FFFFFF;
 		h1{
 			font-size: 70px;
 			letter-spacing: 20px;
-			font-weight: 800;
+			font-weight: 600;
 			color: $white-col;
 		}
 		h2{
@@ -88,6 +88,12 @@ $white-col : #FFFFFF;
 			font-size: 40px;
 			letter-spacing: 10px;
 			font-weight: 800;
+			color: $white-col;
+		}
+		h2{
+			font-size: 20px;
+			letter-spacing: 5px;
+			font-weight: 600;
 			color: $white-col;
 		}
 	}
