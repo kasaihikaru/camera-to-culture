@@ -24,3 +24,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<% assign_meta_tags title: t(".meta_title"),
+                    description: t(".meta_keywords"),
+                    keywords: t(".meta_description") %>

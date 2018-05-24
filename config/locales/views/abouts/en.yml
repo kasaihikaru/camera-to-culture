@@ -2,6 +2,9 @@
 en:
   abouts:
     show:
+      meta_title: 'Camera-to-Cultureとは'
+      meta_keywords: 'カメラマン, 写真撮影, 依頼, マッチング, 出張, 募集, 求人, Camera-to-Culture'
+      meta_description: 'カメラマンと撮影依頼者のマッチングサービス。お気に入りのカメラマンを見つけて依頼できます。価格やサービス内容は全てカメラマン次第。アマ、プロ関わらずカメラマンも募集中。'
       about_1_1: その瞬間にしかない価値を切り取る写真
       about_1_2: Camera-to-Cultureは
       about_1_3: 全てのひとへ
@@ -40,10 +43,17 @@ en:
       5_disc: |
         Write a review about your photographer and photos.
     terms_of_service_cs:
-
+      meta_title: '利用規約'
+      meta_keywords: '利用規約, Camera-to-Culture'
+      meta_description: 'カメラマンと撮影依頼者のマッチングサービス「Camera-to-Culture」の利用規約です。'
     terms_of_service_cl:
-
+      meta_title: 'カメラマン規約'
+      meta_keywords: '利用規約, カメラマン規約, Camera-to-Culture'
+      meta_description: 'カメラマンと撮影依頼者のマッチングサービス「Camera-to-Culture」のカメラマンとして活動するにあたる規約です。'
     to_be_a_cameraman:
+      meta_title: 'カメラマンになるには'
+      meta_keywords: 'カメラマン, 募集, 求人 写真撮影, 依頼, 出張, フォトグラファー, 写真家'
+      meta_description: '「Camera-to-Culture」プラットフォームは、カメラマンとして活動しませんか？価格やサービス内容は全てカメラマン次第。アマ、プロ関わらずカメラマンも募集中。'
       Register_as_a_cameraman: How to be a photographer
       1_Sign_up: ①Sign-up
       Please_sign_up_first: Please sign-up first.
@@ -69,5 +79,12 @@ en:
         撮影可能な日を登録すると、顧客は予約する際に参考にできます。
       register_available_days: 撮影可能日登録へ
     use_with_phone:
+      meta_title: 'スマホでの利用'
+      meta_keywords: 'Camera-to-Culture, スマホ, アプリ, カメラマン, 出張'
+      meta_description: 'Camera-to-Cultureは現在、スマートフォンアプリを提供していませんが、スマートフォンで利用する際により使いやすくする方法を紹介します。'
       Use_with_iphone: Use with iPhone
       please_add_to_home: Please, add Camera-to-Culture to HOME. Check below to do so.
+    contact_us:
+      meta_title: 'お問い合わせ'
+      meta_keywords: 'Camera-to-Culture, お問い合わせ, コンタクト, 連絡'
+      meta_description: 'Camera-to-Culture運営へは、こちらよりお問い合わせください。'

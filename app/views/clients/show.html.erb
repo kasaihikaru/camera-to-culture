@@ -244,3 +244,6 @@
 	<% end %>
 </div>
 
+<% assign_meta_tags title: t(".meta_title", name: @cl_here.user.name),
+                    description: t(".meta_keywords", name: @cl_here.user.name),
+                    keywords: t(".meta_description", name: @cl_here.user.name) %>

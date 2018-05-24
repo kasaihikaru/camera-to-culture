@@ -104,3 +104,8 @@
 		</div>
 	</div>
 </div>
+
+<% assign_meta_tags title: t(".meta_title", name: @comunitating_user.name),
+                    description: t(".meta_keywords"),
+                    keywords: t(".meta_description", name: @comunitating_user.name) %>
+<% set_meta_tags noindex: true %>

@@ -10,3 +10,8 @@
 		<% end %>
 	</div>
 </div>
+
+<% assign_meta_tags title: t(".meta_title", name: @reciever.name),
+                    description: t(".meta_keywords"),
+                    keywords: t(".meta_description") %>
+<% set_meta_tags noindex: true %>

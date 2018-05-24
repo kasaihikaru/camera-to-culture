@@ -2,6 +2,9 @@
 ja:
   client_contacts:
     first_new:
+      meta_title: 'カメラマン登録'
+      meta_keywords: 'カメラマン, 登録, 写真, 撮影, 依頼, プロ, Camera-to-Culture'
+      meta_description: 'カメラマン登録'
       register_as_cameraman: カメラマンとして登録する
       An_eroor_occurred: 入力ミスがあります
       phone_number: 電話番号(半角数字)
@@ -11,6 +14,9 @@ ja:
       terms_of_service: 利用規約
       register_btn: 規約に同意して登録
     new:
+      meta_title: '電話番号・住所変更'
+      meta_keywords: 'カメラマン, 登録, 写真, 撮影, 依頼, プロ, Camera-to-Culture'
+      meta_description: '電話番号・住所変更'
       change_contacts: 連絡先情報を変更する
       An_eroor_occurred: 登録できませんでした
       phone_number: 電話番号

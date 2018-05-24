@@ -2,6 +2,9 @@
 ja:
   client_schedules:
     index:
+      meta_title: 'スケジュール登録'
+      meta_keywords: 'スケジュール, 登録, 写真, 撮影, Camera-to-Culture'
+      meta_description: 'スケジュール登録'
       schedule: スケジュール
       date: 日付
       day: 曜日

@@ -3,7 +3,7 @@ ja:
   abouts:
     show:
       meta_title: 'Camera-to-Cultureとは'
-      meta_keywords: 'カメラマン, 写真撮影, 依頼, マッチング, 出張, 募集, 求人'
+      meta_keywords: 'カメラマン, 写真撮影, 依頼, マッチング, 出張, 募集, 求人, Camera-to-Culture'
       meta_description: 'カメラマンと撮影依頼者のマッチングサービス。お気に入りのカメラマンを見つけて依頼できます。価格やサービス内容は全てカメラマン次第。アマ、プロ関わらずカメラマンも募集中。'
       about_1_1: その瞬間にしかない価値を切り取る写真
       about_1_2: Camera-to-Cultureは
@@ -19,6 +19,9 @@ ja:
       about_2_7: 色んな「撮ってほしい」を
       about_2_8: より自由に結ぶことを目指しています
     how_to_use:
+      meta_title: '使い方'
+      meta_keywords: 'カメラマン, 写真撮影, 依頼, マッチング, Camera-to-Culture'
+      meta_description: 'カメラマンと撮影依頼者のマッチングサービス。お気に入りのカメラマンを見つけて依頼できます。価格やサービス内容は全てカメラマン次第。アマ、プロ関わらずカメラマンも募集中。'
       how_to_use: 利用の流れ
       1_Search: ①検索
       1_disc: |
@@ -43,10 +46,17 @@ ja:
       5_disc: |
         撮影の感想をレビューに残します。
     terms_of_service_cs:
-
+      meta_title: '利用規約'
+      meta_keywords: '利用規約, Camera-to-Culture'
+      meta_description: 'カメラマンと撮影依頼者のマッチングサービス「Camera-to-Culture」の利用規約です。'
     terms_of_service_cl:
-
+      meta_title: 'カメラマン規約'
+      meta_keywords: '利用規約, カメラマン規約, Camera-to-Culture'
+      meta_description: 'カメラマンと撮影依頼者のマッチングサービス「Camera-to-Culture」のカメラマンとして活動するにあたる規約です。'
     to_be_a_cameraman:
+      meta_title: 'カメラマンになるには'
+      meta_keywords: 'カメラマン, 募集, 求人 写真撮影, 依頼, 出張, フォトグラファー, 写真家'
+      meta_description: '「Camera-to-Culture」プラットフォームは、カメラマンとして活動しませんか？価格やサービス内容は全てカメラマン次第。アマ、プロ関わらずカメラマンも募集中。'
       Register_as_a_cameraman: カメラマンになるには
       1_Sign_up: ①ユーザー登録
       Please_sign_up_first: まずは、ユーザー登録し、ログインしてください。
@@ -72,5 +82,12 @@ ja:
         撮影可能な日を登録すると、顧客は予約する際に参考にできます。
       register_available_days: 撮影可能日登録へ
     use_with_phone:
+      meta_title: 'スマホでの利用'
+      meta_keywords: 'Camera-to-Culture, スマホ, アプリ, カメラマン, 出張'
+      meta_description: 'Camera-to-Cultureは現在、スマートフォンアプリを提供していませんが、スマートフォンで利用する際により使いやすくする方法を紹介します。'
       Use_with_iphone: iPhoneで使う
       please_add_to_home: 以下の画像にならって、ホーム画面に追加してお使いください。
+    contact_us:
+      meta_title: 'お問い合わせ'
+      meta_keywords: 'Camera-to-Culture, お問い合わせ, コンタクト, 連絡'
+      meta_description: 'Camera-to-Culture運営へは、こちらよりお問い合わせください。'

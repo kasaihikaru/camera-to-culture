@@ -582,6 +582,19 @@
 	<% end %><!-- endOf cs 過去の場合 -->
 </div>
 
+
+<% if @cl_here == @cl %>
+	<% assign_meta_tags title: t(".meta_title", name: @cs_here.user.name),
+	                    description: t(".meta_keywords"),
+	                    keywords: t(".meta_description") %>
+	<% set_meta_tags noindex: true %>
+<% else %>
+	<% assign_meta_tags title: t(".meta_title", name: @cl_here.user.name),
+	                    description: t(".meta_keywords"),
+	                    keywords: t(".meta_description") %>
+	<% set_meta_tags noindex: true %>
+<% end %>
+
 <script>
 function koshin(){
   location.reload();

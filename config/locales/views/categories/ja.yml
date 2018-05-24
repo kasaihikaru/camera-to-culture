@@ -2,6 +2,9 @@
 ja:
   categories:
     profile:
+      meta_title: 'プロフィール写真を撮影したい'
+      meta_keywords: '写真, プロフィール, プロフィール写真, アイコン, 撮影, 依頼, プロ, 方法, Camera-to-Culture'
+      meta_description: 'プロフィール写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけてプロフィール写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       profile: プロフィール
       tips: チェックポイント
       tips_desc_1: |
@@ -20,6 +23,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     id_photo:
+      meta_title: '証明写真を撮影したい'
+      meta_keywords: '証明写真, 履歴書, 社員証, 撮影, 依頼, プロ, 方法, Camera-to-Culture'
+      meta_description: '証明写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけて証明写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       id-photo: 証明写真
       cate-main-disc: |
         履歴書の写真は「あなたの印象」を決める大きな要素です。パスポートや社員証で使われる証明写真も長く使われるので、よいものを使いたいですよね。
@@ -40,6 +46,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     wedding:
+      meta_title: 'ウェディング写真を撮影したい'
+      meta_keywords: '写真, ウェディング, ブライダル, 結婚, プロポーズ, 依頼, プロ, 方法, Camera-to-Culture'
+      meta_description: 'ウェディング写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけてウェディング写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       wedding: ウェディング
       location: ロケーション
       city: 都市
@@ -63,6 +72,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     traveling:
+      meta_title: '旅行写真を撮影したい'
+      meta_keywords: '写真, 旅行, 依頼, プロ, 方法, Camera-to-Culture'
+      meta_description: '旅行写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけて旅行写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       traveling: 旅行
       tips: チェックポイント
       tips_desc_1: |
@@ -78,6 +90,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     daily_life:
+      meta_title: '日常の写真を撮影したい'
+      meta_keywords: '写真, 日常, 生活, 依頼, 普段, 依頼, プロ, 方法, Camera-to-Culture'
+      meta_description: '日常の写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけて日常の写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       daily-life: 日常
       tips: チェックポイント
       tips_desc_1: |
@@ -93,6 +108,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     seven_five_three:
+      meta_title: '七五三の写真を撮影したい'
+      meta_keywords: '写真, 七五三, 子供, 依頼, 出張, プロ, 方法, Camera-to-Culture'
+      meta_description: '七五三の写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけて七五三の写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       seven-five-three: 七五三
       tips: チェックポイント
       tips_desc_1: |
@@ -111,6 +129,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     coming_of_age:
+      meta_title: '成人式の写真を撮影したい'
+      meta_keywords: '写真, 成人式, 前撮り, 二十歳, 依頼, 出張, プロ, 方法, Camera-to-Culture'
+      meta_description: '成人式の写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけて成人式の写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       coming-of-age: 成人式
       tips: チェックポイント
       tips_desc_1: |
@@ -126,6 +147,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     maternity:
+      meta_title: 'マタニティ写真を撮影したい'
+      meta_keywords: '写真, マタニティ, 妊娠, 妊婦, 依頼, 出張, プロ, 方法, Camera-to-Culture'
+      meta_description: 'マタニティの写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけてマタニティの写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       maternity: マタニティ
       tips: チェックポイント
       tips_desc_1: |
@@ -140,6 +164,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     new_born:
+      meta_title: 'ニューボーン写真を撮影したい'
+      meta_keywords: '写真, ニューボーン, 新生児, 赤ちゃん, 依頼, 出張, プロ, 方法, Camera-to-Culture'
+      meta_description: 'ニューボーンの写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけてニューボーンの写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       new-born: ニューボーン
       tips: チェックポイント
       tips_desc_1: |
@@ -156,6 +183,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     commodities:
+      meta_title: '商品の写真を撮影したい'
+      meta_keywords: '写真, 商品, EC, 通販, アイテム, 料理, 飲食店, 依頼, 出張, プロ, 方法, Camera-to-Culture'
+      meta_description: '商品の写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけて商品の写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       commodities: 商品
       tips: チェックポイント
       tips_desc_1: |
@@ -170,6 +200,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     event:
+      meta_title: 'イベントの写真を撮影したい'
+      meta_keywords: '写真, イベント, ライブ, スポーツ, 依頼, 出張, プロ, 方法, Camera-to-Culture'
+      meta_description: 'イベントの写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけてイベントの写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       event: イベント
       tips: チェックポイント
       tips_desc_1: |
@@ -184,6 +217,9 @@ ja:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     pet:
+      meta_title: 'ペットの写真を撮影したい'
+      meta_keywords: '写真, ペット, 犬, 猫, 依頼, 出張, プロ, 方法, Camera-to-Culture'
+      meta_description: 'ペットの写真を撮影したいときに、気をつけるポイントは？Camera-to-Cultureでは、お気に入りのカメラマンを見つけてペットの写真の撮影依頼ができます。アマ、プロ関わらずカメラマンも募集中。'
       pet: ペット
       tips: チェックポイント
       tips_desc_1: |

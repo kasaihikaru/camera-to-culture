@@ -198,9 +198,10 @@
 
 
 
-
-
-
+<% assign_meta_tags title: t(".meta_title", name: @cl_here.user.name),
+                    description: t(".meta_keywords"),
+                    keywords: t(".meta_description", name: @cl_here.user.name) %>
+<% set_meta_tags noindex: true %>
 
 
 

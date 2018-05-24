@@ -2,9 +2,15 @@
 ja:
   messages:
     new:
+      meta_title: '%{name}さんにメッセージ'
+      meta_keywords: 'メッセージ, 写真撮影, 写真, 撮影, Camera-to-Culture'
+      meta_description: '%{name}さんにメッセージ'
       message: '%{name}さんへのメッセージ'
       send_btn: 送信
     show:
+      meta_title: '%{name}さんにメッセージ'
+      meta_keywords: 'メッセージ, 写真撮影, 写真, 撮影, Camera-to-Culture'
+      meta_description: '%{name}さんにメッセージ'
       Introduction: メッセージ
       Photographing_Categories: 撮影カテゴリー
       Photographing_Area: 撮影可能な都道府県

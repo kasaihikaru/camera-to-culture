@@ -5,3 +5,8 @@
 	<div class="ms-content col-12 col-md-8 col-lg-9  d-none d-md-block message-wrapper">
 	</div>
 </div>
+
+<% assign_meta_tags title: t(".meta_title"),
+                    description: t(".meta_keywords"),
+                    keywords: t(".meta_description") %>
+<% set_meta_tags noindex: true %>

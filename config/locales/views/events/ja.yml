@@ -2,6 +2,9 @@
 ja:
   events:
     new:
+      meta_title: '%{name}さんに予約リクエスト'
+      meta_keywords: '予約, 写真撮影, 写真, 撮影, Camera-to-Culture'
+      meta_description: '%{name}さんに予約リクエスト'
       Request_to_Book: 予約リクエスト
       Check_Shedule: '%{name}さんの予定を確認'
       Request_date_and_time: 予約希望日時
@@ -30,6 +33,9 @@ ja:
       price_per_hour: １時間あたり
       yen: 円
     show:
+      meta_title: '%{name}さんとの撮影'
+      meta_keywords: '予約, 写真撮影, 写真, 撮影, Camera-to-Culture'
+      meta_description: '%{name}さんとの撮影'
       Session_Details: 撮影の詳細
       message: メッセージを送る
       Date_and_Time: 日時
@@ -119,6 +125,9 @@ ja:
       cl_cancele_comment: 大変申し訳ないのですが、撮影をキャンセルさせてください。
       Send: 送信
     edit:
+      meta_title: '予約の変更'
+      meta_keywords: '予約, 変更, 写真, 撮影, Camera-to-Culture'
+      meta_description: '予約の変更'
       Edit_Conditions: 撮影条件変更を依頼
       Check_Your_Shedule: 自分のスケージュールを確認
       Request_date_and_time: 予約希望日時
@@ -145,6 +154,9 @@ ja:
       cl_edit_comment: 撮影条件を変更しました。こちらの条件でしたら撮影可能ですが、いかがでしょうか？
       Send_request: 撮影条件変更を依頼
     cl_future:
+      meta_title: '今後の撮影'
+      meta_keywords: '予約, 撮影, 写真, 撮影, Camera-to-Culture'
+      meta_description: '今後の撮影'
       yen: 円
       Youve_got_a_request: あなたの承認待ち
       You_Approved: 撮影確定
@@ -156,6 +168,9 @@ ja:
       Customer_Dismissed: 却下されました
       no_result: 今は予定はありません
     cl_past:
+      meta_title: '過去の撮影'
+      meta_keywords: '予約, 撮影, 写真, 撮影, Camera-to-Culture'
+      meta_description: '過去の撮影'
       yen: 円
       Automatically_Canceled: 自動キャンセル済み
       Please_deliver_photos: 納品して下さい
@@ -170,6 +185,9 @@ ja:
       Photos_recieved: 写真受け取り済み
       no_result: まだ撮影がありません
     cs_future:
+      meta_title: '今後の予約'
+      meta_keywords: '予約, 撮影, 写真, 撮影, Camera-to-Culture'
+      meta_description: '今後の予約'
       yen: 円
       Requesting: 承認待ち
       Approved: 撮影確定
@@ -184,6 +202,9 @@ ja:
       Photos_recieved: 写真受け取り済み
       no_result: 今は予定がありません
     cs_past:
+      meta_title: '過去の予約'
+      meta_keywords: '予約, 撮影, 写真, 撮影, Camera-to-Culture'
+      meta_description: '過去の予約'
       yen: 円
       Requesting: 承認待ち
       Approved: 撮影確定

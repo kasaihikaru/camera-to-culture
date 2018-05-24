@@ -46,3 +46,8 @@
 <p>Unhappy? <%= button_to t(".Cancel_my_account"), registration_path(resource_name), data: { confirm: t(".Are_you_sure?") }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+
+<% assign_meta_tags title: t(".meta_title"),
+                    description: t(".meta_keywords"),
+                    keywords: t(".meta_description") %>

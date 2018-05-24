@@ -2,6 +2,9 @@
 ja:
   users:
     show:
+      meta_title: 'マイページ'
+      meta_keywords: 'マイページ, Camera-to-Culture'
+      meta_description: 'マイページ'
       Home: ホーム
       Update_available_dates_for_your_customer: 撮影可能日を登録しましょう
       booking_request: '%{name}さんより予約リクエストが届きました。'
@@ -51,6 +54,9 @@ ja:
       sign-out: ログアウト
 
     profile:
+      meta_title: 'プロフィール編集'
+      meta_keywords: 'プロフィール編集, Camera-to-Culture'
+      meta_description: 'プロフィール編集'
       Edit_Profile: ユーザープロフィールの変更
       language_use: 話す言語を全て選択して下さい
       japanese: 日本語
@@ -61,6 +67,9 @@ ja:
       update_btn: 更新
 
     account_setting:
+      meta_title: 'アカウント設定'
+      meta_keywords: 'アカウント設定, Camera-to-Culture'
+      meta_description: 'アカウント設定'
       Account_settings: アカウント設定
       cancel_account_explanation1: 退会後も、Camera-to-Cultureで行った全活動の責任は引き続きご自身が負います。
       cancel_account_explanation2: あなたのプロフィールが表示されなくなります。
@@ -71,6 +80,9 @@ ja:
 # 以下、devise用
     confirmations:
       new:
+        meta_title: '確認メール再送'
+        meta_keywords: '確認メール再送, Camera-to-Culture'
+        meta_description: '確認メール再送'
         Resend_confirmation_instructions: 確認メールを送る
         email: メールアドレス
     mailer:
@@ -98,12 +110,18 @@ ja:
         Unlock_my_account: 凍結を解除
     passwords:
       edit:
+        meta_title: 'パスワードを変更'
+        meta_keywords: 'パスワードを変更, Camera-to-Culture'
+        meta_description: 'パスワードを変更'
         Change_your_password: パスワードを変更する
         characters_minimum: 6文字以上
         New_password: 新しいパスワード
         Confirm_new_password: もう一度入力
         Change_my_password: パスワードを変更
       new:
+        meta_title: 'パスワードを変更'
+        meta_keywords: 'パスワードを変更, Camera-to-Culture'
+        meta_description: 'パスワードを変更'
         Forgot_your_password?: パスワードを変更する
         email: メールアドレス
         Send_me_reset_password_instructions: パスワード再発行メールを送る
@@ -113,6 +131,9 @@ ja:
         Change_my_password: パスワードを変更
     registrations:
       new:
+        meta_title: '新規登録'
+        meta_keywords: '新規登録, Camera-to-Culture'
+        meta_description: '新規登録'
         sign_up: 新規登録
         sign_up_with_FB: Facebookで会員登録
         name: お名前
@@ -127,6 +148,9 @@ ja:
         chinese: 中国語
         image: プロフィール画像
       edit:
+        meta_title: '基礎設定変更'
+        meta_keywords: '基礎設定変更, Camera-to-Culture'
+        meta_description: '基礎設定変更'
         Edit_Settings: 設定の変更
         name: お名前
         email: メールアドレス
@@ -143,6 +167,9 @@ ja:
         we_need_your_current_password_to_confirm_your_changes: 確認のため、パスワードを入力してください。
     sessions:
       new:
+        meta_title: 'ログイン'
+        meta_keywords: 'ログイン, Camera-to-Culture'
+        meta_description: 'ログイン'
         sign_in: ログイン
         sign_in_with_FB: Facebookでログイン
         email: メールアドレス
@@ -157,5 +184,8 @@ ja:
         Didn't_receive_unlock_instructions?: パスワード再発行メールを送る
     unlocks:
       new:
+        meta_title: 'アカウント回復'
+        meta_keywords: 'アカウント回復, Camera-to-Culture'
+        meta_description: 'アカウント回復'
         Resend_unlock_instructions: アカウント凍結からの回復メールを送る
         email: メールアドレス
