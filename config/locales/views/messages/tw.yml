@@ -2,9 +2,15 @@
 tw:
   messages:
     new:
+      meta_title: '給%{name}發消息'
+      meta_keywords: '消息, 寫真, 拍攝, 攝影, 照片, Camera-to-Culture'
+      meta_description: '給%{name}發消息'
       message: '給%{name}發消息'
       send_btn: 發送
-    show:
+    show:
+      meta_title: '給%{name}發消息'
+      meta_keywords: '消息, 寫真, 拍攝, 攝影, 照片, Camera-to-Culture'
+      meta_description: '給%{name}發消息'
       Introduction: 消息
       Photographing_Categories: 攝影類別
       Photographing_Area: 可以拍攝的都道府縣

@@ -2,6 +2,9 @@
 tw:
   client_portfolios:
     new:
+      meta_title: '上傳樣片'
+      meta_keywords: '樣片, 上傳, 登錄, 寫真, 例子, Camera-to-Culture'
+      meta_description: '上傳樣片'
       portfolio: 作品集樣片（最多可上傳19張）
       photos_are_uploaded: 張的樣片已經成功上傳至作品集。
       delete_check: 多選

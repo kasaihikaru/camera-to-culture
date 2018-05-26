@@ -2,6 +2,9 @@
 tw:
   categories:
     profile:
+      meta_title: '想拍個人寫真'
+      meta_keywords: '寫真, 拍照, 個人寫真, 頭像, 約片, 約拍, 專業, 怎麼拍, 姿勢, 方式, Camera-to-Culture'
+      meta_description: '想拍個人寫真？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍照。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       profile: 個人寫真
       tips: 拍攝前的小貼士
       tips_desc_1: |
@@ -20,6 +23,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     id_photo:
+      meta_title: '想拍證件照'
+      meta_keywords: '證件照, 証明寫真, 履曆書, 工作證, 攝影, 拍攝, 專業, 方法,Camera-to-Culture'
+      meta_description: '想拍證件照？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍證件照。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       id-photo: 證件照
       cate-main-disc: |
         在求職簡歷中，證件照將是決定你的印象的關鍵因素。
@@ -41,6 +47,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。'
       other_categories: 其他的拍攝種類在這裡
     wedding:
+      meta_title: '想拍婚紗照'
+      meta_keywords: '寫真, 婚紗, 照相, 攝影, 輕婚紗, 婚禮, 新娘, 結婚, 婚姻, 求婚, 新郎, 專業, 方法, 約拍, Camera-to-Culture'
+      meta_description: '想拍婚紗照？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍婚紗照。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       wedding: 婚紗照
       location: 拍攝地點
       city: 都市
@@ -64,6 +73,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     traveling:
+      meta_title: '想旅拍'
+      meta_keywords: '寫真, 拍攝, 旅行, 約拍, 約片, 專業, 方法, Camera-to-Culture'
+      meta_description: '想拍旅拍？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍旅行拍攝。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       traveling: 旅行
       tips: 拍攝前的小貼士
       tips_desc_1: |
@@ -82,6 +94,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     daily_life:
+      meta_title: '想拍日常写真'
+      meta_keywords: '写真, 日常, 生活, 摄影, 拍摄, 约拍, 专业, 方法, Camera-to-Culture'
+      meta_description: '想拍日常写真？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍日常写真。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       daily-life: 日常
       tips: 拍攝前的小貼士
       tips_desc_1: |
@@ -98,6 +113,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     seven_five_three:
+      meta_title: '想拍七五三'
+      meta_keywords: '寫真, 拍攝, 拍照, 七五三, 小孩, 孩子, 外拍, 專業, 方法, Camera-to-Culture'
+      meta_description: '想拍七五三？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍七五三。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       seven-five-three: 七五三
       tips: 拍攝前的小貼士
       tips_desc_1: |
@@ -115,6 +133,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     coming_of_age:
+      meta_title: '想拍成人式'
+      meta_keywords: '寫真, 拍攝, 拍照, 成人式, 成年, 20歲, 18歲 , 外拍, 專業, 方法, Camera-to-Culture'
+      meta_description: '想拍成人式？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍成人式照。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       coming-of-age: 成人式
       tips: 拍攝前的小貼士
       tips_desc_1: |
@@ -131,6 +152,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     maternity:
+      meta_title: '想拍孕婦照'
+      meta_keywords: '寫真, 拍照, 孕婦, 懷孕, 懷了, 外拍, 專業, 方法, Camera-to-Culture'
+      meta_description: '想拍孕婦照？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍孕婦照。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       maternity: 孕婦寫真
       tips: 拍攝前的小貼士
       tips_desc_1: |
@@ -145,6 +169,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     new_born:
+      meta_title: '想拍新生兒照'
+      meta_keywords: '寫真, 拍照, 拍攝, 新生兒, 嬰兒, 出生, 小baby, 外拍, 專業, 方法, Camera-to-Culture'
+      meta_description: '想拍新生兒照？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍新生兒照。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       new-born: 新生兒寫真
       tips: 拍攝前的小貼士
       tips_desc_1: |
@@ -161,6 +188,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     commodities:
+      meta_title: '想拍商品照'
+      meta_keywords: '寫真, 拍攝, 拍照, 商品, EC, 淘寶, 京東, 網購, 網拍, 物品, 菜, 飯, 首飾, 餐廳, 販賣, 店鋪, 方法, Camera-to-Culture'
+      meta_description: '想拍商品照？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍商品照。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       commodities: 商品
       tips: 拍攝前的小貼士
       tips_desc_1: |
@@ -173,6 +203,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     event:
+      meta_title: '想拍活動照'
+      meta_keywords: '寫真,活動, 演唱會, 運動, 表演, 團建, 公司, 團體, 節目, 專業, 方法, Camera-to-Culture'
+      meta_description: '想拍活動照？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍活動照。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       event: 活動
       tips: 拍攝前的小貼士
       tips_desc_1: |
@@ -188,6 +221,9 @@ tw:
       This_category_has_cls: '拍攝這中類型的攝影師有%{num}人。 '
       other_categories: 其他的拍攝種類在這裡
     pet:
+      meta_title: '想拍寵物照'
+      meta_keywords: '寫真, 拍照, 拍攝, 寵物, 動物, 狗, 貓, 鳥, 兔子, 外拍, 專業, 方法, Camera-to-Culture'
+      meta_description: '想拍寵物照？要注意一些什麼呢？在Camera-to-Culture中，可以找到中意的攝影師給您拍寵物照。我們也非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       pet: 寵物
       tips: 拍攝前的小貼士
       tips_desc_1: |

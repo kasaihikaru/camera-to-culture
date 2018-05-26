@@ -2,9 +2,15 @@
 zh:
   messages:
     new:
+      meta_title: '给%{name}发消息'
+      meta_keywords: '消息, 写真, 拍摄, 摄影, 照片, Camera-to-Culture'
+      meta_description: '给%{name}发消息'
       message: '给%{name}发消息'
       send_btn: 发送
     show:
+      meta_title: '给%{name}发消息'
+      meta_keywords: '消息, 写真, 拍摄, 摄影, 照片, Camera-to-Culture'
+      meta_description: '给%{name}发消息'
       Introduction: 消息
       Photographing_Categories: 摄影类别
       Photographing_Area: 可以拍摄的都道府县

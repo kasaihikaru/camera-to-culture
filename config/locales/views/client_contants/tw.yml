@@ -2,6 +2,9 @@
 tw:
   client_contacts:
     first_new:
+      meta_title: '登錄成為攝影師'
+      meta_keywords: '攝影師, 登錄, 成為, 變成, 寫真, 照相, 攝影, 拍攝, 約片, 約拍, 專業, 業餘, Camera-to-Culture'
+      meta_description: '登錄成為攝影師'
       register_as_cameraman: 登錄攝影師
       An_eroor_occurred: 輸入的內容有誤
       phone_number: 聯絡電話（半角數字）
@@ -11,6 +14,9 @@ tw:
       terms_of_service: 註冊協議
       register_btn: 同意註冊協議并註冊
     new:
+      meta_title: '電話號碼・更改住址'
+      meta_keywords: '攝影師, 登錄, 成為, 變成, 寫真, 照相, 攝影, 拍攝, 約片, 約拍, 專業, 業餘, Camera-to-Culture'
+      meta_description: '電話號碼・更改住址'
       change_contacts: 修改聯絡方式
       An_eroor_occurred: 無法註冊成功
       phone_number: 聯絡電話

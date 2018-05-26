@@ -12,9 +12,7 @@ class User < ApplicationRecord
 	has_many :user_languages
 	accepts_nested_attributes_for :user_languages
 
-  scope :cs_intro_present, ->  {
-    joins(:customer).merge(Customer.intro_present)
-  }
+  scope :intro_present, -> { where.not(introduction_ja: nil).or(where.not(introduction_en: nil).or(where.not(introduction_zh: nil).or(where.not(introduction_tw: nil))))}
 
 
 	# ファイルアップロード処理

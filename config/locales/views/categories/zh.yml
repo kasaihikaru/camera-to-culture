@@ -2,6 +2,9 @@
 zh:
   categories:
     profile:
+      meta_title: '想拍个人写真'
+      meta_keywords: '写真, 拍照, 个人写真, 头像, 约片, 约拍, 专业, 私房, 怎么拍, 姿势, 方式, Camera-to-Culture'
+      meta_description: '想拍个人写真？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍个人写真。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       profile: 个人写真
       tips: 拍摄前的小贴士
       tips_desc_1: |
@@ -20,6 +23,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     id_photo:
+      meta_title: '想拍证件照'
+      meta_keywords: '证件照, 証明写真, 履历书, 工作证, 摄影, 拍摄, 专业, 方法,Camera-to-Culture'
+      meta_description: '想拍证件照？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍证件照。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       id-photo: 证件照
       cate-main-disc: |
         在求职简历中，证件照将是决定你的印象的关键因素。
@@ -41,6 +47,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     wedding:
+      meta_title: '想拍婚纱照'
+      meta_keywords: '写真, 婚纱, 照相, 摄影, 轻婚纱, 婚礼, 新娘, 结婚, 婚姻, 求婚, 新郎, 专业, 方法, 约拍, Camera-to-Culture'
+      meta_description: '想拍婚纱照？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍婚纱照。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       wedding: 婚纱照
       location: 拍摄地点
       city: 都市
@@ -64,6 +73,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     traveling:
+      meta_title: '想旅拍'
+      meta_keywords: '写真, 拍摄, 旅行, 约拍, 约片, 专业, 方法, Camera-to-Culture'
+      meta_description: '想拍旅拍？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍旅行拍摄。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       traveling: 旅行
       tips: 拍摄前的小贴士
       tips_desc_1: |
@@ -82,6 +94,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     daily_life:
+      meta_title: '想拍日常写真'
+      meta_keywords: '写真, 日常, 生活, 摄影, 拍摄, 约拍, 专业, 方法, Camera-to-Culture'
+      meta_description: '想拍日常写真？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍日常写真。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       daily-life: 日常
       tips: 拍摄前的小贴士
       tips_desc_1: |
@@ -98,6 +113,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     seven_five_three:
+      meta_title: '想拍七五三'
+      meta_keywords: '写真, 拍摄, 拍照, 七五三, 小孩, 孩子, 外拍, 专业, 方法, Camera-to-Culture'
+      meta_description: '想拍七五三？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍七五三。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       seven-five-three: 七五三
       tips: 拍摄前的小贴士
       tips_desc_1: |
@@ -115,6 +133,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     coming_of_age:
+      meta_title: '想拍成人式'
+      meta_keywords: '写真, 拍摄, 拍照, 成人式, 成年, 20岁, 18岁 , 外拍, 专业, 方法, Camera-to-Culture'
+      meta_description: '想拍成人式？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍成人式照。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       coming-of-age: 成人式
       tips: 拍摄前的小贴士
       tips_desc_1: |
@@ -131,6 +152,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     maternity:
+      meta_title: '想拍孕妇照'
+      meta_keywords: '写真, 拍照, 孕妇, 怀孕, 怀了, 外拍, 专业, 方法, Camera-to-Culture'
+      meta_description: '想拍孕妇照？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍孕妇照。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       maternity: 孕妇照
       tips: 拍摄前的小贴士
       tips_desc_1: |
@@ -146,6 +170,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     new_born:
+      meta_title: '想拍新生儿照'
+      meta_keywords: '写真, 拍照, 拍摄, 新生儿, 婴儿, 出生, 小baby, 外拍, 专业, 方法, Camera-to-Culture'
+      meta_description: '想拍新生儿照？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍新生儿照。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       new-born: 新生儿照
       tips: 拍摄前的小贴士
       tips_desc_1: |
@@ -162,6 +189,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     commodities:
+      meta_title: '想拍商品照'
+      meta_keywords: '写真, 拍摄, 拍照, 商品, EC, 淘宝, 京东, 网购, 网拍, 物品, 菜, 饭, 首饰, 餐厅, 贩卖, 店铺, 方法, Camera-to-Culture'
+      meta_description: '想拍商品照？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍商品照。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       commodities: 商品
       tips: 拍摄前的小贴士
       tips_desc_1: |
@@ -174,6 +204,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     event:
+      meta_title: '想拍活动照'
+      meta_keywords: '写真,活动, 演唱会, 运动, 表演, 团建, 公司, 团体, 节目, 专业, 方法, Camera-to-Culture'
+      meta_description: '想拍活动照？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍活动照。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       event: 活动
       tips: 拍摄前的小贴士
       tips_desc_1: |
@@ -189,6 +222,9 @@ zh:
       This_category_has_cls: '拍摄这中类型的摄影师有%{num}人。'
       other_categories: 其他的拍摄种类在这里
     pet:
+      meta_title: '想拍宠物照'
+      meta_keywords: '写真, 拍照, 拍摄, 宠物, 动物, 狗, 猫, 鸟, 兔子, 外拍, 专业, 方法, Camera-to-Culture'
+      meta_description: '想拍宠物照？要注意一些什么呢？在Camera-to-Culture中，可以找到中意的摄影师给您拍宠物照。我们也非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       pet: 宠物
       tips: 拍摄前的小贴士
       tips_desc_1: |

@@ -2,6 +2,9 @@
 zh:
   abouts:
     show:
+      meta_title: 'Camera-to-Culture是'
+      meta_keywords: '摄影师, 拍照, 摄影, 约片, 约拍, 对接, 介绍, 外拍, 招募, 模特, Camera-to-Culture'
+      meta_description: '提供给摄影师vs想拍摄者的拍摄对接平台。可以在众多独立摄影师中仔细挑选并直接进行联络和预约。拍摄的内容及价格均为摄影师自行决定。非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       about_1_1: 这一瞬间的照片=这一瞬间的价值
       about_1_2: 在Camera-to-Culture
       about_1_3: 为了使大家感受到
@@ -42,10 +45,17 @@ zh:
       5_disc: |
         最后请在摄影师的个人评价中留下您的感受。
     terms_of_service_cs:
-
+      meta_title: '使用规定'
+      meta_keywords: '使用规定, Camera-to-Culture'
+      meta_description: '摄影师与想拍摄者的拍摄对接平台「Camera-to-Culture」的使用规定。'
     terms_of_service_cl:
-
+      meta_title: '摄影师规定'
+      meta_keywords: '使用规定，摄影师规定, Camera-to-Culture'
+      meta_description: '在本摄影师与想拍摄者的拍摄对接平台「Camera-to-Culture」中担任摄影师时的使用规定。'
     to_be_a_cameraman:
+      meta_title: '成为摄影师'
+      meta_keywords: '摄影师, 招募, 写真, 约片, 约拍, 外拍, 照相, 摄影家'
+      meta_description: '欢迎您登录成为「Camera-to-Culture」的摄影师！价格、时间，拍摄内容均为摄影师自行决定。无论是专业摄影师还是摄影爱好者，我们都欢迎您的加入！'
       Register_as_a_cameraman: 成为登录摄影师的步骤为
       1_Sign_up: ①注册新用户
       Please_sign_up_first: 首先，请注册成为我们的用户。
@@ -68,5 +78,12 @@ zh:
         客人在预约时将根据可拍摄的日期而进行参考。
       register_available_days: 前往登录可拍摄日期
     use_with_phone:
+      meta_title: '在智能手机上的使用方法'
+      meta_keywords: 'Camera-to-Culture, 手机, 智能手机, app, 摄影师, 外拍'
+      meta_description: '现在，Camera-to-Culture还未提供APP服务。我们向您推荐在智能手机中如何更方便的使用方法。'
       Use_with_iphone: iOS移动客户端
       please_add_to_home: 显示出下方的图像后，请添加至手机桌面。
+    contact_us:
+      meta_title: '联系我们'
+      meta_keywords: 'Camera-to-Culture, 询问, 咨询, 联系, 留言'
+      meta_description: '有任何关于Camera-to-Culture的疑问，请从这里联系我们。'

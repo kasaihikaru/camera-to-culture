@@ -2,6 +2,9 @@
 en:
   events:
     new:
+      meta_title: 'Request to %{name}'
+      meta_keywords: ''
+      meta_description: ''
       Request_to_Book: Request to Book
       Check_Shedule: 'Check %{name}''s Shedule'
       Request_date_and_time: Request date and time
@@ -28,6 +31,9 @@ en:
       Total_Fee: Total fee
       yen: yen
     show:
+      meta_title: 'Photographing with %{name}'
+      meta_keywords: ''
+      meta_description: ''
       Session_Details: Session Details
       message: Send a message
       Date_and_Time: Date and Time
@@ -116,6 +122,9 @@ en:
       cl_cancele_comment: I am sorry to inform you that I will have to cancel your reservation.
       Send: Send
     edit:
+      meta_title: 'Request to change conditions'
+      meta_keywords: ''
+      meta_description: ''
       Edit_Conditions: Request to change conditions
       Check_Your_Shedule: Check your schedule
       Request_date_and_time: Request date and time
@@ -143,6 +152,9 @@ en:
       cl_edit_comment: Thank you for your request, but conditions were not suit for me. How are these conditions?
       Send_request: Send request
     cl_future:
+      meta_title: 'Future sessions'
+      meta_keywords: ''
+      meta_description: ''
       yen: yen
       Youve_got_a_request: 'You''ve got request'
       You_Approved: Reservation confirmed
@@ -154,6 +166,9 @@ en:
       Customer_Dismissed: Customer dismissed
       no_result: 'No reservation now'
     cl_past:
+      meta_title: 'Past sessions'
+      meta_keywords: ''
+      meta_description: ''
       yen: yen
       Automatically_Canceled: Request canceled
       Please_deliver_photos: Waiting for photos
@@ -168,6 +183,9 @@ en:
       Photos_recieved: Received photos
       no_result: You have not got sessions yet.
     cs_future:
+      meta_title: 'Future reservations'
+      meta_keywords: ''
+      meta_description: ''
       yen: yen
       Requesting: Requesting
       Approved: Reservation confirmed
@@ -182,6 +200,9 @@ en:
       Photos_recieved: Received photos
       no_result: 'No reservation now'
     cs_past:
+      meta_title: 'Past sessions'
+      meta_keywords: ''
+      meta_description: ''
       yen: yen
       Requesting: Requesting
       Approved: Reservation confirmed

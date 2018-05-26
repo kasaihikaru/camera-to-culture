@@ -2,6 +2,9 @@
 en:
   client_contacts:
     first_new:
+      meta_title: 'Register as a photographer'
+      meta_keywords: ''
+      meta_description: ''
       register_as_cameraman: Register as a Cameraman
       An_eroor_occurred: an error occurred
       phone_number: Phone number
@@ -11,6 +14,9 @@ en:
       terms_of_service: Terms of service
       register_btn: Agree to Terms and Register
     new:
+      meta_title: 'Change phone number and address'
+      meta_keywords: ''
+      meta_description: ''
       change_contacts: Change your contacts
       An_eroor_occurred: an error occurred
       phone_number: Phone number

@@ -2,6 +2,9 @@
 tw:
   abouts:
     show:
+      meta_title: 'Camera-to-Culture是'
+      meta_keywords: '攝影師, 拍照, 攝影, 約片, 約拍, 對接, 介紹, 外拍, 招募, 模特, Camera-to-Culture'
+      meta_description: '提供給攝影師vs想拍攝者的拍攝對接平台。可以在眾多獨立攝影師中仔細挑選並直接進行聯絡和預約。拍攝的內容及價格均為攝影師自行決定。非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       about_1_1: 這一瞬間的照片=這一瞬間的價值
       about_1_2: 在Camera-to-Culture
       about_1_3: 為了讓大家感受到
@@ -42,9 +45,13 @@ tw:
       5_disc: |
         最後請在攝影師的個人評價中留下您的感受。
     terms_of_service_cs:
-
+      meta_title: '使用規定'
+      meta_keywords: '使用規定, Camera-to-Culture'
+      meta_description: '攝影師與想拍攝者的拍攝對接平台「Camera-to-Culture」的使用規定。 '
     terms_of_service_cl:
-
+      meta_title: '攝影師規定'
+      meta_keywords: '使用規定，攝影師規定, Camera-to-Culture'
+      meta_description: '在本攝影師與想拍攝者的拍攝對接平台「Camera-to-Culture」中擔任攝影師時的使用規定。 '
     to_be_a_cameraman:
       Register_as_a_cameraman: 成為登錄攝影師的步驟為
       1_Sign_up: ①註冊新用戶
@@ -68,5 +75,12 @@ tw:
         顧客在預約時將根據可拍攝的日期而進行參考。
       register_available_days: 前往登錄可拍攝日期
     use_with_phone:
+      meta_title: '在智能手機上的使用方法'
+      meta_keywords: 'Camera-to-Culture, 手機, 智能手機, app, 攝影師, 外拍'
+      meta_description: '現在，Camera-to-Culture還未提供APP服務。我們向您推薦在智能手機中如何更方便的使用方法。 '
       Use_with_iphone: iOS移動客戶端
       please_add_to_home: 顯示出下方的圖像後，請添加至手機桌面。
+    contact_us:
+      meta_title: '聯繫我們'
+      meta_keywords: 'Camera-to-Culture, 詢問, 諮詢, 聯繫, 留言'
+      meta_description: '有任何關於Camera-to-Culture的疑問，請從這里聯系我們。 '

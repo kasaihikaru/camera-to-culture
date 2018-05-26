@@ -18,8 +18,8 @@
 						</a>
 					<% end %>
 				</div>
-				<%= render :partial => 'svgs/fee' %>&nbsp;<%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %><br>
-				<%= @cl_here.user.customer.introduction %>
+				<%= render :partial => 'svgs/fee' %>&nbsp;<%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %>
+				<div class="line-break"><%= render :partial => 'clients/introduction', :locals=>{cl: @cl_here, locale: @locale} %></div>
 			</div>
 		</div>
 	</div>
@@ -92,9 +92,16 @@
 		<hr>
 
 		<!-- カメラ -->
-		<% if @cl_here.camera.present? %>
+		<% if @cl_here.deliverables.present? %>
 			<h2><%= render :partial => 'svgs/camera' %>&nbsp;<%= t(".Camera") %></h2>
 			<pre class="indent"><%= @cl_here.camera %></pre>
+			<hr>
+		<% end %>
+
+		<!-- 納品写真 -->
+		<% if @cl_here.deliverables.present? %>
+			<h2><%= render :partial => 'svgs/deliverables' %>&nbsp;<%= t(".deliverables") %></h2>
+			<pre class="indent"><%= @cl_here.deliverables %></pre>
 			<hr>
 		<% end %>
 

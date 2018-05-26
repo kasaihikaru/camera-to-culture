@@ -2,6 +2,9 @@
 zh:
   client_schedules:
     index:
+      meta_title: '登录可拍摄日期'
+      meta_keywords: '可拍摄日期, 日程 登录, 写真, 撮影, 拍摄, Camera-to-Culture'
+      meta_description: '登录可拍摄日期'
       schedule: 可拍摄日程
       date: 日期
       day: 星期

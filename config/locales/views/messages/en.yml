@@ -2,9 +2,15 @@
 en:
   messages:
     new:
+      meta_title: 'Message to %{name}'
+      meta_keywords: ''
+      meta_description: ''
       message: 'Message to %{name}'
       send_btn: Send
     show:
+      meta_title: 'Message to %{name}'
+      meta_keywords: ''
+      meta_description: ''
       Introduction: Introduction
       Photographing_Categories: Photo categories
       Photographing_Area: Visitable areas

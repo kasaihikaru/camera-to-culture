@@ -19,12 +19,49 @@
       <hr>
 
       <%= form_for([current_user, @cl]) do |f| %>
-
         <!-- 自己紹介 -->
-        <div class="field">
-          <span class="bold"><%= t(".introduction")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
-          <textarea name="cs_introduction" class="input-textarea" maxlength="120"><%= @cs.introduction %></textarea>
-        </div>
+        <% if @lang_ids.present? %>
+          <% @lang_ids.each do |id| %>
+            <!-- 日本語 -->
+            <% if id == 1 %>
+              <div class="field">
+                <span class="bold"><%= t(".introduction_ja")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
+                <span class="field-explanation"><%= t(".120_letters_maximum")%></span><br>
+                <textarea name="introduction_ja" class="input-textarea" maxlength="120"><%= @user.introduction_ja %></textarea>
+              </div>
+            <% end %>
+            <!-- 英語 -->
+            <% if id == 2 %>
+              <div class="field">
+                <span class="bold"><%= t(".introduction_en")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
+                <span class="field-explanation"><%= t(".120_letters_maximum")%></span><br>
+                <textarea name="introduction_en" class="input-textarea" maxlength="120"><%= @user.introduction_en %></textarea>
+              </div>
+            <% end %>
+            <!-- 中国語 -->
+            <% if id == 3 %>
+              <div class="field">
+                <span class="bold"><%= t(".introduction_zh")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
+                <span class="field-explanation"><%= t(".120_letters_maximum")%></span><br>
+                <textarea name="introduction_zh" class="input-textarea" maxlength="120"><%= @user.introduction_zh %></textarea>
+              </div>
+              <div class="field">
+                <span class="bold"><%= t(".introduction_tw")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
+                <span class="field-explanation"><%= t(".120_letters_maximum")%></span><br>
+                <textarea name="introduction_tw" class="input-textarea" maxlength="120"><%= @user.introduction_tw %></textarea>
+              </div>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to profile_users_path do %>
+            <div class="alert-box tungsten-shadow">
+              <%= render :partial => 'svgs/alert' %>
+              <%= t(".You_have_not_registered_your_languages") %><br>
+              <%= t(".Please_register_languages_you_speak") %><br>
+              <div class="right-align"><%= render :partial => 'svgs/click_here' %></div>
+            </div>
+          <% end %>
+        <% end %>
 
         <!-- メイン写真 -->
         <div class="field user-image">
@@ -977,7 +1014,17 @@
         <!-- カメラ -->
         <div class="field">
           <%= f.label :camera, t(".camera"), class: "bold"%><br />
-          <%= f.text_area :camera, class: "input-textarea" %>
+          <%= f.text_area :camera, class: "input-textarea", placeholder: t(".camera_placeholder") %>
+        </div>
+
+        <!-- 納品写真について -->
+        <div class="field">
+          <%= f.label :deliverables, t(".deliverables"), class: "bold"%><br />
+          <% if @cl.deliverables.present? %>
+            <%= f.text_area :deliverables, class: "input-textarea", placeholder: t(".deliverables_placeholder") %>
+          <% else %>
+            <%= f.text_area :deliverables, class: "input-textarea", placeholder: t(".deliverables_placeholder"), value: t(".deliverables_value") %>
+          <% end %>
         </div>
 
 

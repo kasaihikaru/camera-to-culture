@@ -2,6 +2,9 @@
 zh:
   client_contacts:
     first_new:
+      meta_title: '登录成为摄影师'
+      meta_keywords: '摄影师, 登录, 成为, 变成, 写真, 照相, 摄影, 拍摄, 约片, 约拍, 专业, 业余, Camera-to-Culture'
+      meta_description: '登录成为摄影师'
       register_as_cameraman: 登录摄影师
       An_eroor_occurred: 输入的内容有误
       phone_number: 联络电话（半角数字)
@@ -11,6 +14,9 @@ zh:
       terms_of_service: 注册协议
       register_btn: 同意注册协议并注册
     new:
+      meta_title: '电话号码・更改住址'
+      meta_keywords: '摄影师, 登录, 成为, 变成, 写真, 照相, 摄影, 拍摄, 约片, 约拍, 专业, 业余, Camera-to-Culture'
+      meta_description: '电话号码・更改住址'
       change_contacts: 更改联络方式
       An_eroor_occurred: 无法注册成功
       phone_number: 联络电话

@@ -2,11 +2,35 @@
 zh:
   clients:
     edit:
+      meta_title: '摄影师情报登录'
+      meta_keywords: '摄影师情报, 摄影师简介, 登录, 写真, 撮影, 拍摄, 拍照, Camera-to-Culture'
+      meta_description: '摄影师情报登录'
       cl_form: 编辑摄影师个人页面
       Jump_to_your_page: 去看看你的个人页面
       Jump_to_how_to_regist_page: 去看看如何登录
+      You_have_not_registered_your_languages: 还未设置使用语言。
+      Please_register_languages_you_speak: 首先，请设置您能使用的语言！
+      introduction_ja: 自我介绍（日语）
+      introduction_en: 自我介绍（英语）
+      introduction_zh: 自我介绍（中文简体体字）
+      introduction_tw: 自我介绍（中文繁体字）
+      120_letters_maximum: 页面最开头显示的简短自我介绍。请输入120字以内的内容。
       required: 必填
       camera: 关于摄影时所使用的相机
+      camera_placeholder: |
+        (例)
+        相机：Canon 5DmarkⅢ
+        镜头：EF85mm F1.4L USM
+      deliverables: 关于交付照片（交付张数等）
+      deliverables_placeholder: |
+        (例)
+        交付张数：  100张以上
+        粗修：  30张
+        精修：  10张
+      deliverables_value: |
+        交付张数：  ____张以上
+        粗修：  ____张
+        精修：  ____张
       introduction: 自我简介（120字以内）
       message: 向顾客详细介绍自己
       importance_of_message_explanation: 在Camera-to-Culture成为摄影师，最重要的是与顾客的交流。写下您拿手的摄影详情，详细的向顾客介绍自己吧。
@@ -105,9 +129,15 @@ zh:
       Okinawa: 冲绳县
       register_btn: 登录以上内容
     index:
+      meta_title: '摄影师一览'
+      meta_keywords: '摄影师, 拍摄写真, 拍照, 对接, 招募, Camera-to-Culture'
+      meta_description: '提供给摄影师vs想拍摄者的拍摄对接平台。可以在众多独立摄影师中仔细挑选并直接进行联络和预约。拍摄的内容及价格均为摄影师自行决定。非常欢迎各位摄影师和摄影爱好者、摄影未经验爱好者的加入！'
       yen_per_hour: 円/1小时
       no_result: 没有相对应的摄影师。。。哭哭
     show:
+      meta_title: '%{name}的页面'
+      meta_keywords: '%{name}, 摄影师, 写真, 照片, 拍摄写真, 拍照, 对接, 外拍, Camera-to-Culture'
+      meta_description: '在「Camera-to-Culture」的%{name}摄影师预约拍摄！请看看摄影师的样片和自我介绍！ 拍摄的内容及价格均为摄影师自行决定。'
       researve: 预约
       message: 发送消息
       sign-in-for-ms: 登录后发送消息
@@ -129,6 +159,7 @@ zh:
       price_per_hour: 每1小时{price}円
       yen: 円
       Camera: 相机
+      deliverables: 关于交付照片
       Message: 消息
     show4_calender:
       available_dates: 可以接片的日程

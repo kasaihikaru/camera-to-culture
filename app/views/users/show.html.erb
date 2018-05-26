@@ -76,7 +76,7 @@
           </ul>
         </div>
       </div><!-- endOf ふせん -->
-
+      <br><br><br><br>
 
       <div class="user-show-wrapper">
         <!-- ユーザー情報 -->
@@ -113,6 +113,7 @@
               <%= t(".None") %>
             <% end %>
           </div>
+          <!-- 自己紹介 -->
           <h2>
             <%= t(".Introduction")%>
             <%= link_to profile_users_path do %>
@@ -130,8 +131,102 @@
               <%= t(".None")%>
             <% end %>
           </div>
+          <br><br><br><br>
+
+
           <!-- カメラマン情報 -->
           <% if @cl.consent == true && @cl.deleted_at == nil %>
+          <h1><%= t(".information_as_a_photographer") %></h1>
+          <hr>
+
+            <!-- 簡易自己紹介 -->
+            <% if @mylangs.present? %>
+              <% @mylangs.each do |lang| %>
+                <!-- 日本語 -->
+                <% if lang.id == 1 %>
+                  <h2>
+                    <%= t(".Introduction_ja")%>
+                    <%= link_to edit_user_client_path(@user, @cl) do %>
+                        <% if @user.introduction_ja.present? %>
+                          <%= render :partial => 'svgs/edit' %>
+                        <% else %>
+                          <%= render :partial => 'svgs/edit_prim' %>
+                        <% end %>
+                    <% end %>
+                  </h2>
+                  <div class="indent">
+                    <% if @user.introduction_ja? %>
+                      <%= @user.introduction_ja %>
+                    <% else %>
+                      <%= t(".None")%>
+                    <% end %>
+                  </div>
+                <% end %>
+                <!-- 英語 -->
+                <% if lang.id == 2 %>
+                  <h2>
+                    <%= t(".Introduction_en")%>
+                    <%= link_to edit_user_client_path(@user, @cl) do %>
+                        <% if @user.introduction_en.present? %>
+                          <%= render :partial => 'svgs/edit' %>
+                        <% else %>
+                          <%= render :partial => 'svgs/edit_prim' %>
+                        <% end %>
+                    <% end %>
+                  </h2>
+                  <div class="indent">
+                    <% if @user.introduction_en? %>
+                      <%= @user.introduction_en %>
+                    <% else %>
+                      <%= t(".None")%>
+                    <% end %>
+                  </div>
+                <% end %>
+                <!-- 簡体字 -->
+                <% if lang.id == 3 %>
+                  <h2>
+                    <%= t(".Introduction_zh")%>
+                    <%= link_to edit_user_client_path(@user, @cl) do %>
+                        <% if @user.introduction_zh.present? %>
+                          <%= render :partial => 'svgs/edit' %>
+                        <% else %>
+                          <%= render :partial => 'svgs/edit_prim' %>
+                        <% end %>
+                    <% end %>
+                  </h2>
+                  <div class="indent">
+                    <% if @user.introduction_zh? %>
+                      <%= @user.introduction_zh %>
+                    <% else %>
+                      <%= t(".None")%>
+                    <% end %>
+                  </div>
+                <% end %>
+                <!-- 繁体字 -->
+                <% if lang.id == 3 %>
+                  <h2>
+                    <%= t(".Introduction_tw")%>
+                    <%= link_to edit_user_client_path(@user, @cl) do %>
+                        <% if @user.introduction_tw.present? %>
+                          <%= render :partial => 'svgs/edit' %>
+                        <% else %>
+                          <%= render :partial => 'svgs/edit_prim' %>
+                        <% end %>
+                    <% end %>
+                  </h2>
+                  <div class="indent">
+                    <% if @user.introduction_tw? %>
+                      <%= @user.introduction_tw %>
+                    <% else %>
+                      <%= t(".None")%>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+
+
+            <!-- 撮影可能日 -->
             <h2>
               <%= t(".Available_dates") %>
               <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
@@ -149,6 +244,8 @@
                 <%= t(".None")%>
               <% end %>
             </div>
+
+            <!-- カテゴリー -->
             <h2>
               <%= t(".Photographing_Categories") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
@@ -230,6 +327,7 @@
                 <%= t(".None")%>
               <% end %>
             </div>
+            <!-- カメラ -->
             <h2>
               <%= t(".Camera") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
@@ -242,11 +340,32 @@
             </h2>
             <div class="indent">
               <% if @cl.camera.present? %>
-                <%= @cl.camera %>
+                <pre><%= @cl.camera %></pre>
               <% else %>
                 <%= t(".None")%>
               <% end %>
             </div>
+
+            <!-- 納品写真 -->
+            <h2>
+              <%= t(".deliverables") %>
+              <%= link_to edit_user_client_path(@user, @cl) do %>
+                <% if @cl.deliverables.present? %>
+                  <%= render :partial => 'svgs/edit' %>
+                <% else %>
+                  <%= render :partial => 'svgs/edit_prim' %>
+                <% end %>
+              <% end %>
+            </h2>
+            <div class="indent">
+              <% if @cl.deliverables.present? %>
+                <pre><%= @cl.deliverables %></pre>
+              <% else %>
+                <%= t(".None")%>
+              <% end %>
+            </div>
+
+            <!-- メッセージ -->
             <h2>
               <%= t(".Message") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
@@ -259,7 +378,7 @@
             </h2>
             <div class="indent">
               <% if @cl.introduction.present? %>
-                <%= @cl.introduction %>
+                <pre><%= @cl.introduction %></pre>
               <% else %>
                 <%= t(".None")%>
               <% end %>

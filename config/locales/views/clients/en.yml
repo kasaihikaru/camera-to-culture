@@ -2,12 +2,35 @@
 en:
   clients:
     edit:
+      meta_title: 'Edit photograher info'
+      meta_keywords: ''
+      meta_description: ''
       cl_form: Edit profile as a cameraman
       Jump_to_your_page: Jump to your page
       Jump_to_how_to_regist_page: Jump to 'how to regist' page
+      You_have_not_registered_your_languages: We don''t know languages you can speak.
+      Please_register_languages_you_speak: Register languages to let customers know how to communicate with you.
+      introduction_ja: Introduction（Japanese）
+      introduction_en: Introduction（English）
+      introduction_zh: Introduction（Simplified Chinese）
+      introduction_tw: Introduction（Traditional Chinese）
+      120_letters_maximum: This is a plain introduction for customers. please write 200 letters or less.
       required: required
       camera: About your cameras and lenses
-      introduction: Introduction（muximum 120 letters）
+      camera_placeholder: |
+        (ex)
+        Camera：Canon 5DmarkⅢ
+        Lens：EF85mm F1.4L USM
+      deliverables: Photos you promise to deliver（numbers of them, etc..）
+      deliverables_placeholder: |
+        (ex)
+        Raw photos：  more than 100
+        Touching up photos：  30
+        Retouching photos：  10
+      deliverables_value: |
+        Raw photos：  _____
+        Touching up photos：  _____
+        Retouching photos：  _____
       message: Message to your customer
       importance_of_message_explanation: Communication is the most important for photographeres and customers on the Camera-to-Culture platform. Let know customers your story, photographing style and introduction in detail.
       main_image: Your main sample photo
@@ -105,9 +128,15 @@ en:
       Okinawa: Okinawa
       register_btn: Update
     index:
+      meta_title: 'Photographer list'
+      meta_keywords: 'photographer, japan, request, matching, job, offer, camera, Camera-to-Culture'
+      meta_description: 'Keep memories in Japan with photos。Just search and find your photographer in English。Prices and services are up to photographers. To be photographer in Japan? Also so welcome.'
       yen_per_hour: yen/h
       no_result: No cameramans have found. Please change seaching conditions, sorry....
     show:
+      meta_title: '%{name}''s page'
+      meta_keywords: '%{name}, photographer, japan, request, offer, camera, Camera-to-Culture'
+      meta_description: 'Request photographing to %{name} in Japan！ Check price and portfolios'
       researve: Request to Book
       message: Send a message
       sign-in-for-ms: Log-in and send a message
@@ -129,6 +158,7 @@ en:
       price_per_hour: '%{price}yen per hour'
       yen: yen
       Camera: Camera
+      deliverables: Photos which will deliver
       Message: Message
     show4_calender:
       available_dates: Available

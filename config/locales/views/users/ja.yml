@@ -15,6 +15,11 @@ ja:
       Languages: 話す言語
       None: なし
       Introduction: 自己紹介
+      information_as_a_photographer: カメラマン情報
+      Introduction_ja: 自己紹介（日本語）
+      Introduction_en: 自己紹介（英語）
+      Introduction_zh: 自己紹介（中国語簡体字）
+      Introduction_tw: 自己紹介（中国語繁体字）
       Available_dates: 撮影可能日
       available_dates_explanation: "撮影可能候補日として、%{nums}日間登録されています。"
       Photographing_Categories: 撮影カテゴリー
@@ -26,6 +31,7 @@ ja:
       price_per_hour: １時間あたり
       yen: 円
       Camera: カメラ
+      deliverables: 納品写真について
       Message: メッセージ
       Your_Main_Photo: メイン写真
       Portfolios: ポートフォリオ

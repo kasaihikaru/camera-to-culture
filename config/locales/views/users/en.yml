@@ -2,6 +2,9 @@
 en:
   users:
     show:
+      meta_title: 'Mypage'
+      meta_keywords: 'Mypage, Camera-to-Culture'
+      meta_description: 'Mypage'
       Home: Home
       Update_available_dates_for_your_customer: Update available dates for your customer
       booking_request: '%{name} requested you to book'
@@ -12,6 +15,11 @@ en:
       Languages: Languages
       None: Not registered
       Introduction: Introduction
+      information_as_a_photographer: Information as a photographer
+      introduction_ja: Introduction（Japanese）
+      introduction_en: Introduction（English）
+      introduction_zh: Introduction（Simplified Chinese）
+      introduction_tw: Introduction（Traditional Chinese）
       Available_dates: Available date and time you can work
       available_dates_explanation: "You have registered %{nums} available days so far."
       Photographing_Categories: Photo categories
@@ -23,6 +31,7 @@ en:
       price_per_hour: '%{price}yen / h'
       yen: yen
       Camera: Camera
+      deliverables: Photos which will deliver
       Message: Message
       Your_Main_Photo: Your main sample photo
       Portfolios: Portfolios
@@ -51,6 +60,9 @@ en:
       sign-out: Log out
 
     profile:
+      meta_title: 'Edit profole'
+      meta_keywords: 'Edit profole, Camera-to-Culture'
+      meta_description: 'Edit profole'
       Edit_Profile: Edit user profile
       language_use: languages you can communicate with
       japanese: Japanese
@@ -61,6 +73,9 @@ en:
       update_btn: Update
 
     account_setting:
+      meta_title: 'Account settings'
+      meta_keywords: 'Account settings, Camera-to-Culture'
+      meta_description: 'Account settings'
       Account_settings: Account settings
       cancel_account_explanation1: You will retain the rights and obligations for all activity on the Airbnb platform prior to deactivation.
       cancel_account_explanation2: Your profile and any listings will be hidden.
@@ -70,6 +85,9 @@ en:
 # 以下、devise用
     confirmations:
       new:
+        meta_title: 'Resend confirmation instructions'
+        meta_keywords: 'Resend confirmation instructions, Camera-to-Culture'
+        meta_description: 'Resend confirmation instructions'
         Resend_confirmation_instructions: Resend confirmation instructions
         email: email
     mailer:
@@ -97,12 +115,18 @@ en:
         Unlock_my_account: Unlock your account
     passwords:
       edit:
+        meta_title: 'Change password'
+        meta_keywords: 'Change password, Camera-to-Culture'
+        meta_description: 'Change password'
         Change_your_password: Change your password
         characters_minimum: 6characters minimum
         New_password: New password
         Confirm_new_password: Confirm new password
         Change_my_password: Change your password
       new:
+        meta_title: 'Change password'
+        meta_keywords: 'Change password, Camera-to-Culture'
+        meta_description: 'Change password'
         Forgot_your_password?: Forgot your password?
         email: Email
         Send_me_reset_password_instructions: Send a reset password instruction
@@ -112,6 +136,9 @@ en:
         Change_my_password: Change your password
     registrations:
       new:
+        meta_title: 'Sign up'
+        meta_keywords: 'Sign up, Camera-to-Culture'
+        meta_description: 'Sign up'
         sign_up: Sign up
         sign_up_with_FB: Sign up with Facebook
         name: Name
@@ -126,6 +153,9 @@ en:
         chinese: Chinese
         image: Profile photo
       edit:
+        meta_title: 'Edit profile'
+        meta_keywords: 'Edit profile, Camera-to-Culture'
+        meta_description: 'Edit profile'
         Edit_Settings: Edit your profile
         name: Name
         language_use: Languages that you speak
@@ -146,6 +176,9 @@ en:
         Are_you_sure?: Are you sure?
     sessions:
       new:
+        meta_title: 'Sign in'
+        meta_keywords: 'Sign in, Camera-to-Culture'
+        meta_description: 'Sign in'
         sign_in: Sign in
         sign_in_with_FB: Sign in with Facebook
         email: Email
@@ -160,5 +193,8 @@ en:
         Didn't_receive_unlock_instructions?: Didn't receive unlock instructions?
     unlocks:
       new:
+        meta_title: 'Unlock account'
+        meta_keywords: 'Unlock account, Camera-to-Culture'
+        meta_description: 'Unlock account'
         Resend_unlock_instructions: Resend unlock instructions
         email: Email

@@ -2,6 +2,9 @@
 tw:
   users:
     show:
+      meta_title: '個人主頁'
+      meta_keywords: '個人主頁, Camera-to-Culture'
+      meta_description: '個人主頁'
       Home: 主頁
       Update_available_dates_for_your_customer: 請登錄可以拍攝的日程
       booking_request: '有一個來自%{name}的預約申請。 '
@@ -12,6 +15,11 @@ tw:
       Languages: 掌握的語言
       None: 沒有
       Introduction: 自我介紹
+      information_as_a_photographer: 攝影師情報
+      Introduction_ja: 自己紹介（日本語）
+      Introduction_en: 自己紹介（英語）
+      Introduction_zh: 自己紹介（中国語簡体字）
+      Introduction_tw: 自己紹介（中国語繁体字）
       Available_dates: 可以拍攝的日程
       available_dates_explanation: "已登錄了%{nums}天作為可以拍攝的日程。"
       Photographing_Categories: 攝影類別
@@ -23,6 +31,7 @@ tw:
       price_per_hour: 每1小時%{price}円
       yen: 円
       Camera: 相機
+      deliverables: 關於交付照片
       Message: 消息
       Your_Main_Photo: 優先照片
       Portfolios: 作品集
@@ -51,6 +60,9 @@ tw:
       sign-out: 退出
 
     profile:
+      meta_title: '編輯個人信息'
+      meta_keywords: '編輯個人信息, Camera-to-Culture'
+      meta_description: '編輯個人信息'
       Edit_Profile: 更改用戶簡介
       language_use: 請選擇能夠使用的語言
       japanese: 日語
@@ -61,6 +73,9 @@ tw:
       update_btn: 更改
 
     account_setting:
+      meta_title: '賬戶設定'
+      meta_keywords: '賬戶設定, Camera-to-Culture'
+      meta_description: '賬戶設定'
       Account_settings: 賬戶設定
       cancel_account_explanation1: 註銷後，在Camera-to-Culture進行的全部活動，請自行負責至活動結束。
       cancel_account_explanation2: 您的主頁將不再被顯示。
@@ -71,91 +86,112 @@ tw:
 # 以下、devise用
     confirmations:
       new:
-      Resend_confirmation_instructions: 發送一封帳號確認郵件
-      email: 電子郵箱
+        meta_title: '再次發送確認郵件'
+        meta_keywords: '再次發送確認郵件, Camera-to-Culture'
+        meta_description: '再次發送確認郵件'
+        Resend_confirmation_instructions: 發送一封帳號確認郵件
+        email: 電子郵箱
     mailer:
       confirmation_instructions:
-      title: 【Camera-to-Culture】歡迎！您已註冊成功！
-      explain_1: 請點擊以下鏈接，完成註冊
-      Confirm_my_account: 已完成驗證您的郵箱
+        title: 【Camera-to-Culture】歡迎！您已註冊成功！
+        explain_1: 請點擊以下鏈接，完成註冊
+        Confirm_my_account: 已完成驗證您的郵箱
       email_changed:
-      title: 【Cumera-to-Culture】更改電子郵箱
-      explain_1: 已更改電子郵箱。電子郵箱的最後認證還未結束。
-      explain_2: 登錄郵箱已成功更改為以下郵箱地址。
+        title: 【Cumera-to-Culture】更改電子郵箱
+        explain_1: 已更改電子郵箱。電子郵箱的最後認證還未結束。
+        explain_2: 登錄郵箱已成功更改為以下郵箱地址。
       passwords_change:
-      title: 【Cumera-to-Culture】已成功更改密碼
-      explain_1: 密碼已更改成功。
+        title: 【Cumera-to-Culture】已成功更改密碼
+        explain_1: 密碼已更改成功。
       reset_password_instructions:
-      title: 【Cumera-to-Culture】確認更改密碼
-      explain_1: 信息即將更新成功，但我們需要驗證您的新電子郵件地址，請檢查郵箱（包括垃圾郵箱），並點擊該鏈接激活您的帳號。
-      Change_my_password: '更改密碼'
-      explain_2: 此郵件因更改密碼而發送至您的郵箱。
-      explain_3: 若並非本人操作，請不要點擊以下鏈接。在沒有點擊鏈接的情況下，密碼將不會被更新。
+        title: 【Cumera-to-Culture】確認更改密碼
+        explain_1: 信息即將更新成功，但我們需要驗證您的新電子郵件地址，請檢查郵箱（包括垃圾郵箱），並點擊該鏈接激活您的帳號。
+        Change_my_password: '更改密碼'
+        explain_2: 此郵件因更改密碼而發送至您的郵箱。
+        explain_3: 若並非本人操作，請不要點擊以下鏈接。在沒有點擊鏈接的情況下，密碼將不會被更新。
       unlock_instructions:
-      title: 【Cumera-to-Culture】賬號解鎖確認
-      explain_1: 您的賬號由於超過可以密碼錯誤的次數，而被鎖定。
-      explain_2: 所需解除鎖定，請點擊以下鏈接。
-      Unlock_my_account: 解除鎖定
+        title: 【Cumera-to-Culture】賬號解鎖確認
+        explain_1: 您的賬號由於超過可以密碼錯誤的次數，而被鎖定。
+        explain_2: 所需解除鎖定，請點擊以下鏈接。
+        Unlock_my_account: 解除鎖定
     passwords:
       edit:
-      Change_your_password: 更改密碼
-      characters_minimum: 6個字以上
-      New_password: 新密碼
-      Confirm_new_password: 再輸入一次
-      Change_my_password: 更改密碼
+        meta_title: '更改密碼'
+        meta_keywords: '更改密碼, Camera-to-Culture'
+        meta_description: '更改密碼'
+        Change_your_password: 更改密碼
+        characters_minimum: 6個字以上
+        New_password: 新密碼
+        Confirm_new_password: 再輸入一次
+        Change_my_password: 更改密碼
       new:
-      Forgot_your_password?: 更改密碼
-      email: 電子郵箱
-      Send_me_reset_password_instructions: 發送密碼通知郵件
-      characters_minimum: 個字以上
-      New_password: 新密碼
-      Confirm_new_password: 確認密碼
-      Change_my_password: 更改密碼
+        meta_title: '更改密碼'
+        meta_keywords: '更改密碼, Camera-to-Culture'
+        meta_description: '更改密碼'
+        Forgot_your_password?: 更改密碼
+        email: 電子郵箱
+        Send_me_reset_password_instructions: 發送密碼通知郵件
+        characters_minimum: 個字以上
+        New_password: 新密碼
+        Confirm_new_password: 確認密碼
+        Change_my_password: 更改密碼
     registrations:
       new:
-      sign_up: 註冊新用戶
-      sign_up_with_FB: 用Facebook註冊新用戶
-      name: 名字
-      email: 電子郵箱
-      password: 密碼
-      characters_minimum: 個字以上
-      password_confirmation: 確認密碼
-      sign_up_btn: 註冊
-      language_use: 選擇能夠使用的語言
-      japanese: 日語
-      english: 英語
-      chinese: 中文
-      image: 個人頭像
+        meta_title: '註冊新用戶'
+        meta_keywords: '註冊新用戶, Camera-to-Culture'
+        meta_description: '註冊新用戶'
+        sign_up: 註冊新用戶
+        sign_up_with_FB: 用Facebook註冊新用戶
+        name: 名字
+        email: 電子郵箱
+        password: 密碼
+        characters_minimum: 個字以上
+        password_confirmation: 確認密碼
+        sign_up_btn: 註冊
+        language_use: 選擇能夠使用的語言
+        japanese: 日語
+        english: 英語
+        chinese: 中文
+        image: 個人頭像
       edit:
-      Edit_Settings: 更改設定
-      name: 名字
-      email: 電子郵箱
-      Currently_waiting_confirmation_for: '「%{mail}」正在等待認證。 '
-      refuse_mail: 停止發往電子郵箱的通知
-      refuse_mail_explanation: 停止來自攝影師和顧客的消息發往電子郵箱
-      New_password: 新密碼
-      leave_blank_if_you_don't_want_to_change_it: 若無更改，無需填寫
-      password: 密碼
-      characters_minimum: 密碼（６個字以上）
-      password_confirmation: 確認密碼
-      update_btn: 更新
-      current_password: 現在的密碼
-      we_need_your_current_password_to_confirm_your_changes: 為了確認，請再次輸入密碼。
+        meta_title: '更改設定'
+        meta_keywords: '更改設定, Camera-to-Culture'
+        meta_description: '更改設定'
+        Edit_Settings: 更改設定
+        name: 名字
+        email: 電子郵箱
+        Currently_waiting_confirmation_for: '「%{mail}」正在等待認證。 '
+        refuse_mail: 停止發往電子郵箱的通知
+        refuse_mail_explanation: 停止來自攝影師和顧客的消息發往電子郵箱
+        New_password: 新密碼
+        leave_blank_if_you_don't_want_to_change_it: 若無更改，無需填寫
+        password: 密碼
+        characters_minimum: 密碼（６個字以上）
+        password_confirmation: 確認密碼
+        update_btn: 更新
+        current_password: 現在的密碼
+        we_need_your_current_password_to_confirm_your_changes: 為了確認，請再次輸入密碼。
     sessions:
       new:
-      sign_in: 登錄
-      sign_in_with_FB: 用Facebook登錄
-      email: 電子郵箱
-      password: 密碼
-      remember_me: 保持登錄狀態
+        meta_title: '登錄'
+        meta_keywords: '登錄, Camera-to-Culture'
+        meta_description: '登錄'
+        sign_in: 登錄
+        sign_in_with_FB: 用Facebook登錄
+        email: 電子郵箱
+        password: 密碼
+        remember_me: 保持登錄狀態
     shared:
       links:
-      sign_in: 登錄
-      sign_up: 註冊新用戶
-      Forgot_your_password?: 忘記了密碼
-      Didn't_receive_confirmation_instructions?: 發送一封確認郵件
-      Didn't_receive_unlock_instructions?: 發送密碼通知郵件
+        sign_in: 登錄
+        sign_up: 註冊新用戶
+        Forgot_your_password?: 忘記了密碼
+        Didn't_receive_confirmation_instructions?: 發送一封確認郵件
+        Didn't_receive_unlock_instructions?: 發送密碼通知郵件
     unlocks:
       new:
-      Resend_unlock_instructions: 發送解鎖賬號的確認郵件
-      email: 電子郵箱
+        meta_title: '恢復賬號'
+        meta_keywords: '恢復賬號, Camera-to-Culture'
+        meta_description: '恢復賬號'
+        Resend_unlock_instructions: 發送解鎖賬號的確認郵件
+        email: 電子郵箱

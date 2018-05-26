@@ -2,11 +2,35 @@
 tw:
   clients:
     edit:
+      meta_title: '攝影師情報登錄'
+      meta_keywords: '攝影師情報, 攝影師簡介, 登錄, 寫真, 撮影, 拍攝, 拍照, Camera-to-Culture'
+      meta_description: '攝影師情報登錄'
       cl_form: 編輯攝影師個人頁面
       Jump_to_your_page: 去看看你的個人頁面
       Jump_to_how_to_regist_page: 去看看如何登錄
+      You_have_not_registered_your_languages: 還未設置使用語言。
+      Please_register_languages_you_speak: 首先，請設置您能使用的語言！
+      introduction_ja: 自我介紹（日語）
+      introduction_en: 自我介紹（英語）
+      introduction_zh: 自己介紹（中文簡体字）
+      introduction_tw: 自己介紹（中文繁体字）
+      120_letters_maximum: 頁面最開頭顯示的簡短自我介紹。請輸入120字以內的內容。
       required: 必填
       camera: 關於攝影時所使用的相機
+      camera_placeholder: |
+        (例)
+        相機：Canon 5DmarkⅢ
+        鏡頭：EF85mm F1.4L USM
+      deliverables: 關於交付照片（交付張數等）
+      deliverables_placeholder: |
+        (例)
+        交付張數：  100張以上
+        粗修：  30張
+        精修：  10張
+      deliverables_value: |
+        交付張數：  ____張以上
+        粗修：  ____張
+        精修：  ____張
       introduction: 自我簡介（120字以内）
       message: 向顧客詳細介紹自己
       importance_of_message_explanation: 在Camera-to-Culture成為攝影師，最重要的是與顧客的交流。寫下您那首的攝影詳情，詳細的向顧客介紹自己吧。
@@ -105,9 +129,15 @@ tw:
       Okinawa: 冲繩縣
       register_btn: 登錄以上內容
     index:
+      meta_title: '攝影師一覽'
+      meta_keywords: '攝影師, 拍攝寫真, 拍照, 對接, 招募, Camera-to-Culture'
+      meta_description: '提供給攝影師vs想拍攝者的拍攝對接平台。可以在眾多獨立攝影師中仔細挑選並直接進行聯絡和預約。拍攝的內容及價格均為攝影師自行決定。非常歡迎各位攝影師和攝影愛好者、攝影未經驗愛好者的加入！ '
       yen_per_hour: 円/1小時
       no_result: 沒有相對應的攝影師。 。 。哭哭
     show:
+      meta_title: '%{name}的頁面'
+      meta_keywords: '%{name}, 攝影師, 寫真, 照片, 拍攝寫真, 拍照, 對接, 外拍, Camera-to-Culture'
+      meta_description: '在「Camera-to-Culture」的%{name}攝影師預約拍攝！請看看攝影師的樣片和自我介紹！拍攝的內容及價格均為攝影師自行決定。 '
       researve: 預約
       message: 發送消息
       sign-in-for-ms: 登錄後發送消息
@@ -129,6 +159,7 @@ tw:
       price_per_hour: 每1小時%{price}円
       yen: 円
       Camera: 相機
+      deliverables: 關於交付照片
       Message: 消息
     show4_calender:
       available_dates: 可以接片的日程

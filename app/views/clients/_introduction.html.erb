@@ -1,0 +1,44 @@
+<% if locale == "ja" %>
+	<% if cl.user.introduction_ja.present? %>
+		<%= cl.user.introduction_ja %>
+	<% elsif cl.user.introduction_en.present? %>
+		<%= cl.user.introduction_en %>
+	<% elsif cl.user.introduction_zh.present? %>
+		<%= cl.user.introduction_zh %>
+	<% elsif cl.user.introduction_tw.present? %>
+		<%= cl.user.introduction_tw %>
+	<% end %>
+<% end %>
+<% if locale == "en" %>
+	<% if cl.user.introduction_en.present? %>
+		<%= cl.user.introduction_en %>
+	<% elsif cl.user.introduction_ja.present? %>
+		<%= cl.user.introduction_ja %>
+	<% elsif cl.user.introduction_zh.present? %>
+		<%= cl.user.introduction_zh %>
+	<% elsif cl.user.introduction_tw.present? %>
+		<%= cl.user.introduction_tw %>
+	<% end %>
+<% end %>
+<% if locale == "zh" %>
+	<% if cl.user.introduction_zh.present? %>
+		<%= cl.user.introduction_zh %>
+	<% elsif cl.user.introduction_tw.present? %>
+		<%= cl.user.introduction_tw %>
+	<% elsif cl.user.introduction_en.present? %>
+		<%= cl.user.introduction_en %>
+	<% elsif cl.user.introduction_ja.present? %>
+		<%= cl.user.introduction_ja %>
+	<% end %>
+<% end %>
+<% if locale == "tw" %>
+	<% if cl.user.introduction_tw.present? %>
+		<%= cl.user.introduction_tw %>
+	<% elsif cl.user.introduction_zh.present? %>
+		<%= cl.user.introduction_zh %>
+	<% elsif cl.user.introduction_en.present? %>
+		<%= cl.user.introduction_en %>
+	<% elsif cl.user.introduction_ja.present? %>
+		<%= cl.user.introduction_ja %>
+	<% end %>
+<% end %>

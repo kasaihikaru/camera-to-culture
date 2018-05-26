@@ -2,6 +2,9 @@
 en:
   client_schedules:
     index:
+      meta_title: 'Schedule registration'
+      meta_keywords: ''
+      meta_description: ''
       schedule: Schedule
       date: Date
       day: Day

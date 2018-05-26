@@ -2,6 +2,9 @@
 tw:
   events:
     new:
+      meta_title: '向%{name}申請預約'
+      meta_keywords: '預約, 申請, 寫真, 照片, 拍攝, 攝影, Camera-to-Culture'
+      meta_description: '向%{name}申請預約'
       Request_to_Book: 申請預約
       Check_Shedule: '確認%{name}的預約情況'
       Request_date_and_time: 預約希望時間
@@ -30,6 +33,9 @@ tw:
       price_per_hour: 每1小時
       yen: 円
     show:
+      meta_title: '和%{name}的拍攝'
+      meta_keywords: '預約, 寫真, 拍攝, 攝影, 照片, Camera-to-Culture'
+      meta_description: '和%{name}的拍攝'
       Session_Details: 攝影的詳情
       message: 發送消息
       Date_and_Time: 日程時間
@@ -119,6 +125,9 @@ tw:
       cl_cancele_comment: 非常抱歉，請允許我取消您的拍攝。
       Send: 發送
     edit:
+      meta_title: '更改預約'
+      meta_keywords: '預約, 變更, 更改, 寫真, 照片, 攝影, 拍攝, Camera-to-Culture'
+      meta_description: '更改預約'
       Edit_Conditions: 提出更改拍攝調節
       Check_Your_Shedule: 確認自己的拍攝日程
       Request_date_and_time: 予約希望的日程
@@ -145,6 +154,9 @@ tw:
       cl_edit_comment: 已經更改了拍攝條件。如果是這樣的條件的話是可以接片的。您看看怎麼樣？
       Send_request: 提出更改拍攝條件
     cl_future:
+      meta_title: '今後的拍攝'
+      meta_keywords: '預約, 變更, 更改, 寫真, 照片, 攝影, 拍攝, Camera-to-Culture'
+      meta_description: '今後的拍攝'
       yen: 円
       Youve_got_a_request: 等待您的同意
       You_Approved: 決定拍攝
@@ -156,6 +168,9 @@ tw:
       Customer_Dismissed: 已被拒絕
       no_result: 還沒有拍攝計劃
     cl_past:
+      meta_title: '過去的拍攝'
+      meta_keywords: '預約, 過去, 曾經, 寫真, 照片, 攝影, 拍攝, Camera-to-Culture'
+      meta_description: '過去的拍攝'
       yen: 円
       Automatically_Canceled: 已自動取消
       Please_deliver_photos: 請上傳照片
@@ -170,6 +185,9 @@ tw:
       Photos_recieved: 已獲取照片
       no_result: 還沒有過拍攝記錄
     cs_future:
+      meta_title: '今後的預約'
+      meta_keywords: '預約, 今後, 未來, 寫真, 照片, 攝影, 拍攝, Camera-to-Culture'
+      meta_description: '今後的預約'
       yen: 円
       Requesting: 等待同意
       Approved: 決定拍攝
@@ -184,6 +202,9 @@ tw:
       Photos_recieved: 已獲取照片
       no_result: 還沒有拍攝計劃
     cs_past:
+      meta_title: '過去的預約'
+      meta_keywords: '預約, 過去, 曾經, 寫真, 照片, 攝影, 拍攝, Camera-to-Culture'
+      meta_description: '過去的預約'
       yen: 円
       Requesting: 等待同意
       Approved: 決定拍攝

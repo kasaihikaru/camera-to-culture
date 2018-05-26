@@ -188,6 +188,12 @@ $white-col : #FFFFFF;
   border-color: $black-col !important;
 }
 
+.line-break{
+  word-wrap: break-word;
+  white-space: normal;
+  display: block;
+}
+
 .no-result{
   text-align: center;
   margin: 200px auto;
@@ -205,6 +211,27 @@ $white-col : #FFFFFF;
 .card {
   box-shadow: 0 2px 4px 0 #ccc;
   padding: 20px;
+}
+
+.alert-box{
+  border-radius: 10px;
+  padding: 10px;
+  margin: 30px 0 45px;
+  background-color: $prim-col;
+  color: $white-col;
+}
+.alert-box:hover{
+  text-decoration: underline;
+  text-decoration-color: $white-col;
+
+}
+
+.light-shadow {
+  box-shadow: 0 2px 4px 0 #ccc;
+}
+
+.tungsten-shadow {
+  box-shadow: 0 2px 4px 0 #333333;
 }
 
 

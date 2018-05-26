@@ -8,9 +8,29 @@ ja:
       cl_form: カメラマンプロフィール編集
       Jump_to_your_page: あなたのページを見に行く
       Jump_to_how_to_regist_page: 登録方法の説明を見る
+      You_have_not_registered_your_languages: まだ言語が登録されていません。
+      Please_register_languages_you_speak: まずは、あなたの話せる言語を登録しましょう！
+      introduction_ja: 自己紹介（日本語）
+      introduction_en: 自己紹介（英語）
+      introduction_zh: 自己紹介（中国語簡体字）
+      introduction_tw: 自己紹介（中国語繁体字）
+      120_letters_maximum: 最初に表示される簡易的な自己紹介です。120文字以内で書いてください。
       required: 必須
       camera: 撮影に使うカメラについて
-      introduction: 自己紹介（120字まで）
+      camera_placeholder: |
+        (例)
+        カメラ：Canon 5DmarkⅢ
+        レンズ：EF85mm F1.4L USM
+      deliverables: 納品写真について（枚数など）
+      deliverables_placeholder: |
+        (例)
+        納品枚数：  100枚以上
+        色のみの微修正写真：  30枚
+        修正写真：  10枚
+      deliverables_value: |
+        納品枚数：  ____枚以上
+        色のみの微修正写真：  ____枚
+        修正写真：  ____枚
       message: お客様へのメッセージ
       importance_of_message_explanation: Camera-to-Cultureでカメラマンとして活動する上で、最も大事なことはコミュニケーションです。得意な撮影の説明や、詳しい自己紹介をしましょう。
       main_image: メイン写真を登録
@@ -138,6 +158,7 @@ ja:
       price_per_hour: １時間あたり%{price}円
       yen: 円
       Camera: カメラ
+      deliverables: 納品写真について
       Message: メッセージ
     show4_calender:
       available_dates: 撮影可能日

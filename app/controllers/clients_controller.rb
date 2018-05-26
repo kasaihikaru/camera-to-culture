@@ -7,8 +7,10 @@ class ClientsController < ApplicationController
 		import_current_user
 
 		# 検索結果(.uniqするとarrayになってしまうので、kaminariは別に切り出す必要がある。)
-		array_cls = Client.active.consent.registerd.cs_intro_present.includes({user: [:customer, user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
+		array_cls = Client.active.consent.registerd.intro_present.includes({user: [:customer, user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
 		@cls = Kaminari.paginate_array(array_cls).page(params[:page]).per(12)
+
+		@locale = params[:locale]
 	end
 
 	def show
@@ -44,10 +46,17 @@ class ClientsController < ApplicationController
 			end
 			@c_dates << date
 		end
+
+		@locale = params[:locale]
 	end
 
 	def edit
 		import_current_user
+		langs = @user.user_languages
+		@lang_ids = []
+		for lang in langs
+			@lang_ids << lang.language_id
+		end
 		@cl_prim_price = @cl.client_primary_prices.active.first
 		@cl_opt_prices = @cl.client_option_prices.active
 		@cl_locations = @cl.client_locations
@@ -63,9 +72,8 @@ class ClientsController < ApplicationController
 	end
 
 	def update
-		#-----カスタマーupdate-----#
-		cs = current_user.customer
-		cs.update(introduction: cs_params)
+		#-----intro update-----#
+		current_user.update(introduction_ja: intro_params[:introduction_ja], introduction_en: intro_params[:introduction_en],introduction_zh:  intro_params[:introduction_zh],introduction_tw: intro_params[:introduction_tw])
 
 		#-----クライアントupdate-----#
 		cl = current_user.client
@@ -220,11 +228,11 @@ private
 	end
 
 	def cl_create_params
-		params.require(:client).permit(:camera, :introduction, :image).merge(user_id: current_user.id)
+		params.require(:client).permit(:camera, :deliverables, :introduction, :image).merge(user_id: current_user.id)
 	end
 
-	def cs_params
-		params[:cs_introduction]
+	def intro_params
+		params.permit(:introduction_ja, :introduction_en, :introduction_zh, :introduction_tw)
 	end
 
 	def cl_prim_price_params

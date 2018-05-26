@@ -2,6 +2,9 @@
 en:
   client_portfolios:
     new:
+      meta_title: 'Portfolios upload'
+      meta_keywords: ''
+      meta_description: ''
       portfolio: Portfolios(maximum 19 photos)
       photos_are_uploaded: photos are uploaded
       delete_check: check for delete
