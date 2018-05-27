@@ -11,3 +11,9 @@ zh:
       available-time: 可拍攝日程的时间详情
       example_sch: （例）10:00-17:00可接片
       Update: 更新
+    user_check:
+      Please_login: 请先登录
+    consent_check:
+      The_page_does_not_exist: 页面不存在
+    create:
+      Setting_has_updated: 更新成功

@@ -28,3 +28,7 @@ zh:
       Setting_has_updated: 更新成功
     user_check:
       Please_login: 请登录
+    consent_check:
+      The_page_does_not_exist: 页面不存在
+    not_consent_check:
+      The_page_does_not_exist: 页面不存在

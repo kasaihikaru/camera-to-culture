@@ -233,3 +233,19 @@ ja:
       Preview_Uploaded_photos: 納品された写真をプレビュー
       photo_nums_explanation_1: '全部で%{nums}枚の写真が納品されています'
       photo_nums_explanation_2: プレビューは6枚まで表示されます。
+    login_check:
+      Please_login: ログインしてください
+    update_user_check:
+      Please_login: ログインしてください
+    event_show_user_check:
+      Please_login: ログインしてください
+    event_edit_user_check:
+      Please_login: ログインしてください
+    create:
+      Requested_time_is_invalid: リクエストした時間は不正です。
+      Requested_price_is_invalid: リクエストした価格は不正です。
+      Requested_option_menu_is_invalid: リクエストしたオプションメニューは不正です。
+    update:
+      Requested_time_is_invalid: リクエストした時間は不正です。
+      Requested_price_is_invalid: リクエストした価格は不正です。
+      Requested_option_menu_is_invalid: リクエストしたオプションメニューは不正です。

@@ -24,3 +24,7 @@ en:
       write_here: Write a message
       send_btn: Send
       last_message: Last message
+    login_check:
+      Please_login: Please login
+    user_check:
+      Please_login: Please login

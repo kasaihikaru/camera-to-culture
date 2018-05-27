@@ -309,7 +309,7 @@ private
 	def state_requested
 		event = Event.find(params[:event_id].to_i)
 		unless event.event_states.last.state == "request"
-			flash[:alert] = "リクエストが不正です"
+			flash[:alert] = t(".Invalid_request")
 			redirect_to root_path
 		end
 	end
@@ -317,7 +317,7 @@ private
 	def state_accepted
 		event = Event.find(params[:event_id].to_i)
 		unless event.event_states.last.state.in?(['cl_accepted','cs_accepted'])
-			flash[:alert] = "リクエストが不正です"
+			flash[:alert] = t(".Invalid_request")
 			redirect_to root_path
 		end
 	end
@@ -325,7 +325,7 @@ private
 	def state_edited
 		event = Event.find(params[:event_id].to_i)
 		unless event.event_states.last.state == "cl_edited"
-			flash[:alert] = "リクエストが不正です"
+			flash[:alert] = t(".Invalid_request")
 			redirect_to root_path
 		end
 	end
@@ -333,7 +333,7 @@ private
 	def state_deliverd
 		event = Event.find(params[:event_id].to_i)
 		unless event.event_states.last.state == "cl_delivered"
-			flash[:alert] = "リクエストが不正です"
+			flash[:alert] = t(".Invalid_request")
 			redirect_to root_path@ev_photo_nums > 0
 		end
 	end
@@ -342,7 +342,7 @@ private
 	def cl_deliver_check
 		event = Event.find(params[:event_id].to_i)
 		unless event.event_photos.present? && event.event_photos.count > 0
-			flash[:alert] = "リクエストが不正です"
+			flash[:alert] = t(".Invalid_request")
 			redirect_to root_path
 		end
 	end
@@ -353,7 +353,7 @@ private
 		user = current_user
 		cl = user.client
 		unless user_signed_in? &&( event.client_id == cl.id )
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end
@@ -363,7 +363,7 @@ private
 		user = current_user
 		cs = user.customer
 		unless user_signed_in? &&( event.customer_id == cs.id)
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end

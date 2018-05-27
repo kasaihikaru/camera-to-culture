@@ -83,6 +83,12 @@ zh:
       cancel_account_explanation3: 若再次联络我们，可以重新恢复您的账号。
       Dont_cancel_account: 先不注销
       Cancel_account: 注销
+    edit_profile:
+      Setting_has_updated: 更新成功
+    login_check:
+      Please_login: 请先登录
+    user_check:
+      Please_login: 请先登录
 
 # 以下、devise用
     confirmations:

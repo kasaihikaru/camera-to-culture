@@ -80,7 +80,6 @@ $white-col : #FFFFFF;
 }
 
 
-
 // 背景
 .prim-back{
   background-color: $prim-col;
@@ -132,7 +131,9 @@ $white-col : #FFFFFF;
 .bold{
   font-weight: 800;
 }
-
+.grey-col{
+  color: #7F7F7F;
+}
 
 // フロート
 .float-right{

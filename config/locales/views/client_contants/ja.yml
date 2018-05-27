@@ -28,3 +28,7 @@ ja:
       Setting_has_updated: 更新しました
     user_check:
       Please_login: ログインしてください
+    consent_check:
+      The_page_does_not_exist: ページが存在しません
+    not_consent_check:
+      The_page_does_not_exist: ページが存在しません

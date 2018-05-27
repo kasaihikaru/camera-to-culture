@@ -24,3 +24,7 @@ ja:
       write_here: メッセージを書く
       send_btn: 送信
       last_message: 最後のメッセージ
+    login_check:
+      Please_login: ログインしてください
+    user_check:
+      Please_login: ログインしてください

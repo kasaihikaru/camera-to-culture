@@ -28,3 +28,7 @@ en:
       Setting_has_updated: Setting_has_updated
     user_check:
       Please_login: Please_login
+    consent_check:
+      The_page_does_not_exist: The page does not exist
+    not_consent_check:
+      The_page_does_not_exist: The page does not exist

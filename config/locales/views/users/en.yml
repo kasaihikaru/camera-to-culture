@@ -81,6 +81,12 @@ en:
       cancel_account_explanation2: Your profile and any listings will be hidden.
       cancel_account_explanation3: You can re-activate your account by contacting us.
       Cancel_account: Cancel account
+    edit_profile:
+      Setting_has_updated: Setting has updated
+    login_check:
+      Please_login: Please login
+    user_check:
+      Please_login: Please login
 
 # 以下、devise用
     confirmations:

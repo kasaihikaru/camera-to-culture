@@ -112,14 +112,14 @@ private
 
 	def user_check
 		unless user_signed_in? && params[:user_id].to_i == current_user.id
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end
 
 	def login_check
 		unless user_signed_in?
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end

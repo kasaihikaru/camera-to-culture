@@ -83,6 +83,12 @@ tw:
       cancel_account_explanation3: 若再次聯絡我們，可以重新恢復您的賬號。
       Dont_cancel_account: 先不註銷
       Cancel_account: 註銷
+    edit_profile:
+      Setting_has_updated: 更新成功
+    login_check:
+      Please_login: 請先登錄
+    user_check:
+      Please_login: 請先登錄
 
 # 以下、devise用
     confirmations:

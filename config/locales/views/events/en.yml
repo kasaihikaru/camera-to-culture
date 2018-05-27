@@ -231,3 +231,19 @@ en:
       Preview_Uploaded_photos: Preview uploaded photos
       photo_nums_explanation_1: '%{nums} photos are uploaded'
       photo_nums_explanation_2: Preview show 6 photos at most.
+    login_check:
+      Please_login: Please login
+    update_user_check:
+      Please_login: Please login
+    event_show_user_check:
+      Please_login: Please login
+    event_edit_user_check:
+      Please_login: Please login
+    create:
+      Requested_time_is_invalid: Requested time is invalid
+      Requested_price_is_invalid: Requested price is invalid
+      Requested_option_menu_is_invalid: Requested option menu is invalid
+    update:
+      Requested_time_is_invalid: Requested time is invalid
+      Requested_price_is_invalid: Requested price is invalid
+      Requested_option_menu_is_invalid: Requested option menu is invalid

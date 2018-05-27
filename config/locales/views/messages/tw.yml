@@ -7,7 +7,7 @@ tw:
       meta_description: '給%{name}發消息'
       message: '給%{name}發消息'
       send_btn: 發送
-    show:
+    show:
       meta_title: '給%{name}發消息'
       meta_keywords: '消息, 寫真, 拍攝, 攝影, 照片, Camera-to-Culture'
       meta_description: '給%{name}發消息'
@@ -24,3 +24,7 @@ tw:
       write_here: 發消息
       send_btn: 發送
       last_message: 最後一通消息
+    login_check:
+      Please_login: 請先登錄
+    user_check:
+      Please_login: 請先登錄

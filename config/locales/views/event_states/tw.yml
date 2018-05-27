@@ -1,0 +1,17 @@
+---
+tw:
+  event_states:
+    state_requested:
+      Invalid_request: 不正常的預約
+    state_accepted:
+      Invalid_request: 不正常的預約
+    state_edited:
+      Invalid_request: 不正常的預約
+    state_deliverd:
+      Invalid_request: 不正常的預約
+    cl_deliver_check:
+      Invalid_request: 不正常的預約
+    client_check:
+      Please_login: 請先登錄
+    customer_check:
+      Please_login: 請先登錄

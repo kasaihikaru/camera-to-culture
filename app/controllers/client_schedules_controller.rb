@@ -36,6 +36,7 @@ class ClientSchedulesController < ApplicationController
 			end
 		}
 
+		flash[:alert] = t(".Setting_has_updated")
 		redirect_to user_client_client_schedules_path(user_params, client_params, day: date_params)
 	end
 
@@ -69,14 +70,14 @@ private
 
 	def user_check
 		unless user_signed_in? && Client.find(params[:client_id]).user == current_user
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end
 	def consent_check
 		cl = Client.find(params[:client_id])
 		unless cl.consent == true && cl.deleted_at == nil
-			flash[:alert] = "指定したページはありません"
+			flash[:alert] = t(".The_page_does_not_exist")
 			redirect_to root_path
 		end
 	end

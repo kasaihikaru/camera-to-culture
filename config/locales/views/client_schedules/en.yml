@@ -11,3 +11,9 @@ en:
       available-time: Write your available-time
       example_sch: ex) 10:00-17:00 is available
       Update: Update
+    user_check:
+      Please_login: Please login
+    consent_check:
+      The_page_does_not_exist: The page does not exist
+    create:
+      Setting_has_updated: Setting_has_updated

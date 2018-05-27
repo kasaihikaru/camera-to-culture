@@ -55,7 +55,7 @@ private
 	#---------- user_check ----------#
 	def user_check
 		unless user_signed_in? && Event.find(params[:event_id]).client == current_user.client
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end
@@ -64,7 +64,7 @@ private
 	def state_recieved
 		event = Event.find(params[:event_id].to_i)
 		unless event.event_states.last.state == "cs_recieved"
-			flash[:alert] = "リクエストが不正です"
+			flash[:alert] = t(".Invalid_request")
 			redirect_to root_path
 		end
 	end

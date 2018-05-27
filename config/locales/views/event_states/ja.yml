@@ -1,0 +1,17 @@
+---
+ja:
+  event_states:
+    state_requested:
+      Invalid_request: 不正なリクエスト
+    state_accepted:
+      Invalid_request: 不正なリクエスト
+    state_edited:
+      Invalid_request: 不正なリクエスト
+    state_deliverd:
+      Invalid_request: 不正なリクエスト
+    cl_deliver_check:
+      Invalid_request: 不正なリクエスト
+    client_check:
+      Please_login: ログインしてください
+    customer_check:
+      Please_login: ログインしてください

@@ -123,7 +123,7 @@ class UsersController < ApplicationController
 		# 自己紹介の更新
 		current_user.customer.update(introduction: cs_intro_params)
 
-		flash[:alert] = "更新しました"
+		flash[:alert] = t(".Setting_has_updated")
 		redirect_to profile_users_path
 	end
 
@@ -162,14 +162,14 @@ private
 
 	def login_check
 		unless user_signed_in?
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end
 
 	def user_check
 		unless user_signed_in? && params[:id].to_i == current_user.id
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end

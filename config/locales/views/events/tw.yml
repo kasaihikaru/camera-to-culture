@@ -233,3 +233,19 @@ tw:
       Preview_Uploaded_photos: 預覽已上傳的照片
       photo_nums_explanation_1: '全部%{nums}張的照片已經上傳成功'
       photo_nums_explanation_2: 預覽僅顯示6張照片。
+    login_check:
+      Please_login: 請先登錄
+    update_user_check:
+      Please_login: 請先登錄
+    event_show_user_check:
+      Please_login: 請先登錄
+    event_edit_user_check:
+      Please_login: 請先登錄
+    create:
+      Requested_time_is_invalid: 預約時間不正常。請重新確認。
+      Requested_price_is_invalid: 預約價格不正常，請重新確認。
+      Requested_option_menu_is_invalid: 預約的附加服務不正常，請重新確認。
+    update:
+      Requested_time_is_invalid: 預約時間不正常。請重新確認。
+      Requested_price_is_invalid: 預約價格不正常，請重新確認。
+      Requested_option_menu_is_invalid: 預約的附加服務不正常，請重新確認。

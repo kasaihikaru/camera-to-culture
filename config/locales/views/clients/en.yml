@@ -35,7 +35,7 @@ en:
       message: Message to your customer
       importance_of_message_explanation: Communication is the most important for photographeres and customers on the Camera-to-Culture platform. Let know customers your story, photographing style and introduction in detail.
       main_image: Your main sample photo
-      main_image_explain: main photo shows when customer seaching
+      main_image_explain: Please pick a landscape photo (horizontal photo) for the main photo. It will look much better!
       category_form: Categories you can take
       Yourself: Yourself
       Memory: Memories
@@ -165,3 +165,11 @@ en:
       available_dates: Available
       check_date_and_time: Check avairable time
       Please_select_from_the_calender: Please select a day from the calender.
+    update:
+      Setting_has_updated: Setting has updated
+    user_check:
+      Please_login: Please login
+    consent_check:
+      The_page_does_not_exist: The page does not exist
+    active_consent_check:
+      The_page_does_not_exist: The page does not exist

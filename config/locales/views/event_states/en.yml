@@ -1,0 +1,17 @@
+---
+en:
+  event_states:
+    state_requested:
+      Invalid_request: Invalid request
+    state_accepted:
+      Invalid_request: Invalid request
+    state_edited:
+      Invalid_request: Invalid request
+    state_deliverd:
+      Invalid_request: Invalid request
+    cl_deliver_check:
+      Invalid_request: Invalid request
+    client_check:
+      Please_login: Please login
+    customer_check:
+      Please_login: Please login

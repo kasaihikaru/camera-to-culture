@@ -36,7 +36,7 @@ zh:
       message: 向顾客详细介绍自己
       importance_of_message_explanation: 在Camera-to-Culture成为摄影师，最重要的是与顾客的交流。写下您拿手的摄影详情，详细的向顾客介绍自己吧。
       main_image: 上传优先样片
-      main_image_explain: 搜索结果中，优先样片将出现在首页。
+      main_image_explain: 搜索结果中，优先样片将出现在首页。推荐设置横向照片，可以更完整的显示于主页。
       category_form: 可拍摄的照片类别
       Yourself: 你
       Memory: 重要时刻
@@ -166,3 +166,11 @@ zh:
       available_dates: 可以接片的日程
       check_date_and_time: 确认可以拍摄的时间
       Please_select_from_the_calender: 从日历中选择希望日期
+    update:
+      Setting_has_updated: 更新成功
+    user_check:
+      Please_login: 请先登录
+    consent_check:
+      The_page_does_not_exist: 页面不存在
+    active_consent_check:
+      The_page_does_not_exist: 页面不存在

@@ -36,7 +36,7 @@ tw:
       message: 向顧客詳細介紹自己
       importance_of_message_explanation: 在Camera-to-Culture成為攝影師，最重要的是與顧客的交流。寫下您那首的攝影詳情，詳細的向顧客介紹自己吧。
       main_image: 上傳優先樣片
-      main_image_explain: 搜索結果中，優先樣片將出現在首頁。
+      main_image_explain: 搜索結果中，優先樣片將出現在首頁。推薦設置橫向照片，可以更完整的顯示於主頁。
       category_form: 可拍攝的照片類別
       Yourself: 你/妳
       Memory: 重要時刻
@@ -166,3 +166,11 @@ tw:
       available_dates: 可以接片的日程
       check_date_and_time: 確認可以拍攝的時間
       Please_select_from_the_calender: 從日曆中選擇希望日期
+    update:
+      Setting_has_updated: 更新成功
+    user_check:
+      Please_login: 請先登錄
+    consent_check:
+      The_page_does_not_exist: 頁面不存在
+    active_consent_check:
+      The_page_does_not_exist: 頁面不存在

@@ -28,3 +28,7 @@ tw:
       Setting_has_updated: 修改成功
     user_check:
       Please_login: 請登入
+    consent_check:
+      The_page_does_not_exist: 頁面不存在
+    not_consent_check:
+      The_page_does_not_exist: 頁面不存在

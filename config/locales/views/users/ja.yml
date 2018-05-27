@@ -82,6 +82,12 @@ ja:
       cancel_account_explanation3: ご連絡いただければアカウントは再度有効にすることができます。
       Dont_cancel_account: 退会しない
       Cancel_account: 退会する
+    edit_profile:
+      Setting_has_updated: 更新しました
+    login_check:
+      Please_login: ログインしてください
+    user_check:
+      Please_login: ログインしてください
 
 # 以下、devise用
     confirmations:

@@ -13,7 +13,7 @@ private
 
 	def user_check
 		unless user_signed_in? && params[:user_id].to_i == current_user.id && Customer.find(params[:id]).user == current_user
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end

@@ -233,3 +233,19 @@ zh:
       Preview_Uploaded_photos: 预览已上传的照片
       photo_nums_explanation_1: '全部%{nums}张的照片已经上传成功'
       photo_nums_explanation_2: 预览仅显示6张照片。
+    login_check:
+      Please_login: 请先登录
+    update_user_check:
+      Please_login: 请先登录
+    event_show_user_check:
+      Please_login: 请先登录
+    event_edit_user_check:
+      Please_login: 请先登录
+    create:
+      Requested_time_is_invalid: 预约时间不正常。请重新确认。
+      Requested_price_is_invalid: 预约价格不正常，请重新确认。
+      Requested_option_menu_is_invalid: 预约的附加服务不正常，请重新确认。
+    update:
+      Requested_time_is_invalid: 预约时间不正常。请重新确认。
+      Requested_price_is_invalid: 预约价格不正常，请重新确认。
+      Requested_option_menu_is_invalid: 预约的附加服务不正常，请重新确认。

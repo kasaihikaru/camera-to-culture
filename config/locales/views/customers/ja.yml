@@ -1,4 +1,5 @@
 ---
 ja:
   customers:
-    show:
+    user_check:
+      Please_login: ログインしてください

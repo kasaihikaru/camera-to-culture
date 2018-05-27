@@ -111,13 +111,13 @@ class EventsController < ApplicationController
 		# イベント作成
 		if ev_create_params.kind_of?(String) then
 			if ev_create_params == "time-error" then
-				flash[:alert] = "リクエスト時間が足りません"
+				flash[:alert] = t(".Requested_time_is_invalid")
 				redirect_to new_event_path(id: event_client_id_params)
 			elsif ev_create_params == "total-fee-error" then
-				flash[:alert] = "金額がマイナスの値です"
+				flash[:alert] = t(".Requested_price_is_invalid")
 				redirect_to new_event_path(id: event_client_id_params)
 			else
-				flash[:alert] = "オプションの数が不正です"
+				flash[:alert] = t(".Requested_option_menu_is_invalid")
 				redirect_to new_event_path(id: event_client_id_params)
 			end
 		else
@@ -167,13 +167,13 @@ class EventsController < ApplicationController
 		# イベント作成
 		if ev_edit_params.kind_of?(String) then
 			if ev_edit_params == "time-error" then
-				flash[:alert] = "リクエスト時間が足りません"
+				flash[:alert] = t(".Requested_time_is_invalid")
 				redirect_to new_event_path(id: event_client_id_params)
 			elsif ev_edit_params == "total-fee-error" then
-				flash[:alert] = "金額がマイナスの値です"
+				flash[:alert] = t(".Requested_price_is_invalid")
 				redirect_to new_event_path(id: event_client_id_params)
 			else
-				flash[:alert] = "オプションの数が不正です"
+				flash[:alert] = t(".Requested_option_menu_is_invalid")
 				redirect_to new_event_path(id: event_client_id_params)
 			end
 		else
@@ -465,7 +465,7 @@ private
 
 	def login_check
 		unless user_signed_in?
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end
@@ -474,7 +474,7 @@ private
 		event = Event.find(id_params)
 		cl = Client.find(event.client_id)
 		unless user_signed_in? && cl.user == current_user
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end
@@ -487,7 +487,7 @@ private
 		unless user_signed_in? &&(
 				event.client_id == cl.id || event.customer_id == cs.id
 			)
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end
@@ -497,7 +497,7 @@ private
 		cl_here = Client.find(params[:client_id])
 		cl = current_user.client
 		unless user_signed_in? &&	event.client_id == cl.id && cl_here == cl
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end

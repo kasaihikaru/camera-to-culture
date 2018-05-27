@@ -170,6 +170,7 @@ class ClientsController < ApplicationController
 			end
 		end
 
+		flash[:alert] = t(".Setting_has_updated")
 		redirect_to edit_user_client_path(current_user, cl)
 	end
 
@@ -278,7 +279,7 @@ private
 
 	def user_check
 		unless user_signed_in? && params[:user_id].to_i == current_user.id
-			flash[:alert] = "ログインしてください"
+			flash[:alert] = t(".Please_login")
 			redirect_to root_path
 		end
 	end
@@ -286,7 +287,7 @@ private
 	def consent_check
 		cl = Client.find(params[:id])
 		unless cl.consent == true && cl.deleted_at == nil
-			flash[:alert] = "指定したページはありません"
+			flash[:alert] = t(".The_page_does_not_exist")
 			redirect_to root_path
 		end
 	end
@@ -294,7 +295,7 @@ private
 	def active_consent_check
 		cl = Client.find(params[:id])
 		unless cl.consent == true && cl.confirmed == true && cl.deleted_at == nil && cl.client_primary_prices.active.first.price_per_hour.present?
-			flash[:alert] = "指定したページはありません"
+			flash[:alert] = t(".The_page_does_not_exist")
 			redirect_to root_path
 		end
 	end

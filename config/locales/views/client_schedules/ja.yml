@@ -11,3 +11,9 @@ ja:
       available-time: 撮影可能な時間の説明
       example_sch: （例）10:00-17:00まで受付可能
       Update: 更新
+    user_check:
+      Please_login: ログインしてください
+    consent_check:
+      The_page_does_not_exist: ページが存在しません
+    create:
+      Setting_has_updated: 更新しました
