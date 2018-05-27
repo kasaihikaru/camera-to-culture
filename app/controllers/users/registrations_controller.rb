@@ -19,10 +19,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user = my_build_resource(sign_up_params)
     resource.save
 
+    #User_languageの更新
+    if resource.persisted? && user_language_params != nil
+      # language_ids = user_language_params
+      user_language_params.each do |id|
+        UserLanguage.create(user_id: user.id, language_id: id.to_i)
+      end
+    end
+
     #CL,CS発番
     customer = Customer.create(user_id: user.id)
     client = Client.create(user_id: user.id)
-
 
     yield resource if block_given?
     if resource.persisted?
@@ -109,6 +116,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     resource.update_without_password(params)
   end
 
+  def user_language_params
+    params[:language_id]
+  end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
