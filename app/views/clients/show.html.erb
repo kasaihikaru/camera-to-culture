@@ -1,10 +1,14 @@
+<div id="cl-show-photo" style="background-image: url(<%= @cl_here.image.url %>);">
+</div>
+
 <!-- ##########  ヘッダー  ########## -->
-<div class="container-fluid cl-show cl-show-1">
+<!-- md以下で表示 -->
+<div class="container-fluid cl-show cl-show-1 d-lg-none">
 	<div class="container">
 		<div class="row">
 			<div class="cl-show-1-left col-3 col-sm-3 col-md-2">
 				<% if @cl_here.user.image? %>
-					<%= image_tag @cl_here.user.image.url(:thumb), alt: "icon" %>
+					<%= image_tag @cl_here.user.image.url(:thumb), alt: "icon", class: "round-img" %>
 				<% else %>
 					<%= render :partial => 'svgs/baby_80' %>
 				<% end %>
@@ -19,7 +23,20 @@
 					<% end %>
 				</div>
 				<%= render :partial => 'svgs/fee' %>&nbsp;<%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %>
-				<div class="line-break"><%= render :partial => 'clients/introduction', :locals=>{cl: @cl_here, locale: @locale} %></div>
+				<!-- メッセージを送る -->
+				<!-- ログイン時 -->
+				<div class="cl-show-side-show-1-message">
+					<% if user_signed_in? %>
+						<%= link_to new_user_message_path(@cl_here.user.id) do %>
+							<%= render :partial => 'svgs/mail' %>&nbsp;<%= t(".message") %>
+						<% end %>
+					<!-- 未ログイン時 -->
+					<% else %>
+						<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
+								<%= render :partial => 'svgs/mail' %>&nbsp;<%= t(".sign-in-for-ms") %>
+						<% end %>
+					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -28,7 +45,11 @@
 
 <!-- # About 1 # -->
 <div class="container-fluid cl-show cl-show-2 white-back">
-	<div class="col-12 col-lg-8 offset-lg-2">
+	<div class="col-12 col-lg-8 offset-lg-1">
+		<div class="line-break"><%= render :partial => 'clients/introduction', :locals=>{cl: @cl_here, locale: @locale} %></div>
+		<hr>
+
+
 
 		<div class="container-fluid">
 			<div class="row">
@@ -137,7 +158,7 @@
 <% if @events_3.present? %>
 	<hr>
 	<div class="container-fluid cl-show cl-show-2 white-back">
-		<div class="col-12 col-lg-8 offset-lg-2">
+		<div class="col-12 col-lg-8 offset-lg-1">
 			<h1><%= t(".Reviews") %></h1>
 			<% @events_3.each do |ev| %>
 				<%= render partial: 'clients/reviews', locals: {ev: ev} %>
@@ -212,28 +233,79 @@
 
 <!-- ##########  Portfolio  ########## -->
 <div class="container-fluid cl-show cl-show-3">
-	<h1><%= t(".Portfolio") %></h1>
-	<div class="container">
-		<div class="row">
-			<div class="pf col-12 col-sm-6 col-md-4 col-lg-3">
-				<a href="<%= @cl_here.image.url if @cl_here.image? %>" data-lightbox="image-1" data-title="<%= @cl_here.user.name %>">
-					<div class="pf-img" style="background-image: url(<%= @cl_here.image.url %>);"></div>
-				</a>
-			</div>
-			<% @portfolios.each do |portfolio| %>
+	<div class="col-12 col-lg-8 offset-lg-1">
+		<h1><%= t(".Portfolio") %></h1>
+		<div class="container">
+			<div class="row">
 				<div class="pf col-12 col-sm-6 col-md-4 col-lg-3">
-					<a href="<%= portfolio.image.url if portfolio.image? %>" data-lightbox="image-1" data-title="<%= @cl_here.user.name %>">
-						<div class="pf-img" style="background-image: url(<%= portfolio.image.url %>);"></div>
+					<a href="<%= @cl_here.image.url if @cl_here.image? %>" data-lightbox="image-1" data-title="<%= @cl_here.user.name %>">
+						<div class="pf-img" style="background-image: url(<%= @cl_here.image.url %>);"></div>
 					</a>
 				</div>
-			<% end %>
+				<% @portfolios.each do |portfolio| %>
+					<div class="pf col-12 col-sm-6 col-md-4 col-lg-3">
+						<a href="<%= portfolio.image.url if portfolio.image? %>" data-lightbox="image-1" data-title="<%= @cl_here.user.name %>">
+							<div class="pf-img" style="background-image: url(<%= portfolio.image.url %>);"></div>
+						</a>
+					</div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
 
 <!-- 不動ボタン -->
+<!-- lg以上 -->
+<div class="cl-show cl-show-side-footer d-none d-lg-block">
+	<% if @cl_here.user.image? %>
+		<%= image_tag @cl_here.user.image.url(:thumb), alt: "icon", class: "round-img" %>
+	<% else %>
+		<%= render :partial => 'svgs/baby_80' %>
+	<% end %>
+	<p><%= @cl_here.user.name %></p>
+	<div class="cl-show-side-footer-price">¥&nbsp;<%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %></div>
+	<p class="cl-show-side-footer-review">
+		<% if @ev_nums.present? && @ev_nums > 0 %>
+			<a class="all-review-inline" data-toggle="modal" data-target="#all-reviews">
+				<%= @ev_nums %><%= t(".reviews") %>
+			</a>
+		<% else %>
+			0<%= t(".reviews") %>
+		<% end %>
+	</p>
+	<% if user_signed_in? %>
+		<%= link_to new_event_path(id: @cl_here.id) do %>
+			<div class="prim-btn cl-show-reserve-btn btn">
+				<%= t(".researve") %>
+			</div>
+		<% end %>
+	<!-- 未ログイン時 -->
+	<% else %>
+		<%= link_to new_user_session_path(rv_redirect_client_id: @cl_here.id), target: "_new" do %>
+			<div class="prim-btn cl-show-btn-login btn">
+				<%= t(".sign-in-for-researve") %>
+			</div>
+		<% end %>
+	<% end %>
+	<!-- メッセージを送る -->
+	<!-- ログイン時 -->
+	<div class="cl-show-side-footer-message">
+		<% if user_signed_in? %>
+			<%= link_to new_user_message_path(@cl_here.user.id) do %>
+				<%= render :partial => 'svgs/mail' %>&nbsp;<%= t(".message") %>
+			<% end %>
+		<!-- 未ログイン時 -->
+		<% else %>
+			<%= link_to new_user_session_path(redirect_client_id: @cl_here.id), target: "_new" do %>
+					<%= render :partial => 'svgs/mail' %>&nbsp;<%= t(".sign-in-for-ms") %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!-- md以下 -->
 <!-- ログイン時 -->
-<div class="container-fluid cl-show cl-show-footer">
+<div class="container-fluid cl-show cl-show-footer d-lg-none">
 	<%= render :partial => 'svgs/fee' %>&nbsp;<%= @prim_price.price_per_hour %><%= t(".yen_per_hour") %>
 	<% if user_signed_in? %>
 		<%= link_to new_event_path(id: @cl_here.id) do %>
