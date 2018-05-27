@@ -15,6 +15,7 @@ ja:
       introduction_zh: 自己紹介（中国語簡体字）
       introduction_tw: 自己紹介（中国語繁体字）
       120_letters_maximum: 最初に表示される簡易的な自己紹介です。120文字以内で書いてください。
+      open_google_translation: google翻訳を開く
       required: 必須
       camera: 撮影に使うカメラについて
       camera_placeholder: |

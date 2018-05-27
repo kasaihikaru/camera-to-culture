@@ -48,7 +48,7 @@ tw:
       As_a_cameraman_future: 今後的攝影計劃（作為攝影師）
       As_a_cameraman_past: 過去的攝影（作為攝影師）
       user_settings: 用戶設定
-      edit_profile: 簡潔編輯
+      edit_profile: 用戶簡介
       settings: 設定
       account_settings: 註銷
       register_as_cameraman: 成為攝影師
@@ -57,7 +57,7 @@ tw:
       cl_schedule: 設定可拍攝日程
       cl_settings: 攝影師的簡介
       upload_cl_portpolios: 上傳樣片
-      sign-out: 退出
+      sign-out: 退出登錄
 
     profile:
       meta_title: '編輯個人信息'

@@ -48,7 +48,7 @@ zh:
       As_a_cameraman_future: 今后的摄影计划（作为摄影师）
       As_a_cameraman_past: 过去的摄影（作为摄影师）
       user_settings: 用户设定
-      edit_profile: 简洁编辑
+      edit_profile: 用户简介
       settings: 设定
       account_settings: 注销
       register_as_cameraman: 成为摄影师
@@ -57,7 +57,7 @@ zh:
       cl_schedule: 设定可拍摄日程
       cl_settings: 摄影师的简介
       upload_cl_portpolios: 上传样片
-      sign-out: 退出
+      sign-out: 退出登录
 
     profile:
       meta_title: '编辑个人信息'

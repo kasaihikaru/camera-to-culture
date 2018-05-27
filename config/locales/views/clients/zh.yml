@@ -15,6 +15,7 @@ zh:
       introduction_zh: 自我介绍（中文简体体字）
       introduction_tw: 自我介绍（中文繁体字）
       120_letters_maximum: 页面最开头显示的简短自我介绍。请输入120字以内的内容。
+      open_google_translation: 打开google翻译
       required: 必填
       camera: 关于摄影时所使用的相机
       camera_placeholder: |
