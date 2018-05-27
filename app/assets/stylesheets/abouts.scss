@@ -111,6 +111,8 @@ background-image: linear-gradient(180deg, #064c92 15%, #2b79d2 41%, #2f99ff 60%,
 }
 
 
+
+
 .img-phone{
 	height: 360px;
 	margin: 10px 0;
@@ -119,11 +121,6 @@ background-image: linear-gradient(180deg, #064c92 15%, #2b79d2 41%, #2f99ff 60%,
 	width: 200px;
 	display: inline-block;
 	font-size: 18px;
-	// background-color: $white-col;
-	// border: solid 1px $prim-col;
-	// color: $prim-col;
-	// border-radius: 5px;
-	padding: 5px 0;
 	margin: 8px 0;
 }
 .about-btn:hover{
@@ -132,7 +129,12 @@ background-image: linear-gradient(180deg, #064c92 15%, #2b79d2 41%, #2f99ff 60%,
 }
 
 
-
+.use-with-phone{
+	img{
+		height: 360px;
+		margin: 10px 10px 30px;
+	}
+}
 
 
 
