@@ -70,8 +70,8 @@ en:
       chinese: Chinese
       image: Icon for profile
       introduction: Introduction（maximum 120 letters）
+      cs_intro_explanation: This introduction shows when you request booking to photographers. Communication is the most important on the Camera-to-Culture platform. Let know photographers about yourself.
       update_btn: Update
-
     account_setting:
       meta_title: 'Account settings'
       meta_keywords: 'Account settings, Camera-to-Culture'

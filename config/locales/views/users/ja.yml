@@ -36,7 +36,6 @@ ja:
       Your_Main_Photo: メイン写真
       Portfolios: ポートフォリオ
       photos_are_uploaded: 枚のポートフォリオが登録されています。
-
     mypage_menu:
       Menu: メニュー
       mypage: ホーム
@@ -70,6 +69,7 @@ ja:
       chinese: 中国語
       image: プロフィール画像
       introduction: 自己紹介（120文字以内）
+      cs_intro_explanation: この自己紹介は、予約リクエスト時にカメラマンがチェックします。Camera-to-Culture利用する上で、最も大事なことはコミュニケーションです。簡単に自己紹介を書いておきましょう。
       update_btn: 更新
 
     account_setting:

@@ -69,7 +69,8 @@
 
         <!-- 自己紹介 -->
         <div class="field">
-          <p class="bold"><%= t(".introduction")%></p>
+          <p class="bold" style="margin-bottom: 0;"><%= t(".introduction")%></p>
+          <span class="field-explanation"><%= t(".cs_intro_explanation")%></span><br>
           <textarea name="introduction" class="input-textarea" maxlength="120"><%= @cs.introduction %></textarea>
         </div>
 
