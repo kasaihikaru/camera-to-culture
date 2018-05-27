@@ -16,10 +16,10 @@ en:
       None: Not registered
       Introduction: Introduction
       information_as_a_photographer: Information as a photographer
-      introduction_ja: Introduction（Japanese）
-      introduction_en: Introduction（English）
-      introduction_zh: Introduction（Simplified Chinese）
-      introduction_tw: Introduction（Traditional Chinese）
+      Introduction_ja: Introduction（Japanese）
+      Introduction_en: Introduction（English）
+      Introduction_zh: Introduction（Simplified Chinese）
+      Introduction_tw: Introduction（Traditional Chinese）
       Available_dates: Available date and time you can work
       available_dates_explanation: "You have registered %{nums} available days so far."
       Photographing_Categories: Photo categories

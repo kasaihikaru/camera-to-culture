@@ -16,10 +16,10 @@ zh:
       None: 没有
       Introduction: 自我介绍
       information_as_a_photographer: 摄影师情报
-      introduction_ja: 自我介紹（日語）
-      introduction_en: 自我介紹（英語）
-      introduction_zh: 自己介紹（中文簡体字）
-      introduction_tw: 自己介紹（中文繁体字）
+      Introduction_ja: 自我介紹（日語）
+      Introduction_en: 自我介紹（英語）
+      Introduction_zh: 自己介紹（中文簡体字）
+      Introduction_tw: 自己介紹（中文繁体字）
       Available_dates: 可以拍摄的日程
       available_dates_explanation: "已登录了%{nums}天作为可以拍摄的日程。"
       Photographing_Categories: 摄影类别
