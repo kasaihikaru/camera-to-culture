@@ -99,6 +99,12 @@ Rails.application.routes.draw do
 			end
 		end
 
+		resource :helps, only: [:index] do
+			collection do
+				get 'To_receive_email'
+			end
+		end
+
 		resources :categories, only: [:index] do
 			collection do
 				get 'profile'

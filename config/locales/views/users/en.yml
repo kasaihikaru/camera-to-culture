@@ -141,6 +141,7 @@ en:
         meta_description: 'Sign up'
         sign_up: Sign up
         sign_up_with_FB: Sign up with Facebook
+        please_set_receiving_permission_from_CtoC: 'please set receiving permission from ''camera-to-culture.com'''
         name: Name
         email: Email
         password: Password

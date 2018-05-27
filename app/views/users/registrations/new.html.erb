@@ -6,6 +6,10 @@
         <%= link_to t(".sign_up_with_FB"), user_facebook_omniauth_authorize_path, class: "fb-register" %>
       </div> -->
 
+
+      <p><%= simple_format(t(".please_set_receiving_permission_from_CtoC"))%></p>
+
+
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 

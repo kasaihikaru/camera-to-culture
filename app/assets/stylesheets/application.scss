@@ -182,6 +182,10 @@ $white-col : #FFFFFF;
   padding: 0;
 }
 
+.black-border{
+  border: 1px solid $black-col;
+}
+
 .border-bottom{
   outline: 0;
   border-width: 0 0 1px;
@@ -232,6 +236,10 @@ $white-col : #FFFFFF;
 
 .tungsten-shadow {
   box-shadow: 0 2px 4px 0 #333333;
+}
+
+.width-90{
+  width: 90%;
 }
 
 

@@ -143,6 +143,10 @@ zh:
         meta_description: '注册新用户'
         sign_up: 注册新用户
         sign_up_with_FB: 用Facebook注册新用户
+        please_set_receiving_permission_from_CtoC: |
+          请在邮箱域名白名单中设置同意接受来自
+          「camera-to-culture.com」的邮件。
+          （QQ邮箱登录者请务必确认域名白名单的设置）
         name: 名字
         email: 电子邮箱
         password: 密码
