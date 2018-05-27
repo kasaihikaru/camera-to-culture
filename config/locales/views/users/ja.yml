@@ -14,7 +14,7 @@ ja:
       Write_a_review: '%{name}さんのレビューを書きましょう'
       Languages: 話す言語
       None: なし
-      Introduction: 自己紹介
+      Introduction: 自己紹介（カメラマンに撮影リクエストを出す際に表示されます）
       information_as_a_photographer: カメラマン情報
       Introduction_ja: 自己紹介（日本語）
       Introduction_en: 自己紹介（英語）

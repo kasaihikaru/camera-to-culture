@@ -14,7 +14,7 @@ tw:
       Write_a_review: '寫下對%{name}的評價吧！ '
       Languages: 掌握的語言
       None: 沒有
-      Introduction: 自我介紹
+      Introduction: 自我介紹（在身為顧客向攝影師申請預約時顯示）
       information_as_a_photographer: 攝影師情報
       Introduction_ja: 自己紹介（日本語）
       Introduction_en: 自己紹介（英語）
