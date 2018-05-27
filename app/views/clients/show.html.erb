@@ -223,7 +223,9 @@
 
 <!-- # Schedule # -->
 <div class="container-fluid cl-show-schedule-title">
-	<h1><%= t(".Schedule") %></h1>
+	<div class="col-12 col-lg-8 offset-lg-1">
+		<h1><%= t(".Schedule") %></h1>
+	</div>
 </div>
 <div id="cl-show4-calender" class="container-fluid cl-show cl-show-4">
 	<%= render partial: 'clients/show4_calender', locals: {cl_here: @cl_here, day: @day, c_dates: @c_dates } %>
