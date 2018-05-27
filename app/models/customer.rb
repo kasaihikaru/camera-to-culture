@@ -9,7 +9,7 @@ class Customer < ApplicationRecord
 	has_many :client_reviews
 	has_many :customer_reviews
 
-	validates :introduction, length: { maximum: 120 }
+	validates :introduction, length: { maximum: 1000 }
 
 	def soft_delete
 		update(deleted_at: Time.now)

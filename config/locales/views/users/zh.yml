@@ -69,8 +69,8 @@ zh:
       english: 英语
       chinese: 中文
       image: 个人头像
-      introduction: 自我介绍（120字以内）
-      cs_intro_explanation: この自己紹介は、予約リクエスト時にカメラマンがチェックします。Camera-to-Culture利用する上で、最も大事なことはコミュニケーションです。簡単に自己紹介を書いておきましょう。
+      introduction: 自我介绍（1000字以内）
+      cs_intro_explanation: 在申请预约后，摄影师会参考此处的自我介绍。在Camera-to-Culture中，这是最重要的交流内容。请简单的介绍一下自己吧。
       update_btn: 更改
 
     account_setting:

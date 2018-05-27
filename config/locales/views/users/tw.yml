@@ -69,8 +69,8 @@ tw:
       english: 英語
       chinese: 中文
       image: 個人頭像
-      introduction: 自我介紹（120字以內）
-      cs_intro_explanation: この自己紹介は、予約リクエスト時にカメラマンがチェックします。Camera-to-Culture利用する上で、最も大事なことはコミュニケーションです。簡単に自己紹介を書いておきましょう。
+      introduction: 自我介紹（1000字以內）
+      cs_intro_explanation: 在申請預約後，攝影師會參考此處的自我介紹。在Camera-to-Culture中，這是最重要的交流內容。請簡單的介紹一下自己吧。
       update_btn: 更改
 
     account_setting:
