@@ -7,7 +7,7 @@ class ClientsController < ApplicationController
 		import_current_user
 
 		# 検索結果(.uniqするとarrayになってしまうので、kaminariは別に切り出す必要がある。)
-		array_cls = Client.active.consent.registerd.intro_present.includes({user: [:customer, user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq
+		array_cls = Client.active.consent.registerd.intro_present.includes({user: [:customer, user_languages: :language]}, :client_portfolios).fits_categpory_id_in(params[:category_ids]).fits_prefecture_id_in(params[:prefecture_ids]).uniq.shuffle!
 		@cls = Kaminari.paginate_array(array_cls).page(params[:page]).per(12)
 
 		@locale = params[:locale]
