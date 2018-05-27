@@ -89,6 +89,7 @@ en:
         meta_keywords: 'Resend confirmation instructions, Camera-to-Culture'
         meta_description: 'Resend confirmation instructions'
         Resend_confirmation_instructions: Resend confirmation instructions
+        Why_didn't_I_get_email?: 'Why didn''t I get email?'
         email: email
     mailer:
       confirmation_instructions:
@@ -142,6 +143,7 @@ en:
         sign_up: Sign up
         sign_up_with_FB: Sign up with Facebook
         please_set_receiving_permission_from_CtoC: 'please set receiving permission from ''camera-to-culture.com'''
+        Why_didn't_I_get_email?: 'Why didn''t I get email?'
         name: Name
         email: Email
         password: Password

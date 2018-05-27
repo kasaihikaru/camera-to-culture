@@ -101,7 +101,7 @@ Rails.application.routes.draw do
 
 		resource :helps, only: [:index] do
 			collection do
-				get 'To_receive_email'
+				get 'to_receive_email'
 			end
 		end
 

@@ -90,6 +90,7 @@ ja:
         meta_keywords: '確認メール再送, Camera-to-Culture'
         meta_description: '確認メール再送'
         Resend_confirmation_instructions: 確認メールを送る
+        Why_didn't_I_get_email?: メールが届かない？
         email: メールアドレス
     mailer:
       confirmation_instructions:
@@ -143,8 +144,8 @@ ja:
         sign_up: 新規登録
         sign_up_with_FB: Facebookで会員登録
         please_set_receiving_permission_from_CtoC: |
-          「camera-to-culture.com」からのメール受信を許可する設定をしておいてください。
-          (QQメールを利用の場合、設定が必要になります。）
+          「camera-to-culture.com」からのメール受信を許可する設定をしておいてください。(QQメールを利用の場合、設定が必要になります。）
+        Why_didn't_I_get_email?: メールが届かない？
         name: お名前
         email: メールアドレス
         password: パスワード

@@ -91,6 +91,7 @@ tw:
         meta_keywords: '再次發送確認郵件, Camera-to-Culture'
         meta_description: '再次發送確認郵件'
         Resend_confirmation_instructions: 發送一封帳號確認郵件
+        Why_didn't_I_get_email?: 收不到確認郵件嗎？
         email: 電子郵箱
     mailer:
       confirmation_instructions:
@@ -144,9 +145,9 @@ tw:
         sign_up: 註冊新用戶
         sign_up_with_FB: 用Facebook註冊新用戶
         please_set_receiving_permission_from_CtoC: |
-          請在郵箱域名白名單中設置同意接受來自
-          「camera-to-culture.com」的郵件。
+          請在郵箱域名白名單中設置同意接受來自「camera-to-culture.com」的郵件。
           （QQ郵箱登錄者請務必確認域名白名單的設置）
+        Why_didn't_I_get_email?: 收不到確認郵件嗎？
         name: 名字
         email: 電子郵箱
         password: 密碼
@@ -191,7 +192,7 @@ tw:
         sign_in: 登錄
         sign_up: 註冊新用戶
         Forgot_your_password?: 忘記了密碼
-        Didn't_receive_confirmation_instructions?: 發送一封確認郵件
+        Didn't_receive_confirmation_instructions?: 再次發送一封確認郵件
         Didn't_receive_unlock_instructions?: 發送密碼通知郵件
     unlocks:
       new:

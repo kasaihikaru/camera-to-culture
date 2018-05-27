@@ -91,6 +91,7 @@ zh:
         meta_keywords: '再次发送确认邮件, Camera-to-Culture'
         meta_description: '再次发送确认邮件'
         Resend_confirmation_instructions: 发送一封帐号确认邮件
+        Why_didn't_I_get_email?: 收不到确认邮件吗？
         email: 电子邮箱
     mailer:
       confirmation_instructions:
@@ -144,9 +145,9 @@ zh:
         sign_up: 注册新用户
         sign_up_with_FB: 用Facebook注册新用户
         please_set_receiving_permission_from_CtoC: |
-          请在邮箱域名白名单中设置同意接受来自
-          「camera-to-culture.com」的邮件。
+          请在邮箱域名白名单中设置同意接受来自「camera-to-culture.com」的邮件。
           （QQ邮箱登录者请务必确认域名白名单的设置）
+        Why_didn't_I_get_email?: 收不到确认邮件吗？
         name: 名字
         email: 电子邮箱
         password: 密码
@@ -191,7 +192,7 @@ zh:
         sign_in: 登录
         sign_up: 注册新用户
         Forgot_your_password?: 忘记了密码
-        Didn't_receive_confirmation_instructions?: 发送一封确认邮件
+        Didn't_receive_confirmation_instructions?: 再次发送一封确认邮件
         Didn't_receive_unlock_instructions?: 发送密码通知邮件
     unlocks:
       new:

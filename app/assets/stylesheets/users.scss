@@ -49,10 +49,6 @@ $white-col : #FFFFFF;
 					height: 150px;
 					border-radius: 5px;
 				}
-				.field-explanation{
-					font-size: 13px;
-					font-weight: 400;
-				}
 			}
 			.user-image{
 				img{
@@ -67,6 +63,10 @@ $white-col : #FFFFFF;
 	}
 }
 
+.field-explanation{
+	font-size: 13px;
+	font-weight: 400;
+}
 
 //---------- users/show -----------//
 @media screen and (max-width:700px){

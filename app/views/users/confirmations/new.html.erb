@@ -3,6 +3,10 @@
 		<div class="col-12 col-md-4 offset-md-1">
 			<h1><%= t(".Resend_confirmation_instructions")%></h1>
 
+			<%= link_to to_receive_email_helps_path, class: "" do %>
+        <%= t(".Why_didn't_I_get_email?") %>
+      <% end %>
+
 			<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
 			  <%= devise_error_messages! %>
 

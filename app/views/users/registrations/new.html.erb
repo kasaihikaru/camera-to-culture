@@ -6,10 +6,6 @@
         <%= link_to t(".sign_up_with_FB"), user_facebook_omniauth_authorize_path, class: "fb-register" %>
       </div> -->
 
-
-      <p><%= simple_format(t(".please_set_receiving_permission_from_CtoC"))%></p>
-
-
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
@@ -54,7 +50,9 @@
 
           <div class="field">
             <%= f.label :email, t(".email") %><br />
-            <%= f.email_field :email, autofocus: true, class: "input-text" %>
+            <%= f.email_field :email, autofocus: true, class: "input-text" %><br>
+            <span class="field-explanation"><%= simple_format(t(".please_set_receiving_permission_from_CtoC"))%></span>
+      </p>
           </div>
 
           <div class="field">
@@ -75,13 +73,17 @@
         </div>
       <% end %>
       <br><br>
+      <%= link_to to_receive_email_helps_path, class: "" do %>
+        <%= t(".Why_didn't_I_get_email?") %>
+      <% end %>
       <%= render "users/shared/links" %>
     </div>
     <div class="col-md-5 offset-md-1 d-none d-md-block">
-      
+
     </div>
   </div>
 </div>
+
 
 <% assign_meta_tags title: t(".meta_title"),
                     description: t(".meta_keywords"),
