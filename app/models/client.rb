@@ -2,10 +2,11 @@ class Client < ApplicationRecord
 
 	scope :active, -> { where(deleted_at: nil) }
 	scope :consent, -> { where(consent: true) }
-	scope :registerd, -> { where.not(introduction: nil).where.not(image: nil).where(confirmed: true) }
-	scope :intro_present, ->  {
-		joins(:user).merge(User.intro_present)
-	}
+	scope :registerd, -> { where.not(image: nil).where(confirmed: true) }
+	# scope :intro_present, ->  {
+	# 	joins(:user).merge(User.intro_present)
+	# }
+	scope :intro_present, -> { where.not(introduction_ja: nil).or(where.not(introduction_en: nil).or(where.not(introduction_zh: nil).or(where.not(introduction_tw: nil))))}
 
 	belongs_to :user
 

@@ -72,9 +72,6 @@ class ClientsController < ApplicationController
 	end
 
 	def update
-		#-----intro update-----#
-		current_user.update(introduction_ja: intro_params[:introduction_ja], introduction_en: intro_params[:introduction_en],introduction_zh:  intro_params[:introduction_zh],introduction_tw: intro_params[:introduction_tw])
-
 		#-----クライアントupdate-----#
 		cl = current_user.client
 		cl.update(cl_create_params)
@@ -229,11 +226,7 @@ private
 	end
 
 	def cl_create_params
-		params.require(:client).permit(:camera, :deliverables, :introduction, :image).merge(user_id: current_user.id)
-	end
-
-	def intro_params
-		params.permit(:introduction_ja, :introduction_en, :introduction_zh, :introduction_tw)
+		params.require(:client).permit(:camera, :deliverables, :message, :image).merge(user_id: current_user.id, introduction_ja: params[:introduction_ja], introduction_en: params[:introduction_en],introduction_zh: params[:introduction_zh],introduction_tw: params[:introduction_tw])
 	end
 
 	def cl_prim_price_params

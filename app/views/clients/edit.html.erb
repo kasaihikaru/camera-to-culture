@@ -27,7 +27,7 @@
               <div class="field">
                 <span class="bold"><%= t(".introduction_ja")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
                 <span class="field-explanation"><%= t(".120_letters_maximum")%></span><br>
-                <textarea name="introduction_ja" class="input-textarea" maxlength="120"><%= @user.introduction_ja %></textarea>
+                <textarea name="introduction_ja" class="input-textarea" maxlength="120"><%= @cl.introduction_ja %></textarea>
               </div>
             <% end %>
             <!-- 英語 -->
@@ -35,7 +35,7 @@
               <div class="field">
                 <span class="bold"><%= t(".introduction_en")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
                 <span class="field-explanation"><%= t(".120_letters_maximum")%></span><br>
-                <textarea name="introduction_en" class="input-textarea" maxlength="120"><%= @user.introduction_en %></textarea>
+                <textarea name="introduction_en" class="input-textarea" maxlength="120"><%= @cl.introduction_en %></textarea>
               </div>
             <% end %>
             <!-- 中国語 -->
@@ -44,13 +44,13 @@
                 <span class="bold"><%= t(".introduction_zh")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
                 <span class="field-explanation "><%= t(".120_letters_maximum")%></span><br>
                 <a href="https://translate.google.co.jp/" target="_blank" class="grey-col"><%= t(".open_google_translation")%></a>
-                <textarea name="introduction_zh" class="input-textarea" maxlength="120"><%= @user.introduction_zh %></textarea>
+                <textarea name="introduction_zh" class="input-textarea" maxlength="120"><%= @cl.introduction_zh %></textarea>
               </div>
               <div class="field">
                 <span class="bold"><%= t(".introduction_tw")%></span><span class="prim-col">（<%= t(".required")%>）</span><br>
                 <span class="field-explanation"><%= t(".120_letters_maximum")%></span><br>
                 <a href="https://translate.google.co.jp/" target="_blank" class="grey-col"><%= t(".open_google_translation")%></a>
-                <textarea name="introduction_tw" class="input-textarea" maxlength="120"><%= @user.introduction_tw %></textarea>
+                <textarea name="introduction_tw" class="input-textarea" maxlength="120"><%= @cl.introduction_tw %></textarea>
               </div>
             <% end %>
           <% end %>
@@ -1034,9 +1034,9 @@
 
         <!-- メッセージ -->
         <div class="field">
-          <%= f.label :introduction, t(".message"), class: "bold" %><span class="prim-col">（<%= t(".required")%>）</span><br>
+          <%= f.label :message, t(".message"), class: "bold" %><span class="prim-col">（<%= t(".required")%>）</span><br>
           <span class="field-explanation"><%= t(".importance_of_message_explanation")%></span><br>
-          <%= f.text_area :introduction, class: "input-textarea" %>
+          <%= f.text_area :message, class: "input-textarea" %>
         </div>
 
         <div class="actions">

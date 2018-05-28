@@ -147,7 +147,7 @@
                   <h2>
                     <%= t(".Introduction_ja")%>
                     <%= link_to edit_user_client_path(@user, @cl) do %>
-                        <% if @user.introduction_ja.present? %>
+                        <% if @cl.introduction_ja.present? %>
                           <%= render :partial => 'svgs/edit' %>
                         <% else %>
                           <%= render :partial => 'svgs/edit_prim' %>
@@ -155,8 +155,8 @@
                     <% end %>
                   </h2>
                   <div class="indent">
-                    <% if @user.introduction_ja? %>
-                      <%= @user.introduction_ja %>
+                    <% if @cl.introduction_ja? %>
+                      <%= @cl.introduction_ja %>
                     <% else %>
                       <%= t(".None")%>
                     <% end %>
@@ -167,7 +167,7 @@
                   <h2>
                     <%= t(".Introduction_en")%>
                     <%= link_to edit_user_client_path(@user, @cl) do %>
-                        <% if @user.introduction_en.present? %>
+                        <% if @cl.introduction_en.present? %>
                           <%= render :partial => 'svgs/edit' %>
                         <% else %>
                           <%= render :partial => 'svgs/edit_prim' %>
@@ -175,8 +175,8 @@
                     <% end %>
                   </h2>
                   <div class="indent">
-                    <% if @user.introduction_en? %>
-                      <%= @user.introduction_en %>
+                    <% if @cl.introduction_en? %>
+                      <%= @cl.introduction_en %>
                     <% else %>
                       <%= t(".None")%>
                     <% end %>
@@ -187,7 +187,7 @@
                   <h2>
                     <%= t(".Introduction_zh")%>
                     <%= link_to edit_user_client_path(@user, @cl) do %>
-                        <% if @user.introduction_zh.present? %>
+                        <% if @cl.introduction_zh.present? %>
                           <%= render :partial => 'svgs/edit' %>
                         <% else %>
                           <%= render :partial => 'svgs/edit_prim' %>
@@ -195,8 +195,8 @@
                     <% end %>
                   </h2>
                   <div class="indent">
-                    <% if @user.introduction_zh? %>
-                      <%= @user.introduction_zh %>
+                    <% if @cl.introduction_zh? %>
+                      <%= @cl.introduction_zh %>
                     <% else %>
                       <%= t(".None")%>
                     <% end %>
@@ -207,7 +207,7 @@
                   <h2>
                     <%= t(".Introduction_tw")%>
                     <%= link_to edit_user_client_path(@user, @cl) do %>
-                        <% if @user.introduction_tw.present? %>
+                        <% if @cl.introduction_tw.present? %>
                           <%= render :partial => 'svgs/edit' %>
                         <% else %>
                           <%= render :partial => 'svgs/edit_prim' %>
@@ -215,8 +215,8 @@
                     <% end %>
                   </h2>
                   <div class="indent">
-                    <% if @user.introduction_tw? %>
-                      <%= @user.introduction_tw %>
+                    <% if @cl.introduction_tw? %>
+                      <%= @cl.introduction_tw %>
                     <% else %>
                       <%= t(".None")%>
                     <% end %>
@@ -369,7 +369,7 @@
             <h2>
               <%= t(".Message") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
-                <% if @cl.introduction.present? %>
+                <% if @cl.message.present? %>
                   <%= render :partial => 'svgs/edit' %>
                 <% else %>
                   <%= render :partial => 'svgs/edit_prim' %>
@@ -377,8 +377,8 @@
               <% end %>
             </h2>
             <div class="indent">
-              <% if @cl.introduction.present? %>
-                <pre><%= @cl.introduction %></pre>
+              <% if @cl.message.present? %>
+                <pre><%= @cl.message %></pre>
               <% else %>
                 <%= t(".None")%>
               <% end %>

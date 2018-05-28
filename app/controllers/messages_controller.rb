@@ -70,6 +70,8 @@ class MessagesController < ApplicationController
 
 		# form用
 		@msg = Message.new
+
+		@locale = params[:locale]
 	end
 
 	def create

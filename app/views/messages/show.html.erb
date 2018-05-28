@@ -5,13 +5,15 @@
 	<div class="ms-user col-lg-3 d-none d-lg-block">
 		<div class="ms-user-upper">
 			<h2><%= @comunitating_user.name %></h2>
-			<%= image_tag @comunitating_user.image.url(:thumb), :alt => "icon", :class => "ms-user-icon" if @comunitating_user.image? %>
+			<% if @cl_here.user.image? %>
+				<%= image_tag @cl_here.user.image.url(:thumb), alt: "icon", class: "ms-user-icon" %>
+			<% else %>
+				<%= render :partial => 'svgs/baby_80' %>
+			<% end %>
 		</div>
 		<div class="ms-user-lower">
-			<% if @cs_here.introduction? %>
-				<h2><%= t(".Introduction") %></h2>
-				<p><%= @cs_here.introduction %></p>
-			<% end %>
+			<div class="line-break"><%= render :partial => 'clients/introduction', :locals=>{cl: @cl_here, locale: @locale} %></div>
+			<br>
 
 			<!-- カテゴリー -->
 			<% if @categories.present? %>
@@ -59,11 +61,18 @@
 
 			<% if @cl_here.camera.present? %>
 				<h2><%= render :partial => 'svgs/camera' %>&nbsp;<%= t(".Camera") %></h2>
-				<p><%= @cl_here.camera %></p>
+				<pre class="indent"><%= @cl_here.camera %></pre>
 			<% end %>
-			<% if @cl_here.introduction? %>
+
+			<!-- 納品写真 -->
+			<% if @cl_here.deliverables.present? %>
+				<h2><%= render :partial => 'svgs/deliverables' %>&nbsp;<%= t(".deliverables") %></h2>
+				<pre class="indent"><%= @cl_here.deliverables %></pre>
+			<% end %>
+
+			<% if @cl_here.message? %>
 				<h2><%= render :partial => 'svgs/message' %>&nbsp;<%= t(".Message") %></h2>
-				<p><%= @cl_here.introduction %></p>
+				<pre class="indent"><%= @cl_here.message %></pre>
 			<% end %>
 		</div>
 	</div>
