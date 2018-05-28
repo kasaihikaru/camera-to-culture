@@ -7,5 +7,5 @@ zh:
       meta_description: '上传样片'
       portfolio: 作品集样片（最多可上传19张）
       photos_are_uploaded: 张的样片已经成功上传至作品集。
-      delete_check: 多选
+      delete_check: 选择（刪除用）
       delete_btn: 选择后将照片删除

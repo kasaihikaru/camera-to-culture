@@ -7,5 +7,5 @@ tw:
       meta_description: '上傳樣片'
       portfolio: 作品集樣片（最多可上傳19張）
       photos_are_uploaded: 張的樣片已經成功上傳至作品集。
-      delete_check: 多選
+      delete_check: 選擇（刪除用）
       delete_btn: 選擇后將照片刪除
