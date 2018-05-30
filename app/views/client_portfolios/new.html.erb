@@ -52,7 +52,7 @@
               <% @portfolios.each do |portfolio| %>
                 <div class="pf col-12 col-sm-6 col-lg-4 maring-b-20">
                   <a href="<%= portfolio.image.url if portfolio.image? %>" data-lightbox="image-1" data-title="<%= @cl.user.name %>">
-                    <div class="pf-img" style="background-image: url(<%= portfolio.image.url %>);"></div>
+                    <div class="pf-img" style="background-image: url(<%= portfolio.image.thumb.url %>);"></div>
                   </a>
                   <label class="checkbox float-right">
                     <input type="checkbox" name="delete_portfolio[]" value=<%= portfolio.id %>>

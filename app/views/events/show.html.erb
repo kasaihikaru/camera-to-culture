@@ -111,14 +111,14 @@
 			<div class="ev-show-icons clearfix">
 				<div class="float-left">
 					<% if @cs_here.user.image? %>
-						<%= image_tag @cs_here.user.image.url, alt: "icon" %>
+						<%= image_tag @cs_here.user.image.thumb.url, alt: "icon" %>
 					<% else %>
 						<%= render :partial => 'svgs/baby' %>
 					<% end %>
 				</div>
 				<div class="float-right">
 					<% if @cl_here.user.image? %>
-						<%= image_tag @cl_here.user.image.url, alt: "icon" %>
+						<%= image_tag @cl_here.user.image.thumb.url, alt: "icon" %>
 					<% else %>
 						<%= render :partial => 'svgs/baby' %>
 					<% end %>

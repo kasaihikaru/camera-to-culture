@@ -29,9 +29,9 @@ ja:
         色のみの微修正写真：  30枚
         修正写真：  10枚
       deliverables_value: |
-        納品枚数：  ____枚以上
-        色のみの微修正写真：  ____枚
-        修正写真：  ____枚
+        納品枚数：  xx枚以上
+        色のみの微修正写真：  xx枚
+        修正写真：  xx枚
       message: お客様へのメッセージ
       importance_of_message_explanation: Camera-to-Cultureでカメラマンとして活動する上で、最も大事なことはコミュニケーションです。得意な撮影の説明や、詳しい自己紹介をしましょう。
       main_image: メイン写真を登録
@@ -156,7 +156,7 @@ ja:
       yen_per_hour: 円/時間
       hours_minimum: 時間から受け付けます
       Option_Menu: オプションメニュー
-      price_per_hour: １時間あたり%{price}円
+      price_per_hour: '１時間あたり%{price}円'
       yen: 円
       Camera: カメラ
       deliverables: 納品写真について

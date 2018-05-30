@@ -8,7 +8,7 @@
       <div class="row">
         <% ev_photos_6.each do |ev_photo| %>
           <div class="pf col-12 col-sm-6 col-lg-4 maring-b-20">
-            <div class="pf-img" style="background-image: url(<%= ev_photo.image.url %>);"></div>
+            <div class="pf-img" style="background-image: url(<%= ev_photo.image.thumb.url %>);"></div>
           </div>
         <% end %>
       </div>

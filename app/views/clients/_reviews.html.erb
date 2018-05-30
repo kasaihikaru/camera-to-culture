@@ -1,7 +1,7 @@
 <div class="cl-show-rv">
 	<div class="cl-show-rv-name clearfix">
 		<% if ev.customer.user.image? %>
-			<%= image_tag ev.customer.user.image.url, alt: "icon" %>
+			<%= image_tag ev.customer.user.image.thumb.url, alt: "icon" %>
 		<% else %>
 			<%= image_tag("/images/baby.png") %>
 		<% end %>

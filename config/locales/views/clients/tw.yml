@@ -29,9 +29,9 @@ tw:
         粗修：  30張
         精修：  10張
       deliverables_value: |
-        交付張數：  ____張以上
-        粗修：  ____張
-        精修：  ____張
+        交付張數：  xx張以上
+        粗修：  xx張
+        精修：  xx張
       introduction: 自我簡介（120字以内）
       message: 向顧客詳細介紹自己
       importance_of_message_explanation: 在Camera-to-Culture成為攝影師，最重要的是與顧客的交流。寫下您那首的攝影詳情，詳細的向顧客介紹自己吧。
@@ -157,7 +157,7 @@ tw:
       yen_per_hour: 円/1小時
       hours_minimum: 小時起可接片
       Option_Menu: 附加服務
-      price_per_hour: 每1小時%{price}円
+      price_per_hour: '每1小時%{price}円'
       yen: 円
       Camera: 相機
       deliverables: 關於交付照片

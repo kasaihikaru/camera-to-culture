@@ -4,7 +4,7 @@
 	<!-- 名前、アイコン -->
 	<div class="ev-new-cl">
 		<a href="#ev-new-profile">
-			<%= image_tag @cl_here.user.image.url, alt: "icon" if @cl_here.user.image? %>
+			<%= image_tag @cl_here.user.image.thumb.url, alt: "icon" if @cl_here.user.image? %>
 		</a>
 	</div>
 

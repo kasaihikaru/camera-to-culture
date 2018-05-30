@@ -63,8 +63,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   process :convert => 'jpg'
 
   # サムネイルを生成する設定
+  # version :thumb do
+  #   process :resize_to_fill => [200, 200, gravity = ::Magick::CenterGravity]
+  # end
+
   version :thumb do
-    process :resize_to_fill => [200, 200, gravity = ::Magick::CenterGravity]
+      process resize_to_limit: [500, 400]
   end
 
   # Override the filename of the uploaded files:

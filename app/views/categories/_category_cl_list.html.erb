@@ -14,11 +14,11 @@
 								<%= link_to client_path(cl), target: "_blank", rel: "noopener noreferrer" do %>
 									<div class="carousel-inner">
 										<div class="carousel-item active">
-											<%= image_tag cl.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if cl.image? %>
+											<%= image_tag cl.image.thumb.url, :alt => "sample", :class => "cameraman-list-portfolio" if cl.image? %>
 										</div>
 										<% cl.client_portfolios.each do |pf| %>
 											<div class="carousel-item">
-												<%= image_tag pf.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if pf.image? %>
+												<%= image_tag pf.image.thumb.url, :alt => "sample", :class => "cameraman-list-portfolio" if pf.image? %>
 											</div>
 										<% end %>
 									</div>
@@ -74,11 +74,11 @@
 								<%= link_to client_path(cl), target: "_blank", rel: "noopener noreferrer" do %>
 									<div class="carousel-inner">
 										<div class="carousel-item active">
-											<%= image_tag cl.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if cl.image? %>
+											<%= image_tag cl.image.thumb.url, :alt => "sample", :class => "cameraman-list-portfolio" if cl.image? %>
 										</div>
 										<% cl.client_portfolios.each do |pf| %>
 											<div class="carousel-item">
-												<%= image_tag pf.image.url, :alt => "sample", :class => "cameraman-list-portfolio" if pf.image? %>
+												<%= image_tag pf.image.thumb.url, :alt => "sample", :class => "cameraman-list-portfolio" if pf.image? %>
 											</div>
 										<% end %>
 									</div>

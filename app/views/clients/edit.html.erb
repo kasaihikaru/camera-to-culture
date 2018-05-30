@@ -72,7 +72,7 @@
             <span class="field-explanation">
               <%= t(".main_image_explain")%>
             </span><br>
-            <%= image_tag @cl.image.url, :alt => "Main Image", class: "image" if @cl.image? %><br>
+            <%= image_tag @cl.image.thumb.url, :alt => "Main Image", class: "image" if @cl.image? %><br>
             <%= f.file_field :image %>
           </div>
         </div>

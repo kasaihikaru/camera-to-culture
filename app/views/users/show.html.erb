@@ -90,7 +90,7 @@
             <% end %>
           </h2>
           <% if @user.image.present? %>
-            <%= image_tag @user.image.url, :alt => "icon" %>
+            <%= image_tag @user.image.thumb.url, :alt => "icon" %>
           <% else %>
             <%= render :partial => 'svgs/baby' %>
           <% end %>
