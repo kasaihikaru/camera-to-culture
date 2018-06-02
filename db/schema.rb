@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180602111403) do
+ActiveRecord::Schema.define(version: 20180602114543) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "ja_group", null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20180602111403) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "name"
+    t.string "name"
     t.index ["client_id"], name: "index_client_contacts_on_client_id"
   end
 
