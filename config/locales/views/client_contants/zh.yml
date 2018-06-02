@@ -7,6 +7,7 @@ zh:
       meta_description: '登录成为摄影师'
       register_as_cameraman: 登录摄影师
       An_eroor_occurred: 输入的内容有误
+      name: 真实姓名
       phone_number: 联络电话（半角数字)
       This_field_does_not_share_with_other_users : ＊非公开项目
       address: 住址
@@ -19,6 +20,7 @@ zh:
       meta_description: '电话号码・更改住址'
       change_contacts: 更改联络方式
       An_eroor_occurred: 无法注册成功
+      name: 真实姓名
       phone_number: 联络电话
       This_field_does_not_share_with_other_users : ＊非公开项目
       address: 住址

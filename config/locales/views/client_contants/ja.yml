@@ -7,6 +7,7 @@ ja:
       meta_description: 'カメラマン登録'
       register_as_cameraman: カメラマンとして登録する
       An_eroor_occurred: 入力ミスがあります
+      name: 本名
       phone_number: 電話番号(半角数字)
       This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
       address: 住所
@@ -19,6 +20,7 @@ ja:
       meta_description: '電話番号・住所変更'
       change_contacts: 連絡先情報を変更する
       An_eroor_occurred: 登録できませんでした
+      name: 本名
       phone_number: 電話番号
       This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
       address: 住所

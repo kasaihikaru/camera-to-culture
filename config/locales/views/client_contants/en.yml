@@ -7,6 +7,7 @@ en:
       meta_description: ''
       register_as_cameraman: Register as a Cameraman
       An_eroor_occurred: an error occurred
+      name: Your real name
       phone_number: Phone number
       This_field_does_not_share_with_other_users : ＊This field does not share with other users
       address: Address
@@ -19,6 +20,7 @@ en:
       meta_description: ''
       change_contacts: Change your contacts
       An_eroor_occurred: an error occurred
+      name: Your real name
       phone_number: Phone number
       This_field_does_not_share_with_other_users : ＊This field does not share with other users
       address: Address

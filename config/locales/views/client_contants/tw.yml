@@ -7,6 +7,7 @@ tw:
       meta_description: '登錄成為攝影師'
       register_as_cameraman: 登錄攝影師
       An_eroor_occurred: 輸入的內容有誤
+      name: 真實姓名
       phone_number: 聯絡電話（半角數字）
       This_field_does_not_share_with_other_users : ＊非公開項目
       address: 住址
@@ -19,6 +20,7 @@ tw:
       meta_description: '電話號碼・更改住址'
       change_contacts: 修改聯絡方式
       An_eroor_occurred: 無法註冊成功
+      name: 真實姓名
       phone_number: 聯絡電話
       This_field_does_not_share_with_other_users : ＊非公開項目
       address: 住址

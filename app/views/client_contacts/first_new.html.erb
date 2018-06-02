@@ -23,6 +23,15 @@
         <!-- 入力フィールド -->
         <% if @pre_cl_contact.present? %>
           <div class="field">
+            <%= f.label :name, t(".name") %>
+            &emsp;<span class="field-explanation">
+              <%= t(".This_field_does_not_share_with_other_users") %>
+            </span>
+            <br>
+            <%= f.text_field :name, required: true, placeholder: "", maxlength: "100", value: @pre_cl_contact.name, class: "input-text" %>
+          </div>
+
+          <div class="field">
             <%= f.label :tel, t(".phone_number") %>
             &emsp;<span class="field-explanation">
               <%= t(".This_field_does_not_share_with_other_users") %>
@@ -41,6 +50,15 @@
           </div>
 
         <% else %>
+          <div class="field">
+            <%= f.label :name, t(".name") %>
+            &emsp;<span class="field-explanation">
+              <%= t(".This_field_does_not_share_with_other_users") %>
+            </span>
+            <br>
+            <%= f.text_field :name, required: true, placeholder: "", maxlength: "100",class: "input-text" %>
+          </div>
+
           <div class="field">
             <%= f.label :tel, t(".phone_number") %>
             &emsp;<span class="field-explanation">

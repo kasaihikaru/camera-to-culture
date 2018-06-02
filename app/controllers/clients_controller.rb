@@ -167,8 +167,12 @@ class ClientsController < ApplicationController
 			end
 		end
 
-		flash[:alert] = t(".Setting_has_updated")
-		redirect_to edit_user_client_path(current_user, cl)
+		if cl.client_portfolios.active.present?
+			flash[:alert] = t(".Setting_has_updated")
+			redirect_to edit_user_client_path(current_user, cl)
+		else
+			redirect_to new_client_client_portfolio_path(cl)
+		end
 	end
 
 	def pre_month
