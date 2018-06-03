@@ -16,6 +16,7 @@ zh:
       None: 没有
       Introduction: 自我介绍（在身为顾客向摄影师申请预约时显示）
       information_as_a_photographer: 摄影师情报
+      Jump_to_your_page: 去看看你的个人页面
       Introduction_ja: 自我介紹（日語）
       Introduction_en: 自我介紹（英語）
       Introduction_zh: 自己介紹（中文簡体字）
@@ -47,7 +48,7 @@ zh:
       mypage: 主页
       message: 消息
       events: 在CtoC的撮影
-      cameraman_menu: 设定摄影师内容
+      cameraman_menu: 摄影师用户设定
       user_settings: 用户设定
       register_as_cameraman: 成为摄影师
     mypage_menu_event:

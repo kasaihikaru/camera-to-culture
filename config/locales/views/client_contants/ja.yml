@@ -9,9 +9,13 @@ ja:
       An_eroor_occurred: 入力ミスがあります
       name: 本名
       phone_number: 電話番号(半角数字)
-      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
+      This_field_does_not_share_with_other_users : ＊他のユーザーには以下の情報は共有されません
       address: 住所
       adress_example: 〇〇県 〇〇市 〇〇 １−１−１
+      SNS_account: SNSアカウント
+      If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below: 電話でなく、SNSでの連絡希望の方は以下に記入してください。
+      line_id: LINE ID
+      wechat_id: WeChat ID
       terms_of_service: 利用規約
       register_btn: 規約に同意して登録
     new:
@@ -22,9 +26,13 @@ ja:
       An_eroor_occurred: 登録できませんでした
       name: 本名
       phone_number: 電話番号
-      This_field_does_not_share_with_other_users : ＊他のユーザーには共有されません
+      This_field_does_not_share_with_other_users : ＊他のユーザーには以下の情報は共有されません
       address: 住所
       adress_example: 〇〇県 〇〇市 〇〇 １−１−１
+      SNS_account: SNSアカウント
+      If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below: 電話でなく、SNSでの連絡希望の方は以下に記入してください。
+      line_id: LINE ID
+      wechat_id: WeChat ID
       register_btn: 更新
     create:
       Setting_has_updated: 更新しました

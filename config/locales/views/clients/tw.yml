@@ -2,19 +2,19 @@
 tw:
   clients:
     edit:
-      meta_title: '攝影師情報登錄'
+      meta_title: '攝影師的簡介'
       meta_keywords: '攝影師情報, 攝影師簡介, 登錄, 寫真, 撮影, 拍攝, 拍照, Camera-to-Culture'
-      meta_description: '攝影師情報登錄'
+      meta_description: '攝影師的簡介'
       cl_form: 編輯攝影師個人頁面
       Jump_to_your_page: 去看看你的個人頁面
       Jump_to_how_to_regist_page: 去看看如何登錄
       You_have_not_registered_your_languages: 還未設置使用語言。
       Please_register_languages_you_speak: 首先，請設置您能使用的語言！
-      introduction_ja: 自我介紹（日語）
-      introduction_en: 自我介紹（英語）
-      introduction_zh: 自己介紹（中文簡体字）
-      introduction_tw: 自己介紹（中文繁体字）
-      introduction: 自己介紹
+      introduction_ja: 自我簡介（日語）
+      introduction_en: 自我簡介（英語）
+      introduction_zh: 自我簡介（中文簡体字）
+      introduction_tw: 自我簡介（中文繁体字）
+      introduction: 自我簡介
       ja: 日語
       en: 英語
       zh: 中文簡体字

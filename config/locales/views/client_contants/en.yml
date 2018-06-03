@@ -12,6 +12,10 @@ en:
       This_field_does_not_share_with_other_users : ＊This field does not share with other users
       address: Address
       adress_example: '1-1-1, A city, B prefecture, Japan'
+      SNS_account: SNS Account
+      If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below: If you want to contact us via sns fill in the balnk below.
+      line_id: LINE ID
+      wechat_id: WeChat ID
       terms_of_service: Terms of service
       register_btn: Agree to Terms and Register
     new:
@@ -25,6 +29,10 @@ en:
       This_field_does_not_share_with_other_users : ＊This field does not share with other users
       address: Address
       adress_example: '1-1-1, A city, B prefecture, Japan'
+      SNS_account: SNS Account
+      If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below: If you want to contact us via sns fill in the balnk below.
+      line_id: LINE ID
+      wechat_id: WeChat ID
       register_btn: Updata
     create:
       Setting_has_updated: Setting_has_updated

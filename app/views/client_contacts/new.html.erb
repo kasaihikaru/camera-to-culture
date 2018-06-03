@@ -6,6 +6,9 @@
   <div class="row">
     <div class="col-12 col-md-8 offset-md-2 mypage-content">
       <h1><%= t(".change_contacts") %></h1>
+      <span class="field-explanation">
+        <%= t(".This_field_does_not_share_with_other_users") %>
+      </span><br><br>
 
       <%= form_for([@user, @cl, @contact]) do |f| %>
 
@@ -23,58 +26,49 @@
         <!-- 入力フィールド -->
         <% if @pre_cl_contact.present? %>
           <div class="field">
-            <%= f.label :name, t(".name") %>
-            &emsp;<span class="field-explanation">
-              <%= t(".This_field_does_not_share_with_other_users") %>
-            </span>
-            <br>
+            <%= f.label :name, t(".name") %><br>
             <%= f.text_field :name, required: true, placeholder: "", maxlength: "100", value: @pre_cl_contact.name, class: "input-text" %>
           </div>
 
           <div class="field">
-            <%= f.label :tel, t(".phone_number") %>
-            &emsp;<span class="field-explanation">
-              <%= t(".This_field_does_not_share_with_other_users") %>
-            </span>
-            <br>
+            <%= f.label :tel, t(".phone_number") %><br>
             <%= f.text_field :tel, required: true, placeholder: "08012345678", maxlength: "15", value: @pre_cl_contact.tel, class: "input-text" %>
           </div>
 
           <div class="field">
-            <%= f.label :address, t(".address") %>
-            &emsp;<span class="field-explanation">
-              <%= t(".This_field_does_not_share_with_other_users") %>
-            </span>
-            <br>
+            <%= f.label :address, t(".address") %><br>
             <%= f.text_field :address, required: true, placeholder: t(".adress_example"), maxlength: "1500", value: @pre_cl_contact.address, class: "input-text" %>
+          </div>
+          <div class="field">
+            <%= f.label :sns_account, t(".SNS_account") %>
+            &emsp;<span class="field-explanation"><%= t(".If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below") %></span>
+            <br>
+            <%= f.text_field :line_id, required: false, placeholder: t(".line_id"), maxlength: "100", value: @pre_cl_contact.line_id, class: "input-text" %>
+            <%= f.text_field :wechat_id, required: false, placeholder: t(".wechat_id"), maxlength: "100", value: @pre_cl_contact.wechat_id, class: "input-text" %>
           </div>
 
         <% else %>
           <div class="field">
-            <%= f.label :name, t(".name") %>
-            &emsp;<span class="field-explanation">
-              <%= t(".This_field_does_not_share_with_other_users") %>
-            </span>
-            <br>
+            <%= f.label :name, t(".name") %><br>
             <%= f.text_field :name, required: true, placeholder: "", maxlength: "100",class: "input-text" %>
           </div>
 
           <div class="field">
-            <%= f.label :tel, t(".phone_number") %>
-            &emsp;<span class="field-explanation">
-              <%= t(".This_field_does_not_share_with_other_users") %>
-            </span>
-            <br>
+            <%= f.label :tel, t(".phone_number") %><br>
             <%= f.text_field :tel, required: true, placeholder: "08012345678", maxlength: "15",class: "input-text" %>
           </div>
 
           <div class="field">
-            <%= f.label :address, t(".address") %>
-            &emsp;<span class="field-explanation">
-              <%= t(".This_field_does_not_share_with_other_users") %>
-            </span>
-            <br>
+            <%= f.label :address, t(".address") %><br>
             <%= f.text_field :address, required: true, placeholder: t(".adress_example"), maxlength: "1500", class: "input-text" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :sns_account, t(".SNS_account") %>
+            &emsp;<span class="field-explanation"><%= t(".If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below") %></span>
+            <br>
+            <%= f.text_field :line_id, required: false, placeholder: t(".line_id"), maxlength: "100", class: "input-text" %>
+            <%= f.text_field :wechat_id, required: false, placeholder: t(".wechat_id"), maxlength: "100", class: "input-text" %>
           </div>
         <% end %>
 

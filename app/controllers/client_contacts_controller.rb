@@ -88,7 +88,7 @@ class ClientContactsController < ApplicationController
 
 private
 	def create_params
-		params.require(:client_contact).permit(:tel, :address, :name).merge(client_id: params[:client_id])
+		params.require(:client_contact).permit(:tel, :address, :name, :line_id, :wechat_id).merge(client_id: params[:client_id])
 	end
 
 	def user_check

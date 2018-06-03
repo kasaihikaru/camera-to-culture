@@ -9,9 +9,13 @@ tw:
       An_eroor_occurred: 輸入的內容有誤
       name: 真實姓名
       phone_number: 聯絡電話（半角數字）
-      This_field_does_not_share_with_other_users : ＊非公開項目
+      This_field_does_not_share_with_other_users : ＊以下為非公開項目
       address: 住址
       adress_example: 〇〇縣 〇〇市 〇〇 １−１−１
+      SNS_account: SNS 賬號
+      If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below: 不願留電話、希望留下SNS聯絡方式的攝影師請填寫此內容。
+      line_id: LINE ID
+      wechat_id: WeChat ID
       terms_of_service: 註冊協議
       register_btn: 同意註冊協議并註冊
     new:
@@ -22,9 +26,13 @@ tw:
       An_eroor_occurred: 無法註冊成功
       name: 真實姓名
       phone_number: 聯絡電話
-      This_field_does_not_share_with_other_users : ＊非公開項目
+      This_field_does_not_share_with_other_users : ＊以下為非公開項目
       address: 住址
       adress_example: 〇〇縣 〇〇市 〇〇 １−１−１
+      SNS_account: SNS 賬號
+      If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below: 不願留電話、希望留下SNS聯絡方式的攝影師請填寫此內容。
+      line_id: LINE ID
+      wechat_id: WeChat ID
       register_btn: 修改
     create:
       Setting_has_updated: 修改成功

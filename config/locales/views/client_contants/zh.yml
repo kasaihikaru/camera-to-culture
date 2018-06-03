@@ -9,9 +9,13 @@ zh:
       An_eroor_occurred: 输入的内容有误
       name: 真实姓名
       phone_number: 联络电话（半角数字)
-      This_field_does_not_share_with_other_users : ＊非公开项目
+      This_field_does_not_share_with_other_users : ＊以下为非公开项目
       address: 住址
       adress_example: 〇〇县 〇〇市 〇〇 １−１−１
+      SNS_account: SNS 账号
+      If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below: 不愿留电话、希望留下SNS联络方式的摄影师请填写此内容。
+      line_id: LINE ID
+      wechat_id: WeChat ID
       terms_of_service: 注册协议
       register_btn: 同意注册协议并注册
     new:
@@ -22,9 +26,13 @@ zh:
       An_eroor_occurred: 无法注册成功
       name: 真实姓名
       phone_number: 联络电话
-      This_field_does_not_share_with_other_users : ＊非公开项目
+      This_field_does_not_share_with_other_users : ＊以下为非公开项目
       address: 住址
       adress_example: 〇〇县 〇〇市 〇〇 １−１−１
+      SNS_account: SNS 账号
+      If_you_want_to_contact_us_via_sns_fill_in_the_balnk_below: 不愿留电话、希望留下SNS联络方式的摄影师请填写此内容。
+      line_id: LINE ID
+      wechat_id: WeChat ID
       register_btn: 更新
     create:
       Setting_has_updated: 更新成功

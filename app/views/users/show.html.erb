@@ -137,6 +137,13 @@
           <!-- カメラマン情報 -->
           <% if @cl.consent == true && @cl.deleted_at == nil %>
           <h1><%= t(".information_as_a_photographer") %></h1>
+          <div class="subprim-col right-align">
+            <% if @cl.image != nil && (@cl.introduction_ja != nil || @cl.introduction_en != nil || @cl.introduction_zh != nil || @cl.introduction_tw != nil) %>
+              <%= link_to client_path(@cl), class: "", target: "blank" do %>
+                <%= t(".Jump_to_your_page")%>
+              <% end %><br>
+            <% end %>
+          </div>
           <hr>
 
             <!-- 簡易自己紹介 -->

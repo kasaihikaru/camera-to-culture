@@ -16,6 +16,7 @@ tw:
       None: 沒有
       Introduction: 自我介紹（在身為顧客向攝影師申請預約時顯示）
       information_as_a_photographer: 攝影師情報
+      Jump_to_your_page: 去看看你的個人頁面
       Introduction_ja: 自己紹介（日本語）
       Introduction_en: 自己紹介（英語）
       Introduction_zh: 自己紹介（中国語簡体字）
@@ -47,7 +48,7 @@ tw:
       mypage: 主頁
       message: 消息
       events: 在CtoC的撮影
-      cameraman_menu: 設定攝影師內容
+      cameraman_menu: 攝影師用戶設定
       user_settings: 用戶設定
       register_as_cameraman: 成為攝影師
     mypage_menu_event:
