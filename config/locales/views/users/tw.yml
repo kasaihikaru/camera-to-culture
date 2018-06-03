@@ -20,6 +20,11 @@ tw:
       Introduction_en: 自己紹介（英語）
       Introduction_zh: 自己紹介（中国語簡体字）
       Introduction_tw: 自己紹介（中国語繁体字）
+      introduction: 自己介紹
+      ja: 日語
+      en: 英語
+      zh: 中文簡体字
+      tw: 中文繁体字
       Available_dates: 可以拍攝的日程
       available_dates_explanation: "已登錄了%{nums}天作為可以拍攝的日程。"
       Photographing_Categories: 攝影類別
@@ -36,28 +41,47 @@ tw:
       Your_Main_Photo: 優先照片
       Portfolios: 作品集
       photos_are_uploaded: 已登錄張作品集。
-
+      sign-out: 退出登錄
     mypage_menu:
       Menu: 菜單
       mypage: 主頁
       message: 消息
       events: 在CtoC的撮影
+      cameraman_menu: 設定攝影師內容
+      user_settings: 用戶設定
+      register_as_cameraman: 成為攝影師
+    mypage_menu_event:
       In_the_future: 今後的攝影
       In_the_past: 過去的攝影
-      As_a_customer: （作為顧客）
-      As_a_cameraman_future: 今後的攝影計劃（作為攝影師）
-      As_a_cameraman_past: 過去的攝影（作為攝影師）
-      user_settings: 用戶設定
+      As_a_customer: 作為顧客
+      As_a_cameraman: 作為攝影師
+      As_a_cameraman_future: 今後的攝影計劃
+      As_a_cameraman_past: 過去的攝影
+    mypage_menu_user:
       edit_profile: 用戶簡介
       settings: 設定
       account_settings: 註銷
-      register_as_cameraman: 成為攝影師
+    mypage_menu_camera:
       change_phone_number_adress: 更改聯繫電話、地址
-      cameraman_menu: 設定攝影師內容
       cl_schedule: 設定可拍攝日程
       cl_settings: 攝影師的簡介
       upload_cl_portpolios: 上傳樣片
-      sign-out: 退出登錄
+    mypage_menu_event_sm:
+      In_the_future: 今後的攝影
+      In_the_past: 過去的攝影
+      As_a_customer: 作為顧客
+      As_a_cameraman: 作為攝影師
+      As_a_cameraman_future: 今後的攝影計劃
+      As_a_cameraman_past: 過去的攝影
+    mypage_menu_user_sm:
+      edit_profile: 用戶簡介
+      settings: 設定
+      account_settings: 註銷
+    mypage_menu_camera_sm:
+      change_phone_number_adress: 更改聯繫電話、地址
+      cl_schedule: 設定可拍攝日程
+      cl_settings: 攝影師的簡介
+      upload_cl_portpolios: 上傳樣片
 
     profile:
       meta_title: '編輯個人信息'

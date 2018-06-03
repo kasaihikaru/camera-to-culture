@@ -1,10 +1,10 @@
 <div class="container-fluid mypage-container">
-  <div class="row mypage-wrapper">
-    <div class="col-12 col-md-3 offset-md-1 mypage-menu">
-      <%= render :partial => 'users/mypage_menu' %>
-    </div>
+  <div class="col-12 mypage-menu">
+    <%= render :partial => 'users/mypage_menu', :locals=>{page: "cl-portfolio"} %>
+  </div>
 
-    <div class="col-12 col-md-8 mypage-content">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 mypage-content">
       <h1><%= t(".portfolio")%></h1>
       <hr>
       <p><%= @portfolio_nums %><%= t(".photos_are_uploaded")%></p>

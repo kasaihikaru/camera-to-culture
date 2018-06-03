@@ -1,10 +1,11 @@
 <div class="container-fluid mypage-container">
-  <div class="row mypage-wrapper">
-    <div class="col-12 col-md-3 offset-md-1 mypage-menu">
-      <%= render :partial => 'users/mypage_menu' %>
-    </div>
+  <div class="col-12 mypage-menu">
+    <%= render :partial => 'users/mypage_menu', :locals=>{page: "user-edit"} %>
+  </div>
+  <hr>
 
-    <div class="col-12 col-md-8 mypage-content">
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2 mypage-content">
       <h1><%= t(".Edit_Settings")%></h1>
       <hr>
 

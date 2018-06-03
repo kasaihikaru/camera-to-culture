@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-2 offset-2">
+    <%= link_to profile_users_path do %>
+      <% if page == "user-profile" %>
+        <p class="selected">&emsp;<%= t(".edit_profile") %></p>
+      <% else %>
+        <p class="under-marker-grey">&emsp;<%= t(".edit_profile") %></p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-2">
+    <%= link_to edit_user_registration_path do %>
+      <% if page == "user-edit" %>
+        <p class="selected">&emsp;<%= t(".settings") %></p>
+      <% else %>
+        <p class="under-marker-grey">&emsp;<%= t(".settings") %></p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-2">
+    <%= link_to account_setting_users_path do %>
+      <% if page == "user-account" %>
+        <p class="selected">&emsp;<%= t(".account_settings") %></p>
+      <% else %>
+        <p class="under-marker-grey">&emsp;<%= t(".account_settings") %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

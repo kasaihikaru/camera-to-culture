@@ -1,0 +1,28 @@
+<%= link_to user_client_client_schedules_path(user, cl, day: Date.today ) do %>
+  <% if page == "cl-schedule" %>
+    <p class="selected">&emsp;<%= t(".cl_schedule") %></p>
+  <% else %>
+    <p class="under-marker-grey">&emsp;<%= t(".cl_schedule") %></p>
+  <% end %>
+<% end %>
+<%= link_to edit_user_client_path(user, cl) do %>
+  <% if page == "cl-edit" %>
+    <p class="selected">&emsp;<%= t(".cl_settings") %></p>
+  <% else %>
+    <p class="under-marker-grey">&emsp;<%= t(".cl_settings") %></p>
+  <% end %>
+<% end %>
+<%= link_to new_client_client_portfolio_path(cl) do %>
+  <% if page == "cl-portfolio" %>
+    <p class="selected">&emsp;<%= t(".upload_cl_portpolios") %></p>
+  <% else %>
+    <p class="under-marker-grey">&emsp;<%= t(".upload_cl_portpolios") %></p>
+  <% end %>
+<% end %>
+<%= link_to new_user_client_client_contact_path(user, cl) do %>
+  <% if page == "cl-contact" %>
+    <p class="selected">&emsp;<%= t(".change_phone_number_adress") %></p>
+  <% else %>
+    <p class="under-marker-grey">&emsp;<%= t(".change_phone_number_adress") %></p>
+  <% end %>
+<% end %>

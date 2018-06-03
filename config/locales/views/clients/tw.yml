@@ -14,6 +14,11 @@ tw:
       introduction_en: 自我介紹（英語）
       introduction_zh: 自己介紹（中文簡体字）
       introduction_tw: 自己介紹（中文繁体字）
+      introduction: 自己介紹
+      ja: 日語
+      en: 英語
+      zh: 中文簡体字
+      tw: 中文繁体字
       120_letters_maximum: 頁面最開頭顯示的簡短自我介紹。請輸入120字以內的內容。
       open_google_translation: 打開google翻譯
       required: 必填

@@ -1,103 +1,120 @@
 <!-- sm以下 -->
 <div class="d-block d-md-none">
-  <!-- メニュー -->
-  <a data-toggle="collapse" href="#mypage-menu-sm" id="mypage-menu-link-sm" class="collapsed">
-    <p class="mypage-menu-btn-sm" >
-      <%= t(".Menu") %><span id="mypage-menu-btn-icon">▼</span>
-    </p>
-  </a>
-  <div class="collapse" id="mypage-menu-sm">
-    <hr>
+  <div class="row mypage-menu-sm"">
     <!-- ホーム -->
-    <%= link_to user_path(current_user) do %>
-      <p class="selected"><span class="glyphicon glyphicon-hand-right"></span><%= t(".mypage") %></p>
-    <% end %>
-    <hr>
-
-    <!-- メッセージ -->
-    <%= link_to user_messages_path(@user) do %>
-      <p><%= t(".message") %></p>
-    <% end %>
-    <hr>
-
+    <div class="col-6 col-sm-3">
+      <%= link_to user_path(current_user) do %>
+        <% if page == "usershow" %>
+          <div class="mypage-menu-sm-btn pushed">
+            <%= t(".mypage") %>
+          </div>
+        <% else %>
+          <div class="mypage-menu-sm-btn square_btn">
+            <%= t(".mypage") %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     <!-- 撮影 -->
-    <a data-toggle="collapse" href="#mypage-menu-events-sm">
-      <p><%= t(".events") %></p>
-    </a>
-    <div class="collapse" id="mypage-menu-events-sm">
-      <%= link_to cs_future_events_path do %>
-        <p>
-          &emsp;<%= t(".In_the_future") %>
-          <% if @cl.consent == true %><%= t(".As_a_customer") %><% end %>
-        </p>
-      <% end %>
-      <%= link_to cs_past_events_path do %>
-        <p>
-          &emsp;<%= t(".In_the_past") %>
-          <% if @cl.consent == true %><%= t(".As_a_customer") %><% end %>
-        </p>
-      <% end %>
-      <% if @cl.consent == true %>
-        <%= link_to cl_future_events_path do %>
-          <p>&emsp;<%= t(".As_a_cameraman_future") %></p>
-        <% end %>
-        <%= link_to cl_past_events_path do %>
-          <p>&emsp;<%= t(".As_a_cameraman_past") %></p>
-        <% end %>
-      <% end %>
-
-    </div>
-    <hr>
-
-    <!-- ユーザー設定 -->
-    <a data-toggle="collapse" href="#mypage-menu-settings-sm">
-      <p><%= t(".user_settings") %></p>
-    </a>
-    <div class="collapse" id="mypage-menu-settings-sm">
-      <%= link_to profile_users_path do %>
-        <p>&emsp;<%= t(".edit_profile") %></p>
-      <% end %>
-      <%= link_to edit_user_registration_path do %>
-        <p>&emsp;<%= t(".settings") %></p>
-      <% end %>
-      <%= link_to account_setting_users_path do %>
-        <p>&emsp;<%= t(".account_settings") %></p>
+    <div class="col-6 col-sm-3">
+      <% if page.in?(['cs-future','cs-past','cl-future','cl-past']) %>
+        <a data-toggle="collapse" href="#mypage-menu-events-sm">
+          <div class="mypage-menu-sm-btn pushed">
+            <%= t(".events") %>
+          </div>
+        </a>
+      <% else %>
+        <a data-toggle="collapse" href="#mypage-menu-events-sm">
+          <div class="mypage-menu-sm-btn square_btn">
+            <%= t(".events") %>
+          </div>
+        </a>
       <% end %>
     </div>
-    <hr>
-
     <!-- カメラマンメニュー -->
     <% if @cl.consent == true %>
-      <a data-toggle="collapse" href="#mypage-menu-cameraman-sm">
-        <p><%= t(".cameraman_menu") %></p>
-      </a>
-      <div class="collapse" id="mypage-menu-cameraman-sm">
-        <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
-          <p>&emsp;<%= t(".cl_schedule") %></p>
-        <% end %>
-        <%= link_to edit_user_client_path(@user, @cl) do %>
-          <p>&emsp;<%= t(".cl_settings") %></p>
-        <% end %>
-        <%= link_to new_client_client_portfolio_path(@cl) do %>
-          <p>&emsp;<%= t(".upload_cl_portpolios") %></p>
-        <% end %>
-        <%= link_to new_user_client_client_contact_path(@user, @cl) do %>
-          <p>&emsp;<%= t(".change_phone_number_adress") %></p>
+      <div class="col-6 col-sm-3">
+        <% if page.in?(['cl-schedule','cl-edit','cl-portfolio','cl-contact']) %>
+          <a data-toggle="collapse" href="#mypage-menu-cameraman-sm">
+            <div class="mypage-menu-sm-btn pushed">
+              <%= t(".cameraman_menu") %>
+            </div>
+          </a>
+        <% else %>
+          <a data-toggle="collapse" href="#mypage-menu-cameraman-sm">
+            <div class="mypage-menu-sm-btn square_btn">
+              <%= t(".cameraman_menu") %>
+            </div>
+          </a>
         <% end %>
       </div>
-
-
-    <!-- カメラマンになる -->
-    <% else %>
-      <%= link_to first_new_user_client_client_contacts_path(@user, @cl) do %>
-        <p><%= t(".register_as_cameraman") %></p>
-      <% end %>
     <% end %>
-    <hr>
+    <!-- ユーザー設定 -->
+    <div class="col-6 col-sm-3">
+      <% if page.in?(['user-profile','user-edit','user-account','logout']) %>
+        <a data-toggle="collapse" href="#mypage-menu-settings-sm">
+          <div class="mypage-menu-sm-btn pushed">
+            <%= t(".user_settings") %>
+          </div>
+        </a>
+      <% else %>
+        <a data-toggle="collapse" href="#mypage-menu-settings-sm">
+          <div class="mypage-menu-sm-btn square_btn">
+            <%= t(".user_settings") %>
+          </div>
+        </a>
+      <% end %>
+    </div>
+    <!-- カメラマンになる -->
+    <% if @cl.consent == false %>
+      <div class="col-6 col-sm-3">
+        <%= link_to first_new_user_client_client_contacts_path(@user, @cl) do %>
+          <% if page == "cl-contact-first" %>
+            <div class="mypage-menu-sm-btn pushed">
+              <%= t(".register_as_cameraman") %>
+            </div>
+          <% else %>
+            <div class="mypage-menu-sm-btn square_btn">
+              <%= t(".register_as_cameraman") %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
-    <!-- ログアウト -->
-    <%= link_to destroy_user_session_path, method: :delete do %>
-      <p><%= t(".sign-out") %></p>
+  <div id="mypage-menu-submenu-sm">
+    <!-- collapge 撮影メニュー -->
+    <% if page.in?(['cs-future','cs-past','cl-future','cl-past']) %>
+      <div class="collapse show" id="mypage-menu-events-sm" data-parent="#mypage-menu-submenu-sm">
+        <%= render :partial => 'users/mypage_menu_event_sm', :locals=>{page: page, cl: @cl} %>
+      </div>
+    <% else %>
+      <div class="collapse" id="mypage-menu-events-sm" data-parent="#mypage-menu-submenu-sm">
+        <%= render :partial => 'users/mypage_menu_event_sm', :locals=>{page: page, cl: @cl} %>
+      </div>
+    <% end %>
+
+    <!-- collapge カメラマンメニュー -->
+    <% if page.in?(['cl-schedule','cl-edit','cl-portfolio','cl-contact']) %>
+      <div class="collapse show" id="mypage-menu-cameraman-sm" data-parent="#mypage-menu-submenu-sm">
+        <%= render :partial => 'users/mypage_menu_camera_sm', :locals=>{page: page, cl: @cl, user: @user} %>
+      </div>
+    <% else %>
+      <div class="collapse" id="mypage-menu-cameraman-sm" data-parent="#mypage-menu-submenu-sm">
+        <%= render :partial => 'users/mypage_menu_camera_sm', :locals=>{page: page, cl: @cl, user: @user} %>
+      </div>
+    <% end %>
+
+    <!-- collapge ユーザーメニュー -->
+    <% if page.in?(['user-profile','user-edit','user-account','logout']) %>
+      <div class="collapse show" id="mypage-menu-settings-sm" data-parent="#mypage-menu-submenu-sm">
+        <%= render :partial => 'users/mypage_menu_user_sm', :locals=>{page: page} %>
+      </div>
+    <% else %>
+      <div class="collapse" id="mypage-menu-settings-sm" data-parent="#mypage-menu-submenu-sm">
+        <%= render :partial => 'users/mypage_menu_user_sm', :locals=>{page: page} %>
+      </div>
     <% end %>
   </div>
 </div>
@@ -107,98 +124,110 @@
 
 <!-- md以上 -->
 <div class="d-none d-md-block">
-  <!-- ホーム -->
-  <%= link_to user_path(current_user) do %>
-    <p class="selected"><span class="glyphicon glyphicon-hand-right"></span><%= t(".mypage") %></p>
-  <% end %>
-  <hr>
-
-  <!-- メッセージ -->
-  <%= link_to user_messages_path(@user) do %>
-    <p><%= t(".message") %></p>
-  <% end %>
-  <hr>
-
-  <!-- 撮影 -->
-  <a data-toggle="collapse" href="#mypage-menu-events">
-    <p><%= t(".events") %></p>
-  </a>
-  <div class="collapse" id="mypage-menu-events">
-    <%= link_to cs_future_events_path do %>
-      <p>
-        &emsp;<%= t(".In_the_future") %>
-        <% if @cl.consent == true %><%= t(".As_a_customer") %><% end %>
-      </p>
-    <% end %>
-    <%= link_to cs_past_events_path do %>
-      <p>
-        &emsp;<%= t(".In_the_past") %>
-        <% if @cl.consent == true %><%= t(".As_a_customer") %><% end %>
-      </p>
-    <% end %>
-    <% if @cl.consent == true %>
-      <%= link_to cl_future_events_path do %>
-        <p>&emsp;<%= t(".As_a_cameraman_future") %></p>
-      <% end %>
-      <%= link_to cl_past_events_path do %>
-        <p>&emsp;<%= t(".As_a_cameraman_past") %></p>
-      <% end %>
-    <% end %>
-
-  </div>
-  <hr>
-
-  <!-- 設定 -->
-  <a data-toggle="collapse" href="#mypage-menu-settings">
-    <p><%= t(".user_settings") %></p>
-  </a>
-  <div class="collapse" id="mypage-menu-settings">
-    <%= link_to profile_users_path do %>
-      <p>&emsp;<%= t(".edit_profile") %></p>
-    <% end %>
-    <%= link_to edit_user_registration_path do %>
-      <p>&emsp;<%= t(".settings") %></p>
-    <% end %>
-    <%= link_to account_setting_users_path do %>
-      <p>&emsp;<%= t(".account_settings") %></p>
-    <% end %>
-  </div>
-  <hr>
-
-  <!-- カメラマンメニュー -->
-  <% if @cl.consent == true %>
-    <a data-toggle="collapse" href="#mypage-menu-cameraman">
-      <p><%= t(".cameraman_menu") %></p>
-    </a>
-    <div class="collapse" id="mypage-menu-cameraman">
-      <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
-        <p>&emsp;<%= t(".cl_schedule") %></p>
-      <% end %>
-      <%= link_to edit_user_client_path(@user, @cl) do %>
-        <p>&emsp;<%= t(".cl_settings") %></p>
-      <% end %>
-      <%= link_to new_client_client_portfolio_path(@cl) do %>
-        <p>&emsp;<%= t(".upload_cl_portpolios") %></p>
-      <% end %>
-      <%= link_to new_user_client_client_contact_path(@user, @cl) do %>
-        <p>&emsp;<%= t(".change_phone_number_adress") %></p>
+  <div class="row">
+    <!-- ホーム -->
+    <div class="col-3 col-xl-2 center-align">
+      <%= link_to user_path(current_user) do %>
+        <% if page == "usershow" %>
+          <p class="mypage-subtitle selected"><%= t(".mypage") %></p>
+        <% else %>
+          <p class="mypage-subtitle"><%= t(".mypage") %></p>
+        <% end %>
       <% end %>
     </div>
 
+    <!-- 撮影 -->
+    <div class="col-3 col-xl-2 center-align">
+      <% if page.in?(['cs-future','cs-past','cl-future','cl-past']) %>
+        <a data-toggle="collapse" href="#mypage-menu-events" id="mypage-menu-event" class="collapsed">
+          <p class="mypage-subtitle under-marker-subprime"><%= t(".events") %>&thinsp;▼</p>
+        </a>
+      <% else %>
+        <a data-toggle="collapse" href="#mypage-menu-events" id="mypage-menu-event" class="collapsed">
+          <p class="mypage-subtitle"><%= t(".events") %>&thinsp;▼</p>
+        </a>
+      <% end %>
+    </div>
 
-  <!-- カメラマンになる -->
-  <% else %>
-    <%= link_to first_new_user_client_client_contacts_path(@user, @cl) do %>
-      <p><%= t(".register_as_cameraman") %></p>
+    <!-- カメラマンメニュー -->
+    <% if @cl.consent == true %>
+      <div class="col-3 col-xl-2 center-align">
+        <% if page.in?(['cl-schedule','cl-edit','cl-portfolio','cl-contact']) %>
+          <a data-toggle="collapse" href="#mypage-menu-cameraman" id="mypage-menu-camera" class="collapsed" aria-expanded="false">
+            <p class="mypage-subtitle under-marker-subprime"><%= t(".cameraman_menu") %>&thinsp;▼</p>
+          </a>
+        <% else %>
+          <a data-toggle="collapse" href="#mypage-menu-cameraman" id="mypage-menu-camera" class="collapsed" aria-expanded="false">
+            <p class="mypage-subtitle"><%= t(".cameraman_menu") %>&thinsp;▼</p>
+          </a>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
-  <hr>
 
-  <!-- ログアウト -->
-  <%= link_to destroy_user_session_path, method: :delete do %>
-    <p><%= t(".sign-out") %></p>
-  <% end %>
+    <!-- 設定 -->
+    <div class="col-3 col-xl-2 center-align">
+      <% if page.in?(['user-profile','user-edit','user-account','logout']) %>
+        <a data-toggle="collapse" href="#mypage-menu-settings" id="mypage-menu-setting" class="collapsed">
+          <p class="mypage-subtitle  under-marker-subprime"><%= t(".user_settings") %>&thinsp;▼</p>
+        </a>
+      <% else %>
+        <a data-toggle="collapse" href="#mypage-menu-settings" id="mypage-menu-setting" class="collapsed">
+          <p class="mypage-subtitle"><%= t(".user_settings") %>&thinsp;▼</p>
+        </a>
+      <% end %>
+    </div>
+
+    <!-- カメラマンになる -->
+    <% if @cl.consent == false %>
+      <div class="col-3 col-xl-2 center-align">
+        <%= link_to first_new_user_client_client_contacts_path(@user, @cl) do %>
+          <% if page == "cl-contact-first" %>
+            <p class="mypage-subtitle selected"><%= t(".register_as_cameraman") %></p>
+          <% else %>
+            <p class="mypage-subtitle"><%= t(".register_as_cameraman") %></p>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="mypage-menu-submenu">
+    <!-- collapge 撮影メニュー -->
+    <% if page.in?(['cs-future','cs-past','cl-future','cl-past']) %>
+      <div class="collapse show" id="mypage-menu-events" data-parent="#mypage-menu-submenu">
+        <%= render :partial => 'users/mypage_menu_event', :locals=>{page: page, cl: @cl} %>
+      </div>
+    <% else %>
+      <div class="collapse" id="mypage-menu-events" data-parent="#mypage-menu-submenu">
+        <%= render :partial => 'users/mypage_menu_event', :locals=>{page: page, cl: @cl} %>
+      </div>
+    <% end %>
+
+    <!-- collapge カメラマンメニュー -->
+    <% if page.in?(['cl-schedule','cl-edit','cl-portfolio','cl-contact']) %>
+      <div class="collapse show" id="mypage-menu-cameraman" data-parent="#mypage-menu-submenu">
+        <%= render :partial => 'users/mypage_menu_camera', :locals=>{page: page, cl: @cl, user: @user} %>
+      </div>
+    <% else %>
+      <div class="collapse" id="mypage-menu-cameraman" data-parent="#mypage-menu-submenu">
+        <%= render :partial => 'users/mypage_menu_camera', :locals=>{page: page, cl: @cl, user: @user} %>
+      </div>
+    <% end %>
+
+    <!-- collapge ユーザーメニュー -->
+    <% if page.in?(['user-profile','user-edit','user-account','logout']) %>
+      <div class="collapse show" id="mypage-menu-settings" data-parent="#mypage-menu-submenu">
+        <%= render :partial => 'users/mypage_menu_user', :locals=>{page: page} %>
+      </div>
+    <% else %>
+      <div class="collapse" id="mypage-menu-settings" data-parent="#mypage-menu-submenu">
+        <%= render :partial => 'users/mypage_menu_user', :locals=>{page: page} %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+<hr class="slash">
 
 <script>
 function menu_btn_label_change(){
@@ -213,4 +242,50 @@ $(function() {
     menu_btn_label_change();
   });
 });
+
+// function menu_btn_label_change_event(){
+//   if ($('#mypage-menu-event').hasClass('collapsed')){
+//     $('#mypage-menu-btn-icon-event').text('▲');
+//   } else {
+//     $('#mypage-menu-btn-icon-event').text('▼');
+//   }
+// };
+// $(function() {
+//   $('#mypage-menu-event').on('click', function() {
+//     menu_btn_label_change_event();
+//     menu_btn_label_change_camera();
+//     menu_btn_label_change_setting();
+//   });
+// });
+
+// function menu_btn_label_change_camera(){
+//   if ($('#mypage-menu-camera').hasClass('collapsed')){
+//     $('#mypage-menu-btn-icon-camera').text('▲');
+//   } else {
+//     $('#mypage-menu-btn-icon-camera').text('▼');
+//   }
+// };
+// $(function() {
+//   $('#mypage-menu-camera').on('click', function() {
+//     menu_btn_label_change_event();
+//     menu_btn_label_change_camera();
+//     menu_btn_label_change_setting();
+//   });
+// });
+
+// function menu_btn_label_change_setting(){
+//   if ($('#mypage-menu-setting').hasClass('collapsed')){
+//     $('#mypage-menu-btn-icon-setting').text('▲');
+//   } else {
+//     $('#mypage-menu-btn-icon-setting').text('▼');
+//   }
+// };
+// $(function() {
+//   $('#mypage-menu-setting').on('click', function() {
+//     menu_btn_label_change_event();
+//     menu_btn_label_change_camera();
+//     menu_btn_label_change_setting();
+//   });
+// });
+
 </script>

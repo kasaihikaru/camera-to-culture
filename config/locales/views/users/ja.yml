@@ -20,6 +20,11 @@ ja:
       Introduction_en: 自己紹介（英語）
       Introduction_zh: 自己紹介（中国語簡体字）
       Introduction_tw: 自己紹介（中国語繁体字）
+      introduction: 自己紹介
+      ja: 日本語
+      en: 英語
+      zh: 中国語簡体字
+      tw: 中国語繁体字
       Available_dates: 撮影可能日
       available_dates_explanation: "撮影可能候補日として、%{nums}日間登録されています。"
       Photographing_Categories: 撮影カテゴリー
@@ -36,27 +41,48 @@ ja:
       Your_Main_Photo: メイン写真
       Portfolios: ポートフォリオ
       photos_are_uploaded: 枚のポートフォリオが登録されています。
+      sign-out: ログアウト
     mypage_menu:
       Menu: メニュー
       mypage: ホーム
       message: メッセージ
       events: CtoCでの撮影
+      cameraman_menu: カメラマン設定
+      user_settings: ユーザー設定
+      register_as_cameraman: カメラマンになる
+    mypage_menu_event:
       In_the_future: 今後の撮影
       In_the_past: 過去の撮影
-      As_a_customer: （お客様として）
-      As_a_cameraman_future: 今後の出張（カメラマンとして）
-      As_a_cameraman_past: 過去の出張（カメラマンとして）
-      user_settings: ユーザー設定
-      edit_profile: プロフィールを編集
+      As_a_customer: お客様として
+      As_a_cameraman: カメラマンとして
+      As_a_cameraman_future: 今後の出張
+      As_a_cameraman_past: 過去の出張
+    mypage_menu_user:
+      edit_profile: プロフィール編集
       settings: 設定
       account_settings: 退会する
-      register_as_cameraman: カメラマンになる
+    mypage_menu_camera:
       change_phone_number_adress: 電話番号、住所の変更
-      cameraman_menu: カメラマン設定
       cl_schedule: 撮影できる日を設定
       cl_settings: カメラマンプロフィール
       upload_cl_portpolios: サンプル写真を投稿
-      sign-out: ログアウト
+    mypage_menu_event_sm:
+      In_the_future: 今後の撮影
+      In_the_past: 過去の撮影
+      As_a_customer: お客様として
+      As_a_cameraman: カメラマンとして
+      As_a_cameraman_future: 今後の出張
+      As_a_cameraman_past: 過去の出張
+    mypage_menu_user_sm:
+      edit_profile: プロフィール編集
+      settings: 設定
+      account_settings: 退会する
+    mypage_menu_camera_sm:
+      change_phone_number_adress: 電話番号、住所の変更
+      cl_schedule: 撮影できる日を設定
+      cl_settings: カメラマンプロフィール
+      upload_cl_portpolios: サンプル写真を投稿
+
 
     profile:
       meta_title: 'プロフィール編集'

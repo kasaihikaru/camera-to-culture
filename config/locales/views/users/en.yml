@@ -20,6 +20,11 @@ en:
       Introduction_en: Introduction（English）
       Introduction_zh: Introduction（Simplified Chinese）
       Introduction_tw: Introduction（Traditional Chinese）
+      introduction: Introduction
+      ja: Japanese
+      en: English
+      zh: Simplified Chinese
+      tw: Traditional Chinese
       Available_dates: Available date and time you can work
       available_dates_explanation: "You have registered %{nums} available days so far."
       Photographing_Categories: Photo categories
@@ -36,28 +41,47 @@ en:
       Your_Main_Photo: Your main sample photo
       Portfolios: Portfolios
       photos_are_uploaded: ' photos are registered as portfolios.'
-
+      sign-out: Log out
     mypage_menu:
       Menu: Menu
       mypage: Home
       message: Message
       events: Sessions in CtoC
-      In_the_future: in the FUTURE
-      In_the_past: in the PAST
-      As_a_customer: （as a CUSTOMER）
-      As_a_cameraman_future: in the FUTURE a PHOTOGRAPHER）
-      As_a_cameraman_past: in the PAST（as a PHOTOGRAPHER）
+      cameraman_menu: Photographer menu
       user_settings: User settings
+      register_as_cameraman: Register as a photographer
+    mypage_menu_event:
+      In_the_future: In the FUTURE
+      In_the_past: In the PAST
+      As_a_customer: As a CUSTOMER
+      As_a_cameraman: As a CAMERAMAN
+      As_a_cameraman_future: in the FUTURE
+      As_a_cameraman_past: in the PAST
+    mypage_menu_user:
       edit_profile: Edit profile
       settings: Settings
       account_settings: Cancele account
-      register_as_cameraman: Register as a photographer
+    mypage_menu_camera:
       change_phone_number_adress: Change tel and address
-      cameraman_menu: Photographer menu
       cl_schedule: Register available dates
       cl_settings: Edit profile as a photographer
       upload_cl_portpolios: Upload portpolios
-      sign-out: Log out
+    mypage_menu_event_sm:
+      In_the_future: In the FUTURE
+      In_the_past: In the PAST
+      As_a_customer: As a CUSTOMER
+      As_a_cameraman: As a CAMERAMAN
+      As_a_cameraman_future: in the FUTURE
+      As_a_cameraman_past: in the PAST
+    mypage_menu_user_sm:
+      edit_profile: Edit profile
+      settings: Settings
+      account_settings: Cancele account
+    mypage_menu_camera_sm:
+      change_phone_number_adress: Change tel and address
+      cl_schedule: Register available dates
+      cl_settings: Edit profile as a photographer
+      upload_cl_portpolios: Upload portpolios
 
     profile:
       meta_title: 'Edit profole'

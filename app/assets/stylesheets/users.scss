@@ -12,61 +12,95 @@ $white-col : #FFFFFF;
 
 // ---------- ユーザーページ共通 -----------//
 .mypage-container{
-	.mypage-wrapper{
+	h1{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.mypage-menu{
+		padding: 10px 0 0;
+		a{
+			color: #000000;
+			text-decoration: none;
+		}
+ 		.mypage-subtitle{
+ 			margin: 15px 0;
+ 		}
+		.mypage-subtitle-sub{
+			width: 80%;
+			margin: 0 0 20px 10px;
+		}
+		.selected{
+			font-weight: 900;
 			background-color: $subprim-col;
-		h1{
-			font-size: 20px;
-			font-weight: bold;
+			color: $white-col;
+			border-radius: 4px;
 		}
-		.mypage-menu{
-			padding: 30px 15px;
-			a{
-				color: #000000;
-				text-decoration: none;
-			}
-			.selected{
-				font-weight: 900;
-			}
-			.mypage-menu-btn-sm{
-				margin: 0;
-				text-align: center;
-				font-size: 12px;
-				font-weight: 800;
+		.mypage-menu-btn-sm{
+			margin: 0;
+			text-align: center;
+			font-size: 12px;
+			font-weight: 800;
+		}
+		#mypage-menu-submenu{
+			padding: 20px 0;
+		}
+		.mypage-menu-sm{
+			font-size: 14px;
+			text-align: center;
+			.mypage-menu-sm-btn{
+				width: 100%;
+				margin-bottom: 15px;
 			}
 		}
-		.mypage-content{
-			padding: 30px 15px;
-			background-color: $white-col;
-			.field{
-				margin-bottom: 60px;
-				.input-text{
-					width: 80%;
-					height: 40px;
-					border-radius: 5px;
-				}
-				.input-textarea{
-					width: 100%;
-					height: 150px;
-					border-radius: 5px;
-				}
+		.pushed{
+		  display: inline-block;
+		  padding: 0.5em 1em;
+		  text-decoration: none;
+		  background: $subprim-col;
+		  color: $white-col;
+		  border-radius: 3px;
+		  -ms-transform: translateY(4px);
+		  -webkit-transform: translateY(4px);
+		  transform: translateY(4px);
+		  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+		  border: solid 1px $subprim-col;
+		}
+	}
+	.mypage-content{
+		padding: 30px 15px;
+		background-color: $white-col;
+		.field{
+			margin-bottom: 60px;
+			.input-text{
+				width: 100%;
+				height: 40px;
+				border-radius: 5px;
 			}
-			.user-image{
-				img{
-					width:auto;
-					height:auto;
-					max-width:230px;
-					max-height:230px;
-					border-radius: 15px;
-				}
+			.input-textarea{
+				width: 100%;
+				height: 150px;
+				border-radius: 5px;
+			}
+		}
+		.user-image{
+			img{
+				width:auto;
+				height:auto;
+				max-width:230px;
+				max-height:230px;
+				border-radius: 15px;
 			}
 		}
 	}
 }
 
+
 .field-explanation{
 	font-size: 13px;
 	font-weight: 400;
 }
+
+
 
 //---------- users/show -----------//
 @media screen and (max-width:700px){
@@ -130,7 +164,7 @@ $white-col : #FFFFFF;
 	h2{
 		font-size: 15px;
 		font-weight: 800;
-		padding-top: 30px;
+		padding-top: 8px;
 	}
 	img{
 		width:auto;
@@ -147,6 +181,13 @@ $white-col : #FFFFFF;
 	}
 }
 
+
+.log-out-btn, .log-out-btn:hover{
+	width: 100px;
+	text-decoration: none;
+	color: #7F7F7F;
+	text-align: center;
+}
 
 
 //---------- clients/edit -----------//

@@ -78,6 +78,33 @@ $white-col : #FFFFFF;
   border-radius: 5px;
   cursor: pointer;
 }
+.grey-btn{
+  height: 26px;
+  background-color: $white-col;
+  color: #7F7F7F;
+  border: #7F7F7F 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.square_btn{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: $white-col;/*ボタン色*/
+  border: solid 1px $subprim-col;
+  border-bottom: solid 4px $subprim-col;
+  border-radius: 3px;
+}
+.square_btn:active {/*ボタンを押したとき*/
+  -ms-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: solid 1px $subprim-col;
+}
+
 
 
 // 背景
@@ -175,8 +202,16 @@ $white-col : #FFFFFF;
   margin: 0 auto;
 }
 
+.margin-0{
+  margin: 0;
+}
+
 .maring-b-20{
   margin-bottom: 20px;
+}
+
+.maring-b-50{
+  margin-bottom: 50px;
 }
 
 .padding-0{
@@ -246,6 +281,55 @@ $white-col : #FFFFFF;
 .round-img{
   border-radius: 50%;
 }
+
+// underline
+.under-line-subprime{
+  position: relative;
+  padding: .25em 0 .5em .75em;
+  border-left: 6px solid #ccc;
+}
+.under-line-subprime::before {
+  position: absolute;
+  left: -6px;
+  bottom: 0;
+  content: '';
+  width: 6px;
+  height: 50%;
+  background-color: #3498db;
+}
+.under-line-subprime::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.under-marker-subprime{
+  background: linear-gradient(transparent 70%, $subprim-col 70%);
+}
+.under-marker-prime{
+  background: linear-gradient(transparent 70%, $prim-col 70%);
+}
+.under-marker-grey{
+  background: linear-gradient(transparent 70%, #CCCCCC 70%);
+}
+
+
+//水平線
+.dots {
+  border-width: 0 0 8px;
+  border-style: solid;
+  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1"><circle fill="hsla(0, 0%, 65%, 1.0)" cx="1" cy="0.5" r="0.5"/></svg>') 0 0 100% repeat;
+   width: 90%;
+}
+.slash{
+  box-shadow: 0 2px 4px 0 #ccc;
+  width: 100%;
+}
+
 
 //--------------- 対策 ----------------//
 pre {

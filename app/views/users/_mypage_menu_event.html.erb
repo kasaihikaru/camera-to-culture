@@ -1,0 +1,73 @@
+<div class="row">
+  <% if cl.consent == true %>
+    <div class="col-4 offset-2">
+      <p class="under-marker-grey"><%= t(".As_a_customer") %></p>
+      <%= link_to cs_future_events_path do %>
+        <% if page == "cs-future" %>
+          <div class="selected mypage-subtitle-sub">
+            &emsp;<%= t(".In_the_future") %>
+          </div>
+        <% else %>
+          <div class="mypage-subtitle-sub">
+            &emsp;<%= t(".In_the_future") %>
+          </div>
+        <% end %>
+      <% end %>
+      <%= link_to cs_past_events_path do %>
+        <% if page == "cs-past" %>
+          <div class="selected mypage-subtitle-sub">
+            &emsp;<%= t(".In_the_past") %>
+          </div>
+        <% else %>
+          <div class="mypage-subtitle-sub">
+            &emsp;<%= t(".In_the_past") %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <p class="under-marker-grey"><%= t(".As_a_cameraman") %></p>
+      <%= link_to cl_future_events_path do %>
+        <% if page == "cl-future" %>
+          <div class="selected mypage-subtitle-sub">&emsp;<%= t(".As_a_cameraman_future") %></div>
+        <% else %>
+          <div class="mypage-subtitle-sub">&emsp;<%= t(".As_a_cameraman_future") %></div>
+        <% end %>
+      <% end %>
+      <%= link_to cl_past_events_path do %>
+        <% if page == "cl-past" %>
+          <div class="selected mypage-subtitle-sub">&emsp;<%= t(".As_a_cameraman_past") %></div>
+        <% else %>
+          <div class="mypage-subtitle-sub">&emsp;<%= t(".As_a_cameraman_past") %></div>
+      　<% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="col-2 offset-2">
+      <%= link_to cs_future_events_path do %>
+        <% if page == "cs-future" %>
+          <div class="selected mypage-subtitle-sub">
+            &emsp;<%= t(".In_the_future") %>
+          </div>
+        <% else %>
+          <div class="under-marker-grey mypage-subtitle-sub">
+            &emsp;<%= t(".In_the_future") %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to cs_past_events_path do %>
+        <% if page == "cs-past" %>
+          <div class="selected mypage-subtitle-sub">
+            &emsp;<%= t(".In_the_past") %>
+          </div>
+        <% else %>
+          <div class="under-marker-grey mypage-subtitle-sub">
+            &emsp;<%= t(".In_the_past") %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

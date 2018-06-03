@@ -1,12 +1,12 @@
 <div class="container-fluid mypage-container">
-  <div class="row mypage-wrapper">
-    <div class="col-12 col-md-3 offset-md-1 mypage-menu">
-      <%= render :partial => 'users/mypage_menu' %>
-    </div>
+  <div class="col-12 mypage-menu">
+    <%= render :partial => 'users/mypage_menu', :locals=>{page: "usershow"} %>
+  </div>
 
-    <div class="col-12 col-md-8 mypage-content">
-      <h1><%= t(".Home")%></h1>
-      <hr>
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 mypage-content">
+<!--       <h1><%= t(".Home")%></h1>
+      <hr> -->
 
       <!-- お知らせ -->
       <div class="user-show-alert">
@@ -81,7 +81,7 @@
       <div class="user-show-wrapper">
         <!-- ユーザー情報 -->
         <div class="user-show-info">
-          <h2>
+          <h2 class="under-line-subprime">
             <%= @user.name %>
             <% unless @user.image.present? %>
               <%= link_to profile_users_path do %>
@@ -94,7 +94,7 @@
           <% else %>
             <%= render :partial => 'svgs/baby' %>
           <% end %>
-          <h2>
+          <h2 class="under-line-subprime">
             <%= t(".Languages")%>
             <%= link_to profile_users_path do %>
               <% if @mylangs.present? %>
@@ -104,7 +104,7 @@
               <% end %>
             <% end %>
           </h2>
-          <div class="indent">
+          <div class="indent maring-b-50">
             <% if @mylangs.present? %>
               <% @mylangs.each do |lang| %>
               	<%= lang.ja %>
@@ -114,7 +114,7 @@
             <% end %>
           </div>
           <!-- 自己紹介 -->
-          <h2>
+          <h2 class="under-line-subprime">
             <%= t(".Introduction")%>
             <%= link_to profile_users_path do %>
                 <% if @cs.introduction.present? %>
@@ -124,7 +124,7 @@
                 <% end %>
             <% end %>
           </h2>
-          <div class="indent">
+          <div class="indent maring-b-50">
             <% if @cs.introduction? %>
               <%= @cs.introduction %>
             <% else %>
@@ -144,7 +144,7 @@
               <% @mylangs.each do |lang| %>
                 <!-- 日本語 -->
                 <% if lang.id == 1 %>
-                  <h2>
+                  <h2 class="under-line-subprime">
                     <%= t(".Introduction_ja")%>
                     <%= link_to edit_user_client_path(@user, @cl) do %>
                         <% if @cl.introduction_ja.present? %>
@@ -154,7 +154,7 @@
                         <% end %>
                     <% end %>
                   </h2>
-                  <div class="indent">
+                  <div class="indent maring-b-50">
                     <% if @cl.introduction_ja? %>
                       <%= @cl.introduction_ja %>
                     <% else %>
@@ -164,7 +164,7 @@
                 <% end %>
                 <!-- 英語 -->
                 <% if lang.id == 2 %>
-                  <h2>
+                  <h2 class="under-line-subprime">
                     <%= t(".Introduction_en")%>
                     <%= link_to edit_user_client_path(@user, @cl) do %>
                         <% if @cl.introduction_en.present? %>
@@ -174,7 +174,7 @@
                         <% end %>
                     <% end %>
                   </h2>
-                  <div class="indent">
+                  <div class="indent maring-b-50">
                     <% if @cl.introduction_en? %>
                       <%= @cl.introduction_en %>
                     <% else %>
@@ -184,7 +184,7 @@
                 <% end %>
                 <!-- 簡体字 -->
                 <% if lang.id == 3 %>
-                  <h2>
+                  <h2 class="under-line-subprime">
                     <%= t(".Introduction_zh")%>
                     <%= link_to edit_user_client_path(@user, @cl) do %>
                         <% if @cl.introduction_zh.present? %>
@@ -194,7 +194,7 @@
                         <% end %>
                     <% end %>
                   </h2>
-                  <div class="indent">
+                  <div class="indent maring-b-50">
                     <% if @cl.introduction_zh? %>
                       <%= @cl.introduction_zh %>
                     <% else %>
@@ -204,7 +204,7 @@
                 <% end %>
                 <!-- 繁体字 -->
                 <% if lang.id == 3 %>
-                  <h2>
+                  <h2 class="under-line-subprime">
                     <%= t(".Introduction_tw")%>
                     <%= link_to edit_user_client_path(@user, @cl) do %>
                         <% if @cl.introduction_tw.present? %>
@@ -214,7 +214,7 @@
                         <% end %>
                     <% end %>
                   </h2>
-                  <div class="indent">
+                  <div class="indent maring-b-50">
                     <% if @cl.introduction_tw? %>
                       <%= @cl.introduction_tw %>
                     <% else %>
@@ -227,7 +227,7 @@
 
 
             <!-- 撮影可能日 -->
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".Available_dates") %>
               <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
                 <% if @cl_schedules.present? %>
@@ -237,7 +237,7 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @cl_schedules.present? %>
                 <%= t(".available_dates_explanation", nums: @cl_schedules.count) %>
               <% else %>
@@ -246,7 +246,7 @@
             </div>
 
             <!-- カテゴリー -->
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".Photographing_Categories") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
                 <% if @cl_categories.present? %>
@@ -256,7 +256,7 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @cl_categories.present? %>
                 <% @cl_categories.each do |cl_category| %>
                   <%= cl_category.category.ja %><br>
@@ -265,7 +265,7 @@
                 <%= t(".None")%>
               <% end %>
             </div>
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".Photographing_Area") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
                 <% if @cl_prefectures.present? %>
@@ -275,7 +275,7 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @cl_prefectures.present? %>
                 <% @cl_prefectures.each do |cl_prefecture| %>
                   <%= cl_prefecture.ja %>
@@ -284,7 +284,7 @@
                 <%= t(".None")%>
               <% end %>
             </div>
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".Price") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
                 <% if @cl_prim_price.present? %>
@@ -294,7 +294,7 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @cl_prim_price.present? %>
                 <%= @cl_prim_price.price_per_hour %><%= t(".yen_per_hour") %><br>
                 <%= @cl_prim_price.minimum_hours %><%= t(".hours_minimum") %>
@@ -302,7 +302,7 @@
                 <%= t(".None")%>
               <% end %>
             </div>
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".Option_Menu") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
                 <% if @cl_opt_prices.present? %>
@@ -312,7 +312,7 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @cl_opt_prices.present? %>
                 <% @cl_opt_prices.each do |cl_opt_price| %>
                   <%= cl_opt_price.name %>
@@ -328,7 +328,7 @@
               <% end %>
             </div>
             <!-- カメラ -->
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".Camera") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
                 <% if @cl.camera.present? %>
@@ -338,7 +338,7 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @cl.camera.present? %>
                 <pre><%= @cl.camera %></pre>
               <% else %>
@@ -347,7 +347,7 @@
             </div>
 
             <!-- 納品写真 -->
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".deliverables") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
                 <% if @cl.deliverables.present? %>
@@ -357,7 +357,7 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @cl.deliverables.present? %>
                 <pre><%= @cl.deliverables %></pre>
               <% else %>
@@ -366,7 +366,7 @@
             </div>
 
             <!-- メッセージ -->
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".Message") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
                 <% if @cl.message.present? %>
@@ -376,14 +376,14 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @cl.message.present? %>
                 <pre><%= @cl.message %></pre>
               <% else %>
                 <%= t(".None")%>
               <% end %>
             </div>
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".Your_Main_Photo") %>
               <%= link_to edit_user_client_path(@user, @cl) do %>
                 <% if @cl.image.present? %>
@@ -393,14 +393,14 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @cl.image.present? %>
                 <%= image_tag @cl.image.url, :alt => "Main Image", class: "image" %>
               <% else %>
                 <%= t(".None")%>
               <% end %>
             </div>
-            <h2>
+            <h2 class="under-line-subprime">
               <%= t(".Portfolios") %>
               <%= link_to new_client_client_portfolio_path(@cl) do %>
                 <% if @portfolio_nums > 0 %>
@@ -410,7 +410,7 @@
                 <% end %>
               <% end %>
             </h2>
-            <div class="indent">
+            <div class="indent maring-b-50">
               <% if @portfolio_nums > 0 %>
                 <%= @portfolio_nums %><%= t(".photos_are_uploaded")%>
               <% else %>
@@ -419,10 +419,14 @@
             </div>
           <% end %>
         </div>
+        <%= link_to destroy_user_session_path, class: "", method: :delete do %>
+          <div class="grey-btn log-out-btn"><%= t(".sign-out") %></div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
 
 <% assign_meta_tags title: t(".meta_title"),
                     description: t(".meta_keywords"),
