@@ -29,6 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
 
+
 ###########多言語の設定###########
   before_action :set_locale
 

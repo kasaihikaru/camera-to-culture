@@ -44,10 +44,20 @@
 		<meta content='NOODP' name='ROBOTS'>
 
 		<!-- 多言語 -->
-		<link rel="alternate" hreflang="zh" href="https://www.camera-to-culture.com/zh">
+<!-- 		<link rel="alternate" hreflang="zh" href="https://www.camera-to-culture.com/zh">
 		<link rel="alternate" hreflang="en" href="https://www.camera-to-culture.com/en">
 		<link rel="alternate" hreflang="zh-TW" href="https://www.camera-to-culture.com/tw">
-		<link rel="alternate" hreflang="ja" href="https://www.camera-to-culture.com/ja">
+		<link rel="alternate" hreflang="ja" href="https://www.camera-to-culture.com/ja"> -->
+		<!-- 多言語 -->
+		<link rel="canonical" href="<%= canonical(locale: params[:locale]) %>">
+		<link rel="alternate" href="<%= canonical %>" hreflang="x-default">
+		<% I18n.available_locales.each do |l| %>
+			<% if l == :tw %>
+				<link rel="alternate" href="<%= canonical(locale: l) %>" hreflang="zh-TW">
+			<% else %>
+				<link rel="alternate" href="<%= canonical(locale: l) %>" hreflang="<%= l %>">
+			<% end %>
+		<% end %>
 
 
 		<!-- For SEO -->
@@ -75,7 +85,6 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<%= render :partial => 'svgs/toggle' %>
 			</button>
-
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto ">
 					<li class="nav-item">

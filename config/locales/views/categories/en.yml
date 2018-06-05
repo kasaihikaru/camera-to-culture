@@ -231,19 +231,19 @@ en:
       This_category_has_cls: 'このカテゴリーのカメラマンが%{num}人見つかりました。'
       other_categories: その他のカテゴリーはこちら
     category_cl_list:
-      Kanto_area: 関東エリア
-      Kansai_area: 関西エリア
-      yen_per_hour: 円/時間
+      Kanto_area: Kanto area
+      Kansai_area: Kansai area
+      yen_per_hour: yen/h
     category_list:
-      profile: プロフィール
-      id_photo: 証明写真
-      wedding: ウェディング
-      traveling: 旅行
-      daily_life: 日常
-      seven_five_three: 七五三
-      coming_of_age: 成人式
-      maternity: マタニティ
-      new_born: ニューボーン
-      commodities: 商品
-      event: イベント
-      pet: ペット
+      profile: profile
+      id_photo: id_photo
+      wedding: wedding
+      traveling: traveling
+      daily_life: daily life
+      seven_five_three: seven five three
+      coming_of_age: coming of age
+      maternity: maternity
+      new_born: new born
+      commodities: commodities
+      event: event
+      pet: pet

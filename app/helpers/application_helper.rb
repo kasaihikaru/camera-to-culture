@@ -1,4 +1,10 @@
 module ApplicationHelper
+
+  # hreflang用
+  def canonical(locale: nil)
+    url_for(locale: locale, only_path: false)
+  end
+
   def show_meta_tags
     if display_meta_tags.blank?
       assign_meta_tags
