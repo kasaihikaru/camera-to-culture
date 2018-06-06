@@ -39,6 +39,7 @@ ja:
         修正写真：  xx枚
       message: お客様へのメッセージ
       importance_of_message_explanation: Camera-to-Cultureでカメラマンとして活動する上で、最も大事なことはコミュニケーションです。得意な撮影の説明や、詳しい自己紹介をしましょう。
+      do_not_post_external_links_and_sns_accounts: 他サイトへのリンクや、SNSアカウントの掲載はトラブルの元となります。ご遠慮ください。
       main_image: メイン写真を登録
       main_image_explain: メイン写真には横長の写真を選んでください。綺麗に表示されます。
       category_form: 撮影可能な写真カテゴリー

@@ -39,6 +39,7 @@ en:
         Retouching photos：  _____
       message: Message to your customer
       importance_of_message_explanation: Communication is the most important for photographeres and customers on the Camera-to-Culture platform. Let know customers your story, photographing style and introduction in detail.
+      do_not_post_external_links_and_sns_accounts: Do not post external links and SNS accounts.
       main_image: Your main sample photo
       main_image_explain: Please pick a landscape photo (horizontal photo) for the main photo. It will look much better!
       category_form: Categories you can take

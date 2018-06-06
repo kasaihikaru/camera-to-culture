@@ -1047,7 +1047,10 @@
           <p class="bold under-line-subprime margin-0">
             <%= f.label :message, t(".message"), class: "margin-0" %>
           </p>
-          <span class="field-explanation"><%= t(".importance_of_message_explanation")%></span><br>
+          <span class="field-explanation">
+            <%= t(".importance_of_message_explanation")%><br>
+            <%= t(".do_not_post_external_links_and_sns_accounts")%>
+          </span><br>
           <%= f.text_area :message, class: "input-textarea" %>
         </div>
 
