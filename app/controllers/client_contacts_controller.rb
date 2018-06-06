@@ -39,7 +39,10 @@ class ClientContactsController < ApplicationController
 			consented_at = @contact.created_at
 			tel = @contact.tel
 			address = @contact.address
-			ClientConsentMailer.first_create(id, name, mail, created_at, consented_at, tel, address).deliver_now
+			real_name = @contact.name
+			line_id = @contact.line_id
+			wechat_id = @contact.wechat_id
+			ClientConsentMailer.first_create(id, name, mail, created_at, consented_at, tel, address, real_name, line_id, wechat_id).deliver_now
 
 			redirect_to edit_user_client_path(@user, @cl)
 

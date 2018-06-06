@@ -5,7 +5,7 @@ class ClientConsentMailer < ApplicationMailer
   #
   #   en.client_consent_mailer.first_new.subject
   #
-	def first_create(id, name, mail, created_at, consented_at, tel, address)
+	def first_create(id, name, mail, created_at, consented_at, tel, address, real_name, line_id, wechat_id)
 		@id = id
 		@name = name
 		@mail = mail
@@ -13,6 +13,9 @@ class ClientConsentMailer < ApplicationMailer
 		@consented_at = consented_at
 		@tel = tel
 		@address = address
+		@real_name = real_name
+		@line_id = line_id
+		@wechat_id = wechat_id
 
 		mail(
 			to: ENV['myaddress'],
