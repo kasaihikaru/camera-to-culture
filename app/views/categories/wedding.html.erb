@@ -40,7 +40,7 @@
 
 
 <section class="cate-location cate-common container">
-	<h1><%= t(".location") %></h1>
+	<h2><%= t(".location") %></h2>
 	<div class="cate-location-photos row">
 		<div class="cate-location-photo col-4 col-lg-2" data-toggle="collapse" data-target="#wedding-location-city" aria-expanded="false" aria-controls="wedding-location-city">
 			<div class="sized-square-photo" alt="wedding-photo-city" style='background-image: url("/images/wedding-location-city.png");'></div>
@@ -71,7 +71,7 @@
 		<div class="center-align">
 			<div class="collapse show" id="wedding-location-secret-places" data-parent="#wedding-location-wrapper">
 				<div class="balloon-top">
-					<h2>秘密の場所</h2>
+					<h3>秘密の場所</h3>
 					<p>
 						知ってる？カメラマンが自分しか知らないおすすめロケーション地があるって！他の人と被らないロケーションを探そう！お気に入りのカメラマンに聞いてみたら？予約確定する前教えてもらうカメラマンもいるかもよ。
 					</p>
@@ -93,7 +93,7 @@
 
 
 <section class="cate-tips cate-common">
-	<h1><%= t(".tips") %></h1>
+	<h2><%= t(".tips") %></h2>
 	<div class="card cate-tips-card">
 		<div class="container">
 			<div class="row">
@@ -135,14 +135,14 @@
 
 <% if @cls.count > 0 %>
 	<section class="cate-photographer-list cate-common">
-		<h1><%= t(".This_category_has_cls", num: @cls.count) %></h1>
+		<h2><%= t(".This_category_has_cls", num: @cls.count) %></h2>
 		<%= render :partial => 'categories/category_cl_list', :locals=>{cls_kanto: @cls_kanto, cls_kansai: @cls_kansai} %>
 	</section>
 	<hr>
 <% end %>
 
 <section class="cate-common">
-	<h1><%= t(".other_categories") %></h1>
+	<h2><%= t(".other_categories") %></h2>
 	<%= render :partial => 'categories/category_list' %>
 </section>
 

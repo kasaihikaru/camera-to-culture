@@ -102,7 +102,7 @@ $white-col : #FFFFFF;
 @media screen and (min-width: 550px) {
 	.cate-common{
 		margin-bottom: 30px;
-		h1{
+		h2{
 			text-align: center;
 			margin: 150px auto 30px;
 			font-size: 28px;
@@ -113,7 +113,7 @@ $white-col : #FFFFFF;
 @media screen and (max-width: 549px) {
 	.cate-common{
 		margin-bottom: 30px;
-		h1{
+		h2{
 			text-align: center;
 			margin: 150px auto 30px;
 			font-size: 20px;
@@ -142,10 +142,6 @@ $white-col : #FFFFFF;
 		cursor : pointer;
 		text-align: center;
 		padding: 10px;
-	}
-	h2{
-		font-size: 18px;
-		font-weight: 700;
 	}
 }
 
@@ -226,7 +222,7 @@ $white-col : #FFFFFF;
 			-moz-border-radius: 10px;
 			background-color: $subprim-col;
 		}
-		h2{
+		h3{
 			color: $white-col;
 			font-size: 20px;
 			text-align: center;
@@ -300,7 +296,7 @@ $white-col : #FFFFFF;
 			margin: 0 auto;
 			background-color: $subprim-col;
 		}
-		h2{
+		h3{
 			color: $white-col;
 			font-size: 15px;
 			text-align: center;

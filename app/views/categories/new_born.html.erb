@@ -40,7 +40,7 @@
 
 
 <section class="cate-tips cate-common">
-	<h1><%= t(".tips") %></h1>
+	<h2><%= t(".tips") %></h2>
 	<div class="card cate-tips-card">
 		<div class="container">
 			<div class="row">
@@ -83,14 +83,14 @@
 
 <% if @cls.count > 0 %>
 	<section class="cate-photographer-list cate-common">
-		<h1><%= t(".This_category_has_cls", num: @cls.count) %></h1>
+		<h2><%= t(".This_category_has_cls", num: @cls.count) %></h2>
 		<%= render :partial => 'categories/category_cl_list', :locals=>{cls_kanto: @cls_kanto, cls_kansai: @cls_kansai} %>
 	</section>
 	<hr>
 <% end %>
 
 <section class="cate-common">
-	<h1><%= t(".other_categories") %></h1>
+	<h2><%= t(".other_categories") %></h2>
 	<%= render :partial => 'categories/category_list' %>
 </section>
 
