@@ -71,8 +71,15 @@
             <span class="field-explanation">
               <%= t(".main_image_explain")%>
             </span><br>
-            <%= image_tag @cl.image.thumb.url, :alt => "Main Image", class: "image" if @cl.image? %><br>
-            <%= f.file_field :image %>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <%= image_tag @cl.image.thumb.url, :alt => "Main Image", class: "image" if @cl.image? %><br>
+                <%= f.file_field :image %>
+              </div>
+              <div class="col-12 col-sm-6 d-none d-sm-block">
+                <img alt="photo-size" src="/images/main-photo-size.png">
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1055,7 +1062,7 @@
         </div>
 
         <div class="actions">
-          <%= f.submit t(".register_btn") %>
+          <%= f.submit t(".register_btn"), class: "prim-btn" %>
         </div>
 
       <% end %>
