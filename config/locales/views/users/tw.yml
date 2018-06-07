@@ -178,7 +178,6 @@ tw:
         please_set_receiving_permission_from_CtoC: |
           請在郵箱域名白名單中設置同意接受來自「camera-to-culture.com」的郵件。
           （QQ郵箱登錄者請務必確認域名白名單的設置）
-        Why_didn't_I_get_email?: 收不到確認郵件嗎？
         name: 名字
         email: 電子郵箱
         password: 密碼
@@ -220,6 +219,7 @@ tw:
         remember_me: 保持登錄狀態
     shared:
       links:
+        Why_didn't_I_get_email?: 收不到確認郵件嗎？
         sign_in: 登錄
         sign_up: 註冊新用戶
         Forgot_your_password?: 忘記了密碼

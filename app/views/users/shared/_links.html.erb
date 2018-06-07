@@ -1,4 +1,10 @@
 <div class="devise_shared">
+	<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+	  <%= link_to to_receive_email_helps_path, class: "" do %>
+	    <%= t(".Why_didn't_I_get_email?") %>
+	  <% end %><br>
+	<% end -%>
+
 	<%- if controller_name != 'sessions' %>
 	  <%= link_to t(".sign_in"), new_session_path(resource_name) %><br />
 	<% end -%>

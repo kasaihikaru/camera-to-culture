@@ -83,8 +83,6 @@ zh:
       cl_schedule: 设定可拍摄日程
       cl_settings: 摄影师的简介
       upload_cl_portpolios: 上传样片
-
-
     profile:
       meta_title: '编辑个人信息'
       meta_keywords: '编辑个人信息, Camera-to-Culture'
@@ -179,7 +177,6 @@ zh:
         please_set_receiving_permission_from_CtoC: |
           请在邮箱域名白名单中设置同意接受来自「camera-to-culture.com」的邮件。
           （QQ邮箱登录者请务必确认域名白名单的设置）
-        Why_didn't_I_get_email?: 收不到确认邮件吗？
         name: 名字
         email: 电子邮箱
         password: 密码
@@ -221,6 +218,7 @@ zh:
         remember_me: 保持登录状态
     shared:
       links:
+        Why_didn't_I_get_email?: 收不到确认邮件吗？
         sign_in: 登录
         sign_up: 注册新用户
         Forgot_your_password?: 忘记了密码

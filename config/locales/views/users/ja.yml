@@ -178,7 +178,6 @@ ja:
         sign_up_with_FB: Facebookで会員登録
         please_set_receiving_permission_from_CtoC: |
           「camera-to-culture.com」からのメール受信を許可する設定をしておいてください。(QQメールを利用の場合、設定が必要になります。）
-        Why_didn't_I_get_email?: メールが届かない？
         name: お名前
         email: メールアドレス
         password: パスワード
@@ -220,6 +219,7 @@ ja:
         remember_me: ログイン状態を保持
     shared:
       links:
+        Why_didn't_I_get_email?: メールが届かない？
         sign_in: ログイン
         sign_up: 新規登録
         Forgot_your_password?: パスワードを忘れた方

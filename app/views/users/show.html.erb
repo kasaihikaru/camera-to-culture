@@ -10,72 +10,112 @@
 
       <!-- お知らせ -->
       <div class="user-show-alert">
-        <div class="fusen">
-          <ul>
-            <% if @cl.consent == true && @cl.deleted_at == nil && @cl_schedules.blank? %>
-              <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
-                <li>
-                  <%= t(".Update_available_dates_for_your_customer") %>
-                </li>
-              <% end %>
-            <% end %>
-            <% if @cl_future.present? %>
-              <% @cl_future.each do |ev| %>
-                <%= link_to event_path(ev.id) do %>
-                  <li>
-                    <%= t(".booking_request", name: ev.customer.user.name) %>
-                  </li>
-                <% end %>
-              <% end %>
-            <% end %>
-            <% if @cl_past.present? %>
-              <% @cl_past.each do |ev| %>
-                <%= link_to event_path(ev.id) do %>
-                  <li>
-                    <%= t(".Deliver_photos", name: ev.customer.user.name) %>
-                  </li>
-                <% end %>
-              <% end %>
-            <% end %>
-            <% if @cs_future.present? %>
-              <% @cs_future.each do |ev| %>
-                <%= link_to event_path(ev.id) do %>
-                  <li>
-                    <%= t(".changing_conditions_request", name: ev.client.user.name) %>
-                  </li>
-                <% end %>
-              <% end %>
-            <% end %>
-            <% if @cs_past.present? %>
-              <% @cs_past.each do |ev| %>
-                <%= link_to event_path(ev.id) do %>
-                  <li>
-                    <%= t(".Photos_delivered", name: ev.client.user.name) %>
-                  </li>
-                <% end %>
-              <% end %>
-            <% end %>
-            <% if @cs_reviews.present? %>
-              <% @cs_reviews.each do |ev| %>
-                <%= link_to event_path(ev.id) do %>
-                  <li>
-                    <%= t(".Write_a_review", name: ev.client.user.name) %>
-                  </li>
-                <% end %>
-              <% end %>
-            <% end %>
-            <% if @cl_reviews.present? %>
-              <% @cl_reviews.each do |ev| %>
-                <%= link_to event_path(ev.id) do %>
-                  <li>
-                    <%= t(".Write_a_review", name: ev.customer.user.name) %>
-                  </li>
-                <% end %>
-              <% end %>
-            <% end %>
-          </ul>
+        <div class="row">
+          <% if @cl.consent == true && @cl.deleted_at == nil && @cl_schedules.blank? %>
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="fusen">
+                <ul>
+                  <%= link_to user_client_client_schedules_path(@user, @cl, day: Date.today ) do %>
+                    <li>
+                      <%= t(".Update_available_dates_for_your_customer") %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if @cl_future.present? %>
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="fusen">
+                <ul>
+                  <% @cl_future.each do |ev| %>
+                    <%= link_to event_path(ev.id) do %>
+                      <li>
+                        <%= t(".booking_request", name: ev.customer.user.name) %>
+                      </li>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if @cl_past.present? %>
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="fusen">
+                <ul>
+                  <% @cl_past.each do |ev| %>
+                    <%= link_to event_path(ev.id) do %>
+                      <li>
+                        <%= t(".Deliver_photos", name: ev.customer.user.name) %>
+                      </li>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if @cs_future.present? %>
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="fusen">
+                <ul>
+                  <% @cs_future.each do |ev| %>
+                    <%= link_to event_path(ev.id) do %>
+                      <li>
+                        <%= t(".changing_conditions_request", name: ev.client.user.name) %>
+                      </li>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if @cs_past.present? %>
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="fusen">
+                <ul>
+                  <% @cs_past.each do |ev| %>
+                    <%= link_to event_path(ev.id) do %>
+                      <li>
+                        <%= t(".Photos_delivered", name: ev.client.user.name) %>
+                      </li>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if @cs_reviews.present? %>
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="fusen">
+                <ul>
+                  <% @cs_reviews.each do |ev| %>
+                    <%= link_to event_path(ev.id) do %>
+                      <li>
+                        <%= t(".Write_a_review", name: ev.client.user.name) %>
+                      </li>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if @cl_reviews.present? %>
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="fusen">
+                <ul>
+                  <% @cl_reviews.each do |ev| %>
+                    <%= link_to event_path(ev.id) do %>
+                      <li>
+                        <%= t(".Write_a_review", name: ev.customer.user.name) %>
+                      </li>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
         </div>
-      </div><!-- endOf ふせん -->
+      </div>
       <br><br><br><br>
 
       <div class="user-show-wrapper">
@@ -426,8 +466,9 @@
             </div>
           <% end %>
         </div>
+        <br><br><br>
         <%= link_to destroy_user_session_path, class: "", method: :delete do %>
-          <div class="grey-btn log-out-btn"><%= t(".sign-out") %></div>
+          <div class="white-btn log-out-btn"><%= t(".sign-out") %></div>
         <% end %>
       </div>
     </div>

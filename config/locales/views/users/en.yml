@@ -120,7 +120,6 @@ en:
         meta_keywords: 'Resend confirmation instructions, Camera-to-Culture'
         meta_description: 'Resend confirmation instructions'
         Resend_confirmation_instructions: Resend confirmation instructions
-        Why_didn't_I_get_email?: 'Why didn''t I get email?'
         email: email
     mailer:
       confirmation_instructions:
@@ -220,6 +219,7 @@ en:
         remember_me: Remember me
     shared:
       links:
+        Why_didn't_I_get_email?: 'Why didn''t I get email?'
         sign_in: Sign in
         sign_up: Sign up
         Forgot_your_password?: Forgot your password?

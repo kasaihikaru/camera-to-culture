@@ -68,14 +68,11 @@
           </div>
 
           <div class="actions">
-            <%= f.submit t(".sign_up_btn") %>
+            <%= f.submit t(".sign_up_btn"), class: "prim-btn" %>
           </div>
         </div>
       <% end %>
       <br><br>
-      <%= link_to to_receive_email_helps_path, class: "" do %>
-        <%= t(".Why_didn't_I_get_email?") %>
-      <% end %>
       <%= render "users/shared/links" %>
     </div>
     <div class="col-md-5 offset-md-1 d-none d-md-block">
