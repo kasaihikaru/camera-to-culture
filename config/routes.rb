@@ -105,7 +105,7 @@ Rails.application.routes.draw do
 			end
 		end
 
-		resources :categories, only: [:index] do
+		resources :categories, only: [] do
 			collection do
 				get 'profile'
 				get 'id_photo'

@@ -28,6 +28,7 @@ config/.DS_Store
 config/secrets.yml
 /config/secrets.yml
 
+public/sitemap.xml.gz
 
 
 # Elastic Beanstalk Files
