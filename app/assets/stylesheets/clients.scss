@@ -86,8 +86,16 @@ $white-col : #FFFFFF;
 .option_name{
 	width: 250px;
 }
-
-
+.mypage-container{
+	.mypage-content{
+		.cl-edit-introductions{
+			margin-bottom: 60px;
+			.field{
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
 
 //------------- client/show ---------------//
 @media screen and (min-width: 550px) {

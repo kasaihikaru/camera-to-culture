@@ -18,39 +18,41 @@
       <%= form_for([current_user, @cl]) do |f| %>
         <!-- 自己紹介 -->
         <% if @lang_ids.present? %>
-          <p class="bold under-line-subprime margin-0">
-            <%= t(".introduction")%><span class="prim-col">（<%= t(".required")%>）</span>
-          </p>
-          <span class="field-explanation"><%= t(".120_letters_maximum")%></span><br><br>
-          <% @lang_ids.each do |id| %>
-            <!-- 日本語 -->
-            <% if id == 1 %>
-              <div class="field">
-                <%= t(".ja")%>
-                <textarea name="introduction_ja" class="input-textarea" maxlength="120"><%= @cl.introduction_ja %></textarea>
-              </div>
+          <div class="cl-edit-introductions">
+            <p class="bold under-line-subprime margin-0">
+              <%= t(".introduction")%><span class="prim-col">（<%= t(".required")%>）</span>
+            </p>
+            <span class="field-explanation"><%= t(".120_letters_maximum")%></span><br><br>
+            <% @lang_ids.each do |id| %>
+              <!-- 日本語 -->
+              <% if id == 1 %>
+                <div class="field">
+                  <%= t(".ja")%>
+                  <textarea name="introduction_ja" class="input-textarea" maxlength="120"><%= @cl.introduction_ja %></textarea>
+                </div>
+              <% end %>
+              <!-- 英語 -->
+              <% if id == 2 %>
+                <div class="field">
+                  <%= t(".en")%>
+                  <textarea name="introduction_en" class="input-textarea" maxlength="120"><%= @cl.introduction_en %></textarea>
+                </div>
+              <% end %>
+              <!-- 中国語 -->
+              <% if id == 3 %>
+                <div class="field">
+                  <%= t(".zh")%><br>
+                  <a href="https://translate.google.co.jp/" target="_blank" class="grey-col field-explanation"><%= t(".open_google_translation")%></a>
+                  <textarea name="introduction_zh" class="input-textarea" maxlength="120"><%= @cl.introduction_zh %></textarea>
+                </div>
+                <div class="field">
+                  <%= t(".tw")%><br>
+                  <a href="https://translate.google.co.jp/" target="_blank" class="grey-col field-explanation"><%= t(".open_google_translation")%></a>
+                  <textarea name="introduction_tw" class="input-textarea" maxlength="120"><%= @cl.introduction_tw %></textarea>
+                </div>
+              <% end %>
             <% end %>
-            <!-- 英語 -->
-            <% if id == 2 %>
-              <div class="field">
-                <%= t(".en")%>
-                <textarea name="introduction_en" class="input-textarea" maxlength="120"><%= @cl.introduction_en %></textarea>
-              </div>
-            <% end %>
-            <!-- 中国語 -->
-            <% if id == 3 %>
-              <div class="field">
-                <%= t(".zh")%><br>
-                <a href="https://translate.google.co.jp/" target="_blank" class="grey-col field-explanation"><%= t(".open_google_translation")%></a>
-                <textarea name="introduction_zh" class="input-textarea" maxlength="120"><%= @cl.introduction_zh %></textarea>
-              </div>
-              <div class="field">
-                <%= t(".tw")%><br>
-                <a href="https://translate.google.co.jp/" target="_blank" class="grey-col field-explanation"><%= t(".open_google_translation")%></a>
-                <textarea name="introduction_tw" class="input-textarea" maxlength="120"><%= @cl.introduction_tw %></textarea>
-              </div>
-            <% end %>
-          <% end %>
+          </div><!-- end of cl-edit-introductions -->
         <% else %>
           <%= link_to profile_users_path do %>
             <div class="alert-box tungsten-shadow">
