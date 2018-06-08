@@ -22,7 +22,7 @@ class ClientsController < ApplicationController
 		@locations = @cl_here.client_locations.includes(:prefecture)
 		@prim_price = @cl_here.client_primary_prices.active.first
 		@options = @cl_here.client_option_prices.active
-		@portfolios = @cl_here.client_portfolios.active.limit(19)
+		@portfolios = @cl_here.client_portfolios.active.limit(20)
 		@events = @cl_here.events.past.cs_reviewed.order(start_time: :DESC).includes(:event_review, customer: :user)
 		@events_3 = @events.take(3)
 		@ev_nums = @events.count()
