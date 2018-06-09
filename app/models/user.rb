@@ -31,6 +31,11 @@ class User < ApplicationRecord
     !deleted_at ? super : :deleted_account
   end
 
+  # trueだと、ブラウザ閉じてもログイン保持できる
+  def remember_me
+    true
+  end
+
 	# userがいなければfacebookアカウントでuserを作成するメソッド
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
