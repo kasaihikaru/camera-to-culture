@@ -26,6 +26,7 @@
 @import "messages";
 @import "users";
 @import "abouts";
+@import "helps";
 @import "categories";
 @import "client_schedules";
 @import "client_portfolios";
@@ -259,11 +260,6 @@ $white-col : #FFFFFF;
   margin: 30px 0 45px;
   background-color: $prim-col;
   color: $white-col;
-}
-.alert-box:hover{
-  text-decoration: underline;
-  text-decoration-color: $white-col;
-
 }
 
 .light-shadow {

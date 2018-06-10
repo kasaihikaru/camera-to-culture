@@ -8,4 +8,6 @@ tw:
       Why_didn't_I_get_email?: 收不到確認郵件嗎？
       Check_your_email_receiveing_settings: 確認郵箱域名白名單
       receive_setting_of_qq: QQ郵箱的設置
-      disc_1: ''
+      disc_1: |
+        在收信白名單中，添加
+        「camera-to-culture.com」

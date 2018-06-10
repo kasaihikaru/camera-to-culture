@@ -175,6 +175,7 @@ tw:
         meta_description: '註冊新用戶'
         sign_up: 註冊新用戶
         sign_up_with_FB: 用Facebook註冊新用戶
+        qq_mail_setting: QQ郵箱登錄希望者請點擊這裡查看重要注意事項
         please_set_receiving_permission_from_CtoC: |
           請在郵箱域名白名單中設置同意接受來自「camera-to-culture.com」的郵件。
           （QQ郵箱登錄者請務必確認域名白名單的設置）

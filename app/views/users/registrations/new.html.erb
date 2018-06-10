@@ -51,6 +51,9 @@
           <div class="field">
             <%= f.label :email, t(".email") %><br />
             <%= f.email_field :email, autofocus: true, class: "input-text" %><br>
+            <%= link_to to_receive_email_helps_path, class: "prim-col", target: "_blank" do %>
+              <%= t(".qq_mail_setting") %>
+            <% end %><br>
             <span class="field-explanation"><%= simple_format(t(".please_set_receiving_permission_from_CtoC"))%></span>
       </p>
           </div>

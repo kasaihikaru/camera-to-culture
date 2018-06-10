@@ -8,4 +8,6 @@ zh:
       Why_didn't_I_get_email?: 收不到确认邮件吗？
       Check_your_email_receiveing_settings: 确认邮箱域名白名单
       receive_setting_of_qq: QQ邮箱的设置
-      disc_1: ''
+      disc_1: |
+        在收信白名单中，添加
+        「camera-to-culture.com」

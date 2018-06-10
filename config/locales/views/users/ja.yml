@@ -176,6 +176,7 @@ ja:
         meta_description: '新規登録'
         sign_up: 新規登録
         sign_up_with_FB: Facebookで会員登録
+        qq_mail_setting: QQメール用の事前設定
         please_set_receiving_permission_from_CtoC: |
           「camera-to-culture.com」からのメール受信を許可する設定をしておいてください。(QQメールを利用の場合、設定が必要になります。）
         name: お名前
