@@ -181,6 +181,7 @@ tw:
           （QQ郵箱登錄者請務必確認域名白名單的設置）
         name: 名字
         email: 電子郵箱
+        email-placeholder: 用QQ邮箱登入是，必须设定域名白名单
         password: 密碼
         characters_minimum: 個字以上
         password_confirmation: 確認密碼

@@ -180,6 +180,7 @@ zh:
           （QQ邮箱登录者请务必确认域名白名单的设置）
         name: 名字
         email: 电子邮箱
+        email-placeholder: 用QQ邮箱登入是，必须设定域名白名单
         password: 密码
         characters_minimum: 个字以上
         password_confirmation: 确认密码
