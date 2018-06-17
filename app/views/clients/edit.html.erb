@@ -28,14 +28,14 @@
               <% if id == 1 %>
                 <div class="field">
                   <%= t(".ja")%>
-                  <textarea name="introduction_ja" class="input-textarea" maxlength="120"><%= @cl.introduction_ja %></textarea>
+                  <textarea name="introduction_ja" class="input-textarea" maxlength="120" required="true"><%= @cl.introduction_ja %></textarea>
                 </div>
               <% end %>
               <!-- 英語 -->
               <% if id == 2 %>
                 <div class="field">
                   <%= t(".en")%>
-                  <textarea name="introduction_en" class="input-textarea" maxlength="120"><%= @cl.introduction_en %></textarea>
+                  <textarea name="introduction_en" class="input-textarea" maxlength="120" required="true"><%= @cl.introduction_en %></textarea>
                 </div>
               <% end %>
               <!-- 中国語 -->
@@ -43,12 +43,12 @@
                 <div class="field">
                   <%= t(".zh")%><br>
                   <a href="https://translate.google.co.jp/" target="_blank" class="grey-col field-explanation"><%= t(".open_google_translation")%></a>
-                  <textarea name="introduction_zh" class="input-textarea" maxlength="120"><%= @cl.introduction_zh %></textarea>
+                  <textarea name="introduction_zh" class="input-textarea" maxlength="120" required="true"><%= @cl.introduction_zh %></textarea>
                 </div>
                 <div class="field">
                   <%= t(".tw")%><br>
                   <a href="https://translate.google.co.jp/" target="_blank" class="grey-col field-explanation"><%= t(".open_google_translation")%></a>
-                  <textarea name="introduction_tw" class="input-textarea" maxlength="120"><%= @cl.introduction_tw %></textarea>
+                  <textarea name="introduction_tw" class="input-textarea" maxlength="120" required="true"><%= @cl.introduction_tw %></textarea>
                 </div>
               <% end %>
             <% end %>
@@ -76,7 +76,7 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <%= image_tag @cl.image.thumb.url, :alt => "Main Image", class: "image" if @cl.image? %><br>
-                <%= f.file_field :image %>
+                <%= f.file_field :image, required: true %>
               </div>
               <div class="col-12 col-sm-6 d-none d-sm-block">
                 <img alt="photo-size" src="/images/main-photo-size.png">
