@@ -4,7 +4,7 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+/*  .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -51,17 +51,73 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+*/
+
+  .error-body{
+    background-image: url("https://www.camera-to-culture.com/images/error-background.png");
+    background-size: cover;
+    background-position: center;
+    }
+  .content{
+    margin: 50px 10%
+  }
+  h1{
+    font-size: 50px;
+    color: #FFFFFF;
+  }
+  h2{
+    font-size: 45px;
+    color: #FFFFFF;
+  }
+  p{
+    font-size: 15px;
+    color: #64A5DD;
+  }
+  .error-btns{
+    text-align: center;
+  }
+  .error-btn{
+    color: #64A5DD;
+    margin: 15px auto;
+    padding: 15px 0;
+    width: 200px;
+    box-shadow: 0 2px 4px 0 #ccc;
+    cursor : pointer;
+  }
+  a, a:hover{
+    color: #64A5DD;
+    text-decoration: none;
+  }
   </style>
 </head>
 
-<body class="rails-default-error-page">
+
+<body class="error-body">
+  <div class="content">
+    <h1>404</h1>
+    <h2>PAGE NOT FOUND</h2>
+    <div class="error-btns">
+      <p>お探しのページが見つかりませんでした。。。</p>
+      <br>
+      <div class="error-btn"><a href="https://www.camera-to-culture.com/ja">ホームに戻る</a></div>
+      <div class="error-btn"><a href="https://www.camera-to-culture.com/en">Back to Home</a></div>
+      <div class="error-btn"><a href="https://www.camera-to-culture.com/zh">回到首页</a></div>
+    </div>
+  </div>
+</body>
+
+
+<!-- <body class="rails-default-error-page"> -->
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
+<!--   <div class="dialog">
     <div>
       <h1>The page you were looking for doesn't exist.</h1>
       <p>You may have mistyped the address or the page may have moved.</p>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
   </div>
-</body>
+</body> -->
+
+
+
 </html>
