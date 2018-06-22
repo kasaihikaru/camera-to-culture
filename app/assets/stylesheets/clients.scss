@@ -149,11 +149,12 @@ $white-col : #FFFFFF;
 	box-shadow: 0 2px 4px 0 #ccc;
 	.cl-show-1-left{
 		text-align: center;
-		img{
-			width:auto;
-			height:auto;
-			max-width:80px;
-			max-height:96px;
+		.cl-show-1-left-img{
+			width:70px;
+			height:70px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
 		}
 	}
 	.cl-show-1-middle{
